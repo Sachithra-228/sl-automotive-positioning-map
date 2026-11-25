@@ -1,0 +1,17 @@
+# IMPORTANT: Never commit Angelo's confidential coaching PDF to GitHub!
+*SCALE Pathway*.pdf
+*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS & Editors
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*.docx
+~$*.xlsx

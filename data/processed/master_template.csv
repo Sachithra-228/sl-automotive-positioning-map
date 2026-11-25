@@ -1,0 +1,4 @@
+Distributor,Brand,Model,Powertrain,Body_Type,Listed_Price_LKR,VAT_Status,Std_Price_Mn,Price_Tier,Source_URL
+United Motors,Mitsubishi,Xpander,ICE,SUV,18500000,Excl_VAT,21.83,Mid-Range,https://www.unitedmotors.lk
+John Keells CG Auto,BYD,Atto 3,EV,SUV,14900000,Incl_VAT,14.90,Mid-Range,https://www.byd.lk
+Euro Motors,Jetour,T2,ICE,SUV,22500000,Incl_VAT,22.50,Mid-Range,https://www.jetour.lk
