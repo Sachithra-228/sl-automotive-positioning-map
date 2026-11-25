@@ -587,6 +587,51 @@
   .tour-btn.primary { background: var(--deep); color: #FFFFFF; border-color: var(--deep); }
   .tour-btn.primary:hover { background: var(--deep-dark); }
 
+
+  /* Landing Page Mobile Sidebar Menu */
+  .lp-menu-btn {
+    display: none; align-items: center; justify-content: center;
+    width: 38px; height: 38px; border-radius: 9px;
+    background: rgba(151, 215, 255, 0.16); border: 1.5px solid rgba(151, 215, 255, 0.45);
+    color: #FFFFFF; cursor: pointer;
+  }
+  #lp-drawer-backdrop {
+    display: none; position: fixed; inset: 0; z-index: 650;
+    background: rgba(2, 18, 28, 0.65); backdrop-filter: blur(4px);
+  }
+  #lp-drawer-backdrop.open { display: block; }
+  #lp-drawer {
+    position: fixed; top: 0; right: 0; bottom: 0; width: 276px; max-width: 82vw; z-index: 700;
+    background: linear-gradient(180deg, #086288 0%, #043248 58%, #021C2B 100%);
+    color: #FFFFFF; padding: 22px 18px;
+    transform: translateX(100%); transition: transform 0.28s cubic-bezier(0.22,1,0.36,1);
+    display: flex; flex-direction: column; justify-content: space-between;
+    box-shadow: -10px 0 36px rgba(2, 18, 28, 0.45);
+    border-left: 1px solid rgba(151, 215, 255, 0.2);
+  }
+  #lp-drawer.open { transform: translateX(0); }
+  .lp-drawer-head {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 16px; border-bottom: 1px solid rgba(151, 215, 255, 0.18); margin-bottom: 16px;
+  }
+  .lp-drawer-close {
+    width: 34px; height: 34px; border-radius: 8px; border: 1px solid rgba(151,215,255,0.3);
+    background: rgba(151,215,255,0.12); color: #FFFFFF; display: grid; place-items: center; cursor: pointer;
+  }
+  .lp-drawer-nav { display: flex; flex-direction: column; gap: 6px; }
+  .lp-drawer-link {
+    display: flex; align-items: center; gap: 11px; padding: 12px 14px; border-radius: 10px;
+    color: rgba(235, 247, 255, 0.9); text-decoration: none; font-size: 13.5px; font-weight: 700;
+    background: transparent; border: none; width: 100%; text-align: left; cursor: pointer; transition: 0.16s;
+  }
+  .lp-drawer-link:hover { background: rgba(151, 215, 255, 0.15); color: #FFFFFF; }
+  .lp-drawer-cta {
+    width: 100%; padding: 12px 16px; border-radius: 10px; border: none;
+    background: linear-gradient(135deg, var(--ice), #FFFFFF);
+    color: var(--deep-night); font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 800;
+    cursor: pointer; box-shadow: 0 8px 22px rgba(151, 215, 255, 0.3);
+  }
+
   .kpi-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
   .lp-mobile-cta { display: none; }
   #mobile-backdrop {
@@ -603,7 +648,9 @@
     .lp-nav { padding: 13px 18px; }
     .lp-nav.scrolled { padding: 11px 18px; }
     .lp-links { display: none; }
-    .lp-mobile-cta { display: inline-block; padding: 7px 14px; font-size: 11.5px; }
+    .lp-mobile-cta { display: none; }
+    .lp-menu-btn { display: inline-flex; }
+    .hero-bg-img { object-position: 52% 56%; }
 
     /* Mobile Sticky Car Scrollytelling */
     .scrolly-wrap { grid-template-columns: 1fr; }
@@ -767,8 +814,27 @@
       <a href="#lp-brands">Brands</a>
       <button class="lp-cta-sm" onclick="enterDashboard('overview')">Open Dashboard</button>
     </div>
-    <button class="lp-cta-sm lp-mobile-cta" onclick="enterDashboard('overview')">Open Dashboard</button>
+    <button class="lp-menu-btn" onclick="toggleLpDrawer(true)" aria-label="Menu"><svg class="ico" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
   </nav>
+  <div id="lp-drawer-backdrop" onclick="toggleLpDrawer(false)"></div>
+  <aside id="lp-drawer">
+    <div>
+      <div class="lp-drawer-head">
+        <div class="lp-logo" style="font-size:15px;">SL AUTO<span>INTEL</span></div>
+        <button class="lp-drawer-close" onclick="toggleLpDrawer(false)" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="lp-drawer-nav">
+        <a class="lp-drawer-link" href="#evolution" onclick="toggleLpDrawer(false)">The Car Evolution</a>
+        <a class="lp-drawer-link" href="#lp-brands" onclick="toggleLpDrawer(false)">Active Brands Carousel</a>
+        <button class="lp-drawer-link" onclick="toggleLpDrawer(false); enterDashboard('overview')">Executive Overview</button>
+        <button class="lp-drawer-link" onclick="toggleLpDrawer(false); enterDashboard('ninebox')">9-Box Matrix (86 Models)</button>
+        <button class="lp-drawer-link" onclick="toggleLpDrawer(false); enterDashboard('quadrant')">Gartner Magic Quadrant</button>
+        <button class="lp-drawer-link" onclick="toggleLpDrawer(false); enterDashboard('scale')">SCALE Strategy Suite</button>
+        <button class="lp-drawer-link" onclick="toggleLpDrawer(false); enterDashboard('registry')">28-Player MECE Registry</button>
+      </div>
+    </div>
+    <button class="lp-drawer-cta" onclick="toggleLpDrawer(false); enterDashboard('overview')">Sign In to Dashboard</button>
+  </aside>
 
   <section class="lp-hero">
     <img class="hero-bg-img" src="assets/cars/hero_suv.jpg" alt="Sri Lanka Automotive 2026 Hero SUV">
@@ -910,7 +976,7 @@
       </button>
       <button class="nav-item" id="nav-ninebox" onclick="showView('ninebox', '9-Box Positioning Simulator', 'ICE / Hybrid / EV vs. Price Tiers', this)">
         <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
-        9-Box Simulator <span class="nav-count" id="sbModelCount">18</span>
+        9-Box Simulator <span class="nav-count" id="sbModelCount">86</span>
       </button>
       <button class="nav-item" id="nav-quadrant" onclick="showView('quadrant', 'Gartner Magic Quadrant', 'Ability to Execute vs. Vision', this)">
         <svg class="ico" viewBox="0 0 24 24"><path d="M3 3v18h18"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="14" r="2"/><circle cx="17" cy="15" r="2"/></svg>
@@ -1049,7 +1115,7 @@
           <select id="filterDistributor"><option value="ALL">All Distributors</option></select>
           <label>Body Type:</label>
           <select id="filterBody"><option value="ALL">All Body Types</option></select>
-          <span style="margin-left:auto; font-size:12px; font-weight:800; color:var(--deep);" id="modelCountBadge">18 Models Shown</span>
+          <span style="margin-left:auto; font-size:12px; font-weight:800; color:var(--deep);" id="modelCountBadge">86 Models Shown</span>
         </div>
 
         <div class="card">
@@ -1151,6 +1217,11 @@
           <div class="card"><div class="card-title">2025 Registrations by Class</div><div class="card-sub">Post-ban surge to 360K+ units (DMT).</div><div id="regChart" style="width:100%; height:290px;"></div></div>
           <div class="card"><div class="card-title">Sector GDP Contribution</div><div class="card-sub">Current vs. Constant Prices (Rs. Mn, DCS).</div><div id="gdpChart" style="width:100%; height:290px;"></div></div>
           <div class="card"><div class="card-title">Imports vs. Exports (Rs. Bn)</div><div class="card-sub">Sri Lanka Customs (2020–2022).</div><div id="tradeChart" style="width:100%; height:290px;"></div></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Listed Distributor Revenue Surge (FY 2023/24 &rarr; FY 2025/26, Rs. Billion)</div>
+          <div class="card-sub">Audited CSE Annual Reports (<code style="color:var(--deep)">company_financials.csv</code>): United Motors jumped 4.4x (Rs 11.8B to Rs 52.4B) and DIMO doubled (Rs 50.2B to Rs 103.6B).</div>
+          <div id="finChart" style="width:100%; height:300px;"></div>
         </div>
         <div class="insight-strip">
           <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
@@ -1567,26 +1638,7 @@
     ["ChargeNET","Charging Infra","Evidenced","100+ locations, 150+ chargers; Dialog Touch Card payment integration."]
   ];
 
-  let currentData = [
-    {Distributor:"AMW", Brand:"Suzuki", Model:"Alto K10", Powertrain:"ICE", Body_Type:"Hatchback", Std_Price_Mn:6.8},
-    {Distributor:"AMW", Brand:"Suzuki", Model:"WagonR", Powertrain:"Hybrid", Body_Type:"Hatchback", Std_Price_Mn:8.9},
-    {Distributor:"United Motors", Brand:"Perodua", Model:"Axia", Powertrain:"ICE", Body_Type:"Hatchback", Std_Price_Mn:8.2},
-    {Distributor:"United Motors", Brand:"Mitsubishi", Model:"Outlander Sport", Powertrain:"ICE", Body_Type:"SUV", Std_Price_Mn:21.8},
-    {Distributor:"Micro Cars", Brand:"MG", Model:"ZS EV", Powertrain:"EV", Body_Type:"SUV", Std_Price_Mn:16.5},
-    {Distributor:"John Keells CG Auto", Brand:"BYD", Model:"Atto 1 / Dolphin", Powertrain:"EV", Body_Type:"Hatchback", Std_Price_Mn:10.5},
-    {Distributor:"John Keells CG Auto", Brand:"BYD", Model:"Atto 3", Powertrain:"EV", Body_Type:"SUV", Std_Price_Mn:14.9},
-    {Distributor:"John Keells CG Auto", Brand:"BYD", Model:"Seal", Powertrain:"EV", Body_Type:"Sedan", Std_Price_Mn:26.5},
-    {Distributor:"Euro Motors", Brand:"Jetour", Model:"Dashing", Powertrain:"ICE", Body_Type:"SUV", Std_Price_Mn:17.5},
-    {Distributor:"Euro Motors", Brand:"Jetour", Model:"T2", Powertrain:"ICE", Body_Type:"SUV", Std_Price_Mn:23.5},
-    {Distributor:"Hayleys Mobility", Brand:"JAECOO", Model:"J5 HEV", Powertrain:"Hybrid", Body_Type:"SUV", Std_Price_Mn:19.8},
-    {Distributor:"Hayleys Mobility", Brand:"Kaiyi", Model:"eVibe EV", Powertrain:"EV", Body_Type:"Hatchback", Std_Price_Mn:9.6},
-    {Distributor:"Browns EV", Brand:"BAW", Model:"E7 Pro EV", Powertrain:"EV", Body_Type:"Hatchback", Std_Price_Mn:8.4},
-    {Distributor:"Kia Motors", Brand:"Kia", Model:"Sportage HEV", Powertrain:"Hybrid", Body_Type:"SUV", Std_Price_Mn:24.2},
-    {Distributor:"Toyota Lanka", Brand:"Toyota", Model:"RAV4 Hybrid", Powertrain:"Hybrid", Body_Type:"SUV", Std_Price_Mn:28.5},
-    {Distributor:"DIMO", Brand:"Mercedes-Benz", Model:"GLB 200", Powertrain:"Hybrid", Body_Type:"SUV", Std_Price_Mn:42.0},
-    {Distributor:"Mels Automobiles", Brand:"BMW", Model:"iX3 / X3", Powertrain:"EV", Body_Type:"SUV", Std_Price_Mn:48.0},
-    {Distributor:"Eurocars", Brand:"Porsche", Model:"Macan EV", Powertrain:"EV", Body_Type:"SUV", Std_Price_Mn:62.0}
-  ];
+  let currentData = [{"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "C-Class C 180", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 39.9}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "E-Class E 200 Exclusive", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 66.5}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "E-Class E 300", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 72.6}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "S-Class", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 167.3}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "Mercedes-Maybach S 580 4MATIC", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 207.5}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "CLA 180", "Powertrain": "ICE", "Body_Type": "Coupe", "Std_Price_Mn": 40.3}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLA 200 Progressive", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 36.5}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLB", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 46.7}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLC", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 65.5}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLE", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 130.0}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLS 450 4MATIC", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 118.8}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "Mercedes-Maybach GLS 600", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 233.0}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "G-Class G 500", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 182.8}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "Mercedes-AMG G 63", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 240.0}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "V-Class V 220 d", "Powertrain": "ICE", "Body_Type": "MPV", "Std_Price_Mn": 80.4}, {"Distributor": "Euro Motors", "Brand": "Jetour", "Model": "T1", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 25.5}, {"Distributor": "Euro Motors", "Brand": "Jetour", "Model": "T2", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 28.5}, {"Distributor": "Euro Motors", "Brand": "Jetour", "Model": "Dashing", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 16.95}, {"Distributor": "Euro Motors", "Brand": "Jetour", "Model": "X70 Plus", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 17.5}, {"Distributor": "Euro Motors", "Brand": "Dongfeng", "Model": "007", "Powertrain": "EV", "Body_Type": "Sedan", "Std_Price_Mn": 18.95}, {"Distributor": "Euro Motors", "Brand": "Dongfeng", "Model": "Box", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 10.98}, {"Distributor": "Euro Motors", "Brand": "Dongfeng", "Model": "Vigo", "Powertrain": "EV", "Body_Type": "Compact SUV", "Std_Price_Mn": 14.35}, {"Distributor": "Euro Motors", "Brand": "JAC", "Model": "T9 Double Cab", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 18.5}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Haval H6", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 20.0}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Haval H6 GT", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 26.0}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Tank 300", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 34.0}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Tank 500", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 43.5}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Ora 5", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 14.5}, {"Distributor": "Carmart", "Brand": "Leapmotor", "Model": "C10 REEV Style", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 23.3}, {"Distributor": "Carmart", "Brand": "Leapmotor", "Model": "C10 REEV Design", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 23.9}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 1 Dynamic", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 9.3}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 1 Premium", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 10.3}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "RACCO Dynamic", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 8.75}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "RACCO Advanced", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 9.75}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "RACCO Premium", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 11.45}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 Advanced", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 14.65}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 EVO Advanced", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 16.3}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 EVO Superior", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 18.9}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 EVO Premium", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 44.55}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 EVO Performance", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 57.89}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "M6 Superior", "Powertrain": "EV", "Body_Type": "MPV", "Std_Price_Mn": 17.4}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "SEALION 5 Dynamic", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 19.48}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "SEALION 5 Premium", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 20.75}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "SEALION 6 Superior", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 23.85}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "SHARK 6 Premium", "Powertrain": "Hybrid", "Body_Type": "Pickup", "Std_Price_Mn": 28.35}, {"Distributor": "AMW", "Brand": "Nissan", "Model": "Magnite Accenta 1.0 AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 8.19}, {"Distributor": "AMW", "Brand": "Nissan", "Model": "Magnite Tekna+ 1.0 AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 9.39}, {"Distributor": "AMW", "Brand": "Nissan", "Model": "Magnite N-Connecta 1.0 Turbo CVT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 9.99}, {"Distributor": "AMW", "Brand": "Nissan", "Model": "Magnite Tekna+ 1.0 Turbo CVT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 10.59}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "XUV 3XO 1.2 MX3 AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 11.6}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "XUV 3XO 1.2 AX5 AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 12.7}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "XUV 3XO 1.2 AX7L AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 13.7}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "Pik-Up Single Cab S6 4x4", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 8.99}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "Bolero MaXX Pik-Up City 1.5T", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 5.79}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "Bolero MaXX HD 1.7T", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 6.1}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J8", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 34.9}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J8 PHEV", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 32.9}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J7 PHEV", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 24.9}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J6", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 23.5}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J5 HEV", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 19.99}, {"Distributor": "Hayleys Mobility", "Brand": "OMODA", "Model": "C9", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 33.9}, {"Distributor": "Hayleys Mobility", "Brand": "OMODA", "Model": "C5", "Powertrain": "ICE", "Body_Type": "Compact SUV", "Std_Price_Mn": 15.9}, {"Distributor": "Hayleys Mobility", "Brand": "OMODA", "Model": "E5", "Powertrain": "EV", "Body_Type": "Crossover", "Std_Price_Mn": 20.9}, {"Distributor": "Hayleys Mobility", "Brand": "Kaiyi", "Model": "eVibe e04", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 7.99}, {"Distributor": "Hayleys Mobility", "Brand": "Kaiyi", "Model": "X3 Pro EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 13.39}, {"Distributor": "Hayleys Mobility", "Brand": "SRM", "Model": "T3 EV Truck", "Powertrain": "EV", "Body_Type": "Light Truck", "Std_Price_Mn": 14.04}, {"Distributor": "Hayleys Mobility", "Brand": "SRM", "Model": "X30L EV Passenger Van", "Powertrain": "EV", "Body_Type": "Van", "Std_Price_Mn": 14.04}, {"Distributor": "Hayleys Mobility", "Brand": "SRM", "Model": "X30L EV Cargo Van", "Powertrain": "EV", "Body_Type": "Van", "Std_Price_Mn": 14.04}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "ZS MCE", "Powertrain": "ICE", "Body_Type": "Compact SUV", "Std_Price_Mn": 12.99}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "ZS Hybrid+", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 18.39}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "HS Plug-In Hybrid", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 25.0}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "HS Hybrid+", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 21.45}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "S9 PHEV", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 30.85}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "S5 EV", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 20.99}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "MG4 Electric", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 15.85}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "MG4 Urban EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 15.79}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "U9", "Powertrain": "ICE", "Body_Type": "Double Cab Pickup", "Std_Price_Mn": 32.99}, {"Distributor": "Browns EV", "Brand": "BAW", "Model": "E6 EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 4.5}, {"Distributor": "Browns EV", "Brand": "BAW", "Model": "E7 EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 5.9}, {"Distributor": "Browns EV", "Brand": "BAW", "Model": "E7 Pro EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 6.5}, {"Distributor": "Browns EV", "Brand": "BAW", "Model": "M8 REEV", "Powertrain": "Hybrid", "Body_Type": "MPV", "Std_Price_Mn": 23.0}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Binguo EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 9.35}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Cloud EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 13.7}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Eksion Plug-in Hybrid", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 20.8}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Darion EV", "Powertrain": "EV", "Body_Type": "MPV", "Std_Price_Mn": 22.5}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Darion Plug-in Hybrid", "Powertrain": "Hybrid", "Body_Type": "MPV", "Std_Price_Mn": 23.0}];
 
   const registry28 = [
     ["A","Toyota Lanka (Pvt) Ltd","Toyota; Lexus (unverified)","toyota.lk","Verified","Arundathie"],
@@ -1621,6 +1673,11 @@
 
   const plotFont = { family: "Plus Jakarta Sans, sans-serif", color: "#072233" };
   const gridCol = "rgba(8, 98, 136, 0.10)";
+
+  function toggleLpDrawer(open) {
+    document.getElementById("lp-drawer").classList.toggle("open", open);
+    document.getElementById("lp-drawer-backdrop").classList.toggle("open", open);
+  }
 
   function toggleMobileSidebar(force) {
     const sb = document.getElementById("sidebar");
@@ -1682,7 +1739,7 @@
         y: rows.map((r, i) => yMap[r.Powertrain] + (((i * 37 + idx * 13) % 10) - 4.5) * 0.045),
         text: rows.map(r => `${r.Brand} ${r.Model}`),
         customdata: rows.map(r => [r.Distributor, r.Powertrain, r.Body_Type || "N/A", parseFloat(r.Std_Price_Mn).toFixed(2)]),
-        mode: "markers+text", textposition: "top center", textfont: { size: 10.2, color: "#072233" },
+        mode: data.length <= 24 ? "markers+text" : "markers", textposition: "top center", textfont: { size: 10, color: "#072233" },
         marker: { size: 13, color: palette[idx % palette.length], line: { color: "#FFFFFF", width: 1.8 } },
         name: dist,
         hovertemplate: "<b>%{text}</b><br>Distributor: %{customdata[0]}<br>Powertrain: %{customdata[1]} • %{customdata[2]}<br>18% VAT-Incl. Price: LKR %{customdata[3]}M<extra></extra>"
@@ -1799,6 +1856,12 @@
   }
 
   function renderMacroCharts() {
+    Plotly.newPlot("finChart", [
+      {x:["FY 2023/24","FY 2024/25","FY 2025/26"], y:[43.6, 50.2, 103.6], name:"DIMO Group (Rs Bn)", type:"bar", marker:{color:"#086288"}, text:["43.6B","50.2B","103.6B"], textposition:"outside"},
+      {x:["FY 2023/24","FY 2024/25","FY 2025/26"], y:[11.6, 11.8, 52.4], name:"United Motors Lanka (Rs Bn)", type:"bar", marker:{color:"#4D8DBA"}, text:["11.6B","11.8B","52.4B"], textposition:"outside"},
+      {x:["FY 2023/24","FY 2024/25","FY 2025/26"], y:[5.4, 9.0, null], name:"Lanka Ashok Leyland (Rs Bn)", type:"bar", marker:{color:"#97D7FF", line:{color:"#086288", width:1}}, text:["5.4B","9.0B",""], textposition:"outside"}
+    ], { barmode:"group", paper_bgcolor:"#FFFFFF", plot_bgcolor:"#F8FBFE", font:plotFont, margin:{l:46,r:14,t:24,b:40}, yaxis:{title:"Revenue (Rs. Billion)", gridcolor:gridCol, range:[0,122]}, legend:{orientation:"h", y:1.14} }, { responsive:true, displaylogo:false });
+
     Plotly.newPlot("regChart", [{
       x:["Motorcycles","Motor Cars","3-Wheelers","Buses"], y:[254817,68047,17332,2096], type:"bar",
       marker:{color:["#086288","#4D8DBA","#97D7FF","#043952"]},

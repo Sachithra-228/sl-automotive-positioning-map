@@ -1,0 +1,114 @@
+Distributor,Brand,Model,Powertrain,Body_Type,Listed_Price_LKR,VAT_Status,Std_Price_Mn,Price_Tier,Source_URL,Fill_Source,Fill_Note
+Toyota Lanka (Pvt) Ltd,Toyota,Yaris Cross,Hybrid,Compact SUV,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/yaris-cross/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Corolla Cross,Hybrid,Compact SUV,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/corolla-cross/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Rush,ICE,Compact SUV,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/rush/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Raize,ICE,Compact SUV,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/raize/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Prius,Hybrid,Hatchback,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/prius/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Wigo,ICE,Hatchback,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/wigo/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Alphard,Hybrid,MPV,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/alphard/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Hilux 2026,ICE,Pickup,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/hilux-2026/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Lite Ace,ICE,Pickup,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/lite-ace/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Hiace,ICE,Van,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/hiace/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Hiace (KDH),ICE,Van,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/ace/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Coaster,ICE,Bus,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/coaster/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Yaris Ativ,ICE,Sedan,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/yaris-ativ/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Corolla,ICE,Sedan,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/corolla/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Camry Hybrid,Hybrid,Sedan,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/camry/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,RAV4 2026 Hybrid,Hybrid,SUV,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/rav4-2026/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,RAV4 2026 Petrol,ICE,SUV,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/rav4-2026/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Land Cruiser 250,ICE,SUV,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/land-cruiser-250/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Land Cruiser 300,ICE,SUV,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/land-cruiser-300/,,No price in provided sources
+Toyota Lanka (Pvt) Ltd,Toyota,Fortuner,ICE,SUV,TBA,Unstated,,TBA,https://www.toyota.lk/vehicle-model/fortuner/,,No price in provided sources
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,C-Class C 180,ICE,Sedan,39900000,Incl_VAT,39.9,Premium,https://www.mercedes-benz.lk/models/c-class-w206-806-2/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,E-Class E 200 Exclusive,ICE,Sedan,66500000,Incl_VAT,66.5,Premium,https://www.mercedes-benz.lk/models/e-class-sedan-w214-806-2/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,E-Class E 300,ICE,Sedan,72600000,Incl_VAT,72.6,Premium,https://www.mercedes-benz.lk/models/e-class-sedan-w214-806-2/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,S-Class,ICE,Sedan,167300000,Incl_VAT,167.3,Premium,https://www.mercedes-benz.lk/models/s-class-w223-fl/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,Mercedes-Maybach S 580 4MATIC,ICE,Sedan,207500000,Incl_VAT,207.5,Premium,https://www.mercedes-benz.lk/models/mercedes-maybach-s-class/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,CLA 180,ICE,Coupe,40300000,Incl_VAT,40.3,Premium,https://www.mercedes-benz.lk/models/cla-c178-806-2/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,GLA 200 Progressive,ICE,SUV,36500000,Incl_VAT,36.5,Premium,https://www.mercedes-benz.lk/models/gla-fl-806-2/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,GLB,ICE,SUV,46700000,Incl_VAT,46.7,Premium,https://www.mercedes-benz.lk/models/glb-x248/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,GLC,ICE,SUV,65500000,Incl_VAT,65.5,Premium,https://www.mercedes-benz.lk/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,GLE,ICE,SUV,130000000,Incl_VAT,130.0,Premium,https://www.mercedes-benz.lk/models/gle-suv-v167-fl/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,GLS 450 4MATIC,ICE,SUV,118800000,Incl_VAT,118.8,Premium,https://www.mercedes-benz.lk/models/gls-x167-fl-806-2/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,Mercedes-Maybach GLS 600,ICE,SUV,233000000,Incl_VAT,233.0,Premium,https://www.mercedes-benz.lk/models/gls-x167-fl-806-2/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,G-Class G 500,ICE,SUV,182800000,Incl_VAT,182.8,Premium,https://www.mercedes-benz.lk/models/g-class-w465/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,Mercedes-AMG G 63,ICE,SUV,240000000,Incl_VAT,240.0,Premium,https://www.mercedes-benz.lk/models/g-class-w465/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Mercedes-Benz,V-Class V 220 d,ICE,MPV,80400000,Incl_VAT,80.4,Premium,https://www.mercedes-benz.lk/models/v-class-fl/,PriceMart/AutoDirect/Customs,VAT inferred 18%
+DIMO (Diesel & Motor Engineering PLC),Tata,Tiago.ev,EV,Hatchback,TBA,Unstated,,TBA,https://cars.tatamotors.lk/utility-vehicles/tiago-ev.php,,No price in provided sources
+DIMO (Diesel & Motor Engineering PLC),Tata,Punch.ev,EV,SUV,TBA,Unstated,,TBA,https://cars.tatamotors.lk/utility-vehicles/punch-ev.php,,No price in provided sources
+DIMO (Diesel & Motor Engineering PLC),Tata,Nexon.ev,EV,SUV,TBA,Unstated,,TBA,https://cars.tatamotors.lk/utility-vehicles/nexon-ev.php,,No price in provided sources
+DIMO (Diesel & Motor Engineering PLC),Tata,Curvv.ev,EV,SUV,TBA,Unstated,,TBA,https://cars.tatamotors.lk/utility-vehicles/curvv-ev.php,,No price in provided sources
+DIMO (Diesel & Motor Engineering PLC),Tata,Punch,ICE,SUV,TBA,Unstated,,TBA,https://cars.tatamotors.lk/ice/punch.php,,No price in provided sources
+DIMO (Diesel & Motor Engineering PLC),Tata,Nexon,ICE,SUV,TBA,Unstated,,TBA,https://cars.tatamotors.lk/utility-vehicles/nexon.php,,No price in provided sources
+DIMO (Diesel & Motor Engineering PLC),Tata,Curvv,ICE,SUV,TBA,Unstated,,TBA,https://cars.tatamotors.lk/ice/curvv.php,,No price in provided sources
+Euro Motors (Euro Holdings),Jetour,T1,Hybrid,SUV,25500000,Incl_VAT,25.5,Premium,https://euromotors.lk/jetour-t1.html,euromotors.lk,PHEV confirmed
+Euro Motors (Euro Holdings),Jetour,T2,Hybrid,SUV,28500000,Incl_VAT,28.5,Premium,https://euromotors.lk/jetour-t2.html,euromotors.lk,VAT inferred 18%
+Euro Motors (Euro Holdings),Jetour,Dashing,ICE,SUV,16950000,Incl_VAT,16.95,Mid-Range,https://euromotors.lk,euromotors.lk,VAT inferred 18%
+Euro Motors (Euro Holdings),Jetour,X70 Plus,ICE,SUV,17500000,Incl_VAT,17.5,Mid-Range,https://euromotors.lk,euromotors.lk,7-seater SUV
+Euro Motors (Euro Holdings),Dongfeng,007,EV,Sedan,18950000,Incl_VAT,18.95,Mid-Range,https://euromotors.lk/dongfeng-007.html,euromotors.lk,VAT inferred 18%
+Euro Motors (Euro Holdings),Dongfeng,Box,EV,Hatchback,10975000,Incl_VAT,10.98,Budget,https://euromotors.lk/dongfeng-box.html,euromotors.lk,VAT inferred 18%
+Euro Motors (Euro Holdings),Dongfeng,Vigo,EV,Compact SUV,14350000,Incl_VAT,14.35,Mid-Range,https://euromotors.lk/dongfeng-vigo.html,euromotors.lk,VAT inferred 18%
+Euro Motors (Euro Holdings),JAC,T9 Double Cab,ICE,Pickup,18500000,Incl_VAT,18.5,Mid-Range,https://euromotors.lk/jac-t9.html,euromotors.lk,2.0CTI turbo diesel
+David Pieris Automobiles,GWM,Haval H6,Hybrid,SUV,19995000,Incl_VAT,20.0,Mid-Range,https://www.gwmsrilanka.lk/vehicles/haval-h6,gwmsrilanka.lk,VAT inferred 18%
+David Pieris Automobiles,GWM,Haval H6 GT,Hybrid,SUV,25995000,Incl_VAT,26.0,Premium,https://www.gwmsrilanka.lk/vehicles/haval-h6-gt,gwmsrilanka.lk,VAT inferred 18%
+David Pieris Automobiles,GWM,Tank 300,Hybrid,SUV,33995000,Incl_VAT,34.0,Premium,https://www.gwmsrilanka.lk/vehicles/tank-300,gwmsrilanka.lk,VAT inferred 18%
+David Pieris Automobiles,GWM,Tank 500,Hybrid,SUV,43500000,Incl_VAT,43.5,Premium,https://www.gwmsrilanka.lk/vehicles/tank-500,gwmsrilanka.lk,VAT inferred 18%
+David Pieris Automobiles,GWM,Ora 5,EV,Hatchback,14500000,Incl_VAT,14.5,Mid-Range,https://www.gwmsrilanka.lk/vehicles/ora-5,gwmsrilanka.lk,VAT inferred 18%
+Carmart Ltd,Leapmotor,C10 REEV Style,Hybrid,SUV,23300000,Incl_VAT,23.3,Mid-Range,https://leapmotor.lk/,leapmotor.lk,Verified
+Carmart Ltd,Leapmotor,C10 REEV Design,Hybrid,SUV,23900000,Incl_VAT,23.9,Mid-Range,https://leapmotor.lk/,leapmotor.lk,Verified
+John Keells CG Auto,BYD,ATTO 1 Dynamic,EV,Hatchback,9300000,Incl_VAT,9.3,Budget,https://www.johnkeellscgauto.com/product/byd-atto-1-dynamic/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,ATTO 1 Premium,EV,Hatchback,10300000,Incl_VAT,10.3,Budget,https://www.johnkeellscgauto.com/product/byd-atto-1-premium/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,RACCO Dynamic,EV,Hatchback,8750000,Incl_VAT,8.75,Budget,https://www.johnkeellscgauto.com/product/byd-racco-dynamic/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,RACCO Advanced,EV,Hatchback,9750000,Incl_VAT,9.75,Budget,https://www.johnkeellscgauto.com/product/byd-racco-advanced/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,RACCO Premium,EV,Hatchback,11450000,Incl_VAT,11.45,Budget,https://www.johnkeellscgauto.com/product/byd-racco-premium/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,ATTO 3 Advanced,EV,SUV,14650000,Incl_VAT,14.65,Mid-Range,https://www.johnkeellscgauto.com/product/byd-atto-3-advanced/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,ATTO 3 EVO Advanced,EV,SUV,16300000,Incl_VAT,16.3,Mid-Range,https://www.johnkeellscgauto.com/product/byd-atto-3-evo-advanced/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,ATTO 3 EVO Superior,EV,SUV,18900000,Incl_VAT,18.9,Mid-Range,https://www.johnkeellscgauto.com/product/byd-atto-3-evo-superior/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,ATTO 3 EVO Premium,EV,SUV,44550000,Incl_VAT,44.55,Premium,https://www.johnkeellscgauto.com/product/byd-atto-3-evo-premium/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,ATTO 3 EVO Performance,EV,SUV,57890000,Incl_VAT,57.89,Premium,https://www.johnkeellscgauto.com/product/byd-atto-3-evo-performance/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,M6 Superior,EV,MPV,17400000,Incl_VAT,17.4,Mid-Range,https://www.johnkeellscgauto.com/product/byd-m6-superior/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,SEALION 5 Dynamic,Hybrid,SUV,19477000,Incl_VAT,19.48,Mid-Range,https://www.johnkeellscgauto.com/product/byd-sealion-5-dynamic/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,SEALION 5 Premium,Hybrid,SUV,20745000,Incl_VAT,20.75,Mid-Range,https://www.johnkeellscgauto.com/product/byd-sealion-5-premium/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,SEALION 6 Superior,Hybrid,SUV,23850000,Incl_VAT,23.85,Mid-Range,https://www.johnkeellscgauto.com/product/byd-sealion-6-superior/,johnkeellscgauto.com,VAT inferred 18%
+John Keells CG Auto,BYD,SHARK 6 Premium,Hybrid,Pickup,28350000,Incl_VAT,28.35,Premium,https://www.johnkeellscgauto.com/product/byd-shark-6-premium/,johnkeellscgauto.com,VAT inferred 18%
+Associated Motorways (AMW),Nissan,Magnite Accenta 1.0 AT,ICE,SUV,8190000,Incl_VAT,8.19,Budget,https://www.nissanlk.com/nissan-magnite/,nissanlk.com,VAT inferred 18%
+Associated Motorways (AMW),Nissan,Magnite Tekna+ 1.0 AT,ICE,SUV,9390000,Incl_VAT,9.39,Budget,https://www.nissanlk.com/nissan-magnite/,nissanlk.com,VAT inferred 18%
+Associated Motorways (AMW),Nissan,Magnite N-Connecta 1.0 Turbo CVT,ICE,SUV,9990000,Incl_VAT,9.99,Budget,https://www.nissanlk.com/nissan-magnite/,nissanlk.com,VAT inferred 18%
+Associated Motorways (AMW),Nissan,Magnite Tekna+ 1.0 Turbo CVT,ICE,SUV,10590000,Incl_VAT,10.59,Budget,https://www.nissanlk.com/nissan-magnite/,nissanlk.com,VAT inferred 18%
+Ideal Motors,Mahindra,XUV 3XO 1.2 MX3 AT,ICE,SUV,11595000,Incl_VAT,11.6,Budget,https://mahindrasrilanka.lk/mahindra-xuv-3xo/,mahindrasrilanka.lk,Verified
+Ideal Motors,Mahindra,XUV 3XO 1.2 AX5 AT,ICE,SUV,12695000,Incl_VAT,12.7,Mid-Range,https://mahindrasrilanka.lk/mahindra-xuv-3xo/,mahindrasrilanka.lk,Verified
+Ideal Motors,Mahindra,XUV 3XO 1.2 AX7L AT,ICE,SUV,13695000,Incl_VAT,13.7,Mid-Range,https://mahindrasrilanka.lk/mahindra-xuv-3xo/,mahindrasrilanka.lk,Verified
+Ideal Motors,Mahindra,Pik-Up Single Cab S6 4x4,ICE,Pickup,7622881,Excl_VAT,8.99,Budget,https://mahindrasrilanka.lk/single-cab/,mahindrasrilanka.lk,Normalized +18% VAT
+Ideal Motors,Mahindra,Bolero MaXX Pik-Up City 1.5T,ICE,Pickup,4911016,Excl_VAT,5.79,Budget,https://mahindrasrilanka.lk/mahindra-bolero-maxx-pik-up-city/,mahindrasrilanka.lk,Normalized +18% VAT
+Ideal Motors,Mahindra,Bolero MaXX HD 1.7T,ICE,Pickup,5165255,Excl_VAT,6.1,Budget,https://mahindrasrilanka.lk/mahindra-bolero-maxx-hd-1-7t/,mahindrasrilanka.lk,Normalized +18% VAT
+Hayleys Mobility,JAECOO,J8,ICE,SUV,34900000,Incl_VAT,34.9,Premium,https://www.hayleysmobility.com/product/jaecoo-j8/,hayleysmobility.com,Verified
+Hayleys Mobility,JAECOO,J8 PHEV,Hybrid,SUV,32900000,Incl_VAT,32.9,Premium,https://www.hayleysmobility.com/product/jaecoo-j8-phev/,hayleysmobility.com,Verified
+Hayleys Mobility,JAECOO,J7 PHEV,Hybrid,SUV,24900000,Incl_VAT,24.9,Mid-Range,https://www.hayleysmobility.com/product/jaecoo-j7-phev/,hayleysmobility.com,Verified
+Hayleys Mobility,JAECOO,J6,EV,SUV,23500000,Incl_VAT,23.5,Mid-Range,https://www.hayleysmobility.com/product/jaecoo-j6/,hayleysmobility.com,Verified
+Hayleys Mobility,JAECOO,J5 HEV,Hybrid,SUV,19990000,Incl_VAT,19.99,Mid-Range,https://www.hayleysmobility.com/product/jaecoo-j5-hev/,hayleysmobility.com,Verified
+Hayleys Mobility,OMODA,C9,Hybrid,SUV,33900000,Incl_VAT,33.9,Premium,https://www.hayleysmobility.com/product/omoda-c9/,hayleysmobility.com,Verified
+Hayleys Mobility,OMODA,C5,ICE,Compact SUV,15900000,Incl_VAT,15.9,Mid-Range,https://www.hayleysmobility.com/product/omoda-c5/,hayleysmobility.com,Verified
+Hayleys Mobility,OMODA,E5,EV,Crossover,20900000,Incl_VAT,20.9,Mid-Range,https://www.hayleysmobility.com/product/omoda-e5/,hayleysmobility.com,Verified
+Hayleys Mobility,Kaiyi,eVibe e04,EV,Hatchback,7990000,Incl_VAT,7.99,Budget,https://www.hayleysmobility.com/product/kaiyi-evibe/,hayleysmobility.com,Verified
+Hayleys Mobility,Kaiyi,X3 Pro EV,EV,Hatchback,13390000,Incl_VAT,13.39,Mid-Range,https://www.hayleysmobility.com/product/kaiyi-x3-pro-ev/,hayleysmobility.com,Verified
+Hayleys Mobility,SRM,T3 EV Truck,EV,Light Truck,11900000,Excl_VAT,14.04,Mid-Range,https://www.hayleysmobility.com/product/srm-t3-ev-truck/,hayleysmobility.com,Normalized +18% VAT
+Hayleys Mobility,SRM,X30L EV Passenger Van,EV,Van,11900000,Excl_VAT,14.04,Mid-Range,https://www.hayleysmobility.com/product/srm-x30l-ev-passenger-van/,hayleysmobility.com,Normalized +18% VAT
+Hayleys Mobility,SRM,X30L EV Cargo Van,EV,Van,11900000,Excl_VAT,14.04,Mid-Range,https://www.hayleysmobility.com/product/srm-x30l-ev-cargo-van/,hayleysmobility.com,Normalized +18% VAT
+Micro Cars Ltd,MG,ZS MCE,ICE,Compact SUV,12989000,Incl_VAT,12.99,Mid-Range,https://mgsrilanka.lk/models/mg-zs-mce,mgsrilanka.lk,VAT inferred 18%
+Micro Cars Ltd,MG,ZS Hybrid+,Hybrid,SUV,18390000,Incl_VAT,18.39,Mid-Range,https://mgsrilanka.lk/models/mg-zs-hybrid,mgsrilanka.lk,VAT inferred 18%
+Micro Cars Ltd,MG,HS Plug-In Hybrid,Hybrid,SUV,24995000,Incl_VAT,25.0,Mid-Range,https://mgsrilanka.lk/models/mg-hs-plug-in-hybrid,mgsrilanka.lk,VAT inferred 18%
+Micro Cars Ltd,MG,HS Hybrid+,Hybrid,SUV,21450000,Incl_VAT,21.45,Mid-Range,https://mgsrilanka.lk/models/mg-hs-hybrid,mgsrilanka.lk,VAT inferred 18%
+Micro Cars Ltd,MG,S9 PHEV,Hybrid,SUV,30850000,Incl_VAT,30.85,Premium,https://mgsrilanka.lk/models/mg-s9-phev/,mgsrilanka.lk,VAT inferred 18%
+Micro Cars Ltd,MG,S5 EV,EV,SUV,20985000,Incl_VAT,20.99,Mid-Range,https://mgsrilanka.lk/models/mg-s5-ev,mgsrilanka.lk,VAT inferred 18%
+Micro Cars Ltd,MG,MG4 Electric,EV,Hatchback,15850000,Incl_VAT,15.85,Mid-Range,https://mgsrilanka.lk/models/mg-4-electric,mgsrilanka.lk,VAT inferred 18%
+Micro Cars Ltd,MG,MG4 Urban EV,EV,Hatchback,15785000,Incl_VAT,15.79,Mid-Range,https://mgsrilanka.lk/models/mg4-urban-ev,mgsrilanka.lk,VAT inferred 18%
+Micro Cars Ltd,MG,U9,ICE,Double Cab Pickup,32985000,Incl_VAT,32.99,Premium,https://mgsrilanka.lk/models/mg-u9,mgsrilanka.lk,VAT inferred 18%
+Browns EV (Brown & Company PLC),BAW,E6 EV,EV,Hatchback,4500000,Incl_VAT,4.5,Budget,https://www.brownsev.com/baw/e6-ev/,brownsev.com,VAT inferred 18%
+Browns EV (Brown & Company PLC),BAW,E7 EV,EV,Hatchback,5900000,Incl_VAT,5.9,Budget,https://www.brownsev.com/baw/e7-ev/,brownsev.com,VAT inferred 18%
+Browns EV (Brown & Company PLC),BAW,E7 Pro EV,EV,Hatchback,6500000,Incl_VAT,6.5,Budget,https://www.brownsev.com/baw/e7-pro-ev/,brownsev.com,VAT inferred 18%
+Browns EV (Brown & Company PLC),BAW,M8 REEV,Hybrid,MPV,23000000,Incl_VAT,23.0,Mid-Range,https://www.brownsev.com/baw/m8-reev/,brownsev.com,VAT inferred 18%
+Browns EV (Brown & Company PLC),Wuling,Binguo EV,EV,Hatchback,9350000,Incl_VAT,9.35,Budget,https://www.brownsev.com/wuling/binguo-ev/,brownsev.com,VAT inferred 18%
+Browns EV (Brown & Company PLC),Wuling,Cloud EV,EV,Hatchback,13700000,Incl_VAT,13.7,Mid-Range,https://www.brownsev.com/wuling/cloud-ev/,brownsev.com,VAT inferred 18%
+Browns EV (Brown & Company PLC),Wuling,Eksion Plug-in Hybrid,Hybrid,SUV,20800000,Incl_VAT,20.8,Mid-Range,https://www.brownsev.com/wuling/eksion-plug-in-hybrid/,brownsev.com,VAT inferred 18%
+Browns EV (Brown & Company PLC),Wuling,Darion EV,EV,MPV,22500000,Incl_VAT,22.5,Mid-Range,https://www.brownsev.com/wuling/darion-ev/,brownsev.com,VAT inferred 18%
+Browns EV (Brown & Company PLC),Wuling,Darion Plug-in Hybrid,Hybrid,MPV,23000000,Incl_VAT,23.0,Mid-Range,https://www.brownsev.com/wuling/darion-plug-in-hybrid/,brownsev.com,VAT inferred 18%
