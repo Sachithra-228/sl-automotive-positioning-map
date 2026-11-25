@@ -325,13 +325,17 @@
     box-shadow: 8px 0 32px rgba(2, 28, 43, 0.16);
     transition: transform 0.25s ease;
   }
-  .back-lp-btn {
-    width: 100%; padding: 9px 12px; border-radius: 10px; margin-bottom: 18px;
-    background: rgba(151, 215, 255, 0.10); border: 1px solid rgba(151, 215, 255, 0.24);
-    color: var(--ice); font-size: 11.5px; font-weight: 700; cursor: pointer;
-    display: flex; align-items: center; gap: 8px; transition: all 0.18s;
+  .sb-footer {
+    margin-top: auto; padding-top: 14px;
+    border-top: 1px solid rgba(151, 215, 255, 0.14);
   }
-  .back-lp-btn:hover { background: var(--ice); color: var(--deep-night); border-color: var(--ice); }
+  .sb-signout-btn {
+    width: 100%; padding: 10px 13px; border-radius: 10px;
+    background: rgba(151, 215, 255, 0.10); border: 1px solid rgba(151, 215, 255, 0.24);
+    color: var(--ice); font-size: 12.5px; font-weight: 700; cursor: pointer;
+    display: flex; align-items: center; gap: 10px; transition: all 0.18s;
+  }
+  .sb-signout-btn:hover { background: var(--ice); color: var(--deep-night); border-color: var(--ice); }
 
   .sb-brand {
     display: flex; align-items: center; gap: 12px; padding: 4px 8px 18px 8px;
@@ -379,10 +383,10 @@
   .page-heading { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 800; color: var(--deep-dark); line-height: 1.15; }
   .topbar-right { display: flex; align-items: center; gap: 10px; }
   .tour-trigger {
-    display: inline-flex; align-items: center; gap: 7px;
-    padding: 7px 14px; border-radius: 99px;
+    width: 38px; height: 38px; padding: 0; border-radius: 50%;
+    display: grid; place-items: center; flex-shrink: 0;
     background: var(--deep); color: #FFFFFF; border: none;
-    font-size: 11.8px; font-weight: 700; cursor: pointer; transition: 0.18s;
+    cursor: pointer; transition: 0.18s;
     box-shadow: 0 4px 12px rgba(8, 98, 136, 0.22);
   }
   .tour-trigger:hover { background: var(--deep-dark); transform: translateY(-1px); }
@@ -698,7 +702,7 @@
 
     /* Dashboard Phone Polish */
     .status-pill { display: none; }
-    .tour-trigger { padding: 6px 11px; font-size: 11px; }
+    .tour-trigger { width: 36px; height: 36px; }
     .kpi-grid, .kpi-grid.cols-4 { grid-template-columns: 1fr 1fr; gap: 10px; }
     .kpi { padding: 13px 13px; }
     .kpi-val { font-size: 22px; }
@@ -824,19 +828,15 @@
         <button class="lp-drawer-close" onclick="toggleLpDrawer(false)" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
       <div class="lp-drawer-nav">
+        <a class="lp-drawer-link" href="#top" onclick="toggleLpDrawer(false)">Home Showcase</a>
         <a class="lp-drawer-link" href="#evolution" onclick="toggleLpDrawer(false)">The Car Evolution</a>
         <a class="lp-drawer-link" href="#lp-brands" onclick="toggleLpDrawer(false)">Active Brands Carousel</a>
-        <button class="lp-drawer-link" onclick="toggleLpDrawer(false); enterDashboard('overview')">Executive Overview</button>
-        <button class="lp-drawer-link" onclick="toggleLpDrawer(false); enterDashboard('ninebox')">9-Box Matrix (86 Models)</button>
-        <button class="lp-drawer-link" onclick="toggleLpDrawer(false); enterDashboard('quadrant')">Gartner Magic Quadrant</button>
-        <button class="lp-drawer-link" onclick="toggleLpDrawer(false); enterDashboard('scale')">SCALE Strategy Suite</button>
-        <button class="lp-drawer-link" onclick="toggleLpDrawer(false); enterDashboard('registry')">28-Player MECE Registry</button>
       </div>
     </div>
     <button class="lp-drawer-cta" onclick="toggleLpDrawer(false); enterDashboard('overview')">Sign In to Dashboard</button>
   </aside>
 
-  <section class="lp-hero">
+  <section class="lp-hero" id="top">
     <img class="hero-bg-img" src="assets/cars/hero_suv.jpg" alt="Sri Lanka Automotive 2026 Hero SUV">
     <div class="hero-vignette"></div>
 
@@ -956,10 +956,6 @@
 <div id="dashboard-mode">
   <div id="mobile-backdrop" onclick="toggleMobileSidebar(false)"></div>
   <aside class="sidebar" id="sidebar">
-    <button class="back-lp-btn" onclick="exitDashboard()">
-      <svg class="ico" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
-      Back to Car Showcase
-    </button>
     <div class="sb-brand">
       <div class="sb-logo">SL</div>
       <div>
@@ -995,6 +991,13 @@
         28-Player Registry <span class="nav-count">28</span>
       </button>
     </nav>
+
+    <div class="sb-footer">
+      <button class="sb-signout-btn" onclick="signOutDashboard()">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Sign Out
+      </button>
+    </div>
   </aside>
 
   <div class="main">
@@ -1009,12 +1012,10 @@
         </div>
       </div>
       <div class="topbar-right">
-        <button class="tour-trigger" onclick="startTour(true)">
+        <button class="tour-trigger" onclick="startTour(true)" title="Guided Tour" aria-label="Guided Tour">
           <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-          Guided Tour
         </button>
         <div class="status-pill"><span class="status-dot"></span><span>angelo@sandbox.lk</span></div>
-        <button class="pill" style="padding:6px 12px; font-size:11.5px;" onclick="signOutDashboard()">Sign Out</button>
       </div>
     </header>
 
@@ -1490,6 +1491,10 @@
   }
 
   function unlockDashboard(viewId = "overview", searchTerm = "") {
+    if (!isAuthenticated()) {
+      openLoginModal();
+      return;
+    }
     document.getElementById("landing-mode").classList.add("hidden");
     document.getElementById("dashboard-mode").classList.add("active");
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -1505,6 +1510,7 @@
 
   function exitDashboard() {
     endTour();
+    toggleMobileSidebar(false);
     document.getElementById("dashboard-mode").classList.remove("active");
     document.getElementById("landing-mode").classList.remove("hidden");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1512,6 +1518,8 @@
 
   function signOutDashboard() {
     sessionStorage.removeItem("sl_auto_auth");
+    document.getElementById("loginEmail").value = "";
+    document.getElementById("loginPass").value = "";
     exitDashboard();
   }
 
@@ -1688,6 +1696,10 @@
   }
 
   function showView(id, title, crumb, btn) {
+    if (!isAuthenticated()) {
+      openLoginModal();
+      return;
+    }
     document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
     document.querySelectorAll(".nav-item").forEach(b => b.classList.remove("active"));
     document.getElementById("view-" + id).classList.add("active");
