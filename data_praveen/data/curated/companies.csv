@@ -1,0 +1,16 @@
+company_id,company,segments,inclusion_basis,listing_status,business_note
+toyota,Toyota Lanka,"PV,CV",brief,Not verified,Toyota and Hino distribution
+dimo,DIMO,"PV,CV",brief,CSE-listed (per brief; verify on CSE),"Mercedes-Benz, Tata, engineering, assembly"
+amw,Associated Motorways (AMW),PV,brief,Not verified,Multi-brand representation
+uml,United Motors Lanka (UNIMO),"PV,CV",brief,CSE-listed (UML.N0000),"Mitsubishi, Fuso, Perodua, DFSK, JMC"
+jkh,John Keells Group - BYD,"PV,EV",added: research (not in brief shortlist),CSE-listed parent (verify),BYD distribution
+evo,Evolution Auto,"PV,EV",added: research (not in brief shortlist),Not verified,Multi-brand EV line-up; EVO Charge
+dpa,David Pieris Automobiles (GWM / BAIC),"PV,EV",added: research; related to DPMC group - legal entity not verified,Not verified,"GWM hybrid/NEV, BAIC"
+lal,Lanka Ashok Leyland,"CV,MF",brief,CSE-listed (ASHO.N0000),"Ashok Leyland assembly, trucks and buses"
+dpmc,David Pieris Motor Company (DPMC),TW,brief,Not verified,"Bajaj, KTM two/three-wheelers"
+tvs,TVS Lanka,TW,brief,Not verified,TVS two/three-wheelers
+micro,Micro Cars,"MF,EV",brief,Private (not verified),Assembly; BAIC EV licence report
+ideal,Ideal Group (Ideal Auto Seating),MF,brief,Not verified,Seating; Magna/MSKH collaboration
+ceat,CEAT Kelani International Tyres,MF,brief,Not verified,Tyre manufacturing
+harness,Lanka Harness / Accolade Engineering,MF,brief,Not verified,Wire harness systems (SLACMA)
+chargenet,ChargeNET,EV,added: research (not in brief shortlist),Not verified,Largest EV charging network

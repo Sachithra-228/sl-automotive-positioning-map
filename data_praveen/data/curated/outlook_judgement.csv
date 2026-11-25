@@ -1,0 +1,16 @@
+company_id,outlook_label,rationale,basis
+toyota,Likely leader,Broadest service footprint and top brand position; main risk is BEV transition.,ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+lal,Likely leader (CV),Strong FY24/25 financials and local assembly; single-OEM concentration risk.,ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+jkh,Contender (EV),"BYD gives EV leadership option; execution depth (service, finance) unproven.",ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+uml,Contender,Fast profit recovery and wide OEM portfolio; limited EV evidence.,ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+dimo,Contender,Diversified mobility ecosystem; thin FY23/24 profit and early digital maturity.,ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+dpmc,Likely leader (2W/3W),Dominant Bajaj brand position (brand-level share). Caveat: only ~25% of Vision weight has evidence and EV three-wheeler readiness is unevidenced.,ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+tvs,Contender (2W),Stable #2 with wide touchpoints.,ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+evo,Watch,EV-first strategy but small/unverified scale.,ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+dpa,Watch,GWM/BAIC NEV push; legal entity link to DPMC unverified.,ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+micro,Watch,Local-assembly and EV ambition; volumes and finances not public.,ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+ideal,Watch,Credible global-supply-chain entry; needs revenue and export data.,ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+chargenet,Contender (EV infra),"Largest charging network by reported footprint and strong Vision evidence, but Execute evidence is thin (not plotted in the EV quadrant) and its scale figures are company-reported; PUCSL framework should favour scale operators.",ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+amw,Insufficient evidence,No post-2025 evidence collected.,ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+ceat,Insufficient evidence,Only directory-level evidence.,ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model
+harness,Insufficient evidence,Only directory/exhibition-level evidence.,ANALYST JUDGEMENT from evidence in scores_evidence.csv - not a forecast model

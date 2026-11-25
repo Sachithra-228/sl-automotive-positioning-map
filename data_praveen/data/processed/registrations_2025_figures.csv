@@ -1,0 +1,17 @@
+metric,value,source,source_type,url,note
+All new registrations 2025,362100,Research brief (DMT-attributed; DMT site unreachable from this environment),unverified_brief,,"Brief quotes 74,410 for 2024. Not independently re-fetched."
+All new registrations 2025,360117,Daily Mirror (full-year DMT-based report),secondary_news,https://www.dailymirror.lk/breaking-news/SL-sees-360-000-vehicles-registered-in-first-year-after-five-year-hiatus/108-330970,0.5% below the brief figure - likely a different cut-off date.
+Motor cars registered 2025,68047,Research brief (DMT-attributed),unverified_brief,,CONFLICTS with the secondary figures below.
+Motor cars registered 2025,22381,JB Securities analysis (via search summary),secondary_analyst,,Possibly a narrower 'motor car' definition than the DMT headline.
+Motor cars registered 2025,55000,"Ada Derana, DMT year-to-date (early Dec 2025)",secondary_news,https://www.adaderana.lk/news/115789/223000-motorcycles-55000-cars-and-13000-three-wheelers-registered-in-2025-dmt,Rounded headline figure.
+Motorcycles registered 2025,254817,Research brief (DMT-attributed),unverified_brief,,
+Motorcycles registered 2025,223423,"Daily Mirror / Ada Derana, DMT year-to-date (early Dec 2025)",secondary_news,https://www.dailymirror.lk/breaking-news/Motorcycles-lead-vehicle-registrations-in-2025-DMT-reports/108-327355,"Year-to-date, not full year."
+Three-wheelers registered 2025,17332,Research brief (DMT-attributed),unverified_brief,,
+Three-wheelers registered 2025,13768,JB Securities analysis (via search summary),secondary_analyst,,
+Buses registered 2025,2096,Research brief (DMT-attributed),unverified_brief,,CONFLICTS with the secondary 722.
+Buses registered 2025,722,Secondary news summary (2024: 121),secondary_news,,
+All new registrations 2024,74410,Research brief (DMT-attributed),unverified_brief,,
+Total vehicle population 2024,8454513,Dept of Census & Statistics Pocket Book 2025 (via brief),official_via_brief,,"Cumulative fleet, not annual sales. 905,329 passenger cars."
+Vehicle import bill 2025 (USD bn),2.047,Central Bank of Sri Lanka (via Ada Derana),secondary_news,https://bizenglish.adaderana.lk/sri-lankas-vehicle-imports-exceeded-usd-2-billion-in-2025/,
+EV share of passenger-vehicle imports 2025 (%),10,Daily Mirror,secondary_news,https://www.dailymirror.lk/breaking-news/EVs-make-up-10-of-Sri-Lankas-2025-vehicle-imports-as-market-rebounds/108-330679,"Imports, not registrations."
+Japan share of 2025 registrations (%),62,Secondary news summary (81% in 2019),secondary_news,,

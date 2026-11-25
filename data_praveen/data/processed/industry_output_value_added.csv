@@ -1,0 +1,6 @@
+year,group_output_rs_mn,value_added_rs_mn,persons_engaged,source,url,quality_flag
+2016,20706.6,4196.0,1041,Automobile Data Book 2023 Tables 3-7 (establishments with 5+ persons),https://www.industry.gov.lk/web/wp-content/uploads/2024/11/Automobile-2023.pdf,ok
+2017,22646.8,4731.9,1226,Automobile Data Book 2023 Tables 3-7 (establishments with 5+ persons),https://www.industry.gov.lk/web/wp-content/uploads/2024/11/Automobile-2023.pdf,Tables 4 and 5 repeat an identical '100 & above' row
+2018,22147.7,4886.9,1580,Automobile Data Book 2023 Tables 3-7 (establishments with 5+ persons),https://www.industry.gov.lk/web/wp-content/uploads/2024/11/Automobile-2023.pdf,Intermediate consumption for the 100+ row printed 6.6bn vs 16.6bn implied; use output and value added only
+2019,20557.4,4328.2,1440,Automobile Data Book 2023 Tables 3-7 (establishments with 5+ persons),https://www.industry.gov.lk/web/wp-content/uploads/2024/11/Automobile-2023.pdf,ok
+2020,42938.9,8963.0,2497,Automobile Data Book 2023 Tables 3-7 (establishments with 5+ persons),https://www.industry.gov.lk/web/wp-content/uploads/2024/11/Automobile-2023.pdf,Output ~2x 2019 while Table 9 shows 236bn: suspected unit/coverage break - do not trend 2019->2020

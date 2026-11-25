@@ -3,24 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sri Lanka Automotive Market — CEO Positioning Intelligence Dashboard</title>
+<title>Sri Lanka Automotive Market — CEO Positioning &amp; Strategy Intelligence</title>
 <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 <style>
   :root {
-    --bg: #070D19;
-    --surface: #0F1A2E;
-    --surface-2: #162440;
+    --bg: #060B16;
+    --surface: #0D1628;
+    --surface-2: #14223B;
     --border: rgba(148, 163, 184, 0.16);
     --text: #F8FAFC;
     --muted: #94A3B8;
     --teal: #14B8A6;
-    --teal-soft: rgba(20, 184, 166, 0.14);
+    --teal-soft: rgba(20, 184, 166, 0.15);
     --gold: #FACC15;
     --gold-soft: rgba(250, 204, 21, 0.14);
-    --blue: #38BDF8;
+    --sky: #38BDF8;
+    --rose: #FB7185;
+    --emerald: #34D399;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
     background: var(--bg);
@@ -29,203 +32,205 @@
     overflow-x: hidden;
   }
 
-  /* Top Navbar */
+  /* Navbar */
   .navbar {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(7, 13, 25, 0.88);
-    backdrop-filter: blur(14px);
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(6, 11, 22, 0.90);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
-    padding: 14px 32px;
-    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 28px;
+    display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap;
   }
-  .brand {
-    display: flex; align-items: center; gap: 12px;
-  }
+  .brand { display: flex; align-items: center; gap: 11px; }
   .brand-badge {
     width: 34px; height: 34px; border-radius: 8px;
     background: linear-gradient(135deg, var(--gold), var(--teal));
-    color: #070D19; font-weight: 900; font-size: 14px;
+    color: #060B16; font-weight: 900; font-size: 13px;
     display: grid; place-items: center;
   }
-  .brand-title { font-weight: 700; font-size: 15px; letter-spacing: 0.2px; }
+  .brand-title { font-weight: 800; font-size: 14.5px; letter-spacing: 0.2px; }
   .brand-sub { font-size: 11px; color: var(--muted); }
-  .nav-actions { display: flex; gap: 10px; align-items: center; }
+  .nav-links { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .nav-link {
+    padding: 6px 11px; border-radius: 6px; font-size: 12px; font-weight: 600;
+    color: #CBD5E1; text-decoration: none; transition: 0.15s;
+  }
+  .nav-link:hover { background: var(--surface-2); color: #FFFFFF; }
   .btn {
-    padding: 8px 14px; border-radius: 7px; font-size: 12.5px; font-weight: 600;
+    padding: 7px 13px; border-radius: 7px; font-size: 12px; font-weight: 700;
     cursor: pointer; border: 1px solid var(--border); background: var(--surface-2);
-    color: var(--text); transition: all 0.18s; text-decoration: none;
+    color: var(--text); transition: all 0.16s; text-decoration: none;
   }
   .btn:hover { border-color: var(--teal); transform: translateY(-1px); }
-  .btn-primary {
-    background: linear-gradient(135deg, #0D9488, #14B8A6);
-    color: #041515; border: none; font-weight: 700;
-  }
-  .btn-gold {
-    background: var(--gold); color: #0B1120; border: none; font-weight: 700;
-  }
+  .btn-primary { background: linear-gradient(135deg, #0D9488, #14B8A6); color: #041515; border: none; }
+  .btn-gold { background: var(--gold); color: #0B1120; border: none; }
 
-  /* Hero Banner */
+  /* Hero */
   .hero {
-    position: relative;
-    padding: 44px 32px 32px 32px;
-    background: radial-gradient(circle at 80% 20%, rgba(20, 184, 166, 0.16), transparent 45%),
-                radial-gradient(circle at 15% 80%, rgba(250, 204, 21, 0.10), transparent 40%),
-                linear-gradient(180deg, #0B1528 0%, #070D19 100%);
+    padding: 38px 28px 28px 28px;
+    background: radial-gradient(circle at 82% 18%, rgba(20, 184, 166, 0.17), transparent 44%),
+                radial-gradient(circle at 12% 85%, rgba(250, 204, 21, 0.10), transparent 38%),
+                linear-gradient(180deg, #0B162C 0%, #060B16 100%);
     border-bottom: 1px solid var(--border);
   }
-  .hero-inner { max-width: 1380px; margin: 0 auto; }
+  .hero-inner { max-width: 1400px; margin: 0 auto; }
   .kicker {
     display: inline-flex; align-items: center; gap: 8px;
-    font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    font-size: 10.5px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase;
     color: var(--gold); background: var(--gold-soft); border: 1px solid rgba(250, 204, 21, 0.3);
-    padding: 4px 12px; border-radius: 99px; margin-bottom: 14px;
+    padding: 4px 12px; border-radius: 99px; margin-bottom: 12px;
   }
-  .hero h1 {
-    font-size: clamp(26px, 3.4vw, 40px); font-weight: 800; line-height: 1.12;
-    margin-bottom: 10px; letter-spacing: -0.5px;
-  }
+  .hero h1 { font-size: clamp(26px, 3.2vw, 38px); font-weight: 800; line-height: 1.12; margin-bottom: 8px; letter-spacing: -0.5px; }
   .hero h1 span { color: var(--teal); }
-  .hero p { max-width: 780px; color: var(--muted); font-size: 14.5px; margin-bottom: 24px; }
+  .hero p { max-width: 840px; color: var(--muted); font-size: 14px; margin-bottom: 22px; }
 
-  /* KPI Grid */
-  .kpi-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 14px;
-  }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 12px; }
   .kpi {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 12px; padding: 16px 18px;
-    position: relative; overflow: hidden;
+    border-radius: 12px; padding: 14px 16px; position: relative; overflow: hidden;
+    transition: transform 0.16s, border-color 0.16s;
   }
-  .kpi::after {
-    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--teal), transparent);
-  }
+  .kpi:hover { transform: translateY(-2px); border-color: rgba(20,184,166,0.45); }
+  .kpi::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--teal), transparent); }
   .kpi.gold::after { background: linear-gradient(90deg, var(--gold), transparent); }
-  .kpi-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.9px; color: var(--muted); font-weight: 600; }
-  .kpi-val { font-size: 26px; font-weight: 800; margin: 4px 0 2px 0; color: #FFFFFF; }
-  .kpi-sub { font-size: 12px; color: var(--teal); }
+  .kpi.sky::after { background: linear-gradient(90deg, var(--sky), transparent); }
+  .kpi-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); font-weight: 700; }
+  .kpi-val { font-size: 24px; font-weight: 800; margin: 3px 0 2px 0; color: #FFFFFF; }
+  .kpi-sub { font-size: 11.5px; color: var(--teal); }
   .kpi.gold .kpi-sub { color: var(--gold); }
+  .kpi.sky .kpi-sub { color: var(--sky); }
 
-  /* Main Container */
-  .container { max-width: 1380px; margin: 0 auto; padding: 28px 32px 64px 32px; }
-
-  /* Section Header */
+  /* Layout */
+  .container { max-width: 1400px; margin: 0 auto; padding: 24px 28px 60px 28px; }
   .sec-head {
     display: flex; justify-content: space-between; align-items: flex-end;
-    flex-wrap: wrap; gap: 12px; margin: 28px 0 14px 0;
+    flex-wrap: wrap; gap: 12px; margin: 32px 0 14px 0;
   }
-  .sec-head h2 { font-size: 20px; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+  .sec-head h2 { font-size: 19px; font-weight: 800; display: flex; align-items: center; gap: 9px; }
   .sec-pill {
     font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
     background: var(--teal-soft); color: var(--teal); padding: 3px 8px; border-radius: 4px;
   }
-  .sec-desc { font-size: 13px; color: var(--muted); }
+  .sec-pill.gold { background: var(--gold-soft); color: var(--gold); }
+  .sec-desc { font-size: 12.8px; color: var(--muted); }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 18px; margin-bottom: 18px;
+  }
+  .grid-2 { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 16px; }
+  .grid-2-eq { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 1020px) { .grid-2, .grid-2-eq, .grid-3 { grid-template-columns: 1fr; } }
+
+  /* Segment Filter Pills */
+  .pill-bar { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 12px; align-items: center; }
+  .seg-pill {
+    padding: 6px 12px; border-radius: 99px; font-size: 12px; font-weight: 700;
+    background: var(--surface-2); color: var(--muted); border: 1px solid var(--border);
+    cursor: pointer; transition: 0.15s;
+  }
+  .seg-pill.active { background: var(--teal); color: #041515; border-color: var(--teal); }
 
   /* Filter Bar */
   .filter-bar {
     display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
     background: var(--surface); border: 1px solid var(--border);
-    padding: 12px 16px; border-radius: 10px; margin-bottom: 16px;
+    padding: 11px 15px; border-radius: 10px; margin-bottom: 14px;
   }
   .filter-bar label { font-size: 12px; color: var(--muted); font-weight: 600; }
   .filter-bar select, .filter-bar input[type="text"] {
     background: var(--bg); color: var(--text); border: 1px solid var(--border);
-    padding: 7px 10px; border-radius: 6px; font-size: 12.5px; outline: none;
+    padding: 6px 10px; border-radius: 6px; font-size: 12px; outline: none;
   }
   .filter-bar select:focus, .filter-bar input:focus { border-color: var(--teal); }
 
-  /* Cards & Charts */
-  .card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 14px; padding: 18px; margin-bottom: 20px;
+  /* Outlook Cards */
+  .outlook-list { max-height: 480px; overflow-y: auto; display: flex; flex-direction: column; gap: 9px; padding-right: 4px; }
+  .outlook-item {
+    background: var(--bg); border: 1px solid var(--border); border-left: 3px solid var(--teal);
+    border-radius: 8px; padding: 10px 12px;
   }
-  .grid-2 { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 18px; }
-  @media (max-width: 980px) { .grid-2 { grid-template-columns: 1fr; } }
+  .outlook-item.contender { border-left-color: var(--sky); }
+  .outlook-item.watch { border-left-color: var(--gold); }
+  .outlook-item.insuff { border-left-color: #64748B; }
+  .outlook-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 3px; }
+  .outlook-name { font-weight: 700; font-size: 13px; color: #FFFFFF; }
+  .outlook-badge { font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: var(--teal-soft); color: var(--teal); }
+  .outlook-item.contender .outlook-badge { background: rgba(56,189,248,0.16); color: var(--sky); }
+  .outlook-item.watch .outlook-badge { background: var(--gold-soft); color: var(--gold); }
+  .outlook-item.insuff .outlook-badge { background: rgba(148,163,184,0.15); color: #94A3B8; }
+  .outlook-text { font-size: 11.8px; color: var(--muted); line-height: 1.4; }
 
   /* Tabs */
-  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
   .tab-btn {
-    padding: 9px 16px; border-radius: 8px; font-size: 13px; font-weight: 700;
+    padding: 8px 14px; border-radius: 8px; font-size: 12.5px; font-weight: 700;
     background: var(--surface-2); color: var(--muted); border: 1px solid var(--border);
-    cursor: pointer; transition: all 0.16s;
+    cursor: pointer; transition: 0.15s;
   }
-  .tab-btn.active {
-    background: var(--gold); color: #0B1120; border-color: var(--gold);
-  }
+  .tab-btn.active { background: var(--gold); color: #0B1120; border-color: var(--gold); }
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
 
-  /* ERRC & Horizon Grids */
+  /* ERRC & Horizons */
   .errc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .errc-box {
     background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--teal);
-    border-radius: 8px; padding: 14px 16px;
+    border-radius: 8px; padding: 13px 15px;
   }
   .errc-box.elim { border-left-color: #EF4444; }
   .errc-box.red { border-left-color: #F59E0B; }
   .errc-box.raise { border-left-color: #38BDF8; }
   .errc-box.create { border-left-color: #14B8A6; }
-  .errc-box h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
-  .errc-box p { font-size: 12.8px; color: var(--muted); }
+  .errc-box h4 { font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 5px; }
+  .errc-box p { font-size: 12.5px; color: var(--muted); }
 
   .horizon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
   @media (max-width: 820px) { .horizon-grid, .errc-grid { grid-template-columns: 1fr; } }
-  .h-card {
-    background: var(--bg); border: 1px solid var(--border); border-top: 4px solid var(--muted);
-    border-radius: 10px; padding: 16px;
-  }
+  .h-card { background: var(--bg); border: 1px solid var(--border); border-top: 4px solid var(--muted); border-radius: 10px; padding: 15px; }
   .h-card.h2 { border-top-color: var(--teal); }
   .h-card.h3 { border-top-color: var(--gold); }
-  .h-pct { font-size: 24px; font-weight: 800; color: var(--gold); margin-bottom: 4px; }
-  .h-card h4 { font-size: 14.5px; margin-bottom: 6px; }
-  .h-card p { font-size: 12.5px; color: var(--muted); }
+  .h-pct { font-size: 22px; font-weight: 800; color: var(--gold); margin-bottom: 3px; }
+  .h-card h4 { font-size: 14px; margin-bottom: 5px; }
+  .h-card p { font-size: 12.3px; color: var(--muted); }
 
-  /* Video Gallery */
-  .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  @media (max-width: 960px) { .video-grid { grid-template-columns: 1fr; } }
-  .video-card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
-  }
-  .video-frame {
-    position: relative; aspect-ratio: 16 / 9; background: linear-gradient(135deg, #0B1933, #132F4C);
-    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 16px;
-  }
-  .video-frame video {
-    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-  }
-  .video-placeholder { z-index: 1; }
-  .video-placeholder span {
-    display: inline-block; font-size: 11px; font-family: Consolas, monospace;
-    background: rgba(20,184,166,0.2); color: var(--teal); padding: 3px 8px; border-radius: 4px; margin-top: 6px;
-  }
-  .video-meta { padding: 12px 14px; }
-  .video-meta h4 { font-size: 13.5px; margin-bottom: 3px; }
-  .video-meta p { font-size: 12px; color: var(--muted); }
-
-  /* Table */
+  /* Tables */
   .table-wrap { max-height: 390px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; }
-  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-  th {
-    position: sticky; top: 0; background: #13223D; color: #FFFFFF;
-    text-align: left; padding: 10px 12px; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.6px;
-  }
-  td { padding: 9px 12px; border-bottom: 1px solid var(--border); color: #CBD5E1; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.2px; }
+  th { position: sticky; top: 0; background: #13223D; color: #FFFFFF; text-align: left; padding: 9px 11px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+  td { padding: 8px 11px; border-bottom: 1px solid var(--border); color: #CBD5E1; }
   tr:hover td { background: rgba(255,255,255,0.03); }
-  .tag {
-    display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 700;
-  }
+  .tag { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10.5px; font-weight: 700; }
   .tag-a { background: rgba(56,189,248,0.16); color: #38BDF8; }
   .tag-b { background: rgba(20,184,166,0.18); color: #2DD4BF; }
   .tag-c { background: rgba(250,204,21,0.18); color: #FACC15; }
   .tag-ok { background: rgba(34,197,94,0.18); color: #4ADE80; }
   .tag-pend { background: rgba(148,163,184,0.16); color: #94A3B8; }
 
-  .upload-status { font-size: 12px; color: var(--teal); font-weight: 600; }
-  footer {
-    text-align: center; padding: 24px; border-top: 1px solid var(--border);
-    color: var(--muted); font-size: 12px;
+  /* Video Gallery */
+  .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 960px) { .video-grid { grid-template-columns: 1fr; } }
+  .video-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .video-frame {
+    position: relative; aspect-ratio: 16 / 9; background: linear-gradient(135deg, #0B1933, #132F4C);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 16px;
   }
+  .video-frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .video-placeholder { z-index: 1; }
+  .video-placeholder span {
+    display: inline-block; font-size: 10.5px; font-family: Consolas, monospace;
+    background: rgba(20,184,166,0.2); color: var(--teal); padding: 3px 8px; border-radius: 4px; margin-top: 6px;
+  }
+  .video-meta { padding: 12px 14px; }
+  .video-meta h4 { font-size: 13.5px; margin-bottom: 3px; }
+  .video-meta p { font-size: 12px; color: var(--muted); }
+
+  .upload-status { font-size: 12px; color: var(--teal); font-weight: 600; }
+  .fact-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 12px; }
+  .fact-pill { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 12px; color: #CBD5E1; }
+  .fact-pill strong { color: var(--gold); display: block; font-size: 14px; margin-bottom: 2px; }
+  footer { text-align: center; padding: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
 </style>
 </head>
 <body>
@@ -234,50 +239,53 @@
   <div class="brand">
     <div class="brand-badge">SL</div>
     <div>
-      <div class="brand-title">Sri Lanka Automotive Positioning Intelligence</div>
-      <div class="brand-sub">MECE Market Map • SCALE Pathway Executive Dashboard</div>
+      <div class="brand-title">Sri Lanka Automotive Intelligence</div>
+      <div class="brand-sub">Gartner Quadrant • 9-Box Map • Macro Economics • SCALE Strategy</div>
     </div>
   </div>
-  <div class="nav-actions">
+  <div class="nav-links">
+    <a class="nav-link" href="#quadrant">Magic Quadrant</a>
+    <a class="nav-link" href="#ninebox">9-Box Map</a>
+    <a class="nav-link" href="#macro">Macro &amp; Trade</a>
+    <a class="nav-link" href="#scale-suite">SCALE &amp; 28 Players</a>
+    <a class="nav-link" href="#videos">Videos</a>
     <input type="file" id="csvInput" accept=".csv" style="display:none">
     <button class="btn btn-primary" onclick="document.getElementById('csvInput').click()">⬆ Load Master CSV</button>
-    <a class="btn" href="#scale-suite">SCALE Strategy</a>
-    <a class="btn btn-gold" href="#videos">▶ Executive Videos</a>
   </div>
 </nav>
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="kicker">CEO-Level Market Intelligence • Brand-New Vehicles Only (18% VAT Normalized)</div>
-    <h1>Sri Lanka Brand-New <span>Automotive Positioning Map</span></h1>
+    <div class="kicker">Unified Team Intelligence • DMT / CBSL / JB Securities / HNB / Ministry of Industries</div>
+    <h1>Sri Lanka <span>Automotive Positioning</span> &amp; Strategy Hub</h1>
     <p>
-      Interactive 9-Box Scatter Plot and SCALE Pathway strategic analysis covering all 28 verified Sri Lankan brand-new distributors across ICE, Hybrid, and EV portfolios. Upload <code style="color:#5EEAD4">master_sl_automotive.csv</code> anytime to refresh all charts live.
+      All curated team intelligence in one interactive CEO dashboard — combining Praveen's evidence-scored Gartner-style Magic Quadrant &amp; macro economic data with our 28-distributor MECE Registry, 9-Box Brand-New Positioning Map (18% VAT normalized), and Angelo's SCALE Pathway frameworks.
     </p>
     <div class="kpi-grid">
-      <div class="kpi">
-        <div class="kpi-label">MECE Market Coverage</div>
-        <div class="kpi-val" id="kpiDistributors">28</div>
-        <div class="kpi-sub">Verified SL Brand-New Distributors</div>
-      </div>
-      <div class="kpi">
-        <div class="kpi-label">Models Plotted</div>
-        <div class="kpi-val" id="kpiModels">18</div>
-        <div class="kpi-sub" id="kpiModeNote">Preview Dataset (Load CSV for Live)</div>
-      </div>
       <div class="kpi gold">
-        <div class="kpi-label">#1 Brand-New Market Leader</div>
+        <div class="kpi-label">2025 Post-Ban Surge</div>
+        <div class="kpi-val">360,117</div>
+        <div class="kpi-sub">Up ~5x from 74,410 in 2024 (DMT)</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">2025 Import Bill</div>
+        <div class="kpi-val">$2.05 Bn</div>
+        <div class="kpi-sub">Central Bank of Sri Lanka (CBSL)</div>
+      </div>
+      <div class="kpi sky">
+        <div class="kpi-label">#1 Brand-New Car Leader</div>
         <div class="kpi-val">48.8%</div>
-        <div class="kpi-sub">BYD: 221 of 453 new cars (Oct 2026)</div>
+        <div class="kpi-sub">BYD: 221 of 453 new cars (Oct '26)</div>
       </div>
       <div class="kpi">
-        <div class="kpi-label">EV Luxury Tax Advantage</div>
-        <div class="kpi-val">60% vs 100%+</div>
-        <div class="kpi-sub">EV CIF &gt; Rs 6M vs Petrol Rs 5M @ 100%</div>
+        <div class="kpi-label">Japan Share Shift</div>
+        <div class="kpi-val">81% → 62%</div>
+        <div class="kpi-sub">2019 vs 2025; EVs hit 10% imports</div>
       </div>
       <div class="kpi gold">
-        <div class="kpi-label">Pricing Standard</div>
-        <div class="kpi-val">18% VAT</div>
-        <div class="kpi-sub">Normalized to VAT-Incl. LKR Millions</div>
+        <div class="kpi-label">MECE Market Scope</div>
+        <div class="kpi-val">28 Players</div>
+        <div class="kpi-sub">8.45M Total Fleet • 18% VAT Base</div>
       </div>
     </div>
   </div>
@@ -285,56 +293,113 @@
 
 <main class="container">
 
-  <!-- SECTION 1: INTERACTIVE 9-BOX MAP -->
-  <div class="sec-head">
+  <!-- SECTION 1: GARTNER-STYLE MAGIC QUADRANT (PRAVEEN'S CURATED DATA) -->
+  <div id="quadrant" class="sec-head">
     <div>
-      <h2><span class="sec-pill">LIVE CHART</span> 9-Box Product Positioning Map</h2>
-      <div class="sec-desc">Hover any dot for exact distributor, model, powertrain, and VAT-inclusive price. Filter dynamically below.</div>
+      <h2><span class="sec-pill gold">GARTNER QUADRANT</span> Ability to Execute vs. Completeness of Vision</h2>
+      <div class="sec-desc">Built directly from <code style="color:#5EEAD4">quadrant_scores_default_weights.csv</code> &amp; <code style="color:#5EEAD4">outlook_judgement.csv</code>. Filter by segment to compare incumbents vs. EV challengers.</div>
     </div>
-    <div class="upload-status" id="uploadStatus">Showing Preview Data — Click "Load Master CSV" to inject final dataset</div>
+  </div>
+
+  <div class="pill-bar" id="segPills">
+    <button class="seg-pill active" onclick="filterQuadrant('ALL', this)">All Segments</button>
+    <button class="seg-pill" onclick="filterQuadrant('PV', this)">PV · Passenger Vehicles</button>
+    <button class="seg-pill" onclick="filterQuadrant('EV', this)">EV · Electric &amp; Charging</button>
+    <button class="seg-pill" onclick="filterQuadrant('CV', this)">CV · Commercial</button>
+    <button class="seg-pill" onclick="filterQuadrant('TW', this)">TW · 2W / 3W</button>
+    <button class="seg-pill" onclick="filterQuadrant('MF', this)">MF · Assembly &amp; Components</button>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div id="magicQuadrantChart" style="width:100%; height:480px;"></div>
+    </div>
+    <div class="card">
+      <h3 style="font-size:14.5px; margin-bottom:4px;">Analyst Outlook &amp; Evidence Judgement</h3>
+      <p style="font-size:11.8px; color:var(--muted); margin-bottom:10px;">Qualitative rationale backed by curated evidence coverage.</p>
+      <div class="outlook-list" id="outlookList"></div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: INTERACTIVE 9-BOX PRODUCT POSITIONING MAP -->
+  <div id="ninebox" class="sec-head">
+    <div>
+      <h2><span class="sec-pill">9-BOX MATRIX</span> Brand-New Vehicle Positioning Map (ICE / Hybrid / EV)</h2>
+      <div class="sec-desc">Standardized to 18% VAT-Inclusive LKR Millions. Click <strong>"Load Master CSV"</strong> above to inject Thilakshana's final merged dataset live.</div>
+    </div>
+    <div class="upload-status" id="uploadStatus">Showing Preview Dataset — Ready for Live master_sl_automotive.csv</div>
   </div>
 
   <div class="filter-bar">
     <label>Powertrain:</label>
     <select id="filterPowertrain">
-      <option value="ALL">All Powertrains (ICE / Hybrid / EV)</option>
+      <option value="ALL">All Powertrains</option>
       <option value="ICE">ICE Only</option>
       <option value="Hybrid">Hybrid Only</option>
       <option value="EV">EV Only</option>
     </select>
     <label>Distributor:</label>
-    <select id="filterDistributor">
-      <option value="ALL">All Distributors</option>
-    </select>
+    <select id="filterDistributor"><option value="ALL">All Distributors</option></select>
     <label>Body Type:</label>
-    <select id="filterBody">
-      <option value="ALL">All Body Types</option>
-    </select>
+    <select id="filterBody"><option value="ALL">All Body Types</option></select>
+    <span style="margin-left:auto; font-size:12px; color:var(--gold); font-weight:700;" id="modelCountBadge">18 Models Shown</span>
   </div>
 
   <div class="card">
-    <div id="nineBoxChart" style="width:100%; height:560px;"></div>
+    <div id="nineBoxChart" style="width:100%; height:530px;"></div>
   </div>
 
-  <!-- SECTION 2: PORTFOLIO MIX + STRATEGY CANVAS -->
-  <div class="grid-2">
+  <div class="grid-2-eq">
     <div class="card">
-      <h3 style="font-size:15px; margin-bottom:4px;">Portfolio Mix by Distributor (ICE vs. Hybrid vs. EV)</h3>
-      <p style="font-size:12px; color:var(--muted); margin-bottom:10px;">Identifies which players are over-exposed to ICE vs. winning the EV transition.</p>
-      <div id="portfolioChart" style="width:100%; height:380px;"></div>
+      <h3 style="font-size:14.5px; margin-bottom:4px;">Portfolio Mix by Distributor (ICE vs. Hybrid vs. EV)</h3>
+      <p style="font-size:12px; color:var(--muted); margin-bottom:8px;">Spots legacy ICE concentration vs. pure-play EV challengers.</p>
+      <div id="portfolioChart" style="width:100%; height:350px;"></div>
     </div>
     <div class="card">
-      <h3 style="font-size:15px; margin-bottom:4px;">Blue Ocean Strategy Canvas (SCALE Stage C)</h3>
-      <p style="font-size:12px; color:var(--muted); margin-bottom:10px;">Traditional ICE Distributors vs. Chinese EV Entrants across 8 competing factors.</p>
-      <div id="canvasChart" style="width:100%; height:380px;"></div>
+      <h3 style="font-size:14.5px; margin-bottom:4px;">Blue Ocean Strategy Canvas (SCALE Stage C)</h3>
+      <p style="font-size:12px; color:var(--muted); margin-bottom:8px;">Traditional ICE Brands vs. Chinese EV Entrants across 8 value factors.</p>
+      <div id="canvasChart" style="width:100%; height:350px;"></div>
     </div>
   </div>
 
-  <!-- SECTION 3: SCALE PATHWAY INTERACTIVE SUITE -->
+  <!-- SECTION 3: MACRO ECONOMICS, REGISTRATIONS & TRADE -->
+  <div id="macro" class="sec-head">
+    <div>
+      <h2><span class="sec-pill">MACRO ANALYTICS</span> Sri Lanka Automotive Rebound, GDP &amp; Trade Flows</h2>
+      <div class="sec-desc">Verified figures from Ministry of Industries, DCS, Sri Lanka Customs, and DMT (2018–2025).</div>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3 style="font-size:14px; margin-bottom:4px;">2025 Registrations by Vehicle Class</h3>
+      <p style="font-size:11.5px; color:var(--muted); margin-bottom:8px;">Post-hiatus surge: 360K+ total vs. 74K in 2024.</p>
+      <div id="regChart" style="width:100%; height:270px;"></div>
+    </div>
+    <div class="card">
+      <h3 style="font-size:14px; margin-bottom:4px;">Sector GDP Contribution (Rs. Mn)</h3>
+      <p style="font-size:11.5px; color:var(--muted); margin-bottom:8px;">Current vs. Constant Prices (2018–2022, DCS).</p>
+      <div id="gdpChart" style="width:100%; height:270px;"></div>
+    </div>
+    <div class="card">
+      <h3 style="font-size:14px; margin-bottom:4px;">Imports vs. Component Exports (Rs. Bn)</h3>
+      <p style="font-size:11.5px; color:var(--muted); margin-bottom:8px;">Exports grew 2.8x (Rs 9.2B → 25.7B) during ban.</p>
+      <div id="tradeChart" style="width:100%; height:270px;"></div>
+    </div>
+  </div>
+
+  <div class="fact-strip">
+    <div class="fact-pill"><strong>17,956 Vehicles</strong>Locally assembled in 2023 (1,121 4W + 16,835 2W)</div>
+    <div class="fact-pill"><strong>~20,000 Direct Jobs</strong>15 assembly industries &amp; 25 component makers</div>
+    <div class="fact-pill"><strong>Global OEM Exports</strong>SL sensors supplied to Toyota, BMW, Volvo, Aston Martin</div>
+    <div class="fact-pill"><strong>EV Luxury Tax Edge</strong>EV: 60% (&gt;Rs 6M) vs. Petrol 100% / Diesel 120% (&gt;Rs 5M)</div>
+  </div>
+
+  <!-- SECTION 4: SCALE PATHWAY + EVIDENCED OFFERINGS + 28 PLAYERS -->
   <div id="scale-suite" class="sec-head">
     <div>
-      <h2><span class="sec-pill">SCALE FRAMEWORK</span> Strategic Diagnosis &amp; Recommendations</h2>
-      <div class="sec-desc">Applying Angelo's SCALE Pathway directly to Sri Lanka's 2026 Automotive Market.</div>
+      <h2><span class="sec-pill gold">SCALE STRATEGY</span> Frameworks, Evidenced Offerings &amp; 28-Player Registry</h2>
+      <div class="sec-desc">Explore every stage of Angelo's SCALE Pathway alongside our verified Sri Lankan player evidence.</div>
     </div>
   </div>
 
@@ -343,150 +408,164 @@
       <button class="tab-btn active" onclick="switchTab(event, 'tab-s')">S · Sense (Disruption)</button>
       <button class="tab-btn" onclick="switchTab(event, 'tab-c')">C · Choose (ERRC Grid)</button>
       <button class="tab-btn" onclick="switchTab(event, 'tab-l')">L · Layer (Three Horizons)</button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-ev')">Evidenced Offerings (18)</button>
       <button class="tab-btn" onclick="switchTab(event, 'tab-r')">MECE 28-Player Registry</button>
     </div>
 
     <div id="tab-s" class="tab-panel active">
       <div class="errc-grid">
         <div class="errc-box raise">
-          <h4>Strategy Palette Diagnosis: Adaptive / Shaping</h4>
-          <p>Post-import-ban Sri Lanka is a <strong>low-predictability, high-malleability</strong> market driven by tax policy shifts, surging Chinese NEV supply, and rapid buyer migration. Classical multi-year plans fail here; winners vary, select, and scale fast.</p>
+          <h4>Strategy Palette: Adaptive / Shaping</h4>
+          <p>Post-ban Sri Lanka is <strong>low-predictability, high-malleability</strong>. Tariff adjustments, EV tax advantages (60% luxury tax vs. 100–120% ICE), and aggressive Chinese entrants mean static Classical 5-year plans fail. Players must experiment, select, and scale fast.</p>
         </div>
         <div class="errc-box elim">
-          <h4>The Innovator's Dilemma in Action</h4>
-          <p>Legacy incumbents (United Motors, DIMO, Toyota, AMW) built moats on heritage &amp; ICE service networks. Disruptors (<strong>BYD</strong> at 48.8% Oct 2026 share, <strong>Jetour</strong> at ~27% small SUV share, <strong>Jaecoo</strong>) entered at lower prices with higher standard tech — climbing straight into the mainstream.</p>
+          <h4>The Innovator's Dilemma in Sri Lanka</h4>
+          <p>Incumbents (Toyota Lanka, DIMO, United Motors, AMW) hold deep workshop moats, yet Japan's registration share slid from <strong>81% (2019) to 62% (2025)</strong>. Disruptors (<strong>BYD</strong> 48.8% Oct '26 new-car share; <strong>Jetour</strong> ~27% small SUVs) entered lower with higher tech and are taking the mainstream.</p>
         </div>
       </div>
     </div>
 
     <div id="tab-c" class="tab-panel">
       <div class="errc-grid">
-        <div class="errc-box elim">
-          <h4>Eliminate</h4>
-          <p>Internal combustion engine complexity, high fuel dependency, and legacy 100%–120% petrol/diesel luxury tax penalties.</p>
-        </div>
-        <div class="errc-box red">
-          <h4>Reduce</h4>
-          <p>Vehicle purchase price via vertical scale + 60% EV luxury tax tier; model refresh cycles cut to ~18 months vs. 48+ months for legacy makers.</p>
-        </div>
-        <div class="errc-box raise">
-          <h4>Raise</h4>
-          <p>In-car software, ADAS / driver-assist, and panoramic/premium cabins offered as standard in the Budget &amp; Mid-Range LKR 10M–22M bands.</p>
-        </div>
-        <div class="errc-box create">
-          <h4>Create</h4>
-          <p>Software-defined vehicles (OTA updates), ultra-low running cost urban mobility, and bundled home-charger + battery warranty ecosystems.</p>
-        </div>
+        <div class="errc-box elim"><h4>Eliminate</h4><p>Combustion engine complexity, high petrol running costs, and 100%–120% ICE luxury tax penalties.</p></div>
+        <div class="errc-box red"><h4>Reduce</h4><p>Landed price via vertical scale + 60% EV luxury tax tier; model refresh cycles cut to ~18 months vs. 48+ months.</p></div>
+        <div class="errc-box raise"><h4>Raise</h4><p>ADAS, large screens, and connected tech delivered as standard in the LKR 10M–22M Budget/Mid-Range tiers.</p></div>
+        <div class="errc-box create"><h4>Create</h4><p>Software-defined cars (OTA updates), bundled home-charging &amp; battery health warranties (e.g., EVO Charge, ChargeNET 100+ sites).</p></div>
       </div>
     </div>
 
     <div id="tab-l" class="tab-panel">
       <div class="horizon-grid">
-        <div class="h-card">
-          <div class="h-pct">~70%</div>
-          <h4>H1 · Immediate (Defend Core)</h4>
-          <p>Protect profitable ICE SUV/commercial lines (e.g., pickups, Perodua/Suzuki budget base) and monetize existing nationwide service workshops.</p>
-        </div>
-        <div class="h-card h2">
-          <div class="h-pct">~20%</div>
-          <h4>H2 · Growth (Scale Adjacencies)</h4>
-          <p>Aggressively fill white-space boxes — specifically <strong>Budget &amp; Mid-Range Hybrids/EVs</strong> (LKR 10M–20M) via dedicated NEV sub-teams.</p>
-        </div>
-        <div class="h-card h3">
-          <div class="h-pct">~10%</div>
-          <h4>H3 · Transformative (Future Bets)</h4>
-          <p>Pilot EV fast-charging partnerships, battery health certification for resale confidence, and subscription/fleet mobility platforms.</p>
-        </div>
+        <div class="h-card"><div class="h-pct">~70%</div><h4>H1 · Immediate (Defend Core)</h4><p>Defend cash-generating ICE SUV/commercial lines (pickups, Perodua/Suzuki entry models) and maximize recurring after-sales workshop revenue.</p></div>
+        <div class="h-card h2"><div class="h-pct">~20%</div><h4>H2 · Growth (Scale Adjacencies)</h4><p>Capture white-space boxes in <strong>Budget &amp; Mid-Range Hybrids/EVs</strong> (LKR 10M–20M) via dedicated NEV sales/service units.</p></div>
+        <div class="h-card h3"><div class="h-pct">~10%</div><h4>H3 · Transformative (Future Bets)</h4><p>Partner with charging networks (ChargeNET/PUCSL framework), certified used-EV battery warranties, and fleet-as-a-service pilots.</p></div>
+      </div>
+    </div>
+
+    <div id="tab-ev" class="tab-panel">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Company</th><th>Offering</th><th>Status</th><th>Evidence &amp; Market Signal</th></tr></thead>
+          <tbody id="offeringsBody"></tbody>
+        </table>
       </div>
     </div>
 
     <div id="tab-r" class="tab-panel">
-      <div style="margin-bottom:10px; display:flex; gap:10px; align-items:center;">
-        <input type="text" id="registrySearch" placeholder="Search distributor, brand, or owner..." style="width:320px; background:var(--bg); color:#fff; border:1px solid var(--border); padding:8px 12px; border-radius:6px; font-size:12.5px;">
-        <span style="font-size:12px; color:var(--muted);">28 Verified Distributors • Split Across Batches A, B &amp; C</span>
+      <div style="margin-bottom:10px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+        <input type="text" id="registrySearch" placeholder="Search distributor, brand, batch, or owner..." style="width:320px; background:var(--bg); color:#fff; border:1px solid var(--border); padding:8px 12px; border-radius:6px; font-size:12px;">
+        <span style="font-size:12px; color:var(--muted);">28 Verified Distributors • Batch A (Arundathie: 9), Batch B (Sithumini: 10), Batch C (Thilakshana: 9)</span>
       </div>
       <div class="table-wrap">
         <table>
-          <thead>
-            <tr><th>Batch</th><th>Distributor</th><th>Brands Carried</th><th>Website</th><th>Owner</th></tr>
-          </thead>
+          <thead><tr><th>Batch</th><th>Distributor</th><th>Brands Carried</th><th>Website</th><th>Owner</th></tr></thead>
           <tbody id="registryBody"></tbody>
         </table>
       </div>
     </div>
   </div>
 
-  <!-- SECTION 4: GEMINI VEO EXECUTIVE VIDEO GALLERY -->
+  <!-- SECTION 5: GEMINI VEO VIDEOS -->
   <div id="videos" class="sec-head">
     <div>
       <h2><span class="sec-pill">GEMINI VEO</span> Executive Visual Briefings</h2>
-      <div class="sec-desc">Drop your 3 generated Gemini videos into <code style="color:#5EEAD4">dashboard/assets/videos/</code> to play them directly inside this presentation hub.</div>
+      <div class="sec-desc">Drop your 3 Gemini Veo `.mp4` files into <code style="color:#5EEAD4">dashboard/assets/videos/</code> to play them seamlessly here.</div>
     </div>
   </div>
 
   <div class="video-grid">
     <div class="video-card">
       <div class="video-frame">
-        <video controls muted loop playsinline onerror="this.style.display='none'">
-          <source src="assets/videos/video1_market_shift.mp4" type="video/mp4">
-        </video>
-        <div class="video-placeholder">
-          <div style="font-size:26px;">🎬</div>
-          <div style="font-size:12.5px; font-weight:700; margin-top:4px;">Video 1: The Market Shift</div>
-          <span>assets/videos/video1_market_shift.mp4</span>
-        </div>
+        <video controls muted loop playsinline onerror="this.style.display='none'"><source src="assets/videos/video1_market_shift.mp4" type="video/mp4"></video>
+        <div class="video-placeholder"><div style="font-size:26px;">🎬</div><div style="font-size:12.5px; font-weight:700; margin-top:4px;">Video 1: The Market Shift</div><span>video1_market_shift.mp4</span></div>
       </div>
-      <div class="video-meta">
-        <h4>01. Sri Lanka's Post-Ban Automotive Awakening</h4>
-        <p>Cinematic opener contrasting Colombo's skyline with sleek new EVs &amp; SUVs entering the roads.</p>
-      </div>
+      <div class="video-meta"><h4>01. Sri Lanka's Post-Ban Awakening</h4><p>Colombo coastal skyline &amp; sleek new EVs/SUVs entering the roads.</p></div>
     </div>
-
     <div class="video-card">
       <div class="video-frame">
-        <video controls muted loop playsinline onerror="this.style.display='none'">
-          <source src="assets/videos/video2_ev_disruption.mp4" type="video/mp4">
-        </video>
-        <div class="video-placeholder">
-          <div style="font-size:26px;">⚡</div>
-          <div style="font-size:12.5px; font-weight:700; margin-top:4px;">Video 2: ICE vs. EV Disruption</div>
-          <span>assets/videos/video2_ev_disruption.mp4</span>
-        </div>
+        <video controls muted loop playsinline onerror="this.style.display='none'"><source src="assets/videos/video2_ev_disruption.mp4" type="video/mp4"></video>
+        <div class="video-placeholder"><div style="font-size:26px;">⚡</div><div style="font-size:12.5px; font-weight:700; margin-top:4px;">Video 2: ICE → EV Disruption</div><span>video2_ev_disruption.mp4</span></div>
       </div>
-      <div class="video-meta">
-        <h4>02. The Innovator's Dilemma (ICE → EV)</h4>
-        <p>Visual metaphor of legacy combustion engineering transitioning into software-defined electric mobility.</p>
-      </div>
+      <div class="video-meta"><h4>02. The Innovator's Dilemma</h4><p>Combustion engineering morphing into software-defined electric mobility.</p></div>
     </div>
-
     <div class="video-card">
       <div class="video-frame">
-        <video controls muted loop playsinline onerror="this.style.display='none'">
-          <source src="assets/videos/video3_future_horizons.mp4" type="video/mp4">
-        </video>
-        <div class="video-placeholder">
-          <div style="font-size:26px;">🚀</div>
-          <div style="font-size:12.5px; font-weight:700; margin-top:4px;">Video 3: Three Horizons Future</div>
-          <span>assets/videos/video3_future_horizons.mp4</span>
-        </div>
+        <video controls muted loop playsinline onerror="this.style.display='none'"><source src="assets/videos/video3_future_horizons.mp4" type="video/mp4"></video>
+        <div class="video-placeholder"><div style="font-size:26px;">🚀</div><div style="font-size:12.5px; font-weight:700; margin-top:4px;">Video 3: Three Horizons Future</div><span>video3_future_horizons.mp4</span></div>
       </div>
-      <div class="video-meta">
-        <h4>03. Winning the Next 5 Years (H1 / H2 / H3)</h4>
-        <p>Futuristic closing visual: ultra-fast charging hubs, connected dashboards, and data-driven positioning.</p>
-      </div>
+      <div class="video-meta"><h4>03. Winning the Next 5 Years</h4><p>Ultra-fast tropical charging hub &amp; connected mobility ecosystem.</p></div>
     </div>
   </div>
 
 </main>
 
 <footer>
-  Built by <strong>Sachithra, Praveen, Arundathie, Sithumini &amp; Thilakshana</strong> • Sri Lanka Automotive Product Positioning Sprint (MECE + SCALE Pathway)
+  Built by <strong>Sachithra, Praveen, Arundathie, Sithumini &amp; Thilakshana</strong> • Sri Lanka Automotive Positioning Intelligence (MECE + Gartner Quadrant + SCALE Pathway)
 </footer>
 
 <script>
-  const BUDGET_MAX = 12.0;
-  const MIDRANGE_MAX = 25.0;
+  const BUDGET_MAX = 12.0, MIDRANGE_MAX = 25.0;
 
+  // 1. PRAVEEN'S CURATED GARTNER QUADRANT SCORES
+  const quadrantData = [
+    {id:"toyota", company:"Toyota Lanka", seg:"PV", exec:4.58, vision:3.88, ec:60, vc:40, status:"Plotted", quad:"Leaders"},
+    {id:"toyota", company:"Toyota Lanka", seg:"CV", exec:4.58, vision:3.88, ec:60, vc:40, status:"Plotted", quad:"Leaders"},
+    {id:"dimo", company:"DIMO", seg:"PV", exec:3.70, vision:3.67, ec:50, vc:30, status:"Plotted", quad:"Challengers"},
+    {id:"dimo", company:"DIMO", seg:"CV", exec:3.70, vision:3.67, ec:50, vc:30, status:"Plotted", quad:"Niche players"},
+    {id:"uml", company:"United Motors (UNIMO)", seg:"PV", exec:4.00, vision:3.40, ec:55, vc:25, status:"Plotted", quad:"Challengers"},
+    {id:"uml", company:"United Motors (UNIMO)", seg:"CV", exec:4.00, vision:3.40, ec:40, vc:25, status:"Plotted", quad:"Challengers"},
+    {id:"jkh", company:"John Keells - BYD", seg:"PV", exec:3.43, vision:4.62, ec:35, vc:40, status:"Plotted", quad:"Visionaries"},
+    {id:"jkh", company:"John Keells - BYD", seg:"EV", exec:3.43, vision:4.62, ec:35, vc:40, status:"Plotted", quad:"Leaders"},
+    {id:"evo", company:"Evolution Auto", seg:"PV", exec:3.43, vision:4.50, ec:35, vc:30, status:"Plotted", quad:"Visionaries"},
+    {id:"evo", company:"Evolution Auto", seg:"EV", exec:3.43, vision:4.50, ec:35, vc:30, status:"Plotted", quad:"Leaders"},
+    {id:"dpa", company:"David Pieris (GWM/BAIC)", seg:"EV", exec:3.00, vision:4.00, ec:15, vc:25, status:"Low Evidence", quad:"Watch"},
+    {id:"lal", company:"Lanka Ashok Leyland", seg:"CV", exec:4.00, vision:4.00, ec:55, vc:20, status:"Plotted", quad:"Leaders"},
+    {id:"dpmc", company:"DPMC (Bajaj/KTM)", seg:"TW", exec:4.43, vision:4.00, ec:35, vc:25, status:"Plotted", quad:"Leaders"},
+    {id:"tvs", company:"TVS Lanka", seg:"TW", exec:4.00, vision:4.00, ec:45, vc:25, status:"Plotted", quad:"Leaders"},
+    {id:"micro", company:"Micro Cars", seg:"MF", exec:3.00, vision:4.20, ec:15, vc:50, status:"Low Evidence", quad:"Watch"},
+    {id:"ceat", company:"CEAT Kelani", seg:"MF", exec:4.00, vision:4.00, ec:15, vc:10, status:"Low Evidence", quad:"Watch"},
+    {id:"harness", company:"Lanka Harness", seg:"MF", exec:3.00, vision:3.50, ec:15, vc:20, status:"Low Evidence", quad:"Watch"},
+    {id:"chargenet", company:"ChargeNET", seg:"EV", exec:5.00, vision:4.27, ec:15, vc:55, status:"Low Evidence", quad:"EV Infra Leader"}
+  ];
+
+  // 2. PRAVEEN'S ANALYST OUTLOOK JUDGEMENTS
+  const outlookData = [
+    {company:"Toyota Lanka", label:"Likely leader", cls:"", text:"Broadest service footprint and top brand position; main risk is BEV transition."},
+    {company:"Lanka Ashok Leyland", label:"Likely leader (CV)", cls:"", text:"Strong FY24/25 financials and local assembly; single-OEM concentration risk."},
+    {company:"DPMC (Bajaj)", label:"Likely leader (2W/3W)", cls:"", text:"Dominant Bajaj brand (~92% 3W share). Caveat: EV 3W readiness unevidenced."},
+    {company:"John Keells - BYD", label:"Contender (EV)", cls:"contender", text:"BYD gives EV leadership option (48.8% Oct '26 new cars); service depth still scaling."},
+    {company:"United Motors (UNIMO)", label:"Contender", cls:"contender", text:"Fast profit recovery and wide OEM portfolio (Mitsubishi, Perodua); limited EV evidence."},
+    {company:"DIMO", label:"Contender", cls:"contender", text:"Diversified mobility ecosystem (Mercedes-Benz, Tata); thin FY23/24 profit, early digital maturity."},
+    {company:"ChargeNET", label:"Contender (EV Infra)", cls:"contender", text:"Largest charging network (100+ sites, 150+ chargers); PUCSL framework favours scale operators."},
+    {company:"TVS Lanka", label:"Contender (2W)", cls:"contender", text:"Stable #2 in motorcycles (~25% share) with wide islandwide touchpoints."},
+    {company:"Evolution Auto", label:"Watch", cls:"watch", text:"EV-first strategy + EVO Charge Peliyagoda, but small/unverified volume scale."},
+    {company:"David Pieris (GWM/BAIC)", label:"Watch", cls:"watch", text:"Strong GWM hybrid/NEV & BAIC push; legal entity link to DPMC unverified."},
+    {company:"Micro Cars", label:"Watch", cls:"watch", text:"Local assembly + MG/Chery/BAIC EV ambitions; volumes & financials not public."},
+    {company:"Ideal Group", label:"Watch", cls:"watch", text:"Credible global supply-chain entry (Magna/MSKH seating); needs export revenue data."},
+    {company:"AMW / CEAT / Harness", label:"Insufficient evidence", cls:"insuff", text:"Directory-level or pre-2025 evidence only; requires Batch A/B price & volume updates."}
+  ];
+
+  // 3. PRAVEEN'S EVIDENCED OFFERINGS
+  const offeringsData = [
+    ["Toyota Lanka","ICE (petrol/diesel)","Evidenced","Toyota & Hino franchise; Raize/Yaris top sellers; trucks 24% (Aug 2025)."],
+    ["Toyota Lanka","Hybrid","Evidenced","All-new hybrid LC300 and Hyryder hybrid in range."],
+    ["DIMO","ICE (petrol/diesel)","Evidenced","Mercedes-Benz and Tata passenger & commercial range."],
+    ["United Motors (UNIMO)","ICE (petrol/diesel)","Evidenced","Mitsubishi, Fuso, Perodua, DFSK, JMC."],
+    ["John Keells - BYD","BEV / PHEV","Evidenced","BYD; EVs ~10% of 2025 PV imports; #1 brand in Oct 2026 (221/453 cars)."],
+    ["Evolution Auto","BEV / PHEV","Evidenced","Launched Sri Lanka's largest multi-brand EV line-up (XPeng, Avatr, IM)."],
+    ["Evolution Auto","Charging / energy","Evidenced","EVO Charge fast-charging station, Peliyagoda + multi-brand EV workshop."],
+    ["David Pieris Auto","Hybrid","Evidenced","GWM strategic partnership (Oct 2025) for hybrid/new-energy vehicles."],
+    ["David Pieris Auto","BEV / PHEV","Reported plan","BAIC sole distributor (1,000+ X55 SUVs); GWM NEV introduction announced."],
+    ["Lanka Ashok Leyland","ICE (petrol/diesel)","Evidenced","Ashok Leyland trucks & buses, locally assembled."],
+    ["DPMC","ICE (petrol/diesel)","Evidenced","Bajaj/KTM 2W & 3W; Bajaj ~92% of three-wheelers (Aug 2025)."],
+    ["TVS Lanka","ICE (petrol/diesel)","Evidenced","TVS motorcycles & 3W; ~25% of motorcycles (Aug 2025)."],
+    ["Micro Cars","ICE + BEV Plan","Evidenced","Local assembly with Chinese/Korean OEMs; BAIC EV assembly licence report."],
+    ["Ideal Group","Components","Evidenced","Auto seating; Magna/MSKH global supply-chain collaboration."],
+    ["CEAT Kelani / Harness","Components","Evidenced","Tyres & wire/impact-sensor harnesses (SLACMA members)."],
+    ["ChargeNET","Charging / energy","Evidenced","100+ locations; 150+ chargers; Dialog Touch Card integration."]
+  ];
+
+  // 4. 9-BOX PREVIEW DATA (REPLACED LIVE WHEN MASTER CSV IS UPLOADED)
   let currentData = [
     {Distributor:"AMW", Brand:"Suzuki", Model:"Alto K10", Powertrain:"ICE", Body_Type:"Hatchback", Std_Price_Mn:6.8},
     {Distributor:"AMW", Brand:"Suzuki", Model:"WagonR", Powertrain:"Hybrid", Body_Type:"Hatchback", Std_Price_Mn:8.9},
@@ -508,6 +587,7 @@
     {Distributor:"Eurocars", Brand:"Porsche", Model:"Macan EV", Powertrain:"EV", Body_Type:"SUV", Std_Price_Mn:62.0}
   ];
 
+  // 5. 28-DISTRIBUTOR MECE REGISTRY
   const registry28 = [
     ["A","Toyota Lanka (Pvt) Ltd","Toyota; Lexus (unverified)","toyota.lk","Verified","Arundathie"],
     ["A","DIMO PLC","Mercedes-Benz; Tata","dimolanka.com","Unverified","Arundathie"],
@@ -539,13 +619,98 @@
     ["C","China Lanka Motors","Honri EVs","Unverified","Unverified","Thilakshana"]
   ];
 
+  // RENDER GARTNER MAGIC QUADRANT
+  function renderQuadrant(seg = "ALL") {
+    let rows = seg === "ALL"
+      ? Object.values(Object.fromEntries(quadrantData.map(r => [r.id, r])))
+      : quadrantData.filter(r => r.seg === seg);
+
+    const plotted = rows.filter(r => r.status === "Plotted");
+    const lowEv = rows.filter(r => r.status !== "Plotted");
+
+    const traces = [
+      {
+        x: plotted.map(r => r.vision),
+        y: plotted.map(r => r.exec),
+        text: plotted.map(r => r.company),
+        customdata: plotted.map(r => [r.seg, r.quad, r.ec, r.vc]),
+        mode: "markers+text",
+        textposition: "top center",
+        textfont: { size: 10.5, color: "#FFFFFF" },
+        marker: { size: 15, color: "#14B8A6", line: { color: "#FFFFFF", width: 2 } },
+        name: "Evidenced Players",
+        hovertemplate: "<b>%{text}</b><br>Segment: %{customdata[0]} | Quadrant: %{customdata[1]}<br>Vision: %{x:.2f} (Cov: %{customdata[3]}%)<br>Execution: %{y:.2f} (Cov: %{customdata[2]}%)<extra></extra>"
+      },
+      {
+        x: lowEv.map(r => r.vision),
+        y: lowEv.map(r => r.exec),
+        text: lowEv.map(r => r.company),
+        customdata: lowEv.map(r => [r.seg, r.quad, r.ec, r.vc]),
+        mode: "markers+text",
+        textposition: "bottom center",
+        textfont: { size: 10, color: "#94A3B8" },
+        marker: { size: 13, color: "rgba(250,204,21,0.15)", line: { color: "#FACC15", width: 2 } },
+        name: "Partial / Watchlist (Hollow)",
+        hovertemplate: "<b>%{text}</b> (Watchlist)<br>Segment: %{customdata[0]}<br>Vision: %{x:.2f} (Cov: %{customdata[3]}%)<br>Execution: %{y:.2f} (Cov: %{customdata[2]}%)<extra></extra>"
+      }
+    ];
+
+    Plotly.newPlot("magicQuadrantChart", traces, {
+      paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "#091224",
+      font: { color: "#E2E8F0", family: "Segoe UI" },
+      margin: { l: 60, r: 24, t: 28, b: 56 },
+      xaxis: { title: "Completeness of Vision (1–5)", range: [2.8, 5.15], gridcolor: "rgba(148,163,184,0.12)" },
+      yaxis: { title: "Ability to Execute (1–5)", range: [2.6, 5.3], gridcolor: "rgba(148,163,184,0.12)" },
+      shapes: [
+        { type:"rect", x0:3.9, x1:5.15, y0:3.9, y1:5.3, fillcolor:"rgba(20,184,166,0.08)", line:{width:0}, layer:"below" },
+        { type:"line", x0:3.9, x1:3.9, y0:2.6, y1:5.3, line:{color:"#475569", width:1.5, dash:"dash"} },
+        { type:"line", x0:2.8, x1:5.15, y0:3.9, y1:3.9, line:{color:"#475569", width:1.5, dash:"dash"} }
+      ],
+      annotations: [
+        { x: 4.95, y: 5.18, text: "<b>LEADERS</b>", showarrow:false, font:{color:"#2DD4BF", size:11} },
+        { x: 3.05, y: 5.18, text: "<b>CHALLENGERS</b>", showarrow:false, font:{color:"#38BDF8", size:11} },
+        { x: 4.95, y: 2.72, text: "<b>VISIONARIES</b>", showarrow:false, font:{color:"#FACC15", size:11} },
+        { x: 3.05, y: 2.72, text: "<b>NICHE PLAYERS</b>", showarrow:false, font:{color:"#94A3B8", size:11} }
+      ],
+      legend: { orientation: "h", y: -0.16 }
+    }, { responsive: true, displaylogo: false });
+  }
+
+  function filterQuadrant(seg, btn) {
+    document.querySelectorAll(".seg-pill").forEach(p => p.classList.remove("active"));
+    btn.classList.add("active");
+    renderQuadrant(seg);
+  }
+
+  function renderOutlooks() {
+    document.getElementById("outlookList").innerHTML = outlookData.map(o => `
+      <div class="outlook-item ${o.cls}">
+        <div class="outlook-top">
+          <div class="outlook-name">${o.company}</div>
+          <div class="outlook-badge">${o.label}</div>
+        </div>
+        <div class="outlook-text">${o.text}</div>
+      </div>
+    `).join("");
+  }
+
+  function renderOfferings() {
+    document.getElementById("offeringsBody").innerHTML = offeringsData.map(r => `
+      <tr>
+        <td><strong>${r[0]}</strong></td>
+        <td><span class="tag tag-b">${r[1]}</span></td>
+        <td><span class="tag ${r[2]==='Evidenced'?'tag-ok':'tag-c'}">${r[2]}</span></td>
+        <td>${r[3]}</td>
+      </tr>
+    `).join("");
+  }
+
+  // RENDER 9-BOX & PORTFOLIO
   function populateFilters(data) {
-    const distSel = document.getElementById("filterDistributor");
-    const bodySel = document.getElementById("filterBody");
     const dists = [...new Set(data.map(d => d.Distributor))].sort();
     const bodies = [...new Set(data.map(d => d.Body_Type).filter(Boolean))].sort();
-    distSel.innerHTML = '<option value="ALL">All Distributors</option>' + dists.map(d => `<option value="${d}">${d}</option>`).join("");
-    bodySel.innerHTML = '<option value="ALL">All Body Types</option>' + bodies.map(b => `<option value="${b}">${b}</option>`).join("");
+    document.getElementById("filterDistributor").innerHTML = '<option value="ALL">All Distributors</option>' + dists.map(d => `<option value="${d}">${d}</option>`).join("");
+    document.getElementById("filterBody").innerHTML = '<option value="ALL">All Body Types</option>' + bodies.map(b => `<option value="${b}">${b}</option>`).join("");
   }
 
   function renderNineBox(data) {
@@ -560,113 +725,114 @@
         y: rows.map((r, i) => yMap[r.Powertrain] + (((i * 37 + idx * 13) % 10) - 4.5) * 0.045),
         text: rows.map(r => `${r.Brand} ${r.Model}`),
         customdata: rows.map(r => [r.Distributor, r.Powertrain, r.Body_Type || "N/A", parseFloat(r.Std_Price_Mn).toFixed(2)]),
-        mode: "markers+text",
-        textposition: "top center",
-        textfont: { size: 10.5, color: "#E2E8F0" },
-        marker: { size: 13, color: colors[idx % colors.length], line: { color: "#070D19", width: 1.5 } },
+        mode: "markers+text", textposition: "top center", textfont: { size: 10, color: "#E2E8F0" },
+        marker: { size: 12.5, color: colors[idx % colors.length], line: { color: "#060B16", width: 1.5 } },
         name: dist,
-        hovertemplate: "<b>%{text}</b><br>Distributor: %{customdata[0]}<br>Powertrain: %{customdata[1]}<br>Body: %{customdata[2]}<br>Price (VAT Incl.): LKR %{customdata[3]}M<extra></extra>"
+        hovertemplate: "<b>%{text}</b><br>Distributor: %{customdata[0]}<br>Powertrain: %{customdata[1]} | Body: %{customdata[2]}<br>Price (18% VAT Incl.): LKR %{customdata[3]}M<extra></extra>"
       };
     });
 
     const maxX = Math.max(35, ...data.map(d => parseFloat(d.Std_Price_Mn) || 0)) * 1.1;
-
-    const layout = {
-      paper_bgcolor: "rgba(0,0,0,0)",
-      plot_bgcolor: "#0B1528",
-      font: { color: "#E2E8F0", family: "Segoe UI, sans-serif" },
-      margin: { l: 120, r: 20, t: 48, b: 54 },
-      xaxis: {
-        title: "Standardized Brand-New Price (LKR Millions, 18% VAT-Inclusive)",
-        range: [0, maxX], gridcolor: "rgba(148,163,184,0.12)", zeroline: false
-      },
-      yaxis: {
-        tickvals: [1, 2, 3],
-        ticktext: ["EV<br>(100% Electric)", "HYBRID<br>(HEV / PHEV)", "ICE<br>(Petrol / Diesel)"],
-        range: [0.45, 3.65], gridcolor: "rgba(148,163,184,0.12)", zeroline: false
-      },
+    Plotly.newPlot("nineBoxChart", traces, {
+      paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "#091224",
+      font: { color: "#E2E8F0", family: "Segoe UI" },
+      margin: { l: 115, r: 20, t: 44, b: 52 },
+      xaxis: { title: "Standardized Brand-New Price (LKR Millions, 18% VAT-Inclusive)", range: [0, maxX], gridcolor: "rgba(148,163,184,0.12)", zeroline: false },
+      yaxis: { tickvals: [1,2,3], ticktext: ["EV<br>(Electric)","HYBRID<br>(HEV/PHEV)","ICE<br>(Petrol/Diesel)"], range: [0.45, 3.65], gridcolor: "rgba(148,163,184,0.12)", zeroline: false },
       shapes: [
         { type:"rect", x0:0, x1:BUDGET_MAX, y0:0.45, y1:3.65, fillcolor:"rgba(20,184,166,0.06)", line:{width:0}, layer:"below" },
         { type:"rect", x0:MIDRANGE_MAX, x1:maxX, y0:0.45, y1:3.65, fillcolor:"rgba(250,204,21,0.05)", line:{width:0}, layer:"below" },
-        { type:"line", x0:BUDGET_MAX, x1:BUDGET_MAX, y0:0.45, y1:3.65, line:{color:"#64748B", width:1.5, dash:"dash"} },
-        { type:"line", x0:MIDRANGE_MAX, x1:MIDRANGE_MAX, y0:0.45, y1:3.65, line:{color:"#64748B", width:1.5, dash:"dash"} },
-        { type:"line", x0:0, x1:maxX, y0:1.5, y1:1.5, line:{color:"#64748B", width:1.5, dash:"dash"} },
-        { type:"line", x0:0, x1:maxX, y0:2.5, y1:2.5, line:{color:"#64748B", width:1.5, dash:"dash"} }
+        { type:"line", x0:BUDGET_MAX, x1:BUDGET_MAX, y0:0.45, y1:3.65, line:{color:"#64748B", width:1.4, dash:"dash"} },
+        { type:"line", x0:MIDRANGE_MAX, x1:MIDRANGE_MAX, y0:0.45, y1:3.65, line:{color:"#64748B", width:1.4, dash:"dash"} },
+        { type:"line", x0:0, x1:maxX, y0:1.5, y1:1.5, line:{color:"#64748B", width:1.4, dash:"dash"} },
+        { type:"line", x0:0, x1:maxX, y0:2.5, y1:2.5, line:{color:"#64748B", width:1.4, dash:"dash"} }
       ],
       annotations: [
-        { x: BUDGET_MAX/2, y: 3.56, text: "<b>BUDGET (&lt; 12M)</b>", showarrow: false, font:{color:"#2DD4BF", size:11} },
-        { x: (BUDGET_MAX+MIDRANGE_MAX)/2, y: 3.56, text: "<b>MID-RANGE (12M – 25M)</b>", showarrow: false, font:{color:"#CBD5E1", size:11} },
-        { x: (MIDRANGE_MAX+maxX)/2, y: 3.56, text: "<b>PREMIUM (&gt; 25M)</b>", showarrow: false, font:{color:"#FACC15", size:11} }
+        { x: BUDGET_MAX/2, y: 3.56, text: "<b>BUDGET (&lt; 12M)</b>", showarrow:false, font:{color:"#2DD4BF", size:11} },
+        { x: (BUDGET_MAX+MIDRANGE_MAX)/2, y: 3.56, text: "<b>MID-RANGE (12M–25M)</b>", showarrow:false, font:{color:"#CBD5E1", size:11} },
+        { x: (MIDRANGE_MAX+maxX)/2, y: 3.56, text: "<b>PREMIUM (&gt; 25M)</b>", showarrow:false, font:{color:"#FACC15", size:11} }
       ],
-      legend: { orientation: "h", y: -0.18, font: { size: 11 } }
-    };
-
-    Plotly.newPlot("nineBoxChart", traces, layout, { responsive: true, displaylogo: false });
+      legend: { orientation: "h", y: -0.18, font: { size: 10.5 } }
+    }, { responsive: true, displaylogo: false });
   }
 
   function renderPortfolio(data) {
     const dists = [...new Set(data.map(d => d.Distributor))];
-    const countOf = (dist, pt) => data.filter(d => d.Distributor === dist && d.Powertrain === pt).length;
-    dists.sort((a,b) => (countOf(a,"ICE")+countOf(a,"Hybrid")+countOf(a,"EV")) - (countOf(b,"ICE")+countOf(b,"Hybrid")+countOf(b,"EV")));
-
-    const traces = [
-      { y: dists, x: dists.map(d => countOf(d,"ICE")), name:"ICE", type:"bar", orientation:"h", marker:{color:"#38BDF8"} },
-      { y: dists, x: dists.map(d => countOf(d,"Hybrid")), name:"Hybrid", type:"bar", orientation:"h", marker:{color:"#FACC15"} },
-      { y: dists, x: dists.map(d => countOf(d,"EV")), name:"EV", type:"bar", orientation:"h", marker:{color:"#14B8A6"} }
-    ];
-    Plotly.newPlot("portfolioChart", traces, {
-      barmode: "stack",
-      paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "#0B1528",
-      font: { color: "#E2E8F0", size: 11 },
-      margin: { l: 130, r: 16, t: 10, b: 40 },
-      xaxis: { title: "Models", gridcolor: "rgba(148,163,184,0.12)" },
-      legend: { orientation: "h", y: 1.12 }
-    }, { responsive: true, displaylogo: false });
+    const c = (dist, pt) => data.filter(d => d.Distributor === dist && d.Powertrain === pt).length;
+    dists.sort((a,b) => (c(a,"ICE")+c(a,"Hybrid")+c(a,"EV")) - (c(b,"ICE")+c(b,"Hybrid")+c(b,"EV")));
+    Plotly.newPlot("portfolioChart", [
+      { y: dists, x: dists.map(d => c(d,"ICE")), name:"ICE", type:"bar", orientation:"h", marker:{color:"#38BDF8"} },
+      { y: dists, x: dists.map(d => c(d,"Hybrid")), name:"Hybrid", type:"bar", orientation:"h", marker:{color:"#FACC15"} },
+      { y: dists, x: dists.map(d => c(d,"EV")), name:"EV", type:"bar", orientation:"h", marker:{color:"#14B8A6"} }
+    ], {
+      barmode: "stack", paper_bgcolor:"rgba(0,0,0,0)", plot_bgcolor:"#091224",
+      font: { color:"#E2E8F0", size:10.5 }, margin: { l:125, r:14, t:10, b:38 },
+      xaxis: { title:"Models", gridcolor:"rgba(148,163,184,0.12)" }, legend: { orientation:"h", y:1.12 }
+    }, { responsive:true, displaylogo:false });
   }
 
   function renderStrategyCanvas() {
-    const factors = ["Price Level","Brand Heritage","Dealer & Service","Engine Refinement","Low Running Cost","In-Car Tech & OTA","Driver Assist","Model Refresh Speed"];
-    const traces = [
-      { x: factors, y: [4.2, 5.0, 5.0, 5.0, 2.0, 2.0, 2.0, 2.0], name: "Traditional ICE Brands", mode: "lines+markers", line: { color: "#94A3B8", dash: "dash", width: 2.5 }, marker: { size: 8 } },
-      { x: factors, y: [2.0, 1.2, 2.2, 1.0, 5.0, 5.0, 4.2, 5.0], name: "Chinese EV Makers (BYD, etc.)", mode: "lines+markers", line: { color: "#FACC15", width: 3.5 }, marker: { size: 9, symbol: "square" } }
-    ];
-    Plotly.newPlot("canvasChart", traces, {
-      paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "#0B1528",
-      font: { color: "#E2E8F0", size: 10.5 },
-      margin: { l: 42, r: 16, t: 16, b: 80 },
-      yaxis: { range: [0.5, 5.5], tickvals: [1,2,3,4,5], gridcolor: "rgba(148,163,184,0.12)" },
-      xaxis: { tickangle: -22 },
-      legend: { orientation: "h", y: 1.14 }
-    }, { responsive: true, displaylogo: false });
+    const f = ["Price Level","Brand Heritage","Dealer & Service","Engine Refinement","Low Running Cost","In-Car Tech & OTA","Driver Assist","Model Refresh"];
+    Plotly.newPlot("canvasChart", [
+      { x:f, y:[4.2,5.0,5.0,5.0,2.0,2.0,2.0,2.0], name:"Traditional ICE", mode:"lines+markers", line:{color:"#94A3B8", dash:"dash", width:2.5}, marker:{size:7} },
+      { x:f, y:[2.0,1.2,2.2,1.0,5.0,5.0,4.2,5.0], name:"Chinese EV Makers", mode:"lines+markers", line:{color:"#FACC15", width:3.2}, marker:{size:8, symbol:"square"} }
+    ], {
+      paper_bgcolor:"rgba(0,0,0,0)", plot_bgcolor:"#091224", font:{color:"#E2E8F0", size:10},
+      margin:{l:38,r:14,t:12,b:75}, yaxis:{range:[0.5,5.5], tickvals:[1,2,3,4,5], gridcolor:"rgba(148,163,184,0.12)"},
+      xaxis:{tickangle:-22}, legend:{orientation:"h", y:1.14}
+    }, { responsive:true, displaylogo:false });
   }
 
-  function renderRegistry(query = "") {
-    const q = query.toLowerCase();
-    const tbody = document.getElementById("registryBody");
-    const filtered = registry28.filter(r => r.join(" ").toLowerCase().includes(q));
-    tbody.innerHTML = filtered.map(r => `
-      <tr>
+  // MACRO CHARTS (REAL DATA FROM data_praveen/data/processed/)
+  function renderMacroCharts() {
+    Plotly.newPlot("regChart", [{
+      x: ["Motorcycles", "Motor Cars", "3-Wheelers", "Buses"],
+      y: [254817, 68047, 17332, 2096],
+      type: "bar",
+      marker: { color: ["#14B8A6","#FACC15","#38BDF8","#FB7185"] },
+      text: ["254.8K","68.0K","17.3K","2.1K"], textposition: "outside", textfont: { color:"#E2E8F0", size:10 }
+    }], {
+      paper_bgcolor:"rgba(0,0,0,0)", plot_bgcolor:"#091224", font:{color:"#E2E8F0", size:10},
+      margin:{l:46,r:10,t:16,b:40}, yaxis:{gridcolor:"rgba(148,163,184,0.12)", range:[0,305000]}
+    }, { responsive:true, displaylogo:false });
+
+    Plotly.newPlot("gdpChart", [
+      { x:[2018,2019,2020,2021,2022], y:[2665,5174,6131,7007,9982], name:"Current Price", mode:"lines+markers", line:{color:"#FACC15", width:3}, marker:{size:7} },
+      { x:[2018,2019,2020,2021,2022], y:[3241,3373,3471,3636,3365], name:"Constant Price", mode:"lines+markers", line:{color:"#38BDF8", width:2.5, dash:"dot"}, marker:{size:6} }
+    ], {
+      paper_bgcolor:"rgba(0,0,0,0)", plot_bgcolor:"#091224", font:{color:"#E2E8F0", size:10},
+      margin:{l:48,r:10,t:12,b:36}, yaxis:{gridcolor:"rgba(148,163,184,0.12)"}, legend:{orientation:"h", y:1.15}
+    }, { responsive:true, displaylogo:false });
+
+    Plotly.newPlot("tradeChart", [
+      { x:["2020","2021","2022"], y:[102.2,49.9,22.0], name:"Imports (Rs Bn)", type:"bar", marker:{color:"#38BDF8"} },
+      { x:["2020","2021","2022"], y:[9.2,16.2,25.7], name:"Exports (Rs Bn)", type:"bar", marker:{color:"#14B8A6"} }
+    ], {
+      barmode:"group", paper_bgcolor:"rgba(0,0,0,0)", plot_bgcolor:"#091224", font:{color:"#E2E8F0", size:10},
+      margin:{l:42,r:10,t:12,b:36}, yaxis:{gridcolor:"rgba(148,163,184,0.12)"}, legend:{orientation:"h", y:1.15}
+    }, { responsive:true, displaylogo:false });
+  }
+
+  function renderRegistry(q = "") {
+    const query = q.toLowerCase();
+    document.getElementById("registryBody").innerHTML = registry28
+      .filter(r => r.join(" ").toLowerCase().includes(query))
+      .map(r => `<tr>
         <td><span class="tag tag-${r[0].toLowerCase()}">Batch ${r[0]}</span></td>
-        <td><strong>${r[1]}</strong></td>
-        <td>${r[2]}</td>
+        <td><strong>${r[1]}</strong></td><td>${r[2]}</td>
         <td><span class="tag ${r[4]==='Verified'?'tag-ok':'tag-pend'}">${r[3]}</span></td>
         <td>${r[5]}</td>
-      </tr>
-    `).join("");
+      </tr>`).join("");
   }
 
   function applyFilters() {
     const pt = document.getElementById("filterPowertrain").value;
     const dist = document.getElementById("filterDistributor").value;
     const body = document.getElementById("filterBody").value;
-    const filtered = currentData.filter(d =>
-      (pt === "ALL" || d.Powertrain === pt) &&
-      (dist === "ALL" || d.Distributor === dist) &&
-      (body === "ALL" || d.Body_Type === body)
-    );
-    document.getElementById("kpiModels").textContent = filtered.length;
-    renderNineBox(filtered);
-    renderPortfolio(filtered);
+    const f = currentData.filter(d => (pt==="ALL"||d.Powertrain===pt) && (dist==="ALL"||d.Distributor===dist) && (body==="ALL"||d.Body_Type===body));
+    document.getElementById("modelCountBadge").textContent = `${f.length} Models Shown`;
+    renderNineBox(f);
+    renderPortfolio(f);
   }
 
   function switchTab(evt, id) {
@@ -677,34 +843,29 @@
   }
 
   document.getElementById("csvInput").addEventListener("change", (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+    const file = e.target.files[0]; if (!file) return;
     Papa.parse(file, {
       header: true, skipEmptyLines: true,
       complete: (res) => {
         const clean = res.data.filter(r => r.Distributor && r.Model && r.Powertrain && !isNaN(parseFloat(r.Std_Price_Mn)));
-        if (!clean.length) {
-          alert("No valid rows found. Make sure columns match master_template.csv (Distributor, Brand, Model, Powertrain, Std_Price_Mn).");
-          return;
-        }
-        currentData = clean;
-        populateFilters(currentData);
-        applyFilters();
-        document.getElementById("kpiModeNote").textContent = `Live CSV Loaded (${file.name})`;
-        document.getElementById("uploadStatus").textContent = `✓ Loaded ${clean.length} live brand-new models from ${file.name}`;
+        if (!clean.length) { alert("No valid rows found. Ensure columns match master_template.csv."); return; }
+        currentData = clean; populateFilters(currentData); applyFilters();
+        document.getElementById("uploadStatus").textContent = `✓ Live CSV Loaded: ${clean.length} models from ${file.name}`;
       }
     });
   });
 
-  ["filterPowertrain","filterDistributor","filterBody"].forEach(id =>
-    document.getElementById(id).addEventListener("change", applyFilters)
-  );
+  ["filterPowertrain","filterDistributor","filterBody"].forEach(id => document.getElementById(id).addEventListener("change", applyFilters));
   document.getElementById("registrySearch").addEventListener("input", (e) => renderRegistry(e.target.value));
 
-  // Initial render
+  // Init all visuals
+  renderQuadrant("ALL");
+  renderOutlooks();
+  renderOfferings();
   populateFilters(currentData);
   applyFilters();
   renderStrategyCanvas();
+  renderMacroCharts();
   renderRegistry();
 </script>
 </body>

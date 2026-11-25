@@ -1,0 +1,16 @@
+criterion,axis,label,weight_pct
+fin,exec,Financial strength & sustainability,15
+mkt,exec,Market presence & distribution reach,15
+svc,exec,After-sales service & customer experience,20
+ops,exec,Operational & supply-chain capability,15
+prod,exec,Product portfolio & availability,15
+track,exec,Execution track record,10
+mgmt,exec,Management & strategic delivery,10
+strat,vision,Future automotive strategy,15
+ev,vision,EV & hybrid transition readiness,15
+innov,vision,Innovation & technology adoption,15
+cust,vision,Market understanding & customer needs,15
+oem,vision,International partnerships & OEM relationships,10
+local,vision,Local manufacturing & export strategy,10
+digital,vision,Digital transformation & connected mobility,10
+sust,vision,Sustainability & long-term positioning,10
