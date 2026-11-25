@@ -1446,7 +1446,7 @@
   let pendingRoute = { viewId: "overview", searchTerm: "" };
 
   function isAuthenticated() {
-    return sessionStorage.getItem("sl_auto_auth") === "1";
+    return localStorage.getItem("sl_auto_auth") === "1" || sessionStorage.getItem("sl_auto_auth") === "1";
   }
 
   function openLoginModal() {
@@ -1469,6 +1469,7 @@
     const email = document.getElementById("loginEmail").value.trim().toLowerCase();
     const pass = document.getElementById("loginPass").value;
     if (email === AUTH_EMAIL.toLowerCase() && pass === AUTH_PASS) {
+      localStorage.setItem("sl_auto_auth", "1");
       sessionStorage.setItem("sl_auto_auth", "1");
       closeLoginModal();
       document.getElementById("loginPass").value = "";
@@ -1490,7 +1491,7 @@
     unlockDashboard(viewId, searchTerm);
   }
 
-  function unlockDashboard(viewId = "overview", searchTerm = "") {
+  function unlockDashboard(viewId = "overview", searchTerm = "", isRestore = false) {
     if (!isAuthenticated()) {
       openLoginModal();
       return;
@@ -1498,12 +1499,12 @@
     document.getElementById("landing-mode").classList.add("hidden");
     document.getElementById("dashboard-mode").classList.add("active");
     window.scrollTo({ top: 0, behavior: "instant" });
-    const btn = document.getElementById("nav-" + viewId);
+    const btn = document.getElementById("nav-" + viewId) || document.getElementById("nav-overview");
     if (btn) btn.click();
     if (searchTerm) {
       document.getElementById("registrySearch").value = searchTerm;
       renderRegistry();
-    } else if (!localStorage.getItem("sl_auto_tour_done")) {
+    } else if (!isRestore && !localStorage.getItem("sl_auto_tour_done")) {
       setTimeout(() => startTour(false), 450);
     }
   }
@@ -1517,7 +1518,9 @@
   }
 
   function signOutDashboard() {
+    localStorage.removeItem("sl_auto_auth");
     sessionStorage.removeItem("sl_auto_auth");
+    localStorage.removeItem("sl_auto_view");
     document.getElementById("loginEmail").value = "";
     document.getElementById("loginPass").value = "";
     exitDashboard();
@@ -1700,6 +1703,7 @@
       openLoginModal();
       return;
     }
+    localStorage.setItem("sl_auto_view", id);
     document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
     document.querySelectorAll(".nav-item").forEach(b => b.classList.remove("active"));
     document.getElementById("view-" + id).classList.add("active");
@@ -1956,6 +1960,12 @@
   renderOfferings();
   populateFilters(currentData);
   renderRegistry();
+
+  // Keep user on their current dashboard page across refreshes until Sign Out
+  if (isAuthenticated()) {
+    const savedView = localStorage.getItem("sl_auto_view") || "overview";
+    unlockDashboard(savedView, "", true);
+  }
 </script>
 </body>
 </html>
