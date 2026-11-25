@@ -6,13 +6,13 @@ MECE Product Positioning Map (9-Box Scatter Plot) and Strategic Analysis for Sri
 
 ## Team Assembly Line (5 Members)
 
-| Member | Role | Ownership |
-| :--- | :--- | :--- |
-| **Sachithra** | Sprint Lead & Deck Owner | MECE Registry (CAL Report), SCALE Frameworks, Final Presentation Deck |
-| **Arundathie** | Data Lead — Batch A | Legacy Giants (`United Motors`, `DIMO`, `AMW`, `Toyota Lanka`) |
-| **Sithumini** | Data Lead — Batch B | New Entrants & EVs (`John Keells/BYD`, `Euro Motors/Jetour`, `Hayleys/Jaecoo`, `Kia`, `Hyundai`, `Micro`) |
-| **Thilakshana** | Data Batch C + QA Auditor | Specialty/Luxury Brands (`Colonial`, `Prestige/BMW`, `Access`, `Carmart`, `Stafford`, `Sathosa`, `Senok`) + VAT Normalization & Master CSV |
-| **Praveen** | Data Science & Viz Lead | Python 9-Box Scatter Plot, Portfolio Mix Chart & Blue Ocean Strategy Canvas |
+| Member | Branch | Role | Ownership |
+| :--- | :--- | :--- | :--- |
+| **Sachithra** | `docs/sachithra-strategy-and-deck` | Sprint Lead & Deck Owner | MECE Registry (CAL Report), SCALE Frameworks, Final Presentation Deck |
+| **Arundathie** | `data/arundathie-legacy-distributors` | Data Lead — Batch A | Legacy Giants (`United Motors`, `DIMO`, `AMW`, `Toyota Lanka`) |
+| **Sithumini** | `data/sithumini-new-entrants-ev` | Data Lead — Batch B | New Entrants & EVs (`John Keells/BYD`, `Euro Motors/Jetour`, `Hayleys/Jaecoo`, `Kia`, `Hyundai`, `Micro`) |
+| **Thilakshana** | `data/thilakshana-specialty-and-qa` | Data Batch C + QA Auditor | Specialty/Luxury Brands (`Colonial`, `Prestige/BMW`, `Access`, `Carmart`, `Stafford`, `Sathosa`, `Senok`) + VAT Normalization & Master CSV |
+| **Praveen** | `feat/praveen-positioning-charts` | Data Science & Viz Lead | Python 9-Box Scatter Plot, Portfolio Mix Chart & Blue Ocean Strategy Canvas |
 
 ---
 
