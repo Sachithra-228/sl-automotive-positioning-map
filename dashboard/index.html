@@ -40,28 +40,106 @@
 
   svg.ico { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
-  /* ==================== PRELOADER ==================== */
+  /* ==================== RAPID BRAND-FLASH PRELOADER ==================== */
   #preloader {
     position: fixed; inset: 0; z-index: 9999;
-    background: radial-gradient(circle at 65% 25%, #0B7BA8 0%, #086288 45%, #031B29 100%);
+    background: radial-gradient(circle at 60% 25%, #0B7BA8 0%, #086288 45%, #031B29 100%);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     transition: opacity 0.55s ease, visibility 0.55s ease;
   }
   #preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-  .loader-ring {
-    width: 68px; height: 68px; border-radius: 18px;
-    background: linear-gradient(135deg, var(--ice), #FFFFFF);
-    color: var(--deep-dark); font-family: 'Outfit', sans-serif;
-    font-size: 24px; font-weight: 900; display: grid; place-items: center;
-    box-shadow: 0 0 0 10px rgba(151, 215, 255, 0.16), 0 20px 45px rgba(0, 0, 0, 0.35);
-    animation: floatPulse 1.3s ease-in-out infinite; margin-bottom: 20px;
+  .loader-stage {
+    width: 112px; height: 112px; border-radius: 26px;
+    background: #FFFFFF;
+    display: grid; place-items: center; padding: 22px;
+    box-shadow: 0 0 0 12px rgba(151, 215, 255, 0.16), 0 24px 56px rgba(0, 0, 0, 0.42);
+    margin-bottom: 22px; position: relative; overflow: hidden;
   }
-  @keyframes floatPulse { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-5px) scale(1.04); } }
-  .loader-title { font-family: 'Outfit', sans-serif; color: #FFFFFF; font-size: 22px; font-weight: 700; margin-bottom: 5px; }
-  .loader-sub { color: var(--ice); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
-  .loader-track { width: 240px; height: 3.5px; background: rgba(151, 215, 255, 0.2); border-radius: 99px; overflow: hidden; }
-  .loader-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--steel), var(--ice), #FFFFFF); animation: loadBar 0.95s cubic-bezier(0.22,1,0.36,1) forwards; }
-  @keyframes loadBar { to { width: 100%; } }
+  .loader-stage img, .loader-stage svg {
+    width: 100%; height: 100%; object-fit: contain;
+    animation: logoPop 0.19s ease;
+  }
+  @keyframes logoPop { from { opacity: 0; transform: scale(0.76); } to { opacity: 1; transform: scale(1); } }
+  .loader-brand-name {
+    font-family: 'Outfit', sans-serif; color: var(--ice); font-size: 13px; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px; min-height: 20px;
+  }
+  .loader-title { font-family: 'Outfit', sans-serif; color: #FFFFFF; font-size: 24px; font-weight: 800; margin-bottom: 18px; letter-spacing: 0.3px; }
+  .loader-bar-wrap { display: flex; align-items: center; gap: 12px; }
+  .loader-track { width: 240px; height: 4px; background: rgba(151, 215, 255, 0.2); border-radius: 99px; overflow: hidden; }
+  .loader-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--steel), var(--ice), #FFFFFF); transition: width 0.14s linear; }
+  .loader-pct { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 800; color: var(--ice); min-width: 38px; text-align: right; }
+
+  /* ==================== EXECUTIVE LOGIN GATE ==================== */
+  #login-modal {
+    position: fixed; inset: 0; z-index: 9000;
+    background: rgba(3, 27, 41, 0.82); backdrop-filter: blur(14px);
+    display: none; align-items: center; justify-content: center; padding: 20px;
+  }
+  #login-modal.active { display: flex; animation: fadeIn 0.25s ease; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .login-shell {
+    width: 860px; max-width: 100%; border-radius: 20px; overflow: hidden;
+    background: #FFFFFF; display: grid; grid-template-columns: 0.95fr 1.05fr;
+    box-shadow: 0 32px 80px rgba(2, 18, 28, 0.65);
+    border: 1px solid rgba(151, 215, 255, 0.28);
+  }
+  @media (max-width: 760px) { .login-shell { grid-template-columns: 1fr; } .login-visual { display: none !important; } }
+  .login-visual {
+    position: relative; background: #031B29; padding: 34px 28px;
+    display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;
+  }
+  .login-visual img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.42;
+  }
+  .login-visual-grad {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(3,27,41,0.75) 0%, rgba(8,98,136,0.35) 50%, rgba(3,27,41,0.92) 100%);
+  }
+  .login-visual-top, .login-visual-bot { position: relative; z-index: 2; color: #FFFFFF; }
+  .login-visual-top .lp-logo { font-size: 16px; }
+  .login-visual-bot h3 { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 800; line-height: 1.15; margin-bottom: 8px; }
+  .login-visual-bot h3 span { color: var(--ice); }
+  .login-visual-bot p { font-size: 12.5px; color: rgba(235, 247, 255, 0.82); }
+
+  .login-form-pane { padding: 36px 34px; position: relative; background: #FFFFFF; }
+  .login-close {
+    position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--canvas); color: var(--deep);
+    cursor: pointer; display: grid; place-items: center; transition: 0.15s;
+  }
+  .login-close:hover { background: var(--ice-soft); border-color: var(--deep); }
+  .login-kicker { font-size: 10.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--steel); margin-bottom: 6px; }
+  .login-title { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 800; color: var(--deep-dark); margin-bottom: 6px; }
+  .login-sub { font-size: 12.8px; color: var(--muted); margin-bottom: 22px; }
+  .field { margin-bottom: 15px; }
+  .field label { display: block; font-size: 11.5px; font-weight: 800; color: var(--deep-dark); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.6px; }
+  .field-wrap { position: relative; }
+  .field input {
+    width: 100%; padding: 11px 14px; border-radius: 10px;
+    border: 1.5px solid var(--border-strong); background: var(--canvas);
+    color: var(--ink); font-size: 13.5px; font-family: inherit; outline: none; transition: 0.16s;
+  }
+  .field input:focus { border-color: var(--deep); background: #FFFFFF; box-shadow: 0 0 0 3px rgba(8, 98, 136, 0.14); }
+  .eye-btn {
+    position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px;
+  }
+  .login-err {
+    display: none; background: #FEF2F2; border: 1px solid #FECACA; color: #B91C1C;
+    font-size: 12px; font-weight: 600; padding: 9px 12px; border-radius: 8px; margin-bottom: 14px;
+  }
+  .login-err.show { display: block; animation: shake 0.32s ease; }
+  @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+  .login-submit {
+    width: 100%; padding: 12px 16px; border-radius: 10px; border: none;
+    background: linear-gradient(135deg, var(--deep), var(--steel));
+    color: #FFFFFF; font-family: 'Outfit', sans-serif; font-size: 14.5px; font-weight: 800;
+    letter-spacing: 0.4px; cursor: pointer; transition: all 0.18s;
+    box-shadow: 0 8px 22px rgba(8, 98, 136, 0.28);
+  }
+  .login-submit:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(8, 98, 136, 0.38); }
+  .login-note { margin-top: 14px; font-size: 11.5px; color: var(--muted); text-align: center; }
 
   /* ==================== LANDING PAGE ==================== */
   #landing-mode { background: var(--deep-night); color: #FFFFFF; }
@@ -170,39 +248,64 @@
   .chap-btn { align-self: flex-start; padding: 11px 22px; border-radius: 8px; background: rgba(151, 215, 255, 0.14); border: 1.5px solid var(--ice); color: #FFFFFF; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.2s; }
   .chap-btn:hover { background: var(--ice); color: var(--deep-night); }
 
-  /* LANDING PAGE BRAND LOGO WALL */
+  /* LANDING PAGE LARGE BRAND CAROUSEL */
   .lp-brands-sec {
-    padding: 76px 36px;
-    background: linear-gradient(180deg, #031B29 0%, #052D43 100%);
+    padding: 96px 0;
+    background: linear-gradient(180deg, #031B29 0%, #05334C 50%, #031B29 100%);
     border-top: 1px solid rgba(151, 215, 255, 0.14);
+    overflow: hidden;
   }
-  .lp-brands-inner { max-width: 1220px; margin: 0 auto; text-align: center; }
-  .lp-brands-kicker { font-size: 11px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; color: var(--ice); margin-bottom: 8px; }
-  .lp-brands-title { font-family: 'Outfit', sans-serif; font-size: clamp(24px, 3vw, 34px); font-weight: 800; color: #FFFFFF; margin-bottom: 10px; }
-  .lp-brands-sub { font-size: 14px; color: rgba(235, 247, 255, 0.72); max-width: 640px; margin: 0 auto 32px auto; }
-  .lp-logo-wall {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
-    gap: 14px;
+  .lp-brands-inner { max-width: 1380px; margin: 0 auto; text-align: center; padding: 0 32px; }
+  .lp-brands-kicker { font-size: 11.5px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ice); margin-bottom: 10px; }
+  .lp-brands-title { font-family: 'Outfit', sans-serif; font-size: clamp(30px, 3.8vw, 46px); font-weight: 800; color: #FFFFFF; margin-bottom: 12px; }
+  .lp-brands-sub { font-size: 15px; color: rgba(235, 247, 255, 0.76); max-width: 680px; margin: 0 auto 42px auto; }
+
+  .carousel-viewport {
+    position: relative; width: 100%; overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    padding: 12px 0 20px 0;
+  }
+  .carousel-track {
+    display: flex; gap: 20px; width: max-content;
+    animation: marqueeScroll 36s linear infinite;
+  }
+  .carousel-viewport:hover .carousel-track { animation-play-state: paused; }
+  @keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
   .lp-logo-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(151, 215, 255, 0.18);
-    border-radius: 14px; padding: 18px 14px;
-    display: flex; flex-direction: column; align-items: center; gap: 10px;
-    cursor: pointer; transition: all 0.22s ease;
+    width: 220px; flex-shrink: 0;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(8, 98, 136, 0.18));
+    border: 1px solid rgba(151, 215, 255, 0.24);
+    border-radius: 20px; padding: 28px 20px;
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+    cursor: pointer; transition: all 0.24s ease;
+    backdrop-filter: blur(8px);
   }
   .lp-logo-card:hover {
-    background: rgba(151, 215, 255, 0.14); border-color: var(--ice);
-    transform: translateY(-4px); box-shadow: 0 12px 28px rgba(3, 27, 41, 0.4);
+    background: rgba(151, 215, 255, 0.18); border-color: var(--ice);
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 18px 40px rgba(3, 27, 41, 0.55);
   }
   .lp-logo-pill {
-    width: 52px; height: 52px; border-radius: 14px; background: #FFFFFF;
-    display: grid; place-items: center; padding: 9px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    width: 78px; height: 78px; border-radius: 20px; background: #FFFFFF;
+    display: grid; place-items: center; padding: 14px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
   }
-  .lp-logo-pill img { width: 100%; height: 100%; object-fit: contain; }
-  .lp-logo-name { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; }
-  .lp-logo-dist { font-size: 10.5px; color: var(--ice); }
+  .lp-logo-pill img, .lp-logo-pill svg { width: 100%; height: 100%; object-fit: contain; }
+  .lp-logo-name { font-family: 'Outfit', sans-serif; font-size: 16.5px; font-weight: 800; color: #FFFFFF; letter-spacing: 0.2px; }
+  .lp-logo-dist { font-size: 12px; color: var(--ice); font-weight: 600; }
+  .carousel-controls {
+    display: flex; justify-content: center; gap: 12px; margin-top: 26px;
+  }
+  .car-ctrl-btn {
+    padding: 8px 18px; border-radius: 99px;
+    background: rgba(151, 215, 255, 0.12); border: 1px solid rgba(151, 215, 255, 0.35);
+    color: var(--ice); font-size: 12px; font-weight: 700; cursor: pointer; transition: 0.18s;
+  }
+  .car-ctrl-btn:hover { background: var(--ice); color: var(--deep-night); }
 
   .lp-cta-band { text-align: center; padding: 84px 28px; background: linear-gradient(135deg, #086288 0%, #4D8DBA 60%, #0B4B6B 100%); color: #FFFFFF; }
   .lp-cta-band h2 { font-family: 'Outfit', sans-serif; font-size: clamp(28px, 4vw, 44px); font-weight: 800; margin-bottom: 10px; }
@@ -497,12 +600,61 @@
 </head>
 <body>
 
-<!-- ==================== PRELOADER ==================== -->
+<!-- ==================== RAPID BRAND-FLASH PRELOADER ==================== -->
 <div id="preloader">
-  <div class="loader-ring">SL</div>
+  <div class="loader-stage" id="loaderStage"></div>
+  <div class="loader-brand-name" id="loaderBrandName">INITIALIZING</div>
   <div class="loader-title">SL Auto Intelligence</div>
-  <div class="loader-sub">Sri Lanka Brand-New Market • 2026</div>
-  <div class="loader-track"><div class="loader-bar"></div></div>
+  <div class="loader-bar-wrap">
+    <div class="loader-track"><div class="loader-bar" id="loaderBar"></div></div>
+    <div class="loader-pct" id="loaderPct">0%</div>
+  </div>
+</div>
+
+<!-- ==================== EXECUTIVE LOGIN MODAL ==================== -->
+<div id="login-modal">
+  <div class="login-shell">
+    <div class="login-visual">
+      <img src="assets/cars/hero_suv.jpg" alt="Executive Portal">
+      <div class="login-visual-grad"></div>
+      <div class="login-visual-top">
+        <div class="lp-logo">SL AUTO<span>INTEL</span></div>
+      </div>
+      <div class="login-visual-bot">
+        <h3>Sri Lanka <span>2026</span> Positioning Portal</h3>
+        <p>Confidential executive intelligence covering 28 MECE distributors, Gartner Magic Quadrant scoring, and SCALE Pathway frameworks.</p>
+      </div>
+    </div>
+
+    <div class="login-form-pane">
+      <button class="login-close" onclick="closeLoginModal()" aria-label="Close">
+        <svg class="ico" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="login-kicker">Executive Access Required</div>
+      <div class="login-title">Sign In to Dashboard</div>
+      <div class="login-sub">Enter your authorized Sandbox executive credentials to unlock the interactive positioning suite.</div>
+
+      <div class="login-err" id="loginErr">Invalid email or password. Please verify your Sandbox credentials.</div>
+
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="field">
+          <label for="loginEmail">Executive Email</label>
+          <input type="email" id="loginEmail" placeholder="name@sandbox.lk" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="loginPass">Password</label>
+          <div class="field-wrap">
+            <input type="password" id="loginPass" placeholder="Enter access password" required autocomplete="current-password">
+            <button type="button" class="eye-btn" onclick="togglePasswordVis()" aria-label="Toggle Password">
+              <svg class="ico" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <button type="submit" class="login-submit">Unlock Executive Dashboard</button>
+      </form>
+      <div class="login-note">Protected Executive Review Environment • Sandbox Consultancy</div>
+    </div>
+  </div>
 </div>
 
 <!-- ==================== GUIDED TOUR OVERLAY ==================== -->
@@ -626,13 +778,19 @@
     </div>
   </section>
 
-  <!-- OFFICIAL BRAND LOGOS SHOWCASE ON LANDING PAGE -->
+  <!-- OFFICIAL BRAND LOGOS CAROUSEL ON LANDING PAGE -->
   <section id="lp-brands" class="lp-brands-sec">
     <div class="lp-brands-inner">
       <div class="lp-brands-kicker">MECE Market Coverage • Active 2026 Franchises</div>
       <h2 class="lp-brands-title">Brands Competing Across Sri Lanka</h2>
-      <p class="lp-brands-sub">Click any brand below to jump straight into its distributor record, powertrain portfolio, and positioning inside the dashboard.</p>
-      <div class="lp-logo-wall" id="lpLogoWall"></div>
+      <p class="lp-brands-sub">Hover to pause or click any brand to unlock its distributor record, powertrain portfolio, and positioning inside the dashboard.</p>
+    </div>
+    <div class="carousel-viewport" id="brandCarouselViewport">
+      <div class="carousel-track" id="lpLogoWall"></div>
+    </div>
+    <div class="carousel-controls">
+      <button class="car-ctrl-btn" onclick="nudgeCarousel(-1)">&larr; Slower / Reverse</button>
+      <button class="car-ctrl-btn" onclick="enterDashboard('registry')">View All 28 Distributors &rarr;</button>
     </div>
   </section>
 
@@ -705,7 +863,8 @@
           <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
           Guided Tour
         </button>
-        <div class="status-pill"><span class="status-dot"></span><span>18% VAT Standard • Nov 2026</span></div>
+        <div class="status-pill"><span class="status-dot"></span><span>angelo@sandbox.lk</span></div>
+        <button class="pill" style="padding:6px 12px; font-size:11.5px;" onclick="signOutDashboard()">Sign Out</button>
       </div>
     </header>
 
@@ -954,24 +1113,27 @@
 </div>
 
 <script>
-  window.addEventListener("load", () => {
-    setTimeout(() => document.getElementById("preloader").classList.add("hidden"), 950);
-  });
-
   window.addEventListener("scroll", () => {
     const nav = document.getElementById("lpNav");
     if (nav) nav.classList.toggle("scrolled", window.scrollY > 50);
   });
 
-  // REAL AUTOMOTIVE BRAND LOGOS (SimpleIcons CDN + graceful crisp monogram fallback)
+  // CRISP INLINE SVG LOGOS FOR BRANDS NOT ON SIMPLEICONS (BYD, MERCEDES-BENZ, LAND ROVER)
+  const inlineSVGs = {
+    byd: `<svg viewBox="0 0 120 46" xmlns="http://www.w3.org/2000/svg"><text x="60" y="33" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="900" font-size="31" letter-spacing="5" fill="#086288">BYD</text><rect x="14" y="39" width="92" height="3.5" rx="2" fill="#4D8DBA"/></svg>`,
+    mercedes: `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="27" fill="none" stroke="#111827" stroke-width="3.5"/><polygon points="32,7 35,30 55,44 32,35 9,44 29,30" fill="#111827"/></svg>`,
+    landrover: `<svg viewBox="0 0 120 64" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="32" rx="54" ry="26" fill="#005A2B"/><ellipse cx="60" cy="32" rx="48" ry="21" fill="none" stroke="#FFFFFF" stroke-width="2"/><text x="60" y="29" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="13" letter-spacing="1.5" fill="#FFFFFF">LAND</text><text x="60" y="44" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="13" letter-spacing="1.5" fill="#FFFFFF">ROVER</text></svg>`
+  };
+
+  // REAL AUTOMOTIVE BRAND LOGOS (SimpleIcons CDN + Inline SVGs + Fallback)
   const logoMap = [
     { match: "Toyota", slug: "toyota", color: "EB0A1E", code: "TY" },
-    { match: "BYD", slug: "byd", color: "086288", code: "BYD" },
-    { match: "John Keells", slug: "byd", color: "086288", code: "BYD" },
+    { match: "BYD", svgKey: "byd", code: "BYD" },
+    { match: "John Keells", svgKey: "byd", code: "BYD" },
     { match: "United Motors", slug: "mitsubishi", color: "E60012", code: "MIT" },
     { match: "Mitsubishi", slug: "mitsubishi", color: "E60012", code: "MIT" },
-    { match: "DIMO", slug: "mercedes", color: "111827", code: "MB" },
-    { match: "Mercedes", slug: "mercedes", color: "111827", code: "MB" },
+    { match: "DIMO", svgKey: "mercedes", code: "MB" },
+    { match: "Mercedes", svgKey: "mercedes", code: "MB" },
     { match: "AMW", slug: "suzuki", color: "003145", code: "SZK" },
     { match: "Associated Motorways", slug: "suzuki", color: "003145", code: "SZK" },
     { match: "Suzuki", slug: "suzuki", color: "003145", code: "SZK" },
@@ -988,7 +1150,8 @@
     { match: "Porsche", slug: "porsche", color: "B12B28", code: "POR" },
     { match: "Carmart", slug: "peugeot", color: "000000", code: "PEU" },
     { match: "Colonial", slug: "mazda", color: "101010", code: "MZD" },
-    { match: "Access", slug: "landrover", color: "005A2B", code: "JLR" },
+    { match: "Access", svgKey: "landrover", code: "JLR" },
+    { match: "Land Rover", svgKey: "landrover", code: "JLR" },
     { match: "Micro", slug: "mg", color: "C8102E", code: "MG" },
     { match: "Tata", slug: "tata", color: "486AAE", code: "TAT" },
     { match: "Prestige", slug: "mini", color: "000000", code: "MINI" },
@@ -1003,22 +1166,27 @@
     { match: "Browns", slug: "", color: "086288", code: "BAW" }
   ];
 
+  function getLogoInner(found, name, code) {
+    if (found && found.svgKey && inlineSVGs[found.svgKey]) return inlineSVGs[found.svgKey];
+    if (found && found.slug) {
+      const url = `https://cdn.simpleicons.org/${found.slug}/${found.color}`;
+      return `<img src="${url}" alt="${name}" onerror="this.outerHTML='<span class=logo-fallback>${code}</span>'">`;
+    }
+    return `<span class="logo-fallback">${code}</span>`;
+  }
+
   function getBrandLogoHTML(name, small = false) {
     const found = logoMap.find(m => name.toLowerCase().includes(m.match.toLowerCase()));
     const code = found ? found.code : name.split(" ").map(w => w[0]).join("").slice(0,3).toUpperCase();
     const cls = small ? "logo-box sm" : "logo-box";
-    if (found && found.slug) {
-      const url = `https://cdn.simpleicons.org/${found.slug}/${found.color}`;
-      return `<div class="${cls}"><img src="${url}" alt="${name}" onerror="this.outerHTML='<span class=logo-fallback>${code}</span>'"></div>`;
-    }
-    return `<div class="${cls}"><span class="logo-fallback">${code}</span></div>`;
+    return `<div class="${cls}">${getLogoInner(found, name, code)}</div>`;
   }
 
   const showcaseBrands = [
-    { brand:"BYD", dist:"John Keells CG Auto", search:"John Keells", slug:"byd", color:"086288", code:"BYD" },
+    { brand:"BYD", dist:"John Keells CG Auto", search:"John Keells", svgKey:"byd", code:"BYD" },
     { brand:"Toyota", dist:"Toyota Lanka", search:"Toyota", slug:"toyota", color:"EB0A1E", code:"TY" },
     { brand:"Mitsubishi", dist:"United Motors (UNIMO)", search:"United Motors", slug:"mitsubishi", color:"E60012", code:"MIT" },
-    { brand:"Mercedes-Benz", dist:"DIMO PLC", search:"DIMO", slug:"mercedes", color:"111827", code:"MB" },
+    { brand:"Mercedes-Benz", dist:"DIMO PLC", search:"DIMO", svgKey:"mercedes", code:"MB" },
     { brand:"Suzuki", dist:"AMW", search:"AMW", slug:"suzuki", color:"003145", code:"SZK" },
     { brand:"Kia", dist:"Kia Motors Lanka", search:"Kia", slug:"kia", color:"05141F", code:"KIA" },
     { brand:"BMW", dist:"Mels Automobiles", search:"Mels", slug:"bmw", color:"0066B1", code:"BMW" },
@@ -1026,21 +1194,53 @@
     { brand:"Porsche", dist:"Eurocars Colombo", search:"Eurocars", slug:"porsche", color:"B12B28", code:"POR" },
     { brand:"Volkswagen", dist:"Continental Cars", search:"Continental", slug:"volkswagen", color:"001E50", code:"VW" },
     { brand:"Honda", dist:"Stafford Motor Co.", search:"Stafford", slug:"honda", color:"CC0000", code:"HND" },
-    { brand:"Land Rover", dist:"Access Motors", search:"Access", slug:"landrover", color:"005A2B", code:"JLR" },
+    { brand:"Land Rover", dist:"Access Motors", search:"Access", svgKey:"landrover", code:"JLR" },
     { brand:"Peugeot", dist:"Carmart Ltd", search:"Carmart", slug:"peugeot", color:"000000", code:"PEU" },
     { brand:"Mazda", dist:"Colonial Motors", search:"Colonial", slug:"mazda", color:"101010", code:"MZD" }
   ];
 
+  // RAPID BRAND-FLASH PRELOADER ENGINE
+  (function runBrandPreloader() {
+    const stage = document.getElementById("loaderStage");
+    const label = document.getElementById("loaderBrandName");
+    const bar = document.getElementById("loaderBar");
+    const pct = document.getElementById("loaderPct");
+    const seq = showcaseBrands.slice(0, 10);
+    let idx = 0;
+
+    function tick() {
+      const item = seq[idx % seq.length];
+      stage.innerHTML = getLogoInner(item, item.brand, item.code);
+      label.textContent = item.brand.toUpperCase();
+      const progress = Math.min(100, Math.round(((idx + 1) / seq.length) * 100));
+      bar.style.width = progress + "%";
+      pct.textContent = progress + "%";
+      idx++;
+      if (idx < seq.length) {
+        setTimeout(tick, 145);
+      } else {
+        setTimeout(() => document.getElementById("preloader").classList.add("hidden"), 260);
+      }
+    }
+    tick();
+  })();
+
+  let carouselReversed = false;
+  function nudgeCarousel() {
+    carouselReversed = !carouselReversed;
+    document.getElementById("lpLogoWall").style.animationDirection = carouselReversed ? "reverse" : "normal";
+  }
+
   function renderLandingLogoWall() {
-    document.getElementById("lpLogoWall").innerHTML = showcaseBrands.map(b => `
+    const cardsHTML = showcaseBrands.map(b => `
       <div class="lp-logo-card" onclick="enterDashboard('registry', '${b.search}')">
-        <div class="lp-logo-pill">
-          <img src="https://cdn.simpleicons.org/${b.slug}/${b.color}" alt="${b.brand}" onerror="this.outerHTML='<span class=logo-fallback>${b.code}</span>'">
-        </div>
+        <div class="lp-logo-pill">${getLogoInner(b, b.brand, b.code)}</div>
         <div class="lp-logo-name">${b.brand}</div>
         <div class="lp-logo-dist">${b.dist}</div>
       </div>
     `).join("");
+    // Duplicate list for seamless infinite marquee carousel
+    document.getElementById("lpLogoWall").innerHTML = cardsHTML + cardsHTML;
   }
 
   function renderOverviewBrands() {
@@ -1084,8 +1284,57 @@
   document.querySelectorAll(".story-chapter").forEach(ch => chapterObserver.observe(ch));
   function scrollToChapter(idx) { document.getElementById("chapter-" + idx).scrollIntoView({ behavior: "smooth", block: "center" }); }
 
-  // ENTER / EXIT DASHBOARD + AUTO FIRST-TIME GUIDED TOUR
+  // ==================== EXECUTIVE LOGIN GATE ====================
+  const AUTH_EMAIL = "angelo@sandbox.lk";
+  const AUTH_PASS = "Automotive228";
+  let pendingRoute = { viewId: "overview", searchTerm: "" };
+
+  function isAuthenticated() {
+    return sessionStorage.getItem("sl_auto_auth") === "1";
+  }
+
+  function openLoginModal() {
+    document.getElementById("loginErr").classList.remove("show");
+    document.getElementById("login-modal").classList.add("active");
+    setTimeout(() => document.getElementById("loginEmail").focus(), 100);
+  }
+
+  function closeLoginModal() {
+    document.getElementById("login-modal").classList.remove("active");
+  }
+
+  function togglePasswordVis() {
+    const inp = document.getElementById("loginPass");
+    inp.type = inp.type === "password" ? "text" : "password";
+  }
+
+  function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+    const pass = document.getElementById("loginPass").value;
+    if (email === AUTH_EMAIL.toLowerCase() && pass === AUTH_PASS) {
+      sessionStorage.setItem("sl_auto_auth", "1");
+      closeLoginModal();
+      document.getElementById("loginPass").value = "";
+      unlockDashboard(pendingRoute.viewId, pendingRoute.searchTerm);
+    } else {
+      const err = document.getElementById("loginErr");
+      err.classList.remove("show");
+      void err.offsetWidth;
+      err.classList.add("show");
+    }
+  }
+
   function enterDashboard(viewId = "overview", searchTerm = "") {
+    pendingRoute = { viewId, searchTerm };
+    if (!isAuthenticated()) {
+      openLoginModal();
+      return;
+    }
+    unlockDashboard(viewId, searchTerm);
+  }
+
+  function unlockDashboard(viewId = "overview", searchTerm = "") {
     document.getElementById("landing-mode").classList.add("hidden");
     document.getElementById("dashboard-mode").classList.add("active");
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -1098,11 +1347,17 @@
       setTimeout(() => startTour(false), 450);
     }
   }
+
   function exitDashboard() {
     endTour();
     document.getElementById("dashboard-mode").classList.remove("active");
     document.getElementById("landing-mode").classList.remove("hidden");
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function signOutDashboard() {
+    sessionStorage.removeItem("sl_auto_auth");
+    exitDashboard();
   }
 
   // ==================== INTERACTIVE 5-STEP GUIDED TOUR ====================
