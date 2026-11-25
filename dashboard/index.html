@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 <style>
   :root {
     --deep: #086288;
@@ -16,16 +15,17 @@
     --deep-night: #031B29;
     --steel: #4D8DBA;
     --ice: #97D7FF;
-    --ice-soft: #EBF7FF;
-    --canvas: #F3F8FC;
+    --ice-soft: #EDF7FF;
+    --canvas: #F4F9FC;
     --card: #FFFFFF;
     --ink: #072233;
-    --muted: #4C6B80;
-    --border: rgba(8, 98, 136, 0.13);
-    --border-strong: rgba(8, 98, 136, 0.26);
-    --shadow-sm: 0 2px 10px rgba(8, 98, 136, 0.05);
-    --shadow-md: 0 12px 32px rgba(8, 98, 136, 0.11);
-    --sidebar-w: 264px;
+    --muted: #527084;
+    --border: rgba(8, 98, 136, 0.11);
+    --border-strong: rgba(8, 98, 136, 0.24);
+    --shadow-xs: 0 1px 3px rgba(4, 57, 82, 0.04);
+    --shadow-sm: 0 4px 16px rgba(4, 57, 82, 0.055), 0 1px 2px rgba(4, 57, 82, 0.04);
+    --shadow-md: 0 14px 36px rgba(4, 57, 82, 0.10), 0 3px 10px rgba(4, 57, 82, 0.05);
+    --sidebar-w: 256px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,7 +38,7 @@
     overflow-x: hidden;
   }
 
-  svg.ico { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  svg.ico { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
   /* ==================== PRELOADER ==================== */
   #preloader {
@@ -60,7 +60,7 @@
   .loader-title { font-family: 'Outfit', sans-serif; color: #FFFFFF; font-size: 22px; font-weight: 700; margin-bottom: 5px; }
   .loader-sub { color: var(--ice); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
   .loader-track { width: 240px; height: 3.5px; background: rgba(151, 215, 255, 0.2); border-radius: 99px; overflow: hidden; }
-  .loader-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--steel), var(--ice), #FFFFFF); animation: loadBar 1.0s cubic-bezier(0.22,1,0.36,1) forwards; }
+  .loader-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--steel), var(--ice), #FFFFFF); animation: loadBar 0.95s cubic-bezier(0.22,1,0.36,1) forwards; }
   @keyframes loadBar { to { width: 100%; } }
 
   /* ==================== LANDING PAGE ==================== */
@@ -69,8 +69,7 @@
 
   .lp-nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-    padding: 18px 44px;
-    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 44px; display: flex; justify-content: space-between; align-items: center;
     background: linear-gradient(180deg, rgba(3, 27, 41, 0.72) 0%, rgba(3, 27, 41, 0) 100%);
     transition: background 0.25s, padding 0.25s;
   }
@@ -118,7 +117,7 @@
 
   .hero-bottom { position: relative; z-index: 4; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
   .btn-explore {
-    padding: 13px 38px; border-radius: 6px;
+    padding: 13px 38px; border-radius: 8px;
     background: rgba(151, 215, 255, 0.18); backdrop-filter: blur(12px);
     border: 1.5px solid var(--ice); color: #FFFFFF; font-family: 'Outfit', sans-serif;
     font-size: 14.5px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
@@ -126,7 +125,7 @@
   }
   .btn-explore:hover { background: var(--ice); color: var(--deep-night); box-shadow: 0 0 32px rgba(151, 215, 255, 0.55); transform: translateY(-2px); }
   .btn-solid {
-    padding: 13px 34px; border-radius: 6px; background: linear-gradient(135deg, var(--ice), #FFFFFF);
+    padding: 13px 34px; border-radius: 8px; background: linear-gradient(135deg, var(--ice), #FFFFFF);
     color: var(--deep-night); font-family: 'Outfit', sans-serif; font-size: 14.5px; font-weight: 800;
     border: none; cursor: pointer; transition: all 0.22s; box-shadow: 0 10px 30px rgba(151, 215, 255, 0.35);
   }
@@ -171,7 +170,41 @@
   .chap-btn { align-self: flex-start; padding: 11px 22px; border-radius: 8px; background: rgba(151, 215, 255, 0.14); border: 1.5px solid var(--ice); color: #FFFFFF; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.2s; }
   .chap-btn:hover { background: var(--ice); color: var(--deep-night); }
 
-  .lp-cta-band { text-align: center; padding: 88px 28px; background: linear-gradient(135deg, #086288 0%, #4D8DBA 60%, #0B4B6B 100%); color: #FFFFFF; }
+  /* LANDING PAGE BRAND LOGO WALL */
+  .lp-brands-sec {
+    padding: 76px 36px;
+    background: linear-gradient(180deg, #031B29 0%, #052D43 100%);
+    border-top: 1px solid rgba(151, 215, 255, 0.14);
+  }
+  .lp-brands-inner { max-width: 1220px; margin: 0 auto; text-align: center; }
+  .lp-brands-kicker { font-size: 11px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; color: var(--ice); margin-bottom: 8px; }
+  .lp-brands-title { font-family: 'Outfit', sans-serif; font-size: clamp(24px, 3vw, 34px); font-weight: 800; color: #FFFFFF; margin-bottom: 10px; }
+  .lp-brands-sub { font-size: 14px; color: rgba(235, 247, 255, 0.72); max-width: 640px; margin: 0 auto 32px auto; }
+  .lp-logo-wall {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
+    gap: 14px;
+  }
+  .lp-logo-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(151, 215, 255, 0.18);
+    border-radius: 14px; padding: 18px 14px;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    cursor: pointer; transition: all 0.22s ease;
+  }
+  .lp-logo-card:hover {
+    background: rgba(151, 215, 255, 0.14); border-color: var(--ice);
+    transform: translateY(-4px); box-shadow: 0 12px 28px rgba(3, 27, 41, 0.4);
+  }
+  .lp-logo-pill {
+    width: 52px; height: 52px; border-radius: 14px; background: #FFFFFF;
+    display: grid; place-items: center; padding: 9px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  }
+  .lp-logo-pill img { width: 100%; height: 100%; object-fit: contain; }
+  .lp-logo-name { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; }
+  .lp-logo-dist { font-size: 10.5px; color: var(--ice); }
+
+  .lp-cta-band { text-align: center; padding: 84px 28px; background: linear-gradient(135deg, #086288 0%, #4D8DBA 60%, #0B4B6B 100%); color: #FFFFFF; }
   .lp-cta-band h2 { font-family: 'Outfit', sans-serif; font-size: clamp(28px, 4vw, 44px); font-weight: 800; margin-bottom: 10px; }
   .lp-cta-band p { font-size: 15px; color: rgba(255,255,255,0.88); max-width: 600px; margin: 0 auto 28px auto; }
 
@@ -179,200 +212,224 @@
   #dashboard-mode { display: none; min-height: 100vh; width: 100%; background: var(--canvas); color: var(--ink); }
   #dashboard-mode.active { display: flex; }
 
+  /* REFINED SLEEK SIDEBAR (NO CLUTTERED FOOTER!) */
   .sidebar {
     position: fixed; top: 0; left: 0; bottom: 0; width: var(--sidebar-w);
-    background: linear-gradient(180deg, var(--deep) 0%, var(--deep-dark) 62%, var(--deep-night) 100%);
-    color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between;
-    padding: 18px 14px 16px 14px; z-index: 200;
-    box-shadow: 6px 0 30px rgba(3, 27, 41, 0.18); transition: transform 0.25s ease;
+    background: linear-gradient(180deg, #064D6B 0%, #043248 58%, #021C2B 100%);
+    color: #FFFFFF; display: flex; flex-direction: column;
+    padding: 20px 14px; z-index: 200;
+    border-right: 1px solid rgba(151, 215, 255, 0.12);
+    box-shadow: 8px 0 32px rgba(2, 28, 43, 0.16);
+    transition: transform 0.25s ease;
   }
   .back-lp-btn {
-    width: 100%; padding: 8px 12px; border-radius: 8px; margin-bottom: 14px;
-    background: rgba(151, 215, 255, 0.12); border: 1px solid rgba(151, 215, 255, 0.32);
+    width: 100%; padding: 9px 12px; border-radius: 10px; margin-bottom: 18px;
+    background: rgba(151, 215, 255, 0.10); border: 1px solid rgba(151, 215, 255, 0.24);
     color: var(--ice); font-size: 11.5px; font-weight: 700; cursor: pointer;
-    display: flex; align-items: center; gap: 8px; transition: 0.15s;
+    display: flex; align-items: center; gap: 8px; transition: all 0.18s;
   }
-  .back-lp-btn:hover { background: var(--ice); color: var(--deep-night); }
+  .back-lp-btn:hover { background: var(--ice); color: var(--deep-night); border-color: var(--ice); }
 
   .sb-brand {
-    display: flex; align-items: center; gap: 11px; padding: 2px 6px 14px 6px;
-    border-bottom: 1px solid rgba(151, 215, 255, 0.18); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px; padding: 4px 8px 18px 8px;
+    border-bottom: 1px solid rgba(151, 215, 255, 0.14); margin-bottom: 18px;
   }
   .sb-logo {
-    width: 36px; height: 36px; border-radius: 9px;
+    width: 38px; height: 38px; border-radius: 11px;
     background: linear-gradient(135deg, var(--ice), #FFFFFF);
     color: var(--deep-dark); font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 15px;
     display: grid; place-items: center; flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(151, 215, 255, 0.25);
   }
-  .sb-brand-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 14px; }
-  .sb-brand-sub { font-size: 10.5px; color: var(--ice); }
-  .sb-label { font-size: 9.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(151, 215, 255, 0.52); padding: 6px 10px; }
-  .sb-nav { display: flex; flex-direction: column; gap: 4px; }
+  .sb-brand-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 14.5px; letter-spacing: 0.2px; }
+  .sb-brand-sub { font-size: 10.5px; color: rgba(151, 215, 255, 0.78); }
+  .sb-label { font-size: 9.5px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: rgba(151, 215, 255, 0.48); padding: 4px 12px 8px 12px; }
+  .sb-nav { display: flex; flex-direction: column; gap: 5px; }
   .nav-item {
-    display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 9px;
-    border: none; width: 100%; text-align: left; background: transparent;
-    color: rgba(235, 247, 255, 0.85); font-size: 12.8px; font-weight: 600; cursor: pointer; transition: 0.16s;
+    position: relative;
+    display: flex; align-items: center; gap: 11px; padding: 11px 13px; border-radius: 11px;
+    border: 1px solid transparent; width: 100%; text-align: left; background: transparent;
+    color: rgba(235, 247, 255, 0.82); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.18s;
   }
-  .nav-item:hover { background: rgba(151, 215, 255, 0.12); color: #FFFFFF; }
-  .nav-item.active { background: linear-gradient(90deg, var(--ice), #C9EAFF); color: var(--deep-night); font-weight: 800; box-shadow: 0 6px 18px rgba(151, 215, 255, 0.22); }
-  .nav-count { margin-left: auto; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 99px; background: rgba(151, 215, 255, 0.18); color: var(--ice); }
-  .nav-item.active .nav-count { background: rgba(8, 98, 136, 0.18); color: var(--deep-night); }
-
-  .sb-footer { border-top: 1px solid rgba(151, 215, 255, 0.18); padding-top: 12px; display: flex; flex-direction: column; gap: 9px; }
-  .upload-btn {
-    width: 100%; padding: 9px 10px; border-radius: 9px;
-    background: rgba(151, 215, 255, 0.14); border: 1.5px dashed var(--ice);
-    color: #FFFFFF; font-size: 12px; font-weight: 700; cursor: pointer; transition: 0.16s;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
+  .nav-item:hover { background: rgba(151, 215, 255, 0.10); color: #FFFFFF; }
+  .nav-item.active {
+    background: linear-gradient(95deg, rgba(151, 215, 255, 0.96), rgba(215, 240, 255, 0.96));
+    color: var(--deep-night); font-weight: 800;
+    box-shadow: 0 8px 22px rgba(3, 27, 41, 0.28);
   }
-  .upload-btn:hover { background: var(--ice); color: var(--deep-night); border-style: solid; }
-  .sb-meta { font-size: 10px; color: rgba(151, 215, 255, 0.65); text-align: center; line-height: 1.45; }
+  .nav-count {
+    margin-left: auto; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 99px;
+    background: rgba(151, 215, 255, 0.16); color: var(--ice);
+  }
+  .nav-item.active .nav-count { background: rgba(8, 98, 136, 0.16); color: var(--deep-night); }
 
   /* Full-Window Main Area */
   .main { margin-left: var(--sidebar-w); flex: 1; width: calc(100% - var(--sidebar-w)); min-width: 0; display: flex; flex-direction: column; }
   .topbar {
     position: sticky; top: 0; z-index: 40;
-    background: rgba(243, 248, 252, 0.92); backdrop-filter: blur(12px);
+    background: rgba(244, 249, 252, 0.92); backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border); padding: 13px 28px;
     display: flex; justify-content: space-between; align-items: center; gap: 14px;
   }
   .menu-toggle { display: none; background: var(--deep); color: #FFFFFF; border: none; border-radius: 7px; padding: 7px 10px; cursor: pointer; }
   .crumb { font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--steel); }
   .page-heading { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 800; color: var(--deep-dark); line-height: 1.15; }
+  .topbar-right { display: flex; align-items: center; gap: 10px; }
+  .tour-trigger {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 7px 14px; border-radius: 99px;
+    background: var(--deep); color: #FFFFFF; border: none;
+    font-size: 11.8px; font-weight: 700; cursor: pointer; transition: 0.18s;
+    box-shadow: 0 4px 12px rgba(8, 98, 136, 0.22);
+  }
+  .tour-trigger:hover { background: var(--deep-dark); transform: translateY(-1px); }
   .status-pill {
     display: inline-flex; align-items: center; gap: 7px;
-    background: var(--ice-soft); border: 1px solid rgba(8, 98, 136, 0.24);
+    background: #FFFFFF; border: 1px solid var(--border-strong);
     color: var(--deep); font-size: 11.5px; font-weight: 700; padding: 6px 13px; border-radius: 99px;
   }
-  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--deep); box-shadow: 0 0 0 3px var(--ice); }
+  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--deep); box-shadow: 0 0 0 3px var(--ice); }
 
-  /* FULL WIDTH CONTENT — NO NARROW CAP */
-  .content { padding: 22px 28px 48px 28px; width: 100%; }
+  .content { padding: 24px 28px 48px 28px; width: 100%; }
   .view { display: none; animation: fadeUp 0.26s ease; }
   .view.active { display: block; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* Executive Overview Banner with Real Car Visual */
+  /* Executive Overview Banner */
   .ov-hero {
-    position: relative; border-radius: 16px; overflow: hidden;
-    background: linear-gradient(125deg, #031B29 0%, #086288 65%, #4D8DBA 100%);
-    color: #FFFFFF; padding: 28px 32px; margin-bottom: 20px;
-    display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 24px; align-items: center;
+    border-radius: 18px; overflow: hidden;
+    background: linear-gradient(125deg, #031B29 0%, #086288 64%, #4D8DBA 100%);
+    color: #FFFFFF; padding: 28px 32px; margin-bottom: 22px;
+    display: grid; grid-template-columns: 1.28fr 0.72fr; gap: 24px; align-items: center;
     box-shadow: var(--shadow-md);
   }
   @media (max-width: 980px) { .ov-hero { grid-template-columns: 1fr; } }
   .ov-hero-img {
-    width: 100%; height: 200px; object-fit: cover; border-radius: 12px;
+    width: 100%; height: 205px; object-fit: cover; border-radius: 14px;
     border: 1px solid rgba(151, 215, 255, 0.35);
-    box-shadow: 0 12px 30px rgba(3, 27, 41, 0.4);
+    box-shadow: 0 12px 30px rgba(3, 27, 41, 0.35);
   }
   .ov-kicker {
     display: inline-block; font-size: 10.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--ice); background: rgba(151, 215, 255, 0.16); border: 1px solid rgba(151, 215, 255, 0.38);
+    color: var(--ice); background: rgba(151, 215, 255, 0.16); border: 1px solid rgba(151, 215, 255, 0.36);
     padding: 4px 11px; border-radius: 99px; margin-bottom: 10px;
   }
   .ov-hero h2 { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.15; margin-bottom: 8px; }
   .ov-hero h2 span { color: var(--ice); }
   .ov-hero p { font-size: 13.5px; color: rgba(235, 247, 255, 0.86); max-width: 680px; }
 
-  /* Company Logo Badges Grid */
-  .brand-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-    gap: 12px; margin-bottom: 20px;
-  }
+  /* REAL BRAND LOGO TILES & EMBLEMS */
+  .brand-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(205px, 1fr)); gap: 13px; }
   .brand-tile {
-    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-    padding: 12px 14px; display: flex; align-items: center; gap: 12px;
-    cursor: pointer; transition: all 0.18s; box-shadow: var(--shadow-sm);
+    background: #FAFDFE; border: 1px solid var(--border); border-radius: 14px;
+    padding: 13px 15px; display: flex; align-items: center; gap: 13px;
+    cursor: pointer; transition: all 0.2s ease; box-shadow: var(--shadow-xs);
   }
   .brand-tile:hover { border-color: var(--deep); background: var(--ice-soft); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-  .co-logo {
-    width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
-    display: grid; place-items: center; font-family: 'Outfit', sans-serif;
-    font-weight: 900; font-size: 12px; letter-spacing: 0.4px; color: #FFFFFF;
+  .logo-box {
+    width: 42px; height: 42px; border-radius: 11px; background: #FFFFFF;
+    border: 1px solid rgba(8, 98, 136, 0.14); flex-shrink: 0;
+    display: grid; place-items: center; padding: 7px; overflow: hidden;
+    box-shadow: 0 2px 6px rgba(8, 98, 136, 0.06);
   }
-  .co-logo.sm { width: 28px; height: 28px; border-radius: 7px; font-size: 10px; }
-  .brand-tile-name { font-size: 12.8px; font-weight: 800; color: var(--deep-dark); line-height: 1.2; }
+  .logo-box.sm { width: 30px; height: 30px; border-radius: 8px; padding: 5px; }
+  .logo-box img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .logo-fallback {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 11px;
+    color: var(--deep); letter-spacing: 0.3px;
+  }
+  .logo-box.sm .logo-fallback { font-size: 9px; }
+  .brand-tile-name { font-size: 12.8px; font-weight: 800; color: var(--deep-dark); line-height: 1.22; }
   .brand-tile-sub { font-size: 11px; color: var(--muted); }
 
-  /* Visual Story Image Cards on Overview */
+  /* ELEVATED EXECUTIVE BOXES & CARDS */
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 22px 24px;
+    box-shadow: var(--shadow-sm); margin-bottom: 20px;
+  }
+  .card-title { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 800; color: var(--deep-dark); margin-bottom: 3px; }
+  .card-sub { font-size: 12.4px; color: var(--muted); margin-bottom: 16px; }
+
+  .insight-strip {
+    background: linear-gradient(90deg, var(--ice-soft), #FFFFFF);
+    border: 1px solid rgba(77, 141, 186, 0.22); border-left: 4px solid var(--deep);
+    border-radius: 12px; padding: 13px 17px; margin-bottom: 18px;
+    display: flex; gap: 11px; align-items: center; box-shadow: var(--shadow-xs);
+  }
+  .insight-strip p { font-size: 12.8px; color: var(--deep-dark); }
+
+  .kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 22px; }
+  @media (max-width: 1180px) { .kpi-grid { grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); } }
+  .kpi {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 15px; padding: 18px 20px; box-shadow: var(--shadow-sm);
+    position: relative; overflow: hidden; transition: transform 0.18s, box-shadow 0.18s;
+  }
+  .kpi:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .kpi::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3.5px; background: linear-gradient(90deg, var(--deep), var(--ice)); }
+  .kpi.steel::before { background: linear-gradient(90deg, var(--steel), var(--ice)); }
+  .kpi-label { font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.9px; color: var(--muted); }
+  .kpi-val { font-family: 'Outfit', sans-serif; font-size: 29px; font-weight: 900; color: var(--deep-dark); margin: 4px 0 2px 0; line-height: 1.1; }
+  .kpi-sub { font-size: 11.6px; color: var(--deep); font-weight: 600; }
+
   .visual-card {
-    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
     overflow: hidden; cursor: pointer; transition: all 0.2s; box-shadow: var(--shadow-sm);
     display: flex; flex-direction: column;
   }
   .visual-card:hover { transform: translateY(-3px); border-color: var(--deep); box-shadow: var(--shadow-md); }
-  .visual-card-img { width: 100%; height: 155px; object-fit: cover; }
-  .visual-card-body { padding: 15px 18px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+  .visual-card-img { width: 100%; height: 158px; object-fit: cover; }
+  .visual-card-body { padding: 16px 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
   .visual-card-kicker { font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--steel); margin-bottom: 4px; }
-  .visual-card h4 { font-family: 'Outfit', sans-serif; font-size: 16.5px; font-weight: 800; color: var(--deep-dark); margin-bottom: 5px; }
-  .visual-card p { font-size: 12.3px; color: var(--muted); margin-bottom: 10px; }
+  .visual-card h4 { font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 800; color: var(--deep-dark); margin-bottom: 5px; }
+  .visual-card p { font-size: 12.4px; color: var(--muted); margin-bottom: 12px; }
   .visual-card-cta { font-size: 12px; font-weight: 800; color: var(--deep); }
-
-  /* Standard Cards & Grids */
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; box-shadow: var(--shadow-sm); margin-bottom: 18px; }
-  .card-title { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 800; color: var(--deep-dark); margin-bottom: 3px; }
-  .card-sub { font-size: 12.4px; color: var(--muted); margin-bottom: 14px; }
-
-  .insight-strip {
-    background: var(--ice-soft); border: 1px solid rgba(77, 141, 186, 0.24); border-left: 4px solid var(--deep);
-    border-radius: 9px; padding: 12px 16px; margin-bottom: 16px;
-    display: flex; gap: 11px; align-items: center;
-  }
-  .insight-strip p { font-size: 12.8px; color: var(--deep-dark); }
-
-  .kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 20px; }
-  @media (max-width: 1180px) { .kpi-grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); } }
-  .kpi { background: var(--card); border: 1px solid var(--border); border-top: 4px solid var(--deep); border-radius: 13px; padding: 16px 18px; box-shadow: var(--shadow-sm); }
-  .kpi.steel { border-top-color: var(--steel); }
-  .kpi.ice { border-top-color: var(--ice); }
-  .kpi-label { font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); }
-  .kpi-val { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 900; color: var(--deep-dark); margin: 3px 0 2px 0; }
-  .kpi-sub { font-size: 11.6px; color: var(--deep); font-weight: 600; }
 
   .grid-2 { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 18px; }
   .grid-2-eq { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   @media (max-width: 1080px) { .grid-2, .grid-2-eq, .grid-3 { grid-template-columns: 1fr; } }
 
-  .pill-bar { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 14px; }
-  .pill { padding: 7px 14px; border-radius: 99px; font-size: 12px; font-weight: 700; background: #FFFFFF; color: var(--deep); border: 1px solid var(--border-strong); cursor: pointer; transition: 0.15s; }
+  .pill-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .pill { padding: 7px 15px; border-radius: 99px; font-size: 12px; font-weight: 700; background: #FFFFFF; color: var(--deep); border: 1px solid var(--border-strong); cursor: pointer; transition: 0.16s; box-shadow: var(--shadow-xs); }
   .pill:hover { background: var(--ice-soft); }
-  .pill.active { background: var(--deep); color: #FFFFFF; border-color: var(--deep); }
+  .pill.active { background: var(--deep); color: #FFFFFF; border-color: var(--deep); box-shadow: 0 4px 12px rgba(8, 98, 136, 0.24); }
 
   .slider-panel {
-    background: linear-gradient(135deg, #EBF7FF, #FFFFFF); border: 1px solid rgba(8, 98, 136, 0.22);
-    border-radius: 12px; padding: 14px 18px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 22px; align-items: center;
+    background: linear-gradient(135deg, #EDF7FF, #FFFFFF); border: 1px solid rgba(8, 98, 136, 0.18);
+    border-radius: 14px; padding: 16px 20px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center;
+    box-shadow: var(--shadow-xs);
   }
-  .slider-group { display: flex; flex-direction: column; gap: 4px; min-width: 220px; }
+  .slider-group { display: flex; flex-direction: column; gap: 5px; min-width: 225px; }
   .slider-group label { font-size: 11.5px; font-weight: 800; color: var(--deep-dark); display: flex; justify-content: space-between; }
   .slider-group input[type="range"] { accent-color: var(--deep); cursor: pointer; }
 
-  .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: var(--card); border: 1px solid var(--border); padding: 11px 15px; border-radius: 11px; margin-bottom: 14px; }
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: var(--card); border: 1px solid var(--border); padding: 12px 16px; border-radius: 13px; margin-bottom: 16px; box-shadow: var(--shadow-xs); }
   .filter-bar label { font-size: 12px; color: var(--deep-dark); font-weight: 700; }
-  .filter-bar select, .filter-bar input { background: var(--canvas); color: var(--ink); border: 1px solid var(--border-strong); padding: 6px 10px; border-radius: 7px; font-size: 12.2px; outline: none; }
+  .filter-bar select, .filter-bar input { background: var(--canvas); color: var(--ink); border: 1px solid var(--border-strong); padding: 7px 11px; border-radius: 8px; font-size: 12.2px; outline: none; }
 
-  .outlook-list { max-height: 500px; overflow-y: auto; display: flex; flex-direction: column; gap: 9px; padding-right: 4px; }
-  .outlook-item { background: var(--canvas); border: 1px solid var(--border); border-left: 4px solid var(--deep); border-radius: 9px; padding: 11px 13px; cursor: pointer; transition: 0.16s; }
-  .outlook-item:hover, .outlook-item.highlighted { background: var(--ice-soft); border-color: var(--deep); transform: translateX(3px); }
+  .outlook-list { max-height: 500px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding-right: 4px; }
+  .outlook-item { background: #FAFDFE; border: 1px solid var(--border); border-left: 4px solid var(--deep); border-radius: 11px; padding: 12px 14px; cursor: pointer; transition: 0.16s; }
+  .outlook-item:hover, .outlook-item.highlighted { background: var(--ice-soft); border-color: var(--deep); transform: translateX(3px); box-shadow: var(--shadow-xs); }
   .outlook-item.contender { border-left-color: var(--steel); }
   .outlook-item.watch { border-left-color: var(--ice); }
   .outlook-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 5px; }
-  .outlook-head-left { display: flex; align-items: center; gap: 9px; }
+  .outlook-head-left { display: flex; align-items: center; gap: 10px; }
   .outlook-name { font-weight: 800; font-size: 13px; color: var(--deep-dark); }
-  .badge { display: inline-block; font-size: 10.5px; font-weight: 800; padding: 2px 8px; border-radius: 99px; background: var(--ice-soft); color: var(--deep); }
+  .badge { display: inline-block; font-size: 10.5px; font-weight: 800; padding: 2.5px 9px; border-radius: 99px; background: var(--ice-soft); color: var(--deep); }
   .badge.dark { background: var(--deep); color: #FFFFFF; }
   .badge.steel { background: var(--steel); color: #FFFFFF; }
   .outlook-text { font-size: 11.8px; color: var(--muted); }
 
   .errc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .errc-box { background: var(--canvas); border: 1px solid var(--border); border-top: 4px solid var(--deep); border-radius: 10px; padding: 15px 17px; }
+  .errc-box { background: #FAFDFE; border: 1px solid var(--border); border-top: 4px solid var(--deep); border-radius: 12px; padding: 16px 18px; }
   .errc-box.steel { border-top-color: var(--steel); }
   .errc-box.ice { border-top-color: var(--ice); }
-  .errc-box h4 { font-size: 12.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--deep-dark); margin-bottom: 5px; }
+  .errc-box h4 { font-size: 12.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--deep-dark); margin-bottom: 6px; }
   .errc-box p { font-size: 12.6px; color: var(--muted); }
 
-  .h-card { background: var(--canvas); border: 1px solid var(--border); border-radius: 12px; padding: 18px; border-top: 5px solid var(--deep); }
+  .h-card { background: #FAFDFE; border: 1px solid var(--border); border-radius: 14px; padding: 20px; border-top: 5px solid var(--deep); }
   .h-card.h2 { border-top-color: var(--steel); background: var(--ice-soft); }
   .h-card.h3 { border-top-color: var(--ice); background: var(--deep-dark); color: #FFFFFF; }
   .h-card.h3 p { color: rgba(235, 247, 255, 0.82); }
@@ -382,13 +439,50 @@
   .h-card h4 { font-size: 14.5px; font-weight: 800; color: var(--deep-dark); margin-bottom: 6px; }
   .h-card p { font-size: 12.5px; color: var(--muted); }
 
-  .table-wrap { max-height: 460px; overflow-y: auto; border: 1px solid var(--border); border-radius: 10px; }
+  .table-wrap { max-height: 460px; overflow-y: auto; border: 1px solid var(--border); border-radius: 12px; }
   table { width: 100%; border-collapse: collapse; font-size: 12.4px; }
-  th { position: sticky; top: 0; background: var(--deep); color: #FFFFFF; text-align: left; padding: 11px 13px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; }
-  td { padding: 9px 13px; border-bottom: 1px solid var(--border); color: var(--ink); vertical-align: middle; }
+  th { position: sticky; top: 0; background: var(--deep); color: #FFFFFF; text-align: left; padding: 11px 14px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; }
+  td { padding: 9.5px 14px; border-bottom: 1px solid var(--border); color: var(--ink); vertical-align: middle; }
   tr:nth-child(even) td { background: #F8FBFE; }
   tr:hover td { background: var(--ice-soft); }
   .co-cell { display: flex; align-items: center; gap: 10px; }
+
+  /* ==================== FIRST-TIME INTERACTIVE GUIDED TOUR ==================== */
+  #tour-overlay {
+    position: fixed; inset: 0; z-index: 8000;
+    background: rgba(3, 27, 41, 0.68);
+    backdrop-filter: blur(2px);
+    display: none;
+  }
+  #tour-overlay.active { display: block; }
+  #tour-spotlight {
+    position: fixed; z-index: 8001; pointer-events: none;
+    border-radius: 14px;
+    border: 2.5px solid var(--ice);
+    box-shadow: 0 0 0 9999px rgba(3, 27, 41, 0.68), 0 0 28px rgba(151, 215, 255, 0.65);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  #tour-popover {
+    position: fixed; z-index: 8002; width: 340px; max-width: calc(100vw - 32px);
+    background: #FFFFFF; border: 1px solid rgba(8, 98, 136, 0.2);
+    border-top: 4px solid var(--deep);
+    border-radius: 14px; padding: 18px 20px;
+    box-shadow: 0 22px 50px rgba(3, 27, 41, 0.36);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tour-step-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--steel); margin-bottom: 5px; }
+  .tour-title { font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 800; color: var(--deep-dark); margin-bottom: 6px; }
+  .tour-desc { font-size: 12.6px; color: var(--muted); line-height: 1.5; margin-bottom: 16px; }
+  .tour-footer { display: flex; justify-content: space-between; align-items: center; }
+  .tour-skip { background: none; border: none; color: var(--muted); font-size: 12px; font-weight: 700; cursor: pointer; }
+  .tour-skip:hover { color: var(--deep); }
+  .tour-btns { display: flex; gap: 8px; }
+  .tour-btn {
+    padding: 7px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer;
+    border: 1px solid var(--border-strong); background: var(--canvas); color: var(--deep);
+  }
+  .tour-btn.primary { background: var(--deep); color: #FFFFFF; border-color: var(--deep); }
+  .tour-btn.primary:hover { background: var(--deep-dark); }
 
   @media (max-width: 900px) {
     .sidebar { transform: translateX(-100%); }
@@ -411,15 +505,32 @@
   <div class="loader-track"><div class="loader-bar"></div></div>
 </div>
 
+<!-- ==================== GUIDED TOUR OVERLAY ==================== -->
+<div id="tour-overlay">
+  <div id="tour-spotlight"></div>
+  <div id="tour-popover">
+    <div class="tour-step-tag" id="tourStepTag">STEP 1 OF 5</div>
+    <div class="tour-title" id="tourTitle">Executive Navigation</div>
+    <div class="tour-desc" id="tourDesc">Switch cleanly between all analytical lenses.</div>
+    <div class="tour-footer">
+      <button class="tour-skip" onclick="endTour()">Skip Tour</button>
+      <div class="tour-btns">
+        <button class="tour-btn" id="tourPrevBtn" onclick="prevTourStep()">Back</button>
+        <button class="tour-btn primary" id="tourNextBtn" onclick="nextTourStep()">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ====================================================================== -->
-<!-- MODE 1: MINIMAL HERO + STICKY CAR SCROLLYTELLING                       -->
+<!-- MODE 1: MINIMAL HERO + STICKY CAR SCROLLYTELLING + BRAND LOGO WALL     -->
 <!-- ====================================================================== -->
 <div id="landing-mode">
   <nav class="lp-nav" id="lpNav">
     <div class="lp-logo">SL AUTO<span>INTEL</span></div>
     <div class="lp-links">
       <a href="#evolution">The Evolution</a>
-      <a href="#launch">Dashboard</a>
+      <a href="#lp-brands">Brands</a>
       <button class="lp-cta-sm" onclick="enterDashboard('overview')">Open Dashboard</button>
     </div>
   </nav>
@@ -515,6 +626,16 @@
     </div>
   </section>
 
+  <!-- OFFICIAL BRAND LOGOS SHOWCASE ON LANDING PAGE -->
+  <section id="lp-brands" class="lp-brands-sec">
+    <div class="lp-brands-inner">
+      <div class="lp-brands-kicker">MECE Market Coverage • Active 2026 Franchises</div>
+      <h2 class="lp-brands-title">Brands Competing Across Sri Lanka</h2>
+      <p class="lp-brands-sub">Click any brand below to jump straight into its distributor record, powertrain portfolio, and positioning inside the dashboard.</p>
+      <div class="lp-logo-wall" id="lpLogoWall"></div>
+    </div>
+  </section>
+
   <section id="launch" class="lp-cta-band">
     <h2>Step Inside the Executive Intelligence Portal</h2>
     <p>Explore all 28 MECE distributors, drag live 9-Box price sliders, inspect Gartner Magic Quadrant scores, and review the SCALE strategic roadmap.</p>
@@ -523,60 +644,49 @@
 </div>
 
 <!-- ====================================================================== -->
-<!-- MODE 2: FULL-WINDOW EXECUTIVE DASHBOARD (ZERO EMOJIS, SVG ICONS)       -->
+<!-- MODE 2: FULL-WINDOW EXECUTIVE DASHBOARD                                -->
 <!-- ====================================================================== -->
 <div id="dashboard-mode">
   <aside class="sidebar" id="sidebar">
-    <div>
-      <button class="back-lp-btn" onclick="exitDashboard()">
-        <svg class="ico" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
-        Back to Car Showcase
-      </button>
-      <div class="sb-brand">
-        <div class="sb-logo">SL</div>
-        <div>
-          <div class="sb-brand-title">SL Auto Intelligence</div>
-          <div class="sb-brand-sub">Executive Positioning Portal</div>
-        </div>
+    <button class="back-lp-btn" onclick="exitDashboard()">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to Car Showcase
+    </button>
+    <div class="sb-brand">
+      <div class="sb-logo">SL</div>
+      <div>
+        <div class="sb-brand-title">SL Auto Intelligence</div>
+        <div class="sb-brand-sub">Executive Positioning Portal</div>
       </div>
-
-      <div class="sb-label">Navigation</div>
-      <nav class="sb-nav">
-        <button class="nav-item active" id="nav-overview" onclick="showView('overview', 'Executive Overview', 'Market Summary &amp; Brand Landscape', this)">
-          <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          Overview
-        </button>
-        <button class="nav-item" id="nav-ninebox" onclick="showView('ninebox', '9-Box Positioning Simulator', 'ICE / Hybrid / EV vs. Price Tiers', this)">
-          <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
-          9-Box Simulator <span class="nav-count" id="sbModelCount">18</span>
-        </button>
-        <button class="nav-item" id="nav-quadrant" onclick="showView('quadrant', 'Gartner Magic Quadrant', 'Ability to Execute vs. Vision', this)">
-          <svg class="ico" viewBox="0 0 24 24"><path d="M3 3v18h18"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="14" r="2"/><circle cx="17" cy="15" r="2"/></svg>
-          Magic Quadrant <span class="nav-count">15</span>
-        </button>
-        <button class="nav-item" id="nav-scale" onclick="showView('scale', 'SCALE Strategy Suite', 'Blue Ocean, ERRC &amp; Three Horizons', this)">
-          <svg class="ico" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          SCALE Strategy
-        </button>
-        <button class="nav-item" id="nav-macro" onclick="showView('macro', 'Macro &amp; Trade Analytics', 'DMT, CBSL &amp; DCS Data', this)">
-          <svg class="ico" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          Macro &amp; Trade
-        </button>
-        <button class="nav-item" id="nav-registry" onclick="showView('registry', 'MECE 28-Player Registry', 'Batches A, B, C &amp; Evidenced Offerings', this)">
-          <svg class="ico" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-          28-Player Registry <span class="nav-count">28</span>
-        </button>
-      </nav>
     </div>
 
-    <div class="sb-footer">
-      <input type="file" id="csvInput" accept=".csv" style="display:none">
-      <button class="upload-btn" onclick="document.getElementById('csvInput').click()">
-        <svg class="ico" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        Upload Master CSV
+    <div class="sb-label">Navigation</div>
+    <nav class="sb-nav" id="tour-nav">
+      <button class="nav-item active" id="nav-overview" onclick="showView('overview', 'Executive Overview', 'Market Summary &amp; Brand Landscape', this)">
+        <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Overview
       </button>
-      <div class="sb-meta">18% VAT Normalized • Brand-New Only<br><strong>Sachithra • Praveen • Arundathie • Sithumini • Thilakshana</strong></div>
-    </div>
+      <button class="nav-item" id="nav-ninebox" onclick="showView('ninebox', '9-Box Positioning Simulator', 'ICE / Hybrid / EV vs. Price Tiers', this)">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+        9-Box Simulator <span class="nav-count" id="sbModelCount">18</span>
+      </button>
+      <button class="nav-item" id="nav-quadrant" onclick="showView('quadrant', 'Gartner Magic Quadrant', 'Ability to Execute vs. Vision', this)">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M3 3v18h18"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="14" r="2"/><circle cx="17" cy="15" r="2"/></svg>
+        Magic Quadrant <span class="nav-count">15</span>
+      </button>
+      <button class="nav-item" id="nav-scale" onclick="showView('scale', 'SCALE Strategy Suite', 'Blue Ocean, ERRC &amp; Three Horizons', this)">
+        <svg class="ico" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        SCALE Strategy
+      </button>
+      <button class="nav-item" id="nav-macro" onclick="showView('macro', 'Macro &amp; Trade Analytics', 'DMT, CBSL &amp; DCS Data', this)">
+        <svg class="ico" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Macro &amp; Trade
+      </button>
+      <button class="nav-item" id="nav-registry" onclick="showView('registry', 'MECE 28-Player Registry', 'Batches A, B, C &amp; Evidenced Offerings', this)">
+        <svg class="ico" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        28-Player Registry <span class="nav-count">28</span>
+      </button>
+    </nav>
   </aside>
 
   <div class="main">
@@ -590,7 +700,13 @@
           <div class="page-heading" id="topTitle">Executive Overview</div>
         </div>
       </div>
-      <div class="status-pill"><span class="status-dot"></span><span id="dataStatusPill">Curated Research + Live Model Positioning</span></div>
+      <div class="topbar-right">
+        <button class="tour-trigger" onclick="startTour(true)">
+          <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Guided Tour
+        </button>
+        <div class="status-pill"><span class="status-dot"></span><span>18% VAT Standard • Nov 2026</span></div>
+      </div>
     </header>
 
     <div class="content">
@@ -608,17 +724,17 @@
           <img class="ov-hero-img" src="assets/cars/hero_suv.jpg" alt="Sri Lanka Modern Automotive Landscape">
         </div>
 
-        <div class="kpi-grid">
+        <div class="kpi-grid" id="tour-kpis">
           <div class="kpi"><div class="kpi-label">2025 Registrations</div><div class="kpi-val">360,117</div><div class="kpi-sub">Up ~5x from 74,410 (2024, DMT)</div></div>
           <div class="kpi steel"><div class="kpi-label">2025 Import Bill</div><div class="kpi-val">$2.05 Bn</div><div class="kpi-sub">Central Bank of Sri Lanka (CBSL)</div></div>
           <div class="kpi"><div class="kpi-label">BYD New-Car Share</div><div class="kpi-val">48.8%</div><div class="kpi-sub">221 of 453 brand-new cars (Oct '26)</div></div>
-          <div class="kpi ice"><div class="kpi-label">MECE Distributors</div><div class="kpi-val">28</div><div class="kpi-sub">100% Brand-New • 18% VAT Base</div></div>
-          <div class="kpi steel"><div class="kpi-label">EV Luxury Tax Tier</div><div class="kpi-val">60% vs 100%+</div><div class="kpi-sub">EV &gt;Rs 6M vs Petrol &gt;Rs 5M</div></div>
+          <div class="kpi steel"><div class="kpi-label">MECE Distributors</div><div class="kpi-val">28</div><div class="kpi-sub">100% Brand-New • 18% VAT Base</div></div>
+          <div class="kpi"><div class="kpi-label">EV Luxury Tax Tier</div><div class="kpi-val">60% vs 100%+</div><div class="kpi-sub">EV &gt;Rs 6M vs Petrol &gt;Rs 5M</div></div>
         </div>
 
-        <div class="card">
-          <div class="card-title">Key Market Players &amp; Distributor Landscape</div>
-          <div class="card-sub">Click any company emblem below to inspect its position in the 9-Box Matrix or 28-Player MECE Registry.</div>
+        <div class="card" id="tour-brands">
+          <div class="card-title">Key Market Players &amp; Official Brand Franchises</div>
+          <div class="card-sub">Select any brand card to inspect its verified distributor entry and powertrain portfolio.</div>
           <div class="brand-grid" id="overviewBrandGrid"></div>
         </div>
 
@@ -666,7 +782,7 @@
           <p><strong>Interactive Simulator:</strong> Drag the <strong>Budget</strong> and <strong>Mid-Range</strong> price sliders below to dynamically test how Sri Lankan brand-new models cluster across the 9 boxes.</p>
         </div>
 
-        <div class="slider-panel">
+        <div class="slider-panel" id="tour-sliders">
           <div class="slider-group">
             <label><span>Budget Ceiling</span><span id="budgetVal" style="color:var(--deep);">LKR 12.0M</span></label>
             <input type="range" id="budgetSlider" min="8" max="18" step="0.5" value="12" oninput="updateThresholds()">
@@ -713,7 +829,7 @@
           <p><strong>Click-to-Inspect:</strong> Filter by segment (PV, EV, CV, TW, MF) and click any company card on the right to highlight its position and evidence coverage inside the Magic Quadrant.</p>
         </div>
 
-        <div class="pill-bar">
+        <div class="pill-bar" id="tour-quad-pills">
           <button class="pill active" onclick="filterQuadrant('ALL', this)">All Segments</button>
           <button class="pill" onclick="filterQuadrant('PV', this)">PV · Passenger</button>
           <button class="pill" onclick="filterQuadrant('EV', this)">EV · Electric</button>
@@ -785,8 +901,8 @@
         <div class="kpi-grid" style="grid-template-columns: repeat(4, 1fr);">
           <div class="kpi"><div class="kpi-label">Locally Assembled (2023)</div><div class="kpi-val">17,956</div><div class="kpi-sub">1,121 4W + 16,835 2W (MoI)</div></div>
           <div class="kpi steel"><div class="kpi-label">Direct Sector Jobs</div><div class="kpi-val">~20,000</div><div class="kpi-sub">15 Assemblers • 25 Component Makers</div></div>
-          <div class="kpi ice"><div class="kpi-label">Total SL Vehicle Fleet</div><div class="kpi-val">8.45 Mn</div><div class="kpi-sub">905,329 Passenger Cars (DCS)</div></div>
-          <div class="kpi"><div class="kpi-label">Component Exports Growth</div><div class="kpi-val">2.8x</div><div class="kpi-sub">Rs 9.2B (2020) to Rs 25.7B (2022)</div></div>
+          <div class="kpi"><div class="kpi-label">Total SL Vehicle Fleet</div><div class="kpi-val">8.45 Mn</div><div class="kpi-sub">905,329 Passenger Cars (DCS)</div></div>
+          <div class="kpi steel"><div class="kpi-label">Component Exports Growth</div><div class="kpi-val">2.8x</div><div class="kpi-sub">Rs 9.2B (2020) to Rs 25.7B (2022)</div></div>
         </div>
         <div class="grid-3">
           <div class="card"><div class="card-title">2025 Registrations by Class</div><div class="card-sub">Post-ban surge to 360K+ units (DMT).</div><div id="regChart" style="width:100%; height:290px;"></div></div>
@@ -839,7 +955,7 @@
 
 <script>
   window.addEventListener("load", () => {
-    setTimeout(() => document.getElementById("preloader").classList.add("hidden"), 1000);
+    setTimeout(() => document.getElementById("preloader").classList.add("hidden"), 950);
   });
 
   window.addEventListener("scroll", () => {
@@ -847,93 +963,93 @@
     if (nav) nav.classList.toggle("scrolled", window.scrollY > 50);
   });
 
-  // STICKY CAR SCROLLYTELLING
-  const hudMeta = [
-    { pill:"ERA 01 · PETROL & DIESEL (ICE)", title:"The Legacy Combustion Base", sub:"Toyota Lanka • United Motors • DIMO • AMW" },
-    { pill:"ERA 02 · RUGGED SUV & JEEP BOOM", title:"Mid-Range SUV Disruption", sub:"Jetour T2 • JAECOO J5 • Mitsubishi Outlander" },
-    { pill:"ERA 03 · PURE ELECTRIC (EV)", title:"The 48.8% EV Takeover", sub:"BYD Atto 3 • Kaiyi eVibe • BAW E7 • ChargeNET" }
+  // REAL AUTOMOTIVE BRAND LOGOS (SimpleIcons CDN + graceful crisp monogram fallback)
+  const logoMap = [
+    { match: "Toyota", slug: "toyota", color: "EB0A1E", code: "TY" },
+    { match: "BYD", slug: "byd", color: "086288", code: "BYD" },
+    { match: "John Keells", slug: "byd", color: "086288", code: "BYD" },
+    { match: "United Motors", slug: "mitsubishi", color: "E60012", code: "MIT" },
+    { match: "Mitsubishi", slug: "mitsubishi", color: "E60012", code: "MIT" },
+    { match: "DIMO", slug: "mercedes", color: "111827", code: "MB" },
+    { match: "Mercedes", slug: "mercedes", color: "111827", code: "MB" },
+    { match: "AMW", slug: "suzuki", color: "003145", code: "SZK" },
+    { match: "Associated Motorways", slug: "suzuki", color: "003145", code: "SZK" },
+    { match: "Suzuki", slug: "suzuki", color: "003145", code: "SZK" },
+    { match: "Kia", slug: "kia", color: "05141F", code: "KIA" },
+    { match: "Hyundai", slug: "hyundai", color: "002C5F", code: "HYU" },
+    { match: "Abans", slug: "hyundai", color: "002C5F", code: "HYU" },
+    { match: "Mels", slug: "bmw", color: "0066B1", code: "BMW" },
+    { match: "BMW", slug: "bmw", color: "0066B1", code: "BMW" },
+    { match: "Continental", slug: "volkswagen", color: "001E50", code: "VW" },
+    { match: "Volkswagen", slug: "volkswagen", color: "001E50", code: "VW" },
+    { match: "Stafford", slug: "honda", color: "CC0000", code: "HND" },
+    { match: "Honda", slug: "honda", color: "CC0000", code: "HND" },
+    { match: "Eurocars", slug: "porsche", color: "B12B28", code: "POR" },
+    { match: "Porsche", slug: "porsche", color: "B12B28", code: "POR" },
+    { match: "Carmart", slug: "peugeot", color: "000000", code: "PEU" },
+    { match: "Colonial", slug: "mazda", color: "101010", code: "MZD" },
+    { match: "Access", slug: "landrover", color: "005A2B", code: "JLR" },
+    { match: "Micro", slug: "mg", color: "C8102E", code: "MG" },
+    { match: "Tata", slug: "tata", color: "486AAE", code: "TAT" },
+    { match: "Prestige", slug: "mini", color: "000000", code: "MINI" },
+    { match: "Nissan", slug: "nissan", color: "C3002F", code: "NIS" },
+    { match: "Euro Motors", slug: "", color: "086288", code: "JTR" },
+    { match: "Hayleys", slug: "", color: "047857", code: "JCO" },
+    { match: "David Pieris", slug: "", color: "086288", code: "GWM" },
+    { match: "Lanka Ashok", slug: "", color: "035388", code: "LAL" },
+    { match: "DPMC", slug: "", color: "086288", code: "DPM" },
+    { match: "ChargeNET", slug: "", color: "0284C7", code: "CN" },
+    { match: "Evolution", slug: "", color: "0E7490", code: "EVO" },
+    { match: "Browns", slug: "", color: "086288", code: "BAW" }
   ];
 
-  function activateStep(stepIdx) {
-    document.querySelectorAll(".car-slide").forEach((s, i) => s.classList.toggle("active", i === stepIdx));
-    document.querySelectorAll(".story-chapter").forEach((c, i) => c.classList.toggle("active", i === stepIdx));
-    document.querySelectorAll(".s-dot").forEach((d, i) => d.classList.toggle("active", i === stepIdx));
-    const m = hudMeta[stepIdx];
-    document.getElementById("hudPill").textContent = m.pill;
-    document.getElementById("hudTitle").textContent = m.title;
-    document.getElementById("hudSub").textContent = m.sub;
+  function getBrandLogoHTML(name, small = false) {
+    const found = logoMap.find(m => name.toLowerCase().includes(m.match.toLowerCase()));
+    const code = found ? found.code : name.split(" ").map(w => w[0]).join("").slice(0,3).toUpperCase();
+    const cls = small ? "logo-box sm" : "logo-box";
+    if (found && found.slug) {
+      const url = `https://cdn.simpleicons.org/${found.slug}/${found.color}`;
+      return `<div class="${cls}"><img src="${url}" alt="${name}" onerror="this.outerHTML='<span class=logo-fallback>${code}</span>'"></div>`;
+    }
+    return `<div class="${cls}"><span class="logo-fallback">${code}</span></div>`;
   }
 
-  const chapterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) activateStep(parseInt(entry.target.getAttribute("data-step"), 10));
-    });
-  }, { rootMargin: "-35% 0px -35% 0px", threshold: 0.1 });
-  document.querySelectorAll(".story-chapter").forEach(ch => chapterObserver.observe(ch));
-  function scrollToChapter(idx) { document.getElementById("chapter-" + idx).scrollIntoView({ behavior: "smooth", block: "center" }); }
-
-  function enterDashboard(viewId = "overview") {
-    document.getElementById("landing-mode").classList.add("hidden");
-    document.getElementById("dashboard-mode").classList.add("active");
-    window.scrollTo({ top: 0, behavior: "instant" });
-    const btn = document.getElementById("nav-" + viewId);
-    if (btn) btn.click();
-  }
-  function exitDashboard() {
-    document.getElementById("dashboard-mode").classList.remove("active");
-    document.getElementById("landing-mode").classList.remove("hidden");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  // BRAND LOGO MONOGRAM HELPER
-  const brandMeta = {
-    "Toyota Lanka": { code:"TY", bg:"#B91C1C" },
-    "John Keells": { code:"BYD", bg:"#086288" },
-    "United Motors": { code:"UML", bg:"#1E3A8A" },
-    "DIMO": { code:"DM", bg:"#0F172A" },
-    "AMW": { code:"AMW", bg:"#0369A1" },
-    "Euro Motors": { code:"JTR", bg:"#0F766E" },
-    "Hayleys": { code:"JCO", bg:"#047857" },
-    "Kia": { code:"KIA", bg:"#111827" },
-    "David Pieris": { code:"GWM", bg:"#1D4ED8" },
-    "Lanka Ashok": { code:"LAL", bg:"#035388" },
-    "Micro": { code:"MG", bg:"#991B1B" },
-    "Eurocars": { code:"POR", bg:"#78350F" },
-    "DPMC": { code:"DPM", bg:"#1E40AF" },
-    "ChargeNET": { code:"CN", bg:"#0284C7" },
-    "Evolution": { code:"EVO", bg:"#0E7490" },
-    "Mels": { code:"BMW", bg:"#1D4ED8" },
-    "Browns": { code:"BAW", bg:"#0F766E" }
-  };
-
-  function getLogoBadge(name, small = false) {
-    const key = Object.keys(brandMeta).find(k => name.toLowerCase().includes(k.toLowerCase()));
-    const m = key ? brandMeta[key] : { code: name.split(" ").map(w => w[0]).join("").slice(0,3).toUpperCase(), bg: "#4D8DBA" };
-    return `<div class="co-logo ${small ? 'sm' : ''}" style="background:${m.bg}">${m.code}</div>`;
-  }
-
-  const featuredBrands = [
-    { name:"John Keells CG Auto", sub:"BYD • #1 (48.8% Share)", search:"John Keells" },
-    { name:"Toyota Lanka", sub:"Toyota • Execution Leader", search:"Toyota" },
-    { name:"United Motors (UNIMO)", sub:"Mitsubishi • Perodua", search:"United Motors" },
-    { name:"DIMO PLC", sub:"Mercedes-Benz • Tata", search:"DIMO" },
-    { name:"Euro Motors", sub:"Jetour • Dongfeng • JAC", search:"Euro Motors" },
-    { name:"Hayleys Mobility", sub:"JAECOO • OMODA • Kaiyi", search:"Hayleys" },
-    { name:"Associated Motorways", sub:"Suzuki • Nissan • Renault", search:"AMW" },
-    { name:"David Pieris Auto", sub:"GWM NEV • BAIC • Proton", search:"David Pieris" },
-    { name:"Kia Motors Lanka", sub:"Sportage • EV5 • Sonet", search:"Kia" },
-    { name:"Micro Cars Ltd", sub:"MG • Chery • KGM", search:"Micro" },
-    { name:"Lanka Ashok Leyland", sub:"Commercial Leader", search:"Ashok" },
-    { name:"Eurocars (Pvt) Ltd", sub:"Porsche Centre Colombo", search:"Eurocars" }
+  const showcaseBrands = [
+    { brand:"BYD", dist:"John Keells CG Auto", search:"John Keells", slug:"byd", color:"086288", code:"BYD" },
+    { brand:"Toyota", dist:"Toyota Lanka", search:"Toyota", slug:"toyota", color:"EB0A1E", code:"TY" },
+    { brand:"Mitsubishi", dist:"United Motors (UNIMO)", search:"United Motors", slug:"mitsubishi", color:"E60012", code:"MIT" },
+    { brand:"Mercedes-Benz", dist:"DIMO PLC", search:"DIMO", slug:"mercedes", color:"111827", code:"MB" },
+    { brand:"Suzuki", dist:"AMW", search:"AMW", slug:"suzuki", color:"003145", code:"SZK" },
+    { brand:"Kia", dist:"Kia Motors Lanka", search:"Kia", slug:"kia", color:"05141F", code:"KIA" },
+    { brand:"BMW", dist:"Mels Automobiles", search:"Mels", slug:"bmw", color:"0066B1", code:"BMW" },
+    { brand:"Hyundai", dist:"Abans Auto", search:"Abans", slug:"hyundai", color:"002C5F", code:"HYU" },
+    { brand:"Porsche", dist:"Eurocars Colombo", search:"Eurocars", slug:"porsche", color:"B12B28", code:"POR" },
+    { brand:"Volkswagen", dist:"Continental Cars", search:"Continental", slug:"volkswagen", color:"001E50", code:"VW" },
+    { brand:"Honda", dist:"Stafford Motor Co.", search:"Stafford", slug:"honda", color:"CC0000", code:"HND" },
+    { brand:"Land Rover", dist:"Access Motors", search:"Access", slug:"landrover", color:"005A2B", code:"JLR" },
+    { brand:"Peugeot", dist:"Carmart Ltd", search:"Carmart", slug:"peugeot", color:"000000", code:"PEU" },
+    { brand:"Mazda", dist:"Colonial Motors", search:"Colonial", slug:"mazda", color:"101010", code:"MZD" }
   ];
+
+  function renderLandingLogoWall() {
+    document.getElementById("lpLogoWall").innerHTML = showcaseBrands.map(b => `
+      <div class="lp-logo-card" onclick="enterDashboard('registry', '${b.search}')">
+        <div class="lp-logo-pill">
+          <img src="https://cdn.simpleicons.org/${b.slug}/${b.color}" alt="${b.brand}" onerror="this.outerHTML='<span class=logo-fallback>${b.code}</span>'">
+        </div>
+        <div class="lp-logo-name">${b.brand}</div>
+        <div class="lp-logo-dist">${b.dist}</div>
+      </div>
+    `).join("");
+  }
 
   function renderOverviewBrands() {
-    document.getElementById("overviewBrandGrid").innerHTML = featuredBrands.map(b => `
+    document.getElementById("overviewBrandGrid").innerHTML = showcaseBrands.slice(0, 12).map(b => `
       <div class="brand-tile" onclick="jumpToRegistry('${b.search}')">
-        ${getLogoBadge(b.name)}
+        ${getBrandLogoHTML(b.brand)}
         <div>
-          <div class="brand-tile-name">${b.name}</div>
-          <div class="brand-tile-sub">${b.sub}</div>
+          <div class="brand-tile-name">${b.brand}</div>
+          <div class="brand-tile-sub">${b.dist}</div>
         </div>
       </div>
     `).join("");
@@ -945,7 +1061,117 @@
     renderRegistry();
   }
 
-  // DASHBOARD STATE & DATA
+  // STICKY CAR SCROLLYTELLING
+  const hudMeta = [
+    { pill:"ERA 01 · PETROL & DIESEL (ICE)", title:"The Legacy Combustion Base", sub:"Toyota Lanka • United Motors • DIMO • AMW" },
+    { pill:"ERA 02 · RUGGED SUV & JEEP BOOM", title:"Mid-Range SUV Disruption", sub:"Jetour T2 • JAECOO J5 • Mitsubishi Outlander" },
+    { pill:"ERA 03 · PURE ELECTRIC (EV)", title:"The 48.8% EV Takeover", sub:"BYD Atto 3 • Kaiyi eVibe • BAW E7 • ChargeNET" }
+  ];
+  function activateStep(stepIdx) {
+    document.querySelectorAll(".car-slide").forEach((s, i) => s.classList.toggle("active", i === stepIdx));
+    document.querySelectorAll(".story-chapter").forEach((c, i) => c.classList.toggle("active", i === stepIdx));
+    document.querySelectorAll(".s-dot").forEach((d, i) => d.classList.toggle("active", i === stepIdx));
+    const m = hudMeta[stepIdx];
+    document.getElementById("hudPill").textContent = m.pill;
+    document.getElementById("hudTitle").textContent = m.title;
+    document.getElementById("hudSub").textContent = m.sub;
+  }
+  const chapterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) activateStep(parseInt(entry.target.getAttribute("data-step"), 10));
+    });
+  }, { rootMargin: "-35% 0px -35% 0px", threshold: 0.1 });
+  document.querySelectorAll(".story-chapter").forEach(ch => chapterObserver.observe(ch));
+  function scrollToChapter(idx) { document.getElementById("chapter-" + idx).scrollIntoView({ behavior: "smooth", block: "center" }); }
+
+  // ENTER / EXIT DASHBOARD + AUTO FIRST-TIME GUIDED TOUR
+  function enterDashboard(viewId = "overview", searchTerm = "") {
+    document.getElementById("landing-mode").classList.add("hidden");
+    document.getElementById("dashboard-mode").classList.add("active");
+    window.scrollTo({ top: 0, behavior: "instant" });
+    const btn = document.getElementById("nav-" + viewId);
+    if (btn) btn.click();
+    if (searchTerm) {
+      document.getElementById("registrySearch").value = searchTerm;
+      renderRegistry();
+    } else if (!localStorage.getItem("sl_auto_tour_done")) {
+      setTimeout(() => startTour(false), 450);
+    }
+  }
+  function exitDashboard() {
+    endTour();
+    document.getElementById("dashboard-mode").classList.remove("active");
+    document.getElementById("landing-mode").classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // ==================== INTERACTIVE 5-STEP GUIDED TOUR ====================
+  const tourSteps = [
+    { view: "overview", target: "#tour-nav", title: "Executive Sidebar Navigation", desc: "Switch seamlessly between Overview, the 9-Box Price Simulator, Gartner Magic Quadrant, SCALE Strategy, Macro Analytics, and all 28 Distributors." },
+    { view: "overview", target: "#tour-kpis", title: "Headline Market Pulse", desc: "Instant boardroom metrics: 360,117 post-ban registrations, $2.05B import bill, BYD's 48.8% Oct 2026 new-car share, and Sri Lanka's EV luxury tax edge." },
+    { view: "overview", target: "#tour-brands", title: "Interactive Official Brand Grid", desc: "Click any automotive brand logo to jump directly to its verified Sri Lankan distributor, website status, and batch ownership." },
+    { view: "ninebox", target: "#tour-sliders", title: "Live 9-Box Price Simulator", desc: "Drag the Budget and Mid-Range LKR sliders in real time to test how ICE, Hybrid, and EV models shift across the 9 positioning boxes." },
+    { view: "quadrant", target: "#tour-quad-pills", title: "Gartner Magic Quadrant Filters", desc: "Filter 15 scored players by segment (PV, EV, CV, TW, MF) and click any Analyst Outlook card on the right to highlight it on the chart." }
+  ];
+  let tourIdx = 0;
+
+  function startTour(force = false) {
+    if (!force && localStorage.getItem("sl_auto_tour_done")) return;
+    tourIdx = 0;
+    document.getElementById("tour-overlay").classList.add("active");
+    renderTourStep();
+  }
+
+  function renderTourStep() {
+    const step = tourSteps[tourIdx];
+    const navBtn = document.getElementById("nav-" + step.view);
+    if (navBtn && !navBtn.classList.contains("active")) navBtn.click();
+
+    setTimeout(() => {
+      const el = document.querySelector(step.target);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      setTimeout(() => {
+        const rect = el.getBoundingClientRect();
+        const pad = 8;
+        const spot = document.getElementById("tour-spotlight");
+        spot.style.top = (rect.top - pad) + "px";
+        spot.style.left = (rect.left - pad) + "px";
+        spot.style.width = (rect.width + pad * 2) + "px";
+        spot.style.height = (rect.height + pad * 2) + "px";
+
+        const pop = document.getElementById("tour-popover");
+        const popW = 340, popH = 185;
+        let top = rect.bottom + 18;
+        let left = rect.left;
+        if (top + popH > window.innerHeight - 16) top = Math.max(16, rect.top - popH - 18);
+        if (left + popW > window.innerWidth - 16) left = window.innerWidth - popW - 18;
+        if (step.target === "#tour-nav") { left = rect.right + 20; top = rect.top + 10; }
+        pop.style.top = top + "px";
+        pop.style.left = Math.max(16, left) + "px";
+
+        document.getElementById("tourStepTag").textContent = `STEP ${tourIdx + 1} OF ${tourSteps.length}`;
+        document.getElementById("tourTitle").textContent = step.title;
+        document.getElementById("tourDesc").textContent = step.desc;
+        document.getElementById("tourPrevBtn").style.display = tourIdx === 0 ? "none" : "inline-block";
+        document.getElementById("tourNextBtn").textContent = tourIdx === tourSteps.length - 1 ? "Finish" : "Next";
+      }, 220);
+    }, 120);
+  }
+
+  function nextTourStep() {
+    if (tourIdx < tourSteps.length - 1) { tourIdx++; renderTourStep(); }
+    else endTour();
+  }
+  function prevTourStep() {
+    if (tourIdx > 0) { tourIdx--; renderTourStep(); }
+  }
+  function endTour() {
+    document.getElementById("tour-overlay").classList.remove("active");
+    localStorage.setItem("sl_auto_tour_done", "1");
+  }
+
+  // ==================== DASHBOARD DATA & CHARTS ====================
   let BUDGET_MAX = 12.0, MIDRANGE_MAX = 25.0;
   let activeBatch = "ALL", activeSegment = "ALL", highlightedCompany = null;
 
@@ -1240,7 +1466,7 @@
     document.getElementById("outlookList").innerHTML = outlookData.map(o => `
       <div class="outlook-item ${o.cls}" onclick="highlightOutlook('${o.id}', this)">
         <div class="outlook-top">
-          <div class="outlook-head-left">${getLogoBadge(o.company, true)}<div class="outlook-name">${o.company}</div></div>
+          <div class="outlook-head-left">${getBrandLogoHTML(o.company, true)}<div class="outlook-name">${o.company}</div></div>
           <span class="badge ${o.cls===''?'dark':(o.cls==='contender'?'steel':'')}">${o.label}</span>
         </div>
         <div class="outlook-text">${o.text}</div>
@@ -1251,7 +1477,7 @@
   function renderOfferings() {
     document.getElementById("offeringsBody").innerHTML = offeringsData.map(r => `
       <tr>
-        <td><div class="co-cell">${getLogoBadge(r[0], true)}<strong>${r[0]}</strong></div></td>
+        <td><div class="co-cell">${getBrandLogoHTML(r[0], true)}<strong>${r[0]}</strong></div></td>
         <td><span class="badge">${r[1]}</span></td>
         <td><span class="badge dark">${r[2]}</span></td>
         <td>${r[3]}</td>
@@ -1265,7 +1491,7 @@
     document.getElementById("registryBody").innerHTML = rows.map(r => `
       <tr>
         <td><span class="badge ${r[0]==='A'?'dark':(r[0]==='B'?'steel':'')}">Batch ${r[0]}</span></td>
-        <td><div class="co-cell">${getLogoBadge(r[1], true)}<strong>${r[1]}</strong></div></td>
+        <td><div class="co-cell">${getBrandLogoHTML(r[1], true)}<strong>${r[1]}</strong></div></td>
         <td>${r[2]}</td>
         <td><span class="badge ${r[4]==='Verified'?'dark':''}">${r[3]}</span></td>
         <td>${r[5]}</td>
@@ -1291,24 +1517,11 @@
     renderPortfolio(f);
   }
 
-  document.getElementById("csvInput").addEventListener("change", (e) => {
-    const file = e.target.files[0]; if (!file) return;
-    Papa.parse(file, {
-      header: true, skipEmptyLines: true,
-      complete: (res) => {
-        const clean = res.data.filter(r => r.Distributor && r.Model && r.Powertrain && !isNaN(parseFloat(r.Std_Price_Mn)));
-        if (!clean.length) { alert("No valid rows found. Ensure columns match master_template.csv."); return; }
-        currentData = clean; populateFilters(currentData); applyFilters();
-        document.getElementById("dataStatusPill").textContent = `Live CSV: ${clean.length} Models (${file.name})`;
-        enterDashboard("ninebox");
-      }
-    });
-  });
-
   ["filterPowertrain","filterDistributor","filterBody"].forEach(id => document.getElementById(id).addEventListener("change", applyFilters));
   document.getElementById("registrySearch").addEventListener("input", renderRegistry);
 
   // Initial setup
+  renderLandingLogoWall();
   renderOverviewBrands();
   renderOutlooks();
   renderOfferings();
