@@ -1,0 +1,29 @@
+Batch,Distributor,Brands_Carried,Official_Website_URL,Website_Status,Size_Tier,Assigned_Team_Member,Notes
+A,Toyota Lanka (Pvt) Ltd,"Toyota; Lexus (unverified)",https://www.toyota.lk,Verified,Large,Arundathie,Toyota's manufacturer representative; Hilux and RAV4 2026 launched
+A,DIMO (Diesel & Motor Engineering PLC),"Mercedes-Benz; Tata (passenger + commercial)",https://www.dimolanka.com,Unverified,Large,Arundathie,Mercedes-Benz GLB 2026 launch; Tata passenger and CV range
+A,Euro Motors (Euro Holdings),"Jetour; Dongfeng (Box EV + trucks); JAC (T9 pickup)",https://euromotors.lk,Verified,Large,Arundathie,Jetour SUVs were about 27% of small SUV registrations in Aug 2026
+A,David Pieris Automobiles,"GWM NEV range (Haval HEV/PHEV; ORA); BAIC; Proton / e.MAS (sales from Q4 2026)",https://www.gwmsrilanka.lk,Verified,Medium,Arundathie,GWM is split by powertrain: NEVs here and ICE at Senok (see MECE note)
+A,Abans Auto,Hyundai,Unverified (no official URL found),Unverified,Medium,Arundathie,Authorised Hyundai distributor and local assembler
+A,Carmart Ltd,"Peugeot; Leapmotor",https://www.carmart.lk,Unverified,Medium,Arundathie,Leapmotor C10 launched in Sep 2025
+A,Colonial Motors Ceylon,Mazda,Unverified (no official URL found),Unverified,Small,Arundathie,Mazda importer since 2012; ComBank Mazda promotion in 2025-26
+A,Mels Automobiles (Melstacorp PLC),BMW,Unverified (no official URL found),Unverified,Small,Arundathie,Appointed BMW importer in May 2026; taking over from Prestige
+A,Continental Cars & Commercials Ltd,Volkswagen,Unverified (no official URL found),Unverified,Small,Arundathie,Taigun and Virtus launched in May 2026 (sourced from Skoda Auto Volkswagen India)
+B,John Keells CG Auto,"BYD; DENZA",https://www.johnkeellscgauto.com,Verified,Large,Sithumini,#1 brand-new brand: 221 of 453 new cars in Oct 2026
+B,Associated Motorways (AMW),"Suzuki; Nissan; Renault",https://www.amwltd.com,Verified,Large,Sithumini,Brand sites suzuki.lk and nissanlk.com; Renault relaunched in Oct 2026
+B,Senok Trade Combine / Prime EV Automobiles,"GWM ICE (Haval Jolion; Poer); Deepal; NEVO (Changan sub-brands)",Unverified (no official URL found),Unverified,Medium,Sithumini,Prime EV is a Senok Group company; core Changan brand not confirmed
+B,Ideal Motors,Mahindra,Unverified (no official URL found),Unverified,Medium,Sithumini,Mahindra joint-venture assembler; Bolero MaXX launched in 2026
+B,Sathosa Motors PLC,Isuzu,Unverified (no official URL found),Unverified,Medium,Sithumini,Linked to the Access group; mostly commercial (Isuzu trucks: 164 in Aug 2026)
+B,Stafford Motor Company,Honda,https://www.honda.lk,Verified,Medium,Sithumini,Brand-new Honda car sales not confirmed; most Vezel registrations are likely reconditioned
+B,Access Motors,"Land Rover; Range Rover; Jaguar",Unverified (no official URL found),Unverified,Small,Sithumini,Formerly SML Frontier Automotive; first official Land Rover shipment in 2025
+B,Prestige Automobile (Pvt) Ltd,"MINI (unverified); BMW until handover to Mels",Unverified (no official URL found),Unverified,Small,Sithumini,Doubtful: role is shrinking after the BMW transfer; confirm MINI
+B,Evolution Auto (Pvt) Ltd,"XPeng; Avatr; IM Motors; Riddara",Unverified (no official URL found),Unverified,Small,Sithumini,Launched in Aug 2025; whether it is the authorised distributor is not confirmed
+B,GS Evo Motors,JMEV (EVEASY; EWIND),Unverified (no official URL found),Unverified,Small,Sithumini,EWIND launched in Sep 2026
+C,United Motors Lanka PLC (incl. Unimo Enterprises),"Mitsubishi; Perodua (via Unimo)",https://www.unitedmotors.lk,Unverified,Large,Thilakshana,Destinator and Outlander Sport launched in 2026; Perodua Traz and Alza launched
+C,Hayleys Mobility,"OMODA; JAECOO; Kaiyi",https://www.hayleysmobility.com,Verified,Large,Thilakshana,JAECOO J5 HEV; Kaiyi eVibe EV
+C,Kia Motors (Lanka) Ltd,Kia,https://www.kia.lk,Verified,Medium,Thilakshana,Sportage and Carnival HEV; Sorento HEV; EV5; Tasman; Sonet
+C,Micro Cars Ltd,"MG; Chery; KGM (SsangYong); Higer",Unverified (no official URL found),Unverified,Medium,Thilakshana,Distribution rights confirmed in Jun 2026 (CDB partnership)
+C,Lanka Ashok Leyland PLC,Ashok Leyland,Unverified (no official URL found),Unverified,Medium,Thilakshana,Commercial vehicles only (trucks and buses); keep only if the map covers CVs
+C,Browns EV (Brown & Company PLC),BAW,Unverified (no official URL found),Unverified,Small,Thilakshana,BAW E7 / E7 Pro EV: 61-67 registrations a month
+C,Eurocars (Pvt) Ltd,Porsche,https://www.porsche.com/pap/_sri-lanka_/,Verified,Small,Thilakshana,Sole Porsche importer since 1996 (Porsche Centre Colombo)
+C,Sterling Automobiles,"Livan; Henrey",Unverified (no official URL found),Unverified,Small,Thilakshana,Launched at the Colombo EV Motor Show in Jul 2026
+C,China Lanka Motors,Honri,Unverified (no official URL found),Unverified,Small,Thilakshana,Honri EVs launched in 2026

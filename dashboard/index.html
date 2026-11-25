@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SL Auto Intelligence — Sri Lanka Automotive Positioning 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<style>
+  :root {
+    --deep: #086288;
+    --deep-dark: #043952;
+    --deep-night: #031B29;
+    --steel: #4D8DBA;
+    --ice: #97D7FF;
+    --ice-soft: #EDF7FF;
+    --canvas: #F4F9FC;
+    --card: #FFFFFF;
+    --ink: #072233;
+    --muted: #527084;
+    --border: rgba(8, 98, 136, 0.11);
+    --border-strong: rgba(8, 98, 136, 0.24);
+    --shadow-xs: 0 1px 3px rgba(4, 57, 82, 0.04);
+    --shadow-sm: 0 4px 16px rgba(4, 57, 82, 0.055), 0 1px 2px rgba(4, 57, 82, 0.04);
+    --shadow-md: 0 14px 36px rgba(4, 57, 82, 0.10), 0 3px 10px rgba(4, 57, 82, 0.05);
+    --sidebar-w: 256px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--deep-night);
+    color: var(--ink);
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+
+  svg.ico { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+  /* ==================== RAPID BRAND-FLASH PRELOADER ==================== */
+  #preloader {
+    position: fixed; inset: 0; z-index: 9999;
+    background: radial-gradient(circle at 60% 25%, #0B7BA8 0%, #086288 45%, #031B29 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    transition: opacity 0.55s ease, visibility 0.55s ease;
+  }
+  #preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+  .loader-stage {
+    width: 112px; height: 112px; border-radius: 26px;
+    background: #FFFFFF;
+    display: grid; place-items: center; padding: 22px;
+    box-shadow: 0 0 0 12px rgba(151, 215, 255, 0.16), 0 24px 56px rgba(0, 0, 0, 0.42);
+    margin-bottom: 22px; position: relative; overflow: hidden;
+  }
+  .loader-stage img, .loader-stage svg {
+    width: 100%; height: 100%; object-fit: contain;
+    animation: logoPop 0.19s ease;
+  }
+  @keyframes logoPop { from { opacity: 0; transform: scale(0.76); } to { opacity: 1; transform: scale(1); } }
+  .loader-brand-name {
+    font-family: 'Outfit', sans-serif; color: var(--ice); font-size: 13px; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px; min-height: 20px;
+  }
+  .loader-title { font-family: 'Outfit', sans-serif; color: #FFFFFF; font-size: 24px; font-weight: 800; margin-bottom: 18px; letter-spacing: 0.3px; }
+  .loader-bar-wrap { display: flex; align-items: center; gap: 12px; }
+  .loader-track { width: 240px; height: 4px; background: rgba(151, 215, 255, 0.2); border-radius: 99px; overflow: hidden; }
+  .loader-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--steel), var(--ice), #FFFFFF); transition: width 0.14s linear; }
+  .loader-pct { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 800; color: var(--ice); min-width: 38px; text-align: right; }
+
+  /* ==================== EXECUTIVE LOGIN GATE ==================== */
+  #login-modal {
+    position: fixed; inset: 0; z-index: 9000;
+    background: rgba(3, 27, 41, 0.82); backdrop-filter: blur(14px);
+    display: none; align-items: center; justify-content: center; padding: 20px;
+  }
+  #login-modal.active { display: flex; animation: fadeIn 0.25s ease; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .login-shell {
+    width: 860px; max-width: 100%; border-radius: 20px; overflow: hidden;
+    background: #FFFFFF; display: grid; grid-template-columns: 0.95fr 1.05fr;
+    box-shadow: 0 32px 80px rgba(2, 18, 28, 0.65);
+    border: 1px solid rgba(151, 215, 255, 0.28);
+  }
+  @media (max-width: 760px) { .login-shell { grid-template-columns: 1fr; } .login-visual { display: none !important; } }
+  .login-visual {
+    position: relative; background: #031B29; padding: 34px 28px;
+    display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;
+  }
+  .login-visual img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.42;
+  }
+  .login-visual-grad {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(3,27,41,0.75) 0%, rgba(8,98,136,0.35) 50%, rgba(3,27,41,0.92) 100%);
+  }
+  .login-visual-top, .login-visual-bot { position: relative; z-index: 2; color: #FFFFFF; }
+  .login-visual-top .lp-logo { font-size: 16px; }
+  .login-visual-bot h3 { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 800; line-height: 1.15; margin-bottom: 8px; }
+  .login-visual-bot h3 span { color: var(--ice); }
+  .login-visual-bot p { font-size: 12.5px; color: rgba(235, 247, 255, 0.82); }
+
+  .login-form-pane { padding: 36px 34px; position: relative; background: #FFFFFF; }
+  .login-close {
+    position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--canvas); color: var(--deep);
+    cursor: pointer; display: grid; place-items: center; transition: 0.15s;
+  }
+  .login-close:hover { background: var(--ice-soft); border-color: var(--deep); }
+  .login-kicker { font-size: 10.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--steel); margin-bottom: 6px; }
+  .login-title { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 800; color: var(--deep-dark); margin-bottom: 6px; }
+  .login-sub { font-size: 12.8px; color: var(--muted); margin-bottom: 22px; }
+  .field { margin-bottom: 15px; }
+  .field label { display: block; font-size: 11.5px; font-weight: 800; color: var(--deep-dark); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.6px; }
+  .field-wrap { position: relative; }
+  .field input {
+    width: 100%; padding: 11px 14px; border-radius: 10px;
+    border: 1.5px solid var(--border-strong); background: var(--canvas);
+    color: var(--ink); font-size: 13.5px; font-family: inherit; outline: none; transition: 0.16s;
+  }
+  .field input:focus { border-color: var(--deep); background: #FFFFFF; box-shadow: 0 0 0 3px rgba(8, 98, 136, 0.14); }
+  .eye-btn {
+    position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px;
+  }
+  .login-err {
+    display: none; background: #FEF2F2; border: 1px solid #FECACA; color: #B91C1C;
+    font-size: 12px; font-weight: 600; padding: 9px 12px; border-radius: 8px; margin-bottom: 14px;
+  }
+  .login-err.show { display: block; animation: shake 0.32s ease; }
+  @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+  .login-submit {
+    width: 100%; padding: 12px 16px; border-radius: 10px; border: none;
+    background: linear-gradient(135deg, var(--deep), var(--steel));
+    color: #FFFFFF; font-family: 'Outfit', sans-serif; font-size: 14.5px; font-weight: 800;
+    letter-spacing: 0.4px; cursor: pointer; transition: all 0.18s;
+    box-shadow: 0 8px 22px rgba(8, 98, 136, 0.28);
+  }
+  .login-submit:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(8, 98, 136, 0.38); }
+  .login-note { margin-top: 14px; font-size: 11.5px; color: var(--muted); text-align: center; }
+
+  /* ==================== LANDING PAGE ==================== */
+  #landing-mode { background: var(--deep-night); color: #FFFFFF; }
+  #landing-mode.hidden { display: none; }
+
+  .lp-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+    padding: 18px 44px; display: flex; justify-content: space-between; align-items: center;
+    background: linear-gradient(180deg, rgba(3, 27, 41, 0.72) 0%, rgba(3, 27, 41, 0) 100%);
+    transition: background 0.25s, padding 0.25s;
+  }
+  .lp-nav.scrolled {
+    background: rgba(3, 27, 41, 0.94); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(151, 215, 255, 0.16); padding: 13px 44px;
+  }
+  .lp-logo { font-family: 'Outfit', sans-serif; font-size: 19px; font-weight: 900; letter-spacing: 3.5px; text-transform: uppercase; color: #FFFFFF; }
+  .lp-logo span { color: var(--ice); }
+  .lp-links { display: flex; gap: 28px; align-items: center; }
+  .lp-links a { color: rgba(255,255,255,0.86); text-decoration: none; font-size: 13px; font-weight: 600; transition: 0.16s; }
+  .lp-links a:hover { color: var(--ice); }
+  .lp-cta-sm {
+    padding: 9px 20px; border-radius: 99px; border: 1.5px solid var(--ice);
+    background: rgba(151, 215, 255, 0.15); color: #FFFFFF;
+    font-size: 12.5px; font-weight: 700; cursor: pointer; transition: 0.2s;
+  }
+  .lp-cta-sm:hover { background: var(--ice); color: var(--deep-night); box-shadow: 0 0 24px rgba(151, 215, 255, 0.5); }
+
+  /* MINIMAL FULL-BLEED HERO */
+  .lp-hero {
+    position: relative; height: 100vh; min-height: 640px; width: 100%;
+    display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+    padding: 96px 24px 36px 24px; overflow: hidden; background: #042538;
+  }
+  .hero-bg-img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center 58%;
+    animation: heroSlowZoom 14s ease-in-out infinite alternate;
+  }
+  @keyframes heroSlowZoom { from { transform: scale(1.01); } to { transform: scale(1.07); } }
+  .hero-vignette {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(3, 27, 41, 0.72) 0%, rgba(8, 98, 136, 0.14) 36%, rgba(8, 98, 136, 0.12) 64%, rgba(3, 27, 41, 0.92) 100%);
+    pointer-events: none;
+  }
+  .hero-top { position: relative; z-index: 4; text-align: center; }
+  .hero-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--ice); margin-bottom: 8px; }
+  .hero-title {
+    font-family: 'Outfit', sans-serif; font-size: clamp(34px, 5.4vw, 64px);
+    font-weight: 800; letter-spacing: -1px; line-height: 1.05;
+    text-shadow: 0 10px 34px rgba(3, 27, 41, 0.55);
+  }
+  .hero-title span { color: var(--ice); }
+
+  .hero-bottom { position: relative; z-index: 4; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .btn-explore {
+    padding: 13px 38px; border-radius: 8px;
+    background: rgba(151, 215, 255, 0.18); backdrop-filter: blur(12px);
+    border: 1.5px solid var(--ice); color: #FFFFFF; font-family: 'Outfit', sans-serif;
+    font-size: 14.5px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+    cursor: pointer; transition: all 0.22s;
+  }
+  .btn-explore:hover { background: var(--ice); color: var(--deep-night); box-shadow: 0 0 32px rgba(151, 215, 255, 0.55); transform: translateY(-2px); }
+  .btn-solid {
+    padding: 13px 34px; border-radius: 8px; background: linear-gradient(135deg, var(--ice), #FFFFFF);
+    color: var(--deep-night); font-family: 'Outfit', sans-serif; font-size: 14.5px; font-weight: 800;
+    border: none; cursor: pointer; transition: all 0.22s; box-shadow: 0 10px 30px rgba(151, 215, 255, 0.35);
+  }
+  .btn-solid:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 14px 40px rgba(151, 215, 255, 0.55); }
+  .scroll-cue { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(151, 215, 255, 0.8); display: flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none; }
+  .scroll-line { width: 1.5px; height: 28px; background: linear-gradient(180deg, var(--ice), transparent); animation: scrollBounce 1.6s ease-in-out infinite; }
+  @keyframes scrollBounce { 0%,100% { transform: scaleY(0.6); opacity: 0.4; } 50% { transform: scaleY(1); opacity: 1; } }
+
+  /* STICKY SPLIT-SCREEN CAR SCROLLYTELLING */
+  .scrolly-wrap { display: grid; grid-template-columns: 1.12fr 0.88fr; background: var(--deep-night); position: relative; }
+  @media (max-width: 960px) {
+    .scrolly-wrap { grid-template-columns: 1fr; }
+    .scrolly-left { position: relative !important; height: 54vh !important; }
+  }
+  .scrolly-left { position: sticky; top: 0; height: 100vh; background: #021520; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .car-slide { position: absolute; inset: 0; opacity: 0; transform: scale(1.08); transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.85s cubic-bezier(0.22,1,0.36,1); pointer-events: none; }
+  .car-slide.active { opacity: 1; transform: scale(1); pointer-events: auto; }
+  .car-slide img { width: 100%; height: 100%; object-fit: cover; }
+  .car-slide-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(3,27,41,0.35) 0%, rgba(3,27,41,0.08) 45%, rgba(3,27,41,0.88) 100%); }
+  .ev-glow-ring { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 50% 62%, rgba(151, 215, 255, 0.34) 0%, rgba(8, 98, 136, 0.22) 45%, transparent 72%); animation: evPulse 2.8s ease-in-out infinite; }
+  @keyframes evPulse { 0%,100% { opacity: 0.55; } 50% { opacity: 1; } }
+
+  .stage-hud { position: absolute; bottom: 32px; left: 32px; right: 32px; z-index: 10; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+  .hud-pill { display: inline-block; padding: 4px 12px; border-radius: 99px; background: rgba(151, 215, 255, 0.2); border: 1px solid var(--ice); color: var(--ice); font-size: 10.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
+  .hud-title { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: #FFFFFF; line-height: 1.1; }
+  .hud-sub { font-size: 13px; color: rgba(235, 247, 255, 0.8); }
+  .stage-dots { display: flex; flex-direction: column; gap: 10px; }
+  .s-dot { width: 10px; height: 10px; border-radius: 99px; background: rgba(255,255,255,0.28); border: none; cursor: pointer; transition: all 0.25s; }
+  .s-dot.active { height: 32px; background: var(--ice); box-shadow: 0 0 14px rgba(151,215,255,0.7); }
+
+  .scrolly-right { background: linear-gradient(180deg, #042538 0%, #063C57 50%, #031B29 100%); padding: 0 48px; }
+  .story-chapter { min-height: 92vh; display: flex; flex-direction: column; justify-content: center; padding: 48px 0; opacity: 0.32; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .story-chapter.active { opacity: 1; transform: translateY(0); }
+  .chap-num { font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; color: var(--ice); margin-bottom: 10px; }
+  .chap-title { font-family: 'Outfit', sans-serif; font-size: clamp(28px, 3vw, 40px); font-weight: 800; line-height: 1.12; color: #FFFFFF; margin-bottom: 14px; }
+  .chap-title span { color: var(--ice); }
+  .chap-desc { font-size: 14.5px; color: rgba(235, 247, 255, 0.82); margin-bottom: 24px; line-height: 1.65; }
+  .chap-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+  .c-stat { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(151, 215, 255, 0.22); border-left: 3px solid var(--ice); border-radius: 10px; padding: 14px 16px; }
+  .c-stat-val { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 900; color: #FFFFFF; line-height: 1.1; }
+  .c-stat-lbl { font-size: 11px; color: var(--ice); font-weight: 600; margin-top: 3px; }
+  .chap-btn { align-self: flex-start; padding: 11px 22px; border-radius: 8px; background: rgba(151, 215, 255, 0.14); border: 1.5px solid var(--ice); color: #FFFFFF; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.2s; }
+  .chap-btn:hover { background: var(--ice); color: var(--deep-night); }
+
+  /* LANDING PAGE LARGE BRAND CAROUSEL */
+  .lp-brands-sec {
+    padding: 96px 0;
+    background: linear-gradient(180deg, #031B29 0%, #05334C 50%, #031B29 100%);
+    border-top: 1px solid rgba(151, 215, 255, 0.14);
+    overflow: hidden;
+  }
+  .lp-brands-inner { max-width: 1380px; margin: 0 auto; text-align: center; padding: 0 32px; }
+  .lp-brands-kicker { font-size: 11.5px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ice); margin-bottom: 10px; }
+  .lp-brands-title { font-family: 'Outfit', sans-serif; font-size: clamp(30px, 3.8vw, 46px); font-weight: 800; color: #FFFFFF; margin-bottom: 12px; }
+  .lp-brands-sub { font-size: 15px; color: rgba(235, 247, 255, 0.76); max-width: 680px; margin: 0 auto 42px auto; }
+
+  .carousel-viewport {
+    position: relative; width: 100%; overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    padding: 12px 0 20px 0;
+  }
+  .carousel-track {
+    display: flex; gap: 20px; width: max-content;
+    animation: marqueeScroll 36s linear infinite;
+  }
+  .carousel-viewport:hover .carousel-track { animation-play-state: paused; }
+  @keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .lp-logo-card {
+    width: 220px; flex-shrink: 0;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(8, 98, 136, 0.18));
+    border: 1px solid rgba(151, 215, 255, 0.24);
+    border-radius: 20px; padding: 28px 20px;
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+    cursor: pointer; transition: all 0.24s ease;
+    backdrop-filter: blur(8px);
+  }
+  .lp-logo-card:hover {
+    background: rgba(151, 215, 255, 0.18); border-color: var(--ice);
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 18px 40px rgba(3, 27, 41, 0.55);
+  }
+  .lp-logo-pill {
+    width: 78px; height: 78px; border-radius: 20px; background: #FFFFFF;
+    display: grid; place-items: center; padding: 14px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
+  }
+  .lp-logo-pill img, .lp-logo-pill svg { width: 100%; height: 100%; object-fit: contain; }
+  .lp-logo-name { font-family: 'Outfit', sans-serif; font-size: 16.5px; font-weight: 800; color: #FFFFFF; letter-spacing: 0.2px; }
+  .lp-logo-dist { font-size: 12px; color: var(--ice); font-weight: 600; }
+  .carousel-controls {
+    display: flex; justify-content: center; gap: 12px; margin-top: 26px;
+  }
+  .car-ctrl-btn {
+    padding: 8px 18px; border-radius: 99px;
+    background: rgba(151, 215, 255, 0.12); border: 1px solid rgba(151, 215, 255, 0.35);
+    color: var(--ice); font-size: 12px; font-weight: 700; cursor: pointer; transition: 0.18s;
+  }
+  .car-ctrl-btn:hover { background: var(--ice); color: var(--deep-night); }
+
+  .lp-cta-band { text-align: center; padding: 84px 28px; background: linear-gradient(135deg, #086288 0%, #4D8DBA 60%, #0B4B6B 100%); color: #FFFFFF; }
+  .lp-cta-band h2 { font-family: 'Outfit', sans-serif; font-size: clamp(28px, 4vw, 44px); font-weight: 800; margin-bottom: 10px; }
+  .lp-cta-band p { font-size: 15px; color: rgba(255,255,255,0.88); max-width: 600px; margin: 0 auto 28px auto; }
+
+  /* ==================== FULL-WINDOW EXECUTIVE DASHBOARD ==================== */
+  #dashboard-mode { display: none; min-height: 100vh; width: 100%; background: var(--canvas); color: var(--ink); }
+  #dashboard-mode.active { display: flex; }
+
+  /* REFINED SLEEK SIDEBAR (NO CLUTTERED FOOTER!) */
+  .sidebar {
+    position: fixed; top: 0; left: 0; bottom: 0; width: var(--sidebar-w);
+    background: linear-gradient(180deg, #064D6B 0%, #043248 58%, #021C2B 100%);
+    color: #FFFFFF; display: flex; flex-direction: column;
+    padding: 20px 14px; z-index: 200;
+    border-right: 1px solid rgba(151, 215, 255, 0.12);
+    box-shadow: 8px 0 32px rgba(2, 28, 43, 0.16);
+    transition: transform 0.25s ease;
+  }
+  .back-lp-btn {
+    width: 100%; padding: 9px 12px; border-radius: 10px; margin-bottom: 18px;
+    background: rgba(151, 215, 255, 0.10); border: 1px solid rgba(151, 215, 255, 0.24);
+    color: var(--ice); font-size: 11.5px; font-weight: 700; cursor: pointer;
+    display: flex; align-items: center; gap: 8px; transition: all 0.18s;
+  }
+  .back-lp-btn:hover { background: var(--ice); color: var(--deep-night); border-color: var(--ice); }
+
+  .sb-brand {
+    display: flex; align-items: center; gap: 12px; padding: 4px 8px 18px 8px;
+    border-bottom: 1px solid rgba(151, 215, 255, 0.14); margin-bottom: 18px;
+  }
+  .sb-logo {
+    width: 38px; height: 38px; border-radius: 11px;
+    background: linear-gradient(135deg, var(--ice), #FFFFFF);
+    color: var(--deep-dark); font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 15px;
+    display: grid; place-items: center; flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(151, 215, 255, 0.25);
+  }
+  .sb-brand-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 14.5px; letter-spacing: 0.2px; }
+  .sb-brand-sub { font-size: 10.5px; color: rgba(151, 215, 255, 0.78); }
+  .sb-label { font-size: 9.5px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: rgba(151, 215, 255, 0.48); padding: 4px 12px 8px 12px; }
+  .sb-nav { display: flex; flex-direction: column; gap: 5px; }
+  .nav-item {
+    position: relative;
+    display: flex; align-items: center; gap: 11px; padding: 11px 13px; border-radius: 11px;
+    border: 1px solid transparent; width: 100%; text-align: left; background: transparent;
+    color: rgba(235, 247, 255, 0.82); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.18s;
+  }
+  .nav-item:hover { background: rgba(151, 215, 255, 0.10); color: #FFFFFF; }
+  .nav-item.active {
+    background: linear-gradient(95deg, rgba(151, 215, 255, 0.96), rgba(215, 240, 255, 0.96));
+    color: var(--deep-night); font-weight: 800;
+    box-shadow: 0 8px 22px rgba(3, 27, 41, 0.28);
+  }
+  .nav-count {
+    margin-left: auto; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 99px;
+    background: rgba(151, 215, 255, 0.16); color: var(--ice);
+  }
+  .nav-item.active .nav-count { background: rgba(8, 98, 136, 0.16); color: var(--deep-night); }
+
+  /* Full-Window Main Area */
+  .main { margin-left: var(--sidebar-w); flex: 1; width: calc(100% - var(--sidebar-w)); min-width: 0; display: flex; flex-direction: column; }
+  .topbar {
+    position: sticky; top: 0; z-index: 40;
+    background: rgba(244, 249, 252, 0.92); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border); padding: 13px 28px;
+    display: flex; justify-content: space-between; align-items: center; gap: 14px;
+  }
+  .menu-toggle { display: none; background: var(--deep); color: #FFFFFF; border: none; border-radius: 7px; padding: 7px 10px; cursor: pointer; }
+  .crumb { font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--steel); }
+  .page-heading { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 800; color: var(--deep-dark); line-height: 1.15; }
+  .topbar-right { display: flex; align-items: center; gap: 10px; }
+  .tour-trigger {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 7px 14px; border-radius: 99px;
+    background: var(--deep); color: #FFFFFF; border: none;
+    font-size: 11.8px; font-weight: 700; cursor: pointer; transition: 0.18s;
+    box-shadow: 0 4px 12px rgba(8, 98, 136, 0.22);
+  }
+  .tour-trigger:hover { background: var(--deep-dark); transform: translateY(-1px); }
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: #FFFFFF; border: 1px solid var(--border-strong);
+    color: var(--deep); font-size: 11.5px; font-weight: 700; padding: 6px 13px; border-radius: 99px;
+  }
+  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--deep); box-shadow: 0 0 0 3px var(--ice); }
+
+  .content { padding: 24px 28px 48px 28px; width: 100%; }
+  .view { display: none; animation: fadeUp 0.26s ease; }
+  .view.active { display: block; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Executive Overview Banner */
+  .ov-hero {
+    border-radius: 18px; overflow: hidden;
+    background: linear-gradient(125deg, #031B29 0%, #086288 64%, #4D8DBA 100%);
+    color: #FFFFFF; padding: 28px 32px; margin-bottom: 22px;
+    display: grid; grid-template-columns: 1.28fr 0.72fr; gap: 24px; align-items: center;
+    box-shadow: var(--shadow-md);
+  }
+  @media (max-width: 980px) { .ov-hero { grid-template-columns: 1fr; } }
+  .ov-hero-img {
+    width: 100%; height: 205px; object-fit: cover; border-radius: 14px;
+    border: 1px solid rgba(151, 215, 255, 0.35);
+    box-shadow: 0 12px 30px rgba(3, 27, 41, 0.35);
+  }
+  .ov-kicker {
+    display: inline-block; font-size: 10.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--ice); background: rgba(151, 215, 255, 0.16); border: 1px solid rgba(151, 215, 255, 0.36);
+    padding: 4px 11px; border-radius: 99px; margin-bottom: 10px;
+  }
+  .ov-hero h2 { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.15; margin-bottom: 8px; }
+  .ov-hero h2 span { color: var(--ice); }
+  .ov-hero p { font-size: 13.5px; color: rgba(235, 247, 255, 0.86); max-width: 680px; }
+
+  /* REAL BRAND LOGO TILES & EMBLEMS */
+  .brand-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(205px, 1fr)); gap: 13px; }
+  .brand-tile {
+    background: #FAFDFE; border: 1px solid var(--border); border-radius: 14px;
+    padding: 13px 15px; display: flex; align-items: center; gap: 13px;
+    cursor: pointer; transition: all 0.2s ease; box-shadow: var(--shadow-xs);
+  }
+  .brand-tile:hover { border-color: var(--deep); background: var(--ice-soft); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .logo-box {
+    width: 42px; height: 42px; border-radius: 11px; background: #FFFFFF;
+    border: 1px solid rgba(8, 98, 136, 0.14); flex-shrink: 0;
+    display: grid; place-items: center; padding: 7px; overflow: hidden;
+    box-shadow: 0 2px 6px rgba(8, 98, 136, 0.06);
+  }
+  .logo-box.sm { width: 30px; height: 30px; border-radius: 8px; padding: 5px; }
+  .logo-box img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .logo-fallback {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 11px;
+    color: var(--deep); letter-spacing: 0.3px;
+  }
+  .logo-box.sm .logo-fallback { font-size: 9px; }
+  .brand-tile-name { font-size: 12.8px; font-weight: 800; color: var(--deep-dark); line-height: 1.22; }
+  .brand-tile-sub { font-size: 11px; color: var(--muted); }
+
+  /* ELEVATED EXECUTIVE BOXES & CARDS */
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 22px 24px;
+    box-shadow: var(--shadow-sm); margin-bottom: 20px;
+  }
+  .card-title { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 800; color: var(--deep-dark); margin-bottom: 3px; }
+  .card-sub { font-size: 12.4px; color: var(--muted); margin-bottom: 16px; }
+
+  .insight-strip {
+    background: linear-gradient(90deg, var(--ice-soft), #FFFFFF);
+    border: 1px solid rgba(77, 141, 186, 0.22); border-left: 4px solid var(--deep);
+    border-radius: 12px; padding: 13px 17px; margin-bottom: 18px;
+    display: flex; gap: 11px; align-items: center; box-shadow: var(--shadow-xs);
+  }
+  .insight-strip p { font-size: 12.8px; color: var(--deep-dark); }
+
+  .kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 22px; }
+  @media (max-width: 1180px) { .kpi-grid { grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); } }
+  .kpi {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 15px; padding: 18px 20px; box-shadow: var(--shadow-sm);
+    position: relative; overflow: hidden; transition: transform 0.18s, box-shadow 0.18s;
+  }
+  .kpi:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .kpi::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3.5px; background: linear-gradient(90deg, var(--deep), var(--ice)); }
+  .kpi.steel::before { background: linear-gradient(90deg, var(--steel), var(--ice)); }
+  .kpi-label { font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.9px; color: var(--muted); }
+  .kpi-val { font-family: 'Outfit', sans-serif; font-size: 29px; font-weight: 900; color: var(--deep-dark); margin: 4px 0 2px 0; line-height: 1.1; }
+  .kpi-sub { font-size: 11.6px; color: var(--deep); font-weight: 600; }
+
+  .visual-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    overflow: hidden; cursor: pointer; transition: all 0.2s; box-shadow: var(--shadow-sm);
+    display: flex; flex-direction: column;
+  }
+  .visual-card:hover { transform: translateY(-3px); border-color: var(--deep); box-shadow: var(--shadow-md); }
+  .visual-card-img { width: 100%; height: 158px; object-fit: cover; }
+  .visual-card-body { padding: 16px 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+  .visual-card-kicker { font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--steel); margin-bottom: 4px; }
+  .visual-card h4 { font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 800; color: var(--deep-dark); margin-bottom: 5px; }
+  .visual-card p { font-size: 12.4px; color: var(--muted); margin-bottom: 12px; }
+  .visual-card-cta { font-size: 12px; font-weight: 800; color: var(--deep); }
+
+  .grid-2 { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 18px; }
+  .grid-2-eq { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 1080px) { .grid-2, .grid-2-eq, .grid-3 { grid-template-columns: 1fr; } }
+
+  .pill-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .pill { padding: 7px 15px; border-radius: 99px; font-size: 12px; font-weight: 700; background: #FFFFFF; color: var(--deep); border: 1px solid var(--border-strong); cursor: pointer; transition: 0.16s; box-shadow: var(--shadow-xs); }
+  .pill:hover { background: var(--ice-soft); }
+  .pill.active { background: var(--deep); color: #FFFFFF; border-color: var(--deep); box-shadow: 0 4px 12px rgba(8, 98, 136, 0.24); }
+
+  .slider-panel {
+    background: linear-gradient(135deg, #EDF7FF, #FFFFFF); border: 1px solid rgba(8, 98, 136, 0.18);
+    border-radius: 14px; padding: 16px 20px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center;
+    box-shadow: var(--shadow-xs);
+  }
+  .slider-group { display: flex; flex-direction: column; gap: 5px; min-width: 225px; }
+  .slider-group label { font-size: 11.5px; font-weight: 800; color: var(--deep-dark); display: flex; justify-content: space-between; }
+  .slider-group input[type="range"] { accent-color: var(--deep); cursor: pointer; }
+
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: var(--card); border: 1px solid var(--border); padding: 12px 16px; border-radius: 13px; margin-bottom: 16px; box-shadow: var(--shadow-xs); }
+  .filter-bar label { font-size: 12px; color: var(--deep-dark); font-weight: 700; }
+  .filter-bar select, .filter-bar input { background: var(--canvas); color: var(--ink); border: 1px solid var(--border-strong); padding: 7px 11px; border-radius: 8px; font-size: 12.2px; outline: none; }
+
+  .outlook-list { max-height: 500px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding-right: 4px; }
+  .outlook-item { background: #FAFDFE; border: 1px solid var(--border); border-left: 4px solid var(--deep); border-radius: 11px; padding: 12px 14px; cursor: pointer; transition: 0.16s; }
+  .outlook-item:hover, .outlook-item.highlighted { background: var(--ice-soft); border-color: var(--deep); transform: translateX(3px); box-shadow: var(--shadow-xs); }
+  .outlook-item.contender { border-left-color: var(--steel); }
+  .outlook-item.watch { border-left-color: var(--ice); }
+  .outlook-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 5px; }
+  .outlook-head-left { display: flex; align-items: center; gap: 10px; }
+  .outlook-name { font-weight: 800; font-size: 13px; color: var(--deep-dark); }
+  .badge { display: inline-block; font-size: 10.5px; font-weight: 800; padding: 2.5px 9px; border-radius: 99px; background: var(--ice-soft); color: var(--deep); }
+  .badge.dark { background: var(--deep); color: #FFFFFF; }
+  .badge.steel { background: var(--steel); color: #FFFFFF; }
+  .outlook-text { font-size: 11.8px; color: var(--muted); }
+
+  .errc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .errc-box { background: #FAFDFE; border: 1px solid var(--border); border-top: 4px solid var(--deep); border-radius: 12px; padding: 16px 18px; }
+  .errc-box.steel { border-top-color: var(--steel); }
+  .errc-box.ice { border-top-color: var(--ice); }
+  .errc-box h4 { font-size: 12.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--deep-dark); margin-bottom: 6px; }
+  .errc-box p { font-size: 12.6px; color: var(--muted); }
+
+  .h-card { background: #FAFDFE; border: 1px solid var(--border); border-radius: 14px; padding: 20px; border-top: 5px solid var(--deep); }
+  .h-card.h2 { border-top-color: var(--steel); background: var(--ice-soft); }
+  .h-card.h3 { border-top-color: var(--ice); background: var(--deep-dark); color: #FFFFFF; }
+  .h-card.h3 p { color: rgba(235, 247, 255, 0.82); }
+  .h-card.h3 h4 { color: var(--ice); }
+  .h-pct { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 900; color: var(--deep); line-height: 1; margin-bottom: 6px; }
+  .h-card.h3 .h-pct { color: var(--ice); }
+  .h-card h4 { font-size: 14.5px; font-weight: 800; color: var(--deep-dark); margin-bottom: 6px; }
+  .h-card p { font-size: 12.5px; color: var(--muted); }
+
+  .table-wrap { max-height: 460px; overflow-y: auto; border: 1px solid var(--border); border-radius: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.4px; }
+  th { position: sticky; top: 0; background: var(--deep); color: #FFFFFF; text-align: left; padding: 11px 14px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; }
+  td { padding: 9.5px 14px; border-bottom: 1px solid var(--border); color: var(--ink); vertical-align: middle; }
+  tr:nth-child(even) td { background: #F8FBFE; }
+  tr:hover td { background: var(--ice-soft); }
+  .co-cell { display: flex; align-items: center; gap: 10px; }
+
+  /* ==================== FIRST-TIME INTERACTIVE GUIDED TOUR ==================== */
+  #tour-overlay {
+    position: fixed; inset: 0; z-index: 8000;
+    background: rgba(3, 27, 41, 0.68);
+    backdrop-filter: blur(2px);
+    display: none;
+  }
+  #tour-overlay.active { display: block; }
+  #tour-spotlight {
+    position: fixed; z-index: 8001; pointer-events: none;
+    border-radius: 14px;
+    border: 2.5px solid var(--ice);
+    box-shadow: 0 0 0 9999px rgba(3, 27, 41, 0.68), 0 0 28px rgba(151, 215, 255, 0.65);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  #tour-popover {
+    position: fixed; z-index: 8002; width: 340px; max-width: calc(100vw - 32px);
+    background: #FFFFFF; border: 1px solid rgba(8, 98, 136, 0.2);
+    border-top: 4px solid var(--deep);
+    border-radius: 14px; padding: 18px 20px;
+    box-shadow: 0 22px 50px rgba(3, 27, 41, 0.36);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tour-step-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--steel); margin-bottom: 5px; }
+  .tour-title { font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 800; color: var(--deep-dark); margin-bottom: 6px; }
+  .tour-desc { font-size: 12.6px; color: var(--muted); line-height: 1.5; margin-bottom: 16px; }
+  .tour-footer { display: flex; justify-content: space-between; align-items: center; }
+  .tour-skip { background: none; border: none; color: var(--muted); font-size: 12px; font-weight: 700; cursor: pointer; }
+  .tour-skip:hover { color: var(--deep); }
+  .tour-btns { display: flex; gap: 8px; }
+  .tour-btn {
+    padding: 7px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer;
+    border: 1px solid var(--border-strong); background: var(--canvas); color: var(--deep);
+  }
+  .tour-btn.primary { background: var(--deep); color: #FFFFFF; border-color: var(--deep); }
+  .tour-btn.primary:hover { background: var(--deep-dark); }
+
+  @media (max-width: 900px) {
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.open { transform: translateX(0); }
+    .main { margin-left: 0; width: 100%; }
+    .menu-toggle { display: inline-block; }
+    .lp-nav { padding: 14px 18px; }
+    .lp-links { display: none; }
+    .scrolly-right { padding: 0 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== RAPID BRAND-FLASH PRELOADER ==================== -->
+<div id="preloader">
+  <div class="loader-stage" id="loaderStage"></div>
+  <div class="loader-brand-name" id="loaderBrandName">INITIALIZING</div>
+  <div class="loader-title">SL Auto Intelligence</div>
+  <div class="loader-bar-wrap">
+    <div class="loader-track"><div class="loader-bar" id="loaderBar"></div></div>
+    <div class="loader-pct" id="loaderPct">0%</div>
+  </div>
+</div>
+
+<!-- ==================== EXECUTIVE LOGIN MODAL ==================== -->
+<div id="login-modal">
+  <div class="login-shell">
+    <div class="login-visual">
+      <img src="assets/cars/hero_suv.jpg" alt="Executive Portal">
+      <div class="login-visual-grad"></div>
+      <div class="login-visual-top">
+        <div class="lp-logo">SL AUTO<span>INTEL</span></div>
+      </div>
+      <div class="login-visual-bot">
+        <h3>Sri Lanka <span>2026</span> Positioning Portal</h3>
+        <p>Confidential executive intelligence covering 28 MECE distributors, Gartner Magic Quadrant scoring, and SCALE Pathway frameworks.</p>
+      </div>
+    </div>
+
+    <div class="login-form-pane">
+      <button class="login-close" onclick="closeLoginModal()" aria-label="Close">
+        <svg class="ico" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="login-kicker">Executive Access Required</div>
+      <div class="login-title">Sign In to Dashboard</div>
+      <div class="login-sub">Enter your authorized Sandbox executive credentials to unlock the interactive positioning suite.</div>
+
+      <div class="login-err" id="loginErr">Invalid email or password. Please verify your Sandbox credentials.</div>
+
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="field">
+          <label for="loginEmail">Executive Email</label>
+          <input type="email" id="loginEmail" placeholder="name@sandbox.lk" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="loginPass">Password</label>
+          <div class="field-wrap">
+            <input type="password" id="loginPass" placeholder="Enter access password" required autocomplete="current-password">
+            <button type="button" class="eye-btn" onclick="togglePasswordVis()" aria-label="Toggle Password">
+              <svg class="ico" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <button type="submit" class="login-submit">Unlock Executive Dashboard</button>
+      </form>
+      <div class="login-note">Protected Executive Review Environment • Sandbox Consultancy</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== GUIDED TOUR OVERLAY ==================== -->
+<div id="tour-overlay">
+  <div id="tour-spotlight"></div>
+  <div id="tour-popover">
+    <div class="tour-step-tag" id="tourStepTag">STEP 1 OF 5</div>
+    <div class="tour-title" id="tourTitle">Executive Navigation</div>
+    <div class="tour-desc" id="tourDesc">Switch cleanly between all analytical lenses.</div>
+    <div class="tour-footer">
+      <button class="tour-skip" onclick="endTour()">Skip Tour</button>
+      <div class="tour-btns">
+        <button class="tour-btn" id="tourPrevBtn" onclick="prevTourStep()">Back</button>
+        <button class="tour-btn primary" id="tourNextBtn" onclick="nextTourStep()">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================================== -->
+<!-- MODE 1: MINIMAL HERO + STICKY CAR SCROLLYTELLING + BRAND LOGO WALL     -->
+<!-- ====================================================================== -->
+<div id="landing-mode">
+  <nav class="lp-nav" id="lpNav">
+    <div class="lp-logo">SL AUTO<span>INTEL</span></div>
+    <div class="lp-links">
+      <a href="#evolution">The Evolution</a>
+      <a href="#lp-brands">Brands</a>
+      <button class="lp-cta-sm" onclick="enterDashboard('overview')">Open Dashboard</button>
+    </div>
+  </nav>
+
+  <section class="lp-hero">
+    <img class="hero-bg-img" src="assets/cars/hero_suv.jpg" alt="Sri Lanka Automotive 2026 Hero SUV">
+    <div class="hero-vignette"></div>
+
+    <div class="hero-top">
+      <div class="hero-eyebrow">Sri Lanka Brand-New Market • 28 Distributors • 2026</div>
+      <h1 class="hero-title">THE NEW <span>AUTOMOTIVE</span> ERA</h1>
+    </div>
+
+    <div class="hero-bottom">
+      <button class="btn-explore" onclick="enterDashboard('overview')">Explore Dashboard</button>
+      <a class="scroll-cue" href="#evolution">
+        <span>Scroll the Evolution</span>
+        <div class="scroll-line"></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- STICKY SPLIT-SCREEN SCROLLYTELLING -->
+  <section id="evolution" class="scrolly-wrap">
+    <div class="scrolly-left">
+      <div class="car-slide active" id="slide-0">
+        <img src="assets/cars/stage1_ice.jpg" alt="Petrol ICE Refueling Era">
+        <div class="car-slide-overlay"></div>
+      </div>
+      <div class="car-slide" id="slide-1">
+        <img src="assets/cars/stage2_jeep.jpg" alt="Modern Rugged Jeep SUV Boom">
+        <div class="car-slide-overlay"></div>
+      </div>
+      <div class="car-slide" id="slide-2">
+        <img src="assets/cars/hero_suv.jpg" alt="Pure EV Electric Mobility">
+        <div class="ev-glow-ring"></div>
+        <div class="car-slide-overlay"></div>
+      </div>
+
+      <div class="stage-hud">
+        <div>
+          <div class="hud-pill" id="hudPill">ERA 01 · PETROL &amp; DIESEL (ICE)</div>
+          <div class="hud-title" id="hudTitle">The Legacy Combustion Base</div>
+          <div class="hud-sub" id="hudSub">Toyota Lanka • United Motors • DIMO • AMW</div>
+        </div>
+        <div class="stage-dots">
+          <button class="s-dot active" onclick="scrollToChapter(0)" aria-label="Chapter 1"></button>
+          <button class="s-dot" onclick="scrollToChapter(1)" aria-label="Chapter 2"></button>
+          <button class="s-dot" onclick="scrollToChapter(2)" aria-label="Chapter 3"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="scrolly-right">
+      <div class="story-chapter active" data-step="0" id="chapter-0">
+        <div class="chap-num">Chapter 01 · Fuel &amp; Heritage</div>
+        <h2 class="chap-title">The Legacy <span>ICE Era</span></h2>
+        <p class="chap-desc">
+          For decades, Sri Lankan roads belonged to traditional petrol and diesel franchises backed by deep islandwide service workshops. High fuel costs and <strong>100%–120% ICE luxury taxes</strong> have compressed traditional Japanese share from <strong>81% (2019) to 62% (2025)</strong>.
+        </p>
+        <div class="chap-stats">
+          <div class="c-stat"><div class="c-stat-val">81% → 62%</div><div class="c-stat-lbl">Japan Registration Share Shift</div></div>
+          <div class="c-stat"><div class="c-stat-val">100%–120%</div><div class="c-stat-lbl">Petrol / Diesel Luxury Tax</div></div>
+        </div>
+        <button class="chap-btn" onclick="enterDashboard('quadrant')">Inspect Legacy Players in Quadrant</button>
+      </div>
+
+      <div class="story-chapter" data-step="1" id="chapter-1">
+        <div class="chap-num">Chapter 02 · Post-Ban Surge</div>
+        <h2 class="chap-title">The Rugged <span>SUV &amp; Jeep</span> Wave</h2>
+        <p class="chap-desc">
+          After a five-year import hiatus, Sri Lanka's market expanded nearly <strong>5x to 360,117 registrations</strong> ($2.05B import bill). Bold new SUVs—led by <strong>Jetour T2</strong> (~27% of small SUVs) and <strong>JAECOO J5 HEV</strong>—crowded the LKR 15M–25M Mid-Range band.
+        </p>
+        <div class="chap-stats">
+          <div class="c-stat"><div class="c-stat-val">360,117</div><div class="c-stat-lbl">2025 Total Registrations (DMT)</div></div>
+          <div class="c-stat"><div class="c-stat-val">$2.05 Bn</div><div class="c-stat-lbl">2025 Import Bill (CBSL)</div></div>
+        </div>
+        <button class="chap-btn" onclick="enterDashboard('ninebox')">Explore 9-Box Matrix</button>
+      </div>
+
+      <div class="story-chapter" data-step="2" id="chapter-2">
+        <div class="chap-num">Chapter 03 · Blue Ocean Disruption</div>
+        <h2 class="chap-title">The <span>Pure EV</span> Takeover</h2>
+        <p class="chap-desc">
+          Powered by vertical manufacturing scale and Sri Lanka's <strong>60% EV luxury tax tier</strong> (above Rs 6M CIF), electric vehicles flipped the pricing curve. <strong>BYD (John Keells CG Auto)</strong> captured <strong>48.8% of Oct 2026 brand-new cars</strong>.
+        </p>
+        <div class="chap-stats">
+          <div class="c-stat"><div class="c-stat-val">48.8%</div><div class="c-stat-lbl">BYD Oct 2026 New-Car Share</div></div>
+          <div class="c-stat"><div class="c-stat-val">60% Tax</div><div class="c-stat-lbl">EV Luxury Tax Advantage</div></div>
+        </div>
+        <button class="chap-btn" onclick="enterDashboard('scale')">Open SCALE Strategy Suite</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFICIAL BRAND LOGOS CAROUSEL ON LANDING PAGE -->
+  <section id="lp-brands" class="lp-brands-sec">
+    <div class="lp-brands-inner">
+      <div class="lp-brands-kicker">MECE Market Coverage • Active 2026 Franchises</div>
+      <h2 class="lp-brands-title">Brands Competing Across Sri Lanka</h2>
+      <p class="lp-brands-sub">Hover to pause or click any brand to unlock its distributor record, powertrain portfolio, and positioning inside the dashboard.</p>
+    </div>
+    <div class="carousel-viewport" id="brandCarouselViewport">
+      <div class="carousel-track" id="lpLogoWall"></div>
+    </div>
+    <div class="carousel-controls">
+      <button class="car-ctrl-btn" onclick="nudgeCarousel(-1)">&larr; Slower / Reverse</button>
+      <button class="car-ctrl-btn" onclick="enterDashboard('registry')">View All 28 Distributors &rarr;</button>
+    </div>
+  </section>
+
+  <section id="launch" class="lp-cta-band">
+    <h2>Step Inside the Executive Intelligence Portal</h2>
+    <p>Explore all 28 MECE distributors, drag live 9-Box price sliders, inspect Gartner Magic Quadrant scores, and review the SCALE strategic roadmap.</p>
+    <button class="btn-solid" onclick="enterDashboard('overview')">Launch Executive Dashboard</button>
+  </section>
+</div>
+
+<!-- ====================================================================== -->
+<!-- MODE 2: FULL-WINDOW EXECUTIVE DASHBOARD                                -->
+<!-- ====================================================================== -->
+<div id="dashboard-mode">
+  <aside class="sidebar" id="sidebar">
+    <button class="back-lp-btn" onclick="exitDashboard()">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to Car Showcase
+    </button>
+    <div class="sb-brand">
+      <div class="sb-logo">SL</div>
+      <div>
+        <div class="sb-brand-title">SL Auto Intelligence</div>
+        <div class="sb-brand-sub">Executive Positioning Portal</div>
+      </div>
+    </div>
+
+    <div class="sb-label">Navigation</div>
+    <nav class="sb-nav" id="tour-nav">
+      <button class="nav-item active" id="nav-overview" onclick="showView('overview', 'Executive Overview', 'Market Summary &amp; Brand Landscape', this)">
+        <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Overview
+      </button>
+      <button class="nav-item" id="nav-ninebox" onclick="showView('ninebox', '9-Box Positioning Simulator', 'ICE / Hybrid / EV vs. Price Tiers', this)">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+        9-Box Simulator <span class="nav-count" id="sbModelCount">18</span>
+      </button>
+      <button class="nav-item" id="nav-quadrant" onclick="showView('quadrant', 'Gartner Magic Quadrant', 'Ability to Execute vs. Vision', this)">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M3 3v18h18"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="14" r="2"/><circle cx="17" cy="15" r="2"/></svg>
+        Magic Quadrant <span class="nav-count">15</span>
+      </button>
+      <button class="nav-item" id="nav-scale" onclick="showView('scale', 'SCALE Strategy Suite', 'Blue Ocean, ERRC &amp; Three Horizons', this)">
+        <svg class="ico" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        SCALE Strategy
+      </button>
+      <button class="nav-item" id="nav-macro" onclick="showView('macro', 'Macro &amp; Trade Analytics', 'DMT, CBSL &amp; DCS Data', this)">
+        <svg class="ico" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Macro &amp; Trade
+      </button>
+      <button class="nav-item" id="nav-registry" onclick="showView('registry', 'MECE 28-Player Registry', 'Batches A, B, C &amp; Evidenced Offerings', this)">
+        <svg class="ico" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        28-Player Registry <span class="nav-count">28</span>
+      </button>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button class="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">
+          <svg class="ico" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div>
+          <div class="crumb" id="topCrumb">Market Summary &amp; Brand Landscape</div>
+          <div class="page-heading" id="topTitle">Executive Overview</div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button class="tour-trigger" onclick="startTour(true)">
+          <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Guided Tour
+        </button>
+        <div class="status-pill"><span class="status-dot"></span><span>angelo@sandbox.lk</span></div>
+        <button class="pill" style="padding:6px 12px; font-size:11.5px;" onclick="signOutDashboard()">Sign Out</button>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- ==================== VIEW 0: EXECUTIVE OVERVIEW ==================== -->
+      <section id="view-overview" class="view active">
+        <div class="ov-hero">
+          <div>
+            <div class="ov-kicker">Sri Lanka Automotive Positioning Intelligence • Nov 2026</div>
+            <h2>A <span>5x Post-Ban Rebound</span> Redefined by Chinese EVs &amp; Tax Arbitrage</h2>
+            <p>
+              Following a five-year import suspension, Sri Lanka recorded <strong>360,117 new registrations</strong> ($2.05B import bill) in 2025. While legacy incumbents lead after-sales execution, Japanese share contracted from <strong>81% to 62%</strong> as <strong>BYD (48.8% of Oct 2026 brand-new cars)</strong> and new SUV entrants reshape every price tier.
+            </p>
+          </div>
+          <img class="ov-hero-img" src="assets/cars/hero_suv.jpg" alt="Sri Lanka Modern Automotive Landscape">
+        </div>
+
+        <div class="kpi-grid" id="tour-kpis">
+          <div class="kpi"><div class="kpi-label">2025 Registrations</div><div class="kpi-val">360,117</div><div class="kpi-sub">Up ~5x from 74,410 (2024, DMT)</div></div>
+          <div class="kpi steel"><div class="kpi-label">2025 Import Bill</div><div class="kpi-val">$2.05 Bn</div><div class="kpi-sub">Central Bank of Sri Lanka (CBSL)</div></div>
+          <div class="kpi"><div class="kpi-label">BYD New-Car Share</div><div class="kpi-val">48.8%</div><div class="kpi-sub">221 of 453 brand-new cars (Oct '26)</div></div>
+          <div class="kpi steel"><div class="kpi-label">MECE Distributors</div><div class="kpi-val">28</div><div class="kpi-sub">100% Brand-New • 18% VAT Base</div></div>
+          <div class="kpi"><div class="kpi-label">EV Luxury Tax Tier</div><div class="kpi-val">60% vs 100%+</div><div class="kpi-sub">EV &gt;Rs 6M vs Petrol &gt;Rs 5M</div></div>
+        </div>
+
+        <div class="card" id="tour-brands">
+          <div class="card-title">Key Market Players &amp; Official Brand Franchises</div>
+          <div class="card-sub">Select any brand card to inspect its verified distributor entry and powertrain portfolio.</div>
+          <div class="brand-grid" id="overviewBrandGrid"></div>
+        </div>
+
+        <div class="grid-3">
+          <div class="visual-card" onclick="document.getElementById('nav-ninebox').click()">
+            <img class="visual-card-img" src="assets/cars/stage2_jeep.jpg" alt="9-Box Positioning Map">
+            <div class="visual-card-body">
+              <div>
+                <div class="visual-card-kicker">Interactive Simulator</div>
+                <h4>9-Box Product Positioning Map</h4>
+                <p>Adjust live Budget &amp; Mid-Range LKR price ceilings to spot overcrowded ICE SUV boxes and open EV white spaces.</p>
+              </div>
+              <div class="visual-card-cta">Open 9-Box Simulator &rarr;</div>
+            </div>
+          </div>
+          <div class="visual-card" onclick="document.getElementById('nav-quadrant').click()">
+            <img class="visual-card-img" src="assets/cars/stage1_ice.jpg" alt="Gartner Magic Quadrant">
+            <div class="visual-card-body">
+              <div>
+                <div class="visual-card-kicker">Competitive Scoring</div>
+                <h4>Gartner Magic Quadrant</h4>
+                <p>Compare Ability to Execute vs. Completeness of Vision across 15 scored Sri Lankan players with analyst rationales.</p>
+              </div>
+              <div class="visual-card-cta">Explore Magic Quadrant &rarr;</div>
+            </div>
+          </div>
+          <div class="visual-card" onclick="document.getElementById('nav-scale').click()">
+            <img class="visual-card-img" src="assets/cars/hero_suv.jpg" alt="SCALE Strategy Suite">
+            <div class="visual-card-body">
+              <div>
+                <div class="visual-card-kicker">Executive Playbook</div>
+                <h4>The SCALE Pathway Suite</h4>
+                <p>Blue Ocean Strategy Canvas, ERRC Action Grid, Innovator's Dilemma, and 70/20/10 Three Horizons roadmap.</p>
+              </div>
+              <div class="visual-card-cta">View SCALE Strategy &rarr;</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 1: INTERACTIVE 9-BOX SIMULATOR ==================== -->
+      <section id="view-ninebox" class="view">
+        <div class="insight-strip">
+          <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <p><strong>Interactive Simulator:</strong> Drag the <strong>Budget</strong> and <strong>Mid-Range</strong> price sliders below to dynamically test how Sri Lankan brand-new models cluster across the 9 boxes.</p>
+        </div>
+
+        <div class="slider-panel" id="tour-sliders">
+          <div class="slider-group">
+            <label><span>Budget Ceiling</span><span id="budgetVal" style="color:var(--deep);">LKR 12.0M</span></label>
+            <input type="range" id="budgetSlider" min="8" max="18" step="0.5" value="12" oninput="updateThresholds()">
+          </div>
+          <div class="slider-group">
+            <label><span>Mid-Range Ceiling</span><span id="midVal" style="color:var(--deep);">LKR 25.0M</span></label>
+            <input type="range" id="midSlider" min="19" max="40" step="1" value="25" oninput="updateThresholds()">
+          </div>
+          <div style="margin-left:auto; display:flex; gap:10px; flex-wrap:wrap;" id="tierSummaryPills"></div>
+        </div>
+
+        <div class="filter-bar">
+          <label>Powertrain:</label>
+          <select id="filterPowertrain">
+            <option value="ALL">All (ICE / Hybrid / EV)</option>
+            <option value="ICE">ICE Only</option>
+            <option value="Hybrid">Hybrid Only</option>
+            <option value="EV">EV Only</option>
+          </select>
+          <label>Distributor:</label>
+          <select id="filterDistributor"><option value="ALL">All Distributors</option></select>
+          <label>Body Type:</label>
+          <select id="filterBody"><option value="ALL">All Body Types</option></select>
+          <span style="margin-left:auto; font-size:12px; font-weight:800; color:var(--deep);" id="modelCountBadge">18 Models Shown</span>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Sri Lanka 9-Box Brand-New Product Positioning Map</div>
+          <div class="card-sub">Y-Axis: Powertrain Spectrum (ICE to EV) • X-Axis: Standardized Brand-New Price (LKR Millions, 18% VAT-Inclusive).</div>
+          <div id="nineBoxChart" style="width:100%; height:520px;"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Brand-New Portfolio Mix by Distributor</div>
+          <div class="card-sub">Highlights legacy ICE concentration versus pure-play EV challengers.</div>
+          <div id="portfolioChart" style="width:100%; height:360px;"></div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 2: GARTNER MAGIC QUADRANT ==================== -->
+      <section id="view-quadrant" class="view">
+        <div class="insight-strip">
+          <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <p><strong>Click-to-Inspect:</strong> Filter by segment (PV, EV, CV, TW, MF) and click any company card on the right to highlight its position and evidence coverage inside the Magic Quadrant.</p>
+        </div>
+
+        <div class="pill-bar" id="tour-quad-pills">
+          <button class="pill active" onclick="filterQuadrant('ALL', this)">All Segments</button>
+          <button class="pill" onclick="filterQuadrant('PV', this)">PV · Passenger</button>
+          <button class="pill" onclick="filterQuadrant('EV', this)">EV · Electric</button>
+          <button class="pill" onclick="filterQuadrant('CV', this)">CV · Commercial</button>
+          <button class="pill" onclick="filterQuadrant('TW', this)">TW · 2W / 3W</button>
+          <button class="pill" onclick="filterQuadrant('MF', this)">MF · Manufacturing</button>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Sri Lanka Automotive Magic Quadrant</div>
+            <div class="card-sub">Source: <code style="color:var(--deep)">quadrant_scores_default_weights.csv</code>. Solid markers = evidenced; light-fill = watchlist.</div>
+            <div id="magicQuadrantChart" style="width:100%; height:495px;"></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Analyst Outlook Judgement</div>
+            <div class="card-sub">Select a company below to highlight on the quadrant.</div>
+            <div class="outlook-list" id="outlookList"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 3: SCALE STRATEGY SUITE ==================== -->
+      <section id="view-scale" class="view">
+        <div class="grid-2-eq">
+          <div class="card">
+            <div class="card-title">S · Sense: Strategy Palette &amp; Disruption</div>
+            <div class="card-sub">Diagnosing Sri Lanka's post-ban competitive terrain.</div>
+            <div class="errc-box" style="margin-bottom:12px;">
+              <h4>Environment: Adaptive / Shaping</h4>
+              <p>Low predictability (tariff &amp; FX shifts) paired with high malleability (60% EV luxury tax edge &amp; rapid Chinese OEM entry). Classical 5-year plans age in months; winners vary, select, and scale fast.</p>
+            </div>
+            <div class="errc-box steel">
+              <h4>The Innovator's Dilemma in Action</h4>
+              <p>Incumbents defend high-margin ICE heritage while disruptors (<strong>BYD, Jetour, Jaecoo, Kaiyi</strong>) enter lower with superior cabin tech and climb straight into the mainstream.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">C · Choose: Blue Ocean Strategy Canvas</div>
+            <div class="card-sub">Traditional ICE Distributors vs. Chinese EV Entrants (1 = low, 5 = high).</div>
+            <div id="scaleCanvasChart" style="width:100%; height:310px;"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">C · Choose: ERRC Action Grid</div>
+          <div class="card-sub">Eliminate · Reduce · Raise · Create framework applied to Sri Lanka's EV transition.</div>
+          <div class="errc-grid">
+            <div class="errc-box"><h4>Eliminate</h4><p>Combustion engine complexity, high fuel dependency, and 100%–120% petrol/diesel luxury tax penalties.</p></div>
+            <div class="errc-box steel"><h4>Reduce</h4><p>Landed price via vertical scale + 60% EV luxury tax tier; model refresh cycles cut to ~18 months vs. 48+ months.</p></div>
+            <div class="errc-box ice"><h4>Raise</h4><p>ADAS driver-assist, large infotainment displays, and connected features delivered as standard in the LKR 10M–22M segment.</p></div>
+            <div class="errc-box"><h4>Create</h4><p>Software-defined vehicles (OTA updates), bundled home-charging, and battery-health resale warranties.</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">L · Layer: Three Horizons Roadmap (70 / 20 / 10)</div>
+          <div class="card-sub">Recommended capital &amp; team split for a legacy Sri Lankan distributor (e.g., United Motors / DIMO).</div>
+          <div class="grid-3">
+            <div class="h-card"><div class="h-pct">~70%</div><h4>H1 · Immediate (Defend Core)</h4><p>Protect profitable ICE SUV/commercial lines and monetize existing islandwide service workshops &amp; spare parts.</p></div>
+            <div class="h-card h2"><div class="h-pct">~20%</div><h4>H2 · Growth (Scale NEVs)</h4><p>Capture white-space boxes in <strong>Budget &amp; Mid-Range Hybrids/EVs</strong> (LKR 10M–20M) via an autonomous NEV unit.</p></div>
+            <div class="h-card h3"><div class="h-pct">~10%</div><h4>H3 · Transformative (Future Bets)</h4><p>Pilot fast-charging alliances (ChargeNET / PUCSL framework), certified EV battery resale guarantees, and fleet mobility.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 4: MACRO & TRADE ==================== -->
+      <section id="view-macro" class="view">
+        <div class="kpi-grid" style="grid-template-columns: repeat(4, 1fr);">
+          <div class="kpi"><div class="kpi-label">Locally Assembled (2023)</div><div class="kpi-val">17,956</div><div class="kpi-sub">1,121 4W + 16,835 2W (MoI)</div></div>
+          <div class="kpi steel"><div class="kpi-label">Direct Sector Jobs</div><div class="kpi-val">~20,000</div><div class="kpi-sub">15 Assemblers • 25 Component Makers</div></div>
+          <div class="kpi"><div class="kpi-label">Total SL Vehicle Fleet</div><div class="kpi-val">8.45 Mn</div><div class="kpi-sub">905,329 Passenger Cars (DCS)</div></div>
+          <div class="kpi steel"><div class="kpi-label">Component Exports Growth</div><div class="kpi-val">2.8x</div><div class="kpi-sub">Rs 9.2B (2020) to Rs 25.7B (2022)</div></div>
+        </div>
+        <div class="grid-3">
+          <div class="card"><div class="card-title">2025 Registrations by Class</div><div class="card-sub">Post-ban surge to 360K+ units (DMT).</div><div id="regChart" style="width:100%; height:290px;"></div></div>
+          <div class="card"><div class="card-title">Sector GDP Contribution</div><div class="card-sub">Current vs. Constant Prices (Rs. Mn, DCS).</div><div id="gdpChart" style="width:100%; height:290px;"></div></div>
+          <div class="card"><div class="card-title">Imports vs. Exports (Rs. Bn)</div><div class="card-sub">Sri Lanka Customs (2020–2022).</div><div id="tradeChart" style="width:100%; height:290px;"></div></div>
+        </div>
+        <div class="insight-strip">
+          <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <p><strong>Global OEM Export Strength:</strong> Sri Lankan SLACMA component manufacturers export automotive wire harnesses and impact sensors directly to <strong>Toyota, Honda, BMW, Volvo, Opel, and Aston Martin</strong> across the USA, Germany, UK, and Switzerland.</p>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 5: 28-PLAYER REGISTRY & EVIDENCE ==================== -->
+      <section id="view-registry" class="view">
+        <div class="card">
+          <div class="card-title">Verified 28-Distributor MECE Master Registry</div>
+          <div class="card-sub">Brand-new Sri Lankan distributors only (as of Nov 2026). Filter by batch or search any company or brand.</div>
+          <div class="filter-bar">
+            <input type="text" id="registrySearch" placeholder="Search distributor, brand, or owner..." style="width:280px; background:#fff;">
+            <div class="pill-bar" style="margin-bottom:0;">
+              <button class="pill active" onclick="filterBatch('ALL', this)">All (28)</button>
+              <button class="pill" onclick="filterBatch('A', this)">Batch A · Arundathie (9)</button>
+              <button class="pill" onclick="filterBatch('B', this)">Batch B · Sithumini (10)</button>
+              <button class="pill" onclick="filterBatch('C', this)">Batch C · Thilakshana (9)</button>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Batch</th><th>Distributor</th><th>Brands Carried</th><th>Website Status</th><th>Owner</th></tr></thead>
+              <tbody id="registryBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Evidenced Product &amp; Ecosystem Offerings</div>
+          <div class="card-sub">Curated offering evidence from <code style="color:var(--deep)">product_positioning.csv</code>.</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Company</th><th>Offering</th><th>Status</th><th>Verified Market Signal</th></tr></thead>
+              <tbody id="offeringsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener("scroll", () => {
+    const nav = document.getElementById("lpNav");
+    if (nav) nav.classList.toggle("scrolled", window.scrollY > 50);
+  });
+
+  // CRISP INLINE SVG LOGOS FOR BRANDS NOT ON SIMPLEICONS (BYD, MERCEDES-BENZ, LAND ROVER)
+  const inlineSVGs = {
+    byd: `<svg viewBox="0 0 120 46" xmlns="http://www.w3.org/2000/svg"><text x="60" y="33" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="900" font-size="31" letter-spacing="5" fill="#086288">BYD</text><rect x="14" y="39" width="92" height="3.5" rx="2" fill="#4D8DBA"/></svg>`,
+    mercedes: `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="27" fill="none" stroke="#111827" stroke-width="3.5"/><polygon points="32,7 35,30 55,44 32,35 9,44 29,30" fill="#111827"/></svg>`,
+    landrover: `<svg viewBox="0 0 120 64" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="32" rx="54" ry="26" fill="#005A2B"/><ellipse cx="60" cy="32" rx="48" ry="21" fill="none" stroke="#FFFFFF" stroke-width="2"/><text x="60" y="29" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="13" letter-spacing="1.5" fill="#FFFFFF">LAND</text><text x="60" y="44" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="13" letter-spacing="1.5" fill="#FFFFFF">ROVER</text></svg>`
+  };
+
+  // REAL AUTOMOTIVE BRAND LOGOS (SimpleIcons CDN + Inline SVGs + Fallback)
+  const logoMap = [
+    { match: "Toyota", slug: "toyota", color: "EB0A1E", code: "TY" },
+    { match: "BYD", svgKey: "byd", code: "BYD" },
+    { match: "John Keells", svgKey: "byd", code: "BYD" },
+    { match: "United Motors", slug: "mitsubishi", color: "E60012", code: "MIT" },
+    { match: "Mitsubishi", slug: "mitsubishi", color: "E60012", code: "MIT" },
+    { match: "DIMO", svgKey: "mercedes", code: "MB" },
+    { match: "Mercedes", svgKey: "mercedes", code: "MB" },
+    { match: "AMW", slug: "suzuki", color: "003145", code: "SZK" },
+    { match: "Associated Motorways", slug: "suzuki", color: "003145", code: "SZK" },
+    { match: "Suzuki", slug: "suzuki", color: "003145", code: "SZK" },
+    { match: "Kia", slug: "kia", color: "05141F", code: "KIA" },
+    { match: "Hyundai", slug: "hyundai", color: "002C5F", code: "HYU" },
+    { match: "Abans", slug: "hyundai", color: "002C5F", code: "HYU" },
+    { match: "Mels", slug: "bmw", color: "0066B1", code: "BMW" },
+    { match: "BMW", slug: "bmw", color: "0066B1", code: "BMW" },
+    { match: "Continental", slug: "volkswagen", color: "001E50", code: "VW" },
+    { match: "Volkswagen", slug: "volkswagen", color: "001E50", code: "VW" },
+    { match: "Stafford", slug: "honda", color: "CC0000", code: "HND" },
+    { match: "Honda", slug: "honda", color: "CC0000", code: "HND" },
+    { match: "Eurocars", slug: "porsche", color: "B12B28", code: "POR" },
+    { match: "Porsche", slug: "porsche", color: "B12B28", code: "POR" },
+    { match: "Carmart", slug: "peugeot", color: "000000", code: "PEU" },
+    { match: "Colonial", slug: "mazda", color: "101010", code: "MZD" },
+    { match: "Access", svgKey: "landrover", code: "JLR" },
+    { match: "Land Rover", svgKey: "landrover", code: "JLR" },
+    { match: "Micro", slug: "mg", color: "C8102E", code: "MG" },
+    { match: "Tata", slug: "tata", color: "486AAE", code: "TAT" },
+    { match: "Prestige", slug: "mini", color: "000000", code: "MINI" },
+    { match: "Nissan", slug: "nissan", color: "C3002F", code: "NIS" },
+    { match: "Euro Motors", slug: "", color: "086288", code: "JTR" },
+    { match: "Hayleys", slug: "", color: "047857", code: "JCO" },
+    { match: "David Pieris", slug: "", color: "086288", code: "GWM" },
+    { match: "Lanka Ashok", slug: "", color: "035388", code: "LAL" },
+    { match: "DPMC", slug: "", color: "086288", code: "DPM" },
+    { match: "ChargeNET", slug: "", color: "0284C7", code: "CN" },
+    { match: "Evolution", slug: "", color: "0E7490", code: "EVO" },
+    { match: "Browns", slug: "", color: "086288", code: "BAW" }
+  ];
+
+  function getLogoInner(found, name, code) {
+    if (found && found.svgKey && inlineSVGs[found.svgKey]) return inlineSVGs[found.svgKey];
+    if (found && found.slug) {
+      const url = `https://cdn.simpleicons.org/${found.slug}/${found.color}`;
+      return `<img src="${url}" alt="${name}" onerror="this.outerHTML='<span class=logo-fallback>${code}</span>'">`;
+    }
+    return `<span class="logo-fallback">${code}</span>`;
+  }
+
+  function getBrandLogoHTML(name, small = false) {
+    const found = logoMap.find(m => name.toLowerCase().includes(m.match.toLowerCase()));
+    const code = found ? found.code : name.split(" ").map(w => w[0]).join("").slice(0,3).toUpperCase();
+    const cls = small ? "logo-box sm" : "logo-box";
+    return `<div class="${cls}">${getLogoInner(found, name, code)}</div>`;
+  }
+
+  const showcaseBrands = [
+    { brand:"BYD", dist:"John Keells CG Auto", search:"John Keells", svgKey:"byd", code:"BYD" },
+    { brand:"Toyota", dist:"Toyota Lanka", search:"Toyota", slug:"toyota", color:"EB0A1E", code:"TY" },
+    { brand:"Mitsubishi", dist:"United Motors (UNIMO)", search:"United Motors", slug:"mitsubishi", color:"E60012", code:"MIT" },
+    { brand:"Mercedes-Benz", dist:"DIMO PLC", search:"DIMO", svgKey:"mercedes", code:"MB" },
+    { brand:"Suzuki", dist:"AMW", search:"AMW", slug:"suzuki", color:"003145", code:"SZK" },
+    { brand:"Kia", dist:"Kia Motors Lanka", search:"Kia", slug:"kia", color:"05141F", code:"KIA" },
+    { brand:"BMW", dist:"Mels Automobiles", search:"Mels", slug:"bmw", color:"0066B1", code:"BMW" },
+    { brand:"Hyundai", dist:"Abans Auto", search:"Abans", slug:"hyundai", color:"002C5F", code:"HYU" },
+    { brand:"Porsche", dist:"Eurocars Colombo", search:"Eurocars", slug:"porsche", color:"B12B28", code:"POR" },
+    { brand:"Volkswagen", dist:"Continental Cars", search:"Continental", slug:"volkswagen", color:"001E50", code:"VW" },
+    { brand:"Honda", dist:"Stafford Motor Co.", search:"Stafford", slug:"honda", color:"CC0000", code:"HND" },
+    { brand:"Land Rover", dist:"Access Motors", search:"Access", svgKey:"landrover", code:"JLR" },
+    { brand:"Peugeot", dist:"Carmart Ltd", search:"Carmart", slug:"peugeot", color:"000000", code:"PEU" },
+    { brand:"Mazda", dist:"Colonial Motors", search:"Colonial", slug:"mazda", color:"101010", code:"MZD" }
+  ];
+
+  // RAPID BRAND-FLASH PRELOADER ENGINE
+  (function runBrandPreloader() {
+    const stage = document.getElementById("loaderStage");
+    const label = document.getElementById("loaderBrandName");
+    const bar = document.getElementById("loaderBar");
+    const pct = document.getElementById("loaderPct");
+    const seq = showcaseBrands.slice(0, 10);
+    let idx = 0;
+
+    function tick() {
+      const item = seq[idx % seq.length];
+      stage.innerHTML = getLogoInner(item, item.brand, item.code);
+      label.textContent = item.brand.toUpperCase();
+      const progress = Math.min(100, Math.round(((idx + 1) / seq.length) * 100));
+      bar.style.width = progress + "%";
+      pct.textContent = progress + "%";
+      idx++;
+      if (idx < seq.length) {
+        setTimeout(tick, 145);
+      } else {
+        setTimeout(() => document.getElementById("preloader").classList.add("hidden"), 260);
+      }
+    }
+    tick();
+  })();
+
+  let carouselReversed = false;
+  function nudgeCarousel() {
+    carouselReversed = !carouselReversed;
+    document.getElementById("lpLogoWall").style.animationDirection = carouselReversed ? "reverse" : "normal";
+  }
+
+  function renderLandingLogoWall() {
+    const cardsHTML = showcaseBrands.map(b => `
+      <div class="lp-logo-card" onclick="enterDashboard('registry', '${b.search}')">
+        <div class="lp-logo-pill">${getLogoInner(b, b.brand, b.code)}</div>
+        <div class="lp-logo-name">${b.brand}</div>
+        <div class="lp-logo-dist">${b.dist}</div>
+      </div>
+    `).join("");
+    // Duplicate list for seamless infinite marquee carousel
+    document.getElementById("lpLogoWall").innerHTML = cardsHTML + cardsHTML;
+  }
+
+  function renderOverviewBrands() {
+    document.getElementById("overviewBrandGrid").innerHTML = showcaseBrands.slice(0, 12).map(b => `
+      <div class="brand-tile" onclick="jumpToRegistry('${b.search}')">
+        ${getBrandLogoHTML(b.brand)}
+        <div>
+          <div class="brand-tile-name">${b.brand}</div>
+          <div class="brand-tile-sub">${b.dist}</div>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  function jumpToRegistry(term) {
+    document.getElementById("nav-registry").click();
+    document.getElementById("registrySearch").value = term;
+    renderRegistry();
+  }
+
+  // STICKY CAR SCROLLYTELLING
+  const hudMeta = [
+    { pill:"ERA 01 · PETROL & DIESEL (ICE)", title:"The Legacy Combustion Base", sub:"Toyota Lanka • United Motors • DIMO • AMW" },
+    { pill:"ERA 02 · RUGGED SUV & JEEP BOOM", title:"Mid-Range SUV Disruption", sub:"Jetour T2 • JAECOO J5 • Mitsubishi Outlander" },
+    { pill:"ERA 03 · PURE ELECTRIC (EV)", title:"The 48.8% EV Takeover", sub:"BYD Atto 3 • Kaiyi eVibe • BAW E7 • ChargeNET" }
+  ];
+  function activateStep(stepIdx) {
+    document.querySelectorAll(".car-slide").forEach((s, i) => s.classList.toggle("active", i === stepIdx));
+    document.querySelectorAll(".story-chapter").forEach((c, i) => c.classList.toggle("active", i === stepIdx));
+    document.querySelectorAll(".s-dot").forEach((d, i) => d.classList.toggle("active", i === stepIdx));
+    const m = hudMeta[stepIdx];
+    document.getElementById("hudPill").textContent = m.pill;
+    document.getElementById("hudTitle").textContent = m.title;
+    document.getElementById("hudSub").textContent = m.sub;
+  }
+  const chapterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) activateStep(parseInt(entry.target.getAttribute("data-step"), 10));
+    });
+  }, { rootMargin: "-35% 0px -35% 0px", threshold: 0.1 });
+  document.querySelectorAll(".story-chapter").forEach(ch => chapterObserver.observe(ch));
+  function scrollToChapter(idx) { document.getElementById("chapter-" + idx).scrollIntoView({ behavior: "smooth", block: "center" }); }
+
+  // ==================== EXECUTIVE LOGIN GATE ====================
+  const AUTH_EMAIL = "angelo@sandbox.lk";
+  const AUTH_PASS = "Automotive228";
+  let pendingRoute = { viewId: "overview", searchTerm: "" };
+
+  function isAuthenticated() {
+    return sessionStorage.getItem("sl_auto_auth") === "1";
+  }
+
+  function openLoginModal() {
+    document.getElementById("loginErr").classList.remove("show");
+    document.getElementById("login-modal").classList.add("active");
+    setTimeout(() => document.getElementById("loginEmail").focus(), 100);
+  }
+
+  function closeLoginModal() {
+    document.getElementById("login-modal").classList.remove("active");
+  }
+
+  function togglePasswordVis() {
+    const inp = document.getElementById("loginPass");
+    inp.type = inp.type === "password" ? "text" : "password";
+  }
+
+  function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+    const pass = document.getElementById("loginPass").value;
+    if (email === AUTH_EMAIL.toLowerCase() && pass === AUTH_PASS) {
+      sessionStorage.setItem("sl_auto_auth", "1");
+      closeLoginModal();
+      document.getElementById("loginPass").value = "";
+      unlockDashboard(pendingRoute.viewId, pendingRoute.searchTerm);
+    } else {
+      const err = document.getElementById("loginErr");
+      err.classList.remove("show");
+      void err.offsetWidth;
+      err.classList.add("show");
+    }
+  }
+
+  function enterDashboard(viewId = "overview", searchTerm = "") {
+    pendingRoute = { viewId, searchTerm };
+    if (!isAuthenticated()) {
+      openLoginModal();
+      return;
+    }
+    unlockDashboard(viewId, searchTerm);
+  }
+
+  function unlockDashboard(viewId = "overview", searchTerm = "") {
+    document.getElementById("landing-mode").classList.add("hidden");
+    document.getElementById("dashboard-mode").classList.add("active");
+    window.scrollTo({ top: 0, behavior: "instant" });
+    const btn = document.getElementById("nav-" + viewId);
+    if (btn) btn.click();
+    if (searchTerm) {
+      document.getElementById("registrySearch").value = searchTerm;
+      renderRegistry();
+    } else if (!localStorage.getItem("sl_auto_tour_done")) {
+      setTimeout(() => startTour(false), 450);
+    }
+  }
+
+  function exitDashboard() {
+    endTour();
+    document.getElementById("dashboard-mode").classList.remove("active");
+    document.getElementById("landing-mode").classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function signOutDashboard() {
+    sessionStorage.removeItem("sl_auto_auth");
+    exitDashboard();
+  }
+
+  // ==================== INTERACTIVE 5-STEP GUIDED TOUR ====================
+  const tourSteps = [
+    { view: "overview", target: "#tour-nav", title: "Executive Sidebar Navigation", desc: "Switch seamlessly between Overview, the 9-Box Price Simulator, Gartner Magic Quadrant, SCALE Strategy, Macro Analytics, and all 28 Distributors." },
+    { view: "overview", target: "#tour-kpis", title: "Headline Market Pulse", desc: "Instant boardroom metrics: 360,117 post-ban registrations, $2.05B import bill, BYD's 48.8% Oct 2026 new-car share, and Sri Lanka's EV luxury tax edge." },
+    { view: "overview", target: "#tour-brands", title: "Interactive Official Brand Grid", desc: "Click any automotive brand logo to jump directly to its verified Sri Lankan distributor, website status, and batch ownership." },
+    { view: "ninebox", target: "#tour-sliders", title: "Live 9-Box Price Simulator", desc: "Drag the Budget and Mid-Range LKR sliders in real time to test how ICE, Hybrid, and EV models shift across the 9 positioning boxes." },
+    { view: "quadrant", target: "#tour-quad-pills", title: "Gartner Magic Quadrant Filters", desc: "Filter 15 scored players by segment (PV, EV, CV, TW, MF) and click any Analyst Outlook card on the right to highlight it on the chart." }
+  ];
+  let tourIdx = 0;
+
+  function startTour(force = false) {
+    if (!force && localStorage.getItem("sl_auto_tour_done")) return;
+    tourIdx = 0;
+    document.getElementById("tour-overlay").classList.add("active");
+    renderTourStep();
+  }
+
+  function renderTourStep() {
+    const step = tourSteps[tourIdx];
+    const navBtn = document.getElementById("nav-" + step.view);
+    if (navBtn && !navBtn.classList.contains("active")) navBtn.click();
+
+    setTimeout(() => {
+      const el = document.querySelector(step.target);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      setTimeout(() => {
+        const rect = el.getBoundingClientRect();
+        const pad = 8;
+        const spot = document.getElementById("tour-spotlight");
+        spot.style.top = (rect.top - pad) + "px";
+        spot.style.left = (rect.left - pad) + "px";
+        spot.style.width = (rect.width + pad * 2) + "px";
+        spot.style.height = (rect.height + pad * 2) + "px";
+
+        const pop = document.getElementById("tour-popover");
+        const popW = 340, popH = 185;
+        let top = rect.bottom + 18;
+        let left = rect.left;
+        if (top + popH > window.innerHeight - 16) top = Math.max(16, rect.top - popH - 18);
+        if (left + popW > window.innerWidth - 16) left = window.innerWidth - popW - 18;
+        if (step.target === "#tour-nav") { left = rect.right + 20; top = rect.top + 10; }
+        pop.style.top = top + "px";
+        pop.style.left = Math.max(16, left) + "px";
+
+        document.getElementById("tourStepTag").textContent = `STEP ${tourIdx + 1} OF ${tourSteps.length}`;
+        document.getElementById("tourTitle").textContent = step.title;
+        document.getElementById("tourDesc").textContent = step.desc;
+        document.getElementById("tourPrevBtn").style.display = tourIdx === 0 ? "none" : "inline-block";
+        document.getElementById("tourNextBtn").textContent = tourIdx === tourSteps.length - 1 ? "Finish" : "Next";
+      }, 220);
+    }, 120);
+  }
+
+  function nextTourStep() {
+    if (tourIdx < tourSteps.length - 1) { tourIdx++; renderTourStep(); }
+    else endTour();
+  }
+  function prevTourStep() {
+    if (tourIdx > 0) { tourIdx--; renderTourStep(); }
+  }
+  function endTour() {
+    document.getElementById("tour-overlay").classList.remove("active");
+    localStorage.setItem("sl_auto_tour_done", "1");
+  }
+
+  // ==================== DASHBOARD DATA & CHARTS ====================
+  let BUDGET_MAX = 12.0, MIDRANGE_MAX = 25.0;
+  let activeBatch = "ALL", activeSegment = "ALL", highlightedCompany = null;
+
+  const quadrantData = [
+    {id:"toyota", company:"Toyota Lanka", seg:"PV", exec:4.58, vision:3.88, ec:60, vc:40, status:"Plotted", quad:"Leaders"},
+    {id:"toyota", company:"Toyota Lanka", seg:"CV", exec:4.58, vision:3.88, ec:60, vc:40, status:"Plotted", quad:"Leaders"},
+    {id:"dimo", company:"DIMO", seg:"PV", exec:3.70, vision:3.67, ec:50, vc:30, status:"Plotted", quad:"Challengers"},
+    {id:"dimo", company:"DIMO", seg:"CV", exec:3.70, vision:3.67, ec:50, vc:30, status:"Plotted", quad:"Niche players"},
+    {id:"uml", company:"United Motors (UNIMO)", seg:"PV", exec:4.00, vision:3.40, ec:55, vc:25, status:"Plotted", quad:"Challengers"},
+    {id:"uml", company:"United Motors (UNIMO)", seg:"CV", exec:4.00, vision:3.40, ec:40, vc:25, status:"Plotted", quad:"Challengers"},
+    {id:"jkh", company:"John Keells - BYD", seg:"PV", exec:3.43, vision:4.62, ec:35, vc:40, status:"Plotted", quad:"Visionaries"},
+    {id:"jkh", company:"John Keells - BYD", seg:"EV", exec:3.43, vision:4.62, ec:35, vc:40, status:"Plotted", quad:"Leaders"},
+    {id:"evo", company:"Evolution Auto", seg:"PV", exec:3.43, vision:4.50, ec:35, vc:30, status:"Plotted", quad:"Visionaries"},
+    {id:"evo", company:"Evolution Auto", seg:"EV", exec:3.43, vision:4.50, ec:35, vc:30, status:"Plotted", quad:"Leaders"},
+    {id:"dpa", company:"David Pieris (GWM/BAIC)", seg:"EV", exec:3.00, vision:4.00, ec:15, vc:25, status:"Watch", quad:"Watch"},
+    {id:"lal", company:"Lanka Ashok Leyland", seg:"CV", exec:4.00, vision:4.00, ec:55, vc:20, status:"Plotted", quad:"Leaders"},
+    {id:"dpmc", company:"DPMC (Bajaj/KTM)", seg:"TW", exec:4.43, vision:4.00, ec:35, vc:25, status:"Plotted", quad:"Leaders"},
+    {id:"tvs", company:"TVS Lanka", seg:"TW", exec:4.00, vision:4.00, ec:45, vc:25, status:"Plotted", quad:"Leaders"},
+    {id:"micro", company:"Micro Cars", seg:"MF", exec:3.00, vision:4.20, ec:15, vc:50, status:"Watch", quad:"Watch"},
+    {id:"ceat", company:"CEAT Kelani", seg:"MF", exec:4.00, vision:4.00, ec:15, vc:10, status:"Watch", quad:"Watch"},
+    {id:"harness", company:"Lanka Harness", seg:"MF", exec:3.00, vision:3.50, ec:15, vc:20, status:"Watch", quad:"Watch"},
+    {id:"chargenet", company:"ChargeNET", seg:"EV", exec:5.00, vision:4.27, ec:15, vc:55, status:"Watch", quad:"EV Infra"}
+  ];
+
+  const outlookData = [
+    {id:"toyota", company:"Toyota Lanka", label:"Likely Leader", cls:"", text:"Broadest service footprint and top brand equity; primary risk is BEV transition pace."},
+    {id:"lal", company:"Lanka Ashok Leyland", label:"Likely Leader (CV)", cls:"", text:"Strong FY24/25 financials and local assembly moat; single-OEM concentration risk."},
+    {id:"dpmc", company:"DPMC (Bajaj)", label:"Likely Leader (2W/3W)", cls:"", text:"Dominant ~92% three-wheeler brand share; EV three-wheeler readiness unevidenced."},
+    {id:"jkh", company:"John Keells – BYD", label:"Contender (EV)", cls:"contender", text:"48.8% Oct '26 new-car share gives clear EV leadership option; islandwide service scaling."},
+    {id:"uml", company:"United Motors (UNIMO)", label:"Contender", cls:"contender", text:"Fast profit recovery & wide OEM portfolio (Mitsubishi, Perodua); limited EV depth."},
+    {id:"dimo", company:"DIMO", label:"Contender", cls:"contender", text:"Diversified mobility ecosystem (Mercedes-Benz, Tata); thin FY23/24 margin."},
+    {id:"chargenet", company:"ChargeNET", label:"Contender (EV Infra)", cls:"contender", text:"Largest charging network (100+ locations, 150+ chargers); PUCSL favours scale."},
+    {id:"evo", company:"Evolution Auto", label:"Watch", cls:"watch", text:"EV-first multi-brand strategy + EVO Charge Peliyagoda, small unverified volume."},
+    {id:"dpa", company:"David Pieris (GWM/BAIC)", label:"Watch", cls:"watch", text:"Strong GWM hybrid/NEV & BAIC push; legal entity link to DPMC unverified."},
+    {id:"micro", company:"Micro Cars", label:"Watch", cls:"watch", text:"Local assembly + MG/Chery/BAIC EV plans; volumes and financials remain private."}
+  ];
+
+  const offeringsData = [
+    ["Toyota Lanka","ICE & Hybrid","Evidenced","Toyota & Hino franchise; Raize/Yaris top sellers; Hybrid LC300 & Hyryder launched."],
+    ["DIMO","ICE (PV & CV)","Evidenced","Mercedes-Benz & Tata passenger/commercial portfolio + engineering."],
+    ["United Motors (UNIMO)","ICE (PV & CV)","Evidenced","Mitsubishi, Fuso, Perodua, DFSK, JMC."],
+    ["John Keells – BYD","BEV / PHEV","Evidenced","#1 brand-new car leader (221/453 cars in Oct 2026); EVs hit 10% of 2025 PV imports."],
+    ["Evolution Auto","BEV + Charging","Evidenced","Multi-brand EV line-up (XPeng, Avatr, IM) + EVO Charge Peliyagoda."],
+    ["David Pieris Auto","Hybrid / NEV","Evidenced","GWM NEV partnership (Oct 2025) + BAIC sole distributor (1,000+ X55 SUVs)."],
+    ["Lanka Ashok Leyland","ICE Commercial","Evidenced","Locally assembled Ashok Leyland trucks & buses."],
+    ["DPMC & TVS Lanka","ICE 2W / 3W","Evidenced","Bajaj (~92% 3W share) & TVS (~25% motorcycle share)."],
+    ["Micro Cars","ICE + EV Plan","Evidenced","Local assembly with Chinese/Korean OEMs; BAIC EV assembly licence report."],
+    ["Ideal / CEAT / Harness","Components","Evidenced","Magna seating JV, tyres, and wire/impact sensors exported to global OEMs."],
+    ["ChargeNET","Charging Infra","Evidenced","100+ locations, 150+ chargers; Dialog Touch Card payment integration."]
+  ];
+
+  let currentData = [
+    {Distributor:"AMW", Brand:"Suzuki", Model:"Alto K10", Powertrain:"ICE", Body_Type:"Hatchback", Std_Price_Mn:6.8},
+    {Distributor:"AMW", Brand:"Suzuki", Model:"WagonR", Powertrain:"Hybrid", Body_Type:"Hatchback", Std_Price_Mn:8.9},
+    {Distributor:"United Motors", Brand:"Perodua", Model:"Axia", Powertrain:"ICE", Body_Type:"Hatchback", Std_Price_Mn:8.2},
+    {Distributor:"United Motors", Brand:"Mitsubishi", Model:"Outlander Sport", Powertrain:"ICE", Body_Type:"SUV", Std_Price_Mn:21.8},
+    {Distributor:"Micro Cars", Brand:"MG", Model:"ZS EV", Powertrain:"EV", Body_Type:"SUV", Std_Price_Mn:16.5},
+    {Distributor:"John Keells CG Auto", Brand:"BYD", Model:"Atto 1 / Dolphin", Powertrain:"EV", Body_Type:"Hatchback", Std_Price_Mn:10.5},
+    {Distributor:"John Keells CG Auto", Brand:"BYD", Model:"Atto 3", Powertrain:"EV", Body_Type:"SUV", Std_Price_Mn:14.9},
+    {Distributor:"John Keells CG Auto", Brand:"BYD", Model:"Seal", Powertrain:"EV", Body_Type:"Sedan", Std_Price_Mn:26.5},
+    {Distributor:"Euro Motors", Brand:"Jetour", Model:"Dashing", Powertrain:"ICE", Body_Type:"SUV", Std_Price_Mn:17.5},
+    {Distributor:"Euro Motors", Brand:"Jetour", Model:"T2", Powertrain:"ICE", Body_Type:"SUV", Std_Price_Mn:23.5},
+    {Distributor:"Hayleys Mobility", Brand:"JAECOO", Model:"J5 HEV", Powertrain:"Hybrid", Body_Type:"SUV", Std_Price_Mn:19.8},
+    {Distributor:"Hayleys Mobility", Brand:"Kaiyi", Model:"eVibe EV", Powertrain:"EV", Body_Type:"Hatchback", Std_Price_Mn:9.6},
+    {Distributor:"Browns EV", Brand:"BAW", Model:"E7 Pro EV", Powertrain:"EV", Body_Type:"Hatchback", Std_Price_Mn:8.4},
+    {Distributor:"Kia Motors", Brand:"Kia", Model:"Sportage HEV", Powertrain:"Hybrid", Body_Type:"SUV", Std_Price_Mn:24.2},
+    {Distributor:"Toyota Lanka", Brand:"Toyota", Model:"RAV4 Hybrid", Powertrain:"Hybrid", Body_Type:"SUV", Std_Price_Mn:28.5},
+    {Distributor:"DIMO", Brand:"Mercedes-Benz", Model:"GLB 200", Powertrain:"Hybrid", Body_Type:"SUV", Std_Price_Mn:42.0},
+    {Distributor:"Mels Automobiles", Brand:"BMW", Model:"iX3 / X3", Powertrain:"EV", Body_Type:"SUV", Std_Price_Mn:48.0},
+    {Distributor:"Eurocars", Brand:"Porsche", Model:"Macan EV", Powertrain:"EV", Body_Type:"SUV", Std_Price_Mn:62.0}
+  ];
+
+  const registry28 = [
+    ["A","Toyota Lanka (Pvt) Ltd","Toyota; Lexus (unverified)","toyota.lk","Verified","Arundathie"],
+    ["A","DIMO PLC","Mercedes-Benz; Tata","dimolanka.com","Unverified","Arundathie"],
+    ["A","Euro Motors (Euro Holdings)","Jetour; Dongfeng; JAC","euromotors.lk","Verified","Arundathie"],
+    ["A","David Pieris Automobiles","GWM NEV (Haval HEV/PHEV, ORA); BAIC; Proton/e.MAS","gwmsrilanka.lk","Verified","Arundathie"],
+    ["A","Abans Auto","Hyundai","Unverified","Unverified","Arundathie"],
+    ["A","Carmart Ltd","Peugeot; Leapmotor","carmart.lk","Unverified","Arundathie"],
+    ["A","Colonial Motors Ceylon","Mazda","Unverified","Unverified","Arundathie"],
+    ["A","Mels Automobiles (Melstacorp)","BMW (appointed May 2026)","Unverified","Unverified","Arundathie"],
+    ["A","Continental Cars & Commercials","Volkswagen (Taigun, Virtus)","Unverified","Unverified","Arundathie"],
+    ["B","John Keells CG Auto","BYD (#1); DENZA","johnkeellscgauto.com","Verified","Sithumini"],
+    ["B","Associated Motorways (AMW)","Suzuki; Nissan; Renault","amwltd.com","Verified","Sithumini"],
+    ["B","Senok / Prime EV Automobiles","GWM ICE (Jolion, Poer); Deepal; NEVO","Unverified","Unverified","Sithumini"],
+    ["B","Ideal Motors","Mahindra","Unverified","Unverified","Sithumini"],
+    ["B","Sathosa Motors PLC","Isuzu (Commercial)","Unverified","Unverified","Sithumini"],
+    ["B","Stafford Motor Company","Honda (Brand-new only)","honda.lk","Verified","Sithumini"],
+    ["B","Access Motors","Land Rover; Range Rover; Jaguar","Unverified","Unverified","Sithumini"],
+    ["B","Prestige Automobile","MINI (unverified); BMW handover","Unverified","Unverified","Sithumini"],
+    ["B","Evolution Auto (Pvt) Ltd","XPeng; Avatr; IM Motors; Riddara","Unverified","Unverified","Sithumini"],
+    ["B","GS Evo Motors","JMEV (EVEASY; EWIND)","Unverified","Unverified","Sithumini"],
+    ["C","United Motors (incl. Unimo)","Mitsubishi; Perodua","unitedmotors.lk","Unverified","Thilakshana"],
+    ["C","Hayleys Mobility","OMODA; JAECOO; Kaiyi","hayleysmobility.com","Verified","Thilakshana"],
+    ["C","Kia Motors (Lanka) Ltd","Kia (Sportage, Carnival, EV5, Sonet)","kia.lk","Verified","Thilakshana"],
+    ["C","Micro Cars Ltd","MG; Chery; KGM (SsangYong); Higer","Unverified","Unverified","Thilakshana"],
+    ["C","Lanka Ashok Leyland PLC","Ashok Leyland (Commercial)","Unverified","Unverified","Thilakshana"],
+    ["C","Browns EV (Brown & Co.)","BAW (E7 / E7 Pro EV)","Unverified","Unverified","Thilakshana"],
+    ["C","Eurocars (Pvt) Ltd","Porsche","porsche.com/pap/_sri-lanka_/","Verified","Thilakshana"],
+    ["C","Sterling Automobiles","Livan; Henrey","Unverified","Unverified","Thilakshana"],
+    ["C","China Lanka Motors","Honri EVs","Unverified","Unverified","Thilakshana"]
+  ];
+
+  const plotFont = { family: "Plus Jakarta Sans, sans-serif", color: "#072233" };
+  const gridCol = "rgba(8, 98, 136, 0.10)";
+
+  function showView(id, title, crumb, btn) {
+    document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
+    document.querySelectorAll(".nav-item").forEach(b => b.classList.remove("active"));
+    document.getElementById("view-" + id).classList.add("active");
+    if (btn) btn.classList.add("active");
+    document.getElementById("topTitle").textContent = title;
+    document.getElementById("topCrumb").textContent = crumb;
+    document.getElementById("sidebar").classList.remove("open");
+    setTimeout(() => {
+      if (id === "ninebox") applyFilters();
+      if (id === "quadrant") renderQuadrant(activeSegment);
+      if (id === "scale") renderStrategyCanvas();
+      if (id === "macro") renderMacroCharts();
+    }, 30);
+  }
+
+  function updateThresholds() {
+    BUDGET_MAX = parseFloat(document.getElementById("budgetSlider").value);
+    MIDRANGE_MAX = parseFloat(document.getElementById("midSlider").value);
+    if (MIDRANGE_MAX <= BUDGET_MAX + 2) { MIDRANGE_MAX = BUDGET_MAX + 3; document.getElementById("midSlider").value = MIDRANGE_MAX; }
+    document.getElementById("budgetVal").textContent = `LKR ${BUDGET_MAX.toFixed(1)}M`;
+    document.getElementById("midVal").textContent = `LKR ${MIDRANGE_MAX.toFixed(1)}M`;
+    applyFilters();
+  }
+
+  function populateFilters(data) {
+    const dists = [...new Set(data.map(d => d.Distributor))].sort();
+    const bodies = [...new Set(data.map(d => d.Body_Type).filter(Boolean))].sort();
+    document.getElementById("filterDistributor").innerHTML = '<option value="ALL">All Distributors</option>' + dists.map(d => `<option value="${d}">${d}</option>`).join("");
+    document.getElementById("filterBody").innerHTML = '<option value="ALL">All Body Types</option>' + bodies.map(b => `<option value="${b}">${b}</option>`).join("");
+  }
+
+  function renderNineBox(data) {
+    const bCount = data.filter(d => parseFloat(d.Std_Price_Mn) < BUDGET_MAX).length;
+    const mCount = data.filter(d => parseFloat(d.Std_Price_Mn) >= BUDGET_MAX && parseFloat(d.Std_Price_Mn) <= MIDRANGE_MAX).length;
+    const pCount = data.filter(d => parseFloat(d.Std_Price_Mn) > MIDRANGE_MAX).length;
+    document.getElementById("tierSummaryPills").innerHTML = `
+      <span class="badge">Budget: ${bCount}</span>
+      <span class="badge steel">Mid-Range: ${mCount}</span>
+      <span class="badge dark">Premium: ${pCount}</span>
+    `;
+    const yMap = { "EV": 1, "Hybrid": 2, "ICE": 3 };
+    const dists = [...new Set(data.map(d => d.Distributor))].sort();
+    const palette = ["#086288","#4D8DBA","#032233","#0EA5E9","#0284C7","#1E40AF","#0F766E","#38BDF8","#2563EB","#155E75","#0369A1","#1D4ED8"];
+
+    const traces = dists.map((dist, idx) => {
+      const rows = data.filter(d => d.Distributor === dist && yMap[d.Powertrain] && !isNaN(parseFloat(d.Std_Price_Mn)));
+      return {
+        x: rows.map(r => parseFloat(r.Std_Price_Mn)),
+        y: rows.map((r, i) => yMap[r.Powertrain] + (((i * 37 + idx * 13) % 10) - 4.5) * 0.045),
+        text: rows.map(r => `${r.Brand} ${r.Model}`),
+        customdata: rows.map(r => [r.Distributor, r.Powertrain, r.Body_Type || "N/A", parseFloat(r.Std_Price_Mn).toFixed(2)]),
+        mode: "markers+text", textposition: "top center", textfont: { size: 10.2, color: "#072233" },
+        marker: { size: 13, color: palette[idx % palette.length], line: { color: "#FFFFFF", width: 1.8 } },
+        name: dist,
+        hovertemplate: "<b>%{text}</b><br>Distributor: %{customdata[0]}<br>Powertrain: %{customdata[1]} • %{customdata[2]}<br>18% VAT-Incl. Price: LKR %{customdata[3]}M<extra></extra>"
+      };
+    });
+
+    const maxX = Math.max(35, ...data.map(d => parseFloat(d.Std_Price_Mn) || 0)) * 1.1;
+    Plotly.newPlot("nineBoxChart", traces, {
+      paper_bgcolor:"#FFFFFF", plot_bgcolor:"#F8FBFE", font:plotFont,
+      margin:{l:110,r:20,t:42,b:52},
+      xaxis:{title:"Standardized Brand-New Price (LKR Millions, 18% VAT-Inclusive)", range:[0,maxX], gridcolor:gridCol, zeroline:false},
+      yaxis:{tickvals:[1,2,3], ticktext:["<b>EV</b><br>Electric","<b>HYBRID</b><br>HEV/PHEV","<b>ICE</b><br>Petrol/Diesel"], range:[0.45,3.65], gridcolor:gridCol, zeroline:false},
+      shapes:[
+        {type:"rect", x0:0, x1:BUDGET_MAX, y0:0.45, y1:3.65, fillcolor:"rgba(151,215,255,0.22)", line:{width:0}, layer:"below"},
+        {type:"rect", x0:MIDRANGE_MAX, x1:maxX, y0:0.45, y1:3.65, fillcolor:"rgba(8,98,136,0.06)", line:{width:0}, layer:"below"},
+        {type:"line", x0:BUDGET_MAX, x1:BUDGET_MAX, y0:0.45, y1:3.65, line:{color:"#086288", width:1.4, dash:"dash"}},
+        {type:"line", x0:MIDRANGE_MAX, x1:MIDRANGE_MAX, y0:0.45, y1:3.65, line:{color:"#086288", width:1.4, dash:"dash"}},
+        {type:"line", x0:0, x1:maxX, y0:1.5, y1:1.5, line:{color:"#4D8DBA", width:1.3, dash:"dash"}},
+        {type:"line", x0:0, x1:maxX, y0:2.5, y1:2.5, line:{color:"#4D8DBA", width:1.3, dash:"dash"}}
+      ],
+      annotations:[
+        {x:BUDGET_MAX/2, y:3.56, text:`<b>BUDGET (&lt; ${BUDGET_MAX}M)</b>`, showarrow:false, font:{color:"#086288", size:11}},
+        {x:(BUDGET_MAX+MIDRANGE_MAX)/2, y:3.56, text:`<b>MID-RANGE (${BUDGET_MAX}M–${MIDRANGE_MAX}M)</b>`, showarrow:false, font:{color:"#4D8DBA", size:11}},
+        {x:(MIDRANGE_MAX+maxX)/2, y:3.56, text:`<b>PREMIUM (&gt; ${MIDRANGE_MAX}M)</b>`, showarrow:false, font:{color:"#043952", size:11}}
+      ],
+      legend:{orientation:"h", y:-0.18, font:{size:10.5}}
+    }, { responsive:true, displaylogo:false });
+  }
+
+  function renderPortfolio(data) {
+    const dists = [...new Set(data.map(d => d.Distributor))];
+    const c = (dist, pt) => data.filter(d => d.Distributor === dist && d.Powertrain === pt).length;
+    dists.sort((a,b) => (c(a,"ICE")+c(a,"Hybrid")+c(a,"EV")) - (c(b,"ICE")+c(b,"Hybrid")+c(b,"EV")));
+    Plotly.newPlot("portfolioChart", [
+      {y:dists, x:dists.map(d => c(d,"ICE")), name:"ICE", type:"bar", orientation:"h", marker:{color:"#086288"}},
+      {y:dists, x:dists.map(d => c(d,"Hybrid")), name:"Hybrid", type:"bar", orientation:"h", marker:{color:"#4D8DBA"}},
+      {y:dists, x:dists.map(d => c(d,"EV")), name:"EV", type:"bar", orientation:"h", marker:{color:"#97D7FF"}}
+    ], {
+      barmode:"stack", paper_bgcolor:"#FFFFFF", plot_bgcolor:"#F8FBFE", font:plotFont,
+      margin:{l:140,r:18,t:12,b:40}, xaxis:{title:"Number of Brand-New Models", gridcolor:gridCol}, legend:{orientation:"h", y:1.12}
+    }, { responsive:true, displaylogo:false });
+  }
+
+  function renderQuadrant(seg = "ALL") {
+    activeSegment = seg;
+    const rows = seg === "ALL"
+      ? Object.values(Object.fromEntries(quadrantData.map(r => [r.id, r])))
+      : quadrantData.filter(r => r.seg === seg);
+    const plotted = rows.filter(r => r.status === "Plotted");
+    const watch = rows.filter(r => r.status !== "Plotted");
+
+    Plotly.newPlot("magicQuadrantChart", [
+      {
+        x: plotted.map(r => r.vision), y: plotted.map(r => r.exec),
+        text: plotted.map(r => r.company), customdata: plotted.map(r => [r.seg, r.quad, r.ec, r.vc]),
+        mode: "markers+text", textposition: "top center", textfont: { size: 11, color: "#043952" },
+        marker: { size: plotted.map(r => r.id === highlightedCompany ? 22 : 14), color: plotted.map(r => r.id === highlightedCompany ? "#97D7FF" : "#086288"), line: { color: "#043952", width: 2.2 } },
+        name: "Evidenced Players",
+        hovertemplate: "<b>%{text}</b><br>Segment: %{customdata[0]} • %{customdata[1]}<br>Vision: %{x:.2f} (Cov: %{customdata[3]}%)<br>Execution: %{y:.2f} (Cov: %{customdata[2]}%)<extra></extra>"
+      },
+      {
+        x: watch.map(r => r.vision), y: watch.map(r => r.exec),
+        text: watch.map(r => r.company), customdata: watch.map(r => [r.seg, r.quad, r.ec, r.vc]),
+        mode: "markers+text", textposition: "bottom center", textfont: { size: 10.2, color: "#4C6B80" },
+        marker: { size: 13, color: "#EBF7FF", line: { color: "#4D8DBA", width: 2 } },
+        name: "Watchlist / Partial Evidence",
+        hovertemplate: "<b>%{text}</b> (Watchlist)<br>Vision: %{x:.2f} • Execution: %{y:.2f}<extra></extra>"
+      }
+    ], {
+      paper_bgcolor:"#FFFFFF", plot_bgcolor:"#F8FBFE", font:plotFont,
+      margin:{l:56,r:24,t:24,b:56},
+      xaxis:{title:"Completeness of Vision (1–5)", range:[2.8,5.15], gridcolor:gridCol},
+      yaxis:{title:"Ability to Execute (1–5)", range:[2.6,5.3], gridcolor:gridCol},
+      shapes:[
+        {type:"rect", x0:3.9, x1:5.15, y0:3.9, y1:5.3, fillcolor:"rgba(151,215,255,0.25)", line:{width:0}, layer:"below"},
+        {type:"line", x0:3.9, x1:3.9, y0:2.6, y1:5.3, line:{color:"#086288", width:1.3, dash:"dash"}},
+        {type:"line", x0:2.8, x1:5.15, y0:3.9, y1:3.9, line:{color:"#086288", width:1.3, dash:"dash"}}
+      ],
+      annotations:[
+        {x:4.92, y:5.18, text:"<b>LEADERS</b>", showarrow:false, font:{color:"#086288", size:11}},
+        {x:3.08, y:5.18, text:"<b>CHALLENGERS</b>", showarrow:false, font:{color:"#4D8DBA", size:11}},
+        {x:4.92, y:2.72, text:"<b>VISIONARIES</b>", showarrow:false, font:{color:"#086288", size:11}},
+        {x:3.08, y:2.72, text:"<b>NICHE PLAYERS</b>", showarrow:false, font:{color:"#64748B", size:11}}
+      ],
+      legend:{orientation:"h", y:-0.16}
+    }, { responsive:true, displaylogo:false });
+  }
+
+  function filterQuadrant(seg, btn) {
+    document.querySelectorAll("#view-quadrant .pill").forEach(p => p.classList.remove("active"));
+    btn.classList.add("active");
+    renderQuadrant(seg);
+  }
+
+  function highlightOutlook(id, el) {
+    highlightedCompany = (highlightedCompany === id) ? null : id;
+    document.querySelectorAll(".outlook-item").forEach(i => i.classList.remove("highlighted"));
+    if (highlightedCompany) el.classList.add("highlighted");
+    renderQuadrant(activeSegment);
+  }
+
+  function renderStrategyCanvas() {
+    const f = ["Price Level","Brand Heritage","Dealer & Service","Engine Refinement","Low Running Cost","In-Car Tech & OTA","Driver Assist","Model Refresh"];
+    Plotly.newPlot("scaleCanvasChart", [
+      {x:f, y:[4.2,5.0,5.0,5.0,2.0,2.0,2.0,2.0], name:"Traditional ICE", mode:"lines+markers", line:{color:"#64748B", dash:"dash", width:2.5}, marker:{size:8}},
+      {x:f, y:[2.0,1.2,2.2,1.0,5.0,5.0,4.2,5.0], name:"Chinese EV Makers", mode:"lines+markers", line:{color:"#086288", width:4}, marker:{size:10, symbol:"square", color:"#97D7FF", line:{color:"#086288", width:2}}}
+    ], {
+      paper_bgcolor:"#FFFFFF", plot_bgcolor:"#F8FBFE", font:plotFont,
+      margin:{l:40,r:16,t:14,b:72}, yaxis:{range:[0.5,5.5], tickvals:[1,2,3,4,5], gridcolor:gridCol},
+      xaxis:{tickangle:-18}, legend:{orientation:"h", y:1.15}
+    }, { responsive:true, displaylogo:false });
+  }
+
+  function renderMacroCharts() {
+    Plotly.newPlot("regChart", [{
+      x:["Motorcycles","Motor Cars","3-Wheelers","Buses"], y:[254817,68047,17332,2096], type:"bar",
+      marker:{color:["#086288","#4D8DBA","#97D7FF","#043952"]},
+      text:["254.8K","68.0K","17.3K","2.1K"], textposition:"outside"
+    }], { paper_bgcolor:"#FFFFFF", plot_bgcolor:"#F8FBFE", font:plotFont, margin:{l:46,r:12,t:18,b:38}, yaxis:{gridcolor:gridCol, range:[0,310000]} }, { responsive:true, displaylogo:false });
+
+    Plotly.newPlot("gdpChart", [
+      {x:[2018,2019,2020,2021,2022], y:[2665,5174,6131,7007,9982], name:"Current Price", mode:"lines+markers", line:{color:"#086288", width:3.5}, marker:{size:8, color:"#97D7FF", line:{color:"#086288", width:2}}},
+      {x:[2018,2019,2020,2021,2022], y:[3241,3373,3471,3636,3365], name:"Constant Price", mode:"lines+markers", line:{color:"#4D8DBA", width:2.5, dash:"dot"}, marker:{size:6}}
+    ], { paper_bgcolor:"#FFFFFF", plot_bgcolor:"#F8FBFE", font:plotFont, margin:{l:48,r:12,t:12,b:36}, yaxis:{gridcolor:gridCol}, legend:{orientation:"h", y:1.15} }, { responsive:true, displaylogo:false });
+
+    Plotly.newPlot("tradeChart", [
+      {x:["2020","2021","2022"], y:[102.2,49.9,22.0], name:"Imports (Rs Bn)", type:"bar", marker:{color:"#086288"}},
+      {x:["2020","2021","2022"], y:[9.2,16.2,25.7], name:"Exports (Rs Bn)", type:"bar", marker:{color:"#97D7FF", line:{color:"#086288", width:1}}}
+    ], { barmode:"group", paper_bgcolor:"#FFFFFF", plot_bgcolor:"#F8FBFE", font:plotFont, margin:{l:42,r:12,t:12,b:36}, yaxis:{gridcolor:gridCol}, legend:{orientation:"h", y:1.15} }, { responsive:true, displaylogo:false });
+  }
+
+  function renderOutlooks() {
+    document.getElementById("outlookList").innerHTML = outlookData.map(o => `
+      <div class="outlook-item ${o.cls}" onclick="highlightOutlook('${o.id}', this)">
+        <div class="outlook-top">
+          <div class="outlook-head-left">${getBrandLogoHTML(o.company, true)}<div class="outlook-name">${o.company}</div></div>
+          <span class="badge ${o.cls===''?'dark':(o.cls==='contender'?'steel':'')}">${o.label}</span>
+        </div>
+        <div class="outlook-text">${o.text}</div>
+      </div>
+    `).join("");
+  }
+
+  function renderOfferings() {
+    document.getElementById("offeringsBody").innerHTML = offeringsData.map(r => `
+      <tr>
+        <td><div class="co-cell">${getBrandLogoHTML(r[0], true)}<strong>${r[0]}</strong></div></td>
+        <td><span class="badge">${r[1]}</span></td>
+        <td><span class="badge dark">${r[2]}</span></td>
+        <td>${r[3]}</td>
+      </tr>
+    `).join("");
+  }
+
+  function renderRegistry() {
+    const q = (document.getElementById("registrySearch").value || "").toLowerCase();
+    const rows = registry28.filter(r => (activeBatch === "ALL" || r[0] === activeBatch) && r.join(" ").toLowerCase().includes(q));
+    document.getElementById("registryBody").innerHTML = rows.map(r => `
+      <tr>
+        <td><span class="badge ${r[0]==='A'?'dark':(r[0]==='B'?'steel':'')}">Batch ${r[0]}</span></td>
+        <td><div class="co-cell">${getBrandLogoHTML(r[1], true)}<strong>${r[1]}</strong></div></td>
+        <td>${r[2]}</td>
+        <td><span class="badge ${r[4]==='Verified'?'dark':''}">${r[3]}</span></td>
+        <td>${r[5]}</td>
+      </tr>
+    `).join("");
+  }
+
+  function filterBatch(batch, btn) {
+    activeBatch = batch;
+    document.querySelectorAll("#view-registry .pill").forEach(p => p.classList.remove("active"));
+    btn.classList.add("active");
+    renderRegistry();
+  }
+
+  function applyFilters() {
+    const pt = document.getElementById("filterPowertrain").value;
+    const dist = document.getElementById("filterDistributor").value;
+    const body = document.getElementById("filterBody").value;
+    const f = currentData.filter(d => (pt==="ALL"||d.Powertrain===pt) && (dist==="ALL"||d.Distributor===dist) && (body==="ALL"||d.Body_Type===body));
+    document.getElementById("modelCountBadge").textContent = `${f.length} Models Shown`;
+    document.getElementById("sbModelCount").textContent = currentData.length;
+    renderNineBox(f);
+    renderPortfolio(f);
+  }
+
+  ["filterPowertrain","filterDistributor","filterBody"].forEach(id => document.getElementById(id).addEventListener("change", applyFilters));
+  document.getElementById("registrySearch").addEventListener("input", renderRegistry);
+
+  // Initial setup
+  renderLandingLogoWall();
+  renderOverviewBrands();
+  renderOutlooks();
+  renderOfferings();
+  populateFilters(currentData);
+  renderRegistry();
+</script>
+</body>
+</html>
