@@ -587,14 +587,96 @@
   .tour-btn.primary { background: var(--deep); color: #FFFFFF; border-color: var(--deep); }
   .tour-btn.primary:hover { background: var(--deep-dark); }
 
+  .kpi-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .lp-mobile-cta { display: none; }
+  #mobile-backdrop {
+    display: none; position: fixed; inset: 0; z-index: 190;
+    background: rgba(3, 27, 41, 0.55); backdrop-filter: blur(3px);
+  }
+  #mobile-backdrop.active { display: block; }
+
   @media (max-width: 900px) {
-    .sidebar { transform: translateX(-100%); }
+    .sidebar { transform: translateX(-100%); width: 270px; }
     .sidebar.open { transform: translateX(0); }
     .main { margin-left: 0; width: 100%; }
-    .menu-toggle { display: inline-block; }
-    .lp-nav { padding: 14px 18px; }
+    .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+    .lp-nav { padding: 13px 18px; }
+    .lp-nav.scrolled { padding: 11px 18px; }
     .lp-links { display: none; }
-    .scrolly-right { padding: 0 22px; }
+    .lp-mobile-cta { display: inline-block; padding: 7px 14px; font-size: 11.5px; }
+
+    /* Mobile Sticky Car Scrollytelling */
+    .scrolly-wrap { grid-template-columns: 1fr; }
+    .scrolly-left { position: sticky !important; top: 0; height: 42vh !important; z-index: 25; box-shadow: 0 8px 24px rgba(3,27,41,0.55); }
+    .stage-hud { bottom: 14px; left: 16px; right: 16px; }
+    .hud-title { font-size: 19px; }
+    .hud-sub { font-size: 11px; }
+    .hud-pill { font-size: 9.5px; padding: 3px 9px; }
+    .scrolly-right { padding: 0 20px; }
+    .story-chapter { min-height: 60vh; padding: 34px 0; }
+    .chap-title { font-size: 26px; }
+    .chap-desc { font-size: 13.5px; margin-bottom: 18px; }
+    .c-stat { padding: 11px 12px; }
+    .c-stat-val { font-size: 21px; }
+
+    .topbar { padding: 11px 16px; }
+    .page-heading { font-size: 18px; }
+    .content { padding: 16px 14px 40px 14px; }
+    .card { padding: 16px 15px; border-radius: 14px; }
+    .ov-hero { padding: 20px 18px; gap: 16px; }
+    .ov-hero h2 { font-size: 22px; }
+    .ov-hero-img { height: 165px; }
+    .errc-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .lp-hero { height: 100svh; min-height: 560px; padding: 80px 16px 26px 16px; }
+    .hero-eyebrow { font-size: 9.5px; letter-spacing: 2px; }
+    .hero-title { font-size: 32px; }
+    .btn-explore, .btn-solid { padding: 12px 26px; font-size: 13px; width: 100%; max-width: 290px; }
+
+    .lp-brands-sec { padding: 62px 0; }
+    .lp-brands-inner { padding: 0 18px; }
+    .lp-brands-title { font-size: 26px; }
+    .lp-logo-card { width: 164px; padding: 20px 14px; gap: 10px; border-radius: 16px; }
+    .lp-logo-pill { width: 58px; height: 58px; border-radius: 15px; padding: 10px; }
+    .lp-logo-name { font-size: 14px; }
+    .lp-logo-dist { font-size: 10.5px; }
+    .lp-cta-band { padding: 60px 18px; }
+
+    /* Login Modal iOS-safe */
+    .login-form-pane { padding: 28px 20px; }
+    .login-title { font-size: 22px; }
+    .field input { font-size: 16px; padding: 11px 13px; }
+
+    /* Dashboard Phone Polish */
+    .status-pill { display: none; }
+    .tour-trigger { padding: 6px 11px; font-size: 11px; }
+    .kpi-grid, .kpi-grid.cols-4 { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .kpi { padding: 13px 13px; }
+    .kpi-val { font-size: 22px; }
+    .kpi-label { font-size: 9.5px; }
+    .kpi-sub { font-size: 10.5px; }
+    .brand-grid { grid-template-columns: 1fr 1fr; gap: 9px; }
+    .brand-tile { padding: 10px 10px; gap: 9px; }
+    .logo-box { width: 34px; height: 34px; padding: 5px; }
+    .brand-tile-name { font-size: 11.8px; }
+    .brand-tile-sub { font-size: 10px; }
+
+    .slider-panel { padding: 13px 14px; gap: 12px; }
+    .slider-group { width: 100%; min-width: 0; }
+    .filter-bar { padding: 10px 12px; gap: 8px; }
+    .filter-bar select, .filter-bar input { width: 100%; font-size: 14px; }
+    #nineBoxChart, #magicQuadrantChart { height: 390px !important; }
+    #portfolioChart, #scaleCanvasChart { height: 310px !important; }
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table { min-width: 560px; }
+
+    /* Mobile Guided Tour Bottom Sheet */
+    #tour-popover {
+      left: 14px !important; right: 14px !important; bottom: 16px !important; top: auto !important;
+      width: auto !important; max-width: none;
+    }
   }
 </style>
 </head>
@@ -685,6 +767,7 @@
       <a href="#lp-brands">Brands</a>
       <button class="lp-cta-sm" onclick="enterDashboard('overview')">Open Dashboard</button>
     </div>
+    <button class="lp-cta-sm lp-mobile-cta" onclick="enterDashboard('overview')">Open Dashboard</button>
   </nav>
 
   <section class="lp-hero">
@@ -805,6 +888,7 @@
 <!-- MODE 2: FULL-WINDOW EXECUTIVE DASHBOARD                                -->
 <!-- ====================================================================== -->
 <div id="dashboard-mode">
+  <div id="mobile-backdrop" onclick="toggleMobileSidebar(false)"></div>
   <aside class="sidebar" id="sidebar">
     <button class="back-lp-btn" onclick="exitDashboard()">
       <svg class="ico" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
@@ -850,7 +934,7 @@
   <div class="main">
     <header class="topbar">
       <div style="display:flex; align-items:center; gap:12px;">
-        <button class="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">
+        <button class="menu-toggle" onclick="toggleMobileSidebar()">
           <svg class="ico" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
         <div>
@@ -1057,7 +1141,7 @@
 
       <!-- ==================== VIEW 4: MACRO & TRADE ==================== -->
       <section id="view-macro" class="view">
-        <div class="kpi-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="kpi-grid cols-4">
           <div class="kpi"><div class="kpi-label">Locally Assembled (2023)</div><div class="kpi-val">17,956</div><div class="kpi-sub">1,121 4W + 16,835 2W (MoI)</div></div>
           <div class="kpi steel"><div class="kpi-label">Direct Sector Jobs</div><div class="kpi-val">~20,000</div><div class="kpi-sub">15 Assemblers • 25 Component Makers</div></div>
           <div class="kpi"><div class="kpi-label">Total SL Vehicle Fleet</div><div class="kpi-val">8.45 Mn</div><div class="kpi-sub">905,329 Passenger Cars (DCS)</div></div>
@@ -1382,8 +1466,11 @@
     const navBtn = document.getElementById("nav-" + step.view);
     if (navBtn && !navBtn.classList.contains("active")) navBtn.click();
 
+    const isNarrow = window.innerWidth <= 900;
+    const selector = (step.target === "#tour-nav" && isNarrow) ? ".menu-toggle" : step.target;
+
     setTimeout(() => {
-      const el = document.querySelector(step.target);
+      const el = document.querySelector(selector);
       if (!el) return;
       el.scrollIntoView({ behavior: "smooth", block: "center" });
       setTimeout(() => {
@@ -1396,14 +1483,16 @@
         spot.style.height = (rect.height + pad * 2) + "px";
 
         const pop = document.getElementById("tour-popover");
-        const popW = 340, popH = 185;
-        let top = rect.bottom + 18;
-        let left = rect.left;
-        if (top + popH > window.innerHeight - 16) top = Math.max(16, rect.top - popH - 18);
-        if (left + popW > window.innerWidth - 16) left = window.innerWidth - popW - 18;
-        if (step.target === "#tour-nav") { left = rect.right + 20; top = rect.top + 10; }
-        pop.style.top = top + "px";
-        pop.style.left = Math.max(16, left) + "px";
+        if (window.innerWidth > 640) {
+          const popW = 340, popH = 185;
+          let top = rect.bottom + 18;
+          let left = rect.left;
+          if (top + popH > window.innerHeight - 16) top = Math.max(16, rect.top - popH - 18);
+          if (left + popW > window.innerWidth - 16) left = window.innerWidth - popW - 18;
+          if (selector === "#tour-nav") { left = rect.right + 20; top = rect.top + 10; }
+          pop.style.top = top + "px";
+          pop.style.left = Math.max(16, left) + "px";
+        }
 
         document.getElementById("tourStepTag").textContent = `STEP ${tourIdx + 1} OF ${tourSteps.length}`;
         document.getElementById("tourTitle").textContent = step.title;
@@ -1533,6 +1622,14 @@
   const plotFont = { family: "Plus Jakarta Sans, sans-serif", color: "#072233" };
   const gridCol = "rgba(8, 98, 136, 0.10)";
 
+  function toggleMobileSidebar(force) {
+    const sb = document.getElementById("sidebar");
+    const bd = document.getElementById("mobile-backdrop");
+    const open = typeof force === "boolean" ? force : !sb.classList.contains("open");
+    sb.classList.toggle("open", open);
+    bd.classList.toggle("active", open);
+  }
+
   function showView(id, title, crumb, btn) {
     document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
     document.querySelectorAll(".nav-item").forEach(b => b.classList.remove("active"));
@@ -1540,7 +1637,7 @@
     if (btn) btn.classList.add("active");
     document.getElementById("topTitle").textContent = title;
     document.getElementById("topCrumb").textContent = crumb;
-    document.getElementById("sidebar").classList.remove("open");
+    toggleMobileSidebar(false);
     setTimeout(() => {
       if (id === "ninebox") applyFilters();
       if (id === "quadrant") renderQuadrant(activeSegment);
@@ -1592,12 +1689,13 @@
       };
     });
 
+    const isMob = window.innerWidth < 640;
     const maxX = Math.max(35, ...data.map(d => parseFloat(d.Std_Price_Mn) || 0)) * 1.1;
     Plotly.newPlot("nineBoxChart", traces, {
-      paper_bgcolor:"#FFFFFF", plot_bgcolor:"#F8FBFE", font:plotFont,
-      margin:{l:110,r:20,t:42,b:52},
-      xaxis:{title:"Standardized Brand-New Price (LKR Millions, 18% VAT-Inclusive)", range:[0,maxX], gridcolor:gridCol, zeroline:false},
-      yaxis:{tickvals:[1,2,3], ticktext:["<b>EV</b><br>Electric","<b>HYBRID</b><br>HEV/PHEV","<b>ICE</b><br>Petrol/Diesel"], range:[0.45,3.65], gridcolor:gridCol, zeroline:false},
+      paper_bgcolor:"#FFFFFF", plot_bgcolor:"#F8FBFE", font:{ ...plotFont, size: isMob ? 10 : 12 },
+      margin:{l: isMob ? 64 : 110, r: isMob ? 8 : 20, t:38, b:48},
+      xaxis:{title: isMob ? "Price (LKR Mn, 18% VAT)" : "Standardized Brand-New Price (LKR Millions, 18% VAT-Inclusive)", range:[0,maxX], gridcolor:gridCol, zeroline:false},
+      yaxis:{tickvals:[1,2,3], ticktext: isMob ? ["<b>EV</b>","<b>HYB</b>","<b>ICE</b>"] : ["<b>EV</b><br>Electric","<b>HYBRID</b><br>HEV/PHEV","<b>ICE</b><br>Petrol/Diesel"], range:[0.45,3.65], gridcolor:gridCol, zeroline:false},
       shapes:[
         {type:"rect", x0:0, x1:BUDGET_MAX, y0:0.45, y1:3.65, fillcolor:"rgba(151,215,255,0.22)", line:{width:0}, layer:"below"},
         {type:"rect", x0:MIDRANGE_MAX, x1:maxX, y0:0.45, y1:3.65, fillcolor:"rgba(8,98,136,0.06)", line:{width:0}, layer:"below"},
@@ -1637,26 +1735,27 @@
     const plotted = rows.filter(r => r.status === "Plotted");
     const watch = rows.filter(r => r.status !== "Plotted");
 
+    const isMobQ = window.innerWidth < 640;
     Plotly.newPlot("magicQuadrantChart", [
       {
         x: plotted.map(r => r.vision), y: plotted.map(r => r.exec),
         text: plotted.map(r => r.company), customdata: plotted.map(r => [r.seg, r.quad, r.ec, r.vc]),
-        mode: "markers+text", textposition: "top center", textfont: { size: 11, color: "#043952" },
-        marker: { size: plotted.map(r => r.id === highlightedCompany ? 22 : 14), color: plotted.map(r => r.id === highlightedCompany ? "#97D7FF" : "#086288"), line: { color: "#043952", width: 2.2 } },
+        mode: "markers+text", textposition: "top center", textfont: { size: isMobQ ? 9 : 11, color: "#043952" },
+        marker: { size: plotted.map(r => r.id === highlightedCompany ? 20 : (isMobQ ? 11 : 14)), color: plotted.map(r => r.id === highlightedCompany ? "#97D7FF" : "#086288"), line: { color: "#043952", width: 2 } },
         name: "Evidenced Players",
         hovertemplate: "<b>%{text}</b><br>Segment: %{customdata[0]} • %{customdata[1]}<br>Vision: %{x:.2f} (Cov: %{customdata[3]}%)<br>Execution: %{y:.2f} (Cov: %{customdata[2]}%)<extra></extra>"
       },
       {
         x: watch.map(r => r.vision), y: watch.map(r => r.exec),
         text: watch.map(r => r.company), customdata: watch.map(r => [r.seg, r.quad, r.ec, r.vc]),
-        mode: "markers+text", textposition: "bottom center", textfont: { size: 10.2, color: "#4C6B80" },
-        marker: { size: 13, color: "#EBF7FF", line: { color: "#4D8DBA", width: 2 } },
+        mode: "markers+text", textposition: "bottom center", textfont: { size: isMobQ ? 8.5 : 10.2, color: "#4C6B80" },
+        marker: { size: isMobQ ? 10 : 13, color: "#EBF7FF", line: { color: "#4D8DBA", width: 2 } },
         name: "Watchlist / Partial Evidence",
         hovertemplate: "<b>%{text}</b> (Watchlist)<br>Vision: %{x:.2f} • Execution: %{y:.2f}<extra></extra>"
       }
     ], {
-      paper_bgcolor:"#FFFFFF", plot_bgcolor:"#F8FBFE", font:plotFont,
-      margin:{l:56,r:24,t:24,b:56},
+      paper_bgcolor:"#FFFFFF", plot_bgcolor:"#F8FBFE", font:{ ...plotFont, size: isMobQ ? 10 : 12 },
+      margin:{l: isMobQ ? 42 : 56, r: isMobQ ? 10 : 24, t:22, b:48},
       xaxis:{title:"Completeness of Vision (1–5)", range:[2.8,5.15], gridcolor:gridCol},
       yaxis:{title:"Ability to Execute (1–5)", range:[2.6,5.3], gridcolor:gridCol},
       shapes:[
