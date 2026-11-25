@@ -1,0 +1,7 @@
+flow,year,value_rs_mn,source,url,quality_flag
+Import,2020,102242.6,Automobile Data Book 2023 Table 15 (Sri Lanka Customs),https://www.industry.gov.lk/web/wp-content/uploads/2024/11/Automobile-2023.pdf,"Broad HS group 'vehicles other than railway, and parts'; Rs value"
+Import,2021,49893.3,Automobile Data Book 2023 Table 15 (Sri Lanka Customs),https://www.industry.gov.lk/web/wp-content/uploads/2024/11/Automobile-2023.pdf,as above
+Import,2022,21967.4,Automobile Data Book 2023 Table 15 (Sri Lanka Customs),https://www.industry.gov.lk/web/wp-content/uploads/2024/11/Automobile-2023.pdf,as above; import-suspension period
+Export,2020,9210.4,Automobile Data Book 2023 Table 16 (Sri Lanka Customs),https://www.industry.gov.lk/web/wp-content/uploads/2024/11/Automobile-2023.pdf,Rs value; rupee depreciation inflates 2022 in Rs terms
+Export,2021,16241.5,Automobile Data Book 2023 Table 16 (Sri Lanka Customs),https://www.industry.gov.lk/web/wp-content/uploads/2024/11/Automobile-2023.pdf,as above
+Export,2022,25692.6,Automobile Data Book 2023 Table 16 (Sri Lanka Customs),https://www.industry.gov.lk/web/wp-content/uploads/2024/11/Automobile-2023.pdf,as above

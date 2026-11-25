@@ -1,0 +1,24 @@
+company_id,company,segment,exec_score,exec_coverage,vision_score,vision_coverage,status,quadrant_fixed3,quadrant_relative
+toyota,Toyota Lanka,PV,4.58,0.6,3.88,0.4,plotted (hollow: partial evidence),Leaders,Leaders
+toyota,Toyota Lanka,CV,4.58,0.6,3.88,0.4,plotted (hollow: partial evidence),Leaders,Leaders
+dimo,DIMO,PV,3.7,0.5,3.67,0.3,plotted (hollow: partial evidence),Leaders,Challengers
+dimo,DIMO,CV,3.7,0.5,3.67,0.3,plotted (hollow: partial evidence),Leaders,Niche players
+amw,Associated Motorways (AMW),PV,4.0,0.1,,0.0,insufficient evidence,,
+uml,United Motors Lanka (UNIMO),PV,4.0,0.55,3.4,0.25,plotted (hollow: partial evidence),Leaders,Challengers
+uml,United Motors Lanka (UNIMO),CV,4.0,0.4,3.4,0.25,plotted (hollow: partial evidence),Leaders,Challengers
+jkh,John Keells Group - BYD,PV,3.43,0.35,4.62,0.4,plotted (hollow: partial evidence),Leaders,Visionaries
+jkh,John Keells Group - BYD,EV,3.43,0.35,4.62,0.4,plotted (hollow: partial evidence),Leaders,n/a (<3 plotted)
+evo,Evolution Auto,PV,3.43,0.35,4.5,0.3,plotted (hollow: partial evidence),Leaders,Visionaries
+evo,Evolution Auto,EV,3.43,0.35,4.5,0.3,plotted (hollow: partial evidence),Leaders,n/a (<3 plotted)
+dpa,David Pieris Automobiles (GWM / BAIC),PV,3.0,0.15,4.0,0.25,insufficient evidence,,
+dpa,David Pieris Automobiles (GWM / BAIC),EV,3.0,0.15,4.0,0.25,insufficient evidence,,
+lal,Lanka Ashok Leyland,CV,4.0,0.55,4.0,0.2,plotted (hollow: partial evidence),Leaders,Leaders
+lal,Lanka Ashok Leyland,MF,4.0,0.4,4.0,0.2,plotted (hollow: partial evidence),Leaders,n/a (<3 plotted)
+dpmc,David Pieris Motor Company (DPMC),TW,4.43,0.35,4.0,0.25,plotted (hollow: partial evidence),Leaders,n/a (<3 plotted)
+tvs,TVS Lanka,TW,4.0,0.45,4.0,0.25,plotted (hollow: partial evidence),Leaders,n/a (<3 plotted)
+micro,Micro Cars,MF,3.0,0.15,4.2,0.5,insufficient evidence,,
+micro,Micro Cars,EV,3.0,0.15,4.2,0.5,insufficient evidence,,
+ideal,Ideal Group (Ideal Auto Seating),MF,,0.0,3.86,0.35,insufficient evidence,,
+ceat,CEAT Kelani International Tyres,MF,4.0,0.15,4.0,0.1,insufficient evidence,,
+harness,Lanka Harness / Accolade Engineering,MF,3.0,0.15,3.5,0.2,insufficient evidence,,
+chargenet,ChargeNET,EV,5.0,0.15,4.27,0.55,insufficient evidence,,

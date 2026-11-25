@@ -1,0 +1,3809 @@
+--- page 1 ---
+Code on EV charging
+stations installation, 
+maintenance, and 
+operation   
+  May 2025
+
+--- page 2 ---
+ 
+ii 
+ 
+Table of Contents 
+Table of Contents ....................................................................................................................... ii 
+Contributors ............................................................................................................................... x 
+Definitions................................................................................................................................. xi 
+1 
+BACKGROUND ............................................................................................................... 1 
+2 
+ELECTRIC VEHICLE CHARGING ................................................................................ 2 
+2.1 
+Connection between the EV and supply network ....................................................... 2 
+2.1.1 
+Case A ................................................................................................................ 3 
+2.1.2 
+Case B ................................................................................................................ 3 
+2.1.3 
+Case C ................................................................................................................ 3 
+2.1.4 
+Application of Accessories ................................................................................ 4 
+2.2 
+Charging modes........................................................................................................... 5 
+2.2.1 
+Mode 1 ............................................................................................................... 6 
+2.2.2 
+Mode 2 ............................................................................................................... 6 
+2.2.3 
+Mode 3 ............................................................................................................... 6 
+2.2.4 
+Mode 4 ............................................................................................................... 7 
+2.2.5 
+Mandatory Functions provided in Mode 2, 3, and 4 .......................................... 7 
+2.2.6 
+Optional functions for Modes 2, 3 and 4 ........................................................... 9 
+2.3 
+AC Charging Interfaces ............................................................................................. 10 
+2.3.1 
+Configuration Type 1 ....................................................................................... 10 
+2.3.2 
+Configuration Type 2 ....................................................................................... 12 
+2.4 
+DC Charging Interfaces ............................................................................................. 14 
+2.4.1 
+Configuration AA ............................................................................................ 14 
+
+--- page 3 ---
+ 
+iii 
+ 
+2.4.2 
+Configuration EE ............................................................................................. 16 
+2.4.3 
+Configuration FF .............................................................................................. 18 
+2.5 
+Communication ......................................................................................................... 21 
+2.6 
+Protection against electric shock ............................................................................... 21 
+2.7 
+Requirements for adaptors ........................................................................................ 21 
+2.8 
+Cable assembly requirements .................................................................................... 22 
+2.9 
+EVSE constructional requirements and tests ............................................................ 22 
+2.9.1 
+Degrees of protection against solid foreign objects and water for the 
+enclosures ......................................................................................................................... 22 
+2.9.2 
+Degrees of protection against solid foreign objects and water for basic, 
+universal and combined and DC interfaces ..................................................................... 22 
+2.10 Overload and short-circuit protection ....................................................................... 23 
+2.11 Marking and other relevant instructions for users ..................................................... 23 
+3 
+MINIMUM STANDARDS FOR CHARGING MODE 1 ............................................... 25 
+3.1 
+Power interfaces ........................................................................................................ 25 
+3.2 
+Installation standards ................................................................................................. 26 
+3.3 
+Energy metering ........................................................................................................ 27 
+3.3.1 
+Single metering ................................................................................................ 27 
+3.3.2 
+Submetering approach ..................................................................................... 27 
+3.3.3 
+Separate metering approach ............................................................................. 28 
+3.3.4 
+Minimum functionality requirements of energy meters .................................. 29 
+3.4 
+Safety codes and standards for EV chargers ............................................................. 30 
+3.5 
+Standards for interfaces and cables ........................................................................... 30 
+
+--- page 4 ---
+ 
+iv 
+ 
+4 
+MINIMUM STANDARDS FOR CHARGING MODE 2 ............................................... 31 
+4.1 
+Power interfaces ........................................................................................................ 31 
+4.2 
+Installation standards ................................................................................................. 31 
+4.3 
+Energy metering ........................................................................................................ 32 
+4.4 
+Safety codes and standards for EV charger ............................................................... 34 
+4.5 
+Standards for interfaces and cables ........................................................................... 34 
+4.6 
+Standards for the energy meter.................................................................................. 35 
+5 
+MINIMUM STANDARDS FOR CHARGING MODE 3 ............................................... 36 
+5.1 
+Power interfaces ........................................................................................................ 36 
+5.2 
+Installation standards ................................................................................................. 36 
+5.2.1 
+Emergency Disconnection and Safety Measures ............................................. 36 
+5.2.2 
+Temperature Limits .......................................................................................... 36 
+5.2.3 
+Ingress Protection............................................................................................. 37 
+5.2.4 
+Cable Management and Storage ...................................................................... 37 
+5.2.5 
+Socket-Outlet and Connector Height Requirements ........................................ 37 
+5.2.6 
+Prohibition of Extension Cords ........................................................................ 37 
+5.2.7 
+Earthing and Electrical Continuity................................................................... 37 
+5.2.8 
+Insulation Resistance Requirements ................................................................ 38 
+5.2.9 
+Electrical Supply and Circuit Requirements .................................................... 38 
+5.2.10 
+Installation Requirements ................................................................................ 38 
+5.3 
+Energy metering ........................................................................................................ 39 
+5.4 
+Safety codes and standards for EV charger ............................................................... 39 
+5.5 
+Standards for interfaces and cables ........................................................................... 39 
+
+--- page 5 ---
+ 
+v 
+ 
+5.6 
+Standards for the energy meter.................................................................................. 39 
+6 
+MINIMUM STANDARDS FOR CHARGING MODE 4 ............................................... 40 
+6.1 
+Power interfaces ........................................................................................................ 41 
+6.2 
+Installation standards ................................................................................................. 41 
+6.2.1 
+Emergency Disconnection and Safety Measures ............................................. 41 
+6.2.2 
+Temperature Limits .......................................................................................... 41 
+6.2.3 
+Ingress Protection............................................................................................. 41 
+6.2.4 
+Cable Management and Storage ...................................................................... 41 
+6.2.5 
+Socket-Outlet and Connector Height Requirements ........................................ 41 
+6.2.6 
+Prohibition of Extension Cords ........................................................................ 41 
+6.2.7 
+Earthing and Electrical Continuity................................................................... 41 
+6.2.8 
+Insulation Resistance Requirements ................................................................ 41 
+6.2.9 
+Electrical Supply and Circuit Requirements .................................................... 42 
+6.2.10 
+Installation Requirements ................................................................................ 42 
+6.3 
+Energy metering ........................................................................................................ 42 
+6.4 
+Safety codes and standards for EV charger ............................................................... 42 
+6.5 
+Standards for interfaces and cables ........................................................................... 42 
+6.6 
+Standards for the energy meter.................................................................................. 42 
+6.7 
+DC charging systems ................................................................................................. 43 
+6.7.1 
+System A .......................................................................................................... 43 
+6.7.2 
+System B .......................................................................................................... 46 
+6.7.3 
+System C .......................................................................................................... 47 
+7 
+STANDARDS FOR INSTALLING EVCS AT DIFFERENT LOCATIONS ................ 49 
+
+--- page 6 ---
+ 
+vi 
+ 
+7.1 
+Installation of EVCS at domestic premises ............................................................... 49 
+7.1.1 
+Electrical Supply and Load Capacity ............................................................... 49 
+7.1.2 
+Charging Mode and Equipment Compliance ................................................... 49 
+7.1.3 
+Protection and Safety Requirements ................................................................ 49 
+7.1.4 
+Inspection and Compliance Verification ......................................................... 50 
+7.2 
+Installation of EVCS at fuelling stations ................................................................... 51 
+7.2.1 
+Electrical Supply and Load Capacity ............................................................... 51 
+7.2.2 
+Charging Mode and Equipment Compliance ................................................... 52 
+7.2.3 
+Protection and Safety Requirements ................................................................ 52 
+7.2.4 
+Inspection and Compliance Verification ......................................................... 53 
+7.3 
+Installation of EVCS at Enclosed Parking Lots ........................................................ 54 
+7.3.1 
+Electrical Supply and Load Capacity ............................................................... 56 
+7.3.2 
+Charging Mode and Equipment Compliance ................................................... 57 
+7.3.3 
+Protection and Safety Requirements ................................................................ 57 
+7.3.4 
+Inspection and Compliance Verification ......................................................... 58 
+7.4 
+Installation of EVCS at Open Parking Lots .............................................................. 58 
+7.4.1 
+Electrical Supply and Load Capacity ............................................................... 60 
+7.4.2 
+Charging Mode and Equipment Compliance ................................................... 60 
+7.4.3 
+Protection and Safety Requirements ................................................................ 60 
+7.4.4 
+Inspection and Compliance Verification ......................................................... 61 
+8 
+INSTALLATION OF EVCS INTEGRATED WITH RENEWABLE ENERGY AND 
+BATTERY ENERGY STORAGE SYSTEMS ....................................................................... 62 
+8.1 
+System Design and Integration ................................................................................. 64 
+
+--- page 7 ---
+ 
+vii 
+ 
+8.2 
+Electrical Infrastructure and Protection..................................................................... 64 
+8.3 
+Renewable Energy and Inverter Standards ............................................................... 64 
+8.4 
+Battery Energy Storage System Standards ................................................................ 64 
+8.5 
+Fire Protection and Thermal Management ................................................................ 65 
+8.6 
+Electrical Safety and Protection Systems .................................................................. 65 
+8.7 
+Explosion and Hazardous Environment Considerations ........................................... 66 
+8.8 
+Emergency Shutdown and Maintenance Provisions ................................................. 66 
+9 
+INSTALLATION OF BATTERY SWAP STATIONS .................................................. 67 
+9.1 
+System overview ....................................................................................................... 68 
+9.1.1 
+Lane system ..................................................................................................... 69 
+9.1.2 
+Battery handling system ................................................................................... 69 
+9.1.3 
+Storage system ................................................................................................. 69 
+9.1.4 
+Charging system............................................................................................... 69 
+9.1.5 
+Supervisory and control system ....................................................................... 70 
+9.2 
+Safety requirements ................................................................................................... 70 
+9.2.1 
+Safety requirements of the battery swap system and/or its systems ................ 70 
+9.2.2 
+Battery Maintenance ........................................................................................ 74 
+9.2.3 
+Data Security and Transmission Safety ........................................................... 74 
+9.2.4 
+Environmental considerations .......................................................................... 75 
+10 
+INSTALLATION OF CHARGING FACILITIES FOR E-BIKES AND E-TUK 
+TUKS 76 
+10.1 Charging Mode and Equipment Compliance ............................................................ 76 
+10.2 Connector Types ....................................................................................................... 76 
+
+--- page 8 ---
+ 
+viii 
+ 
+10.3 Safety and Protection Measures ................................................................................ 76 
+11 
+INSTALLATION OF CHARGING FACILITIES FOR HEAVY EVs ...................... 77 
+11.1 Charging Mode and Equipment Compliance ............................................................ 77 
+11.2 Connector Types ....................................................................................................... 77 
+11.3 Safety and Protection Measures ................................................................................ 77 
+11.4 Special Considerations for Pantograph-based Charing Stations ............................... 78 
+11.4.1 
+Mechanical Design and Structural Integration ................................................ 78 
+11.4.2 
+Site Design and Spatial Requirements ............................................................. 78 
+11.4.3 
+Safety and Protective Measures ....................................................................... 79 
+11.4.4 
+Communication ................................................................................................ 79 
+12 
+COMMUNICATION AND IT-RELATED ASPECTS............................................... 80 
+12.1 Communication Protocols for EVCS ........................................................................ 80 
+12.2 Cybersecurity and Data Protection ............................................................................ 81 
+12.3 Smart Grid and Energy Management ........................................................................ 81 
+13 
+OPERATING PROCEDURES .................................................................................... 82 
+13.1 Pre-Operation Checks ............................................................................................... 82 
+13.2 Charging Process ....................................................................................................... 82 
+13.3 Charging Completion and Disconnection ................................................................. 82 
+14 
+MAINTENANCE PROCEDURES ............................................................................. 83 
+14.1 Daily Checks ............................................................................................................. 83 
+14.2 Monthly Checks ........................................................................................................ 83 
+14.3 Quarterly Checks ....................................................................................................... 83 
+14.4 Annual Checks .......................................................................................................... 83 
+
+--- page 9 ---
+ 
+ix 
+ 
+14.5 Emergency Maintenance ........................................................................................... 84 
+14.6 Safety Precautions ..................................................................................................... 84 
+14.7 Record Keeping ......................................................................................................... 84 
+15 
+BASIC TROUBLESHOOTING STEPS FOR EVCS ................................................. 85 
+15.1 Power Supply Issues.................................................................................................. 85 
+15.2 Charging Cable and Connector Issues ...................................................................... 85 
+15.3 Communication Errors .............................................................................................. 85 
+15.4 Abrupt stop during a charging session ...................................................................... 85 
+15.5 Electrical Shock or Fire Risk .................................................................................... 85 
+15.6 Overheating of the Charging Station ......................................................................... 87 
+15.7 Grounding or Earthing Failure .................................................................................. 88 
+15.8 Frequent RCD Tripping ............................................................................................ 88 
+16 
+REFERENCES ............................................................................................................ 89 
+16.1 Standards ................................................................................................................... 89 
+16.2 Other references ........................................................................................................ 91 
+17 
+APPENDIX .................................................................................................................. 92 
+17.1 Annexure A: Cross Reference Standards .................................................................. 92 
+ 
+ 
+
+--- page 10 ---
+ 
+x 
+ 
+Contributors 
+Prepared by 
+• Dr. Eng. Lihil Uthpala Subasinghe - Consultant, USAID Sri Lanka Energy Program 
+Project Officers 
+• Eng. Ramesh Chanchala - Assistant Director, Environment, Efficiency and 
+Renewable, PUCSL 
+• Eng. Jinesha Kodikara - Renewable Energy Development Specialist, USAID Sri 
+Lanka Energy Program 
+• Eng. Kosala Gunawardana - Advanced Energy Technologies Specialist, USAID Sri 
+Lanka Energy Program 
+Internal Reviewers 
+• Eng. Amila Rajapaksha - Deputy Director - Licensing, PUCSL 
+• Eng. Lilantha Neelawala - Deputy Director Inspectorate, PUCSL 
+• Eng. Dileepa Karunarathne - Assistant Director Regulatory Affairs, PUCSL 
+• Eng. Dilhan Kariyapperuma - Assistant Director, Inspectorate, PUCSL 
+External Reviewers 
+• Mr. R. L. Molagoda - Director Technical Ministry of Transport, Highways, Ports and 
+Civil Aviation 
+• Mr. B. G. Aruna - Assistant Commissioner – Technical - Department of Motor Traffic 
+• Eng. L. K. Fernando - DGM - Planning & Development - DD2 - Ceylon Electricity 
+Board 
+• Eng. M. A. S. Kumara - DGM - Design & Development - Lanka Electricity Company 
+(Pvt) Ltd 
+• Mr. P. S. Maldeniya - Director - System and Planning - Sri Lanka Sustainable Energy 
+Authority 
+• Mr. Hasitha Karunaratne - Deputy Director - Sri Lanka Standards Institute 
+• Eng. G. Niroshana Bandara - Representative of The Institution of Engineers of Sri 
+Lanka 
+• Mr. Suranga Wijesinghe - MEL advisor, USAID Sri Lanka Energy Program 
+
+--- page 11 ---
+ 
+xi 
+ 
+Definitions 
+Abbreviation 
+Term 
+Definition 
+BS 
+British Standards 
+Specifications and guidelines developed by the British Standards 
+Institution (BSI) to ensure quality, safety, and consistency in 
+products, services, and systems in the United Kingdom and 
+internationally. 
+CHARdeMO CHArge de MOve A standard for charging electric vehicles. 
+Class I EVSE 
+Class I Electric 
+Vehicle Supply 
+Equipment 
+Equipment where protection against electric shock relies on basic 
+insulation and a protective earth connection of accessible conductive 
+parts. In the event of a failure in the basic insulation, the protective 
+earthing ensures that exposed conductive parts do not reach a 
+hazardous voltage. 
+Class II EVSE 
+Class II Electric 
+Vehicle Supply 
+Equipment 
+This equipment provides protection against electric shock through 
+double or reinforced insulation, without relying on protective 
+earthing. This means there is no provision for connection to a 
+protective conductor, as safety is ensured by two layers of insulation 
+or an equivalent single layer of reinforced insulation. 
+CPO 
+Charge Point 
+Operator 
+A legal entity that constructs, owns, and operates electric vehicle 
+charging stations, obtains the necessary power supply from a 
+distribution licensee, and resells electricity to all types of electric 
+vehicle owners at reasonable prices, operating under a distribution 
+and supply exemption. 
+CCTV 
+Closed Circuit 
+Television 
+A system of video cameras used to transmit signals to a specific set 
+of monitors for surveillance and security purposes. 
+COP 
+Code of Practice 
+A set of guidelines and standards that outline best practices, safety 
+measures, technical requirements, and operational procedures to 
+ensure the efficient, safe, and user-friendly installation, operation and 
+management of electric vehicle charging infrastructure. 
+CCS 
+Combined 
+Charging System 
+A standard for charging electric vehicles. 
+ 
+Commission 
+Public Utilities Commission of Sri Lanka incorporated under the 
+PUCSL Act No 35 of 2002. 
+
+--- page 12 ---
+ 
+xii 
+ 
+EV 
+Electric Vehicle 
+A vehicle powered entirely or partially by electricity, typically using 
+energy stored in batteries or fuel cells, and driven by electric motors 
+instead of internal combustion engines. 
+E-bike 
+Electric Bike 
+A bicycle equipped with an electric motor that assists propulsion, 
+either by providing pedal assistance or full electric drive. 
+E-tuk tuk 
+Electric Tuk Tuk 
+A three-wheeled electric vehicle designed for passenger or cargo 
+transport, powered by an electric motor instead of an internal 
+combustion engine. 
+EVCS 
+Electric Vehicle 
+Charging Station 
+A facility equipped with the necessary infrastructure to supply 
+electrical energy for recharging the batteries of electric vehicles. 
+EVSE 
+Electric Vehicle 
+Supply Equipment 
+The complete system that delivers electrical energy to recharge 
+electric vehicles including all components required to safely transfer 
+power from the electrical source to the EV battery. 
+Heavy EV 
+Heavy Electric 
+Vehicle 
+An electrically powered vehicle that falls within the heavy-duty 
+vehicle category, typically including buses, trucks, and other large 
+commercial or industrial vehicles. 
+IP 
+Ingress Protection 
+A standard rating system that classifies the level of protection 
+provided by an enclosure against the intrusion of solid objects, dust, 
+and water. 
+IET 
+Institution of 
+Engineering and 
+Technology 
+A professional organization based in the United Kingdom that 
+promotes engineering and technology innovation, provides industry 
+standards, and supports education, professional development, and 
+research globally. 
+IEC 
+International 
+Electrotechnical 
+Commission 
+A global organization that develops and publishes standards for 
+electrical, 
+electronic, 
+and 
+related 
+technologies 
+to 
+ensure 
+compatibility, safety, and performance across industries. 
+kWh 
+kilowatt hour 
+A unit of energy that measures the amount of electricity used or 
+produced over one hour at a rate of one kilowatt. 
+LOTO 
+Lockout-tagout 
+A safety procedure used in workplaces to ensure that machines or 
+equipment are properly shut off and not started up again while 
+maintenance or repair work is being done, preventing accidental 
+injuries. 
+NFC 
+Near Field 
+Communication 
+A wireless technology that enables short-range communication 
+between devices, typically within a few centimetres, for data 
+exchange or contactless transactions. 
+
+--- page 13 ---
+ 
+xiii 
+ 
+OTP 
+One Time 
+Password 
+A security feature that generates a unique, temporary code for a 
+single use during authentication to enhance online security. 
+PPE 
+Personal Protective 
+Equipment 
+Protective clothing, helmets, gloves, face shields, goggles, or other 
+safety gear designed to protect individuals from health and safety 
+risks at work or in specific environments. 
+PUCSL 
+Public Utilities 
+Commission of Sri 
+Lanka 
+Public Utilities Commission of Sri Lanka incorporated under the 
+PUCSL Act No 35 of 2002. 
+QR Code 
+Quick Response 
+Code 
+A two-dimensional barcode that can store information and is easily 
+scanned using a smartphone or device to access data or perform 
+actions quickly. 
+RFID 
+Radio Frequency 
+Identification 
+A wireless technology that uses electromagnetic fields to identify and 
+track tags attached to objects or devices for data exchange and 
+authentication. 
+V2G 
+Vehicle to Grid 
+A technology that enables electric vehicles to transfer stored energy 
+back to the power grid, allowing bidirectional energy flow for grid 
+stabilization and energy management. 
+Wi-Fi 
+Wireless Fidelity 
+A wireless networking technology that allows devices to connect to 
+the internet and communicate with each other using radio waves, 
+typically within a local area. 
+ 
+ 
+ 
+
+--- page 14 ---
+ 
+1 
+ 
+1 PREAMBLE 
+This is the approved Code on EV charging stations installation, maintenance, and operation 
+by the Commission in line with the empowerment given by the cabinet decision of 
+17/0613/706/041 in the year 2017 to regulate Electric Vehicle (EV) charging stations. 
+Further to the above, this code is issued per Condition 5 of the Certificate of Distribution and 
+Supply or Supply Exemption granted under section 10(1) of the Sri Lanka Electricity Act 
+2009 (as amended). 
+Compliance with IEC standards is mandatory for the installation of EVSE and EV charging 
+stations. This Code serves as a simplified and accessible version of these standards and other 
+local regulations, ensuring that all stakeholders can easily understand and comply with its 
+provisions. 
+The initial guideline issued in 2017 has been updated and structured into a Code, 
+incorporating the latest standards and other necessary regulations, providing comprehensive 
+guidance on the installation, operation, and maintenance of EVCS. 
+The Code was prepared by Dr. Eng. Lihil Uthpala Subasinghe, a consultant procured by the 
+Sri Lanka Energy Program, the funded organization for this development. 
+ 
+
+--- page 15 ---
+ 
+2 
+ 
+2 ELECTRIC VEHICLE CHARGING 
+In an Electric Vehicle Charging Station (EVCS), the Electric Vehicle (EV) shall be connected 
+to the Electric Vehicle Supply Equipment (EVSE) to ensure that, under normal conditions of 
+use, the conductive energy transfer function operates safely. 
+This safety is generally achieved by meeting the relevant requirements specified in the IEC 
+61851 and IEC 62196 standards, with compliance verified through the prescribed tests 
+detailed in these standards. Standard accessories used for EVSE shall be in accordance with 
+IEC 60309-1, IEC 60309-2 or IEC 60884-1 or the national standard. Standard accessories 
+that are intermateable with interfaces described in the IEC 60320 series shall not be used for 
+EVSE. 
+The charging equipment shall support a rated supply voltage of up to 1000 V AC or 1500 V 
+DC. It must function correctly within a tolerance of ±6% of the nominal voltage. The rated 
+frequency for operation is 50 Hz ± 1%.  
+All installations shall comply with IEC 61439: Low-voltage switchgear and controlgear 
+assemblies that defines the requirements for the design, testing, and performance of electrical 
+assemblies used in industrial, commercial, and residential applications. 
+An automotive-type vehicle designed for on-road use, such as passenger cars, buses, trucks, 
+vans, electric three-wheelers, electric motorcycles, and similar vehicles, qualifies as an 
+electric vehicle if it is primarily powered by an electric motor that draws energy from a 
+rechargeable storage battery, supercapacitor, fuel cell, photovoltaic array, or other electric 
+current sources. Plug-in Hybrid Electric Vehicles (PHEVs) are also considered electric 
+vehicles. 
+For the purpose of the Sri Lankan standard, off-road self-propelled electric vehicles such as 
+industrial trucks, shuttle vehicle, hoists, lifts, golf carts, airline ground support equipment, 
+tractors, boats, and special purpose vehicles that do not require registration with the 
+Department of Motor Traffic (DMT), Sri Lanka, are excluded from the definition of electric 
+vehicles. 
+2.1 Connection between the EV and supply network  
+IEC 61851-1:2017 specifies 3 different connection arrangements as Case A, Case B, and 
+Case C. 
+
+--- page 16 ---
+ 
+3 
+ 
+2.1.1 Case A 
+Connection of an EV to the supply network with a plug and cable permanently attached to the 
+EV as shown in Figure 2.1.1. The cable assembly is part of the vehicle. 
+ 
+Figure 2.1.1 Case A connection 
+2.1.2 Case B 
+Connection of an EV to a supply network with a cable assembly detachable at both ends as 
+shown in Figure 2.1.2. The detachable cable assembly is not part of the vehicle or the 
+charging station. 
+ 
+Figure 2.1.2 Case B connection 
+2.1.3 Case C 
+Connection of an EV to a supply network utilizing a cable and vehicle connector permanently 
+attached to the EV charging station as shown in Figure 2.1.3. The cable assembly is part of 
+the EV charging station. 
+ 
+Figure 2.1.3 Case C connection 
+ 
+ 
+
+--- page 17 ---
+ 
+4 
+ 
+Key for, Figure 2.1.1, Figure 2.1.2, and Figure 2.1.3 are as follows. 
+(a) Socket-outlet (b) Plug (c) Cable (d) Vehicle connector (e) Vehicle coupler (f) Vehicle 
+inlet (g) Charging station (h) EV socket-outlet (i) EV plug 
+2.1.4 Application of Accessories 
+IEC 62196-1:2022 depicts the application of accessories as shown in Figure 2.1.4. 
+ 
+Figure 2.1.4 Diagram showing the use of the accessories.  
+Key for Figure 2.1.4 are as follows. 
+1 - In-cable control and protective device (IC-CPD) 
+A - Standard socket-outlet or EV socket-outlet 
+B - Standard plug or EV plug 
+C - Vehicle connector 
+D - Vehicle inlet 
+
+--- page 18 ---
+ 
+5 
+ 
+2.2 Charging modes 
+IEC 61851-1:2017 specifies 4 charging modes as Mode 1, Mode 2, Mode 3, and Mode 4 (see 
+Figure 2.2.1). A Residual Current Device (RCD) with characteristics that are at least 
+equivalent to Type A as defined in IEC 61008-1 or IEC 61009-1, or IEC/TR 60755 in 
+conjunction with an over-current protection device shall be required for all modes of 
+charging. However, as per IEC 60364-7-722, to protect against DC leakage currents, Type B 
+RCD or a Type A RCD and appropriate equipment that ensures the disconnection of the 
+supply in case of DC fault current above 6 mA shall be required. 
+ 
+Figure 2.2.1 Charging modes 
+
+--- page 19 ---
+ 
+6 
+ 
+2.2.1 Mode 1 
+Mode 1 is a method for the connection of an EV to a standard socket outlet of an AC supply 
+network, utilizing a cable and plug, both of which are not fitted with any supplementary pilot 
+or auxiliary contacts. 
+The rated values for current and voltage shall not exceed: 
+• 16 A and 250 V AC, single-phase, 
+• 16 A and 480 V AC, three-phase. 
+EVSE intended for Mode 1 charging shall provide a protective earthing conductor from the 
+standard plug to the vehicle connector. 
+Current limitations are also subject to the standard socket-outlet ratings. 
+2.2.2 Mode 2 
+Mode 2 is a method for the connection of an EV to a standard socket-outlet of an AC supply 
+network utilizing an AC EVSE with a cable and plug, with a control pilot function and 
+system for personal protection against electric shock placed between the standard plug and 
+the EV. 
+The rated values for current and voltage shall not exceed: 
+• 32 A and 250 V AC single-phase, 
+• 32 A and 480 V AC three-phase. 
+Current limitations are also subject to the standard socket-outlet ratings.  
+EVSE intended for Mode 2 charging shall provide a protective earthing conductor from the 
+standard plug to the vehicle connector.  
+Mode 2 equipment that is destined to be mounted on a wall but is detachable by the user, or 
+to be used in a shock resistant enclosure shall use protection equipment as required by IEC 
+62752. 
+2.2.3 Mode 3 
+Mode 3 is a method for the connection of an EV to an AC EVSE permanently connected to 
+an AC supply network, with a control pilot function that extends from the AC EVSE to the 
+
+--- page 20 ---
+ 
+7 
+ 
+EV. EVSE intended for Mode 3 charging shall provide a protective earthing conductor to the 
+EV socket-outlet and/or to the vehicle connector. 
+2.2.4 Mode 4 
+Mode 4 is a method for the connection of an EV to an AC or DC supply network utilizing a 
+DC EVSE, with a control pilot function that extends from the DC EVSE to the EV. 
+Mode 4 equipment may be either permanently connected or connected by a cable and plug to 
+the supply network. EVSE intended for Mode 4 charging shall provide a protective earthing 
+conductor or protective conductor to the vehicle connector. 
+Additional requirements for DC EVSE are given in IEC 61851-23. 
+2.2.5 Mandatory Functions provided in Mode 2, 3, and 4 
+The following control pilot functions shall be provided by the EVSE. 
+2.2.5.1 Continuous continuity checking of the protective conductor 
+While charging in Mode 2, the electrical continuity of the protective earthing conductor 
+between the ICCB (in-cable control box) and the respective EV contact shall be continuously 
+monitored by the ICCB.  
+Note: ICCB is a device incorporated in the Mode 2 cable assembly, which performs control 
+functions and safety functions. 
+While charging in Mode 3, the electrical continuity of the protective earthing conductor 
+between the EV charging station and the respective EV contact shall be continuously 
+monitored by the EVSE. 
+While charging in Mode 4, the electrical continuity of the protective conductor between the 
+EV charging station and the respective EV contact shall be continuously monitored by the 
+EVSE. 
+The EVSE shall disconnect the supply to the EV in case of: 
+• loss of electrical continuity of the protective conductor (i.e. open control pilot circuit), 
+within 100 ms. 
+• incapacity to verify the continuity of the protective conductor (e.g. short circuit 
+between pilot wire and protective conductor), within 3 s. 
+
+--- page 21 ---
+ 
+8 
+ 
+2.2.5.2 Verification that the EV is properly connected to the EVSE 
+The EVSE shall be able to determine that the EV is properly connected to the EVSE. 
+Proper connection is assumed when the continuity of the control pilot circuit is detected. 
+2.2.5.3 Energization of the power supply to the EV 
+The EV socket-outlet or the vehicle connector shall not be energized unless the control pilot 
+function between EVSE and EV has been established correctly with signal states allowing 
+energization. 
+The presence of such states does not imply that energy will be transferred between the EVSE 
+and the EV as this may be subject to other external conditions, e.g. energy management 
+system. 
+If the EV requests ventilation, the EVSE shall only energize the system if such ventilation is 
+provided by the installation or the premises. 
+2.2.5.4 De-energization of the power supply to the EV 
+If the control pilot signal is interrupted the power supply to the EV shall be interrupted 
+according to 2.2.5.1. 
+If the control pilot signal status no longer allows energization, the power supply to the EV 
+shall be interrupted but the control pilot signalling may remain in operation. 
+2.2.5.5 Maximum allowable current 
+A means shall be provided to inform the EV of the value of the maximum current it is 
+allowed to draw. The value of the maximum current permitted shall be transmitted and shall 
+not exceed any of the following: 
+• the rated output current of the EVSE, 
+• the rated current of the cable assembly. 
+Note: The cable assembly includes Mode 2 and Mode 3 cable assemblies. 
+The transmitted value may change, without exceeding the maximum allowed current, to adapt 
+to power limitations, e.g. for load management. 
+
+--- page 22 ---
+ 
+9 
+ 
+The EVSE may interrupt the energy supply if the current drawn by the EV exceeds the 
+transmitted value. 
+2.2.6 Optional functions for Modes 2, 3 and 4 
+The optional functions that are implemented shall be indicated in the manual and shall fulfil 
+the requirements of section 2.2.6 
+2.2.6.1 Ventilation during supply of energy 
+EVSE can exchange information with installation regarding the request and presence for 
+ventilation. 
+(Note: The EVSE can communicate with the electrical installation of the building and check 
+for the operation of the ventilation system. If required, the EVSE can request the electrical 
+installation to switch on the ventilation system.) 
+2.2.6.2 Intentional and unintentional disconnection of the vehicle connector and/or the 
+EV plug 
+A mechanical or electromechanical means shall be provided to prevent intentional and 
+unintentional disconnection under load of the vehicle connector and/or plug according to IEC 
+62196-1. 
+2.2.6.3 Mode 4 using the combined charging system 
+The combined charging system as described in Annex CC of IEC 61851-23:2014 shall be 
+designed so that, 
+• AC chargeable EVs with a basic vehicle inlet do not require any means to protect the 
+EV against DC voltage at the inlet. 
+• AC EVSE does not require any means to be self-protected against DC voltage coming 
+from the EV. 
+For DC charging, digital communication shall be established between the vehicle and the DC 
+EV charging station that validates the DC energy transfer. The DC supply to the vehicle shall 
+not be connected until such complete validation from the vehicle is achieved. 
+A combined interface extends the use of a basic interface for AC and DC charging.  
+
+--- page 23 ---
+ 
+10 
+ 
+DC charging can be achieved by using separate and additional DC power contacts to supply 
+DC energy to the EV or by using power contacts placed at the position of the AC power 
+contacts of a basic interface if the vehicle connector and the vehicle inlet are both suitable for 
+DC. 
+The basic portion of the combined vehicle inlet can be used with a basic connector for AC 
+charging only or with a combined connector having separate contacts for AC or DC charging. 
+AC and DC power transfer shall not occur through the combined interface at the same time. 
+The combined interface used for DC charging shall only be used with the “Combined 
+Charging System” described in Annex CC of IEC 61851-23:2014. 
+Analysis and design of the EVSE using a basic interface for DC shall apply a risk analysis 
+according to IEC 61508 (all parts) applying a severity level of at least S2 for the function 
+preventing the risk of unintended DC voltage output. 
+Additional information has been provided in IEC 61851 Appendix A, B, and C. 
+2.3 AC Charging Interfaces 
+AC charging interfaces that comply with the relevant provisions of the IEC 62196 series shall 
+be deemed acceptable for use, provided they ensure interoperability, safety, and performance 
+in accordance with applicable IEC standards. 
+2.3.1 Configuration Type 1 
+This is a 32 A, 250 V (rated) AC interface. Also known as the “Type 1 connector,” which is 
+developed based on the SAE J772 standard that supports charging in Mode 2 (section 2.2.2). 
+It features a round housing, which has a notch on the vehicle inlet for proper orientation, with 
+five pin-and-sleeve contacts for two AC conductors, a protective conductor and two signal 
+pins that are used for the control pilot function (according to IEC 61851-1 Annex A) and for 
+proximity detection (using an auxiliary switch and no current coding, according to IEC 
+61851-1 Annex B). When inserted into the vehicle inlet, the connector is held in place by a 
+mechanical latch, which is part of the connector. 
+Pin arrangement is shown in Figure 2.3.1.1 and the definitions are given in Table 2.3.1.1. 
+Further information can be found in IEC 62196-2. The actual appearance of a Type 1 vehicle 
+connector and a vehicle inlet are shown in Figure 2.3.1.2 and Figure 2.3.1.3, respectively. 
+
+--- page 24 ---
+ 
+11 
+ 
+ 
+Figure 2.3.1.1 Configuration Type 1 (vehicle connector) 
+Table 2.3.1.1 Overview of the basic vehicle interface, configuration type 1, single phase 
+Pin 
+Definition 
+Maximum Voltage 
+Maximum 
+Current 
+L1 
+Live 1 
+250 V 
+32 A 
+N/L2 
+Neutral/Live 2 
+250 V 
+32 A 
+PE 
+Protective Earth/Ground 
+ 
+Rated for fault 
+CP 
+Control pilot 
+30 V 
+2 A 
+PP/CS 
+Proximity 
+pilot/Connection switch 
+30 V 
+2 A 
+Note: "Rated for fault" means "rated for the highest fault current". 
+
+--- page 25 ---
+ 
+12 
+ 
+ 
+Figure 2.3.1.2 Type 1 vehicle connector 
+ 
+Figure 2.3.1.3 Type 1 vehicle inlet 
+2.3.2 Configuration Type 2 
+This is a 63 A, 480 V (rated) three-phase or a 70 A, 250 V (rated) single-phase interface. 
+Also known as the “Type 2 connector”. This configuration consists of a plug and socket-
+outlet that support charging in Mode 3 (section 2.2.3), and a vehicle coupler, consisting of 
+vehicle connector and vehicle inlet, that supports charging in Mode 2 (section 2.2.2) and 
+Mode 3 (section 2.2.3). 
+It features a round housing, which is flattened on one side for proper orientation, with up to 
+seven pin-and-sleeve contacts for up to four AC conductors, a protective conductor and two 
+signal pins that are used for the control pilot function (according to IEC 61851-1 Annex A) 
+and for simultaneous proximity detection and current coding (according to IEC 61851-1 
+Annex B). By design, the contacts cannot be touched by the standardized test finger. Since 
+the second edition of the standard, additional touch protection of the contacts can optionally 
+
+--- page 26 ---
+ 
+13 
+ 
+be provided by shutters. When inserted into the inlet, the connector is held in place by the 
+locking mechanism, which is attached to the inlet. The same concept is used by the socket-
+outlet to hold the plug in place.  
+Pin arrangement is shown in Figure 2.3.2.1 and the definitions are given in Table 2.3.2.1. 
+Further information can be found in IEC 62196-2. The actual appearance of a Type 2 vehicle 
+connector and a vehicle inlet are shown in Figure 2.3.2.2 and Figure 2.3.2.3, respectively. 
+ 
+Figure 2.3.2.1 Configuration Type 2 (vehicle connector) 
+Table 2.3.2.1 Overview of the basic vehicle interface, configuration type 2, three phase 
+or single phase 
+Pin 
+Definition 
+Maximum 
+Voltage 
+Maximum Current 
+Three 
+phase 
+Single 
+phase 
+L1 
+Live 1 
+480 V 
+63 A 
+70 A 
+L2 
+Live 2 
+480 V 
+63 A 
+- 
+L3 
+Live 3 
+480 V 
+63 A 
+- 
+N 
+Neutral 
+480 V 
+63 A 
+70 A 
+PE 
+Protective Earth/Ground 
+― 
+Rated for fault 
+CP 
+Control pilot 
+30 V 
+2 A 
+PP/CS 
+Proximity 
+pilot/Connection switch 
+30 V 
+2 A 
+ 
+
+--- page 27 ---
+ 
+14 
+ 
+ 
+Figure 2.3.2.2 Type 2 vehicle connector 
+ 
+Figure 2.3.2.3 Type 2 vehicle inlet 
+2.4 DC Charging Interfaces 
+DC charging interfaces that comply with the relevant provisions of the IEC 62196 series shall 
+be deemed acceptable for use, provided they ensure interoperability, safety, and performance 
+in accordance with applicable IEC standards. 
+2.4.1 Configuration AA 
+This is a 1000 V DC interface that can go up to 400 A. Also known as the “CHAdeMO 
+connector”. This coupler is intended to be used with DC charging stations that implement 
+
+--- page 28 ---
+ 
+15 
+ 
+System A according to IEC 61851-23 Annex AA and CAN-communication according to 
+IEC 61851-24 Annex A. The coupler supports charging in Mode 4 (section 2.2.4). 
+Pin arrangement is shown in Figure 2.4.1.1 and the definitions are given in Table 2.4.1.1. 
+Further information can be found in IEC 62196-3. The actual appearance of a Type AA 
+vehicle connector and a vehicle inlet are shown in Figure 2.4.1.2 and Figure 2.4.1.3, 
+respectively. 
+ 
+Figure 2.4.1.1 Configuration AA (vehicle connector) 
+Table 2.4.1.1 Overview of the basic vehicle interface, configuration AA 
+Pin 
+Definition 
+Maximum Voltage 
+Maximum Current 
+DC+ 
+DC power supply (+) 
+1000 V 
+400 A 
+DC- 
+DC power supply (-) 
+1000 V 
+400 A 
+FG 
+Protective Earth/Ground 
+- 
+Rated for fault 
+N/C 
+Not connected/Reserved 
+- 
+- 
+SS1 
+Charge sequence signal 
+(start/stop charging) 1 
+30 V 
+10 A 
+DCP 
+Control pilot / Charge 
+Enable (Vehicle grants 
+EVSE permission to 
+connect power) 
+30 V 
+10 A 
+PP 
+Proximity pilot 
+30 V 
+2 A 
+C-L 
+CAN-low 
+30 V 
+2 A 
+
+--- page 29 ---
+ 
+16 
+ 
+C-H 
+CAN-high 
+30 V 
+2 A 
+SS2 
+Charge sequence signal 
+(start/stop charging) 2 
+30 V 
+10 A 
+ 
+ 
+Figure 2.4.1.2 Type AA (CHAdeMO) vehicle connector 
+ 
+Figure 2.4.1.3 Type AA (CHAdeMO) vehicle inlet 
+2.4.2 Configuration EE 
+This is a 1000 V DC interface that can go up to 400 A. Also known as the “CCS1 connector” 
+or “Combo1 connector”, because it is used within the Combined Charging System (CCS) and 
+extends the Type 1 coupler. This coupler is intended to be used with DC charging stations 
+that implement System C according to IEC 61851-23 and PLC communication according to 
+IEC 61851-24 Annex C. 
+
+--- page 30 ---
+ 
+17 
+ 
+Pin arrangement is shown in Figure 2.4.2.1 and the definitions are given in Table 2.4.2.1. 
+Further information can be found in IEC 62196-3. The actual appearance of a Type EE 
+vehicle connector and a vehicle inlet are shown in Figure 2.4.2.2 and Figure 2.4.2.3, 
+respectively. 
+ 
+Figure 2.4.2.1 Configuration EE (vehicle connector) 
+Table 2.4.2.1 Overview of the basic vehicle interface, configuration EE 
+Pin 
+Definition 
+Maximum Voltage 
+Maximum 
+Current 
+L1 
+Live 1 
+250 V 
+32 A 
+N/L2 
+Neutral/Live 2 
+250 V 
+32 A 
+PE 
+Protective Earth/Ground 
+ 
+Rated for fault 
+CP 
+Control pilot 
+30 V 
+2 A 
+PP/CS 
+Proximity 
+pilot/Connection switch 
+30 V 
+2 A 
+
+--- page 31 ---
+ 
+18 
+ 
+DC+ 
+DC power supply (+) 
+1000 V 
+400 A 
+DC- 
+DC power supply (-) 
+1000 V 
+400 A 
+ 
+Figure 2.4.2.2 Type EE (CCS1) vehicle connector 
+ 
+Figure 2.4.2.3 Type EE (CCS1) vehicle inlet 
+2.4.3 Configuration FF 
+This is a 1000 V DC interface that can go up to 400 A. Also known as the “CCS2 connector” 
+or “Combo2 connector”, because it is used within the Combined Charging System (CCS) and 
+extends the Type 2 coupler. This coupler is intended to be used with DC charging stations 
+
+--- page 32 ---
+ 
+19 
+ 
+that implement System C according to IEC 61851-23 and PLC communication according to 
+IEC 61851-24 Annex C. 
+Pin arrangement is shown in Figure 2.4.3.1 and the definitions are given in Table 2.4.3.1. 
+Further information can be found in IEC 62196-3. The actual appearance of a Type FF 
+vehicle connector and a vehicle inlet are shown in Figure 2.4.3.2 and Figure 2.4.3.3, 
+respectively. 
+ 
+ 
+Figure 2.4.3.1 Configuration FF (vehicle connector) 
+Table 2.4.3.1 Overview of the basic vehicle interface, configuration FF 
+Pin 
+Definition 
+Maximum 
+Voltage 
+Maximum Current 
+Three 
+phase 
+Single 
+phase 
+L1 
+Live 1 
+480 V 
+63 A 
+70 A 
+L2 
+Live 2 
+480 V 
+63 A 
+- 
+
+--- page 33 ---
+ 
+20 
+ 
+L3 
+Live 3 
+480 V 
+63 A 
+- 
+N 
+Neutral 
+480 V 
+63 A 
+70 A 
+PE 
+Protective Earth/Ground 
+― 
+Rated for fault 
+CP 
+Control pilot 
+30 V 
+2 A 
+PP/CS 
+Proximity 
+pilot/Connection switch 
+30 V 
+2 A 
+DC+ 
+DC power supply (+) 
+1000 V 
+400 A 
+DC- 
+DC power supply (-) 
+1000 V 
+400 A 
+ 
+ 
+Figure 2.4.3.2 Type FF (CCS2) vehicle connector 
+
+--- page 34 ---
+ 
+21 
+ 
+ 
+Figure 2.4.3.3 Type FF (CCS2) vehicle inlet 
+2.5 Communication 
+Digital communication is optional for Modes 1, 2 and 3. For Mode 4 the digital 
+communication as described in IEC 61851-24 shall be provided to allow the EV to control 
+the EVSE. 
+2.6 Protection against electric shock 
+The means of protection against electrical shock shall be provided as described in IEC 
+61851-1. 
+2.7 Requirements for adaptors 
+Adaptors between the EV socket-outlet and the EV plug shall only be used if specifically 
+designated and approved by the vehicle manufacturer or by the EVSE manufacturer and in 
+accordance with national requirements. 
+Such adaptors shall comply with the requirements of this standard, and the other relevant 
+standards governing either the EV plug or EV socket-outlet portions of the adaptor. The 
+adaptors shall be marked to indicate the specific conditions of use allowed by the 
+manufacturer. 
+Such adaptors shall not allow transitions from one mode to another. 
+
+--- page 35 ---
+ 
+22 
+ 
+2.8 Cable assembly requirements 
+The cable assembly requirements shall be fulfilled as described in IEC 61851-1. 
+2.9 EVSE constructional requirements and tests 
+The constructional requirements of EVSE shall be fulfilled, and relevant tests shall be 
+conducted as described in IEC 61851-1. 
+2.9.1 Degrees of protection against solid foreign objects and water for the enclosures 
+Enclosures of the EVSE shall have an Ingress Protection (IP) degree, according to IEC 
+60529 as follows. 
+• indoor use: at least IP41 
+• outdoor use: at least IP44 
+The minimum IP degree for socket-outlets and the vehicle connectors shall be in accordance 
+with their appropriate standards. IPX4 may be obtained by the combination of the socket-
+outlet or connector and the lid or cap, EVSE enclosure or EV enclosure. 
+2.9.2 Degrees of protection against solid foreign objects and water for basic, universal 
+and combined and DC interfaces 
+The minimum IP degrees for ingress of objects and liquids shall be as follows. 
+• Indoor use: 
+o vehicle connector when mated with vehicle inlet: IP21 
+o EV plug mated with EV socket-outlet: IP21 
+o vehicle connector for case C when not mated: IP21 
+o vehicle connector for case B when not mated: IP24 
+• Outdoor use: 
+o vehicle connector when mated with vehicle inlet: IP44 
+o EV plug mated with EV socket-outlet: IP44 
+o vehicle connector when not mated: IP24 
+o vehicle connector for case B when not mated: IP24 
+o socket-outlet when not mated: IP24 
+IPX4 may be obtained by the combination of the socket-outlet or connector and the lid or 
+cap, EVSE enclosure or EV enclosure. 
+
+--- page 36 ---
+ 
+23 
+ 
+2.10 Overload and short-circuit protection 
+The means of overload and short-circuit protection shall be provided as described in IEC 
+61851-1. The following is only a general description. 
+Where connecting points can be used simultaneously and are intended to be supplied from the 
+same input line, they shall have individual protection incorporated in the EVSE. 
+If the EVSE presents more than one connecting point then such connecting points may have 
+common overload protection means and may have common short-circuit protection means, if 
+those protection means provide the required protection for each of the connecting points (e.g. 
+the common protection device shall have a rating no higher than the lowest rating of the 
+connecting points). 
+If the EVSE presents more than one connecting point that cannot be used simultaneously then 
+such connecting points can have common protection means.  
+Such overcurrent protective devices shall comply with IEC 60947-2, IEC 60947-6-2 or IEC 
+61009-1 or with the relevant parts of IEC 60898 series or IEC 60269 series. 
+2.11 Marking and other relevant instructions for users 
+The installation manual of EV charging stations shall indicate the classification as given in 
+Clause 5 of IEC 61851-1.  
+The EVSE manufacturer shall state the interface characteristics specified in Clause 5 of IEC 
+TS 61439-7:2014 in the manual where applicable. Wiring instructions shall be provided. 
+If protective devices are included in the EV charging station, the manual shall indicate the 
+characteristics of those protection devices explicitly describing the type and rating. The 
+information may be provided in a detailed electric diagram. 
+If the protective devices are not in the EV charging station, the manual shall indicate all 
+information necessary for the installation of external protection explicitly describing the type 
+and rating of the devices to be used. 
+It is recommended that the installation manual be made available to relevant stakeholders and 
+regulating bodies. 
+
+--- page 37 ---
+ 
+24 
+ 
+If the EV charging station has more than one connection of equipment to the AC supply 
+network and does not have individual protection for each connecting point to the vehicles, 
+then the installation manual shall indicate that each connection of the equipment to the AC 
+supply network requires individual protection. 
+The equipment shall bear the following markings in a clear manner, as applicable. 
+• Name, initials, trademark or distinctive marking to identify the manufacturer 
+• Equipment reference 
+• Serial number or catalogue number 
+• Date of manufacture 
+• Rated voltage in V 
+• Rated frequency in Hz 
+• Rated current in A 
+• Number of phases 
+• IP degrees (degree of protection) 
+• "Indoor Use Only", or the equivalent, if intended for indoor use only 
+• For all Class II equipment, the symbol shall clearly appear in the markings 
+• All necessary information relating to the other declared classifications, characteristics 
+and diversity factor(s) 
+• Minimal contact information (for example, phone number, address of contractor, 
+installer or manufacturer) 
+ 
+ 
+
+--- page 38 ---
+ 
+25 
+ 
+3 MINIMUM STANDARDS FOR CHARGING MODE 1 
+Only the following rated power interfaces are permitted for charging Mode 1. 
+3.1 Power interfaces 
+If an EV charging station is equipped with a power supply cord featuring a plug that complies 
+with IEC 60083 (BS 1363), a compatible outlet must be installed. The Type I socket outlet 
+for EV charging facilities in Sri Lanka must be a square-pin, 13 A, 230 V outlet conforming 
+to IEC 60083 Type G (BS 1363), as illustrated in Figure 3.1.1. It should be mandatory to 
+safeguard against overcurrent and earth faults at the power supply using protective devices 
+including miniature circuit breakers (MCBs) and residual current detectors (RCDs) designed 
+as per the BS 7671.  
+ 
+Figure 3.1.1 IEC 60083 Type G socket-outlet and a plug 
+The Type II socket outlet for EV charging facilities in Sri Lanka must be a round, five-pin 
+industrial socket (L1, L2, L3, N, and PE), rated at 32 A and 400 V, compliant with IEC 
+60309, as illustrated in Figure 3.1.2. Similar to Type I outlets, it must also be protected 
+against overcurrent and earth faults at the power supply using protective devices such as 
+MCBs and RCDs, as per the BS 7671. 
+ 
+Figure 3.1.2 IEC 60309 five-pin socket-outlet and a plug 
+
+--- page 39 ---
+ 
+26 
+ 
+The Type III socket outlet for EV charging facilities in Sri Lanka must be a round, three-pin 
+industrial socket (L N, and PE), rated at 16 A and 230 V, compliant with IEC 60309, as 
+illustrated in Figure 3.1.3. Similar to Type I and II outlets, it must also be protected against 
+overcurrent and earth faults at the power supply using protective devices such as MCBs and 
+RCDs, as per the BS 7671. 
+ 
+Figure 3.1.3 IEC 60309 three-pin socket-outlet and a plug 
+Connectors intended for outdoor use must have a minimum IP rating of IP44. 
+The charging cable, equipped with in-cable control to support mandatory pilot functions, 
+shall be supplied by the EV manufacturer. 
+3.2 Installation standards 
+The selection of circuit components must align with the ratings of the EV charging station as 
+specified in IEC 61851. The charging station should be powered by a dedicated branch 
+circuit, which may require installing a circuit breaker in the distribution panel. Since this 
+equipment is classified as a continuous load, the existing service line must have sufficient 
+capacity to handle the additional demand. If not, upgrading the panel and service line may be 
+necessary. 
+Alternatively, the station can be connected to an existing branch circuit with an appropriate 
+rating (e.g., a 20 A circuit supplying a kitchen range), provided a switching mechanism is 
+installed to prevent simultaneous operation of both loads. 
+It is mandatory to provide a socket outlet along with a properly designed switch disconnector, 
+isolator, or switching mechanism positioned before the power interface. 
+The conductor gauge must be selected to ensure that voltage drop and current-carrying 
+capacity comply with the IET Wiring Regulations, 18th Edition (BS 7671). 
+
+--- page 40 ---
+ 
+27 
+ 
+3.3 Energy metering 
+All metering equipment used to measure electricity consumption must comply with IEC 
+62052. Three general approaches have been identified for metering EV load in Mode 1: 
+single metering, submetering, and separate metering. 
+3.3.1 Single metering 
+The EV load is included as part of the total household load and is not measured separately. 
+This approach, illustrated in Figure 3.3.1, is similar to how electricity consumption is 
+accounted for with most other new appliances purchased by a household. It is commonly 
+referred to as "whole-house" metering. 
+ 
+Figure 3.3.1 Single metering approach 
+3.3.2 Submetering approach 
+The EV load is measured using a meter installed between the main meter and the EVSE, 
+functioning as a submeter specifically for the EV load. This setup allows the submeter to 
+measure the EV load as a subset of the total load, while the main energy meter continues to 
+measure the entire household load, as shown in Figure 3.3.2. For accurate billing, the EV load 
+recorded by the submeter must be subtracted from the main meter's reading to prevent 
+double-counting of EV consumption. This approach is also known as "subtractive metering" 
+or "series metering." 
+
+--- page 41 ---
+ 
+28 
+ 
+ 
+Figure 3.3.2 Submetering approach 
+3.3.3 Separate metering approach 
+The EV load is measured and billed independently of the rest of the customer's load using a 
+dedicated revenue-grade meter. In this approach, the EV load is effectively charged to a 
+separate account from the other household loads. However, the accounts can be combined 
+into a single bill for convenience. This approach is also referred to as "parallel metering" and 
+is illustrated in Figure 3.3.3. 
+ 
+Figure 3.3.3 Separate metering approach 
+
+--- page 42 ---
+ 
+29 
+ 
+3.3.4 Minimum functionality requirements of energy meters 
+The minimum functionalities required for each metering arrangement used in charging Mode 
+1 are outlined in Table 3.3.4.1. 
+Table 3.3.4.1 Minimum functionality requirements 
+Functionality 
+Single metering 
+Submetering 
+Separate metering 
+EV metering accuracy 
+Not applicable 
+(N/A) 
+Highly accurate 
+meters are available, 
+but the cost goes to 
+the customer. 
+Require Advanced 
+Metering 
+Infrastructure (AMI) 
+compatibility and 
+the accuracy 
+requirement for 
+such meter. 
+Load data granularity 
+N/A 
+Multiple time 
+intervals consistent 
+with the number of 
+intervals in the 
+utility EV tariff 
+structure. 
+Multiple time 
+intervals consistent 
+with the number of 
+intervals in the 
+utility EV tariff 
+structure. 
+Communication 
+N/A 
+Daily reporting will 
+be necessary to 
+enable consumers to 
+track online billing 
+information. 
+Same as a meter 
+with AMI. 
+Data storage 
+N/A 
+Time of use data 
+storage. 
+Same as a meter 
+with AMI. 
+Ownership 
+Energy meter 
+should be owned by 
+utility and the EVSE 
+should be owned by 
+the tariff customer. 
+Energy meter and 
+EVSE should be 
+owned by the 
+customer. 
+Energy meter 
+should be owned by 
+utility and the EVSE 
+should be owned by 
+the customer. 
+
+--- page 43 ---
+ 
+30 
+ 
+3.4 Safety codes and standards for EV chargers 
+Generally, the key safety and operational requirements for onboard chargers in Mode 1 are as 
+follows. 
+i. 
+Electromagnetic compatibility (EMC), emission and immunity should comply with 
+IEC CISPR 11, IEC CISPR 22 and IEC 61000-4.  
+ii. 
+Efficiency should be more than or equal to 96%. 
+iii. 
+Total harmonic distortion (THD) of current (iTHD) should be less than 7% as specified 
+in IEC 61000-3-6. 
+iv. 
+Minimum enclosure protection should be IP54. 
+v. 
+Safety in terms of breaking capacities, cables and connectors, phase fault, and earth 
+fault conditions should comply with IEC 62196, IEC 61851, and Conformité 
+Européene (CE) marking. 
+3.5 Standards for interfaces and cables 
+IEC 62893-1:2017(E) specifies the construction, dimensions, and testing requirements for 
+cables with extruded insulation and sheaths, designed for flexible applications under harsh 
+conditions. These cables have a voltage rating of up to and including 1000 V AC and are 
+intended for use in the power supply connection between the electricity supply point of the 
+EVCS and the EV. 
+Ordinary-duty cables with a rated voltage of 300/500 V are permitted only for charging Mode 
+1. The maximum allowable conductor temperature for these cables, as specified in IEC 
+62893, is 90°C. 
+ 
+ 
+
+--- page 44 ---
+ 
+31 
+ 
+4 MINIMUM STANDARDS FOR CHARGING MODE 2 
+4.1 Power interfaces 
+If an EV charging station is equipped with a power supply cord featuring a plug that complies 
+with IEC 60083 (BS 1363), a compatible outlet must be installed. The Type I socket outlet 
+does not support charging Mode 2 therefore the socket must be Type II of Type III. The Type 
+II socket outlet for EV charging facilities in Sri Lanka must be a round, five-pin industrial 
+socket (L1, L2, L3, N, and PE), rated at 32 A and 400 V, compliant with IEC 60309. The 
+Type III socket outlet for EV charging facilities in Sri Lanka must be a round, three-pin 
+industrial socket (L, N, and PE), rated at 16 A and 230 V, compliant with IEC 60309. The 
+RCD is integrated into the in-cable control and protective device supplied by the EV 
+manufacturer. In addition to supporting the mandatory pilot functions, this device provides 
+overcurrent detection, overtemperature detection, and protective earth (PE) detection from the 
+socket outlet. Typical Type II and Type III socket-outlets and plugs are illustrated in Figure 
+3.1.2 and Figure 3.1.3. 
+The recommended AC charging interfaces used in charging Mode 2 are detailed in Section 
+2.3. 
+4.2 Installation standards 
+The selection of circuit components must align with the ratings of the EV charging station as 
+specified in IEC 61851. The charging station should be powered by a dedicated branch 
+circuit, which may require installing a circuit breaker and a Type A RCD with appropriate 
+rating in the distribution panel. Since this equipment is classified as a continuous load, the 
+existing service line must have sufficient capacity to handle the additional demand. If not, 
+upgrading the panel and service line may be necessary. The conductor gauge must be chosen 
+to ensure that voltage drops comply with the IET Wiring Regulations, 18th Edition (BS 7671). 
+The installation must be carried out by an electrician with qualifications and experience 
+equivalent to Sri Lanka Qualifications Framework (SLQF) Level 4. 
+The electrician should adhere to the following guidelines. 
+• Read the manufacturer’s installation instructions carefully. 
+• Refer to the nameplate to ensure the apparatus is approved with recognized 
+certification markings and confirm its ratings (e.g., 400 V, 32 A per dwelling station). 
+
+--- page 45 ---
+ 
+32 
+ 
+• Verify that the distribution panel can accommodate the additional load, following the 
+guidelines of the IET Wiring Regulations, 18th Edition (BS 7671), as each station in a 
+multi-dwelling unit (MDU) is considered as a separate continuous load. 
+• Install the wiring between the panel and the EVSE using the appropriate method 
+specified in the IET Wiring Regulations, 18th Edition (BS 7671). 
+• Install a circuit breaker with the correct rating in the distribution panel (e.g., 40 A per 
+dwelling station). 
+• Securely anchor the socket outlet to the wall. 
+• Complete the connections and energize the EVSE. 
+• Test the EVSE to ensure it operates correctly.  
+4.3 Energy metering 
+All metering equipment used to measure electricity consumption must comply with IEC 
+62052. Three general approaches can also be used for metering EV load in charging Mode 2: 
+single metering, submetering, and separate metering. Unlike in charging Mode 1, charging 
+Mode 2 is often adopted in industrial and commercial EVCS. In such applications, it is 
+common to use MDUs, where separate branch circuits are required for each dwelling unit. 
+Therefore, the most practical metering approach would be either submetering or separate 
+metering, as illustrated in Figure 4.3.1 and Figure 4.3.2, respectively. These readings can be 
+used for billing the customers who utilize the facility. Depending on the capacity of the grid 
+supply and the demand of the EVCS, the utility will determine whether a separate 
+transformer is necessary. 
+
+--- page 46 ---
+ 
+33 
+ 
+ 
+Figure 4.3.1 Submetering approach for charging Mode 2: an MDU EVCS including a 
+Non-EV load within the customer infrastructure 
+ 
+Figure 4.3.2 Separate metering approach for charging Mode 2: an MDU EVCS 
+including a Non-EV load within the customer infrastructure 
+For an EVCS operating in Mode 2 with MDUs, which is not open to the public but dedicated 
+to predefined users, such as company employees, single metering may be the preferred 
+approach, as shown in Figure 4.3.3. 
+
+--- page 47 ---
+ 
+34 
+ 
+ 
+Figure 4.3.3 Single metering approach in charging Mode 2 
+4.4 Safety codes and standards for EV charger 
+The charger must adhere to various specifications mandated by the government and utility 
+providers of Sri Lanka. Generally, the key safety and operational requirements for EV 
+chargers in Mode 2 are as follows. 
+i. 
+Electromagnetic compatibility (EMC), emission and immunity should comply with 
+IEC CISPR 11, IEC CISPR 22 and IEC 61000-4.  
+ii. 
+Efficiency should be more than or equal to 96%. 
+iii. 
+Total harmonic distortion (THD) of current (iTHD) should be less than 7% as specified 
+in IEC 61000-3-6. 
+iv. 
+Minimum enclosure protection should be IP54. 
+v. 
+Safety in terms of breaking capacities, cables and connectors, phase fault, and earth 
+fault conditions should comply with IEC 62196, IEC 61851, and Conformité 
+Européene (CE) marking. 
+4.5 Standards for interfaces and cables 
+IEC 62893-1:2017(E) specifies the construction, dimensions, and testing requirements for 
+cables with extruded insulation and sheaths, designed for flexible applications under harsh 
+conditions. These cables have a voltage rating of up to and including 1000 V AC and are 
+
+--- page 48 ---
+ 
+35 
+ 
+intended for use in the power supply connection between the electricity supply point of the 
+EVCS and the EV. 
+The cables used in Mode 2 must comply with the requirements outlined in IEC 62893-3. The 
+maximum conductor temperature for the cables in this part of IEC 62893 is 90 ºC. 
+4.6 Standards for the energy meter 
+The energy meter must comply with the following standards or their latest editions or latest 
+amendments. 
+• 
+General requirements, tests, and test conditions: IEC 62052-21:2003. 
+• 
+Power consumption, voltage requirements, accuracy, and local interface: IEC 62053-
+21:2003. 
+• 
+Data exchange for meter reading, tariff, and load control: IEC 62056-21:2002. 
+• 
+Acceptance inspection: IEC 62058-11:2010 and IEC 62058-31:2010. 
+• 
+Degree of protection: IP51. 
+• 
+Data communication: IEC 61334 and IEC 14908-4:2012. 
+• 
+Case: IP53, IEC 60529. 
+• 
+Certifications: CE and RoHS, in addition to the above IEC standards. 
+ 
+ 
+
+--- page 49 ---
+ 
+36 
+ 
+5 MINIMUM STANDARDS FOR CHARGING MODE 3 
+5.1 Power interfaces 
+In charging Mode 3, two interface arrangements are possible: 
+• 
+Case B: Featuring an EV socket-outlet and an EV plug at the EVCS end (refer to 
+Section 2.1.2). 
+• 
+Case C: Without an EV socket-outlet and EV plug at the EVCS end (refer to Section 
+2.1.3). 
+In both configurations, the AC EVSE must continuously monitor the electrical continuity of 
+the protective conductor connected to the electric vehicle. If a loss of continuity is detected, 
+the electrical supply circuit to the vehicle shall be immediately disconnected. 
+The recommended AC charging interfaces used in charging Mode 3 are detailed in Section 
+2.3. 
+5.2 Installation standards 
+For charging Mode 3, the AC EVSE shall incorporate the constructional requirements and 
+tests outlined in Section 12 of IEC 61851-1. 
+5.2.1 Emergency Disconnection and Safety Measures 
+i. An emergency switching or disconnect device shall be installed to isolate the AC 
+supply network from the EVSE in case of electric shock, fire, explosion, or any kind 
+of an emergency. 
+ii. It shall be located within 2 meters of the EVSE, preferably mounted on a nearby wall, 
+or on a visible pedestal, not obstructed by vehicles or equipment (BS 7671). 
+iii. This device shall be equipped with provisions to prevent unintentional or accidental 
+operation. 
+5.2.2 Temperature Limits 
+The maximum permissible surface temperature of parts that are hand-grasped at the 
+maximum rated current and an ambient temperature of 40°C shall be: 
+• 
+50°C for metallic parts 
+• 
+60°C for non-metallic parts 
+For parts that may be touched but not grasped under the same conditions: 
+
+--- page 50 ---
+ 
+37 
+ 
+• 
+60°C for metallic parts 
+• 
+85°C for non-metallic parts 
+5.2.3 Ingress Protection 
+When energized or not, and with the socket-outlet access trap door closed, the EVSE shall 
+provide a minimum degree of protection of IP54, verified through testing in accordance with 
+IEC 60529. 
+5.2.4 Cable Management and Storage 
+A designated storage system shall be provided for the cable assembly and vehicle connector 
+when not in use. The EVSE shall be provided with an indicator to confirm whether the cable 
+assembly/vehicle connector has been properly stored after disconnection from the vehicle. 
+5.2.5 Socket-Outlet and Connector Height Requirements 
+The lowest part of the socket-outlet or the storage system for the vehicle connector shall be 
+positioned between 0.4 m and 1.5 m above ground level. 
+5.2.6 Prohibition of Extension Cords 
+The use of extension cords for connecting the EV to the AC EVSE is strictly prohibited to 
+prevent scenarios such as direct contact with unsafe components, potential overload risks, and 
+the absence of a protective conductor. 
+5.2.7 Earthing and Electrical Continuity 
+Under faulty conditions, all exposed conductive parts that could become live shall be 
+connected in a way that ensures proper electrical continuity, allowing fault currents to be 
+safely conducted to the earthed point of the AC supply network. 
+Compliance shall be verified by testing electrical continuity between exposed conductive 
+parts and the earth circuit. A 16 A DC current (derived from a source with a no-load voltage 
+not exceeding 12 V) shall be applied between any exposed conductive part and the earthing 
+terminal of the charging station. The voltage drop between these two points shall be 
+measured, and the calculated resistance shall not exceed 0.1 Ω. 
+For Class II EVSE, a lead-through protective conductor shall be provided. 
+
+--- page 51 ---
+ 
+38 
+ 
+5.2.8 Insulation Resistance Requirements 
+The insulation resistance, measured with a 500 V DC voltage applied between all 
+interconnected inputs/outputs (including the power source) and accessible parts, shall be: 
+• 
+For Class I EVSE: R > 1 MΩ 
+• 
+For Class II EVSE: R > 7 MΩ 
+For this test, all extra low voltage (ELV) circuits shall be connected to the accessible parts 
+during the test. The measurement of insulation resistance shall be carried out with the 
+protective impedances disconnected, and after applying the test voltage for the duration of 1 
+min and immediately after the damp heat continuous test of IEC 60068-2-78, test Ca, at 40 
+°C ± 2 °C and 93 % relative humidity for four days. 
+Note: The definitions of Class I and Class II can be found in IEC 60364-4-41: Protection for 
+safety - Protection against electric shock. 
+5.2.9 Electrical Supply and Circuit Requirements 
+The selection of circuit components must align with the ratings of the EV charging station as 
+specified in IEC 61851. The charging station should be powered by a dedicated branch 
+circuit, which may require installing a circuit breaker and a Type B RCD with an appropriate 
+rating in the distribution panel. Since this equipment is classified as a continuous load, the 
+existing service line must have sufficient capacity to handle the additional demand. If not, 
+upgrading the panel and service line may be necessary. The conductor gauge must be chosen 
+to ensure that voltage drops comply with the IET Wiring Regulations, 18th Edition (BS 7671). 
+5.2.10 Installation Requirements 
+The installation must be conducted under the supervision of a Chartered Engineer and carried 
+out by an electrician with qualifications and experience equivalent to SLQF Level 4. 
+The electrician should adhere to the following guidelines: 
+• Read the manufacturer’s installation instructions carefully. 
+• Refer to the nameplate to ensure the apparatus is approved with recognized 
+certification markings and confirm its ratings (e.g., 400 V, 32 A per dwelling station). 
+
+--- page 52 ---
+ 
+39 
+ 
+• Verify that the distribution panel can accommodate the additional load, following the 
+guidelines of the IET Wiring Regulations, 18th Edition (BS 7671), as each station in a 
+multi-dwelling unit (MDU) is considered as a separate continuous load. 
+• Install the wiring between the panel and the EVSE using the appropriate method 
+specified in the IET Wiring Regulations, 18th Edition (BS 7671). 
+• Install a circuit breaker with the correct rating in the distribution panel (e.g., 40 A per 
+dwelling station). 
+• Securely anchor the socket-outlet to the wall (Case B) or permanently connect the 
+cable where a separate plug and socket is not applicable (Case C). 
+• Complete the connections and energize the EVSE. 
+• Test the EVSE to ensure it operates correctly. 
+5.3 Energy metering 
+Same as Section 4.3. 
+5.4 Safety codes and standards for EV charger 
+Same as Section 4.4. 
+5.5 Standards for interfaces and cables 
+Same as Section 4.5. 
+5.6 Standards for the energy meter 
+Same as Section 4.6. 
+ 
+ 
+
+--- page 53 ---
+ 
+40 
+ 
+6 MINIMUM STANDARDS FOR CHARGING MODE 4 
+Mode 4 charging refers to the connection of an EV to the power supply through a DC EVSE, 
+such as an off-board charger, where the control pilot function extends to the DC EVSE. 
+Unlike AC charging, which relies on an onboard charger, DC charging utilizes a charger 
+integrated into the charging station, allowing for significantly higher power delivery. Since 
+the charging station supplies power directly to the EV battery, it must be capable of adjusting 
+the charging voltage and current based on the vehicle’s specific requirements. 
+The mandatory dc charging functions of the charger as per section 6.4 of IEC61851-23 are as 
+follows. 
+• Verification that the vehicle is properly connected 
+• Protective conductor continuity checking  
+• Energization of the system 
+• De-energization of the system 
+• DC supply for EV 
+• Measuring current and voltage 
+• Retaining / releasing coupler 
+• Locking of the coupler 
+• Compatibility assessment 
+• Insulation test before charging 
+• Protection against overvoltage at the battery 
+• Verification of vehicle connector voltage 
+• Control circuit supply integrity 
+• Short circuit test before charging 
+• User initiated shutdown 
+• Overload protection for parallel conductors (conditional function) 
+• Protection against temporary overvoltage 
+• Emergency shutdown 
+These requirements are explicitly detailed in IEC 61851-23. 
+
+--- page 54 ---
+ 
+41 
+ 
+6.1 Power interfaces 
+The connection of EVs using cables shall be performed in accordance with Case C: without 
+an EV socket-outlet and EV plug at the EVCS end (refer to Section 2.1.3). The recommended 
+DC charging interfaces used in charging Mode 4 are detailed in Section 2.4. 
+6.2 Installation standards 
+For charging Mode 3, the AC EVSE shall incorporate the control functions outlined in 
+Section 8 of IEC 61851-1. 
+6.2.1 Emergency Disconnection and Safety Measures 
+During system installation, an emergency disconnection device must be installed to isolate 
+the AC supply network from the DC EVSE in the event of a risk of electric shock, fire, or 
+explosion. The disconnection device must be equipped with a mechanism to prevent 
+accidental activation and should include a Type B RCD along with appropriate overcurrent 
+protection measures. 
+6.2.2 Temperature Limits 
+Same as Section 5.2.2. 
+6.2.3 Ingress Protection 
+Same as Section 5.2.3. 
+6.2.4 Cable Management and Storage 
+Same as Section 5.2.4. 
+6.2.5 Socket-Outlet and Connector Height Requirements 
+Same as Section 5.2.5. 
+6.2.6 Prohibition of Extension Cords 
+Same as Section 5.2.6. 
+6.2.7 Earthing and Electrical Continuity 
+Same as Section 5.2.7. 
+6.2.8 Insulation Resistance Requirements 
+Same as Section 5.2.8. 
+
+--- page 55 ---
+ 
+42 
+ 
+6.2.9 Electrical Supply and Circuit Requirements 
+Same as Section 5.2.9. 
+6.2.10 Installation Requirements 
+The installation must be conducted under the supervision of a Chartered Engineer and carried 
+out by an electrician with qualifications and experience equivalent to SLQF Level 4. 
+The electrician should adhere to the following guidelines: 
+• Read the manufacturer’s installation instructions carefully. 
+• Refer to the nameplate to ensure the apparatus is approved with recognized 
+certification markings and confirm its ratings (e.g., 400 V, 32 A per dwelling station). 
+• Verify that the distribution panel can accommodate the additional load, following the 
+guidelines of the IET Wiring Regulations, 18th Edition (BS 7671), as each station in a 
+multi-dwelling unit (MDU) is considered as a separate continuous load. 
+• Install the wiring between the panel and the EVSE using the appropriate method 
+specified in the IET Wiring Regulations, 18th Edition (BS 7671). 
+• Install a circuit breaker with the correct rating in the distribution panel (e.g., 40 A per 
+dwelling station). 
+• Complete the connections and energize the EVSE. 
+• Test the EVSE to ensure it operates correctly. 
+6.3 Energy metering 
+The AC side metering is the same as Section 4.3. 
+6.4 Safety codes and standards for EV charger 
+Same as Section 4.4. 
+6.5 Standards for interfaces and cables 
+Same as Section 4.5. 
+6.6 Standards for the energy meter 
+Same as Section 4.6. 
+
+--- page 56 ---
+ 
+43 
+ 
+6.7 DC charging systems 
+In IEC 61851-23, three systems namely System A, System B, and System C are defined for 
+EVSE, each with distinct characteristics as follows. 
+6.7.1 System A 
+System A is a regulated DC charging system that utilizes a dedicated CAN communication 
+circuit for digital communication between the DC charging station and the EV, ensuring 
+precise control of the charging process. The vehicle coupler Configuration AA, as specified 
+in IEC 62196-3, is applicable to System A. 
+The specific digital communication requirements, along with detailed communication actions 
+and parameters for System A, are defined in Annex A of IEC 61851-24. The rated DC output 
+voltage for a System A station is limited to 500 V DC, making it suitable for passenger 
+vehicles and light trucks. 
+The schematic block diagram of system A is given in Figure 6.7.1.1. The interface circuit 
+between the station and the vehicle for charging control is shown in Figure 6.7.1.2. CAN-bus 
+circuit is provided for digital communication with the vehicle. The definition and description 
+of symbols and terms in Figure 6.7.1.1 and Figure 6.7.1.2 are given in Table 6.7.1.1. The 
+values of the parameters for the interface circuit are given in Table 6.7.1.2. Detailed 
+information can be found in IEC 61851-23. 
+ 
+Figure 6.7.1.1 Overall schematic of system A station and EV 
+
+--- page 57 ---
+ 
+44 
+ 
+ 
+Figure 6.7.1.2 Interface circuit for charging control of system A station 
+ 
+ 
+ 
+ 
+ 
+
+--- page 58 ---
+ 
+45 
+ 
+Table 6.7.1.1 Definition of symbols of system A station 
+ 
+ 
+ 
+ 
+ 
+
+--- page 59 ---
+ 
+46 
+ 
+Table 6.7.1.2 Parameters and values for interface circuit of system A station 
+ 
+6.7.2 System B 
+The following shows the specification of a DC EV charging station of system B using 
+dedicated DC vehicle coupler of Configuration BB as specified in IEC 62196-3. 
+Figure 6.7.2.1 shows DC charging System B for charging Mode 4, including DC charger 
+control unit, resistors R1, R2, R3, R4 and R5, switch S, AC supply circuit contactor K0, 
+isolating transformer T, AC/DC inverter, DC supply circuit contactors K1 and K2, low 
+voltage auxiliary supply circuit contactors K3 and K4, charging circuit contactors K5 and K6, 
+reverse-current-prevention device including the diode, K7 and R6, electrical interlock, and 
+vehicle control unit. Vehicle control unit can be integrated in the Battery Management 
+System (BMS). The R2 and R3 resistors are installed on the vehicle connector, and the R4 
+resistor is installed in the vehicle inlet. Switch S is the inner switch of vehicle connector, and 
+it will close when the vehicle connector and vehicle inlet are properly connected. During the 
+whole charging process, DC charger control unit should detect and control the states of K1, 
+K2, K3 and K4, while the vehicle control unit detects and controls K5 and K6. During the 
+charging procedure, if the Insulation Monitoring Device (IMD) detects that the insulation 
+resistance drops below the setting value, appropriate protective measures shall be activated. 
+The setting value shall be no less than 100 Ω/V multiplied by the maximum output voltage 
+rating of the DC EVCS. Detailed information can be found in IEC 61851-23. 
+
+--- page 60 ---
+ 
+47 
+ 
+ 
+Figure 6.7.2.1 Overall schematic of system B station and EV 
+6.7.3 System C 
+System C specifies the requirements for DC EVCS designed for use with the Combined 
+Charging System (CCS). Schematics of CCS for DC supply is given in Figure 6.7.3.1, as well 
+the definition and description of symbols and terms in Table 6.7.3.1. 
+ 
+Figure 6.7.3.1 Overall schematic of system C station and EV 
+Note: PP line from vehicle connector to DC supply is mandatory for Configuration EE and 
+optional for Configuration FF couplers. 
+
+--- page 61 ---
+ 
+48 
+ 
+Table 6.7.3.1 Definitions and descriptions of symbols and terms of system C station 
+ 
+Detailed information can be found in IEC 61851-23. 
+ 
+ 
+
+--- page 62 ---
+ 
+49 
+ 
+7 STANDARDS 
+FOR 
+INSTALLING 
+EVCS 
+AT 
+DIFFERENT 
+LOCATIONS 
+7.1 Installation of EVCS at domestic premises  
+This section specifies the special requirements for installation of EVCS at domestic premisses 
+such as houses. All relevant standards outlined in previous sections shall apply to this section, 
+except where otherwise specified in this section. 
+7.1.1 Electrical Supply and Load Capacity 
+i) Assess the household electrical supply to ensure it can support the additional load of 
+an EVCS. 
+ii) A dedicated circuit should be used for the EVCS to avoid overloading existing 
+household circuits. 
+iii) Ensure the main service panel has sufficient capacity; if not, an upgrade may be 
+required. 
+iv) Voltage levels should be compatible with the local grid (i.e. 230 V for single-phase or 
+400 V for three-phase). 
+7.1.2 Charging Mode and Equipment Compliance 
+Charging Mode 1, 2, and 3 are recommended for this application. 
+7.1.3 Protection and Safety Requirements 
+7.1.3.1 Overcurrent Protection 
+Use an appropriately rated MCB to prevent overcurrent damage. The breaker should match 
+the rated current of the EVSE (e.g., 32 A for a 7.4 kW charger). 
+7.1.3.2 Residual Current Protection 
+i) The selection and installation of the RCD shall comply with IEC 60364-7-722. 
+ii) The connecting point of the EV supply equipment shall be protected by an RCD 
+having a rated residual operating current not exceeding 30 mA. 
+iii) For AC leakage protection, use Type A RCD. 
+iv) For DC leakage protection, use  
+• Type B RCD or 
+
+--- page 63 ---
+ 
+50 
+ 
+• Type A RCD and appropriate equipment that ensures the disconnection of the 
+supply in case of DC fault current above 6 mA. 
+7.1.3.3 Surge Protection 
+i) The selection and installation of the surge protection devices (SPD) shall comply with 
+IEC 60364-4-44. 
+ii) An SPD is required to protect the EVSE from transient overvoltage (e.g., lightning). 
+7.1.3.4 Earthing and Bonding 
+i) Earthing and bonding shall comply with IEC 60364-4-41. 
+ii) Ensure the EVSE is properly earthed to prevent electric shock hazards. 
+iii) Bonding of exposed conductive parts must comply with IEC protection against 
+electric shock regulations depicted in IEC 61140. 
+7.1.4 Inspection and Compliance Verification 
+Installation should be conducted by a SLQF Level 4-certified electrician to ensure 
+compliance with national wiring regulations. A schematic of a sample wiring diagram of an 
+EVSE installation in a domestic premise is shown in Figure 7.1.4.1. 
+
+--- page 64 ---
+ 
+51 
+ 
+ 
+Figure 7.1.4.1 Sample single line diagram of an EVSE installation at a domestic premise 
+7.2 Installation of EVCS at fuelling stations 
+7.2.1 Electrical Supply and Load Capacity 
+i) Ensure that the fuelling station’s electrical infrastructure can support the EVCS, 
+considering both the continuous load and the potential simultaneous charging of 
+multiple vehicles. 
+ii) EVCS installations should have dedicated branch circuits to avoid interference with 
+other electrical systems. 
+iii) Implement load management systems to distribute power efficiently, especially when 
+multiple EVCS units are in operation. 
+
+--- page 65 ---
+ 
+52 
+ 
+7.2.2 Charging Mode and Equipment Compliance 
+Charging Mode 3 and 4 are recommended for this application. 
+7.2.3 Protection and Safety Requirements 
+7.2.3.1 Overcurrent Protection 
+Same as Section 7.1.3.1. 
+7.2.3.2 Residual Current Protection 
+Same as Section 7.1.3.2. 
+7.2.3.3 Surge Protection 
+Same as Section 7.1.3.3. 
+7.2.3.4 Earthing and Bonding 
+Same as Section 7.1.3.4. 
+7.2.3.5 Emergency Disconnection 
+A dedicated emergency disconnection device should be installed to isolate the EVSE from 
+the power supply in the event of faults, fire, or explosion risks. 
+7.2.3.6 Hazardous Area Safety 
+i) When the EVSE is near fuel dispensing areas and underground fuel tank vents, 
+adherence to IEC 60079 is crucial to prevent ignition sources and ensure the 
+equipment is rated for explosive atmospheres. 
+ii) The installation must be based on a detailed risk assessment and the hazardous area 
+classification as outlined in IEC 60079. 
+a. Risk Assessment and Zoning: The installation should consider the likelihood 
+of flammable vapours and the classification of hazardous zones around fuel 
+dispensing areas and underground fuel tank vents. 
+iii) It is recommended to maintain a minimum separation of 10 meters between the fuel 
+dispenser or underground fuel tank vent and the EVSE to reduce ignition risks. 
+However, the exact distance may vary based on site-specific conditions. 
+iv) It is recommended to install a heat or smoke detector near the charging area. 
+An EVCS installed closer to a fuelling station is shown in Figure 7.2.3.6.1. 
+
+--- page 66 ---
+ 
+53 
+ 
+ 
+Figure 7.2.3.6.1 An EVCS with a fuelling station (gas pumps) nearby 
+7.2.3.7 Environmental considerations 
+i) The EVSE must have adequate ingress protection (typically IP44 or higher) for 
+outdoor installations, safeguarding against moisture, dust, and other environmental 
+factors.  
+ii) Use weather-resistant, durable enclosures and ensure proper ventilation to manage 
+heat dissipation, particularly for DC chargers used in charging Mode 4. 
+7.2.4 Inspection and Compliance Verification 
+Installation should be inspected and verified by a Chartered Engineer to ensure compliance 
+with relevant IEC standards and national wiring regulations. A schematic of a sample wiring 
+diagram of a EVSE installation at a fuelling station is shown in Figure 7.2.4.1. 
+
+--- page 67 ---
+ 
+54 
+ 
+ 
+Figure 7.2.4.1 Sample single line diagram of an EVSE installation at a fuelling station 
+7.3 Installation of EVCS at Enclosed Parking Lots 
+Enclosed parking lots are typically found in: 
+• 
+Residential Complexes: Many apartment buildings and housing developments include 
+multistorey or underground parking structures. 
+
+--- page 68 ---
+ 
+55 
+ 
+• 
+Commercial Buildings: Office complexes, shopping centres, and mixed-use 
+developments often feature enclosed parking to protect vehicles from weather. 
+• 
+Transportation Hubs: Airports, train stations, and transit centres may incorporate 
+enclosed parking for security and climate control. 
+• 
+Institutional Facilities: Hospitals, universities, and government buildings often 
+provide enclosed parking to ensure safe, year-round vehicle storage. 
+A picture of a modern indoor EVCS is shown in Figure 7.3.1 and Figure 7.3.2.  
+ 
+Figure 7.3.1 EVs getting charged in an enclosed EVCS 
+ 
+Figure 7.3.2 An enclosed EVCS 
+A sample layout plan for an EVCS integrated into a parking lot is shown in Figure 7.3.3. The 
+green colour dots represent the EVSE for e-bikes and the red colour dots represent the EVSE 
+for four-wheeled EVs. The 3 m wide pathway can be used for e-tuk tuks as well. 
+
+--- page 69 ---
+ 
+56 
+ 
+ 
+Figure 7.3.3 Sample Layout plan for an EVCS in an enclosed parking lot 
+7.3.1 Electrical Supply and Load Capacity 
+i) Ensure that the building’s electrical system can handle the additional load from EVCS 
+installations without compromising other services. 
+ii) Each EVCS should have its own dedicated branch circuit with appropriate overcurrent 
+protection devices, such as MCBs. 
+iii) For multiple charging stations, implement load management systems to distribute 
+power efficiently and prevent overloads on the main service panel. 
+
+--- page 70 ---
+ 
+57 
+ 
+7.3.2 Charging Mode and Equipment Compliance 
+Charging Mode 3 and 4 are recommended for this application. 
+7.3.3 Protection and Safety Requirements 
+7.3.3.1 Overcurrent Protection 
+Same as Section 7.1.3.1. 
+7.3.3.2 Residual Current Protection 
+Same as Section 7.1.3.2. 
+7.3.3.3 Surge Protection 
+Same as Section 7.1.3.3. 
+7.3.3.4 Earthing and Bonding 
+Same as Section 7.1.3.4. 
+7.3.3.5 Emergency Disconnection 
+Same as Section 7.2.3.5. 
+7.3.3.6 Hazardous Area Safety 
+i) Implement fire detection and suppression systems to comply with IEC 60079. 
+ii) A risk assessment shall be conducted to ascertain whether any segment of the 
+installation is required to comply with the explosive atmosphere standards (IEC 
+60079), particularly in instances where flammable vapours such as those emitted from 
+exhaust gases or present in fuel tanks, are present. 
+iii) Ensure the installation area is well-lit and that emergency access routes remain 
+unobstructed. 
+iv) It is recommended to install a heat or smoke detector near the charging area. 
+7.3.3.7 Environmental considerations 
+i) Enclosed parking lots require adequate ventilation to prevent the buildup of exhaust 
+fumes and to manage heat generated by both vehicles and charging equipment. 
+ii) Ensure that the EVSE operates within its specified temperature range. Additional 
+cooling or heat dissipation measures may be necessary in poorly ventilated areas. 
+
+--- page 71 ---
+ 
+58 
+ 
+iii) The EVSE must have adequate ingress protection (typically IP44 or higher) for 
+enclosed parking lots, safeguarding against moisture, dust, and other environmental 
+factors.  
+iv) Use durable enclosures and ensure proper ventilation to manage heat dissipation, 
+particularly for DC chargers used in charging Mode 4. 
+7.3.4 Inspection and Compliance Verification 
+Installation should be inspected and verified by a Chartered Engineer to ensure compliance 
+with relevant IEC standards and national wiring regulations. A schematic of a sample wiring 
+diagram of an EVSE installation in an enclosed parking lot is similar to the diagram shown in 
+Figure 7.2.4.1. 
+7.4 Installation of EVCS at Open Parking Lots 
+Open parking lots are typically found in: 
+• Retail Centres, Supermarkets, and Shopping Malls: Often situated adjacent to or 
+within large commercial complexes. 
+• Airports and Transit Hubs: Common for vehicle parking areas serving travellers. 
+• Urban and Suburban Areas: Street parking or surface lots provided by municipalities. 
+• Educational and Institutional Campuses: Outdoor parking spaces for students and 
+staff. 
+• Recreational Facilities: Stadiums, parks, and sports complexes usually feature open 
+parking areas. 
+Sample layouts of an open parking lot with EVCS are illustrated in Figure 7.4.1 and Figure 
+7.4.2. 
+
+--- page 72 ---
+ 
+59 
+ 
+ 
+Figure 7.4.1 An EVCS at an open parking lot - Example 1 
+ 
+ 
+Figure 7.4.2 An EVCS at an open parking lot - Example 2 
+
+--- page 73 ---
+ 
+60 
+ 
+7.4.1 Electrical Supply and Load Capacity 
+Similar to Section 7.3.1. 
+7.4.2 Charging Mode and Equipment Compliance 
+Charging Mode 3 and 4 are recommended for this application. 
+7.4.3 Protection and Safety Requirements 
+7.4.3.1 Overcurrent Protection 
+Same as Section 7.1.3.1. 
+7.4.3.2 Residual Current Protection 
+Same as Section 7.1.3.2. 
+7.4.3.3 Surge Protection 
+Same as Section 7.1.3.3. 
+7.4.3.4 Earthing and Bonding 
+Same as Section 7.1.3.4. 
+7.4.3.5 Emergency Disconnection 
+Same as Section 7.2.3.5. 
+7.4.3.6 Hazardous Area Safety 
+i) Implement fire detection and suppression systems to comply with IEC 60079. 
+ii) Adequate lighting for security and safety, along with clear signage, ensures that the 
+charging area is easily identifiable and safe to use. 
+iii) The EVSE should be designed with durable, vandal-resistant enclosures, as open 
+parking lots can be more susceptible to vandalism or accidental damage. 
+iv) Ensure cables are securely routed and stored to prevent trip hazards and damage from 
+environmental exposure or interference. 
+v) It is recommended to install a heat or smoke detector near the charging area. 
+7.4.3.7 Environmental considerations 
+i) Since the EVSE will be exposed to the elements, the enclosure should be designed to 
+withstand direct exposure to dust, rain, and UV radiation. 
+
+--- page 74 ---
+ 
+61 
+ 
+ii) Typically, an IP rating of IP65 (or higher) is recommended for fully outdoor 
+installations, ensuring the equipment is dust-tight and protected against water jets. If 
+the unit is sheltered (e.g., under a canopy), a slightly lower rating (such as IP54) shall 
+be acceptable. 
+iii) The EVSE must have adequate ingress protection (typically IP44 or higher) for 
+enclosed parking lots, safeguarding against moisture, dust, and other environmental 
+factors. 
+iv) Ensure that the EVSE operates within its specified temperature range. Additional 
+cooling or heat dissipation measures may be necessary, especially when the EVSE is 
+in direct sunlight. 
+7.4.4 Inspection and Compliance Verification 
+Installation should be inspected and verified by a Chartered Engineer to ensure compliance 
+with relevant IEC standards and national wiring regulations. A schematic of a sample wiring 
+diagram of an EVSE installation in an open parking lot is similar to the diagram shown in 
+Figure 7.2.4.1. 
+ 
+ 
+
+--- page 75 ---
+ 
+62 
+ 
+8 INSTALLATION OF EVCS INTEGRATED WITH RENEWABLE 
+ENERGY AND BATTERY ENERGY STORAGE SYSTEMS  
+The following are few examples of EVCS integrated with renewable energy and energy 
+storage systems. 
+• Solar-Powered Charging Stations: EVCS that incorporate solar panels mounted on 
+canopies or rooftops. These systems capture solar energy during daylight hours and, 
+when combined with battery storage, can provide charging services even during 
+periods of low sunlight or peak demand (see Figure 8.1 and Figure 8.2). 
+• Hybrid Renewable Systems: Integrated solutions that combine multiple renewable 
+sources such as solar and wind with battery storage. These systems can optimize 
+energy generation throughout the day and across different weather conditions, 
+ensuring a more reliable power supply for EV charging. 
+• Microgrid-Integrated EVCS: EV charging stations connected to a local microgrid that 
+includes renewable energy generation (e.g., solar arrays, wind turbines) and energy 
+storage systems. These microgrids can operate independently from the main grid, 
+providing sustainable charging options, especially in remote or off-grid areas. 
+• Grid-Tied Systems with V2G Capability: EVCS integrated with renewable energy 
+sources and battery storage that also support vehicle-to-grid (V2G) functionality. In 
+this configuration, electric vehicles can feed energy back into the grid during peak 
+demand, enhancing grid stability and maximizing the use of renewable energy (see 
+Figure 8.3). 
+ 
+Figure 8.1 A domestic EVCS integrated with Solar PV and Energy Storage System 
+
+--- page 76 ---
+ 
+63 
+ 
+ 
+Figure 8.2 A conventional EVCS powered by the Grid, an Onsite Solar PV array, and 
+an Onsite Energy Storage 
+ 
+ 
+Figure 8.3 A V2G-enabled EVCS powered by the Grid, a Renewable Energy System 
+and a BSS 
+
+--- page 77 ---
+ 
+64 
+ 
+8.1 System Design and Integration 
+i) Interconnection Architecture: Design a seamless integration of the EVCS, renewable 
+energy generation (solar panels, wind turbines), and energy storage, ensuring efficient 
+energy flow and load management. 
+ii) Smart Energy Management: Implement an intelligent control system that balances 
+energy from renewables, the grid, and the storage system, supports smart charging 
+features, and facilitates demand response or V2G functionalities. 
+iii) Grid Interconnection: For grid-tied systems, ensure compliance with local grid codes 
+and standards, including anti-islanding and synchronization requirements (e.g., IEC 
+61727 for grid-connected PV systems). 
+8.2 Electrical Infrastructure and Protection 
+Adhere to IEC 60364 for electrical installations, ensuring proper wiring, grounding, and 
+protection in the overall system. 
+8.3 Renewable Energy and Inverter Standards 
+i) Photovoltaic (PV) Systems: Use PV modules and inverters certified to IEC 61215 
+(design qualification) and IEC 61730 (safety) and ensure inverter safety in line with 
+IEC 62109.  
+ii) All PV installations should comply with the “Guidelines on Rooftop Solar PV 
+Installation for Solar Service Providers” published by the PUCSL. 
+iii) Wind Energy Systems: Follow relevant IEC standards for wind turbine safety and grid 
+integration (e.g., IEC 61400 series), if wind energy is part of the renewable mix. 
+8.4 Battery Energy Storage System Standards 
+When the EVCS is integrated with a Battery Energy Storage System (BESS) consist of Li-ion 
+cells, the system shall comply with the following standards. 
+i) IEC 62619:2017 Safety requirements for secondary lithium cells and batteries for use 
+in industrial applications: This standard addresses safety aspects for Li-ion batteries 
+intended for stationary or industrial use. 
+ii) IEC 62933 Series: This series covers the safety, performance, and testing 
+requirements for electrical energy storage systems (EES), including those that utilize 
+Li-ion battery technology in stationary applications. 
+
+--- page 78 ---
+ 
+65 
+ 
+iii) IEC 62485-5: This standard covers requirements on safety aspects associated with the 
+installation, use, inspection, and maintenance and disposal of lithium-ion batteries. 
+iv) IEC 63056: Covers safety for secondary lithium-ion batteries in stationary energy 
+storage systems. 
+v) Battery enclosures should be weatherproof (IEC 60529 – minimum IP54 rating) if 
+installed outdoors. 
+8.5 Fire Protection and Thermal Management 
+i) Implement fire-resistant enclosures (per IEC 60332 for fire-resistant materials). 
+ii) Install automatic fire suppression systems (e.g., gas-based or water mist systems per 
+NFPA 855 and IEC 62305 for lightning protection). 
+iii) Maintain adequate ventilation to dissipate heat and prevent thermal runaway. 
+iv) Use battery thermal management systems (BTMS) to control cell temperatures and 
+prevent overheating. 
+8.6 Electrical Safety and Protection Systems 
+i) 
+Use BMS to monitor state of charge (SOC), state of health (SOH), temperature, 
+and voltage balancing of the BESS. 
+ii) 
+Implement overcurrent and short-circuit protection (as per IEC 60364-4-43). 
+iii) 
+Use isolation monitoring devices to detect insulation faults (as per IEC 61557-8). 
+iv) 
+The selection and installation of the RCD shall comply with IEC 60364-7-722. 
+v) 
+The connecting point of the EV supply equipment shall be protected by an RCD 
+having a rated residual operating current not exceeding 30 mA. 
+vi) 
+For AC leakage protection, use Type A RCD. 
+vii) 
+For DC leakage protection, use  
+• Type B RCD or 
+• Type A RCD and appropriate equipment that ensures the disconnection of the 
+supply in case of DC fault current above 6 mA. 
+viii) Ensure proper earthing and bonding as per IEC 60364-5-54. 
+ix) 
+Protect against lightning and power surges as per IEC 62305. 
+x) 
+Include emergency isolation mechanisms to disconnect the EVSE in the event of a 
+fault, fire, or other hazards. 
+
+--- page 79 ---
+ 
+66 
+ 
+8.7 Explosion and Hazardous Environment Considerations 
+i) If installed near fuel dispensers or in enclosed areas, conduct risk assessments as per 
+IEC 60079 (Explosive Atmospheres). 
+ii) Enclosures should meet IP54 or higher (as per IEC 60529) for dust and water 
+protection. 
+8.8 Emergency Shutdown and Maintenance Provisions 
+i) Install an Emergency Disconnection System to isolate the battery in case of faults (as 
+per IEC 60364-4-482). 
+ii) Provide manual and remote disconnect options for maintenance and emergency 
+situations. 
+iii) Ensure safe access for maintenance personnel, including lockout/tagout (LOTO) 
+provisions. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- page 80 ---
+ 
+67 
+ 
+9 INSTALLATION OF BATTERY SWAP STATIONS 
+A Battery Swap Station (BSS) allows the replacement of a discharged battery pack in an 
+electric vehicle with a fully charged battery pack, using an automated or manual process, 
+ensuring electrical and mechanical safety and compatibility with the vehicle's energy 
+management system. A sample layout of a modern BSS is illustrated in Figure 9.1.1. 
+The purpose of the battery swap system is to provide energy partly or in total to EVs through 
+fast replacement of their swappable battery system (SBS). While charging, the EV typically 
+takes a relatively long time, the battery swap process takes only a few minutes to complete. 
+Thus, it will reduce range anxiety and will facilitate travel for longer distances. 
+As there is a possibility to charge the batteries after their removal from the vehicle in various 
+ways, the impact of this process on the critical infrastructure of the electrical grid is 
+minimized.  
+ 
+Figure 9.1 Battery swap station 
+Battery swap stations mainly include one or more of the following functions. 
+i) Swap of EV SBS 
+ii) Storage of EV SBS 
+iii) Charging and cooling of EV SBS 
+iv) Testing, maintenance and safety management of EV SBS 
+All the BSS shall comply with the following IEC standards. 
+i) IEC 62840-1: General and guidance 
+ii) IEC 62840-2: Safety requirements 
+
+--- page 81 ---
+ 
+68 
+ 
+9.1 System overview 
+Figure 9.1.1 shows the composition of the EV battery swap system and the relationships 
+between the various systems. 
+ 
+Figure 9.1.1 EV battery swap system 
+A BSS may include the following. 
+• A lane system. 
+• A battery handling system. 
+• A storage system. 
+• A charging system. 
+• A supervisory and control system. 
+
+--- page 82 ---
+ 
+69 
+ 
+9.1.1 Lane system 
+The lane system is used to transfer and/or position the EV to the designated location to get 
+ready for battery handling. EVs leave safely through the lane system after SBS are 
+exchanged. The lane system may provide functions such as, 
+i) EV verification, 
+ii) EV validation, 
+iii) EV cleaning, 
+iv) EV positioning, and 
+v) EV locking and unlocking. 
+The lane may include a cleaning station for the purposes of cleaning EV/battery parts before 
+the swap process starts. 
+9.1.2 Battery handling system 
+The battery handling system consists of swap equipment and transferring equipment. The 
+system may provide functions such as, 
+i) locking/unlocking, 
+ii) mounting/un-mounting, and 
+iii) transferring. 
+9.1.3 Storage system 
+The storage system is used to store the SBS safely. It shall monitor the status of the SBS and 
+the ambient circumstances during storage. This system consists of a storage rack and 
+equipment to communicate with supervisory and control system. 
+9.1.4 Charging system 
+The charging system is used to charge the SBS safely. It shall carry the SBS in the charging 
+rack, communicate with the battery control unit (BCU) during the charging procedure, and 
+control the charging procedure and its safe operation. 
+This system consists of, 
+i) SBS charger(s), 
+ii) charging racks, and 
+iii) equipment to communicate with supervisory and control system. 
+
+--- page 83 ---
+ 
+70 
+ 
+9.1.5 Supervisory and control system 
+The supervisory and control system contains 
+i) communication units, 
+ii) a data process module, 
+iii) data acquisition units, 
+iv) a data storage module, 
+v) a remote-control module, and 
+vi) a human machine interface (HMI). 
+The supervisory and control system monitors and controls all battery swap system processes. 
+This system may have communication with the power grid as well.  
+9.2 Safety requirements 
+IEC 62840-2 provides the safety requirements for a battery swap system, for the purposes of 
+swapping swappable battery system (SBS) of electric vehicles. The battery swap system is 
+intended to be connected to the supply network. The power supply is up to 1 000 V AC or up 
+to 1 500 V DC in accordance with IEC 60038. 
+Aspects covered under this section are, 
+• safety requirements of the battery swap system and/or its systems; 
+• security requirements for communication; 
+• electromagnetic compatibility (EMC); 
+• signs and instructions; 
+• protection against electric shock and other hazards. 
+9.2.1 Safety requirements of the battery swap system and/or its systems 
+The battery swap system for electrical vehicles shall be in accordance with IEC 60204-1, 
+IEC 61511-1 and ISO 13849-1.  
+9.2.1.1 Lane system 
+At the entrance to the lane, the EV information shall be identified and fed into the supervisor 
+and control system in order to use the right parameters and components for this vehicle. 
+
+--- page 84 ---
+ 
+71 
+ 
+The lane may include a cleaning station for the purposes of cleaning EV/battery parts before 
+the swap process starts. All lane system components shall be able to resist the effect of 
+automotive solvents and fluids.  
+Drivers and passengers may be allowed to stay on-board during the battery swap process. The 
+lane system shall be built in such a manner that humans and EVs are not at risk as a result of 
+movement of mechanical parts or as a result of open underground cavities. 
+During each phase of the battery swap process, the driver (if on board) and system operators 
+should have immediate access to emergency stop buttons to stop all automation motions in 
+case of emergency. 
+The lane shall be equipped with suitable escape routes and emergency exits allowing people 
+(if on board), including disabled persons, children and infants to evacuate from the lane area 
+in case of fire or any other emergency. 
+All marking, routing and geometry of escape routes and exits should be done according to 
+local regulations. 
+9.2.1.2 Battery handling system 
+In automatic BSS, a door or a sensor system shall be installed to prevent an unauthorized 
+person gaining access to the battery swap zone: 
+• if a door or access is opened, the system has to stop. 
+• the system can only operate if all accesses are closed. 
+• a door can be opened from outside only if the system stops. 
+• a door, if one exists, shall be able to open from inside in any case. 
+• a restart can only be performed if all accesses are closed, and no person is inside the 
+zone. 
+In the event of a grid power outage (loss of electrical power), the battery handling system 
+shall have a function that prevents the battery handling system from releasing unsafely. 
+The battery handling system of either automatic mode or semi-automatic mode shall have 
+emergency operation mode and manual operation mode.  
+Note: The definitions of automatic, semi-automatic, and manual modes are given in 
+IEC62840-2. 
+
+--- page 85 ---
+ 
+72 
+ 
+An emergency stop device shall be provided, so that the operator can stop the battery 
+handling system immediately in case of emergency. 
+Detecting and warning devices or relevant protection measures are recommended in case of a 
+human or an animal having unexpected proximity to the system. 
+9.2.1.3 Battery storage 
+The storage condition provided by the battery storage system shall comply with the specific 
+requirements of SBS. Structural elements carrying SBS in battery storage system shall be 
+rigid and precise enough to prevent a risk of a SBS falling down from a storage compartment.  
+Structural elements supporting SBS in the storage system shall be secured to the ground or to 
+the wall in such a manner that the structure shall not collapse under SBS weight or as the 
+result of impact or vibration, such as failure in undesired motion of automatic devices against 
+battery storage. 
+If SBS is not fully sealed, each SBS shall be separated by coverage from other SBS stored in 
+the same rack by at least IP4x. 
+If SBS is not fully sealed, each SBS shall be protected by coverage to avoid liquid drops from 
+other SBS stored in the same rack by at least IPx2. 
+The storage system shall be designed and constructed in accordance with local construction 
+regulations. The storage rack shall be equipped with locking device to prevent unintended 
+motion of SBS and provide locking state information to the supervisor and control system. 
+Safety critical parameters shall be monitored as long as the SBS is stored in the storage rack. 
+If there are no other local regulations or system requirements, the following parameters shall 
+be monitored. 
+• Temperature of critical components 
+• Electrical malfunctions 
+• Locking state 
+If any of these parameters are out of specific level, necessary actions shall be activated by the 
+supervisory and control system. 
+
+--- page 86 ---
+ 
+73 
+ 
+Rapid isolation or transfer of the battery in case of emergency shall be ensured, including the 
+following equipment: 
+• Fire detection and extinguishing equipment in the battery storage/bin area. The fire 
+detection system should be connected to the supervisory and control system of the 
+BSS. 
+• Isolated observation facility, such as fire bunker, in order to isolate abnormal 
+batteries. 
+• It is recommended to install a heat or smoke detector near the BSS. 
+9.2.1.4 Charging system 
+i) Charging parameters of the charger shall meet the inherent parameters of the battery 
+which are specified by the battery manufacturer. 
+ii) The SBS charger shall supply a DC current or voltage to the battery in accordance 
+with a charging control function request. Functions provided in DC charging shall 
+comply with 6.4.1 and 6.4.2 of IEC 61851-23. 
+iii) The SBS charger shall connect to SBS on the charging rack through both power 
+connections and communication connections, for the purpose of battery charging. 
+iv) An emergency means shall be installed to isolate the AC supply network (mains) from 
+the SBS charger in case of risk of electric shock, fire or explosion. 
+v) The SBS charger shall be equipped with a protective device against the uncontrolled 
+reverse power flow from the SBS. 
+vi) Specific requirements for isolated systems shall comply with 101.2 of IEC 61851-23. 
+vii) The charger shall have an unambiguous signal and indicator during the charging 
+procedure, so as to avoid an incorrect operation. 
+viii) 
+Chargers shall be installed according to manufacturers’ instructions. This 
+applies to requirements regarding installation, cooling, ventilation and further 
+requirements. 
+ix) The battery charge process should be enabled only if the SBS coupler between the 
+charging rack and the SBS is reliably connected as well as the locking device is 
+reliably locked. The charger shall cease its output, if any abnormal connection or 
+condition between the charger and SBS is detected. 
+x) As long as the SBS is stored in the charging rack, the requirement of storage system 
+shall be applied. 
+
+--- page 87 ---
+ 
+74 
+ 
+xi) The battery charge process shall be based on a real time handshake between the 
+charger controller and BCU. Parameters, such as: 
+a. temperature of critical components, 
+b. voltage, 
+c. SOH, 
+d. SOC, and 
+e. maximum allowed charging current, 
+shall be provided by BCU to the charger controller. 
+xii) The charger controller shall have a communication interface with the supervisory and 
+control system to transmit charging data to the supervisory and control system. 
+9.2.2 Battery Maintenance 
+The battery maintenance system shall have the functions of periodic inspection and 
+maintenance of SBS to ensure safety and to extend the life cycle of SBS. 
+The battery maintenance system shall have a function that checks and tests the following of 
+the SBS. 
+• Appearance 
+• Insulation 
+• Mechanical condition of the wearing parts 
+• Reliability of connections between cables and key parts, such as connectors and fuse. 
+The battery maintenance system shall have the following functions. 
+• Forecast and maintain the cells’ electrical quantity and life cycle. 
+• Check and test the consistency of assembled battery cells. 
+• Store and analyse the data during the process of SBS maintenance. 
+• Communicate with the supervisory and control system. 
+9.2.3 Data Security and Transmission Safety 
+i) Any communication between two or more systems within the BSS as well as with 
+external communication entities shall avoid unauthorized access and ensure the data 
+integrity. 
+
+--- page 88 ---
+ 
+75 
+ 
+ii) Where the functional safety is affected, the communication between systems and 
+inside systems shall follow the requirements of IEC 61784-3. 
+9.2.4 Environmental considerations 
+i) The IP degrees for enclosures that provide protection against access to hazardous 
+parts shall be at least IPXXC (Protection Against Tool Access). 
+ii) The minimum IP degrees for the enclosures shall be, 
+a. for indoor use: IP21 
+b. for outdoor use: IP44 
+iii) Live parts shall be located inside enclosures regarding protection against direct 
+contact of at least IP2X or IPXXB (Protection Against Finger Contact) in 
+conformance to IEC 60529. 
+iv) Where the top surfaces of the enclosure are readily accessible, the minimum degree of 
+protection against direct contact provided by the top surfaces shall be IP4X or IPXXD 
+(Protection Against Wire Access). 
+v) The IP degrees for couplers located outside enclosures which enclose hazardous live 
+parts shall provide protection by at least IPXXB. 
+vi) The minimum IP degrees for the coupler shall be, 
+a. for indoor use: IP21 
+b. for outdoor use: IP44 
+Detailed information can be found in IEC 62840-2. 
+ 
+ 
+
+--- page 89 ---
+ 
+76 
+ 
+10 INSTALLATION OF CHARGING FACILITIES FOR E-BIKES AND 
+E-TUK TUKS 
+When installing an EVCS for E-bikes and E-tuk tuks, several technical, safety, and regulatory 
+aspects must be considered. 
+10.1 Charging Mode and Equipment Compliance 
+All 4 charging modes are applicable for E-bikes and E-tuk tuks. 
+i) AC Charging (Mode 1, 2, and 3): Typically, single-phase 230V, with power ratings of 
+1-3 kW (e-bikes) and 3-7 kW (e-tuk tuks). 
+ii) DC Charging (Mode 4): Some e-tuk tuks may support higher power DC charging that 
+complies with IEC 61851-23. 
+iii) If swapping stations are used, compliance with IEC 62840 is required. 
+10.2 Connector Types 
+The vehicle connector, vehicle coupler, and vehicle inlet shall comply with the charging 
+interfaces mentioned in Sections 2.3 and 2.4. 
+10.3 Safety and Protection Measures 
+i) 
+ 
+ii) 
+Circuit breakers must comply with IEC 60898-1. 
+iii) 
+For DC systems, IEC 61557-8 ensures insulation resistance monitoring. 
+iv) 
+IP Rating Requirements (IEC 60529) 
+a. 
+Outdoor chargers: Minimum IP54  
+b. 
+Indoor chargers: Minimum IP44 
+v) 
+EVCS shall meet IEC 61140 for electrical shock protection. 
+vi) 
+EVCS shall meet IEC 62262 (IK ratings for impact resistance). 
+vii) 
+EVCS shall meet IEC 60068-2 for extreme climate conditions. 
+viii) 
+EVCS shall meet IEC 60332 (fire resistance of cables) and IEC 60695 
+(flammability of enclosures). 
+ix) 
+It is recommended to install a heat or smoke detector near the charging area. 
+ 
+
+--- page 90 ---
+ 
+77 
+ 
+11 INSTALLATION OF CHARGING FACILITIES FOR HEAVY EVs 
+When installing an EVCS for Heavy EVs such as busses and trucks, several technical, safety, 
+and regulatory aspects must be considered. 
+11.1 Charging Mode and Equipment Compliance 
+i) 
+Heavy EV charging typically requires Mode 4 (DC fast charging) with high 
+output power ranging from 150 kW to 600 kW or more however, Modes 2 and 3 
+(AC charging) may also be applicable. Mode 1 is prohibited for Heavy EVs. 
+ii) 
+If swapping stations are used, compliance with IEC 62840 is required. 
+11.2 Connector Types 
+i) 
+The vehicle connector, vehicle coupler, and vehicle inlet shall comply with the 
+charging interfaces mentioned in Sections 2.3 and 2.4. 
+ii) 
+The system shall comply with IEC 61851-23, IEC 61851-24, and ISO 15118 if a 
+pantograph-based overhead charging system is used. 
+11.3 Safety and Protection Measures 
+i. 
+The selection and installation of the RCD shall comply with IEC 60364-7-722. 
+ii. 
+The connecting point of the EV supply equipment shall be protected by an RCD 
+having a rated residual operating current not exceeding 30 mA. 
+iii. 
+For AC leakage protection, use Type A RCD. 
+iv. 
+For DC leakage protection, use  
+• Type B RCD or 
+• Type A RCD and appropriate equipment that ensures the disconnection of the 
+supply in case of DC fault current above 6 mA. 
+• If the load current is more than 125 A, use an external Type B RCD relay plus 
+a matching contactor or breaker as per IEC 62423. 
+v. 
+Use SPDs as per IEC 61643 and MCBs compliant with IEC 60947-2. 
+vi. 
+Proper earthing per IEC 60364-5-54 is essential for large metal-bodied vehicles. 
+vii. 
+Use weatherproof and rugged outdoor-compatible equipment with a minimum IP 
+rating of IP54 (IEC 60529). 
+viii. 
+Ensure sufficient airflow if installed indoors or in enclosed depots (as per IEC 
+61851-1 and IEC 60068 for environmental conditions). 
+
+--- page 91 ---
+ 
+78 
+ 
+ix. 
+Install fire detection and suppression systems in accordance with IEC 60364-4-
+42. 
+x. 
+EVCS shall meet IEC 61140 for electrical shock protection. 
+xi. 
+EVCS shall meet IEC 62262 (IK ratings for impact resistance). 
+xii. 
+EVCS shall meet IEC 60068-2 for extreme climate conditions. 
+xiii. 
+EVCS shall meet IEC 60332 (fire resistance of cables) and IEC 60695 
+(flammability of enclosures). 
+xiv. 
+EVCS shall be designed for larger turning radii, parking bays, and overhead 
+clearance. 
+11.4 Special Considerations for Pantograph-based Charing Stations 
+11.4.1 Mechanical Design and Structural Integration 
+i. 
+The pantograph assembly shall be structurally supported to withstand mechanical 
+loading due to wind, vibration, and vehicle-induced movement. 
+ii. 
+The design shall ensure accurate vertical and lateral alignment with the vehicle 
+contact rails, accommodating standard tolerances defined in IEC 61851-23 and 
+IEC 61980. 
+iii. 
+The supporting infrastructure (e.g., gantries, overhead masts) shall be constructed 
+using corrosion-resistant materials and comply with applicable civil engineering 
+codes for public installations. 
+iv. 
+Vehicle access to the charging point shall be unobstructed, and the layout shall 
+ensure safe and repeatable docking for consistent pantograph connection. 
+11.4.2 Site Design and Spatial Requirements 
+i. 
+The site layout shall accommodate the turning radius, height, and length of the 
+intended Heavy EVs, ensuring safe manoeuvring to and from the pantograph 
+charging point. 
+ii. 
+The charging point design shall include standardized markings, curbing, and 
+vehicle guidance features to enable consistent alignment beneath the pantograph. 
+iii. 
+Minimum overhead clearance shall comply with local traffic and safety 
+regulations of the Department of Motor Traffic (DMT) and shall be sufficient to 
+avoid obstruction by other infrastructure or vehicles. 
+
+--- page 92 ---
+ 
+79 
+ 
+iv. 
+The charging station footprint, including the pantograph assembly and control 
+enclosure, shall be designed to withstand outdoor environmental conditions and 
+maintain accessibility for service and maintenance personnel. 
+11.4.3 Safety and Protective Measures 
+i. 
+The pantograph system shall include automatic disconnection functionality in the 
+event of system malfunction, communication loss, electrical fault, or activation of 
+an emergency stop. 
+ii. 
+All exposed conductive parts shall be physically protected against accidental 
+contact in accordance with IEC 61851-1 and IEC 60529 and insulated where 
+appropriate to prevent electrical hazards. 
+iii. 
+Adequate electrical clearance and creepage distances shall be maintained to 
+prevent arcing or flashover, particularly under high-voltage DC operation. 
+iv. 
+Safety interlocks shall be employed to prevent energization of the pantograph 
+unless full mechanical engagement is verified. 
+v. 
+Visual indicators and audible alerts shall be provided to signal charging status and 
+fault conditions to personnel in the vicinity. 
+11.4.4 Communication 
+i. 
+The pantograph charging system shall incorporate a digital communication 
+interface compliant with IEC 61851-24, enabling real-time data exchange 
+between the electric vehicle and the supply equipment.  
+ii. 
+The system shall support automated positioning, connection control, and 
+verification processes to ensure correct alignment and electrical engagement. 
+iii. 
+All automated communication functions shall include redundant safety protocols 
+to prevent unintended connection or disconnection events. 
+iv. 
+The charging system shall be compatible with vehicle and fleet management 
+systems via ISO 15118 to facilitate smart charging and diagnostics. 
+ 
+ 
+
+--- page 93 ---
+ 
+80 
+ 
+12 COMMUNICATION AND IT-RELATED ASPECTS 
+When setting up an EVCS, communication and IT-related aspects are crucial for 
+interoperability, monitoring, billing, security, and remote management. A schematic of a 
+communication network for an EVCS that connects EV, EVSE, and Grid together is 
+illustrated in Figure 12.1. 
+ 
+Figure 12.1 A schematic of a communication network for an EVCS that connects EV, 
+EVSE, and Grid together 
+12.1 Communication Protocols for EVCS 
+The EVCS shall comply with the following communication protocols. 
+i) IEC 61850: Communication networks and systems for power utility automation, 
+applicable for smart grid integration. 
+ii) IEC 61851-1: Defines control and communication requirements between the EV and 
+charging equipment. 
+iii) IEC 61851-24: Specifies digital communication protocols for DC charging stations. 
+
+--- page 94 ---
+ 
+81 
+ 
+iv) IEC/ISO 15118: Vehicle-to-grid (V2G) communication protocol for automated 
+authentication and billing. 
+v) IEC 63584: Open Charge Point Protocol (OCPP) – Open standard for communication 
+between charging stations and central management systems. 
+12.2 Cybersecurity and Data Protection 
+The EVCS shall comply with the following standards relevant to cybersecurity and data 
+protection. 
+i) IEC 62443: Industrial cybersecurity standard for protecting charging infrastructure 
+from cyber threats. 
+ii) IEC/ISO 27001: Information security management system (ISMS) for data 
+protection. 
+iii) ISO 15118-20: Enhances security features in V2G communication. 
+iv) IEC 62351: TLS (Transport Layer Security) - Encryption for secure data transmission 
+between the EVCS and backend systems. 
+12.3 Smart Grid and Energy Management 
+The EVCS shall comply with the following standards relevant to smart grid and energy 
+management. 
+i) IEC 63110: Protocol for managing EV charging infrastructure, energy distribution, 
+and grid integration. 
+ii) IEC 61850-7-420: Defines interactions between Distributed Energy Resources (DER) 
+and charging stations. 
+iii) IEC 60870-5-104: Communication protocols for smart energy monitoring. 
+ 
+ 
+
+--- page 95 ---
+ 
+82 
+ 
+13 OPERATING PROCEDURES 
+13.1 Pre-Operation Checks 
+i) Ensure the charging station is powered and the display is operational. 
+ii) Check that the charger’s cables and connectors are free from visible damage. 
+iii) Verify the emergency stop button is functional and accessible. 
+iv) Confirm the charger’s indicator light shows it is ready for use. 
+13.2 Charging Process 
+i) User Authentication: Authenticate via RFID card, mobile app, OTP, QR code, 
+Barcode, NFC, Biometric etc. 
+ii) Connect to Vehicle: 
+a. Plug the charging connector into the EV inlet securely. 
+b. Ensure a firm connection and wait for the vehicle to communicate with the 
+charger. 
+iii) Charging Initiation: 
+a. Follow on-screen instructions to start charging. 
+b. The charging session begins once authentication is successful. 
+iv) Monitoring Charging: 
+a. Observe the charger’s display for charging status and energy consumption. 
+b. Monitor the state of charge (SoC) via the app or display. 
+13.3 Charging Completion and Disconnection 
+i) Charging will stop automatically or manually via the app or the display of the EVSE. 
+ii) Disconnect the charging cable and store it properly. 
+iii) Ensure the EVSE returns to standby mode. 
+ 
+ 
+
+--- page 96 ---
+ 
+83 
+ 
+14 MAINTENANCE PROCEDURES 
+14.1 Daily Checks 
+i) Visually inspect the charger for any physical damage. 
+ii) Check for any error messages or alerts on the display panel. 
+iii) Ensure proper cable management and check for wear or fraying. 
+Note: If the EVCS is an unmanned station, these daily checked shall be performed monthly by 
+the Charge Point Operator (CPO) and empower the EV user to perform these checks on daily 
+basis before plugging the EV to the charger. 
+14.2 Monthly Checks 
+i) Inspect and clean the charging connectors and ports. 
+ii) Ensure ventilation systems are clear of obstructions. 
+iii) Check the indicator lights and display functionality. 
+iv) Confirm that safety labels and user instructions are intact and legible. 
+v) Verify the charger is operational by performing a test charge. 
+vi) Test emergency stop function to ensure proper operation. 
+14.3 Quarterly Checks 
+i) Perform insulation resistance tests as per IEC 61851. 
+ii) Inspect and test the proper functioning of SPDs. 
+iii) Verify all communication and networking connections. 
+iv) Ensure that the circuit breakers and RCDs operate correctly. 
+v) Perform software/firmware updates if applicable. 
+14.4 Annual Checks 
+i) Conduct a full electrical system inspection by a SLQF Level 4-certified electrician. 
+ii) Verify grounding and bonding as per IEC 60364. 
+iii) Perform thermal imaging on electrical connections to detect overheating. 
+iv) Inspect enclosure integrity, ensuring compliance with IP rating requirements. 
+v) Calibrate metering and billing components to ensure accuracy. 
+vi) Clean and lubricate mechanical components as required. 
+
+--- page 97 ---
+ 
+84 
+ 
+14.5 Emergency Maintenance 
+i) If an error or fault occurs, follow the troubleshooting guide provided by the EVSE 
+manufacturer. 
+ii) If a surge or electrical fault is detected, inspect and replace damaged components as 
+necessary. 
+iii) In case of overheating or fire risk, shut down the system and investigate the cause 
+before reactivating. 
+14.6 Safety Precautions 
+i) Always wear appropriate personal protective equipment (PPE) during maintenance. 
+ii) Follow LOTO procedures before servicing electrical components. 
+iii) Ensure all tools and equipment used are certified and in good condition. 
+14.7 Record Keeping 
+i) Maintain logs of all maintenance activities, including date, observations, and 
+corrective actions taken. 
+ii) Store reports for audit and compliance purposes. 
+iii) Ensure digital records are backed up and accessible for review. 
+ 
+ 
+
+--- page 98 ---
+ 
+85 
+ 
+15 BASIC TROUBLESHOOTING STEPS FOR EVCS 
+15.1 Power Supply Issues 
+• Check the circuit breakers, MCBs, and RCDs: Ensure the main breaker, MCB, and 
+RCD have not tripped. Reset if necessary. 
+• Check the SPD indicator colour (should be green) to confirm that no electrical surge 
+has occurred.  
+• Inspect wiring connections: Loose or damaged wiring should be checked and 
+corrected by a qualified electrician. 
+• Verify grid supply: Ensure that the home’s electrical system is providing sufficient 
+power as per IEC 60364-7-722. 
+15.2 Charging Cable and Connector Issues 
+• Inspect for damage: Look for visible wear or damage on the cable, plug, and charging 
+socket. 
+• Check connection status: Ensure the EV is properly connected and locked into place. 
+• Verify the connector type: Use only connectors compliant with IEC 62196, IEC 
+60083, or IEC 60309. 
+15.3 Communication Errors 
+• Restart the charger: Power cycle the EVCS by turning it off and on. 
+• Check error messages: Many modern chargers have LED indicators or display screens 
+showing error codes. 
+• Verify EV compatibility: Ensure the vehicle supports the selected charging mode 
+(Mode 2, 3, or 4 as per IEC 61851). 
+15.4 Abrupt stop during a charging session 
+• Check the ambient temperature: Charging may stop due to overheating protection. 
+• Check if the load management system is limiting power. 
+• Inspect for tripped breakers: If overload is suspected, reduce other electrical loads. 
+15.5 Electrical Shock or Fire Risk 
+• Immediately disconnect power: Use an emergency disconnect switch (mandatory as 
+per IEC 61851-1). 
+
+--- page 99 ---
+ 
+86 
+ 
+• Use a suitable fire extinguisher. 
+o For a Class E (electrical) fire: Dry Powder (Blue colour label or tank) or CO2 
+(Black colour label or tank). 
+o See Figure 15.1 and Figure 15.2. 
+ 
+ 
+Figure 15.1 Dry Powder Fire Extinguisher 
+ 
+Figure 15.2 CO2 Fire Extinguisher 
+• Follow the PASS technique to operate the fire extinguisher as illustrated in Figure 
+15.3. 
+o P: Pull the safety pin to release the extinguisher mechanism. 
+o A: Aim the nozzle directly at the base of the fire, not the flames. 
+o S: Squeeze the handle to discharge the extinguishing agent. 
+
+--- page 100 ---
+ 
+87 
+ 
+o  S: Sweep the nozzle back and forth or sideways across the base of the fire 
+until it is extinguished 
+ 
+ 
+Figure 15.3 PASS Technique  
+• Ensure that the nearest exit is always behind you and the fire is in front of you. 
+• If the fire cannot be controlled, leave the premises and call emergency services. 
+o Fire and Rescue: Call 110 
+o Sri Lanka Police Emergency Service: Call 119 
+o Suwa Seriya Ambulance Service: Call 1990 
+15.6 Overheating of the Charging Station 
+• Stop charging immediately: Overheating could indicate internal component failure. 
+• Check ventilation: EVCS should be installed in well-ventilated areas per IEC 60364-
+7-722. 
+• Contact a professional: If persistent overheating occurs, a SLQF Level 4-certified 
+electrician should inspect the unit. 
+
+--- page 101 ---
+ 
+88 
+ 
+15.7 Grounding or Earthing Failure 
+• Perform an earth test: Use an earth resistivity tester to check compliance with IEC 
+60364 grounding requirements. 
+• Check the earthing conductor: Loose or corroded connections should be fixed 
+immediately. 
+15.8 Frequent RCD Tripping 
+• Identify the cause: RCD trips may indicate leakage currents above permissible limits 
+(IEC 60364-7-722). 
+• Inspect the insulation resistance: If below 1 MΩ (in Class I) or 7 MΩ (in Class II) per 
+IEC 61851, repair is required. 
+ 
+ 
+
+--- page 102 ---
+ 
+89 
+ 
+16 REFERENCES 
+16.1 Standards 
+No 
+Name 
+Link 
+1 
+IEC 14908-4 
+https://webstore.iec.ch/en/publication/10213 
+2 
+IEC 27001 
+https://www.iso.org/standard/27001 
+3 
+IEC 60068-2 
+https://webstore.iec.ch/en/publication/62437 
+4 
+IEC 60079-0 
+https://webstore.iec.ch/en/publication/32878 
+5 
+IEC 60204-1 
+https://webstore.iec.ch/en/publication/26037 
+6 
+IEC 60269-1 
+https://webstore.iec.ch/en/publication/66096 
+7 
+IEC 60309 
+https://webstore.iec.ch/en/publication/59916  
+8 
+IEC 60320 
+https://webstore.iec.ch/en/publication/64901  
+9 
+IEC 60332 
+https://webstore.iec.ch/en/publication/62423 
+10 
+IEC 60364-1 
+https://webstore.iec.ch/en/publication/1865 
+11 
+IEC 60364-4-41 
+https://webstore.iec.ch/en/publication/1867 
+12 
+IEC 60364-4-43 
+https://webstore.iec.ch/en/publication/28432 
+13 
+IEC 60364-4-44 
+https://webstore.iec.ch/en/publication/32355 
+14 
+IEC 60364-4-482 
+https://webstore.iec.ch/en/publication/15757 
+15 
+IEC 60364-5-54 
+https://webstore.iec.ch/en/publication/1882 
+16 
+IEC 60364-7-722 
+https://webstore.iec.ch/en/publication/29958 
+17 
+IEC 60529 
+https://webstore.iec.ch/en/publication/64427 
+18 
+IEC 60695-2-11 
+https://webstore.iec.ch/en/publication/63552 
+19 
+IEC 60755 
+https://webstore.iec.ch/en/publication/33927  
+20 
+IEC 60870-5-104 
+https://webstore.iec.ch/en/publication/3746 
+21 
+IEC 60898-1 
+https://webstore.iec.ch/en/publication/66619 
+22 
+IEC 60947-1 
+https://webstore.iec.ch/en/publication/26973 
+23 
+IEC 61000-4-20 
+https://webstore.iec.ch/en/publication/34378 
+24 
+IEC 61008 
+https://webstore.iec.ch/en/publication/67980  
+25 
+IEC 61009 
+https://webstore.iec.ch/en/publication/4270   
+26 
+IEC 61140 
+https://webstore.iec.ch/en/publication/23997 
+27 
+IEC 61215-1 
+https://webstore.iec.ch/en/publication/61345 
+28 
+IEC 61334-4-41 
+https://webstore.iec.ch/en/publication/5303 
+29 
+IEC 61400-12-1 
+https://webstore.iec.ch/en/publication/68499 
+30 
+IEC 61439 
+https://webstore.iec.ch/en/publication/32338  
+31 
+IEC 61511-1 
+https://webstore.iec.ch/en/publication/24241 
+32 
+IEC 61557-8 
+https://webstore.iec.ch/en/publication/5582 
+33 
+IEC 61727 
+https://webstore.iec.ch/en/publication/5736 
+34 
+IEC 61730-1 
+https://webstore.iec.ch/en/publication/59803 
+35 
+IEC 61850-7-420 
+https://webstore.iec.ch/en/publication/34384 
+36 
+IEC 61851 
+https://webstore.iec.ch/en/publication/33644 
+37 
+IEC 61980 
+https://webstore.iec.ch/en/publication/31657 
+38 
+IEC 62052-11 
+https://webstore.iec.ch/en/publication/28212 
+
+--- page 103 ---
+ 
+90 
+ 
+39 
+IEC 62053-21 
+https://webstore.iec.ch/en/publication/6382 
+40 
+IEC 62056-21 
+https://webstore.iec.ch/en/publication/6398 
+41 
+IEC 62058-11 
+https://webstore.iec.ch/en/publication/6414 
+42 
+IEC 62058-31 
+https://webstore.iec.ch/en/publication/6416 
+43 
+IEC 62109-1 
+https://webstore.iec.ch/en/publication/6470 
+44 
+IEC 62196 
+https://webstore.iec.ch/en/publication/59922  
+45 
+IEC 62262 
+https://webstore.iec.ch/en/publication/6673 
+46 
+IEC 62305 
+https://webstore.iec.ch/en/publication/6797 
+47 
+IEC 62423 
+https://webstore.iec.ch/en/publication/6998 
+48 
+IEC 62443 
+https://www.isa.org/standards-and-publications/isa-
+standards/isa-iec-62443-series-of-standards 
+49 
+IEC 62485-5 
+https://webstore.iec.ch/en/publication/29086 
+50 
+IEC 62619 
+https://webstore.iec.ch/en/publication/28895 
+51 
+IEC 62752 
+https://webstore.iec.ch/en/publication/66220  
+52 
+IEC 62840-2 
+https://webstore.iec.ch/en/publication/25983 
+53 
+IEC 62893-1 
+https://webstore.iec.ch/en/publication/30590 
+54 
+IEC 62933-1 
+https://webstore.iec.ch/en/publication/64642 
+55 
+IEC 63056 
+https://webstore.iec.ch/en/publication/29224 
+56 
+IEC 63110-1 
+https://webstore.iec.ch/en/publication/60000 
+57 
+IEC 63584 
+https://webstore.iec.ch/en/publication/95734 
+58 
+IEC TR 60083 
+https://webstore.iec.ch/en/publication/23628 
+59 
+IEC TR 61850-1 
+https://webstore.iec.ch/en/publication/6007 
+60 
+IEC TS 61400-30 
+https://webstore.iec.ch/en/publication/31267 
+61 
+IEC TS 62351-100-4 
+https://webstore.iec.ch/en/publication/63323 
+62 
+IEC TS 62840-1 
+https://webstore.iec.ch/en/publication/25398 
+63 
+ISO 13849-1:2023 
+https://www.iso.org/standard/73481.html 
+64 
+ISO 15118-20 
+https://webstore.iec.ch/en/publication/26347 
+65 
+ISO 15118-4 
+https://webstore.iec.ch/en/publication/32348 
+66 
+CISPR 11 
+https://webstore.iec.ch/en/publication/66118 
+67 
+CISPR 22 
+https://webstore.iec.ch/en/publication/72 
+68 
+NFPA 855 
+https://www.nfpa.org/codes-and-standards/nfpa-855-
+standard-development/855 
+ 
+ 
+ 
+
+--- page 104 ---
+ 
+91 
+ 
+16.2 Other references 
+[1] 
+BS 7671 - 18th Edition: The IET Wiring Regulations https://electrical.theiet.org/bs-
+7671/  
+[2] 
+EV 
+Plugs, 
+socket-outlets, 
+vehicle 
+connectors 
+and 
+vehicle 
+inlets 
+https://en.wikipedia.org/wiki/IEC_62196 
+[3] 
+Guidelines on Rooftop Solar PV Installation for Solar Service Providers 
+https://www.pucsl.gov.lk/wp-content/uploads/2022/10/Guidelines-on-Rooftop-
+Solar-PV-installation-for-Utility-Providers_Revision-01.pdf  
+[4] 
+Battery 
+swapping 
+stations 
+https://www.sciencedirect.com/topics/engineering/battery-swapping-station  
+[5] 
+An in-depth analysis of electric vehicle charging station infrastructure, policy 
+implications, 
+and 
+future 
+trends  
+https://www.sciencedirect.com/science/article/pii/S2352484722017346  
+[6] 
+Electric Vehicle Public Charging Station Host’s Handbook by Iowa Economic 
+Development 
+Authority 
+https://publications.iowa.gov/38022/1/ev-
+infrastructureguide2019.pdf  
+[7] 
+New Retail Layouts With EV Charging Deliver a High-Value Customer Experience 
+https://evadvisors.com/new-retail-layouts-with-ev-charging-deliver-a-high-value-
+customer-experience/  
+[8] 
+Dumb Or Brilliant? Electrify America Opens An Indoor Charging Station 
+https://www.youtube.com/watch?v=W0hK5mphkGA  
+[9] 
+This Massive Indoor EV Hub Is the Nicest Charging Station I've Visited 
+https://www.cnet.com/home/electric-vehicles/this-massive-indoor-ev-hub-is-the-
+nicest-charging-station-ive-visited/  
+[10] Feasibility analysis of a solar-assisted electric vehicle charging station model 
+considering differential pricing https://onlinelibrary.wiley.com/doi/10.1002/est2.237  
+Note: All the Images included in this document are the property of their respective owners. 
+ 
+ 
+ 
+
+--- page 105 ---
+ 
+92 
+ 
+17 APPENDIX 
+17.1 Annexure A: Cross Reference Standards 
+International Standards 
+Corresponding Sri Lanka Standards 
+IEC 61851 Electric Vehicle Conductive Charging 
+System 
+Part 1: 2017 COR-2023 General Requirements 
+SLS 1801 Electric Vehicle Conductive Charging 
+System 
+Part 1: 2024 COR-2023 General Requirements 
+IEC 61851 Electric Vehicle Conductive Charging 
+System 
+Part 1-1: 2023 Specific requirements for electric 
+vehicle conductive charging system using type 4 
+vehicle coupler 
+SLS 1801 Electric Vehicle Conductive Charging 
+System 
+Part 1-1: 2024 Specific requirements for electric 
+vehicle conductive charging system using type 4 
+vehicle coupler 
+IEC 61851 Electric Vehicle Conductive Charging 
+System 
+Part 21-1: 2017 Electric vehicle on-board charger 
+EMC requirements for conductive connection to 
+an AC/DC supply 
+SLS 1801 Electric Vehicle Conductive Charging 
+System 
+Part 21-1: 2024 Electric vehicle on-board charger 
+EMC requirements for conductive connection to 
+an AC/DC supply 
+IEC 61851 Electric Vehicle Conductive Charging 
+System 
+Part 21-2: 2018 Electric vehicle requirements for 
+conductive connection to an AC/DC supply 
+SLS 1801 Electric Vehicle Conductive Charging 
+System 
+Part 21-2: 2024 Electric vehicle requirements for 
+conductive connection to an AC/DC supply 
+IEC 61851 Electric Vehicle Conductive Charging 
+System 
+Part 23: 2014 DC electric vehicle charging station 
+SLS 1801 Electric Vehicle Conductive Charging 
+System 
+Part 23: 2024 DC electric vehicle charging 
+station 
+IEC 61851 Electric Vehicle Conductive Charging 
+System 
+Part 24: 2014 Digital communication between a 
+DC EV charging station and an electric vehicle 
+for control of DC charging 
+SLS 1801 Electric Vehicle Conductive Charging 
+System 
+Part 24: 2024 Digital communication between a 
+DC EV charging station and an electric vehicle 
+for control of DC charging 
+
+--- page 106 ---
+ 
+93 
+ 
+IEC 61851 Electric Vehicle Conductive Charging 
+System 
+Part 25: 2020 DC EV supply equipment where 
+protection relies on electrical separation 
+SLS 1801 Electric Vehicle Conductive Charging 
+System 
+Part 25: 2024 DC EV supply equipment where 
+protection relies on electrical separation 
+IEC 
+62196 
+Plugs, 
+socket-outlets, 
+vehicle 
+connectors and vehicle inlets  
+Part 1: 2022 General Requirements 
+SLS 
+1802 
+Plugs, 
+socket-outlets, 
+vehicle 
+connectors and vehicle inlets  
+Part 1: 2024 General Requirements 
+IEC 
+62196 
+Plugs, 
+socket-outlets, 
+vehicle 
+connectors and vehicle inlets  
+Part 
+2: 
+2022 
+Dimensional 
+compatibility 
+requirements for AC pin and contact-tube 
+accessories 
+SLS 
+1802 
+Plugs, 
+socket-outlets, 
+vehicle 
+connectors and vehicle inlets  
+Part 
+2: 
+2024 
+Dimensional 
+compatibility 
+requirements for AC pin and contact-tube 
+accessories 
+IEC 
+62196 
+Plugs, 
+socket-outlets, 
+vehicle 
+connectors and vehicle inlets  
+Part 
+3: 
+2022 
+Dimensional 
+compatibility 
+requirements for DC and AC/DC pin and contact-
+tube vehicle couplers 
+SLS 
+1802 
+Plugs, 
+socket-outlets, 
+vehicle 
+connectors and vehicle inlets  
+Part 
+3: 
+2024 
+Dimensional 
+compatibility 
+requirements for DC and AC/DC pin and contact-
+tube vehicle couplers 
+IEC 
+62196 
+Plugs, 
+socket-outlets, 
+vehicle 
+connectors and vehicle inlets  
+Part 3-1: 2020 Vehicle connector, vehicle inlet 
+and cable assembly for DC charging intended to 
+be used with a thermal management system 
+SLS 
+1802 
+Plugs, 
+socket-outlets, 
+vehicle 
+connectors and vehicle inlets  
+Part 3-1: 2024 Vehicle connector, vehicle inlet 
+and cable assembly for DC charging intended to 
+be used with a thermal management system 
+IEC 
+62196 
+Plugs, 
+socket-outlets, 
+vehicle 
+connectors and vehicle inlets  
+Part 4: 2022 Dimensional compatibility and 
+interchangeability requirements for DC pin and 
+contact-tube accessories for Class II or Class III 
+applications 
+SLS 
+1802 
+Plugs, 
+socket-outlets, 
+vehicle 
+connectors and vehicle inlets  
+Part 4: 2024 Dimensional compatibility and 
+interchangeability requirements for DC pin and 
+contact-tube accessories for Class II or Class III 
+applications 
+
+--- page 107 ---
+ 
+94 
+ 
+IEC 
+62196 
+Plugs, 
+socket-outlets, 
+vehicle 
+connectors and vehicle inlets  
+Part 
+6: 
+2022 
+Dimensional 
+compatibility 
+requirements for DC pin and contact-tube vehicle 
+couplers intended to be used for DC EV supply 
+equipment where protection relies on electrical 
+separation 
+SLS 
+1802 
+Plugs, 
+socket-outlets, 
+vehicle 
+connectors and vehicle inlets  
+Part 
+6: 
+2024 
+Dimensional 
+compatibility 
+requirements for DC pin and contact-tube vehicle 
+couplers intended to be used for DC EV supply 
+equipment where protection relies on electrical 
+separation 
+IEC 61980 Electric Vehicle Wireless Power 
+Transfer (WPT) systems  
+Part 1: 2020 General Requirements 
+SLS 1806 Electric Vehicle Wireless Power 
+Transfer (WPT) systems  
+Part 1: 2024 General Requirements 
+IEC 61980 Electric Vehicle Wireless Power 
+Transfer (WPT) systems  
+Part 
+2: 
+2023 
+Specific 
+requirements 
+for 
+communication between electric road vehicle 
+(EV) and infrastructure 
+SLS 1806 Electric Vehicle Wireless Power 
+Transfer (WPT) systems  
+Part 
+2: 
+2024 
+Specific 
+requirements 
+for 
+communication between electric road vehicle 
+(EV) and infrastructure 
+IEC 61980 Electric Vehicle Wireless Power 
+Transfer (WPT) systems  
+Part 3: 2022 Specific requirements for the 
+magnetic field wireless power transfer systems 
+SLS 1806 Electric Vehicle Wireless Power 
+Transfer (WPT) systems  
+Part 3: 2024 Specific requirements for the 
+magnetic field wireless power transfer systems 
+IEC 62576: 2018 - Electric double-layer 
+capacitors for use in hybrid electric vehicles - 
+Test methods for electrical characteristics 
+SLS 
+1807: 
+2024 
+- 
+Electric 
+double-layer 
+capacitors for use in hybrid electric vehicles - 
+Test methods for electrical characteristics 
+IEC 62840 Electric vehicle battery swap system  
+Part 1: 2016 General and Guidance 
+SLS 1808 Electric vehicle battery swap system  
+Part 1: 2024 General and Guidance 
+IEC 62840 Electric vehicle battery swap system  
+Part 2: 2016 Safety Requirements 
+SLS 1808 Electric vehicle battery swap system  
+Part 2: 2024 Safety Requirements 
+IEC 62840 Electric vehicle battery swap system  
+Part 3: 2021 Particular safety and interoperability 
+requirements for battery swap systems operating 
+with removable RESS/battery systems 
+SLS 1808 Electric vehicle battery swap system  
+Part 3: 2024 Particular safety and interoperability 
+requirements for battery swap systems operating 
+with removable RESS/battery systems 
+
+--- page 108 ---
+ 
+95 
+ 
+IEC 62893 Charging cables for electric vehicles 
+for rated voltages up to and including 0.6/1 kV   
+Part 1: 2017 + AMD 2020General Requirements 
+SLS 1809 Charging cables for electric vehicles 
+for rated voltages up to and including 0.6/1 kV   
+Part 1: 2024 + AMD 2020 General Requirements 
+IEC 62893 Charging cables for electric vehicles 
+for rated voltages up to and including 0.6/1 kV   
+Part 2: 2017 Test Methods 
+SLS 1809 Charging cables for electric vehicles 
+for rated voltages up to and including 0.6/1 kV   
+Part 2: 2024 Test Methods 
+IEC 62893 Charging cables for electric vehicles 
+for rated voltages up to and including 0.6/1 kV   
+Part 3: 2017 Cables for AC charging according to 
+modes 1, 2 and 3 of IEC 61851-1 of rated 
+voltages up to and including 450/750 V 
+SLS 1809 Charging cables for electric vehicles 
+for rated voltages up to and including 0.6/1 kV   
+Part 3: 2024 Cables for AC charging according to 
+modes 1, 2 and 3 of IEC 61851-1 of rated 
+voltages up to and including 450/750 V 
+IEC 62893 Charging cables for electric vehicles 
+for rated voltages up to and including 0.6/1 kV   
+Part 4-1: 2020 Cables for DC charging according 
+to mode 4 of IEC 61851-1 - DC charging without 
+use of a thermal management system 
+SLS 1809 Charging cables for electric vehicles 
+for rated voltages up to and including 0.6/1 kV   
+Part 4-1: 2024 Cables for DC charging according 
+to mode 4 of IEC 61851-1 - DC charging without 
+use of a thermal management system 
+IEC 62893 Charging cables for electric vehicles 
+for rated voltages up to and including 0.6/1 kV   
+Part 4-2: 2021 Cables for DC charging according 
+to mode 4 of IEC 61851-1 - Cables intended to be 
+used with a thermal management system 
+SLS 1809 Charging cables for electric vehicles 
+for rated voltages up to and including 0.6/1 kV   
+Part 4-2: 2024 Cables for DC charging according 
+to mode 4 of IEC 61851-1 - Cables intended to be 
+used with a thermal management system 
+IEC 63110 Protocol for management of electric 
+vehicles charging and discharging infrastructures  
+Part 1: 2022 Basic definitions, use cases and 
+architectures 
+SLS IEC 63110 Protocol for management of 
+electric vehicles charging and discharging 
+infrastructures  
+Part 1: 2024 Basic definitions, use cases and 
+architectures 
+IEC 63119 Information exchange for electric 
+vehicle charging roaming service  
+Part 1: 2019 General 
+SLS IEC 63119 IEC 63119 Information 
+exchange for electric vehicle charging roaming 
+service  
+Part 1: 2024 General 
+
+--- page 109 ---
+ 
+96 
+ 
+IEC 63119 Information exchange for electric 
+vehicle charging roaming service  
+Part 2: 2022 Use Cases 
+SLS IEC 63119 Information exchange for 
+electric vehicle charging roaming service  
+Part 2: 2024 Use Cases 
+IEC PAS 63454: 2022 Conductive charging of 
+electric 
+vehicles 
+– 
+DC 
+vehicle 
+coupler 
+configuration GG 
+SLS 1811: 2024 Conductive charging of electric 
+vehicles – DC vehicle coupler configuration GG 
+ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+ Part 1: 2019 General Information and use case 
+definition 
+SLS ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+ Part 1: 2024 General Information and use case 
+definition 
+ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 2: 2014 Network and application protocol 
+requirements 
+SLS ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 2: 2024 Network and application protocol 
+requirements 
+ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 3: 2015 Physical and data link layer 
+requirements 
+SLS ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 3: 2024 Physical and data link layer 
+requirements 
+ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 4: 2018 Network and application protocol 
+conformance test 
+SLS ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 4: 2024 Network and application protocol 
+conformance test 
+ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 5: 2018 Physical and data link layer 
+conformance test 
+SLS ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 5: 2024 Physical and data link layer 
+conformance test 
+ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 8: 2020 Physical and data link layer 
+requirements for wireless communication 
+SLS ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 8: 2024 Physical and data link layer 
+requirements for wireless communication 
+
+--- page 110 ---
+ 
+97 
+ 
+ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 9: 2022 Physical and data link layer 
+conformance test for wireless communication 
+SLS ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 9: 2024 Physical and data link layer 
+conformance test for wireless communication 
+ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 20: 2022 2nd Generation network layer and 
+application layer requirements 
+SLS ISO 15118 Road Vehicles - Vehicle to grid 
+communication interface 
+Part 20: 2024 2nd Generation network layer and 
+application layer requirements 
+ 
+ 
+ 
+ 

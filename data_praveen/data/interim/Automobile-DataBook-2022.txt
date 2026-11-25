@@ -1,0 +1,1692 @@
+--- page 1 ---
+
+--- page 2 ---
+ii 
+ 
+AUTOMOBILE INDUSTRY 
+MINISTRY OF INDUSTRIES 
+
+--- page 3 ---
+iii 
+ 
+List of Contributors 
+  
+Mr.A.H.M.U. Aruna Banadara 
+Miss. Inoka De Alwis 
+Miss.Samangika  Abeysinghe 
+Mr.G.D.P.Munidasa 
+Miss.W.P.Kalyani 
+Mrs. H.A.R.N. Wijesinghe 
+Ms. Chamari Fonseka 
+Mr. Umesh Hapuarachchi 
+Mr. P.A.N.C. Pathiraja 
+Mr.W.A.S.R. Jayawardhane 
+Ms.G.R. Madagedara 
+Ms. W.A.K.Fernando 
+Mrs. G.H.R.A. Priyashanika 
+Ms.A.A.S.Weerasinghe 
+Mrs.W.P.D.M. Nawarathna 
+Mrs.K.A.M.L.Senani 
+Mrs. M.Nalani 
+Mrs.S.D.C.Priyanka 
+Mr.H.M.R.A.Bandara 
+Mrs.R. Dinithi Madushani 
+Mrs.M.L.Jayaweera 
+  
+  
+  
+  
+  
+  
+Statistics Unit 
+Planning Division 
+Ministry of Industries 
+P.O.Box 570,73/1, Galle road, Colombo 03 
+  
+  
+  
+  
+Telephone: +94 11 2392149 
+E-mail:         plan_unit@yahoo.com 
+Website:     www.industry.gov.lk 
+
+--- page 4 ---
+iv 
+ 
+Foreword  
+The Industrial Data book 2022 is an effort to support the Industrialists, in coping with current eco-
+nomic challenges, and contribute to their sustainable socioeconomic development through stream-
+lining the vital process of productive decision making. This Data book focuses on the statistical fac-
+tors effecting the economic growth specifically concerning the export expansion.  
+The statistical analyses given in this Data book are based on comprehensive statistical accounts 
+drawn from the Department of Census and Statistics (DCS), Department of Customs (DoC), Export 
+Development Board (EDB) and the Central Bank of Sri Lanka (CBSL) as a reference.  
+This publication includes statistical references pertaining to exports and imports including the tables 
+on productivity indicators prepared based on Manufacturing establishments and number of persons 
+engaged in each sector, statistics on Principal indicators of Industrial Activity from year 2015 to 
+2019, value of outputs and output components, value of intermediate consumptions, employment 
+by nature, statistics on Economic indicators of industrial activities classified by industry class and sta-
+tistics on imports and exports.  
+I am grateful to the Director General, Planning Division, Ministry of Industries Mr. Aruna Bandara 
+and his team for the immense support given in this endeavor. Further, my heartfelt gratitude goes 
+to Ms. Rajitha Wijesinghe, Statistician, Ministry of Industries and her team members Mr. Nirosh 
+Chathuranga Pathiraja and Mr. Shamith Rashmika Jayawardane for their well-commited contribu-
+tion and tremendous effort to make this a reality while working in collaboration with the DCS. Also, I 
+would like to thank Ms. Chamari Fonseka, Deputy Director, and Mr. Umesh Hapuarachchci, Infor-
+mation and Communication Technology Officer of the Information Technology Division for their con-
+tribution in providing the write-ups and cover page designs.  
+ I strongly believe that this Industrial Data book 2022 will serve a valuable purpose on the present 
+and future status of productivity and economic growth in industrial sectors, while influencing prolific 
+process of policymaking in the industry sectors. I am of the view that this publication would be ben-
+eficial for all levels of industrial data consumers including policy makers, economic planners, aca-
+demics, researches and any other interested parties in future.  
+ 
+ 
+ 
+J.M. Thilaka Jayasundara 
+Secretary 
+Ministry of Industries  
+
+--- page 5 ---
+v 
+ 
+Content 
+                                                                                                                                                                Page No. 
+Overview                                                                                                                                                            2 
+Data Tables of  Auto mobile Industry  Sector                                                                                    2  –  08 
+References                                                                                                                                                       09 
+Table 1: 
+Manufacture of  Automobile Sector Contribution to the GDP at Current and Constant 
+Market Price (2017 - 2021) 
+Manufacture of motor vehicles, trailers and semi-trailers 
+02 
+Table 2: 
+Automobile Manufacturing Establishments and Number of Persons Engaged  (2015-
+2019)   
+02 
+Table 3: 
+Principal Indicators of Industrial Activity Classified by Industry Division & Persons En-
+gaged Size of Automobile  Industry (2015)                                                                                                                
+(Establishments with 5 or more persons engaged) 
+03 
+Table 4: 
+Principal Indicators of Industrial Activity Classified by Industry Division & Persons En-
+gaged Size of Automobile  Industry (2016)                                                                                                                
+(Establishments with 5 or more persons engaged) 
+03 
+Table 5: 
+Principal Indicators of Industrial Activity Classified by Industry Division & Persons En-
+gaged Size of Automobile  Industry (2017)                                                                                                                
+(Establishments with 5 or more persons engaged) 
+03 
+Table 6: 
+Principal Indicators of Industrial Activity Classified by Industry Division & Persons En-
+gaged Size of Automobile  Industry (2018)                                                                                                                
+(Establishments with 5 or more persons engaged) 
+04 
+Table 7: 
+Principal Indicators of Industrial Activity Classified by Industry Division & Persons En-
+gaged Size of Automobile  Industry (2019)                                                                                                                
+(Establishments with 5 or more persons engaged) 
+04 
+Table 8: 
+Manufacturing of Automobile  Industry  Per Head Labour Productivity 
+04 
+Table  9: 
+Value of Output & Out put Components Classified by Automobile Industry 
+Establishments 25 or more engaged 
+05 
+Table 10: 
+Value of Intermediate Consumptions & Intermediate Consumptions Components Clas-
+sified by Automobile  Industry - (Establishments with 25 or more engaged) 
+05 
+Table 11: 
+Employment by Nature of Employment & Gender Classified by Industry Divisions of 
+Auto mobile Industry                                                                                                                                                                                
+- (Establishment with 25 or more persons engaged) 
+05 
+Table 12: 
+Economic Indicators of Industrial Activity Classified by  Automobile Industry Class - 
+(Establishments with 25 or more persons engaged) 
+06 
+Table 12.1: 
+Manufacture of Motor Vehicles 
+06 
+Table 12.2: 
+Manufacture of Bodies for Motor Vehicles; Manufacture of Trailers & Semi Trailers 
+06 
+Table 12..3: 
+Manufacture of Parts and Accessories for Motor Vehicles 
+ 
+ 06 
+Table 13: 
+Economic Indicators of Industrial Activity Classified by Automobile Industry Class 
+(Establishments with less than 25 persons engaged) 
+ 06 
+Table 14: 
+Categories of Employees by Nature of Employment Classified by Auto Mobile Industry 
+ ( Establishments with 25 or more persons engaged ) 
+ 07 
+Table 15 
+: Number of Automobile Manufacturing Industries and Engaged Persons in Sri Lanka 
+(2013/14 Economic Census) 
+ 07 
+Table 16: 
+Automobile Imports (2019-2021) 
+ 07 
+Table 17: 
+Automobile Exports (2019-2021)  
+ 08 
+List of Tables 
+
+--- page 6 ---
+vi 
+ 
+Figure 1: 
+The Contribution of the Automobile Industry  sector to the share of the manufacturing 
+industry to the GDP 
+02  
+Figure 2: 
+Manufacturing of Automobile  Industry  Per Head Labour Productivity 
+04  
+Figure 3: 
+Major Imports Countries of Vehicles other than railway or tramway rolling-stock, and 
+parts and accessories thereof - 2021 
+08  
+Figure 4: 
+Major Imports Countries of Vehicles other than railway or tramway rolling-stock, and 
+parts and accessories thereof - 2021 
+ 08 
+Figure 5: 
+Major Exports Countries of Vehicles other than railway or tramway rolling-stock, and 
+parts and accessories thereof - 2021 
+ 08 
+Figure 6: 
+Major Exports Countries of Vehicles other than railway or tramway rolling-stock, and 
+parts and accessories thereof - 2021 
+ 08 
+List of Figures                                                                                                                                            Page No. 
+CIF 
+cost, insurance, and freight 
+FOB 
+Free on Board 
+Kg 
+Kilogram 
+GDP 
+Gross Domestic Products 
+MT 
+Metric Ton 
+No 
+Number 
+n.e.c 
+Not elsewhere classified 
+(‘000) No 
+Thousand Number 
+(‘000) Pairs 
+Thousand Pairs 
+(‘000) Rs 
+Thousand  Rupees 
+Qty. 
+Quantity 
+Rs. 
+Rupees 
+Rs. Mn 
+Rupees Million 
+Abbreviations 
+
+--- page 7 ---
+1 
+ 
+Overview  
+The automobile sector in Sri Lanka consist of the two main 
+subsectors, the component manufacturing sector and auto-
+mobile manufacturing/assembly sector. At present the sec-
+tor is strengthened with 15 domestically Value-Added Auto-
+mobile Assembling Industries, 25 Ministry Registered Do-
+mestically Value-Added Auto Mobile Components Manufac-
+tures and06 Locally Assembled World-Renowned Brands. 
+The industry provides employment for about 20,000 direct 
+employments. 
+Automobile sector imports accounts for USD 422 million in 
+2021. The imports have been declined by around 30% com-
+pared to imports in 2021, from USD 603 million recorded in 
+2020, due to the measures taken by the government to tem-
+porary suspend the vehicle imports. Total value of automo-
+bile sector exports stands at USD 91 million by the end of 
+2021.  
+The Automobile Assembling Industry has been continuing in 
+Sri Lanka for the last 20 years. Regarding the cabinet deci-
+sions dated 2004.07.28 and subsequently, 2008.08.27, the 
+Cabinet of Ministers decided to provide tax and tariff relief, 
+formulate regulations and control mechanisms for this in-
+dustry. The Automobile assembling companies enjoy excise 
+duty concession on domestic value addition. 
+The component manufacturing sector has been recognized 
+as key sectors with the potential to be developed and pro-
+moted in the international market by linking with the Global 
+Value Chains. The sector involves in manufacturing Tyres, 
+Batteries, Rubber components including bushes, Exhausts 
+systems, Seats & seating components, Radiators, Bumpers, 
+Body interior parts, Centre consoles, HVAC systems, Com-
+plete dashboard systems, steering racks including conver-
+sion kits, Cables, Wire harness, Oil filters, Air filters, Head 
+light, Truck bodies, Bowsers and Sensors.  
+Further, the component manufacturing industry is currently 
+manufacturing sensors for the world-renowned automobile 
+brands such as Toyota, Honda, Aston Martin, Volvo, Opel and 
+BMW. A significant level of investment in the domestically 
+value-added automobile manufacturing/assembly industry is 
+an important factor to cater to the demand required by the 
+components manufacturing industry to become competitive in 
+the export market.USA, Germany, UK, Canada and Switzerland 
+are the major export destinations of the Component manufac-
+turing sector. Michelin, Ferentino, Continentals, GRI, Cable 
+Solutions, Lanka Harness are some of the overseas companies 
+that are involved in component manufacturing in Sri Lanka.  
+Sri Lankan Component Manufacturing has entered the Global 
+Supply Chain by the technical collaboration between Ideal Au-
+to Seating and MSKH India, a joint venture of Magna World-
+wide - the largest automotive component manufacturer in the 
+world. Magna Worldwide has its presence in 28 countries with 
+169,000 employees and 338 manufacturing plants. The sector 
+has been able to reduce the importation of spare parts by 8 
+per cent. 
+The Ministry of Industries is currently in the process of compil-
+ing a Standard Operating Procedures (SOP) for the domestical-
+ly value-added automobile industry, as a guideline to both the 
+automobile manufacturing/assembly and components manu-
+facturing industries. This SOP includes all regulations, proce-
+dures and requirements related to different aspects of the 
+industry, from the registration of an industry to the safety & 
+quality standards applicable to the same.  
+Figure 14.1: Forecasted Movement of Vehicles  
+
+--- page 8 ---
+2 
+ 
+Year 
+Establishments less than 25  persons  engaged Establishments 25 or more persons  engaged 
+No of Establishments 
+Persons engaged 
+No of Establishments 
+Persons engaged 
+2015 
+                         35  
+                            334  
+                            7  
+                        1,324  
+2016 
+                         21  
+                            221  
+                         10  
+                           820  
+2017 
+                         28  
+                            278  
+                         12  
+                           948  
+2018 
+                         43  
+                            469  
+                         15  
+                        1,111  
+2019 
+                         29  
+                            316  
+                         15  
+                        1,124  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+Table 2: Automobile Manufacturing Establishments and Number of Persons Engaged  (2015-2019)  
+Table 1: Manufacture of  Automobile Sector Contribution to the GDP at Current and Constant Market Price 
+(2017 - 2021) 
+Manufacture of motor vehicles, trailers and semi-trailers 
+Year 
+ Current market price (Rs. Mn) 
+ Constant market price (Rs. Mn) 
+Contribution Value 
+(Rs. Mn) 
+Share (%) 
+Contribution Value 
+(Rs. Mn) 
+Share (%) 
+2017 
+1,885 
+0.01 
+2,375 
+0.03 
+2018 
+2,453 
+0.02 
+2,645 
+0.03 
+2019 
+5,711 
+0.04 
+2,842 
+0.03 
+2020 
+5,375 
+0.04 
+2,902 
+0.03 
+2021 
+6,143 
+0.04 
+3,040 
+0.03 
+Source : Department of Census and Statistics 
+Figure 1: The Contribution of the Automobile Industry  sector to 
+the share of the manufacturing industry to the GDP 
+Source : Department of Census and Statistics 
+0.18
+0.20
+0.19
+0.17
+0.16
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+2017
+2018
+2019
+2020
+2021
+Share (%)
+
+--- page 9 ---
+3 
+ 
+2015 
+Year 
+No of 
+establish-
+ments 
+Persons 
+engaged 
+Em-
+ployees 
+Salary & 
+Wages 
+Out put (Rs.) 
+Intermediate 
+consumptions 
+(Rs.) 
+Value added 
+(Rs.) 
+Gross addition 
+to fixed assets 
+(Rs.) 
+less than 10 
+                  
+12  
+                    
+53  
+             
+42  
+       
+10,398,950  
+           
+34,220,306  
+               
+15,639,916  
+            
+18,580,390  
+                
+1,865,319  
+10 to 99 
+                  
+25  
+                  
+385  
+           
+373  
+    
+101,579,274  
+     
+1,646,775,853  
+         
+1,411,555,073  
+         
+235,220,780  
+              
+11,376,521  
+100 & above 
+                    
+5  
+              
+1,220  
+       
+1,216  
+    
+751,105,509  
+   
+20,614,663,159  
+       
+17,181,760,767  
+      
+3,432,902,392  
+            
+554,621,407  
+Group total 
+                  
+42  
+              
+1,658  
+       
+1,631  
+    
+863,083,733  
+   
+22,295,659,318  
+       
+18,608,955,756  
+      
+3,686,703,562  
+            
+567,863,247  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+Table 3: Principal Indicators of Industrial Activity Classified by Industry Division & Persons Engaged 
+Size of Automobile  Industry (2015)                                                                                                                
+(Establishments with 25 or more persons engaged) 
+2016 
+Year 
+No of 
+establish-
+ments 
+Persons 
+engaged 
+Employ-
+ees 
+Salary & 
+Wages 
+Out put (Rs.) 
+Intermediate 
+consumptions 
+(Rs.) 
+Value added 
+(Rs.) 
+Gross addition 
+to fixed assets 
+(Rs.) 
+less than 10 
+                  
+15  
+               
+103  
+             
+80  
+       
+18,605,970  
+           
+65,107,680  
+              
+30,734,865  
+          
+34,372,815  
+                    
+547,000  
+10 to 99 
+                  
+15  
+               
+557           551  
+    
+150,879,192  
+     
+1,092,828,714  
+           
+840,898,739  
+        
+251,929,975  
+              
+54,658,750  
+100 & above 
+                    
+1  
+               
+381           381  
+    
+273,886,427  
+   
+19,548,677,551  
+     
+15,638,942,041  
+    
+3,909,735,510  
+            
+184,654,830  
+Group total 
+                  
+31  
+            
+1,041  
+       
+1,012  
+    
+443,371,589  
+   
+20,706,613,945  
+     
+16,510,575,645  
+    
+4,196,038,300  
+            
+239,860,580  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+2017 
+Year 
+No of 
+establish-
+ments 
+Persons 
+engaged 
+Employ-
+ees 
+Salary & 
+Wages 
+Out put (Rs.) 
+Intermediate 
+consumptions 
+(Rs.) 
+Value added 
+(Rs.) 
+Gross addition 
+to fixed assets 
+(Rs.) 
+less than 10 
+17 
+               
+113  
+             
+83  
+       
+23,529,292  
+           
+69,598,517  
+              
+30,653,583  
+          
+38,944,934  
+                
+2,559,669  
+10 to 99 
+21 
+               
+587           567  
+    
+228,821,172  
+     
+1,740,692,231  
+        
+1,279,691,811  
+        
+461,000,420  
+              
+60,208,386  
+100 & above 
+2 
+               
+526           526  
+    
+353,413,319  
+   
+20,836,513,604  
+     
+16,604,516,953  
+    
+4,231,996,651  
+            
+222,627,220  
+Group total 
+                  
+40  
+            
+1,226  
+       
+1,176  
+    
+605,763,783  
+   
+22,646,804,352  
+     
+17,914,862,347  
+    
+4,731,942,005  
+            
+285,395,275  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+Table 4: Principal Indicators of Industrial Activity Classified by Industry Division & Persons Engaged 
+Size of Automobile  Industry (2016)                                                                                                                
+(Establishments with 25 or more persons engaged) 
+Table 5: Principal Indicators of Industrial Activity Classified by Industry Division & Persons Engaged 
+Size of Automobile  Industry (2017)                                                                                                                
+(Establishments with 25 or more persons engaged) 
+
+--- page 10 ---
+4 
+ 
+2018 
+Year 
+No of 
+establish-
+ments 
+Persons 
+engaged 
+Employ-
+ees 
+Salary & 
+Wages 
+Out put (Rs.) 
+Intermediate 
+consumptions 
+(Rs.) 
+Value added 
+(Rs.) 
+Gross addition 
+to fixed assets 
+(Rs.) 
+less than 10 
+                  
+24  
+               
+153            121  
+       
+31,203,833  
+         
+198,151,883  
+           
+124,403,985  
+          
+73,747,899  
+                
+3,460,849  
+10 to 99 
+                  
+32  
+               
+901            878     376,961,585  
+     
+1,113,044,741  
+           
+531,925,249  
+        
+581,119,492  
+            
+155,527,734  
+100 & above 
+                    
+2  
+               
+526            526     353,413,319  
+   
+20,836,513,604  
+     
+16,604,516,953  
+    
+4,231,996,651  
+            
+222,627,220  
+Group total 
+                  
+58  
+            
+1,580        1,525     761,578,737  
+   
+22,147,710,228  
+     
+17,260,846,187  
+    
+4,886,864,042  
+            
+381,615,803  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+2019 
+Year 
+No of 
+establish-
+ments 
+Persons 
+engaged 
+Employ-
+ees 
+Salary & 
+Wages 
+Out put (Rs.) 
+Intermediate 
+consumptions 
+(Rs.) 
+Value added 
+(Rs.) 
+Gross addition 
+to fixed assets 
+(Rs.) 
+less than 10 
+                  
+16  
+                  
+96  
+             
+66  
+       
+18,511,048  
+           
+90,891,048  
+              
+71,432,987  
+          
+19,458,061  
+                
+3,129,731  
+10 to 99 
+                  
+27  
+               
+818           790  
+    
+312,173,417  
+     
+1,113,404,559  
+           
+745,592,560  
+        
+367,811,999  
+            
+156,603,480  
+100 & above 
+                    
+2  
+               
+526           526  
+    
+353,413,319  
+   
+19,353,131,926  
+     
+15,412,208,233  
+    
+3,940,923,693  
+            
+222,627,220  
+Group total 
+                  
+45  
+            
+1,440  
+       
+1,382  
+    
+684,097,784  
+   
+20,557,427,533  
+     
+16,229,233,780  
+    
+4,328,193,753  
+            
+382,360,431  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+Table 6: Principal Indicators of Industrial Activity Classified by Industry Division & Persons Engaged 
+Size of Automobile  Industry (2018)                                                                                                                
+(Establishments with 25 or more persons engaged) 
+Table 7: Principal Indicators of Industrial Activity Classified by Industry Division & Persons Engaged 
+Size of Automobile  Industry (2019)                                                                                                                
+(Establishments with 25 or more persons engaged) 
+Year 
+Per head   
+Labour cost 
+Per head  Labour 
+Productivity 
+Labour 
+Cost to 
+productivi-
+ty ratio 
+2015 
+529,175 
+2,260,395 
+4.27 
+2016 
+438,114 
+4,146,283 
+9.46 
+2017 
+515,105 
+4,023,760 
+7.81 
+2018 
+495,006 
+3,131,833 
+6.33 
+2019 
+495,006 
+3,131,833 
+6.33 
+Source : Department of Census and Statistics , Annual 
+Survey of Industries 
+Table 8: Manufacturing of Automobile  Industry  Per 
+Head Labour Productivity 
+Figure 2: Manufacturing of Automobile  Industry  Per 
+Head Labour Productivity 
+0
+500,000
+1,000,000
+1,500,000
+2,000,000
+2,500,000
+3,000,000
+3,500,000
+4,000,000
+4,500,000
+2015
+2016
+2017
+2018
+2019
+Value Rs.
+Per head Labour cost
+Per head  Labour Productivity
+Source : Department of Census and Statistics Sri Lanka 
+
+--- page 11 ---
+5 
+ 
+Table 10: Value of Intermediate Consumptions & Intermediate Consumptions Compo-
+nents Classified by Automobile  Industry - (Establishments with 25 or more engaged) 
+Year 
+Intermediate 
+consumption  
+(Rs.) 
+Raw materials 
+consumed         
+(Rs.) 
+Cost of industrial 
+services done by 
+others & other 
+payments          
+(Rs.) 
+Electricity & fuel con-
+sumed                      
+(Rs.) 
+2015 
+  18,516,730,111         18,122,100,540  
+          353,360,243  
+                   41,269,328  
+2016 
+  16,429,850,419         16,067,641,640  
+          326,576,030  
+                   35,632,749  
+2017 
+  17,798,211,688         17,273,497,665  
+          485,075,897  
+                   39,638,125  
+2018 
+  16,940,947,333         16,382,078,970  
+          518,428,235  
+                   40,440,128  
+2019 
+  15,850,942,168         15,287,495,340  
+          519,442,830  
+                   44,003,999  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+Table 11: Employment by Nature of Employment & Gender Classified by Industry Divisions of Auto mobile 
+Industry                                                                                                                                                                                       
+- (Establishment with 25 or more persons engaged) 
+Year 
+Working Proprie-
+tors (No) 
+Unpaid family work-
+ers (No) 
+Operatives (No) 
+Other employees 
+(No) 
+Total persons    
+engaged 
+Male 
+Fe-
+male 
+Male 
+Female 
+Male 
+Female 
+Male 
+Female 
+Male 
+Female 
+2015 
+            8  
+                  
+2  
+                -                     -    
+              
+707  
+           353  
+              
+212  
+                  42              928  
+             
+396  
+2016 
+            4  
+                  
+1  
+                -                     -    
+              
+449  
+              
+95  
+              
+192  
+                  79              645  
+             
+175  
+2017 
+            6  
+                  
+2  
+                -                     -    
+              
+584  
+              
+71  
+              
+211  
+                  75              800  
+             
+148  
+2018 
+            9  
+                  
+6  
+                -                     -    
+              
+584  
+           171  
+              
+278  
+                  62              871  
+             
+240  
+2019 
+            9  
+                  
+6  
+                -                     -    
+              
+596  
+           171  
+              
+278  
+                  63              884  
+             
+241  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+Table 9: Value of Output & Out put Components Classified by Automobile Industry                                                                  
+Establishments 25 or more engaged 
+Year 
+Output (Rs.) 
+Shipped (Rs)/ 
+products moved 
+of the establish-
+ment (Rs.) 
+Change in 
+Stocks (Rs.) 
+Industrial ser-
+vices & other 
+revenue (Rs.) 
+2015 
+  
+22,107,169,284  
+       
+11,371,256,125  
+       
+(256,964,698) 
+          
+10,992,877,857  
+2016 
+  
+20,551,066,574  
+       
+10,768,735,567  
+       
+(256,964,698) 
+          
+10,039,295,705  
+2017 
+  
+22,398,088,210  
+       
+12,574,275,428  
+       
+(256,561,861) 
+          
+10,080,374,643  
+2018 
+  
+21,438,458,118  
+       
+11,361,445,774  
+       
+(256,561,861) 
+          
+10,333,574,205  
+2019 
+  
+20,017,881,391  
+       
+12,529,509,473  
+       
+(256,561,861) 
+             
+7,744,933,779  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+
+--- page 12 ---
+6 
+ 
+Table 12: Economic Indicators of Industrial Activity Classified by  Automobile 
+Industry Class - (Establishments with 25 or more persons engaged) 
+Table 12.1: Manufacture of Motor Vehicles 
+Year 
+Output per persons 
+engaged (Rs.) 
+Output per 
+intermediate 
+consump-
+tions 
+Output per 
+assets 
+Value added per 
+persons engaged 
+(Rs.) 
+Value added 
+per interme-
+diate con-
+sumptions  
+Value add-
+ed per as-
+sets 
+2015 
+             52,621,201  
+          1.176  
+       18.390  
+             7,871,560  
+          0.176  
+        2.751  
+2016 
+             51,308,865  
+          1.250  
+       17.932  
+           10,261,773  
+          0.250  
+        3.586  
+2017 
+             51,308,865  
+          1.250  
+       17.932  
+             2,861,374  
+          0.250  
+        3.586  
+2018 
+             51,308,865  
+          1.250  
+       17.932  
+           10,261,773  
+          0.250  
+        3.586  
+2019 
+             47,077,566  
+          1.254  
+       16.453  
+             9,543,575  
+          0.254  
+        3.335  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+Table 12.2: Manufacture of Bodies for Motor Vehicles; Manufacture of Trailers & Semi Trailers 
+Year 
+Output per persons 
+engaged (Rs.) 
+Output per 
+intermediate 
+consump-
+tions 
+Output per 
+assets 
+Value added per 
+persons engaged 
+(Rs.) 
+Value added 
+per interme-
+diate con-
+sumptions  
+Value add-
+ed per as-
+sets 
+2015 
+                              -    
+                 -    
+                -    
+                            -    
+                 -    
+               -    
+2016 
+                   512,695  
+          1.710  
+         0.671  
+                 212,912  
+          0.710  
+        0.279  
+2017 
+               5,287,403  
+          1.369  
+         7.766  
+                 680,829  
+          0.369  
+        2.095  
+2018 
+               5,004,709  
+          1.363  
+         3.921  
+             1,333,003  
+          0.363  
+        1.044  
+2019 
+               5,378,346  
+          1.298  
+         3.722  
+             1,234,626  
+          0.298  
+        0.854  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+Table 12..3: Manufacture of Parts and Accessories for Motor Vehicles 
+Year 
+Output per persons 
+engaged (Rs.) 
+Output per 
+intermediate 
+consump-
+tions 
+Output per 
+assets 
+Value added per 
+persons engaged 
+(Rs.) 
+Value added 
+per interme-
+diate con-
+sumptions  
+Value add-
+ed per as-
+sets 
+2015 
+               2,183,474  
+          1.403  
+         1.678  
+                 627,280  
+          0.403  
+        0.482  
+2016 
+               5,005,850  
+          1.218  
+         1.864  
+                 895,063  
+          0.218  
+        0.333  
+2017 
+               4,531,428  
+          1.220  
+         1.841  
+             2,461,768  
+          0.220  
+        0.332  
+2018 
+                   931,598  
+          1.907  
+         0.339  
+                 443,126  
+          0.907  
+        0.161  
+2019 
+                   955,532  
+          1.557  
+         0.363  
+                 341,794  
+          0.557  
+        0.130  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+Table 13: Economic Indicators of Industrial Activity Classified by Automobile Industry 
+Class (Establishments with less than 25 persons engaged) 
+Year 
+Output per persons 
+engaged (Rs.) 
+Output per 
+intermediate 
+consump-
+tions 
+Output per 
+assets 
+Value added per 
+persons engaged 
+(Rs.) 
+Value added 
+per interme-
+diate con-
+sumptions  
+Value add-
+ed per as-
+sets 
+2015 
+          563,966  
+     2.044  
+    0.787  
+         288,025  
+     1.044  
+   0.402  
+2016 
+          703,834  
+     1.927  
+    1.843  
+         338,562  
+     0.927  
+   0.887  
+2017 
+          893,539  
+     2.132  
+    1.158  
+         474,459  
+     1.132  
+   0.615  
+2018 
+       1,512,265  
+     2.217  
+    1.336  
+         830,178  
+     1.217  
+   0.734  
+2019 
+       1,706,830  
+     1.426  
+    1.431  
+         510,122  
+     0.426  
+   0.428  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+
+--- page 13 ---
+7 
+ 
+Table 15: Number of Automobile Manufacturing Industries and Engaged Persons in Sri Lanka  
+(2013/14 Economic Census) 
+Industry 
+Micro 
+Small 
+Medium 
+Large 
+No. of Es-
+tab. 
+No. of PE 
+No. of 
+Estab. 
+No. of PE 
+No. of 
+Estab. 
+No. of PE No. of Es-
+tab. 
+No. of PE 
+Manufacture & assembling 
+of motor  vehicles 
+                                
+5  
+                14                   5                             80                     8             679                     1  
+                
+200  
+Manufacture of bodies and 
+trailers for motor vehicles; 
+                           
+175  
+              
+370  
+               32                           247                     6             488  
+ -  
+ -  
+Manufacture of  parts and 
+accessories for motor vehi-
+cles 
+                           
+169  
+              
+297  
+               19                           229                  10             553                     1  
+                
+575  
+Manufacture of car seats 
+                             
+51  
+                85                   3                             23  
+ -  
+ -  
+                 -                       -    
+Total 
+                           
+400  
+              
+766  
+               59                           579                  24          1,720                     2  
+                
+775  
+Source: Department of Census and Statistics 
+Table 16: Automobile Imports (2019-2021) 
+Description 
+Unit 
+2019 
+2020 
+2021 
+Quantity Value (Rs. Mn) Quantity 
+Value (Rs. Mn) 
+Quantity 
+Value (Rs. Mn) 
+Vehicles other than rail-
+way or tramway rolling-
+stock, and parts and 
+accessories thereof 
+(‘000) No 
+                   
+1,677 
+          217,465 
+             
+14,747 
+       102,311 
+                    
+947 
+           49,893 
+Vehicles other than rail-
+way or tramway rolling-
+stock, and parts and 
+accessories thereof 
+MT 
+                
+38,786 
+             19,791 
+             
+18,661 
+           9,525 
+              
+48,862 
+           33,853 
+Total 
+(‘000)  No 
+                   
+1,677 
+          217,465 
+             
+14,747 
+       102,311 
+                    
+947 
+           49,893 
+Total 
+MT 
+                
+38,786 
+             19,791 
+             
+18,661 
+           9,525 
+              
+48,862 
+           33,853 
+Source: Sri Lanka Customs 
+Table 14: Categories of Employees by Nature of Employment Classified by Auto Mobile Industry                                            
+( Establishments with 25 or more persons engaged ) 
+Year 
+Employees (No) 
+Skilled (No) 
+Unskilled (No) 
+2015 
+                       1,313  
+              915  
+             145  
+2016 
+                           815  
+              381  
+             163  
+2017 
+                           940  
+              505  
+             150  
+2018 
+                       1,096  
+              566  
+             190  
+2019 
+                       1,109  
+              574  
+             194  
+Source : Department of Census and Statistics , Annual Survey of Industries 
+
+--- page 14 ---
+8 
+ 
+Table 17: Automobile Exports (2019-2021) 
+Description 
+Unit 
+2019 
+2020 
+2021 
+Quantity Value (Rs. Mn) Quantity Value (Rs. Mn) 
+Quantity 
+Value (Rs. Mn) 
+Vehicles other than rail-
+way or tramway rolling-
+stock, and parts and 
+accessories thereof 
+(‘000) No 
+                      
+611 
+             10,563 
+                   
+493 
+           9,210                     896 
+           16,241 
+Vehicles other than rail-
+way or tramway rolling-
+stock, and parts and 
+accessories thereof 
+MT 
+                   
+3,355 
+               1,707 
+               
+3,303 
+           1,590                 3,607 
+             1,917 
+Total 
+(‘000) No 
+                      
+611 
+             10,563 
+                   
+493 
+           9,210                     896 
+           16,241 
+Total 
+MT 
+                   
+3,355 
+               1,707 
+               
+3,303 
+           1,590                 3,607 
+             1,917 
+Source: Sri Lanka Customs 
+735 
+648 
+674 
+460 
+519 
+ -
+ 100
+ 200
+ 300
+ 400
+ 500
+ 600
+ 700
+ 800
+ -
+ 5,000
+ 10,000
+ 15,000
+ 20,000
+ 25,000
+India
+China
+Taiwan
+Japan
+Turkey
+CIF Value (Rs/Kg)
+Qty  (mt) , Value (Mn.Rs)
+Qty
+Value
+CIF
+Source : Sri Lanka Customs 
+Source :Sri Lanka Customs 
+240,443 
+406,247 
+1,820,792 
+569,362 
+303,592 
+ -
+ 200,000
+ 400,000
+ 600,000
+ 800,000
+ 1,000,000
+ 1,200,000
+ 1,400,000
+ 1,600,000
+ 1,800,000
+ 2,000,000
+ -
+ 10,000
+ 20,000
+ 30,000
+ 40,000
+ 50,000
+ 60,000
+ 70,000
+ 80,000
+India
+Japan
+Indonesia
+U.S.A.
+Vietnam
+CIF Value (Rs/No)
+Qty  (No) , Value (Mn.Rs)
+Qty
+Value
+CIF
+Figure 3: Major Imports Countries of Vehicles other 
+than railway or tramway rolling-stock, and parts and 
+accessories thereof - 2021  
+Figure 4: Major Imports Countries of Vehicles other 
+than railway or tramway rolling-stock, and parts and 
+accessories thereof - 2021  
+15,128 
+18,515 
+14,210 
+11,960 
+ -
+ 2,000
+ 4,000
+ 6,000
+ 8,000
+ 10,000
+ 12,000
+ 14,000
+ 16,000
+ 18,000
+ 20,000
+ -
+ 1,000
+ 2,000
+ 3,000
+ 4,000
+ 5,000
+ 6,000
+India
+U.K.
+Germeny
+Netherlands
+FOB Value (Rs/No)
+Qty  (000' No) , Value (Mn.Rs)
+Qty
+Value
+FOB
+Source : Sri Lanka Customs 
+Figure 5: Major Exports Countries of Vehicles other than 
+railway or tramway rolling-stock, and parts and accesso-
+ries thereof - 2021  
+Figure 6: Major Exports Countries of Vehicles other than 
+railway or tramway rolling-stock, and parts and accesso-
+ries thereof - 2021  
+15,128 
+18,515 
+14,210 
+11,960 
+ -
+ 2,000
+ 4,000
+ 6,000
+ 8,000
+ 10,000
+ 12,000
+ 14,000
+ 16,000
+ 18,000
+ 20,000
+ -
+ 1,000
+ 2,000
+ 3,000
+ 4,000
+ 5,000
+ 6,000
+India
+U.K.
+Germeny
+Netherlands
+FOB Value (Rs/No)
+Qty  (000' No) , Value (Mn.Rs)
+Qty
+Value
+FOB
+Source : Sri Lanka Customs 
+
+--- page 15 ---
+9 
+ 
+References 
+ 
+Annual Survey of Industries 2016, Department of Census and Statistics 
+Annual Survey of Industries 2017, Department of Census and Statistics 
+Annual Survey of Industries 2018, Department of Census and Statistics 
+Annual Survey of Industries 2019, Department of Census and Statistics  
+APO(2020) APO Productivity Data book 2020 
+ https://www.apo-tokyo.org/wp-content/uploads/2020/11/APO-Productivity-Databook-2020.pdf:  
+Central Bank Annual Report 2018; https://www.cbsl.gov.lk/ 
+Central Bank Annual Report 2019; https://www.cbsl.gov.lk/ 
+ Central Bank Annual Report 2020; https://www.cbsl.gov.lk/ 
+Central Bank Annual Report 2021; https://www.cbsl.gov.lk/ 
+External Trade Statistics, 2018,Sri Lanka Customs  
+External Trade Statistics, 2019,Sri Lanka Customs 
+External Trade Statistics, 2020,Sri Lanka Customs 
+External Trade Statistics, 2021,Sri Lanka Customs 
+National Accounts of Sri Lanka 2019, Department of Census and Statistics 
+Sri Lanka Export Development Board website;https://www.srilankabusiness.com/ 
+UNIDO Statistics, Industrial Production Index Methodology 
+;file:///F:/Industry%20Books/Industrial%20Production%20Index%20Methodology.pdf 
+UNIDO Statistics, World Manufacturing Production;  
+file:///F:/Industry%20Books/World_Manufacturing_Production_2021_Q3.pdf 
+ 

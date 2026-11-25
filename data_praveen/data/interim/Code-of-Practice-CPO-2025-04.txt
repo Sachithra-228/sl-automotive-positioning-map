@@ -1,0 +1,1296 @@
+--- page 1 ---
+
+--- page 2 ---
+Code of Practice for EV Charge Point Operators 
+1 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+Contents 
+Definitions ......................................................................................................... 2 
+Preamble ........................................................................................................... 6 
+1. 
+Legal and Regulatory Compliance ............................................................ 7 
+2. 
+Code for EVCS Equipment and Installation ............................................... 8 
+3. 
+Code for EVCS operation ........................................................................ 11 
+4. 
+Code for Customer Handling and Payment Handling ............................. 15 
+5. 
+Code for Metering and Billing ................................................................ 17 
+6. 
+Code for Inspection and Maintenance of EVCS ...................................... 19 
+7. 
+Code for Safety, Health, and Environment. ............................................ 20 
+8. 
+Code for Data, Data Dissemination and Reporting ................................. 22 
+9. 
+General code for E-bikes and E-tuk tuks ................................................. 23 
+10. 
+General code for Heavy EVs ................................................................... 25 
+11. 
+Customer Obligations ............................................................................. 27 
+12. 
+References ............................................................................................. 28 
+ 
+ 
+ 
+Version 1: Issued on : April 2025  
+ 
+
+--- page 3 ---
+Code of Practice for EV Charge Point Operators 
+2 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+ 
+Definitions 
+ 
+Abbreviation 
+Term 
+Definition 
+API 
+Application 
+Programming 
+Interface 
+A set of protocols and tools that allow different software 
+applications to communicate and interact with each other. 
+AP 
+Authorized Person A person appointed by an Exempted Person to act as the point of 
+contact in relation to the Exempted Person’s Distribution System. 
+ 
+Breakdown 
+An occurrence relating to equipment of the supply system which 
+prevents its normal functioning. 
+BS 
+British Standards 
+Specifications and guidelines developed by the British Standards 
+Institution (BSI) to ensure quality, safety, and consistency in 
+products, services, and systems in the United Kingdom and 
+internationally. 
+CCPMS 
+Central Charge 
+Point Management 
+System 
+A software platform that monitors, controls, and manages multiple 
+EV charging stations, enabling efficient operations, data analysis, 
+and user services. 
+CEA 
+Central 
+Environmental 
+Authority 
+A government body responsible for the protection and management 
+of the country's environment. 
+ 
+Certificate of 
+Exemption 
+Certificate issued by the PUCSL under and in terms of Section 10 (2) 
+of the Sri Lanka Electricity Act No. 20 of 2009 (as amended). 
+exempting a person or a category of persons from the requirement 
+of obtaining a license to distribute and/or supply electricity subject 
+to the terms and conditions specified therein. 
+CHARdeMO CHArge de MOve 
+A standard for charging electric vehicles. 
+CPO 
+Charge Point 
+Operator 
+A legal entity that constructs, owns, and operates electric vehicle 
+charging stations, obtains the necessary power supply from a 
+distribution licensee, and resells electricity to all types of electric 
+vehicle owners at reasonable prices, operating under a distribution 
+and supply exemption. 
+CCTV 
+Closed Circuit 
+Television 
+A system of video cameras used to transmit signals to a specific set 
+of monitors for surveillance and security purposes. 
+
+--- page 4 ---
+Code of Practice for EV Charge Point Operators 
+3 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+COP 
+Code of Practice 
+A set of guidelines and standards that outline best practices, safety 
+measures, technical requirements, and operational procedures to 
+ensure the efficient, safe, and user-friendly installatioin, operation 
+and management of electric vehicle charging infrastructure. 
+CCS 
+Combined Charging 
+System 
+A standard for charging electric vehicles. 
+ 
+Commission 
+Public Utilities Commission of Sri Lanka incorporated under the 
+PUCSL Act No 35 of 2002. 
+ 
+Consider 
+A duty to think about or deliberate on a matter which does not 
+necessarily obligate the CPO to act in a specific way however, the 
+weight and importance of the matter being considered depends on 
+the context in which it is used and any accompanying obligations 
+specified in the COP. 
+ 
+Consumer 
+A unit holder within the Premises who consumes electricity and is 
+connected to the Exempted Person’s Distribution System. 
+CP 
+Contact Point 
+A designated phone number, email, or customer service channel 
+that allows users to get in touch for assistance, inquiries, or support 
+related to the charging station. 
+MUSSD 
+Department of 
+Measurement 
+Units, Standards & 
+Services 
+A government body responsible for ensuring the accuracy and 
+consistency of measurement systems, developing national 
+standards, and providing related services to support trade, industry, 
+and consumer protection. 
+DL 
+Distribution 
+Licensee 
+A company licensed to carry out the distribution of electricity in 
+terms of the Sri Lanka Electricity Act No. 20 of 2009 (as amended). 
+EV 
+Electric Vehicle 
+A vehicle powered entirely or partially by electricity, typically using 
+energy stored in batteries or fuel cells, and driven by electric motors 
+instead of internal combustion engines. 
+E-bike 
+Electric Bike 
+A bicycle equipped with an electric motor that assists propulsion, 
+either by providing pedal assistance or full electric drive. 
+E-tuk tuk 
+Electric Tuk Tuk 
+A three-wheeled electric vehicle designed for passenger or cargo 
+transport, powered by an electric motor instead of an internal 
+combustion engine. 
+EVCS 
+Electric Vehicle 
+Charging Station 
+A facility equipped with the necessary infrastructure to supply 
+electrical energy for recharging the batteries of electric vehicles. 
+ 
+Exempted Person 
+A person or category of persons exempted by the PUCSL from the 
+requirement of obtaining a license to distribute and/or supply 
+electricity under and in terms of Section 10 (1) of the Sri Lanka 
+Electricity Act No. 20 of 2009 (as amended). 
+
+--- page 5 ---
+Code of Practice for EV Charge Point Operators 
+4 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+GPS 
+Global Positioning 
+System 
+A satellite-based navigation system that provides location and time 
+information anywhere on Earth, allowing devices to determine their 
+precise position. 
+Heavy EV 
+Heavy Electric 
+Vehicle 
+An electrically powered vehicle that falls within the heavy-duty 
+vehicle category, typically including buses, trucks, and other large 
+commercial or industrial vehicles. 
+IRS 
+Incident Reporting 
+System 
+A platform developed by PUCSL to allow public to submit and track 
+any incidents, accidents, or unsafe conditions in an organization or 
+environment  
+IP 
+Ingress Protection 
+A standard rating system that classifies the level of protection 
+provided by an enclosure against the intrusion of solid objects, dust, 
+and water. 
+IET 
+Institution of 
+Engineering and 
+Technology 
+A professional organization based in the United Kingdom that 
+promotes engineering and technology innovation, provides industry 
+standards, and supports education, professional development, and 
+research globally. 
+IEC 
+International 
+Electrotechnical 
+Commission 
+A global organization that develops and publishes standards for 
+electrical, electronic, and related technologies to ensure 
+compatibility, safety, and performance across industries. 
+kWh 
+kilowatt hour 
+A unit of energy that measures the amount of electricity used or 
+produced over one hour at a rate of one kilowatt. 
+LISS 
+Licensee 
+Information 
+Submission System 
+A web flatform developed by the PUCSL in order to facilitate the 
+submission of the licensee’s data as required by the Commission.  
+LKR 
+Sri Lankan Rupees The official currency of Sri Lanka and is denoted by the symbol "රු" 
+or "Rs." 
+LOTO 
+Lockout-tagout 
+A safety procedure used in workplaces to ensure that machines or 
+equipment are properly shut off and not started up again while 
+maintenance or repair work is being done, preventing accidental 
+injuries. 
+ 
+Tariff Methodology A method that specifies the procedure of determining the tariff.  
+NFC 
+Near Field 
+Communication 
+A wireless technology that enables short-range communication 
+between devices, typically within a few centimeters, for data 
+exchange or contactless transactions. 
+OTP 
+One Time Password A security feature that generates a unique, temporary code for a 
+single use during authentication to enhance online security. 
+PPE 
+Personal Protective 
+Equipment 
+Protective clothing, helmets, gloves, face shields, goggles, or other 
+safety gear designed to protect individuals from health and safety 
+risks at work or in specific environments. 
+
+--- page 6 ---
+Code of Practice for EV Charge Point Operators 
+5 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+ 
+Planned 
+Interruption 
+Disruption to the supply of electricity to the Exempted Person’s 
+Distribution System/ to the Consumer’s unit to carry out routine 
+operational and maintenance work. 
+PUCSL 
+Public Utilities 
+Commission of Sri 
+Lanka 
+Public Utilities Commission of Sri Lanka incorporated under the 
+PUCSL Act No 35 of 2002. 
+QR Code 
+Quick Response 
+Code 
+A two-dimensional barcode that can store information and is easily 
+scanned using a smartphone or device to access data or perform 
+actions quickly. 
+RFID 
+Radio Frequency 
+Identification 
+A wireless technology that uses electromagnetic fields to identify 
+and track tags attached to objects or devices for data exchange and 
+authentication. 
+ 
+Recommendation 
+A non-binding suggestion or advice provided by the Commission 
+which is not mandatory or enforceable by law, but it carries 
+persuasive authority or weight depending on the context. 
+SLS 
+Sri Lanka Standards 
+Official specifications and guidelines established by the Sri Lanka 
+Standards Institution (SLSI) to ensure quality, safety, and consistency 
+in products, services, and processes within the country. 
+ 
+To the extent 
+possible 
+Used to introduce a qualification or limitation on an obligation, 
+indicating that the action should be carried out as far as it is feasible 
+or practicable under the circumstances. 
+Unplanned 
+Interruption 
+Disruption to any part of the Exempted Person’s Distribution System 
+automatically or manually with no notice to affected parties, as a 
+result of an electrical system abnormality or any other condition 
+which poses a potential threat/damage to the Exempted Person’s 
+Distribution System and/or property and/or human life. 
+UI 
+User Interface 
+The visual elements and design through which a user interacts with 
+a computer, software, or device, including buttons, icons, and 
+menus. 
+V2G 
+Vehicle to Grid 
+A technology that enables electric vehicles to transfer stored energy 
+back to the power grid, allowing bidirectional energy flow for grid 
+stabilization and energy management. 
+ 
+Where possible 
+Used to introduce a condition or qualifier that allows flexibility in 
+fulfilling an obligation or taking an action implying that the 
+requirement or recommendation should be followed only if it is 
+feasible, practical, or achievable under the given circumstances. 
+Wi-Fi 
+Wireless Fidelity 
+A wireless networking technology that allows devices to connect to 
+the internet and communicate with each other using radio waves, 
+typically within a local area. 
+  
+ 
+
+--- page 7 ---
+Code of Practice for EV Charge Point Operators 
+6 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+Preamble  
+ 
+This is the approved Code of Practice (COP) by the Commission in line with the empowerment 
+given by the cabinet decision of 17/0613/706/041 in the year 2017 to regulate Electric Vehicle 
+(EV) charging stations.  
+ 
+Further to the above, this COP is issued in accordance with Condition 5 of the Certificate of 
+Distribution and Supply or Supply Exemption granted under section 10(1) of the Sri Lanka 
+Electricity Act 2009 (as amended).  
+ 
+The COP also contains information on how a Charge Point Operator (CPO) shall prepare the 
+processes and procedures for operating an Electric Vehicle Charging Station (EVCS). In 
+supplying or offering terms for supply to an EV, the CPO shall not show undue preference, 
+discriminate, or impose terms that will be unduly onerous. The COP is based on the prevailing 
+regulations, rules, methodologies, guidelines, and other codes made.   
+ 
+ 
+ 
+
+--- page 8 ---
+Code of Practice for EV Charge Point Operators 
+7 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+1. Legal and Regulatory Compliance 
+ 
+Under section 10 (1) of the Electricity Act 2009 (as amended) and the Electricity (Applications 
+for Licenses and Exemptions) Regulation, 2009, to sell electricity to Electric Propelled vehicles, 
+the CPOs shall require obtaining Distribution and Supply or Supply exemption from the Public 
+Utilities Commission of Sri Lanka (PUCSL). The CPO must comply with all regulations, codes, 
+and guidelines issued by the Commission, including this COP, “Code on EV charging stations 
+installation, maintenance and operation”, Grid code, Distribution code, Electricity (Safety, 
+Quality, and Continuity) Regulations No. of 2016, and all applicable IEC standards.  
+ 
+The PUCSL has the authority to revoke their Distribution and Supply or Supply exemption if 
+the CPO is found to be in violation of the COP. 
+ 
+The CPO is required to adhere to IEC standards; however, at this stage, national standards 
+based on IEC are also accepted. Nevertheless, the CPO must achieve full compliance with IEC 
+standards within three (3) years from the publication of this document. 
+ 
+Note: Information on the application process for obtaining an exemption certificate from 
+the Commission can be accessed through the Commission's website or by directly contacting 
+the Licensing Division. 
+ 
+
+--- page 9 ---
+Code of Practice for EV Charge Point Operators 
+8 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+2. Code for EVCS Equipment and Installation 
+ 
+2.1. 
+All electric vehicle charging stations must comply with the relevant standards for 
+equipment, installation, workmanship, and metering, as outlined in the “Code on EV 
+charging stations installation, maintenance and operation” published by the PUCSL. In 
+case of any discrepancies or missing information in these codes, the applicable Sri 
+Lanka Standards (SLS) or International Electrotechnical Commission (IEC) standards 
+shall be followed. 
+ 
+2.2. 
+Standards and Regulations to be followed by CPOs.  
+2.2.1. All installations shall comply with BS 7671 or IEC 60364.  
+2.2.2. In case of an EVCS with battery swapping capability, the installation shall 
+comply with IEC 62840 in addition to BS 7671 or IEC 60364. 
+2.2.3. All installations shall require following the recommendations of the IET Code of 
+Practice for Electric Vehicle Charging Equipment Installation, 5th ed. London, 
+U.K.: Institution of Engineering and Technology, 2023. ISBN: 978-1839538575 
+(as amended). 
+2.2.4. All EVCS installation shall be adhered to the Electricity (Safety, Quality and 
+Continuity) Regulations No. of 2016 (as amended) and all other applicable 
+standards and local regulations. 
+ 
+2.3. 
+Location of EV charging stations and Layout of charging stations. 
+The location and layout of charging sites are crucial considerations for encouraging 
+usage and enhancing the visibility of EV charging stations. The key factors to consider 
+in this area are as follows. 
+2.3.1. 
+The site shall be located in proximity to existing electrical infrastructure. 
+2.3.2. 
+Consider whether the site can accommodate various vehicle sizes, including 
+larger EVs, buses, or trucks if relevant for the area. 
+2.3.3. 
+Clear signage shall be installed to guide drivers to the EV charging stations, 
+especially in larger parking lots or complexes. 
+
+--- page 10 ---
+Code of Practice for EV Charge Point Operators 
+9 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+2.3.4. 
+The site shall be assessed for environmental impact, particularly if located in 
+natural areas. Design elements can be included to integrate the station 
+aesthetically with its surroundings. 
+2.3.5. 
+The site shall not be located in a flood-prone area. 
+2.3.6. 
+The site shall be easily accessible from main or secondary roads. 
+2.3.7. 
+Ensure reliable internet connectivity for the charging units to facilitate 
+payment processing, remote monitoring, and data collection. 
+2.3.8. 
+ The charging station area shall be adequately illuminated to ensure that 
+users and operators can clearly view the signage and operate the charger 
+safely.  
+2.3.9. 
+Access to charging equipment shall be available at all times. 
+2.3.10. The site should be accessible to emergency vehicles and clearly marked with 
+emergency contact information. 
+2.3.11. The site shall provide a minimum of two dedicated charging bays. This could 
+be a combination of two charging bays facilitating different types of vehicles 
+(i.e. one charging bay for a four-wheeled vehicle and one charging bay for a 
+two-wheeled vehicle). 
+2.3.12. The charging unit shall be positioned centrally between two bays. 
+2.3.13. Where possible, bays shall be widened to allow easy access to vehicle 
+charging sockets. 
+2.3.14. Bays shall be designed, where possible, to meet national standards for 
+disability access. For charge points on sidewalks or raised platforms, dropped 
+curbs shall be included to allow wheelchair access. 
+2.3.15. Crash-resistant bollards shall be installed in front of ground-mounted charge 
+points. If there is vehicular traffic behind the charge point, bollards shall also 
+be placed there. Charge points shall be positioned so that cables do not cross 
+over footpaths or create trip hazards. 
+2.3.16. Where possible, dedicated charging points and bays shall be provided for e-
+bikes and e-three-wheelers. 
+2.3.17. In exposed locations, consider installing a canopy over the charge point. 
+2.3.18. For all types of installations, it is recommended that charging equipment 
+meets the minimum Ingress Protection (IP) rating as specified in section 2.4. 
+
+--- page 11 ---
+Code of Practice for EV Charge Point Operators 
+10 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+2.3.19. If necessary, ensure the location allows for potential expansion to 
+accommodate additional charging units or bays as EV demand grows. 
+ 
+2.4. 
+It is recommended to install Vehicle to Grid (V2G)-enabled EV chargers. 
+ 
+2.5. 
+It is recommended to integrate renewable energy options like solar canopies to power 
+the station, making the site more sustainable. 
+ 
+2.6. 
+Type Test Certificate: 
+EVCS shall undergo type testing for compliance with the relevant IEC standards. For 
+EVCS units designed for outdoor use, a test certificate confirming the ingress 
+protection rating in accordance with IEC 60529 shall be provided. An IP rating of IP54 
+or higher is recommended for indoor/outdoor installations. For EVCS units installed in 
+indoor areas, the socket outlet and associated electrical equipment must be protected 
+against dust and water ingress to at least an IP54 rating. If the EV charging facility is 
+located outdoors, an ingress protection rating of IP65 or higher is required to protect 
+both plugged and unplugged conditions. The use of a weatherproof enclosure for 
+housing socket outlets and associated electrical equipment is acceptable and 
+recommended for enhanced durability in exposed environments. 
+ 
+
+--- page 12 ---
+Code of Practice for EV Charge Point Operators 
+11 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+3. Code for EVCS operation 
+ 
+3.1. 
+The CPO is responsible for ensuring that the operation of the EVCS complies with the 
+distribution code of each Distribution Licensee (DL). The EVCS operation must not 
+contribute to poor power quality conditions, such as harmonics, flicker, or 
+undervoltage, in the electricity supply provided by the Distributor. 
+ 
+3.2. 
+Operating instructions for the charging facility, including essential information such as 
+rated voltage (V), frequency (Hz), current (A), and number of phases, shall be clearly 
+displayed in a prominent location at each parking space with an EV charging facility. 
+ 
+3.3. 
+All EVCS shall be operated through a Central Charge Point Management System 
+(CCPMS) that meets the following criteria. 
+3.3.1. Compliance with the latest interoperability standards. 
+3.3.2. Offer two (or more) authentication methods (e.g., RFID, mobile app, OTP, QR 
+code, Barcode, NFC, Biometric) to activate the charging points to start a 
+charging session. 
+3.3.3. When an EVCS is located in a remote area with weak mobile network coverage, 
+the CPO shall provide a local wireless network to enable consumers to use the 
+mobile app to activate a charging session. 
+3.3.4. Authentication method to identify the customer and activate the charging 
+points to start a charging session. 
+3.3.5. Allow users to receive alerts (e.g., session completion, fault detection) via 
+mobile app or SMS. 
+3.3.6. Collection of data on key parameters for each charging session, including fault 
+monitoring and automated maintenance alerts. 
+3.3.7. Generation of periodic reports on all charging transactions, as required by the 
+regulator and utility service provider. 
+3.3.8. Provision of real-time availability data to consumers and stakeholders. 
+3.3.9. Ensure compliance with the Personal Data Protection Act, No. 9 of 2022 (as 
+amended) and implement secure protocols for storing and transmitting user 
+data, including payment and usage data. 
+
+--- page 13 ---
+Code of Practice for EV Charge Point Operators 
+12 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+3.3.10. Enable remote diagnostics, troubleshooting, and software updates to reduce 
+downtime and ensure efficient maintenance. 
+3.3.11. Consider implementing dynamic load management features to distribute 
+power efficiently across multiple charge points, particularly during peak 
+demand, to prevent grid overload. 
+3.3.12. Where applicable, allow for integration with on-site renewable energy sources 
+to reduce grid reliance and enhance sustainability. 
+3.3.13. Include a readily accessible emergency stop feature and clear safety 
+instructions to ensure user safety during any emergency. 
+3.3.14. Provide users with access to their charging history through the app or portal, 
+enabling them to track their energy usage and expenses. 
+3.3.15. Offer an Application Programming Interface (API) for third-party applications, 
+such as navigation or fleet management software, to access real-time data, 
+enhancing the system's flexibility and usability. 
+ 
+3.4. 
+When multiple outlets are provided, it is recommended that the charging equipment 
+be rated to allow all outlets to operate at full capacity simultaneously. 
+ 
+3.5. 
+The CPO shall provide usage instructions for the EV charger, including an explanation 
+of indicator statuses and their meanings. It is recommended to include a video guide 
+accessible via mobile device or directly through the charger’s User Interface (UI) to 
+assist users with operation. 
+ 
+3.5.1.   It is mandatory to display the following information on the UI during a   charging 
+session. 
+a) 
+Current state of charge (SoC) of the EV (%) 
+b) 
+Duration of the charging session (minutes or hours) 
+c) 
+Amount of energy delivered (kWh) 
+d) 
+Power consumption (kW) 
+e) 
+Cost (LKR) 
+f) 
+End condition of the charging session (time-based, cost-based, or energy-
+based, SoC-based, etc.) 
+
+--- page 14 ---
+Code of Practice for EV Charge Point Operators 
+13 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+ 
+3.6. 
+The CPO shall ensure the availability of the charging station, managing both planned 
+and unplanned shutdowns, as follows.  
+3.6.1. Shutdowns may occur due to a Breakdown in the charging system, an 
+Unplanned Interruption to the electrical supply, a Planned Interruption (e.g. 
+maintenance activity), or any Unexpected Malfunction of the electric vehicle 
+(EV). 
+ 
+3.6.2. Consumer may contact the EVCS Contact Point (CP), as the case may be, to 
+notify any breakdowns or obtain information on any interruption of service 
+including the cause for such interruption at the CPs referred as in Schedule 1. 
+Unplanned Interruptions may occur in the following instances. 
+a) Failure of DL’s power supply. 
+b) Failure of equipment within the EVCS’s Distribution System. 
+c) Issues such as overheating, fire, explosion, flooding, electric shock, 
+physical damage to the charger, or problems with dust, damaged 
+cables, and connectors (which may require manually switching off 
+the charger using the emergency switch). 
+d) Tripping of main or sub switches. 
+e) Power interruptions caused by lightning strikes. 
+f) Intrusion of animals into supply facilities or damage caused by 
+vermin. 
+g) Any other abnormalities occurring during the charging process. 
+ 
+3.6.3. Any planned interruptions shall be announced at least three (3) days in advance. 
+These interruptions shall be pre-scheduled, and affected consumers shall be 
+notified of the tentative interruption either through a written notice displayed 
+in a common area on the premises or by individual electronic notices (e.g. 
+mobile app notification or SMS). The notice shall also include the expected date 
+of the charger’s restoration. 
+ 
+
+--- page 15 ---
+Code of Practice for EV Charge Point Operators 
+14 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+3.6.4. In the event of an interruption caused by a breakdown in the DL’s power supply, 
+it is recommended to provide backup power using an emergency generator to 
+ensure the completion of any ongoing charging sessions. The CPO may advertise 
+the availability of the backup generator to the Consumer. 
+ 
+3.6.5. It is recommended that the charging equipment be capable of starting and 
+ending a charging session independently, even in the absence of mobile 
+network communication. 
+ 
+3.6.6. The availability/unavailability status of the EVCS, must be informed to the 
+Consumer via the Mobile App and/or an SMS and/or an email. 
+ 
+3.7. 
+ The use of wheel stops is recommended to prevent vehicles from making contact with 
+the charger or any other permanent structure. Additionally, the vehicle shall be 
+positioned optimally to ensure sufficient cable length for charging. 
+ 
+3.8. 
+ The CPO shall provide a set of guidelines that consumers must follow, including fire 
+safety procedures and an emergency shutdown and response plan. These guidelines 
+shall be displayed in three languages (Sinhala, Tamil, and English) at the EVCS and also 
+shall be available in the mobile app. 
+ 
+3.9. 
+The necessary security measures, such as CCTV, motion detection sensors, and theft 
+alarms, shall be implemented where required. An access control system shall also be 
+adopted as needed, to provide critical information in the event of disputes or 
+investigations. 
+ 
+3.10. Appropriate signage, or similar, shall be provided for the Consumer to understand the 
+type of the charger (AC slow, AC fast, or DC fast) and the type of the connector (Type 
+1, Type 2, CHARdeMO, CCS1, CCS2, etc.) before plugging the EV to the charger. 
+ 
+3.11. It is recommended for the CPO to provide amenities such as seating, washrooms, food, 
+and Wi-Fi to the consumers free of charge or at a reasonable cost. 
+ 
+ 
+
+--- page 16 ---
+Code of Practice for EV Charge Point Operators 
+15 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+4. Code for Customer Handling and Payment Handling  
+ 
+4.1. 
+The CPO shall display the user registration and authentication procedures through 
+electronic media and make them accessible at the EVCS. User registration, 
+authentication, and account management shall be handled through an automated 
+system. The primary authentication method shall be email-based or mobile number-
+based, and customers shall be able to access their historical data via the mobile app 
+provided by the CPO. 
+4.1.1. Before providing the charging service, the CPO shall record the following details 
+of the customer. 
+a) 
+Name 
+b) 
+Email address or phone number 
+c) 
+License plate number of the vehicle 
+ 
+4.2. 
+The CPO shall provide a minimum of two alternate payment options.  
+ 
+4.2.1. The CPO may choose from different payment options such as credit card, debit 
+card, mobile wallet, bank transfer, Lankapay, Payhere, QR code-based payments, 
+or cash. 
+ 
+4.2.2. Even though the cash option is available, the CPO shall promote cashless 
+payment methods where possible. 
+ 
+4.2.3. The CPO shall obtain approvals/clearances from relevant financial authorities 
+for payment handling, processing, and other finance-related activities. 
+ 
+4.3. 
+If postpaid billing systems are implemented by the CPO, the billing cycle, late payment 
+fees, and all the other parameters relevant to postpaid billing shall be approved by the 
+Commission. 
+ 
+4.4. 
+The CPO shall provide a list of services available for the Consumer when he/she 
+contacts the CP or the Call Center. 
+ 
+
+--- page 17 ---
+Code of Practice for EV Charge Point Operators 
+16 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+4.5. 
+Complaint handling is to be done as follows. 
+4.5.1. Any complaint can be made in writing (through email or the mobile app) or 
+verbally (by calling the CP). All verbal complaints shall be recorded by the CP. 
+ 
+4.5.2. The CPO shall record the complaint in an appropriate medium and issue a 
+reference number to the Consumer. 
+ 
+4.5.3. If the complaint is about an interruption of an ongoing charging session, the CP 
+or the Authorized Person (AP) or the CPO shall respond immediately to rectify 
+the interruption and/or end the ongoing session with less hassle to Consumer.  
+ 
+4.5.4. All written or verbal complaints shall be acknowledged within three (3) working 
+days of lodging the complaint. The CPO shall publish the details of the CP and/or 
+AP for complaints as per Schedule 1. 
+ 
+4.5.5. The CP and/or AP assigned by the CPO shall make every effort to address and 
+resolve all complaints within fourteen (14) working days of receipt, or within a 
+mutually agreed extended timeframe. 
+ 
+4.5.6. If a complaint is not attended to within the said timeframe, or if the Consumer 
+is not satisfied with the solution/decision, the Consumer may refer the matter 
+to the PUCSL. Details of the PUCSL are provided in Schedule 2 of this document. 
+The CPO shall display the contact details of the PUCSL in a clearly visible location 
+within the EVCS. 
+ 
+4.5.7. The procedure of complain handling shall be furnished in the EVCS and shall be 
+displayed in three languages (Sinhala, Tamil, and English) at the EVCS and also 
+shall be available in the mobile app. 
+ 
+ 
+
+--- page 18 ---
+Code of Practice for EV Charge Point Operators 
+17 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+5. Code for Metering and Billing 
+ 
+5.1. 
+Energy meters used at charging stations to measure the electrical energy (kWh) sold 
+to customers must be calibrated and certified every five years by the Department of 
+Measurement Units, Standards and Services (MUSSD) or a laboratory accredited by Sri 
+Lanka Accreditation Board (SLAB). The calibration certificate must be made readily 
+available during periodic inspections by the Commission. 
+ 
+5.1.1. The energy meter must be verified annually, by a third party. The verification 
+certificate must be prominently displayed within the EVCS and the calibration 
+certificate shall be made readily available during periodic or sudden 
+inspections by the Commission. 
+ 
+5.1.2. In the event of a dispute, the Commission may verify the meter's accuracy in 
+accordance with the relevant guidelines issued by the MUSSD. 
+ 
+5.2. 
+Consumers may request a test of the energy meter's accuracy at any time if they have 
+concerns about the energy delivered to their EVs, subject to payment of the relevant 
+meter testing fee approved by the PUCSL. Ideally, the meter shall operate within the 
+specified accuracy limits. If the meter is found to be operating outside these limits, it 
+will be replaced, the testing fee will be refunded, and any overcharged amounts (due 
+to over-registering) will also be refunded to the consumer. 
+ 
+5.3. 
+A receipt (electronic preferred) shall be issued for each charging session including the 
+following details. 
+a) Receipt Number 
+b) Date 
+c) Start and end time of the charging session.  
+d) Customer ID/Account Number 
+e) Vehicle Registration Number (Optional but useful for fleet or corporate 
+customers) 
+f) EVCS Name/ID 
+
+--- page 19 ---
+Code of Practice for EV Charge Point Operators 
+18 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+g) EVCS Location (Address or GPS coordinates) 
+h) CPO Name and Address 
+i) Energy Delivered (in kWh) 
+j) Tariff (LKR per kWh) 
+k) Tax Breakdown 
+l) Total Cost (LKR) 
+m) Power Rating (Optional) - Maximum power delivered during the session (e.g., 
+22 kW, 30 kW) 
+n) Payment Method (if applicable) - Credit card, Debit card, Mobile Wallet, RFID 
+account 
+o) Carbon offset (if available) 
+p) Energy source 
+q) Customer Support - Phone number or email address for inquiries or complaints 
+r) Terms and Conditions 
+ 
+5.4. 
+All charges or rates applied to consumers for EV charging shall be calculated in 
+accordance with the approved Tariff Methodology of the PUCSL. A detailed breakdown 
+of the calculation of these charges or rates shall be provided upon the consumer's 
+request.  
+ 
+5.5. 
+The charging session may be based on the duration of the charge, the number of units 
+supplied, or the amount of money that the consumer is willing to pay. 
+ 
+5.6. 
+ EVCS tariff changes shall be implemented as necessary to align with any adjustments 
+in utility tariffs.  
+ 
+5.7. 
+The CPO shall display (physically or in the mobile app) or email details of the tariff 
+charges and applicable service conditions at the EVCS. This information must be clearly 
+communicated to customers prior to the start of a charging session.  
+ 
+5.8. 
+In the event of misconduct of the CPO such as overbilling, inaccurate metering, or 
+fraudulent metering, the CPO must compensate the customer for the losses incurred.  
+
+--- page 20 ---
+Code of Practice for EV Charge Point Operators 
+19 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+6. Code for Inspection and Maintenance of EVCS 
+ 
+6.1. 
+All components of the electrical installation and associated equipment shall be 
+maintained in a safe working condition and fit for their intended protective purposes, 
+ensuring secure and reliable service delivery at all times. 
+ 
+6.2. 
+Regular inspections of the charging facilities shall be conducted quarterly. Any required 
+repairs or maintenance involving electrical work must be performed by a qualified and 
+competent electrical contractor and worker. 
+ 
+6.3. 
+Inspectors from the Commission shall conduct periodic or sudden inspections to 
+ensure compliance with the recommended standards for the safe and efficient 
+operation of EVCS.  
+ 
+6.4. 
+When conducting an inspection, CPO shall furnish all relevant records and information 
+required for the verification and provide access to the EVCS, make available all 
+standardized testing instruments  and offer necessary support for the inspection.  
+ 
+6.5. 
+All components of the electrical installation shall be maintained to ensure the safety 
+of both people and property. 
+ 
+6.6. 
+Maintenance procedures shall be clearly defined and implemented. Safety protocols, 
+including work permits and lockout-tagout (LOTO) systems, shall be enforced at the 
+EVCS.  
+ 
+6.7. 
+The electrical wiring shall be inspected and certified by a Chartered Electrical Engineer 
+at least once every five (5) years. The inspection records must be submitted as part of 
+the exemption certificate renewal process. 
+ 
+6.8. 
+The CPO shall ensure the availability of an adequate number of staff to handle 
+troubleshooting and maintenance tasks and to promptly respond to consumer queries 
+during an ongoing charging session. 
+ 
+6.9. 
+It is recommended to promote inclusivity and diversity among the staff. 
+
+--- page 21 ---
+Code of Practice for EV Charge Point Operators 
+20 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+ 
+6.10. Individuals performing maintenance work shall be properly trained and competent in 
+the use of Personal Protective Equipment (PPE) as required. 
+ 
+7. Code for Safety, Health, and Environment.  
+ 
+7.1. 
+The CPO shall follow the National Occupational Safety and Health Policy while 
+conducting operations of the EVCS. 
+ 
+7.2. 
+The CPO shall follow BS ISO 3864-1:2011 for safety signs displayed within the EVCS. 
+ 
+7.3. 
+The CPO shall, to the extent possible, integrate renewable energy resources into the 
+EVCS. To recover their investment, the CPO may charge a fair rate to consumers, in 
+accordance with the Tariff Methodology approved by the Commission. 
+ 
+7.4. 
+The CPO shall, to the extent possible, adopt the upcoming technologies to improve the 
+efficient charging practices (e.g. smart charging, load management). 
+ 
+7.5. 
+EVCS shall comply with all applicable environmental laws in Sri Lanka, except where 
+exemptions or grace periods may be granted to the Exempted Person under such laws 
+for compliance. 
+ 
+7.6. 
+If the CPO is using a standby generator, the generator system shall be operated in 
+accordance with the limitations set by the Central Environmental Authority (CEA). The 
+operation of the generator shall not cause any disturbance to the neighboring 
+establishments or the surrounding community.  
+ 
+7.7. 
+EVCS shall be covered by public liability insurance to protect against potential damages 
+caused by accidents that could reasonably occur during the normal operation of the 
+charging station. 
+ 
+
+--- page 22 ---
+Code of Practice for EV Charge Point Operators 
+21 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+7.8. 
+In the event of an emergency, alarms shall be activated, and the emergency evacuation 
+routes marked at the EVCS shall be followed. 
+ 
+7.9. 
+EVCS must be equipped with fire extinguishers suitable for use on electrical and 
+battery fires. CPOs are required to maintain up-to-date certification from the relevant 
+fire department or equipment supplier, confirming that the firefighting equipment is 
+in proper working condition. Additionally,  
+ 
+7.9.1. The CPO shall provide an adequate number of fire extinguishers at the EVCS 
+and display clear signage indicating the location of the nearest fire extinguisher. 
+ 
+7.9.2. If it is a manned EVCS, the staff must be adequately trained in the use of the 
+firefighting equipment. 
+ 
+7.10. Each charge point shall be clearly labeled with its unique ID number, location details 
+and contact details for emergency communication including the nearest hospital, fire 
+brigade, and police station. 
+ 
+7.11. In addition to the general signage such as parking, no parking, and electric shock risk, 
+the CPO must display the following symbol(s) to clearly signify the presence of the 
+EVCS to the public.  
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+Symbol EV 01   
+ 
+ 
+Symbol EV 02 
+Image credit: Manual on Uniform Traffic Control Devices for Streets and Highways by 
+the Federal Highway Administration of USA 
+ 
+
+--- page 23 ---
+Code of Practice for EV Charge Point Operators 
+22 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+ 
+7.11.1. If the EVCS offers services for different types of EVs, the relevant signage must 
+be displayed accordingly.  
+ 
+7.12. Directional signage, both inside and outside the car park, is recommended to guide EV 
+drivers to the designated parking spaces with EV charging facilities. 
+ 
+7.13. The installation of an indicator light at the charging facility to signal when charging is 
+in progress is recommended. 
+ 
+8. Code for Data, Data Dissemination and Reporting 
+ 
+8.1. 
+All the activities related to data shall comply with the Personal Data Protection Act, 
+No. 9 of 2022.  
+ 
+8.2. 
+The EVCS must have the capability to store data of charge sessions for a minimum of 
+two months, either in its built-in memory or in cloud storage. 
+ 
+8.3. 
+Each EVCS shall publish its location details, available facilities such as charging options, 
+connector types, and amenities such as seating, washrooms, food, and Wi-Fi—on a 
+website and/or a mobile app. Operators managing multiple charging stations as part 
+of a network may consolidate and provide information for all stations on a common 
+website and/or a mobile app.  
+ 
+8.4. 
+Real-time information on the availability of EVCS shall be made accessible to the public 
+through a common website and/or a mobile app.  
+ 
+8.5. 
+All EVCSs shall maintain daily records for each vehicle served, including the number of 
+vehicles, kWh sales (with time interval data in the case of Time-of-Use electricity 
+supply), and total revenue. This information shall be submitted to the PUCSL monthly, 
+either through a web portal or via the LISS system as prescribed by the PUCSL. 
+
+--- page 24 ---
+Code of Practice for EV Charge Point Operators 
+23 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+Additionally, this data shall be shared with the relevant and authorized personnel as 
+specified by the respective DL. 
+ 
+8.6. 
+Whenever an accident or fire results in loss of life, injury to any person, or significant 
+property damage within the EVCS premises, the CPO shall report the incident to the 
+Commission by the quickest available means. The CPO/consumers may utilize an 
+Incident Reporting System (IRS) to log and communicate such incidents to the 
+Commission. 
+ 
+8.6.1. In the event of an incident or a consumer complaint, technical data such as voltage 
+and current patterns of the charger shall be made accessible to the Commission. 
+ 
+8.7. 
+All records related to the design, construction, operation, inspection, testing, and 
+maintenance of the electrical installation shall be maintained, periodically updated, 
+and made accessible to relevant and authorized personnel. 
+ 
+8.8. 
+The CPO is required to submit an annual performance report to the Commission each 
+year, and the report shall be published on their website and/or mobile app accordingly.  
+ 
+ 
+9. General code for E-bikes and E-tuk tuks 
+This section specifies the special requirements for CPOs maintaining EV charging centers to 
+accommodate e-bikes and e-tuks. All conditions outlined in the previous chapters shall apply 
+to this category, except where otherwise specified in this chapter. 
+ 
+9.1. 
+An EVCS that facilitates E-bikes and E-tuk tuks shall provide a square-pin, 13 A, 230 V 
+socket outlet conforming to IEC 60083 Type G (BS 1363) and a round, five-pin industrial 
+socket, rated at 16 A and 400 V, compliant with IEC 60309. Cabling shall be carried out 
+in accordance with BS 7671 or IEC 60364 or Code on EV charging stations installation, 
+maintenance and operation. 
+ 
+
+--- page 25 ---
+Code of Practice for EV Charge Point Operators 
+24 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+9.2. 
+Operators must adhere to applicable standards, including IEC 61851 to promote 
+interoperability. 
+ 
+9.3. 
+Charging equipment shall be designed to meet the voltage and power requirements 
+of E-bikes and E-tuk tuks, typically within the range of 48V to 72V DC systems, ensuring 
+safe and efficient charging. 
+ 
+9.4. 
+The EVCS shall be designed to accommodate the unique parking and connector 
+placement requirements of E-bikes and E-tuk tuks, ensuring ease of access even in 
+constrained spaces. 
+ 
+9.5. 
+The CPO shall establish clear procedures for safe charging and battery swapping, 
+including measures to mitigate risks of fire or battery mishandling. 
+ 
+9.6. 
+The EVCS must include appropriate protection from environmental conditions such as 
+rain and heat to safeguard both vehicles and users during charging operations. 
+ 
+9.7. 
+Prominent and easily understandable signage, along with step-by-step user guides, 
+shall be installed at all EVCS to ensure safe usage by all operators, regardless of 
+technical expertise. 
+ 
+9.8. 
+If the EVCS is equipped with battery swapping facility, the EVCS shall comply with IEC 
+62840, ensuring safe and efficient battery swapping operations. 
+ 
+9.9. 
+The CPOs shall implement procedures for routine maintenance and monitoring of 
+swappable batteries to ensure their safety and longevity. 
+ 
+9.10. The CPO and relevant staff shall undergo regular training to assist users and handle 
+charging or battery-swapping equipment safely and efficiently. 
+ 
+9.11. Charging infrastructure shall account for high-frequency, short-duration charging 
+needs typical of E-tuk tuks used in public transport and delivery services. 
+
+--- page 26 ---
+Code of Practice for EV Charge Point Operators 
+25 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+ 
+9.12. The CPO shall provide a minimum of one charging bay for E-bikes and one charging 
+bay for E-tuk tuk. 
+ 
+9.13. The CPO shall provide at least “bank transfer” and “cash” as the two alternate payment 
+options as stated in clause 4.2. 
+ 
+ 
+10. General code for Heavy EVs 
+This section specifies the special requirements for CPOs maintaining EV charging centers to 
+accommodate Heavy EVs. All conditions outlined in the previous chapters shall apply to this 
+category, except where otherwise specified in this chapter. 
+ 
+10.1. Charging stations shall provide ultra-fast DC charging capabilities with power levels 
+ranging from 350 kW to 1 MW or higher, compliant with standards such as the 
+Megawatt Charging System (MCS) or CCS2 as depicted in IEC 61851-23-3. 
+ 
+10.2. The CPO shall collaborate with utility service providers to ensure adequate grid 
+capacity and implement load management strategies. 
+ 
+10.3. Charging stations shall include designated bays with sufficient space, reinforced 
+ground surfaces, and overhead or side-mounted charging infrastructure suitable for 
+heavy-duty electric vehicles. 
+ 
+10.4. The CPO shall install appropriate cooling systems to manage heat dissipation during 
+high-power charging, preventing thermal overload and fire risks. 
+ 
+10.5. Fire Safety Measures 
+ 
+10.5.1. A fire hydrant with a hose must be installed at all heavy EV charging stations to 
+provide an immediate water source in case of fire. 
+
+--- page 27 ---
+Code of Practice for EV Charge Point Operators 
+26 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+10.5.2. Water-based fire suppression shall be positioned strategically to cool 
+surrounding infrastructure and prevent fire spread. 
+10.5.3. Class D fire extinguishers (for metal fires) and dry chemical or foam suppression 
+systems shall be available on-site. 
+10.5.4. Adequate spacing must be maintained between charging bays to reduce the 
+risk of fire propagation. 
+10.6. Emergency shutdown procedures must be clearly outlined and accessible to station 
+operators and users. 
+ 
+10.7. All charging infrastructures shall be designed to support the weight of heavy-duty 
+electric vehicles, with reinforced foundations and durable surface materials. 
+ 
+10.8. Charging stations must comply with IEC 61851-23 and IEC 62196 high-voltage safety 
+standards, including the provision of insulated gloves, automatic shutoff mechanisms, 
+and personnel training programs. 
+ 
+10.9. Charging stations servicing electric buses or commercial fleets shall accommodate 
+pantograph-based charging systems, compliant with IEC 61851-1, IEC 61851-23, and 
+IEC 62196. 
+ 
+10.10. Parking bays shall be designed to accommodate articulated trucks and trailers, 
+including turning radius allowances, proper alignment guidance, and robust cable 
+management systems. 
+ 
+10.11. Parking bays shall be designed to accommodate articulated trucks and trailers, 
+including turning radius allowances, proper alignment guidance, and robust cable 
+management systems. 
+ 
+10.12. The CPO shall establish fire suppression measures, emergency shutdown procedures, 
+and compliance with battery fire risk management protocols. 
+ 
+10.13. Charging stations shall adhere to local noise regulations and implement measures to 
+minimize operational noise impact, especially in urban and residential areas. 
+
+--- page 28 ---
+Code of Practice for EV Charge Point Operators 
+27 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+11. Customer Obligations 
+ 
+11.1. Adherent to Safety Guidelines 
+11.1.1. Follow all safety instructions provided at the charging station. 
+11.1.2. Avoid tampering with charging equipment or infrastructure. 
+ 
+11.2. Proper Use of Equipment 
+11.2.1. Use the charging station only for its intended purpose and with compatible 
+vehicles. 
+11.2.2. Ensure the charging connectors are handled carefully and returned to their 
+proper place after use. 
+ 
+11.3. Respect Station Policies 
+11.3.1. Comply with time limits for charging, especially in high-demand areas. 
+11.3.2. Park only in designated EV charging bays and vacate promptly after charging. 
+ 
+11.4. Ensure payment for charging services is completed as per the specified rates and 
+methods. 
+ 
+11.5. Personal Responsibility 
+11.5.1. Take responsibility for personal belongings while at the charging station. 
+11.5.2. Ensure the vehicle is secure during the charging session. 
+11.5.3. Ensure the vehicle is promptly unplugged from the charger and the charging 
+bay is vacated immediately after the charging session ends, allowing other 
+users to access the charger. 
+ 
+11.6. Environmental Considerations 
+11.6.1. Avoid littering or causing damage to the premises. 
+11.6.2. Report any spills or hazards immediately to CPO or EVCS management. 
+ 
+11.7. Ensure that the electric vehicle is covered by appropriate insurance in compliance with 
+local laws and regulations, including a fire cover. 
+
+--- page 29 ---
+Code of Practice for EV Charge Point Operators 
+28 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+ 
+11.8. Emergency Procedures 
+11.8.1. Follow protocols in case of emergencies, such as equipment malfunctions or 
+fire. 
+11.8.2. Report any technical issues or irregularities to the CPO promptly. 
+ 
+11.9. Maintain Orderliness 
+11.9.1. Avoid blocking access to other users or the charging equipment. 
+11.9.2. Show courtesy to other EV users by allowing equal access to facilities. 
+ 
+ 
+ 
+12. References 
+[1] Federal Highway Administration, Manual on Uniform Traffic Control Devices for streets 
+and Highways, MUTCD. Available at: https://mutcd.fhwa.dot.gov/ (Accessed: 24 
+November 2024).  
+ 
+ 
+
+--- page 30 ---
+Code of Practice for EV Charge Point Operators 
+29 | P a g e  
+ 
+PUBLIC UTILITIES COMMISSION OF SRI LANKA 
+Schedule 1: Information on how to contact the Authorized Person 
+ 
+The Exempted Persons are required to display specific contact details as follows. 
+  
+Authorized Person  
+ 
+<Insert Name, Address and contact details>  
+ 
+Call Points  
+Enquiries and complaints  
+ 
+Telephone Number 1 –  
+Telephone Number 2 –  
+Email address –  
+ 
+Issues with the billing, meter accuracy, 
+Disconnection, reconnection of electricity  
+ 
+ 
+Telephone Number 1 –  
+Telephone Number 2 –  
+Email address –  
+ 
+Emergency/ Breakdown (24-hour service)  
+ 
+ 
+Hotline -  
+ 
+ 
+ 
+Schedule 2: Public Utilities Commission of Sri Lanka 
+ 
+The Public Utilities Commission of Sri Lanka (PUCSL) has been established under Act, No. 35 
+of 2002. It has been empowered to regulate the economic, technical and safety aspects of the 
+industry, under the provisions of the Act.  
+ 
+The PUCSL is tasked with resolving, by mediation, any dispute between a licensee and any 
+other affected party. Please contact the PUCSL for further information.  
+ 
+ 
+Contact details of PUCSL  
+Public Utilities Commission of Sri Lanka  
+6th Floor, BOC Merchant Tower St. Michael’s Road, Colombo 3,  
+Sri Lanka.  
+Telephone: (011)2392607/8  
+Fax: (011)2392641  
+E-mail: info@pucsl.gov.lk  
+Website: www.pucsl.gov.lk 

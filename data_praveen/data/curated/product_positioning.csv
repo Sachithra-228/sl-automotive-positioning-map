@@ -1,0 +1,19 @@
+company_id,offering,status,note,source_url,evidence_type
+toyota,ICE (petrol/diesel),Evidenced,Toyota and Hino franchise; Raize/Yaris top sellers; trucks 24% (Aug 2025).,https://www.dailymirror.lk/breaking-news/BYD-roars-back-as-SLs-vehicle-market-sees-tepid-growth/108-319630,secondary_news
+toyota,Hybrid,Evidenced,All-new hybrid LC300 and Hyryder hybrid in range.,https://www.sundayobserver.lk/2025/06/22/spectrum/55086/toyota-unveils-all-new-hybrid-lc300,secondary_news
+dimo,ICE (petrol/diesel),Evidenced,Mercedes-Benz and Tata passenger and commercial range.,,brief_claim
+uml,ICE (petrol/diesel),Evidenced,"Mitsubishi, Fuso, Perodua, DFSK, JMC.",,brief_claim
+jkh,BEV / PHEV,Evidenced,BYD; EVs ~10% of 2025 passenger-vehicle imports.,https://www.dailymirror.lk/breaking-news/EVs-make-up-10-of-Sri-Lankas-2025-vehicle-imports-as-market-rebounds/108-330679,secondary_news
+evo,BEV / PHEV,Evidenced,Launched what it calls Sri Lanka's largest EV line-up.,https://www.dailymirror.lk/business-news/Evolution-Auto-unveils-Sri-Lankas-largest-EV-line-up/273-316395,secondary_news
+evo,Charging / energy,Evidenced,"EVO Charge fast-charging station, Peliyagoda.",https://bizenglish.adaderana.lk/evolution-auto-powers-ahead-with-global-ev-technical-training-and-new-multi-brand-workshop-to-elevate-sri-lankas-after-sales-standards,secondary_news
+dpa,Hybrid,Evidenced,GWM partnership (Oct 2025) for hybrid/new-energy vehicles.,https://www.magzter.com/hi/stories/newspaper/Daily-FT/DAVID-PIERIS-AUTOMOBILES-AND-GWM-FORGE-STRATEGIC-PARTNERSHIP-989493,secondary_news
+dpa,BEV / PHEV,Reported plan,BAIC (sole distributor); GWM NEV introduction announced.,https://businesscafe.lk/business-news/motor/20725-more-than-1-000-baic-x55-suvs-hit-sri-lankan-roads-2,secondary_news
+lal,ICE (petrol/diesel),Evidenced,"Ashok Leyland trucks and buses, locally assembled.",https://www.industry.gov.lk/web/wp-content/uploads/2024/11/Automobile-2023.pdf,official
+dpmc,ICE (petrol/diesel),Evidenced,"Bajaj/KTM two- and three-wheelers; Bajaj ~92% of three-wheelers (Aug 2025, brand-level).",https://www.freepressjournal.in/business/sri-lanka-vehicle-registrations-rise-15-in-january-indian-imports-surge-bajaj-leads-two-wheelers,secondary_news
+tvs,ICE (petrol/diesel),Evidenced,TVS motorcycles and three-wheelers; ~25% of motorcycles (Aug 2025).,https://www.freepressjournal.in/business/sri-lanka-vehicle-registrations-rise-15-in-january-indian-imports-surge-bajaj-leads-two-wheelers,secondary_news
+micro,BEV / PHEV,Reported plan,Report of BAIC EV assembly under licence; earlier EV ambitions.,https://autotechinsight.spglobal.com/news/5238222/micro-cars-to-assemble-baic-ev-in-sri-lanka-report-,secondary_news
+micro,ICE (petrol/diesel),Evidenced,Local assembly with Chinese/Korean OEM partners.,https://www.dailymirror.lk/breaking-news/Local-auto-industry-shifts-gear-to-assembly-mode/108-347515,secondary_news
+ideal,Components,Evidenced,Auto seating; Magna/MSKH collaboration.,https://www.industry.gov.lk/web/wp-content/uploads/2023/05/Automobile-3.pdf,official
+ceat,Components,Evidenced,Tyres (SLACMA member).,https://www.slacma.lk/members/,brief_claim
+harness,Components,Evidenced,Wire/impact-sensor harnesses (SLACMA members).,https://www.slacma.lk/members/,brief_claim
+chargenet,Charging / energy,Evidenced,100+ locations; company claims 150+ chargers.,https://www.ft.lk/motor/Dialog-Touch-Card-now-enables-EV-charging-at-chargeNET-stations/55-779991,secondary_news
