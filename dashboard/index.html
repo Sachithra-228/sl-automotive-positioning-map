@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SL Auto Intelligence — Sri Lanka Automotive Market Positioning</title>
+<title>SL Auto Intelligence — Sri Lanka Automotive Positioning 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
   :root {
     --deep: #086288;
     --deep-dark: #043952;
-    --deep-night: #032233;
+    --deep-night: #031B29;
     --steel: #4D8DBA;
     --ice: #97D7FF;
     --ice-soft: #EBF7FF;
@@ -41,228 +41,243 @@
   /* ==================== PRELOADER ==================== */
   #preloader {
     position: fixed; inset: 0; z-index: 9999;
-    background: radial-gradient(circle at 65% 25%, #0B7BA8 0%, #086288 45%, #032233 100%);
+    background: radial-gradient(circle at 65% 25%, #0B7BA8 0%, #086288 45%, #031B29 100%);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     transition: opacity 0.55s ease, visibility 0.55s ease;
   }
   #preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
   .loader-ring {
-    width: 72px; height: 72px; border-radius: 20px;
+    width: 70px; height: 70px; border-radius: 18px;
     background: linear-gradient(135deg, var(--ice), #FFFFFF);
     color: var(--deep-dark); font-family: 'Outfit', sans-serif;
-    font-size: 26px; font-weight: 900; letter-spacing: -1px;
-    display: grid; place-items: center;
+    font-size: 25px; font-weight: 900; display: grid; place-items: center;
     box-shadow: 0 0 0 10px rgba(151, 215, 255, 0.16), 0 20px 45px rgba(0, 0, 0, 0.35);
-    animation: floatPulse 1.4s ease-in-out infinite;
-    margin-bottom: 22px;
+    animation: floatPulse 1.3s ease-in-out infinite; margin-bottom: 20px;
   }
-  @keyframes floatPulse {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-5px) scale(1.04); }
-  }
-  .loader-title { font-family: 'Outfit', sans-serif; color: #FFFFFF; font-size: 24px; font-weight: 700; letter-spacing: 0.4px; margin-bottom: 5px; }
-  .loader-sub { color: var(--ice); font-size: 11.5px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 22px; }
-  .loader-track { width: 250px; height: 4px; background: rgba(151, 215, 255, 0.2); border-radius: 99px; overflow: hidden; }
-  .loader-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--steel), var(--ice), #FFFFFF); animation: loadBar 1.1s cubic-bezier(0.22,1,0.36,1) forwards; }
+  @keyframes floatPulse { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-5px) scale(1.04); } }
+  .loader-title { font-family: 'Outfit', sans-serif; color: #FFFFFF; font-size: 22px; font-weight: 700; margin-bottom: 5px; }
+  .loader-sub { color: var(--ice); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+  .loader-track { width: 240px; height: 3.5px; background: rgba(151, 215, 255, 0.2); border-radius: 99px; overflow: hidden; }
+  .loader-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--steel), var(--ice), #FFFFFF); animation: loadBar 1.05s cubic-bezier(0.22,1,0.36,1) forwards; }
   @keyframes loadBar { to { width: 100%; } }
 
-  /* ==================== LANDING PAGE (JETOUR-INSPIRED) ==================== */
-  #landing-mode {
-    background: var(--deep-night);
-    color: #FFFFFF;
-    min-height: 100vh;
-    transition: opacity 0.4s ease;
-  }
+  /* ==================== LANDING PAGE ==================== */
+  #landing-mode { background: var(--deep-night); color: #FFFFFF; }
   #landing-mode.hidden { display: none; }
 
-  /* Transparent Automotive Top Nav */
   .lp-nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-    padding: 16px 42px;
+    padding: 18px 44px;
     display: flex; justify-content: space-between; align-items: center;
-    background: linear-gradient(180deg, rgba(3, 34, 51, 0.72) 0%, rgba(3, 34, 51, 0) 100%);
-    backdrop-filter: blur(8px);
-    transition: background 0.25s;
+    background: linear-gradient(180deg, rgba(3, 27, 41, 0.72) 0%, rgba(3, 27, 41, 0) 100%);
+    transition: background 0.25s, padding 0.25s;
   }
-  .lp-nav.scrolled { background: rgba(3, 34, 51, 0.92); border-bottom: 1px solid rgba(151, 215, 255, 0.16); }
+  .lp-nav.scrolled {
+    background: rgba(3, 27, 41, 0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(151, 215, 255, 0.16); padding: 13px 44px;
+  }
   .lp-logo {
-    font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 900;
-    letter-spacing: 3px; text-transform: uppercase; color: #FFFFFF;
-    display: flex; align-items: center; gap: 10px;
+    font-family: 'Outfit', sans-serif; font-size: 19px; font-weight: 900;
+    letter-spacing: 3.5px; text-transform: uppercase; color: #FFFFFF;
   }
   .lp-logo span { color: var(--ice); }
   .lp-links { display: flex; gap: 28px; align-items: center; }
-  .lp-links a {
-    color: rgba(255, 255, 255, 0.85); text-decoration: none; font-size: 13px; font-weight: 600;
-    letter-spacing: 0.4px; transition: color 0.16s;
-  }
+  .lp-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 13px; font-weight: 600; transition: 0.16s; }
   .lp-links a:hover { color: var(--ice); }
   .lp-cta-sm {
     padding: 9px 20px; border-radius: 99px; border: 1.5px solid var(--ice);
-    background: rgba(151, 215, 255, 0.14); color: #FFFFFF;
-    font-size: 12.5px; font-weight: 700; cursor: pointer; transition: all 0.2s;
+    background: rgba(151, 215, 255, 0.15); color: #FFFFFF;
+    font-size: 12.5px; font-weight: 700; cursor: pointer; transition: 0.2s;
   }
-  .lp-cta-sm:hover { background: var(--ice); color: var(--deep-night); box-shadow: 0 0 24px rgba(151, 215, 255, 0.45); }
+  .lp-cta-sm:hover { background: var(--ice); color: var(--deep-night); box-shadow: 0 0 24px rgba(151, 215, 255, 0.5); }
 
-  /* Full-Viewport Hero Stage */
+  /* MINIMAL JETOUR-STYLE FULL-BLEED HERO */
   .lp-hero {
-    position: relative; min-height: 100vh;
+    position: relative; height: 100vh; min-height: 640px; width: 100%;
     display: flex; flex-direction: column; justify-content: space-between; align-items: center;
-    padding: 105px 32px 34px 32px; overflow: hidden;
+    padding: 96px 24px 36px 24px; overflow: hidden;
+    background: #042538;
+  }
+  .hero-bg-img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center 58%;
+    transform: scale(1.02);
+    animation: heroSlowZoom 14s ease-in-out infinite alternate;
+  }
+  @keyframes heroSlowZoom { from { transform: scale(1.01); } to { transform: scale(1.07); } }
+  .hero-vignette {
+    position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse 90% 55% at 50% 22%, rgba(151, 215, 255, 0.34), transparent 65%),
-      linear-gradient(180deg, #086288 0%, #4D8DBA 44%, #1A4E70 68%, #04283D 100%);
-  }
-  .lp-hero-video {
-    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-    opacity: 0.28; pointer-events: none; mix-blend-mode: luminosity;
-  }
-  /* Subtle Mountain / Horizon Silhouette SVG */
-  .horizon-bg {
-    position: absolute; bottom: 0; left: 0; right: 0; height: 48%;
-    background: linear-gradient(180deg, rgba(8, 98, 136, 0) 0%, rgba(4, 40, 61, 0.88) 42%, #032233 100%);
+      linear-gradient(180deg, rgba(3, 27, 41, 0.72) 0%, rgba(8, 98, 136, 0.15) 36%, rgba(8, 98, 136, 0.12) 64%, rgba(3, 27, 41, 0.92) 100%);
     pointer-events: none;
   }
-  .watermark-text {
-    position: absolute; top: 18%; left: 50%; transform: translateX(-50%);
-    font-family: 'Outfit', sans-serif; font-size: clamp(110px, 18vw, 230px);
-    font-weight: 900; letter-spacing: 14px; color: rgba(255, 255, 255, 0.10);
-    user-select: none; pointer-events: none; white-space: nowrap;
-  }
 
-  .hero-center {
-    position: relative; z-index: 5; text-align: center; max-width: 920px; width: 100%;
-    margin-top: 10px;
+  .hero-top {
+    position: relative; z-index: 4; text-align: center;
+    animation: fadeInDown 0.9s ease forwards;
   }
-  .hero-tag {
-    display: inline-block; padding: 5px 15px; border-radius: 99px;
-    background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(151, 215, 255, 0.5);
-    color: var(--ice); font-size: 11px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase;
-    margin-bottom: 14px;
+  @keyframes fadeInDown { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-eyebrow {
+    font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--ice); margin-bottom: 8px;
   }
   .hero-title {
-    font-family: 'Outfit', sans-serif; font-size: clamp(32px, 5vw, 56px);
-    font-weight: 800; line-height: 1.08; letter-spacing: -1px; margin-bottom: 12px;
-    text-shadow: 0 8px 30px rgba(3, 34, 51, 0.35);
+    font-family: 'Outfit', sans-serif; font-size: clamp(34px, 5.4vw, 64px);
+    font-weight: 800; letter-spacing: -1px; line-height: 1.05;
+    text-shadow: 0 10px 34px rgba(3, 27, 41, 0.55);
   }
   .hero-title span { color: var(--ice); }
-  .hero-sub { font-size: 15px; color: rgba(235, 247, 255, 0.88); max-width: 680px; margin: 0 auto 24px auto; }
 
-  /* Center Vehicle Spotlight Card (Jetour-inspired stage) */
-  .spotlight-stage {
-    background: rgba(3, 34, 51, 0.55);
-    backdrop-filter: blur(18px);
-    border: 1px solid rgba(151, 215, 255, 0.32);
-    border-radius: 20px;
-    padding: 22px 28px;
-    max-width: 780px; margin: 0 auto 24px auto;
-    display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 20px; align-items: center;
-    text-align: left;
-    box-shadow: 0 24px 60px rgba(3, 25, 38, 0.45);
-    transition: all 0.28s ease;
+  .hero-bottom {
+    position: relative; z-index: 4; text-align: center;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
   }
-  @media (max-width: 760px) { .spotlight-stage { grid-template-columns: 1fr; text-align: center; } }
-  .spot-badge {
-    display: inline-block; font-size: 10.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
-    padding: 3px 10px; border-radius: 4px; background: var(--ice); color: var(--deep-night); margin-bottom: 8px;
-  }
-  .spot-model { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: #FFFFFF; line-height: 1.1; margin-bottom: 4px; }
-  .spot-dist { font-size: 13px; color: var(--ice); font-weight: 600; margin-bottom: 10px; }
-  .spot-note { font-size: 12.5px; color: rgba(235, 247, 255, 0.8); }
-  .spot-metrics {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-  }
-  .spot-stat {
-    background: rgba(151, 215, 255, 0.10); border: 1px solid rgba(151, 215, 255, 0.22);
-    border-radius: 10px; padding: 10px 12px;
-  }
-  .spot-stat-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.9px; color: var(--ice); }
-  .spot-stat-val { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 800; color: #FFFFFF; }
-
-  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 18px; }
+  .hero-btn-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
   .btn-explore {
-    padding: 13px 34px; border-radius: 8px;
+    padding: 13px 38px; border-radius: 6px;
+    background: rgba(151, 215, 255, 0.18);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid var(--ice);
+    color: #FFFFFF; font-family: 'Outfit', sans-serif;
+    font-size: 14.5px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+    cursor: pointer; transition: all 0.22s;
+  }
+  .btn-explore:hover {
+    background: var(--ice); color: var(--deep-night);
+    box-shadow: 0 0 32px rgba(151, 215, 255, 0.55); transform: translateY(-2px);
+  }
+  .btn-solid {
+    padding: 13px 34px; border-radius: 6px;
     background: linear-gradient(135deg, var(--ice), #FFFFFF);
     color: var(--deep-night); font-family: 'Outfit', sans-serif;
-    font-size: 14.5px; font-weight: 800; letter-spacing: 0.6px;
+    font-size: 14.5px; font-weight: 800; letter-spacing: 0.5px;
     border: none; cursor: pointer; transition: all 0.22s;
     box-shadow: 0 10px 30px rgba(151, 215, 255, 0.35);
   }
-  .btn-explore:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 14px 40px rgba(151, 215, 255, 0.55); }
-  .btn-ghost {
-    padding: 13px 26px; border-radius: 8px;
-    background: rgba(255, 255, 255, 0.08); color: #FFFFFF;
-    border: 1.5px solid rgba(255, 255, 255, 0.45);
-    font-size: 14px; font-weight: 700; cursor: pointer; text-decoration: none; transition: all 0.2s;
-  }
-  .btn-ghost:hover { background: rgba(255, 255, 255, 0.18); border-color: var(--ice); }
+  .btn-solid:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 14px 40px rgba(151, 215, 255, 0.55); }
 
-  /* Bottom Model Selector Strip (Exact Jetour Carousel Feel!) */
-  .model-selector {
-    position: relative; z-index: 6; width: 100%; max-width: 960px;
-    display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
-    padding-top: 8px;
+  .scroll-cue {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(151, 215, 255, 0.8);
+    display: flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none;
   }
-  .model-chip {
-    background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(151, 215, 255, 0.22);
-    border-radius: 12px; padding: 10px 18px; cursor: pointer;
-    color: rgba(255, 255, 255, 0.72); text-align: center; transition: all 0.2s; min-width: 138px;
+  .scroll-line {
+    width: 1.5px; height: 28px; background: linear-gradient(180deg, var(--ice), transparent);
+    animation: scrollBounce 1.6s ease-in-out infinite;
   }
-  .model-chip:hover { background: rgba(151, 215, 255, 0.16); color: #FFFFFF; transform: translateY(-2px); }
-  .model-chip.active {
-    background: rgba(151, 215, 255, 0.22); border-color: var(--ice); color: #FFFFFF;
-    box-shadow: 0 6px 24px rgba(151, 215, 255, 0.28); transform: translateY(-3px);
-  }
-  .model-chip-name { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 800; }
-  .model-chip-sub { font-size: 10.5px; color: var(--ice); margin-top: 1px; }
+  @keyframes scrollBounce { 0%,100% { transform: scaleY(0.6); opacity: 0.4; } 50% { transform: scaleY(1); opacity: 1; } }
 
-  /* Scroll Storytelling Sections */
-  .lp-section {
-    padding: 84px 32px;
+  /* ==================== STICKY SPLIT-SCREEN CAR SCROLLYTELLING ==================== */
+  .scrolly-wrap {
+    display: grid; grid-template-columns: 1.12fr 0.88fr;
+    background: var(--deep-night);
     position: relative;
   }
-  .lp-section.light { background: var(--canvas); color: var(--ink); }
-  .lp-section.ocean { background: linear-gradient(155deg, #064A68 0%, #032233 100%); color: #FFFFFF; }
-  .lp-inner { max-width: 1180px; margin: 0 auto; }
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  .lp-sec-kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: var(--steel); margin-bottom: 8px; }
-  .lp-section.ocean .lp-sec-kicker { color: var(--ice); }
-  .lp-sec-title { font-family: 'Outfit', sans-serif; font-size: clamp(26px, 3.4vw, 40px); font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
-  .lp-sec-sub { font-size: 15px; color: var(--muted); max-width: 680px; margin-bottom: 34px; }
-  .lp-section.ocean .lp-sec-sub { color: rgba(235, 247, 255, 0.8); }
-
-  .shock-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
-  .shock-card {
-    background: #FFFFFF; border: 1px solid var(--border); border-top: 4px solid var(--deep);
-    border-radius: 16px; padding: 24px; box-shadow: var(--shadow-sm); transition: transform 0.2s;
+  @media (max-width: 960px) {
+    .scrolly-wrap { grid-template-columns: 1fr; }
+    .scrolly-left { position: relative !important; height: 56vh !important; }
   }
-  .shock-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-  .shock-card.accent { border-top-color: var(--steel); }
-  .shock-val { font-family: 'Outfit', sans-serif; font-size: 38px; font-weight: 900; color: var(--deep); line-height: 1.05; margin-bottom: 6px; }
-  .shock-lbl { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
-  .shock-desc { font-size: 12.5px; color: var(--muted); }
 
-  .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  @media (max-width: 860px) { .pillar-grid { grid-template-columns: 1fr; } }
-  .pillar-card {
+  /* Left Sticky Car Stage */
+  .scrolly-left {
+    position: sticky; top: 0; height: 100vh;
+    background: #021520;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .car-slide {
+    position: absolute; inset: 0;
+    opacity: 0; transform: scale(1.08);
+    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.85s cubic-bezier(0.22,1,0.36,1);
+    pointer-events: none;
+  }
+  .car-slide.active { opacity: 1; transform: scale(1); pointer-events: auto; }
+  .car-slide img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .car-slide-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(3,27,41,0.35) 0%, rgba(3,27,41,0.08) 45%, rgba(3,27,41,0.88) 100%);
+  }
+
+  /* EV Cyan Charge Pulse Overlay on Stage 3 */
+  .ev-glow-ring {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(circle at 50% 62%, rgba(151, 215, 255, 0.34) 0%, rgba(8, 98, 136, 0.22) 45%, transparent 72%);
+    animation: evPulse 2.8s ease-in-out infinite;
+  }
+  @keyframes evPulse { 0%,100% { opacity: 0.55; } 50% { opacity: 1; } }
+
+  /* HUD Overlay inside Sticky Car Stage */
+  .stage-hud {
+    position: absolute; bottom: 32px; left: 32px; right: 32px; z-index: 10;
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 16px;
+  }
+  .hud-pill {
+    display: inline-block; padding: 4px 12px; border-radius: 99px;
+    background: rgba(151, 215, 255, 0.2); border: 1px solid var(--ice);
+    color: var(--ice); font-size: 10.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .hud-title { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: #FFFFFF; line-height: 1.1; }
+  .hud-sub { font-size: 13px; color: rgba(235, 247, 255, 0.8); }
+
+  .stage-dots { display: flex; flex-direction: column; gap: 10px; }
+  .s-dot {
+    width: 10px; height: 10px; border-radius: 99px;
+    background: rgba(255,255,255,0.28); border: none; cursor: pointer; transition: all 0.25s;
+  }
+  .s-dot.active { height: 32px; background: var(--ice); box-shadow: 0 0 14px rgba(151,215,255,0.7); }
+
+  /* Right Scrollable Story Chapters */
+  .scrolly-right {
+    background: linear-gradient(180deg, #042538 0%, #063C57 50%, #031B29 100%);
+    padding: 0 46px;
+  }
+  .story-chapter {
+    min-height: 92vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 48px 0;
+    opacity: 0.32; transform: translateY(18px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .story-chapter.active { opacity: 1; transform: translateY(0); }
+  .chap-num {
+    font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 800;
+    letter-spacing: 2.2px; text-transform: uppercase; color: var(--ice); margin-bottom: 10px;
+  }
+  .chap-title {
+    font-family: 'Outfit', sans-serif; font-size: clamp(28px, 3vw, 40px);
+    font-weight: 800; line-height: 1.12; color: #FFFFFF; margin-bottom: 14px;
+  }
+  .chap-title span { color: var(--ice); }
+  .chap-desc { font-size: 14.5px; color: rgba(235, 247, 255, 0.82); margin-bottom: 24px; line-height: 1.65; }
+
+  .chap-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;
+  }
+  .c-stat {
     background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(151, 215, 255, 0.22);
-    border-radius: 16px; padding: 26px; transition: all 0.2s; cursor: pointer;
+    border-left: 3px solid var(--ice); border-radius: 10px; padding: 14px 16px;
   }
-  .pillar-card:hover { background: rgba(151, 215, 255, 0.14); border-color: var(--ice); transform: translateY(-4px); }
-  .pillar-num { font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 800; color: var(--ice); letter-spacing: 1.5px; margin-bottom: 10px; }
-  .pillar-card h3 { font-family: 'Outfit', sans-serif; font-size: 21px; margin-bottom: 8px; }
-  .pillar-card p { font-size: 13.5px; color: rgba(235, 247, 255, 0.78); margin-bottom: 14px; }
-  .pillar-link { font-size: 12.5px; font-weight: 800; color: var(--ice); }
+  .c-stat-val { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 900; color: #FFFFFF; line-height: 1.1; }
+  .c-stat-lbl { font-size: 11px; color: var(--ice); font-weight: 600; margin-top: 3px; }
 
+  .chap-btn {
+    align-self: flex-start;
+    padding: 11px 22px; border-radius: 8px;
+    background: rgba(151, 215, 255, 0.14); border: 1.5px solid var(--ice);
+    color: #FFFFFF; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.2s;
+  }
+  .chap-btn:hover { background: var(--ice); color: var(--deep-night); }
+
+  /* Final Launch Band */
   .lp-cta-band {
-    text-align: center; padding: 72px 32px;
-    background: linear-gradient(135deg, var(--deep) 0%, var(--steel) 60%, #2A6F97 100%);
+    text-align: center; padding: 92px 28px;
+    background: linear-gradient(135deg, #086288 0%, #4D8DBA 60%, #0B4B6B 100%);
     color: #FFFFFF;
   }
-  .lp-cta-band h2 { font-family: 'Outfit', sans-serif; font-size: clamp(26px, 3.6vw, 40px); font-weight: 800; margin-bottom: 10px; }
-  .lp-cta-band p { font-size: 15px; color: rgba(255,255,255,0.88); max-width: 620px; margin: 0 auto 26px auto; }
+  .lp-cta-band h2 { font-family: 'Outfit', sans-serif; font-size: clamp(28px, 4vw, 44px); font-weight: 800; margin-bottom: 10px; }
+  .lp-cta-band p { font-size: 15px; color: rgba(255,255,255,0.88); max-width: 600px; margin: 0 auto 28px auto; }
 
   /* ==================== INTERACTIVE DASHBOARD MODE ==================== */
   #dashboard-mode { display: none; min-height: 100vh; background: var(--canvas); color: var(--ink); }
@@ -271,23 +286,19 @@
   .sidebar {
     position: fixed; top: 0; left: 0; bottom: 0; width: var(--sidebar-w);
     background: linear-gradient(180deg, var(--deep) 0%, var(--deep-dark) 62%, var(--deep-night) 100%);
-    color: #FFFFFF;
-    display: flex; flex-direction: column; justify-content: space-between;
+    color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between;
     padding: 18px 15px 16px 15px; z-index: 200;
-    box-shadow: 6px 0 30px rgba(3, 34, 51, 0.18);
-    transition: transform 0.25s ease;
+    box-shadow: 6px 0 30px rgba(3, 27, 41, 0.2); transition: transform 0.25s ease;
   }
   .back-lp-btn {
     width: 100%; padding: 8px 12px; border-radius: 8px; margin-bottom: 12px;
-    background: rgba(151, 215, 255, 0.12); border: 1px solid rgba(151, 215, 255, 0.35);
-    color: var(--ice); font-size: 11.5px; font-weight: 700; cursor: pointer;
-    text-align: left; transition: 0.15s;
+    background: rgba(151, 215, 255, 0.14); border: 1px solid rgba(151, 215, 255, 0.35);
+    color: var(--ice); font-size: 11.5px; font-weight: 700; cursor: pointer; text-align: left; transition: 0.15s;
   }
   .back-lp-btn:hover { background: var(--ice); color: var(--deep-night); }
 
   .sb-brand {
-    display: flex; align-items: center; gap: 11px;
-    padding: 2px 6px 14px 6px;
+    display: flex; align-items: center; gap: 11px; padding: 2px 6px 14px 6px;
     border-bottom: 1px solid rgba(151, 215, 255, 0.18); margin-bottom: 12px;
   }
   .sb-logo {
@@ -298,25 +309,16 @@
   }
   .sb-brand-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 14px; }
   .sb-brand-sub { font-size: 10.5px; color: var(--ice); }
-
   .sb-label { font-size: 9.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(151, 215, 255, 0.55); padding: 6px 10px; }
   .sb-nav { display: flex; flex-direction: column; gap: 4px; }
   .nav-item {
-    display: flex; align-items: center; gap: 10px;
-    padding: 10px 12px; border-radius: 9px; border: none; width: 100%; text-align: left;
-    background: transparent; color: rgba(235, 247, 255, 0.85);
-    font-size: 12.8px; font-weight: 600; cursor: pointer; transition: 0.16s;
+    display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 9px;
+    border: none; width: 100%; text-align: left; background: transparent;
+    color: rgba(235, 247, 255, 0.85); font-size: 12.8px; font-weight: 600; cursor: pointer; transition: 0.16s;
   }
   .nav-item:hover { background: rgba(151, 215, 255, 0.12); color: #FFFFFF; }
-  .nav-item.active {
-    background: linear-gradient(90deg, var(--ice), #C5E8FF);
-    color: var(--deep-night); font-weight: 800;
-    box-shadow: 0 6px 18px rgba(151, 215, 255, 0.25);
-  }
-  .nav-count {
-    margin-left: auto; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 99px;
-    background: rgba(151, 215, 255, 0.18); color: var(--ice);
-  }
+  .nav-item.active { background: linear-gradient(90deg, var(--ice), #C5E8FF); color: var(--deep-night); font-weight: 800; box-shadow: 0 6px 18px rgba(151, 215, 255, 0.25); }
+  .nav-count { margin-left: auto; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 99px; background: rgba(151, 215, 255, 0.18); color: var(--ice); }
   .nav-item.active .nav-count { background: rgba(8, 98, 136, 0.18); color: var(--deep-night); }
 
   .sb-footer { border-top: 1px solid rgba(151, 215, 255, 0.18); padding-top: 12px; display: flex; flex-direction: column; gap: 8px; }
@@ -350,29 +352,17 @@
   .view.active { display: block; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* Interactive Controls & Cards */
-  .card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 14px; padding: 20px 22px; box-shadow: var(--shadow-sm); margin-bottom: 18px;
-  }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; box-shadow: var(--shadow-sm); margin-bottom: 18px; }
   .card-title { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 800; color: var(--deep-dark); margin-bottom: 3px; }
   .card-sub { font-size: 12.4px; color: var(--muted); margin-bottom: 14px; }
-
   .insight-strip {
-    background: var(--ice-soft); border-left: 4px solid var(--deep);
-    border-radius: 9px; padding: 13px 16px; margin-bottom: 16px;
-    display: flex; gap: 11px; align-items: flex-start;
-    border-top: 1px solid rgba(77, 141, 186, 0.22);
-    border-right: 1px solid rgba(77, 141, 186, 0.22);
-    border-bottom: 1px solid rgba(77, 141, 186, 0.22);
+    background: var(--ice-soft); border-left: 4px solid var(--deep); border-radius: 9px; padding: 13px 16px; margin-bottom: 16px;
+    display: flex; gap: 11px; align-items: flex-start; border: 1px solid rgba(77, 141, 186, 0.22); border-left-width: 4px;
   }
   .insight-strip p { font-size: 12.8px; color: var(--deep-dark); }
 
   .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px; }
-  .kpi {
-    background: var(--card); border: 1px solid var(--border); border-top: 4px solid var(--deep);
-    border-radius: 14px; padding: 16px 18px; box-shadow: var(--shadow-sm);
-  }
+  .kpi { background: var(--card); border: 1px solid var(--border); border-top: 4px solid var(--deep); border-radius: 14px; padding: 16px 18px; box-shadow: var(--shadow-sm); }
   .kpi.steel { border-top-color: var(--steel); }
   .kpi.ice { border-top-color: var(--ice); }
   .kpi-label { font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); }
@@ -385,43 +375,24 @@
   @media (max-width: 1080px) { .grid-2, .grid-2-eq, .grid-3 { grid-template-columns: 1fr; } }
 
   .pill-bar { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 14px; }
-  .pill {
-    padding: 7px 14px; border-radius: 99px; font-size: 12px; font-weight: 700;
-    background: #FFFFFF; color: var(--deep); border: 1px solid var(--border-strong);
-    cursor: pointer; transition: 0.15s;
-  }
+  .pill { padding: 7px 14px; border-radius: 99px; font-size: 12px; font-weight: 700; background: #FFFFFF; color: var(--deep); border: 1px solid var(--border-strong); cursor: pointer; transition: 0.15s; }
   .pill:hover { background: var(--ice-soft); }
   .pill.active { background: var(--deep); color: #FFFFFF; border-color: var(--deep); }
 
-  /* Interactive What-If Sliders */
   .slider-panel {
-    background: linear-gradient(135deg, #EBF7FF, #FFFFFF);
-    border: 1px solid rgba(8, 98, 136, 0.22);
-    border-radius: 12px; padding: 14px 18px; margin-bottom: 16px;
-    display: flex; flex-wrap: wrap; gap: 18px; align-items: center;
+    background: linear-gradient(135deg, #EBF7FF, #FFFFFF); border: 1px solid rgba(8, 98, 136, 0.22);
+    border-radius: 12px; padding: 14px 18px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 18px; align-items: center;
   }
   .slider-group { display: flex; flex-direction: column; gap: 4px; min-width: 210px; }
   .slider-group label { font-size: 11.5px; font-weight: 800; color: var(--deep-dark); display: flex; justify-content: space-between; }
   .slider-group input[type="range"] { accent-color: var(--deep); cursor: pointer; }
 
-  .filter-bar {
-    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
-    background: var(--card); border: 1px solid var(--border);
-    padding: 11px 15px; border-radius: 11px; margin-bottom: 14px;
-  }
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: var(--card); border: 1px solid var(--border); padding: 11px 15px; border-radius: 11px; margin-bottom: 14px; }
   .filter-bar label { font-size: 12px; color: var(--deep-dark); font-weight: 700; }
-  .filter-bar select, .filter-bar input {
-    background: var(--canvas); color: var(--ink); border: 1px solid var(--border-strong);
-    padding: 6px 10px; border-radius: 7px; font-size: 12.2px; outline: none;
-  }
+  .filter-bar select, .filter-bar input { background: var(--canvas); color: var(--ink); border: 1px solid var(--border-strong); padding: 6px 10px; border-radius: 7px; font-size: 12.2px; outline: none; }
 
-  /* Click-to-Inspect Company Card in Quadrant */
   .outlook-list { max-height: 495px; overflow-y: auto; display: flex; flex-direction: column; gap: 9px; padding-right: 4px; }
-  .outlook-item {
-    background: var(--canvas); border: 1px solid var(--border);
-    border-left: 4px solid var(--deep); border-radius: 9px; padding: 11px 13px;
-    cursor: pointer; transition: 0.16s;
-  }
+  .outlook-item { background: var(--canvas); border: 1px solid var(--border); border-left: 4px solid var(--deep); border-radius: 9px; padding: 11px 13px; cursor: pointer; transition: 0.16s; }
   .outlook-item:hover, .outlook-item.highlighted { background: var(--ice-soft); border-color: var(--deep); transform: translateX(3px); }
   .outlook-item.contender { border-left-color: var(--steel); }
   .outlook-item.watch { border-left-color: var(--ice); }
@@ -457,19 +428,10 @@
   tr:hover td { background: var(--ice-soft); }
 
   .video-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
-  .video-frame {
-    position: relative; aspect-ratio: 16 / 9;
-    background: linear-gradient(135deg, var(--deep-night), var(--deep));
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center; padding: 18px; color: #FFFFFF;
-  }
+  .video-frame { position: relative; aspect-ratio: 16 / 9; background: linear-gradient(135deg, var(--deep-night), var(--deep)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 18px; color: #FFFFFF; }
   .video-frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .video-ph { z-index: 1; }
-  .video-ph code {
-    display: inline-block; margin-top: 8px; font-size: 11px;
-    background: rgba(151, 215, 255, 0.2); color: var(--ice);
-    border: 1px solid rgba(151, 215, 255, 0.45); padding: 3px 9px; border-radius: 5px;
-  }
+  .video-ph code { display: inline-block; margin-top: 8px; font-size: 11px; background: rgba(151, 215, 255, 0.2); color: var(--ice); border: 1px solid rgba(151, 215, 255, 0.45); padding: 3px 9px; border-radius: 5px; }
   .video-meta { padding: 15px 17px; }
   .video-meta h4 { font-family: 'Outfit', sans-serif; font-size: 16.5px; font-weight: 800; color: var(--deep-dark); margin-bottom: 4px; }
   .video-meta p { font-size: 12.4px; color: var(--muted); }
@@ -481,6 +443,7 @@
     .menu-toggle { display: inline-block; }
     .lp-nav { padding: 14px 18px; }
     .lp-links { display: none; }
+    .scrolly-right { padding: 0 22px; }
   }
 </style>
 </head>
@@ -490,165 +453,146 @@
 <div id="preloader">
   <div class="loader-ring">SL</div>
   <div class="loader-title">SL Auto Intelligence</div>
-  <div class="loader-sub">Sri Lanka Brand-New Market • 2026 Positioning</div>
+  <div class="loader-sub">Sri Lanka Brand-New Market • 2026</div>
   <div class="loader-track"><div class="loader-bar"></div></div>
 </div>
 
 <!-- ====================================================================== -->
-<!-- MODE 1: CINEMATIC SCROLLING LANDING PAGE (JETOUR-INSPIRED)             -->
+<!-- MODE 1: MINIMAL JETOUR-STYLE HERO + STICKY CAR SCROLLYTELLING          -->
 <!-- ====================================================================== -->
 <div id="landing-mode">
   <nav class="lp-nav" id="lpNav">
     <div class="lp-logo">SL AUTO<span>INTEL</span></div>
     <div class="lp-links">
-      <a href="#lp-shock">2025–26 Rebound</a>
-      <a href="#lp-pillars">SCALE Strategy</a>
-      <a href="#lp-launch">Executive Portal</a>
-      <button class="lp-cta-sm" onclick="enterDashboard('quadrant')">Launch Dashboard →</button>
+      <a href="#evolution">The Evolution</a>
+      <a href="#launch">Dashboard</a>
+      <button class="lp-cta-sm" onclick="enterDashboard('ninebox')">Open Dashboard →</button>
     </div>
   </nav>
 
-  <!-- FULL-VIEWPORT HERO STAGE -->
+  <!-- MINIMAL FULL-BLEED HERO -->
   <section class="lp-hero">
-    <video class="lp-hero-video" autoplay muted loop playsinline onerror="this.style.display='none'">
-      <source src="assets/videos/video1_market_shift.mp4" type="video/mp4">
-    </video>
-    <div class="horizon-bg"></div>
-    <div class="watermark-text" id="heroWatermark">BYD</div>
+    <img class="hero-bg-img" src="assets/cars/hero_suv.jpg" alt="Sri Lanka Automotive 2026 Hero SUV">
+    <div class="hero-vignette"></div>
 
-    <div class="hero-center">
-      <div class="hero-tag">MECE Market Positioning • 28 Verified Distributors • 18% VAT Standard</div>
-      <h1 class="hero-title">Redrawing Sri Lanka's<br><span>Automotive Landscape</span></h1>
-      <p class="hero-sub">
-        A CEO-level competitive intelligence platform mapping every brand-new ICE, Hybrid, and EV player across Sri Lanka — powered by Gartner Magic Quadrant scoring, a live 9-Box Matrix, and the SCALE Pathway.
-      </p>
+    <div class="hero-top">
+      <div class="hero-eyebrow">Sri Lanka Brand-New Market • 28 Distributors • 2026</div>
+      <h1 class="hero-title">THE NEW <span>AUTOMOTIVE</span> ERA</h1>
+    </div>
 
-      <!-- Interactive Center Spotlight Card -->
-      <div class="spotlight-stage" id="spotlightCard">
+    <div class="hero-bottom">
+      <div class="hero-btn-row">
+        <button class="btn-explore" onclick="enterDashboard('ninebox')">Explore Dashboard</button>
+      </div>
+      <a class="scroll-cue" href="#evolution">
+        <span>Scroll the Evolution</span>
+        <div class="scroll-line"></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- STICKY SPLIT-SCREEN SCROLLYTELLING (LEFT: REAL CARS CHANGING | RIGHT: STORY) -->
+  <section id="evolution" class="scrolly-wrap">
+
+    <!-- STICKY LEFT CAR STAGE -->
+    <div class="scrolly-left">
+      <!-- Slide 0: Petrol / ICE Era -->
+      <div class="car-slide active" id="slide-0">
+        <img src="assets/cars/stage1_ice.jpg" alt="Petrol ICE Refueling Era">
+        <div class="car-slide-overlay"></div>
+      </div>
+
+      <!-- Slide 1: Rugged Jeep / SUV Boom -->
+      <div class="car-slide" id="slide-1">
+        <img src="assets/cars/stage2_jeep.jpg" alt="Modern Rugged Jeep SUV Boom">
+        <div class="car-slide-overlay"></div>
+      </div>
+
+      <!-- Slide 2: Pure EV Disruption -->
+      <div class="car-slide" id="slide-2">
+        <img src="assets/cars/hero_suv.jpg" alt="Pure EV Electric Mobility">
+        <div class="ev-glow-ring"></div>
+        <div class="car-slide-overlay"></div>
+      </div>
+
+      <!-- Dynamic Telemetry HUD -->
+      <div class="stage-hud">
         <div>
-          <span class="spot-badge" id="spotBadge">EV Market Leader • #1 Brand</span>
-          <div class="spot-model" id="spotModel">BYD Atto 3 / Atto 1</div>
-          <div class="spot-dist" id="spotDist">John Keells CG Auto • Batch B</div>
-          <div class="spot-note" id="spotNote">Captured 48.8% of Oct 2026 brand-new car registrations (221 of 453), powered by vertical scale and Sri Lanka's 60% EV luxury tax tier.</div>
+          <div class="hud-pill" id="hudPill">ERA 01 · PETROL &amp; DIESEL (ICE)</div>
+          <div class="hud-title" id="hudTitle">The Legacy Combustion Base</div>
+          <div class="hud-sub" id="hudSub">Toyota Lanka • United Motors • DIMO • AMW</div>
         </div>
-        <div class="spot-metrics">
-          <div class="spot-stat"><div class="spot-stat-lbl">Powertrain</div><div class="spot-stat-val" id="spotPT">100% EV</div></div>
-          <div class="spot-stat"><div class="spot-stat-lbl">Est. Price</div><div class="spot-stat-val" id="spotPrice">LKR 14.9M</div></div>
-          <div class="spot-stat"><div class="spot-stat-lbl">Price Tier</div><div class="spot-stat-val" id="spotTier">Mid-Range</div></div>
-          <div class="spot-stat"><div class="spot-stat-lbl">Quadrant</div><div class="spot-stat-val" id="spotQuad">Visionary</div></div>
+        <div class="stage-dots">
+          <button class="s-dot active" onclick="scrollToChapter(0)" title="01 ICE Era"></button>
+          <button class="s-dot" onclick="scrollToChapter(1)" title="02 SUV / Jeep Boom"></button>
+          <button class="s-dot" onclick="scrollToChapter(2)" title="03 EV Disruption"></button>
         </div>
-      </div>
-
-      <div class="hero-actions">
-        <button class="btn-explore" onclick="enterDashboard('ninebox')">Explore Interactive Dashboard →</button>
-        <a class="btn-ghost" href="#lp-shock">Scroll Market Story ↓</a>
       </div>
     </div>
 
-    <!-- Bottom Model Selector Carousel (Jetour Style) -->
-    <div class="model-selector">
-      <div class="model-chip active" onclick="selectHeroModel(0, this)">
-        <div class="model-chip-name">BYD Atto 3</div>
-        <div class="model-chip-sub">EV • #1 Leader</div>
-      </div>
-      <div class="model-chip" onclick="selectHeroModel(1, this)">
-        <div class="model-chip-name">Jetour T2</div>
-        <div class="model-chip-sub">ICE • Euro Motors</div>
-      </div>
-      <div class="model-chip" onclick="selectHeroModel(2, this)">
-        <div class="model-chip-name">JAECOO J5</div>
-        <div class="model-chip-sub">HEV • Hayleys</div>
-      </div>
-      <div class="model-chip" onclick="selectHeroModel(3, this)">
-        <div class="model-chip-name">Toyota RAV4</div>
-        <div class="model-chip-sub">Hybrid • Legacy King</div>
-      </div>
-      <div class="model-chip" onclick="selectHeroModel(4, this)">
-        <div class="model-chip-name">Outlander Sport</div>
-        <div class="model-chip-sub">ICE • United Motors</div>
-      </div>
-    </div>
-  </section>
+    <!-- SCROLLABLE RIGHT STORY CHAPTERS -->
+    <div class="scrolly-right">
 
-  <!-- SCROLL SECTION 2: THE 2025-2026 SHOCKWAVE -->
-  <section id="lp-shock" class="lp-section light">
-    <div class="lp-inner reveal">
-      <div class="lp-sec-kicker">01 · The Post-Ban Inflection Point</div>
-      <h2 class="lp-sec-title">Five Years of Pent-Up Demand — And a Structural Shift</h2>
-      <p class="lp-sec-sub">
-        When Sri Lanka reopened vehicle imports, the market didn't simply return to 2019 norms. Registrations surged nearly 5× while Chinese EV &amp; SUV entrants rewrote the pricing curve.
-      </p>
-      <div class="shock-grid">
-        <div class="shock-card">
-          <div class="shock-val">360,117</div>
-          <div class="shock-lbl">2025 New Registrations</div>
-          <div class="shock-desc">Exploded ~5× from 74,410 in 2024 after the five-year import hiatus (DMT).</div>
+      <!-- CHAPTER 01: PETROL / ICE -->
+      <div class="story-chapter active" data-step="0" id="chapter-0">
+        <div class="chap-num">Chapter 01 · Fuel &amp; Heritage</div>
+        <h2 class="chap-title">The Legacy <span>ICE Era</span></h2>
+        <p class="chap-desc">
+          For decades, Sri Lankan roads belonged to traditional petrol and diesel franchises backed by deep islandwide service workshops. Yet high fuel costs and <strong>100%–120% ICE luxury taxes</strong> have compressed traditional Japanese share from <strong>81% (2019) to 62% (2025)</strong>.
+        </p>
+        <div class="chap-stats">
+          <div class="c-stat"><div class="c-stat-val">81% → 62%</div><div class="c-stat-lbl">Japan Registration Share Shift</div></div>
+          <div class="c-stat"><div class="c-stat-val">100%–120%</div><div class="c-stat-lbl">Petrol / Diesel Luxury Tax</div></div>
         </div>
-        <div class="shock-card accent">
-          <div class="shock-val">$2.05 Bn</div>
-          <div class="shock-lbl">2025 Vehicle Import Bill</div>
-          <div class="shock-desc">Confirmed by Central Bank of Sri Lanka (CBSL) alongside Rs 896B in customs taxes.</div>
-        </div>
-        <div class="shock-card">
-          <div class="shock-val">48.8%</div>
-          <div class="shock-lbl">BYD Brand-New Share</div>
-          <div class="shock-desc">221 of 453 brand-new cars in Oct 2026 (JB Securities) — disrupting legacy ICE leaders.</div>
-        </div>
-        <div class="shock-card accent">
-          <div class="shock-val">81% → 62%</div>
-          <div class="shock-lbl">Japan's Share Compression</div>
-          <div class="shock-desc">Traditional Japanese dominance dropped 19 points from 2019 to 2025 as EVs reached 10% of imports.</div>
-        </div>
+        <button class="chap-btn" onclick="enterDashboard('quadrant')">Inspect Legacy Players in Quadrant →</button>
       </div>
+
+      <!-- CHAPTER 02: JEEP / SUV BOOM -->
+      <div class="story-chapter" data-step="1" id="chapter-1">
+        <div class="chap-num">Chapter 02 · Post-Ban Surge</div>
+        <h2 class="chap-title">The Rugged <span>SUV &amp; Jeep</span> Wave</h2>
+        <p class="chap-desc">
+          After a five-year import hiatus, Sri Lanka's market exploded nearly <strong>5× to 360,117 registrations</strong> ($2.05B import bill). Bold new SUVs—like <strong>Jetour T2</strong> (~27% of small SUVs) and <strong>JAECOO J5 HEV</strong>—stormed the LKR 15M–25M Mid-Range band with luxury styling at mainstream prices.
+        </p>
+        <div class="chap-stats">
+          <div class="c-stat"><div class="c-stat-val">360,117</div><div class="c-stat-lbl">2025 Total Registrations (DMT)</div></div>
+          <div class="c-stat"><div class="c-stat-val">$2.05 Bn</div><div class="c-stat-lbl">2025 Import Bill (CBSL)</div></div>
+        </div>
+        <button class="chap-btn" onclick="enterDashboard('ninebox')">Explore Mid-Range 9-Box Map →</button>
+      </div>
+
+      <!-- CHAPTER 03: PURE EV DISRUPTION -->
+      <div class="story-chapter" data-step="2" id="chapter-2">
+        <div class="chap-num">Chapter 03 · Blue Ocean Disruption</div>
+        <h2 class="chap-title">The <span>Pure EV</span> Takeover</h2>
+        <p class="chap-desc">
+          Powered by vertical manufacturing scale and Sri Lanka's <strong>60% EV luxury tax threshold</strong> (above Rs 6M CIF), electric vehicles flipped the price curve. <strong>BYD (John Keells CG Auto)</strong> captured <strong>48.8% of Oct 2026 brand-new cars</strong> — redefining what buyers expect below LKR 15M.
+        </p>
+        <div class="chap-stats">
+          <div class="c-stat"><div class="c-stat-val">48.8%</div><div class="c-stat-lbl">BYD Oct 2026 New-Car Share</div></div>
+          <div class="c-stat"><div class="c-stat-val">60% Tax</div><div class="c-stat-lbl">EV Luxury Tax Advantage</div></div>
+        </div>
+        <button class="chap-btn" onclick="enterDashboard('scale')">Open SCALE Strategy Suite →</button>
+      </div>
+
     </div>
   </section>
 
-  <!-- SCROLL SECTION 3: 3 INTERACTIVE PILLARS -->
-  <section id="lp-pillars" class="lp-section ocean">
-    <div class="lp-inner reveal">
-      <div class="lp-sec-kicker">02 · Inside the Intelligence Dashboard</div>
-      <h2 class="lp-sec-title">Three Consulting Lenses. Zero Guesswork.</h2>
-      <p class="lp-sec-sub">Click any analytical lens below to jump straight into that interactive view inside the dashboard.</p>
-      <div class="pillar-grid">
-        <div class="pillar-card" onclick="enterDashboard('quadrant')">
-          <div class="pillar-num">LENS 01 · COMPETITIVE SCORING</div>
-          <h3>Gartner Magic Quadrant</h3>
-          <p>Filter 15 scored Sri Lankan players across PV, EV, CV, 2W/3W, and Manufacturing. Click any player to inspect Analyst Outlook &amp; evidence coverage.</p>
-          <div class="pillar-link">Open Magic Quadrant →</div>
-        </div>
-        <div class="pillar-card" onclick="enterDashboard('ninebox')">
-          <div class="pillar-num">LENS 02 · LIVE SIMULATOR</div>
-          <h3>Interactive 9-Box Matrix</h3>
-          <p>Drag live Budget &amp; Mid-Range LKR price sliders to test market white spaces in real time — plus instant drag-and-drop CSV upload.</p>
-          <div class="pillar-link">Launch 9-Box Simulator →</div>
-        </div>
-        <div class="pillar-card" onclick="enterDashboard('scale')">
-          <div class="pillar-num">LENS 03 · STRATEGY PLAYBOOK</div>
-          <h3>The SCALE Pathway Suite</h3>
-          <p>Blue Ocean Strategy Canvas, ERRC Action Grid, Innovator's Dilemma, and an interactive Three Horizons (70/20/10) capital allocator.</p>
-          <div class="pillar-link">Explore SCALE Suite →</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SCROLL SECTION 4: FINAL CTA BAND -->
-  <section id="lp-launch" class="lp-cta-band">
-    <div class="lp-inner reveal">
-      <h2>Ready to Inspect the Live Data?</h2>
-      <p>Enter the interactive executive dashboard to filter all 28 MECE distributors, adjust 9-Box price cutoffs live, and review the SCALE strategic roadmap.</p>
-      <button class="btn-explore" onclick="enterDashboard('ninebox')">Enter Interactive Dashboard →</button>
-    </div>
+  <!-- FINAL LAUNCH BAND -->
+  <section id="launch" class="lp-cta-band">
+    <h2>Step Inside the Live Intelligence Dashboard</h2>
+    <p>Filter all 28 MECE distributors, drag live 9-Box price sliders, inspect Gartner Magic Quadrant scores, and review the SCALE strategic roadmap.</p>
+    <button class="btn-solid" onclick="enterDashboard('ninebox')">Launch Interactive Dashboard →</button>
   </section>
 </div>
 
 <!-- ====================================================================== -->
-<!-- MODE 2: FULL INTERACTIVE EXECUTIVE DASHBOARD                           -->
+<!-- MODE 2: HYPER-INTERACTIVE EXECUTIVE DASHBOARD                          -->
 <!-- ====================================================================== -->
 <div id="dashboard-mode">
   <aside class="sidebar" id="sidebar">
     <div>
-      <button class="back-lp-btn" onclick="exitDashboard()">← Back to Landing Showcase</button>
+      <button class="back-lp-btn" onclick="exitDashboard()">← Back to Car Showcase</button>
       <div class="sb-brand">
         <div class="sb-logo">SL</div>
         <div>
@@ -705,7 +649,7 @@
       <section id="view-ninebox" class="view active">
         <div class="insight-strip">
           <div>🎯</div>
-          <p><strong>Interactive Simulator:</strong> Drag the <strong>Budget</strong> and <strong>Mid-Range</strong> price sliders below to dynamically test how Sri Lankan brand-new models cluster across the 9 boxes. Hover any dot for full distributor &amp; VAT-inclusive pricing details.</p>
+          <p><strong>Interactive Simulator:</strong> Drag the <strong>Budget</strong> and <strong>Mid-Range</strong> price sliders below to dynamically test how Sri Lankan brand-new models cluster across the 9 boxes.</p>
         </div>
 
         <div class="slider-panel">
@@ -830,16 +774,10 @@
           <div class="kpi ice"><div class="kpi-label">Total SL Vehicle Fleet</div><div class="kpi-val">8.45 Mn</div><div class="kpi-sub">905,329 Passenger Cars (DCS)</div></div>
           <div class="kpi"><div class="kpi-label">Component Exports Growth</div><div class="kpi-val">2.8×</div><div class="kpi-sub">Rs 9.2B (2020) → Rs 25.7B (2022)</div></div>
         </div>
-
         <div class="grid-3">
           <div class="card"><div class="card-title">2025 Registrations by Class</div><div class="card-sub">Post-ban surge to 360K+ units (DMT).</div><div id="regChart" style="width:100%; height:280px;"></div></div>
           <div class="card"><div class="card-title">Sector GDP Contribution</div><div class="card-sub">Current vs. Constant Prices (Rs. Mn, DCS).</div><div id="gdpChart" style="width:100%; height:280px;"></div></div>
           <div class="card"><div class="card-title">Imports vs. Exports (Rs. Bn)</div><div class="card-sub">Sri Lanka Customs (2020–2022).</div><div id="tradeChart" style="width:100%; height:280px;"></div></div>
-        </div>
-
-        <div class="insight-strip">
-          <div>🏭</div>
-          <p><strong>Global OEM Export Strength:</strong> Sri Lankan SLACMA component manufacturers export automotive wire harnesses and impact sensors directly to <strong>Toyota, Honda, BMW, Volvo, Opel, and Aston Martin</strong> across the USA, Germany, UK, and Switzerland.</p>
         </div>
       </section>
 
@@ -913,43 +851,47 @@
 </div>
 
 <script>
-  // Preloader dismiss
+  // Preloader
   window.addEventListener("load", () => {
-    setTimeout(() => document.getElementById("preloader").classList.add("hidden"), 1100);
+    setTimeout(() => document.getElementById("preloader").classList.add("hidden"), 1050);
   });
 
-  // Landing Page Navbar Scroll & Reveal Observer
+  // Navbar scroll effect
   window.addEventListener("scroll", () => {
     const nav = document.getElementById("lpNav");
-    if (nav) nav.classList.toggle("scrolled", window.scrollY > 40);
+    if (nav) nav.classList.toggle("scrolled", window.scrollY > 50);
   });
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
-  }, { threshold: 0.14 });
-  document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
 
-  // Jetour-style Hero Model Carousel Data
-  const heroModels = [
-    { wm:"BYD", badge:"EV Market Leader • #1 Brand", model:"BYD Atto 3 / Atto 1", dist:"John Keells CG Auto • Batch B", note:"Captured 48.8% of Oct 2026 brand-new car registrations (221 of 453), powered by vertical scale and Sri Lanka's 60% EV luxury tax tier.", pt:"100% EV", price:"LKR 14.9M", tier:"Mid-Range", quad:"Visionary" },
-    { wm:"T2", badge:"Fast-Rising SUV Disruptor", model:"Jetour T2 / Dashing", dist:"Euro Motors (Euro Holdings) • Batch A", note:"Rugged Defender-inspired styling at mid-range pricing — Jetour captured ~27% of small SUV registrations in Aug 2026.", pt:"ICE", price:"LKR 23.5M", tier:"Mid-Range", quad:"Challenger" },
-    { wm:"J5", badge:"New-Wave Hybrid Challenger", model:"JAECOO J5 HEV", dist:"Hayleys Mobility • Batch C", note:"Backed by Hayleys' corporate scale alongside OMODA & Kaiyi EVs — aggressively targeting Sri Lanka's underserved hybrid SUV band.", pt:"Hybrid", price:"LKR 19.8M", tier:"Mid-Range", quad:"Contender" },
-    { wm:"RAV4", badge:"Incumbent Execution Leader", model:"Toyota RAV4 / LC300 Hybrid", dist:"Toyota Lanka (Pvt) Ltd • Batch A", note:"Broadest islandwide service network and highest execution score (4.58/5.0) — pivoting selectively into hybrids to defend share.", pt:"Hybrid", price:"LKR 28.5M", tier:"Premium", quad:"Leader" },
-    { wm:"UML", badge:"Core Legacy Client", model:"Mitsubishi Outlander Sport", dist:"United Motors Lanka (UNIMO) • Batch C", note:"Strong profit recovery & multi-brand ICE base (Mitsubishi, Perodua) — key opportunity lies in H2 Budget/Mid-Range NEV expansion.", pt:"ICE", price:"LKR 21.8M", tier:"Mid-Range", quad:"Challenger" }
+  // STICKY CAR SCROLLYTELLING ENGINE
+  const hudMeta = [
+    { pill:"ERA 01 · PETROL & DIESEL (ICE)", title:"The Legacy Combustion Base", sub:"Toyota Lanka • United Motors • DIMO • AMW" },
+    { pill:"ERA 02 · RUGGED SUV & JEEP BOOM", title:"Mid-Range SUV Disruption", sub:"Jetour T2 • JAECOO J5 • Mitsubishi Outlander" },
+    { pill:"ERA 03 · PURE ELECTRIC (EV)", title:"The 48.8% EV Takeover", sub:"BYD Atto 3 • Kaiyi eVibe • BAW E7 • ChargeNET" }
   ];
 
-  function selectHeroModel(idx, el) {
-    document.querySelectorAll(".model-chip").forEach(c => c.classList.remove("active"));
-    el.classList.add("active");
-    const m = heroModels[idx];
-    document.getElementById("heroWatermark").textContent = m.wm;
-    document.getElementById("spotBadge").textContent = m.badge;
-    document.getElementById("spotModel").textContent = m.model;
-    document.getElementById("spotDist").textContent = m.dist;
-    document.getElementById("spotNote").textContent = m.note;
-    document.getElementById("spotPT").textContent = m.pt;
-    document.getElementById("spotPrice").textContent = m.price;
-    document.getElementById("spotTier").textContent = m.tier;
-    document.getElementById("spotQuad").textContent = m.quad;
+  function activateStep(stepIdx) {
+    document.querySelectorAll(".car-slide").forEach((s, i) => s.classList.toggle("active", i === stepIdx));
+    document.querySelectorAll(".story-chapter").forEach((c, i) => c.classList.toggle("active", i === stepIdx));
+    document.querySelectorAll(".s-dot").forEach((d, i) => d.classList.toggle("active", i === stepIdx));
+    const m = hudMeta[stepIdx];
+    document.getElementById("hudPill").textContent = m.pill;
+    document.getElementById("hudTitle").textContent = m.title;
+    document.getElementById("hudSub").textContent = m.sub;
+  }
+
+  const chapterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = parseInt(entry.target.getAttribute("data-step"), 10);
+        activateStep(idx);
+      }
+    });
+  }, { rootMargin: "-35% 0px -35% 0px", threshold: 0.1 });
+
+  document.querySelectorAll(".story-chapter").forEach(ch => chapterObserver.observe(ch));
+
+  function scrollToChapter(idx) {
+    document.getElementById("chapter-" + idx).scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
   // Enter / Exit Dashboard
@@ -966,7 +908,7 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  // Dashboard State
+  // Dashboard State & Data
   let BUDGET_MAX = 12.0, MIDRANGE_MAX = 25.0;
   let activeBatch = "ALL", activeSegment = "ALL", highlightedCompany = null;
 
@@ -1092,10 +1034,7 @@
   function updateThresholds() {
     BUDGET_MAX = parseFloat(document.getElementById("budgetSlider").value);
     MIDRANGE_MAX = parseFloat(document.getElementById("midSlider").value);
-    if (MIDRANGE_MAX <= BUDGET_MAX + 2) {
-      MIDRANGE_MAX = BUDGET_MAX + 3;
-      document.getElementById("midSlider").value = MIDRANGE_MAX;
-    }
+    if (MIDRANGE_MAX <= BUDGET_MAX + 2) { MIDRANGE_MAX = BUDGET_MAX + 3; document.getElementById("midSlider").value = MIDRANGE_MAX; }
     document.getElementById("budgetVal").textContent = `LKR ${BUDGET_MAX.toFixed(1)}M`;
     document.getElementById("midVal").textContent = `LKR ${MIDRANGE_MAX.toFixed(1)}M`;
     applyFilters();
@@ -1117,7 +1056,6 @@
       <span class="badge steel">Mid-Range: ${mCount}</span>
       <span class="badge dark">Premium: ${pCount}</span>
     `;
-
     const yMap = { "EV": 1, "Hybrid": 2, "ICE": 3 };
     const dists = [...new Set(data.map(d => d.Distributor))].sort();
     const palette = ["#086288","#4D8DBA","#032233","#0EA5E9","#0284C7","#1E40AF","#0F766E","#38BDF8","#2563EB","#155E75","#0369A1","#1D4ED8"];
@@ -1186,11 +1124,7 @@
         x: plotted.map(r => r.vision), y: plotted.map(r => r.exec),
         text: plotted.map(r => r.company), customdata: plotted.map(r => [r.seg, r.quad, r.ec, r.vc]),
         mode: "markers+text", textposition: "top center", textfont: { size: 11, color: "#043952" },
-        marker: {
-          size: plotted.map(r => r.id === highlightedCompany ? 22 : 14),
-          color: plotted.map(r => r.id === highlightedCompany ? "#97D7FF" : "#086288"),
-          line: { color: "#043952", width: 2.2 }
-        },
+        marker: { size: plotted.map(r => r.id === highlightedCompany ? 22 : 14), color: plotted.map(r => r.id === highlightedCompany ? "#97D7FF" : "#086288"), line: { color: "#043952", width: 2.2 } },
         name: "Evidenced Players",
         hovertemplate: "<b>%{text}</b><br>Segment: %{customdata[0]} • %{customdata[1]}<br>Vision: %{x:.2f} (Cov: %{customdata[3]}%)<br>Execution: %{y:.2f} (Cov: %{customdata[2]}%)<extra></extra>"
       },
@@ -1328,7 +1262,7 @@
   ["filterPowertrain","filterDistributor","filterBody"].forEach(id => document.getElementById(id).addEventListener("change", applyFilters));
   document.getElementById("registrySearch").addEventListener("input", renderRegistry);
 
-  // Initial data setup
+  // Initial setup
   renderOutlooks();
   renderOfferings();
   populateFilters(currentData);
