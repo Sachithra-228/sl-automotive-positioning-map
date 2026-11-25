@@ -1,0 +1,25 @@
+dataset,issue,rows_affected,action
+DCS Table 7.2 vehicles in use,"2022: components sum to 8,352,186 but printed 'All vehicles' is 8,352,213 (diff 27)",1,Kept as printed; flagged as a source discrepancy (0.0003%)
+DCS Table 7.2 vehicles in use,Tractor and trailer split has a '-' for 2022 in the source,2,"Kept the 'Tractors and trailers (total)' row only, which is complete"
+DCS Table 7.2 vehicles in use,Tamil legacy-font text interleaved with English labels,1,Matched English labels with regex and read the next five numbers; verified that components sum exactly to 'All vehicles' for 2019-2023
+World Bank EN.CO2.TRAN.ZS,Indicator returned no data for Sri Lanka,0,Dropped (not available)
+World Bank EP.PMP.DESL.CD,Indicator returned no data for Sri Lanka,0,Dropped (not available)
+World Bank EP.PMP.SGAS.CD,Indicator returned no data for Sri Lanka,0,Dropped (not available)
+World Bank IS.VEH.NVEH.P3,Indicator returned no data for Sri Lanka,0,Dropped (not available)
+World Bank NE.EXP.GNFS.CD,Null values for some years,5,Dropped null year rows (kept only reported values)
+World Bank NE.IMP.GNFS.CD,Null values for some years,5,Dropped null year rows (kept only reported values)
+UN Comtrade,"Duplicate (year, flow, HS, partner, customs, mode) rows",0,"Removed duplicates, kept first"
+UN Comtrade,Rows with null or zero trade value,0,Kept in clean file with value_usd=0 flagged; excluded from sums
+DCS Table 7.3 new registrations by fuel,"2023 rows sum to 27,839 but printed total is 27,890 (diff 51); 2019-2022 reconcile exactly",1,Kept as printed; parser tolerates only this documented difference
+DCS Table 7.3 new registrations by fuel,Flat token stream with Tamil legacy-font text and '-' for zero,215,Positional matching of 43 class x fuel rows validated against printed totals
+SLACMA directory,Phone numbers and emails not needed,31,Dropped contact fields; kept name address products website
+SLACMA directory,No category field,31,Rule-based product keyword categories (documented in 01_parse_slacma.py)
+Ministry data book 2023 Tables 4 and 5,Identical '100 and above' row repeated for 2017 and 2018,2,Flagged quality_flag; not used for trends
+Ministry data book 2023 Table 5,2018 intermediate consumption printed 6.6bn where row implies 16.6bn,1,Field not used
+Ministry data book 2023 Tables 7 and 9,2020 output jumps from about Rs 20bn to 42.9bn (Table 7) and 236bn (Table 9); establishments double,5,Flagged as series break; not trended across 2019-2020
+Ministry data book 2023 Tables 15-16,Rupee values for a broad vehicles-and-parts group; depreciation inflates 2022,6,Flagged; not mixed with USD sources
+Registrations 2025,"Research brief and press disagree for cars, motorcycles, buses and three-wheelers",16,All values kept with source and type; excluded from analysis until DMT data is loaded
+DCS Statistical Abstract downloads,"Several table files are byte-identical copies of the same multi-table PDF (7.1=7.2, 7.4=7.5=7.6, 7.7=7.8, 7.9=7.10)",18,De-duplicated by file hash; one PDF used per group
+Company financials,Unit mismatch between sources (Rs '000 in DIMO and UML reports; Rs in Lanka Ashok Leyland),124,Converted all to Rs million; parsed values cross-checked against headline figures in each report
+Company financials,United Motors reports Group and Company columns; press mixed them (Rs 3.6bn vs 2.2bn),8,Kept both with a Group or Company note
+EDB export table,Row labels wrap across lines and a growth column follows the ten year values,40,Parsed ten annual values and checked computed 2025 change equals printed change

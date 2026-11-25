@@ -1,0 +1,1571 @@
+--- page 1 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+AUTOMOBILE SECTOR 
+INDUSTRY 
+DATA 
+BOOK 
+
+--- page 2 ---
+ 
+ 
+i 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+AUTOMOBILE 
+SECTOR 
+
+--- page 3 ---
+ 
+ 
+ii 
+List of Contributors  
+ 
+01. Mr. A.H.M.U. Aruna Banadara  
+- 
+Director General 
+02. Miss. Samangika Abeysinghe  
+- 
+Acting Director 
+03. Mr. G.D.P. Munidasa  
+- 
+Acting Director 
+04. Miss. W.P. Kalyani  
+- 
+Deputy Director 
+05. Mr. B.A.K. Heshan 
+- 
+Statistician 
+06. Mr. P.A.N.C. Pathiraja  
+- 
+Development Officer 
+07. Mr. W.A.S.R. Jayawardhane  
+- 
+Development Officer 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+P.O.Box 570,73/1, Galle road, Colombo 03 
+Telephone 
+:    +94 11 2431342  
+E-mail  
+:    plan_unit@yahoo.com  
+Website 
+:    www.industry.gov.lk 
+
+--- page 4 ---
+ 
+ 
+iii 
+Foreword 
+ 
+The 2023 Industrial Data Book represents our commitment to supporting industrialists as they face 
+current economic challenges and strive for sustainable development through improved decision-
+making. This data book primarily concentrates on the statistical factors that impact economic 
+growth, particularly focusing on export expansion. 
+The statistical analyses presented in this data book are based on comprehensive statistical data 
+sourced from various institutions, including the Department of Census and Statistics (DCS), the 
+Department of Customs (DoC), the Export Development Board (EDB) and the Central Bank of Sri 
+Lanka (CBSL). 
+Within this publication, you will find statistical references related to both exports and imports. This 
+includes tables featuring productivity indicators derived from manufacturing establishments and the 
+number of individuals employed in each sector, as well as statistics on key indicators of industrial 
+activity spanning from 2016 to 2020. The data also covers the value of outputs and output 
+components, intermediate consumption values, employment breakdowns by nature, economic 
+indicators categorized by industry class, and import and export statistics. 
+I extend my gratitude to Mr. Aruna Bandara, Director General of the Planning Division at the Ministry 
+of Industries, and his dedicated team for their unwavering support throughout this project. I would 
+also like to express my sincere appreciation to Mr. Kavishka Heshan, Statistician at the Ministry of 
+Industries, and his team members, Mr. Nirosh Chathuranga Pathiraja and Mr. Shamith Rashmika 
+Jayawardane, for their remarkable dedication and collaborative efforts with the DCS, which helped 
+make this data book a reality. 
+I firmly believe that the 2023 Industrial Data Book will play a crucial role in shedding light on current 
+and future productivity and economic growth trends within the industrial sectors. It has the 
+potential to significantly influence policymaking in the industry sectors and will be valuable to a wide 
+range of data consumers, including policymakers, economic planners, academics, researchers and 
+other interested parties in the future. 
+ 
+J.M. Thilaka Jayasundara  
+Secretary  
+Ministry of Industries 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- page 5 ---
+ 
+ 
+iv 
+Content 
+Page No : 
+Overview 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+      01 
+Tables of Data and Graphs of Data 
+ 
+ 
+ 
+ 
+ 
+ 
+  02 - 08 
+ 
+ 
+ 
+ 
+List of Tables 
+Table 1. 
+Manufacture of motor vehicles, trailers and semi-trailers Contributions to 
+the GDP at Current and Constant Market Price (2018 -2022) 
+02 
+Table 2. 
+Manufacturing Establishments and Number of Persons Engaged of The 
+Share of the Manufacture of motor vehicles, trailers and semi-trailers 
+03 
+Table 3. 
+Principal Indicators of Industrial Activity Classified by Industry Division 
+& Persons Engaged Size Class of of the Manufacture of motor vehicles, 
+trailers and semi-trailer (2016) (Establishments with 5 or more persons  
+engaged) 
+03 
+Table 4. 
+Principal Indicators of Industrial Activity Classified by Industry Division 
+& Persons Engaged Size Class of of the Manufacture of motor vehicles, 
+trailers and semi-trailer (2017) (Establishments with 5 or more persons  
+engaged) 
+03 
+Table 5. 
+Principal Indicators of Industrial Activity Classified by Industry Division 
+& Persons Engaged Size Class of of the Manufacture of motor vehicles, 
+trailers and semi-trailer (2018) (Establishments with 5 or more persons  
+engaged) 
+04 
+Table 6. 
+Principal Indicators of Industrial Activity Classified by Industry Division 
+& Persons Engaged Size Class of of the Manufacture of motor vehicles, 
+trailers and semi-trailer (2019) (Establishments with 5 or more persons  
+engaged) 
+04 
+Table 7. 
+Principal Indicators of Industrial Activity Classified by Industry Division 
+& Persons Engaged Size Class of of the Manufacture of motor vehicles, 
+trailers and semi-trailer (2020) (Establishments with 5 or more persons  
+engaged) 
+04 
+Table 8. 
+Manufacturing of Manufacture of motor vehicles, trailers and semi-trailer 
+Per Head Labour Productivity 
+ 
+05 
+Table 9. 
+Value of Output & Output Components Classified by Manufacture of 
+motor vehicles, trailers and semi-trailer - (Establishments 25 or more 
+engaged) 
+05 
+Table 10. Value of Intermediate Consumptions & Intermediate Consumptions 
+Components Classified by Manufacture of motor vehicles, trailers and 
+semi-trailer - (Establishments with 25 or more engaged) 
+05 
+Table 11. Employment by Nature of Employment & Gender Classified by Industry 
+Divisions of Manufacture of motor vehicles, trailers and semi-trailer - 
+(Establishment with 25 or more persons engaged) 
+06 
+Table 
+12.1 
+Economic Indicators of Industrial Activity Classified by Automobile 
+Industry Class - (Establishments with 25 or more persons engaged) - 
+Manufacture of Motor Vehicles 
+06 
+Table 
+12.2 
+Economic Indicators of Industrial Activity Classified by Automobile 
+Industry Class - (Establishments with 25 or more persons engaged) - 
+Manufacture of Bodies for Motor Vehicles; Manufacture of Trailers & 
+Semi Trailers 
+06 
+Table 
+12.3 
+Economic Indicators of Industrial Activity Classified by Automobile 
+Industry Class - (Establishments with 25 or more persons engaged) - 
+Manufacture of Parts and Accessories for Motor Vehicles 
+07 
+
+--- page 6 ---
+ 
+ 
+v 
+Table 13. Economic Indicators of Industrial Activity Classified by Manufacture of 
+motor vehicles, trailers and semi-trailers - (Establishments with less than 
+25 persons engaged) 
+07 
+Table 14. Categories of Employees by Nature of Employment Classified by 
+Manufacture of motor vehicles, trailers and semi-trailers 
+07 
+Table 15. Automobile Imports (2020 - 2022) 
+07 
+Table 16.  Automobile Exports (2020 - 2022) 
+08 
+ 
+ 
+List of Figures 
+Page No : 
+ 
+Figure 1. Contribution of the Manufacture of motor vehicles, trailers and 
+semi-trailers to the share of the manufacturing industry to the GDP 
+02 
+Figure 2. The Share of the Manufacture of motor vehicles, trailers and semi-
+trailers Sector to the GDP 
+02 
+Figure 3. Manufacturing of Automobile Industry Per Head Labour 
+Productivity and Labour Cost 
+05 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- page 7 ---
+ 
+ 
+1 
+ 
+ 
+ 
+The year 2022 marked a pivotal period for the 
+automobile industry in Sri Lanka, characterized by 
+significant shifts in consumer preferences, 
+regulatory 
+reforms, 
+and 
+technological 
+advancements. Furthermore, Sri Lanka has faced 
+confluence of challenges and opportunities in 
+2022 in automobile industry. 
+Economic uncertainties, fluctuating exchange 
+rates, and supply chain disruptions posed 
+challenges 
+for 
+automobile 
+manufacturers, 
+impacting production schedules and pricing 
+dynamics. 
+Soaring 
+inflation, 
+currency 
+depreciation, and rising fuel prices dampened 
+consumer confidence and reduced purchasing 
+power, leading to a significant decline in new 
+vehicle registrations. Sales plunged by nearly 50% 
+compared to 2021. Government measures to curb 
+foreign 
+exchange 
+usage 
+tightened 
+import 
+regulations, 
+impacting 
+the 
+availability 
+of 
+Completely Built Units (CBUs) and Completely 
+Knocked Down (CKD) kits.  
+Sri Lanka's assembly operations primarily handle 
+small-scale production, leaving the industry 
+heavily reliant on imports. Lack of robust local 
+manufacturing hampered growth and resilience. 
+Infrastructure limitations, particularly in charging 
+infrastructure for electric vehicles, hindered the 
+widespread adoption of alternative fuel vehicles, 
+requiring concerted efforts from both public and 
+private sectors. 
+Despite challenges posed by the COVID-19 
+pandemic, the Sri Lankan automobile industry 
+experienced resilience and adaptability, with a 
+gradual recovery observed in vehicle sales and 
+production. Established assemblers like Mahindra 
+& 
+Mahindra, 
+Suzuki, 
+and 
+Ashok 
+Leyland 
+maintained their presence, although facing 
+production slowdowns. The demand for both new 
+and used vehicles remained steady, driven by 
+factors such as urbanization, rising disposable 
+incomes, and a growing middle class. 
+ 
+ 
+ 
+ 
+ 
+Increasing 
+awareness 
+about 
+environmental 
+sustainability and fuel efficiency prompted a surge 
+in the adoption of electric and hybrid vehicles, 
+supported by government incentives and policies 
+promoting green transportation solutions. New 
+entrants like Micro Cars and VEEM ventured into 
+electric mobility solutions. 
+Government initiatives aimed at reducing carbon 
+emissions and promoting cleaner energy sources 
+led to the introduction of stricter emission 
+standards and incentives for electric vehicle 
+adoption. The automotive industry witnessed 
+rapid 
+technological 
+advancements, 
+with 
+innovations in electric vehicle technology, 
+autonomous driving systems, and connected car 
+features gaining prominence. 
+The growing demand for electric and hybrid 
+vehicles presented lucrative opportunities for 
+automotive manufacturers and investors, driving 
+investments in research and development of 
+eco-friendly 
+technologies. 
+Collaboration 
+between 
+government 
+agencies, 
+industry 
+stakeholders, 
+and 
+international 
+partners 
+facilitated knowledge exchange and capacity 
+building, fostering innovation and sustainable 
+growth in the automobile sector. 
+Government initiatives promoting EVs, coupled 
+with rising fuel costs, sparked interest in eco-
+friendly alternatives. However, limited charging 
+infrastructure remained a hurdle. Government 
+efforts to encourage local value addition through 
+tax breaks and concessionary schemes aimed to 
+bolster domestic production in the long run. 
+Growth in tourism and economic recovery could 
+lead to a rebound in demand for new vehicles in 
+the future. 
+In 2022, the Sri Lankan automobile industry 
+navigated through a period of transformation, 
+characterized by evolving consumer preferences, 
+regulatory 
+reforms, 
+and 
+technological 
+advancements. While challenges persisted, the 
+industry embraced opportunities for innovation 
+and sustainability, setting the stage for continued 
+growth and development in the years to come.
+Overview 
+
+--- page 8 ---
+ 
+ 
+2 
+Source : Department of Census and Statistics 
+Table 1 : Manufacture of motor vehicles, trailers and semi-trailers Contributions to the GDP at Current and  
+Constant Market Price (2018 -2022) 
+ 
+Year 
+ Current market price 
+ Constant market price 
+Contribution 
+price (Rs. Mn) 
+Share (%) 
+Contribution 
+price (Rs. Mn) 
+Share (%) 
+2018 
+2,665 
+0.02 
+3,241 
+0.02 
+2019 
+5,174 
+0.03 
+3,373 
+0.03 
+2020 
+6,131 
+0.04 
+3,471 
+0.03 
+2021 
+7,007 
+0.04 
+3,636 
+0.03 
+2022 
+9,982 
+0.04 
+3,365 
+0.03 
+ 
+ 
+Figure 1 : Contribution of the Manufacture of motor vehicles, trailers and semi-trailers to the share of the  
+manufacturing industry to the GDP 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2 : The Share of the Manufacture of motor vehicles, trailers and semi-trailers Sector to the GDP 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2,665
+5,174
+6,131
+7,007
+9,982
+3,241
+3,373
+3,471
+3,636
+3,365
+0
+2000
+4000
+6000
+8000
+10000
+12000
+2018
+2019
+2020
+2021
+2022
+Rs. (Mn)
+Current Price
+Constant Price
+0.02
+0.03
+0.04
+0.4
+0.4
+0.02
+0.03
+0.03
+0.03
+0.03
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+2018
+2019
+2020
+2021
+2022
+Share (%)
+Current Price
+Constant Price
+
+--- page 9 ---
+ 
+ 
+3 
+Source: Department of Census and Statistics, Annual Surveys of Industries 
+Source: Department of Census and Statistics, Annual Survey of Industries 
+Source: Department of Census and Statistics, Annual Survey of Industries 
+Table 2 : Manufacturing Establishments and Number of Persons Engaged of The Share of the Manufacture  
+of motor vehicles, trailers and semi-trailers 
+ 
+ 
+ 
+Year 
+Establishments less than 25 
+persons engaged 
+Establishments 25 or more 
+persons engaged 
+No. of 
+Establishments 
+Persons 
+engaged 
+No. of 
+Establishments 
+Persons 
+engaged 
+2016 
+21  
+221  
+10  
+820  
+2017 
+28  
+278  
+12  
+948  
+2018 
+43  
+469  
+15  
+1,111  
+2019 
+29  
+316  
+15  
+1,124  
+2020 
+19 
+129 
+29 
+2,368 
+ 
+ 
+ 
+ 
+ 
+   Table 3 : Principal Indicators of Industrial Activity Classified by Industry Division & Persons Engaged  
+                   Size Class of of the Manufacture of motor vehicles, trailers and semi-trailer (2016)  
+(Establishments with 5 or more persons engaged) 
+ 
+2016 
+Size Class 
+No. of 
+establishments 
+Persons 
+engaged Employees 
+Salary & 
+Wages 
+Output 
+(Rs.) 
+Intermediate 
+consumptions 
+(Rs.) 
+Value added  
+(Rs.) 
+Gross 
+addition to 
+fixed assets 
+(Rs.) 
+less than 10 
+15 
+103 
+80 
+18,605,970 
+65,107,680 
+30,734,865 
+34,372,815 
+547,000  
+10 to 99 
+15 
+557 
+551 
+150,879,192 
+1,092,828,714 
+840,898,739 
+251,929,975 
+54,658,750  
+100 & above 
+1 
+381 
+381 
+273,886,427 
+19,548,677,551 
+15,638,942,041 
+3,909,735,510 
+184,654,830  
+Group total 
+31 
+1,041 
+1,012 
+443,371,589 
+20,706,613,945 
+16,510,575,645 
+4,196,038,300 239,860,580  
+ 
+ 
+ 
+ 
+   Table 4 : Principal Indicators of Industrial Activity Classified by Industry Division & Persons Engaged  
+                   Size Class of of the Manufacture of motor vehicles, trailers and semi-trailer (2017)  
+(Establishments with 5 or more persons engaged) 
+ 
+2017 
+Size Class 
+No. of 
+establishments 
+Persons 
+engaged Employees 
+Salary & 
+Wages 
+Output 
+(Rs.) 
+Intermediate 
+consumptions 
+(Rs.) 
+Value added  
+(Rs.) 
+Gross 
+addition to 
+fixed assets 
+(Rs.) 
+less than 10 
+17 
+113  
+83  
+23,529,292  
+69,598,517  
+30,653,583  
+38,944,934  
+2,559,669  
+10 to 99 
+21 
+587  
+567  
+228,821,172  
+1,740,692,231  
+1,279,691,811  
+461,000,420  
+60,208,386  
+100 & above 
+2 
+526  
+526    353,413,319  
+20,836,513,604  16,604,516,953  4,231,996,651  
+222,627,220  
+Group total 
+  40  
+1,226  
+1,176    605,763,783  
+22,646,804,352  17,914,862,347  4,731,942,005  
+285,395,275  
+ 
+ 
+ 
+
+--- page 10 ---
+ 
+ 
+4 
+Source: Department of Census and Statistics, Annual Survey of Industries 
+Source: Department of Census and Statistics, Annual Survey of Industries 
+Source: Department of Census and Statistics, Annual Survey of Industries 
+Table 5 : Principal Indicators of Industrial Activity Classified by Industry Division & Persons Engaged  
+                   Size Class of of the Manufacture of motor vehicles, trailers and semi-trailer (2018)  
+(Establishments with 5 or more persons engaged) 
+ 
+ 
+2018 
+Size Class 
+No. of 
+establishments 
+Persons 
+engaged Employees 
+Salary & 
+Wages 
+Output 
+(Rs.) 
+Intermediate 
+consumptions  
+(Rs.) 
+Value added 
+(Rs.) 
+Gross addition 
+to fixed assets 
+(Rs.) 
+less than 10 
+24  
+153  
+121  
+31,203,833  
+198,151,883  
+124,403,985  
+73,747,899  
+3,460,849  
+10 to 99 
+32  
+901  
+878  
+376,961,585  
+1,113,044,741  
+531,925,249  
+581,119,492  
+55,527,734  
+100 & above 
+2  
+526  
+526  
+  353,413,319  
+20,836,513,604    6,604,516,953  
+4,231,996,651  
+222,627,220  
+Group total 
+58  
+1,580  
+1,525  
+761,578,737  22,147,710,228  
+7,260,846,187  
+4,886,864,042  381,615,803  
+ 
+ 
+ Table 6 : Principal Indicators of Industrial Activity Classified by Industry Division & Persons Engaged  
+                   Size Class of of the Manufacture of motor vehicles, trailers and semi-trailer (2019)  
+(Establishments with 5 or more persons engaged) 
+ 
+2019 
+Size Class 
+No. of 
+establishments 
+Persons 
+engaged Employees 
+Salary &  
+Wages 
+Output 
+(Rs.) 
+Intermediate 
+consumptions  
+(Rs.) 
+Value added  
+(Rs.) 
+Gross addition 
+to fixed assets 
+(Rs.) 
+less than 10 
+16  
+96  
+66  
+18,511,048  
+90,891,048  
+71,432,987  
+19,458,061  
+3,129,731  
+10 to 99 
+27  
+818  
+790  
+312,173,417  
+1,113,404,559  
+745,592,560  
+367,811,999  
+156,603,480  
+100 & 
+above 
+2  
+526  
+526  
+353,413,319  
+19,353,131,926  
+15,412,208,233  
+3,940,923,693  
+222,627,220  
+Group total 
+45  
+1,440  
+1,382  
+684,097,784  
+20,557,427,533  16,229,233,780  
+4,328,193,753  
+382,360,431  
+ 
+ 
+ 
+   Table 7 : Principal Indicators of Industrial Activity Classified by Industry Division & Persons Engaged  
+                   Size Class of of the Manufacture of motor vehicles, trailers and semi-trailer (2020)  
+(Establishments with 5 or more persons engaged) 
+ 
+2020 
+Size Class 
+No. of 
+establishments 
+Persons 
+engaged Employees 
+Salary &  
+Wages 
+Output 
+(Rs.) 
+Intermediate 
+consumptions  
+(Rs.) 
+Value added 
+(Rs.) 
+Gross addition 
+to fixed assets 
+(Rs.) 
+less than 10 
+16 
+90 
+60 
+17,509,000 
+196,033,411 
+142,527,457 
+53,505,954 
+1,345,425 
+10 to 99 
+26 
+1,065 
+1,034 
+426,588,444 
+1,203,444,798 
+785,398,984 
+418,045,814 
+192,138,965 
+100 & above 
+6 
+1,342 
+1,342 
+865,880,422 
+41,539,422,602 
+33,047,932,206 
+8,491,490,396 
+521,199,220 
+Group total 
+48 
+2,497 
+2,436 
+1,309,977,866 
+42,938,900,811 33,975,858,647 
+8,963,042,164 
+714,683,610 
+ 
+ 
+ 
+ 
+
+--- page 11 ---
+ 
+ 
+5 
+Source: Department of Census and Statistics,  
+Annual Surveys of Industries 
+Source: Department of Census and Statistics, Annual Surveys of Industries 
+Source: Department of Census and Statistics, Annual Surveys of Industries 
+   Table 8 : Manufacturing of  Manufacture of motor    Figure 3 : 
+vehicles, trailers and semi-trailer Per  
+Head Labour Productivity  
+ 
+ 
+ 
+Year 
+Per head 
+Labour 
+Cost 
+Per head 
+Labour 
+Productivity 
+Labour Cost to 
+Productivity 
+Ratio 
+2016 
+438,114 
+4,146,283 
+9.46 
+2017 
+515,105 
+4,023,760 
+7.81 
+2018 
+499,396 
+3,204,501 
+6.42 
+2019 
+495,006 
+3,131,833 
+6.33 
+2020 
+ 548,021 
+18,248,829  
+ 33.30 
+ 
+ 
+ 
+   Table 9 : Value of Output & Output Components Classified by Manufacture of motor vehicles, trailers  
+and semi-trailer -  (Establishments 25 or more engaged) 
+ 
+Year 
+Output  
+(Rs.) 
+Shipped (Rs.)/ 
+products moved of 
+the establishment 
+(Rs.) 
+Change in Stocks  
+(Rs.) 
+Industrial services 
+& other revenue 
+(Rs.) 
+2016 
+20,551,066,574  
+10,768,735,567  
+(256,964,698) 
+10,039,295,705  
+2017 
+22,398,088,210  
+12,574,275,428  
+(256,561,861) 
+10,080,374,643  
+2018 
+21,438,458,118  
+11,361,445,774  
+(256,561,861) 
+10,333,574,205  
+2019 
+20,017,881,391  
+12,529,509,473  
+(256,561,861) 
+7,744,933,779  
+2020 
+236,639,856,000 
+218,174,600,000 
+20,556,000 
+18,444,700,000 
+ 
+ 
+   Table 10 : Value of Intermediate Consumptions & Intermediate Consumptions Components Classified  
+         by Manufacture of motor vehicles, trailers and semi-trailer - (Establishments with 25 or more  
+engaged) 
+ 
+Year 
+Intermediate 
+consumption  
+(Rs.) 
+Raw materials 
+consumed  
+(Rs.) 
+Cost of industrial 
+services done by 
+others & other 
+payments  
+(Rs.) 
+Electricity & fuel 
+consumed  
+(Rs.) 
+2016 
+16,429,850,419 
+16,067,641,640 
+326,576,030 
+35,632,749 
+2017 
+17,798,211,688  
+17,273,497,665  
+485,075,897  
+39,638,125  
+2018 
+16,940,947,333  
+16,382,078,970  
+518,428,235  
+40,440,128  
+2019 
+15,850,942,168  
+15,287,495,340  
+519,442,830  
+44,003,999  
+2020 
+33,812,602,210 
+32,406,494,432 
+1,317,046,765 
+89,061,013 
+ 
+   Table 11 : Employment by Nature of Employment & Gender Classified by Industry Divisions of  
+Manufacturing of Automobile Industry Per 
+Head Labour Productivity and Labour Cost 
+438
+515
+499
+495
+548
+4,146
+4,024
+3,205
+3,132
+18,249
+0
+5000
+10000
+15000
+20000
+2016
+2017
+2018
+2019
+2020
+Value Rs. 000
+Per Head Labour cost
+Per Head Labour Productivity
+
+--- page 12 ---
+ 
+ 
+6 
+Source: Department of Census and Statistics, Annual Surveys of Industries 
+Source: Department of Census and Statistics, Annual Surveys of Industries 
+Source: Department of Census and Statistics, Annual Surveys of Industries 
+        Manufacture of motor vehicles, trailers and semi-trailer - (Establishment with 25 or more  
+persons engaged)  
+ 
+Year 
+Working Proprietors 
+(No.) 
+Unpaid family workers 
+(No.) 
+Operatives 
+(No.) 
+Other employees 
+(No.) 
+Total persons 
+engaged 
+Male 
+Female 
+Male 
+Female 
+Male 
+Female 
+Male 
+Female 
+Male 
+Female 
+2016 
+4 
+1 
+- 
+- 
+449  
+95  
+192  
+79  
+645  
+175  
+2017 
+6 
+2 
+- 
+- 
+584  
+71  
+211  
+75  
+800  
+148  
+2018 
+9 
+6 
+- 
+- 
+584  
+171  
+278  
+62  
+871  
+240  
+2019 
+9 
+6 
+- 
+- 
+596  
+171  
+278  
+63  
+884  
+241  
+2020 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A  
+N/A 
+N/A 
+N/A 
+N/A 
+ 
+   Table 12 : Economic Indicators of Industrial Activity Classified by Automobile Industry Class –  
+        (Establishments with 25 or more persons engaged) 
+ 
+Table 12.1 : Manufacture of Motor Vehicles 
+ 
+Year 
+Output per 
+persons 
+engaged (Rs.) 
+Output per 
+intermediate 
+consumptions 
+Output per 
+assets 
+Value added 
+per persons 
+engaged (Rs.) 
+Value added per 
+intermediate 
+consumptions  
+Value added 
+per assets 
+2016 
+51,308,865  
+1.25 
+17.93  
+10,261,773  
+0.25  
+3.59 
+2017 
+51,308,865  
+1.25  
+17.93  
+2,861,374  
+0.25  
+3.59 
+2018 
+51,308,865  
+1.25 
+17.93  
+10,261,773  
+0.25  
+3.59 
+2019 
+47,077,566  
+1.25 
+16.45  
+9,543,575  
+0.25 
+3.34 
+2020 
+47,077,600 
+1.25 
+16.45 
+9,543,600 
+0.25 
+3.34 
+ 
+Table 12.2 : Manufacture of Bodies for Motor Vehicles; Manufacture of Trailers & Semi Trailers 
+ 
+Year 
+Output per 
+persons 
+engaged (Rs) 
+Output per 
+intermediate 
+consumptions 
+Output per 
+assets 
+Value added 
+per persons 
+engaged (Rs) 
+Value added per 
+intermediate 
+consumptions  
+Value added 
+per assets 
+2016 
+512,695  
+1.71 
+0.67 
+212,912  
+0.71 
+0.28 
+2017 
+5,287,403  
+1.37 
+7.77 
+680,829  
+0.37 
+2.30 
+2018 
+5,004,709  
+1.36 
+3.92 
+1,333,003  
+0.36 
+1.04 
+2019 
+5,378,346  
+1.30 
+3.72 
+1,234,626  
+0.30 
+0.85 
+2020 
+6,264,500 
+1.29 
+4.71 
+1,412,200 
+0.29 
+1.06 
+ 
+ 
+ 
+ 
+
+--- page 13 ---
+ 
+ 
+7 
+Source: Department of Census and Statistics, Annual Surveys of Industries 
+Source: Department of Census and Statistics, Annual Surveys of Industries 
+Source: Department of Census and Statistics, Annual Surveys of Industries 
+Table 12.3 : Manufacture of Parts and Accessories for Motor Vehicles 
+ 
+Year 
+Output per 
+persons 
+engaged (Rs.) 
+Output per 
+intermediate 
+consumptions 
+Output per 
+assets 
+Value added 
+per persons 
+engaged (Rs.) 
+Value added per 
+intermediate 
+consumptions  
+Value added 
+per assets 
+2016 
+5,005,850  
+1.22  
+1.86  
+895,063  
+0.22  
+0.33 
+2017 
+4,531,428  
+1.22 
+1.84  
+2,461,768  
+0.22  
+0.33 
+2018 
+931,598  
+1.91 
+0.34  
+443,126  
+0.91  
+0.16  
+2019 
+955,532  
+1.56 
+0.36  
+341,794  
+0.56  
+0.13  
+2020 
+922,400 
+1.58 
+0.37 
+336,900 
+0.58 
+0.14 
+ 
+Table 13 : Economic Indicators of Industrial Activity Classified by Manufacture of motor  
+vehicles, trailers and semi-trailers - (Establishments with less than 25 persons engaged) 
+ 
+Year 
+Output per 
+persons 
+engaged (Rs.) 
+Output per 
+intermediate 
+consumptions 
+Output per 
+assets 
+Value added 
+per persons 
+engaged (Rs.) 
+Value added per 
+intermediate 
+consumptions  
+Value added 
+per assets 
+2016 
+703,834  
+1.93  
+1.84  
+338,562  
+0.93 
+0.89  
+2017 
+893,539  
+2.13  
+1.16  
+474,459  
+1.13 
+0.62  
+2018 
+1,512,265  
+2.22  
+1.34  
+830,178  
+1.22 
+0.73  
+2019 
+1,706,830  
+1.43  
+1.43  
+510,122  
+0.43  
+0.43  
+2020 
+1,834,400 
+1.45 
+1.39 
+568,900 
+0.45 
+0.43 
+ 
+ 
+Table 14 : Categories of Employees by Nature of Employment Classified by Manufacture of motor vehicles,  
+trailers and semi-trailers 
+ 
+Year 
+Employees (No.) 
+Skilled (No.) 
+Unskilled (No.) 
+2016 
+815 
+381 
+163 
+2017 
+940 
+505 
+150 
+2018 
+1,096 
+566 
+190 
+2019 
+1,109 
+574 
+194 
+2020 
+2,340 
+1,272 
+377 
+ 
+ 
+Table 15 : Automobile Imports (2020 - 2022) 
+ 
+Description 
+Unit 
+2020 
+2021 
+2022 
+Qty 
+Value (Rs.) 
+Qty 
+Value (Rs.) 
+Qty 
+Value (Rs.) 
+Vehicles other than railway or 
+tramway rollingstock, and parts 
+and accessories thereof 
+No 
+14,747,948 
+102,242,595,007  
+947,818  49,893,270,492  
+536,848  
+21,967,420,462  
+Vehicles other than railway or 
+tramway rollingstock, and parts 
+and accessories thereof 
+kg 
+18,661,251 
+9,525,760,694  48,862,454  33,853,234,185  
+ 
+ 
+32,656,558 
+33,216,786,238  
+Source: Sri Lanka Customs 
+
+--- page 14 ---
+ 
+ 
+8 
+Source: Sri Lanka Customs 
+Table 16 : Automobile Exports (2020 - 2022) 
+ 
+Description 
+Unit 
+2020 
+2021 
+2022 
+Qty 
+Value (Rs.) 
+Qty 
+Value (Rs.) 
+Qty 
+Value (Rs.) 
+Vehicles other than railway or 
+tramway rollingstock, and parts 
+and accessories thereof  
+No 
+ 
+493,745 
+ 
+9,210,421,339 
+ 
+896,563 
+ 
+16,241,500,251 
+ 
+618,851 
+ 
+25,692,607,514 
+Vehicles other than railway or 
+tramway rollingstock, and parts 
+and accessories thereof 
+kg 
+ 
+3,303,274 
+ 
+1,590,888,397 
+ 
+3,607,178 
+ 
+1,917,935,149 
+ 
+7,698,478 
+ 
+7,011,551,383 
+ 

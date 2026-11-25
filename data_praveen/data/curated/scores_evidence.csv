@@ -6,14 +6,22 @@ toyota,*,prod,4,L,secondary_news,Hybrid line-up incl. all-new hybrid LC300 and H
 toyota,*,oem,5,L,secondary_news,Japan-origin vehicles were 62% of 2025 registrations; Toyota is the lead Japanese franchise. [Source page not confirmed - figure came from a search-result summary; verify before relying.],
 toyota,*,strat,4,M,secondary_news,Ground-breaking of flagship Bambalapitiya showroom and 30+ facility target indicate committed long-horizon investment.,https://www.ft.lk/front-page/Toyota-Lanka-breaks-ground-for-flagship-showroom-in-Bambalapitiya/44-794636
 toyota,*,ev,3,L,analyst_inference,Hybrid-led readiness; no verified BEV offering located in research - score reflects hybrid strength only.,
+<<<<<<< HEAD
+dimo,*,fin,3,H,company_report,"Audited ten-year summary (annual report parsed): Group revenue Rs 103.6 bn in FY2025/26 (Rs 50.2 bn FY24/25), profit Rs 1.54 bn after a Rs 1.31 bn loss in FY24/25. Net margin only 1.5%; borrowings Rs 47.5 bn are 2.8 times equity (0.6 times in FY21/22). Strong growth, thin margin, high leverage.",https://www.dimolanka.com/wp-content/uploads/2026/08/dimo-plc-annual-report-2025-2026.pdf
+=======
 dimo,*,fin,3,L,secondary_news,FY2023/24 profit before tax fell to Rs 183 mn on interest cost of recent investments; FY2024/25 results not retrieved. [Source page not confirmed - figure came from a search-result summary; verify before relying.],
+>>>>>>> 916080e14f6f5618f18536d6109f597294d45cc8
 dimo,*,svc,4,L,brief_claim,"Mobility value chain incl. delivery, registration, roadside assistance and after-sales (company-reported).",
 dimo,*,ops,4,L,brief_claim,"Multi-division engineering, assembly and spare-parts operations (company-reported).",
 dimo,*,oem,4,M,brief_claim,Mercedes-Benz and Tata representation across passenger and commercial.,
 dimo,*,digital,3,M,company_report,FY2024/25 report: stabilised SAP ERP and set up dedicated digitalisation team (early-stage).,https://www.sustainabilityreports.com/diesel-and-motor-engineering/2025/annual-report
 dimo,*,sust,4,M,company_report,Committed to Science Based Targets initiative; CMA integrated-reporting gold 2024.,https://www.sustainabilityreports.com/diesel-and-motor-engineering/2025/annual-report
 amw,*,track,4,L,brief_claim,Long operating history as a vehicle and engineering incumbent (company-reported).,
+<<<<<<< HEAD
+uml,*,fin,4,H,company_report,"Audited FY2025/26 (annual report parsed): Group turnover Rs 52.35 bn (FY24/25 Rs 11.77 bn), Group profit before tax Rs 5.11 bn, profit to owners Rs 3.61 bn (Company only Rs 2.20 bn), return on equity 20.6%, borrowings to equity 42.7%, interest cover 8.6x. Press figures of Rs 2.2 bn and 3.6 bn are the Company and Group figures.",https://www.unitedmotors.lk/images/financial-highlights/uml-annual-report-2025-2026.pdf
+=======
 uml,*,fin,4,L,secondary_news,FY24/25 revenue Rs 11.8 bn and profit ~Rs 73 mn; FY25/26 group revenue ~Rs 52.4 bn with record profit (Rs 2.2 bn company / headline 3.6 bn - basis to be verified). Revenue/profit from secondary aggregators and press; audited report not parsed.,https://www.dailymirror.lk/print/business-news/United-Motors-Lanka-achieves-highest-ever-profit-of-Rs-3-6bn-for-FY202526/273-341624
+>>>>>>> 916080e14f6f5618f18536d6109f597294d45cc8
 uml,*,track,4,M,secondary_news,Rapid profit recovery after import reopening shows execution when demand returned.,https://www.dailymirror.lk/print/business-news/United-Motors-Lanka-achieves-highest-ever-profit-of-Rs-3-6bn-for-FY202526/273-341624
 uml,PV,mkt,4,L,secondary_news,"Perodua reportedly ~60% of new-car sales in an early post-reopening window (short period, analyst-cited). [Source page not confirmed - figure came from a search-result summary; verify before relying.]",
 uml,*,prod,4,M,brief_claim,"Broad portfolio: Mitsubishi, Fuso, Perodua, DFSK, JMC and equipment.",

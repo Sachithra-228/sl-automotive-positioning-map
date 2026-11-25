@@ -1,0 +1,191 @@
+indicator,name,year,value,source
+EG.ELC.ACCS.ZS,Access to electricity (%),2024,100.0,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2023,100.0,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2022,100.0,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2021,100.0,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2020,100.0,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2019,99.8,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2018,99.6,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2017,97.5,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2016,97.5,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2015,94.3,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2014,92.7,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2013,90.2,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2012,87.0,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2011,87.8,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2010,85.3,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2009,87.1,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2008,82.9,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2007,80.0,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2006,82.0,World Bank WDI API
+EG.ELC.ACCS.ZS,Access to electricity (%),2005,78.1,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2024,6093946546.37436,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2023,4405117005.00662,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2022,1896231717.15846,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2021,3136991506.34787,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2020,5663994385.32783,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2019,7648305273.42442,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2018,6920825566.09992,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2017,7959047614.93675,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2016,6008199165.17799,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2015,7302096590.22384,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2014,8210750127.74158,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2013,7500000871.53902,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2012,7106460348.66884,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2011,6739196545.08981,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2010,7195358507.0,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2009,5353610216.2272,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2008,2616559583.33782,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2007,3518418228.00437,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2006,2832098098.88231,World Bank WDI API
+FI.RES.TOTL.CD,Total reserves (USD),2005,2734967767.26121,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2024,-0.42936004906973,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2023,16.5411742279831,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2022,49.7211021114327,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2021,7.01478071238194,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2020,6.15394508391737,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2019,3.52839358231811,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2018,2.135037737132,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2017,7.70413767850601,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2016,3.95888846593069,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2015,3.76836783062096,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2014,3.17900228236059,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2013,6.90845034828452,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2012,7.54291373239437,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2011,6.7167684358854,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2010,6.2176488930462,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2009,3.46496322106074,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2008,22.5644955300126,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2007,15.8421114924843,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2006,10.0201836057034,World Bank WDI API
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (%)",2005,11.6396860971118,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2024,19680136442.1892,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2023,17320146764.9548,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2022,15984910773.0554,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2021,14985052392.6152,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2020,13036289408.4338,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2019,19422660165.2782,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2018,20255985244.1513,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2017,19085446205.5468,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2016,17445193522.1031,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2015,16927340151.1628,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2009,8972038339.48688,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2008,10113919886.6377,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2007,9418771913.85285,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2006,8516554444.01693,World Bank WDI API
+NE.EXP.GNFS.CD,Exports of goods and services (USD),2005,7892069651.74129,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2024,22277780953.8684,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2023,19126705821.4167,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2022,18626984767.9622,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2021,21525852974.0925,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2020,18243032009.0896,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2019,24565416614.3158,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2018,26788997949.0932,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2017,25400652317.36,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2016,23449857058.2692,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2015,22995302384.2399,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2009,11703149676.6582,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2008,15686042402.1272,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2007,12775598413.4002,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2006,11627135436.7064,World Bank WDI API
+NE.IMP.GNFS.CD,Imports of goods and services (USD),2005,10071562189.0547,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2024,4.99241614398109,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2023,-2.0289296690344,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2022,-7.34919311146656,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2021,4.2074764950026,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2020,-4.62451503712715,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2019,-0.220483886824823,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2018,2.31008425504933,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2017,6.46068127080994,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2016,5.05362488993089,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2015,4.20595547501601,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2014,6.37797889684965,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2013,4.0517463303875,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2012,8.6321813769906,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2011,8.66948301160571,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2010,8.01596737040464,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2009,3.53891205317842,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2008,5.95008814473897,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2007,6.79682611892866,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2006,7.66829190107919,World Bank WDI API
+NY.GDP.MKTP.KD.ZG,GDP growth (%),2005,6.24174804376447,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2024,4545.36006870612,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2023,3815.41531767474,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2022,3342.63650438046,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2021,3996.96240531688,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2020,3847.60136741182,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2019,4081.94772178134,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2018,4358.56095905888,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2017,4398.88828786059,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2016,4149.19189391879,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2015,4057.71582716521,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2014,3972.04377042271,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2013,3739.43182292825,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2012,3327.77612404326,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2011,3224.95745082305,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2010,2808.36245207687,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2009,2026.65939950702,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2008,1973.58476901287,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2007,1578.63451125392,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2006,1388.89739119932,World Bank WDI API
+NY.GDP.PCAP.CD,GDP per capita (current USD),2005,1207.21994764165,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2024,302.116066666666,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2023,327.506533333333,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2022,322.632674256474,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2021,198.764316844656,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2020,185.592557772212,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2019,178.744925045847,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2018,162.464858736778,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2017,152.446413948767,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2016,145.581667492025,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2015,135.856912797088,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2014,130.564685218829,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2013,129.069030932887,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2012,127.60335350681,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2011,110.565207851396,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2010,113.064480448821,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2009,114.944783333333,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2008,108.333762719298,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2007,110.623233333333,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2006,103.914445833333,World Bank WDI API
+PA.NUS.FCRF,"Exchange rate (LKR per USD, period avg)",2005,100.498051666666,World Bank WDI API
+SP.POP.TOTL,Population,2024,21916000.0,World Bank WDI API
+SP.POP.TOTL,Population,2023,22037000.0,World Bank WDI API
+SP.POP.TOTL,Population,2022,22181000.0,World Bank WDI API
+SP.POP.TOTL,Population,2021,22156000.0,World Bank WDI API
+SP.POP.TOTL,Population,2020,21919000.0,World Bank WDI API
+SP.POP.TOTL,Population,2019,21803000.0,World Bank WDI API
+SP.POP.TOTL,Population,2018,21670000.0,World Bank WDI API
+SP.POP.TOTL,Population,2017,21453000.0,World Bank WDI API
+SP.POP.TOTL,Population,2016,21209000.0,World Bank WDI API
+SP.POP.TOTL,Population,2015,20970000.0,World Bank WDI API
+SP.POP.TOTL,Population,2014,20778000.0,World Bank WDI API
+SP.POP.TOTL,Population,2013,20585000.0,World Bank WDI API
+SP.POP.TOTL,Population,2012,21169458.0,World Bank WDI API
+SP.POP.TOTL,Population,2011,21009048.0,World Bank WDI API
+SP.POP.TOTL,Population,2010,20879089.0,World Bank WDI API
+SP.POP.TOTL,Population,2009,20756435.0,World Bank WDI API
+SP.POP.TOTL,Population,2008,20629378.0,World Bank WDI API
+SP.POP.TOTL,Population,2007,20492545.0,World Bank WDI API
+SP.POP.TOTL,Population,2006,20352411.0,World Bank WDI API
+SP.POP.TOTL,Population,2005,20216524.0,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2024,20.2996997058686,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2023,20.1455348442463,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2022,19.9877933196367,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2021,19.8266275195269,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2020,19.6621898312161,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2019,19.4946326418437,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2018,19.3241083384127,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2017,19.1507693078088,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2016,18.9747679368162,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2015,18.796256612131,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2014,18.6153877203724,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2013,18.4323136480916,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2012,18.2617686748284,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2011,17.7881192817964,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2010,17.2486209380693,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2009,16.7428136405592,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2008,16.2762363395441,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2007,15.8544279853018,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2006,15.4829275281105,World Bank WDI API
+SP.URB.TOTL.IN.ZS,Urban population (%),2005,15.167273918248,World Bank WDI API

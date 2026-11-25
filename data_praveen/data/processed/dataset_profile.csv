@@ -1,0 +1,18 @@
+file,rows,columns,missing_cells_pct,duplicate_rows,years
+assembly_and_sector_facts.csv,10,8,8.8,0,2020 to 2023
+company_financials.csv,108,7,0.8,0,2016/17 to 2025/26
+comtrade_missing_combinations.csv,118,3,0.0,0,2017 to 2024
+comtrade_sl_trade_clean.csv,3409,11,0.2,0,2017 to 2024
+comtrade_unit_value_outliers.csv,7,5,0.0,0,2019 to 2024
+dataset_catalog.csv,17,8,3.7,0,n/a
+dmt_new_registrations_by_class_fuel_2019_2023.csv,215,6,0.0,0,2019 to 2023
+edb_export_categories.csv,40,5,0.0,0,2016 to 2025
+industry_establishments.csv,5,8,0.0,0,2016 to 2020
+industry_gdp_contribution.csv,5,6,0.0,0,2018 to 2022
+industry_output_value_added.csv,5,7,0.0,0,2016 to 2020
+quadrant_scores_default_weights.csv,23,10,8.7,0,n/a
+registrations_2025_figures.csv,16,6,18.8,0,n/a
+slacma_members.csv,31,6,8.1,0,n/a
+trade_automobile_imports_exports.csv,6,6,0.0,0,2020 to 2022
+vehicle_stock_by_type_2019_2023.csv,55,4,0.0,0,2019 to 2023
+worldbank_indicators.csv,190,5,0.0,0,2005 to 2024
