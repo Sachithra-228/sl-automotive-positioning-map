@@ -6,37 +6,43 @@
 <title>SL Auto Intelligence — Sri Lanka Automotive Positioning 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
 <style>
   :root {
     --deep: #086288;
-    --deep-dark: #043952;
+    --deep-dark: #043248;
     --deep-night: #031B29;
     --steel: #4D8DBA;
     --ice: #97D7FF;
-    --ice-soft: #EDF7FF;
-    --canvas: #F4F9FC;
+    --ice-soft: #EEF6FB;
+    --canvas: #F5F8FA;
     --card: #FFFFFF;
-    --ink: #072233;
-    --muted: #527084;
-    --border: rgba(8, 98, 136, 0.11);
-    --border-strong: rgba(8, 98, 136, 0.24);
-    --shadow-xs: 0 1px 3px rgba(4, 57, 82, 0.04);
-    --shadow-sm: 0 4px 16px rgba(4, 57, 82, 0.055), 0 1px 2px rgba(4, 57, 82, 0.04);
-    --shadow-md: 0 14px 36px rgba(4, 57, 82, 0.10), 0 3px 10px rgba(4, 57, 82, 0.05);
-    --sidebar-w: 256px;
+    --ink: #0F2537;
+    --muted: #5A7184;
+    --border: #DCE7EF;
+    --border-strong: #C2D6E4;
+    --shadow-xs: 0 1px 2px rgba(4, 50, 72, 0.04);
+    --shadow-sm: 0 1px 3px rgba(4, 50, 72, 0.06), 0 1px 2px rgba(4, 50, 72, 0.04);
+    --shadow-md: 0 6px 18px rgba(4, 50, 72, 0.08);
+    --sidebar-w: 248px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--deep-night);
     color: var(--ink);
     line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
+  #dashboard-mode, #dashboard-mode h1, #dashboard-mode h2, #dashboard-mode h3, #dashboard-mode h4, #dashboard-mode h5, #dashboard-mode button, #dashboard-mode input, #dashboard-mode select {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  }
+  .kpi-val, .pf-big-val, .h-pct, table td { font-variant-numeric: tabular-nums; }
 
   svg.ico { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
@@ -315,183 +321,168 @@
   #dashboard-mode { display: none; min-height: 100vh; width: 100%; background: var(--canvas); color: var(--ink); }
   #dashboard-mode.active { display: flex; }
 
-  /* REFINED SLEEK SIDEBAR (NO CLUTTERED FOOTER!) */
+  /* CLEAN INSTITUTIONAL SIDEBAR (NO GLASS, NO NUMBERS) */
   .sidebar {
     position: fixed; top: 0; left: 0; bottom: 0; width: var(--sidebar-w);
-    background: linear-gradient(180deg, #064D6B 0%, #043248 58%, #021C2B 100%);
+    background: #043248;
     color: #FFFFFF; display: flex; flex-direction: column;
     padding: 20px 14px; z-index: 200;
-    border-right: 1px solid rgba(151, 215, 255, 0.12);
-    box-shadow: 8px 0 32px rgba(2, 28, 43, 0.16);
-    transition: transform 0.25s ease;
+    border-right: 1px solid #0A4966;
+    transition: transform 0.24s ease;
   }
   .sb-footer {
     margin-top: auto; padding-top: 14px;
-    border-top: 1px solid rgba(151, 215, 255, 0.14);
+    border-top: 1px solid rgba(151, 215, 255, 0.16);
   }
   .sb-signout-btn {
-    width: 100%; padding: 10px 13px; border-radius: 10px;
-    background: rgba(151, 215, 255, 0.10); border: 1px solid rgba(151, 215, 255, 0.24);
-    color: var(--ice); font-size: 12.5px; font-weight: 700; cursor: pointer;
-    display: flex; align-items: center; gap: 10px; transition: all 0.18s;
+    width: 100%; padding: 10px 13px; border-radius: 8px;
+    background: #06425E; border: 1px solid #165B7A;
+    color: #E2F1FA; font-size: 13px; font-weight: 600; cursor: pointer;
+    display: flex; align-items: center; gap: 10px; transition: background 0.15s, color 0.15s;
   }
-  .sb-signout-btn:hover { background: var(--ice); color: var(--deep-night); border-color: var(--ice); }
+  .sb-signout-btn:hover { background: #086288; color: #FFFFFF; border-color: #4D8DBA; }
 
   .sb-brand {
-    display: flex; align-items: center; gap: 12px; padding: 4px 8px 18px 8px;
+    display: flex; align-items: center; gap: 11px; padding: 4px 8px 18px 8px;
     border-bottom: 1px solid rgba(151, 215, 255, 0.14); margin-bottom: 18px;
   }
   .sb-logo {
-    width: 38px; height: 38px; border-radius: 11px;
-    background: linear-gradient(135deg, var(--ice), #FFFFFF);
-    color: var(--deep-dark); font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 15px;
+    width: 36px; height: 36px; border-radius: 9px;
+    background: #FFFFFF;
+    color: var(--deep-dark); font-weight: 800; font-size: 14px; letter-spacing: -0.3px;
     display: grid; place-items: center; flex-shrink: 0;
-    box-shadow: 0 4px 14px rgba(151, 215, 255, 0.25);
   }
-  .sb-brand-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 14.5px; letter-spacing: 0.2px; }
-  .sb-brand-sub { font-size: 10.5px; color: rgba(151, 215, 255, 0.78); }
-  .sb-label { font-size: 9.5px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: rgba(151, 215, 255, 0.48); padding: 4px 12px 8px 12px; }
-  .sb-nav { display: flex; flex-direction: column; gap: 5px; }
+  .sb-brand-title { font-weight: 700; font-size: 14.5px; letter-spacing: -0.2px; color: #FFFFFF; }
+  .sb-brand-sub { font-size: 11px; color: #97D7FF; font-weight: 500; }
+  .sb-label { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(151, 215, 255, 0.58); padding: 4px 12px 8px 12px; }
+  .sb-nav { display: flex; flex-direction: column; gap: 4px; }
   .nav-item {
     position: relative;
-    display: flex; align-items: center; gap: 11px; padding: 11px 13px; border-radius: 11px;
-    border: 1px solid transparent; width: 100%; text-align: left; background: transparent;
-    color: rgba(235, 247, 255, 0.82); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.18s;
+    display: flex; align-items: center; gap: 11px; padding: 10px 12px; border-radius: 8px;
+    border: none; width: 100%; text-align: left; background: transparent;
+    color: #D2E6F3; font-size: 13.2px; font-weight: 500; cursor: pointer; transition: background 0.15s, color 0.15s;
   }
-  .nav-item:hover { background: rgba(151, 215, 255, 0.10); color: #FFFFFF; }
+  .nav-item:hover { background: #084866; color: #FFFFFF; }
   .nav-item.active {
-    background: linear-gradient(95deg, rgba(151, 215, 255, 0.96), rgba(215, 240, 255, 0.96));
-    color: var(--deep-night); font-weight: 800;
-    box-shadow: 0 8px 22px rgba(3, 27, 41, 0.28);
+    background: #FFFFFF;
+    color: #043248; font-weight: 700;
   }
-  .nav-count {
-    margin-left: auto; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 99px;
-    background: rgba(151, 215, 255, 0.16); color: var(--ice);
-  }
-  .nav-item.active .nav-count { background: rgba(8, 98, 136, 0.16); color: var(--deep-night); }
 
-  /* Full-Window Main Area */
+  /* Full-Window Main Area (NO GLASS EFFECT) */
   .main { margin-left: var(--sidebar-w); flex: 1; width: calc(100% - var(--sidebar-w)); min-width: 0; display: flex; flex-direction: column; }
   .topbar {
     position: sticky; top: 0; z-index: 40;
-    background: rgba(244, 249, 252, 0.92); backdrop-filter: blur(14px);
+    background: #FFFFFF;
     border-bottom: 1px solid var(--border); padding: 13px 28px;
     display: flex; justify-content: space-between; align-items: center; gap: 14px;
   }
-  .menu-toggle { display: none; background: var(--deep); color: #FFFFFF; border: none; border-radius: 7px; padding: 7px 10px; cursor: pointer; }
-  .crumb { font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--steel); }
-  .page-heading { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 800; color: var(--deep-dark); line-height: 1.15; }
+  .menu-toggle { display: none; background: var(--deep); color: #FFFFFF; border: none; border-radius: 8px; padding: 8px 10px; cursor: pointer; }
+  .crumb { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.9px; color: var(--steel); }
+  .page-heading { font-size: 20px; font-weight: 700; letter-spacing: -0.35px; color: var(--deep-dark); line-height: 1.2; }
   .topbar-right { display: flex; align-items: center; gap: 10px; }
   .tour-trigger {
-    width: 38px; height: 38px; padding: 0; border-radius: 50%;
+    width: 36px; height: 36px; padding: 0; border-radius: 50%;
     display: grid; place-items: center; flex-shrink: 0;
     background: var(--deep); color: #FFFFFF; border: none;
-    cursor: pointer; transition: 0.18s;
-    box-shadow: 0 4px 12px rgba(8, 98, 136, 0.22);
+    cursor: pointer; transition: background 0.15s;
   }
-  .tour-trigger:hover { background: var(--deep-dark); transform: translateY(-1px); }
+  .tour-trigger:hover { background: var(--deep-dark); }
   .status-pill {
     display: inline-flex; align-items: center; gap: 7px;
-    background: #FFFFFF; border: 1px solid var(--border-strong);
-    color: var(--deep); font-size: 11.5px; font-weight: 700; padding: 6px 13px; border-radius: 99px;
+    background: var(--canvas); border: 1px solid var(--border);
+    color: var(--deep-dark); font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 99px;
   }
-  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--deep); box-shadow: 0 0 0 3px var(--ice); }
+  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--deep); }
 
   .content { padding: 24px 28px 48px 28px; width: 100%; }
-  .view { display: none; animation: fadeUp 0.26s ease; }
+  .view { display: none; }
   .view.active { display: block; }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* Executive Overview Banner */
+  /* Clean Solid Executive Overview Banner */
   .ov-hero {
-    border-radius: 18px; overflow: hidden;
-    background: linear-gradient(125deg, #031B29 0%, #086288 64%, #4D8DBA 100%);
-    color: #FFFFFF; padding: 28px 32px; margin-bottom: 22px;
+    border-radius: 12px; overflow: hidden;
+    background: #043248;
+    border: 1px solid #086288;
+    color: #FFFFFF; padding: 26px 30px; margin-bottom: 20px;
     display: grid; grid-template-columns: 1.28fr 0.72fr; gap: 24px; align-items: center;
-    box-shadow: var(--shadow-md);
   }
   @media (max-width: 980px) { .ov-hero { grid-template-columns: 1fr; } }
   .ov-hero-img {
-    width: 100%; height: 205px; object-fit: cover; border-radius: 14px;
-    border: 1px solid rgba(151, 215, 255, 0.35);
-    box-shadow: 0 12px 30px rgba(3, 27, 41, 0.35);
+    width: 100%; height: 196px; object-fit: cover; border-radius: 10px;
+    border: 1px solid #1E5A78;
   }
   .ov-kicker {
-    display: inline-block; font-size: 10.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--ice); background: rgba(151, 215, 255, 0.16); border: 1px solid rgba(151, 215, 255, 0.36);
-    padding: 4px 11px; border-radius: 99px; margin-bottom: 10px;
+    display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--ice); background: #084866; border: 1px solid #1B6488;
+    padding: 4px 10px; border-radius: 6px; margin-bottom: 10px;
   }
-  .ov-hero h2 { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.15; margin-bottom: 8px; }
+  .ov-hero h2 { font-size: 25px; font-weight: 700; letter-spacing: -0.45px; line-height: 1.2; margin-bottom: 8px; }
   .ov-hero h2 span { color: var(--ice); }
-  .ov-hero p { font-size: 13.5px; color: rgba(235, 247, 255, 0.86); max-width: 680px; }
+  .ov-hero p { font-size: 13.5px; color: #D7E9F5; max-width: 680px; line-height: 1.6; }
 
   /* REAL BRAND LOGO TILES & EMBLEMS */
-  .brand-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(205px, 1fr)); gap: 13px; }
+  .brand-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(205px, 1fr)); gap: 12px; }
   .brand-tile {
-    background: #FAFDFE; border: 1px solid var(--border); border-radius: 14px;
-    padding: 13px 15px; display: flex; align-items: center; gap: 13px;
-    cursor: pointer; transition: all 0.2s ease; box-shadow: var(--shadow-xs);
+    background: #FFFFFF; border: 1px solid var(--border); border-radius: 10px;
+    padding: 12px 14px; display: flex; align-items: center; gap: 12px;
+    cursor: pointer; transition: border-color 0.15s, background 0.15s;
   }
-  .brand-tile:hover { border-color: var(--deep); background: var(--ice-soft); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .brand-tile:hover { border-color: var(--deep); background: var(--ice-soft); }
   .logo-box {
-    width: 42px; height: 42px; border-radius: 11px; background: #FFFFFF;
-    border: 1px solid rgba(8, 98, 136, 0.14); flex-shrink: 0;
-    display: grid; place-items: center; padding: 7px; overflow: hidden;
-    box-shadow: 0 2px 6px rgba(8, 98, 136, 0.06);
+    width: 40px; height: 40px; border-radius: 8px; background: #FFFFFF;
+    border: 1px solid var(--border); flex-shrink: 0;
+    display: grid; place-items: center; padding: 6px; overflow: hidden;
   }
-  .logo-box.sm { width: 30px; height: 30px; border-radius: 8px; padding: 5px; }
+  .logo-box.sm { width: 28px; height: 28px; border-radius: 6px; padding: 4px; }
   .logo-box img { width: 100%; height: 100%; object-fit: contain; display: block; }
-  .logo-fallback {
-    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 11px;
-    color: var(--deep); letter-spacing: 0.3px;
-  }
-  .logo-box.sm .logo-fallback { font-size: 9px; }
-  .brand-tile-name { font-size: 12.8px; font-weight: 800; color: var(--deep-dark); line-height: 1.22; }
-  .brand-tile-sub { font-size: 11px; color: var(--muted); }
+  .logo-fallback { font-weight: 800; font-size: 10.5px; color: var(--deep); letter-spacing: 0.2px; }
+  .logo-box.sm .logo-fallback { font-size: 8.5px; }
+  .brand-tile-name { font-size: 13px; font-weight: 700; color: var(--deep-dark); line-height: 1.25; }
+  .brand-tile-sub { font-size: 11.2px; color: var(--muted); }
 
-  /* ELEVATED EXECUTIVE BOXES & CARDS */
+  /* CLEAN FLAT EXECUTIVE CARDS */
   .card {
     background: var(--card); border: 1px solid var(--border);
-    border-radius: 16px; padding: 22px 24px;
-    box-shadow: var(--shadow-sm); margin-bottom: 20px;
+    border-radius: 12px; padding: 20px 22px;
+    box-shadow: var(--shadow-xs); margin-bottom: 18px;
   }
-  .card-title { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 800; color: var(--deep-dark); margin-bottom: 3px; }
-  .card-sub { font-size: 12.4px; color: var(--muted); margin-bottom: 16px; }
+  .card-title { font-size: 16.5px; font-weight: 700; letter-spacing: -0.25px; color: var(--deep-dark); margin-bottom: 3px; }
+  .card-sub { font-size: 12.5px; color: var(--muted); margin-bottom: 15px; }
 
   .insight-strip {
-    background: linear-gradient(90deg, var(--ice-soft), #FFFFFF);
-    border: 1px solid rgba(77, 141, 186, 0.22); border-left: 4px solid var(--deep);
-    border-radius: 12px; padding: 13px 17px; margin-bottom: 18px;
-    display: flex; gap: 11px; align-items: center; box-shadow: var(--shadow-xs);
+    background: #FFFFFF;
+    border: 1px solid var(--border); border-left: 4px solid var(--deep);
+    border-radius: 10px; padding: 13px 16px; margin-bottom: 18px;
+    display: flex; gap: 11px; align-items: flex-start;
   }
-  .insight-strip p { font-size: 12.8px; color: var(--deep-dark); }
+  .insight-strip p { font-size: 13px; color: var(--ink); line-height: 1.55; }
 
-  .kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 22px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; margin-bottom: 20px; }
   @media (max-width: 1180px) { .kpi-grid { grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); } }
   .kpi {
     background: var(--card); border: 1px solid var(--border);
-    border-radius: 15px; padding: 18px 20px; box-shadow: var(--shadow-sm);
-    position: relative; overflow: hidden; transition: transform 0.18s, box-shadow 0.18s;
+    border-radius: 11px; padding: 16px 18px; box-shadow: var(--shadow-xs);
+    position: relative; overflow: hidden; transition: border-color 0.15s;
   }
-  .kpi:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-  .kpi::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3.5px; background: linear-gradient(90deg, var(--deep), var(--ice)); }
-  .kpi.steel::before { background: linear-gradient(90deg, var(--steel), var(--ice)); }
-  .kpi-label { font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.9px; color: var(--muted); }
-  .kpi-val { font-family: 'Outfit', sans-serif; font-size: 29px; font-weight: 900; color: var(--deep-dark); margin: 4px 0 2px 0; line-height: 1.1; }
-  .kpi-sub { font-size: 11.6px; color: var(--deep); font-weight: 600; }
+  .kpi:hover { border-color: var(--steel); }
+  .kpi::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--deep); }
+  .kpi.steel::before { background: var(--steel); }
+  .kpi-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: var(--muted); }
+  .kpi-val { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; color: var(--deep-dark); margin: 5px 0 3px 0; line-height: 1.15; }
+  .kpi-sub { font-size: 11.8px; color: var(--deep); font-weight: 500; }
 
   .visual-card {
-    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
-    overflow: hidden; cursor: pointer; transition: all 0.2s; box-shadow: var(--shadow-sm);
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    overflow: hidden; cursor: pointer; transition: border-color 0.15s, box-shadow 0.15s; box-shadow: var(--shadow-xs);
     display: flex; flex-direction: column;
   }
-  .visual-card:hover { transform: translateY(-3px); border-color: var(--deep); box-shadow: var(--shadow-md); }
-  .visual-card-img { width: 100%; height: 158px; object-fit: cover; }
-  .visual-card-body { padding: 16px 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
-  .visual-card-kicker { font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--steel); margin-bottom: 4px; }
-  .visual-card h4 { font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 800; color: var(--deep-dark); margin-bottom: 5px; }
-  .visual-card p { font-size: 12.4px; color: var(--muted); margin-bottom: 12px; }
-  .visual-card-cta { font-size: 12px; font-weight: 800; color: var(--deep); }
+  .visual-card:hover { border-color: var(--deep); box-shadow: var(--shadow-md); }
+  .visual-card-img { width: 100%; height: 152px; object-fit: cover; }
+  .visual-card-body { padding: 16px 18px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+  .visual-card-kicker { font-size: 10.5px; font-weight: 700; letter-spacing: 0.9px; text-transform: uppercase; color: var(--steel); margin-bottom: 4px; }
+  .visual-card h4 { font-size: 16px; font-weight: 700; letter-spacing: -0.2px; color: var(--deep-dark); margin-bottom: 5px; }
+  .visual-card p { font-size: 12.6px; color: var(--muted); margin-bottom: 12px; line-height: 1.5; }
+  .visual-card-cta { font-size: 12.5px; font-weight: 700; color: var(--deep); }
 
   .grid-2 { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 18px; }
   .grid-2-eq { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -504,17 +495,23 @@
   .pill.active { background: var(--deep); color: #FFFFFF; border-color: var(--deep); box-shadow: 0 4px 12px rgba(8, 98, 136, 0.24); }
 
   .slider-panel {
-    background: linear-gradient(135deg, #EDF7FF, #FFFFFF); border: 1px solid rgba(8, 98, 136, 0.18);
-    border-radius: 14px; padding: 16px 20px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center;
+    background: #FFFFFF; border: 1px solid var(--border);
+    border-radius: 11px; padding: 15px 18px; margin-bottom: 15px; display: flex; flex-wrap: wrap; gap: 22px; align-items: center;
     box-shadow: var(--shadow-xs);
   }
   .slider-group { display: flex; flex-direction: column; gap: 5px; min-width: 225px; }
-  .slider-group label { font-size: 11.5px; font-weight: 800; color: var(--deep-dark); display: flex; justify-content: space-between; }
+  .slider-group label { font-size: 12px; font-weight: 700; color: var(--deep-dark); display: flex; justify-content: space-between; }
   .slider-group input[type="range"] { accent-color: var(--deep); cursor: pointer; }
 
-  .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: var(--card); border: 1px solid var(--border); padding: 12px 16px; border-radius: 13px; margin-bottom: 16px; box-shadow: var(--shadow-xs); }
-  .filter-bar label { font-size: 12px; color: var(--deep-dark); font-weight: 700; }
-  .filter-bar select, .filter-bar input { background: var(--canvas); color: var(--ink); border: 1px solid var(--border-strong); padding: 7px 11px; border-radius: 8px; font-size: 12.2px; outline: none; }
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: var(--card); border: 1px solid var(--border); padding: 12px 16px; border-radius: 11px; margin-bottom: 16px; box-shadow: var(--shadow-xs); }
+  .filter-bar label { font-size: 12px; color: var(--deep-dark); font-weight: 600; }
+  .filter-bar select, .filter-bar input { background: var(--canvas); color: var(--ink); border: 1px solid var(--border-strong); padding: 7px 11px; border-radius: 7px; font-size: 12.5px; outline: none; min-height: 36px; }
+  .filter-bar select:focus, .filter-bar input:focus { border-color: var(--deep); background: #FFFFFF; }
+  .reset-btn {
+    padding: 7px 12px; border-radius: 7px; border: 1px solid var(--border-strong);
+    background: #FFFFFF; color: var(--deep); font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s;
+  }
+  .reset-btn:hover { background: var(--ice-soft); border-color: var(--deep); }
 
   .outlook-list { max-height: 500px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding-right: 4px; }
   .outlook-item { background: #FAFDFE; border: 1px solid var(--border); border-left: 4px solid var(--deep); border-radius: 11px; padding: 12px 14px; cursor: pointer; transition: 0.16s; }
@@ -557,8 +554,7 @@
   /* ==================== FIRST-TIME INTERACTIVE GUIDED TOUR ==================== */
   #tour-overlay {
     position: fixed; inset: 0; z-index: 8000;
-    background: rgba(3, 27, 41, 0.68);
-    backdrop-filter: blur(2px);
+    background: rgba(3, 27, 41, 0.65);
     display: none;
   }
   #tour-overlay.active { display: block; }
@@ -640,7 +636,7 @@
   .lp-mobile-cta { display: none; }
   #mobile-backdrop {
     display: none; position: fixed; inset: 0; z-index: 190;
-    background: rgba(3, 27, 41, 0.55); backdrop-filter: blur(3px);
+    background: rgba(3, 27, 41, 0.52);
   }
   #mobile-backdrop.active { display: block; }
 
@@ -769,6 +765,122 @@
     cursor: pointer; border: none; transition: 0.16s;
   }
   .dmt-upload-btn:hover { background: var(--deep-dark); }
+
+
+  /* CREATIVE EXECUTIVE HERO SLIDESHOW (OVERVIEW) */
+  .ov-slideshow {
+    position: relative; border-radius: 14px; overflow: hidden;
+    background: #043248; border: 1px solid #086288;
+    margin-bottom: 20px; min-height: 252px;
+  }
+  .ov-slide {
+    display: none; grid-template-columns: 1.25fr 0.75fr; gap: 26px; align-items: center;
+    padding: 28px 32px 44px 32px; color: #FFFFFF;
+    animation: slideFade 0.45s ease;
+  }
+  .ov-slide.active { display: grid; }
+  @keyframes slideFade { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
+  @media (max-width: 960px) { .ov-slide { grid-template-columns: 1fr; padding: 22px 20px 44px 20px; gap: 16px; } }
+  .ov-slide-img {
+    width: 100%; height: 196px; object-fit: cover; border-radius: 10px;
+    border: 1px solid #1C5C7A;
+  }
+  .ov-slide h2 { font-size: 25px; font-weight: 700; letter-spacing: -0.45px; line-height: 1.2; margin-bottom: 8px; }
+  .ov-slide h2 span { color: var(--ice); }
+  .ov-slide p { font-size: 13.5px; color: #D7E9F5; max-width: 660px; line-height: 1.6; margin-bottom: 14px; }
+  .ov-slide-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 18px; border-radius: 8px; border: none;
+    background: #97D7FF; color: #031B29; font-size: 12.5px; font-weight: 700;
+    cursor: pointer; transition: background 0.15s;
+  }
+  .ov-slide-cta:hover { background: #FFFFFF; }
+  .ov-slide-controls {
+    position: absolute; bottom: 14px; left: 32px; right: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  @media (max-width: 960px) { .ov-slide-controls { left: 20px; right: 20px; } }
+  .ov-dots { display: flex; gap: 7px; align-items: center; }
+  .ov-dot {
+    width: 8px; height: 8px; border-radius: 99px; border: none;
+    background: #1B5B78; cursor: pointer; transition: width 0.25s, background 0.25s;
+  }
+  .ov-dot.active { width: 26px; background: #97D7FF; }
+  .ov-arrows { display: flex; gap: 6px; }
+  .ov-arr {
+    width: 28px; height: 28px; border-radius: 6px; border: 1px solid #1D5E7C;
+    background: #06425E; color: #FFFFFF; cursor: pointer; display: grid; place-items: center;
+    transition: background 0.15s;
+  }
+  .ov-arr:hover { background: #086288; }
+
+  /* BORDERLESS LARGE INTERACTIVE BRAND LOGO CAROUSEL (OVERVIEW — NO BOXES!) */
+  .ov-brands-strip {
+    padding: 18px 0 22px 0; margin-bottom: 20px;
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    overflow: hidden; background: transparent;
+  }
+  .ov-brands-head {
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 12px;
+    margin-bottom: 16px; flex-wrap: wrap;
+  }
+  .ov-brands-head h3 { font-size: 15.5px; font-weight: 700; color: var(--deep-dark); letter-spacing: -0.2px; }
+  .ov-brands-head p { font-size: 12px; color: var(--muted); }
+  .ov-marquee-wrap {
+    position: relative; width: 100%; overflow: hidden; padding: 8px 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  }
+  .ov-marquee-track {
+    display: flex; align-items: center; gap: 44px; width: max-content;
+    animation: marqueeScroll 32s linear infinite;
+  }
+  .ov-marquee-wrap:hover .ov-marquee-track { animation-play-state: paused; }
+  .ov-logo-item {
+    display: flex; flex-direction: column; align-items: center; gap: 7px;
+    cursor: pointer; flex-shrink: 0; padding: 6px 10px;
+    transition: transform 0.2s ease, opacity 0.2s ease; opacity: 0.88;
+  }
+  .ov-logo-item:hover { transform: scale(1.12); opacity: 1; }
+  .ov-logo-emblem {
+    width: 66px; height: 52px; display: flex; align-items: center; justify-content: center;
+  }
+  .ov-logo-emblem img, .ov-logo-emblem svg { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .ov-logo-title { font-size: 12px; font-weight: 700; color: var(--deep-dark); white-space: nowrap; }
+  .ov-logo-sub { font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+
+  /* CREATIVE SECTION HERO BANNERS (ALL DASHBOARD VIEWS — SOLID, NO GLASS!) */
+  .sec-hero {
+    border-radius: 12px; overflow: hidden; background: #043248;
+    border: 1px solid #086288; color: #FFFFFF;
+    padding: 22px 26px; margin-bottom: 18px;
+    display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 22px; align-items: center;
+  }
+  @media (max-width: 900px) { .sec-hero { grid-template-columns: 1fr; padding: 18px 18px; gap: 14px; } }
+  .sec-hero-kicker {
+    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase;
+    color: var(--ice); background: #084866; border: 1px solid #1B6488;
+    padding: 3px 9px; border-radius: 5px; margin-bottom: 8px;
+  }
+  .sec-hero h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.35px; line-height: 1.22; margin-bottom: 6px; color: #FFFFFF; }
+  .sec-hero h3 span { color: var(--ice); }
+  .sec-hero p { font-size: 12.8px; color: #D2E7F4; line-height: 1.55; margin-bottom: 12px; max-width: 660px; }
+  .sec-hero-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .sec-chip {
+    font-size: 11px; font-weight: 600; color: #E8F5FD; background: #074461;
+    border: 1px solid #1A5E7F; padding: 4px 10px; border-radius: 6px;
+  }
+  .sec-hero-img {
+    width: 100%; height: 142px; object-fit: cover; border-radius: 9px;
+    border: 1px solid #1B5B79;
+  }
+  @media (max-width: 640px) {
+    .sec-hero-img { height: 120px; }
+    .ov-slide h2 { font-size: 20px; }
+    .ov-slide-img { height: 150px; }
+    .ov-logo-emblem { width: 54px; height: 42px; }
+    .ov-marquee-track { gap: 30px; }
+  }
 
 </style>
 </head>
@@ -1013,11 +1125,11 @@
       </button>
       <button class="nav-item" id="nav-features" onclick="showView('features', 'Price vs. Features Matrix', 'MECE Apples-to-Apples Model Positioning', this)">
         <svg class="ico" viewBox="0 0 24 24"><line x1="4" y1="20" x2="20" y2="20"/><line x1="4" y1="20" x2="4" y2="4"/><circle cx="9" cy="14" r="2"/><circle cx="14" cy="9" r="2"/><circle cx="18" cy="13" r="2"/></svg>
-        Price vs. Features <span class="nav-count" id="sbFeatureCount">116</span>
+        Price vs. Features
       </button>
       <button class="nav-item" id="nav-ninebox" onclick="showView('ninebox', '9-Box Positioning Simulator', 'ICE / Hybrid / EV vs. Price Tiers', this)">
         <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
-        9-Box Simulator <span class="nav-count" id="sbModelCount">116</span>
+        9-Box Simulator
       </button>
       <button class="nav-item" id="nav-macro" onclick="showView('macro', 'Demand &amp; Macro (DMT)', 'Registrations, CSE Financials &amp; Trade', this)">
         <svg class="ico" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
@@ -1029,11 +1141,11 @@
       </button>
       <button class="nav-item" id="nav-quadrant" onclick="showView('quadrant', 'Innovator Benchmark (Gartner)', 'Optional Vision vs. Execution Lens', this)">
         <svg class="ico" viewBox="0 0 24 24"><path d="M3 3v18h18"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="14" r="2"/><circle cx="17" cy="15" r="2"/></svg>
-        Innovator Benchmark <span class="nav-count">15</span>
+        Innovator Benchmark
       </button>
       <button class="nav-item" id="nav-registry" onclick="showView('registry', 'MECE 28-Player Registry', 'Batches A, B, C &amp; Evidenced Offerings', this)">
         <svg class="ico" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-        28-Player Registry <span class="nav-count">28</span>
+        Distributor Registry
       </button>
     </nav>
 
@@ -1068,15 +1180,45 @@
 
       <!-- ==================== VIEW 0: EXECUTIVE OVERVIEW ==================== -->
       <section id="view-overview" class="view active">
-        <div class="ov-hero">
-          <div>
-            <div class="ov-kicker">Sri Lanka Automotive Positioning Intelligence • Nov 2026</div>
-            <h2>A <span>5x Post-Ban Rebound</span> Redefined by Chinese EVs &amp; Tax Arbitrage</h2>
-            <p>
-              Following a five-year import suspension, Sri Lanka recorded <strong>360,117 new registrations</strong> ($2.05B import bill) in 2025. While legacy incumbents lead after-sales execution, Japanese share contracted from <strong>81% to 62%</strong> as <strong>BYD (48.8% of Oct 2026 brand-new cars)</strong> and new SUV entrants reshape every price tier.
-            </p>
+        <div class="ov-slideshow" id="ovSlideshow">
+          <div class="ov-slide active">
+            <div>
+              <div class="ov-kicker">Sri Lanka Automotive Positioning Intelligence • Nov 2026</div>
+              <h2>A <span>5x Post-Ban Rebound</span> Redefined by Chinese EVs &amp; Tax Arbitrage</h2>
+              <p>Following a five-year import suspension, Sri Lanka recorded <strong>360,117 new registrations</strong> ($2.05B import bill). Japanese share contracted from <strong>81% to 62%</strong> as <strong>BYD (48.8% of Oct 2026 brand-new cars)</strong> reshaped every price tier.</p>
+              <button class="ov-slide-cta" onclick="document.getElementById('nav-features').click()">Open Price vs. Features Matrix &rarr;</button>
+            </div>
+            <img class="ov-slide-img" src="assets/cars/hero_suv.jpg" alt="Sri Lanka EV & SUV Market Rebound">
           </div>
-          <img class="ov-hero-img" src="assets/cars/hero_suv.jpg" alt="Sri Lanka Modern Automotive Landscape">
+          <div class="ov-slide">
+            <div>
+              <div class="ov-kicker">Apples-to-Apples Model Coverage • 116 Models</div>
+              <h2><span>116 Brand-New Models</span> Scored Across 6 MECE Feature Pillars</h2>
+              <p>Covering <strong>14 active distributors</strong>—including DIMO's Mercedes-Benz EQ &amp; Tata EVs, United Motors (Mitsubishi/Perodua), Toyota Lanka, Kia, Abans Hyundai, AMW, Euro Motors, and BYD—plotted against Sri Lanka's Market Value Frontier.</p>
+              <button class="ov-slide-cta" onclick="document.getElementById('nav-ninebox').click()">Launch 9-Box Price Simulator &rarr;</button>
+            </div>
+            <img class="ov-slide-img" src="assets/cars/stage2_jeep.jpg" alt="116 Brand-New SUV and EV Models">
+          </div>
+          <div class="ov-slide">
+            <div>
+              <div class="ov-kicker">The SCALE Pathway • Strategic Execution</div>
+              <h2>Turning <span>Market Gaps</span> Into a 70 / 20 / 10 Growth Playbook</h2>
+              <p>Combine real post-ban consumer demand signals with Blue Ocean Strategy Canvas, ERRC Value Innovation, and Three Horizons capital allocation to defend legacy core profit while scaling NEVs.</p>
+              <button class="ov-slide-cta" onclick="document.getElementById('nav-scale').click()">Explore SCALE Strategy Suite &rarr;</button>
+            </div>
+            <img class="ov-slide-img" src="assets/cars/stage1_ice.jpg" alt="SCALE Strategic Framework">
+          </div>
+          <div class="ov-slide-controls">
+            <div class="ov-dots">
+              <button class="ov-dot active" onclick="goOvSlide(0)" aria-label="Slide 1"></button>
+              <button class="ov-dot" onclick="goOvSlide(1)" aria-label="Slide 2"></button>
+              <button class="ov-dot" onclick="goOvSlide(2)" aria-label="Slide 3"></button>
+            </div>
+            <div class="ov-arrows">
+              <button class="ov-arr" onclick="stepOvSlide(-1)" aria-label="Previous Slide"><svg class="ico" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+              <button class="ov-arr" onclick="stepOvSlide(1)" aria-label="Next Slide"><svg class="ico" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            </div>
+          </div>
         </div>
 
         <div class="kpi-grid" id="tour-kpis">
@@ -1087,10 +1229,17 @@
           <div class="kpi"><div class="kpi-label">EV Luxury Tax Tier</div><div class="kpi-val">60% vs 100%+</div><div class="kpi-sub">EV &gt;Rs 6M vs Petrol &gt;Rs 5M</div></div>
         </div>
 
-        <div class="card" id="tour-brands">
-          <div class="card-title">Key Market Players &amp; Official Brand Franchises</div>
-          <div class="card-sub">Select any brand card to inspect its verified distributor entry and powertrain portfolio.</div>
-          <div class="brand-grid" id="overviewBrandGrid"></div>
+        <div class="ov-brands-strip" id="tour-brands">
+          <div class="ov-brands-head">
+            <div>
+              <h3>Key Market Players &amp; Official Brand Franchises</h3>
+              <p>Hover to pause or select any brand emblem to jump straight into its verified distributor record.</p>
+            </div>
+            <button class="reset-btn" onclick="document.getElementById('nav-registry').click()">View All 28 Distributors &rarr;</button>
+          </div>
+          <div class="ov-marquee-wrap">
+            <div class="ov-marquee-track" id="overviewBrandGrid"></div>
+          </div>
         </div>
 
         <div class="grid-3">
@@ -1132,6 +1281,19 @@
 
       <!-- ==================== NEW PRIMARY VIEW: PRICE VS FEATURES (MECE) ==================== -->
       <section id="view-features" class="view">
+        <div class="sec-hero">
+          <div>
+            <div class="sec-hero-kicker">MECE Model-Level Positioning • Apples-to-Apples</div>
+            <h3>Price vs. <span>Features</span> Positioning Matrix</h3>
+            <p>Every brand-new model in Sri Lanka scored objectively across 6 mutually exclusive feature pillars and benchmarked against the Market Value Frontier to reveal exact product gaps.</p>
+            <div class="sec-hero-chips">
+              <span class="sec-chip">116 Scored Models</span>
+              <span class="sec-chip">42 EVs • 28 Hybrids • 46 ICE</span>
+              <span class="sec-chip">DIMO EVs &amp; Legacy Franchises Included</span>
+            </div>
+          </div>
+          <img class="sec-hero-img" src="assets/cars/stage2_jeep.jpg" alt="Price vs Features Positioning">
+        </div>
         <div class="insight-strip">
           <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           <p><strong>Apples-to-Apples Automotive Positioning:</strong> Every brand-new model (including DIMO's Mercedes-Benz EQ &amp; Tata EVs, United Motors, Toyota Lanka, Kia &amp; BYD) is scored across <strong>6 MECE feature pillars (0–100)</strong> and plotted against Standardized LKR Price. Models <strong>above the dashed Value Frontier</strong> deliver superior features per LKR Million; empty bands reveal open market gaps.</p>
@@ -1154,7 +1316,8 @@
             <option value="FOCUS">Core Market Focus (0 – 45M LKR)</option>
             <option value="FULL">Full Market (0 – 250M LKR)</option>
           </select>
-          <span style="margin-left:auto; font-size:12px; font-weight:800; color:var(--deep);" id="pfCountBadge">116 Models Plotted</span>
+          <button class="reset-btn" onclick="resetPfFilters()">Reset</button>
+          <span style="margin-left:auto; font-size:12px; font-weight:700; color:var(--deep);" id="pfCountBadge">116 Models Plotted</span>
         </div>
 
         <div class="grid-2">
@@ -1224,6 +1387,19 @@
 
       <!-- ==================== VIEW 1: INTERACTIVE 9-BOX SIMULATOR ==================== -->
       <section id="view-ninebox" class="view">
+        <div class="sec-hero">
+          <div>
+            <div class="sec-hero-kicker">Interactive Scenario Engine • 18% VAT Base</div>
+            <h3>9-Box <span>Powertrain vs. Price</span> Simulator</h3>
+            <p>Drag live Budget and Mid-Range LKR price ceilings to stress-test how ICE, Hybrid, and EV portfolios cluster across Sri Lanka's 9 competitive cells.</p>
+            <div class="sec-hero-chips">
+              <span class="sec-chip">Live LKR Threshold Sliders</span>
+              <span class="sec-chip">14 Active Distributors</span>
+              <span class="sec-chip">Portfolio Mix Breakdown</span>
+            </div>
+          </div>
+          <img class="sec-hero-img" src="assets/cars/hero_suv.jpg" alt="9-Box Simulator">
+        </div>
         <div class="insight-strip">
           <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           <p><strong>Interactive Simulator:</strong> Drag the <strong>Budget</strong> and <strong>Mid-Range</strong> price sliders below to dynamically test how Sri Lankan brand-new models cluster across the 9 boxes.</p>
@@ -1253,7 +1429,8 @@
           <select id="filterDistributor"><option value="ALL">All Distributors</option></select>
           <label>Body Type:</label>
           <select id="filterBody"><option value="ALL">All Body Types</option></select>
-          <span style="margin-left:auto; font-size:12px; font-weight:800; color:var(--deep);" id="modelCountBadge">116 Models Shown</span>
+          <button class="reset-btn" onclick="resetNineBoxFilters()">Reset</button>
+          <span style="margin-left:auto; font-size:12px; font-weight:700; color:var(--deep);" id="modelCountBadge">116 Models Shown</span>
         </div>
 
         <div class="card">
@@ -1271,6 +1448,19 @@
 
       <!-- ==================== VIEW 2: GARTNER MAGIC QUADRANT ==================== -->
       <section id="view-quadrant" class="view">
+        <div class="sec-hero">
+          <div>
+            <div class="sec-hero-kicker">Optional Corporate Innovator Lens</div>
+            <h3>Gartner-Style <span>Vision vs. Execution</span> Benchmark</h3>
+            <p>Compare corporate execution strength against strategic vision across 15 scored Sri Lankan automotive players and inspect analyst outlooks by vehicle segment.</p>
+            <div class="sec-hero-chips">
+              <span class="sec-chip">15 Scored Players</span>
+              <span class="sec-chip">PV · EV · CV · TW · MF</span>
+              <span class="sec-chip">Click-to-Inspect Outlooks</span>
+            </div>
+          </div>
+          <img class="sec-hero-img" src="assets/cars/stage2_jeep.jpg" alt="Innovator Benchmark">
+        </div>
         <div class="insight-strip">
           <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           <p><strong>Optional Innovator Benchmark (Gartner Lens):</strong> Evaluates corporate Vision vs. Execution across 15 scored players. For model-level automotive gap analysis, use the <strong>Price vs. Features</strong> and <strong>9-Box Matrix</strong> tabs.</p>
@@ -1301,6 +1491,19 @@
 
       <!-- ==================== VIEW 3: SCALE STRATEGY SUITE ==================== -->
       <section id="view-scale" class="view">
+        <div class="sec-hero">
+          <div>
+            <div class="sec-hero-kicker">The SCALE Pathway © • Executive Playbook</div>
+            <h3>Blue Ocean, <span>ERRC Grid</span> &amp; Three Horizons</h3>
+            <p>Translate positioning white spaces into boardroom execution: diagnose Adaptive/Shaping dynamics, plot Value Innovation curves, and allocate 70/20/10 capital across H1–H3.</p>
+            <div class="sec-hero-chips">
+              <span class="sec-chip">Sense · Choose · Align · Layer</span>
+              <span class="sec-chip">Innovator's Dilemma</span>
+              <span class="sec-chip">70 / 20 / 10 Roadmap</span>
+            </div>
+          </div>
+          <img class="sec-hero-img" src="assets/cars/hero_suv.jpg" alt="SCALE Strategy Suite">
+        </div>
         <div class="grid-2-eq">
           <div class="card">
             <div class="card-title">S · Sense: Strategy Palette &amp; Disruption</div>
@@ -1345,6 +1548,19 @@
 
       <!-- ==================== VIEW 4: DEMAND & MACRO (DMT-READY) ==================== -->
       <section id="view-macro" class="view">
+        <div class="sec-hero">
+          <div>
+            <div class="sec-hero-kicker">Consumer Demand &amp; Macroeconomic Signals</div>
+            <h3>Post-Ban <span>Demand, DMT</span> &amp; Audited Financials</h3>
+            <p>Track what Sri Lankan consumers are actually buying—pairing brand-wise registration signals with CBSL import bills, DCS sector GDP, and audited CSE distributor revenue surges.</p>
+            <div class="sec-hero-chips">
+              <span class="sec-chip">360,117 Registrations (2025)</span>
+              <span class="sec-chip">DMT CSV Live Upload Ready</span>
+              <span class="sec-chip">DIMO Rs 103.6B • UNIMO Rs 52.4B</span>
+            </div>
+          </div>
+          <img class="sec-hero-img" src="assets/cars/stage1_ice.jpg" alt="Demand and Macro Analytics">
+        </div>
         <div class="card">
           <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
             <div>
@@ -1386,6 +1602,19 @@
 
       <!-- ==================== VIEW 5: 28-PLAYER REGISTRY & EVIDENCE ==================== -->
       <section id="view-registry" class="view">
+        <div class="sec-hero">
+          <div>
+            <div class="sec-hero-kicker">100% Verified Official Franchises • Nov 2026</div>
+            <h3>MECE <span>28-Distributor</span> Master Registry</h3>
+            <p>Search and filter all 28 verified brand-new vehicle distributors across Batches A, B, and C, complete with official website verification and evidenced market offerings.</p>
+            <div class="sec-hero-chips">
+              <span class="sec-chip">28 Verified Official Sites</span>
+              <span class="sec-chip">100% Brand-New Scope</span>
+              <span class="sec-chip">Batches A · B · C</span>
+            </div>
+          </div>
+          <img class="sec-hero-img" src="assets/cars/stage1_ice.jpg" alt="28-Distributor Registry">
+        </div>
         <div class="card">
           <div class="card-title">Verified 28-Distributor MECE Master Registry</div>
           <div class="card-sub">Brand-new Sri Lankan distributors only (as of Nov 2026). Filter by batch or search any company or brand.</div>
@@ -1554,16 +1783,36 @@
   }
 
   function renderOverviewBrands() {
-    document.getElementById("overviewBrandGrid").innerHTML = showcaseBrands.slice(0, 12).map(b => `
-      <div class="brand-tile" onclick="jumpToRegistry('${b.search}')">
-        ${getBrandLogoHTML(b.brand)}
-        <div>
-          <div class="brand-tile-name">${b.brand}</div>
-          <div class="brand-tile-sub">${b.dist}</div>
-        </div>
+    const items = showcaseBrands.map(b => `
+      <div class="ov-logo-item" onclick="jumpToRegistry('${b.search}')" title="${b.brand} — ${b.dist}">
+        <div class="ov-logo-emblem">${getLogoInner(b, b.brand, b.code)}</div>
+        <div class="ov-logo-title">${b.brand}</div>
+        <div class="ov-logo-sub">${b.dist}</div>
       </div>
     `).join("");
+    document.getElementById("overviewBrandGrid").innerHTML = items + items;
   }
+
+  // OVERVIEW EXECUTIVE AUTO-SLIDESHOW
+  let ovSlideIdx = 0;
+  let ovSlideTimer = null;
+  function goOvSlide(idx) {
+    const slides = document.querySelectorAll("#ovSlideshow .ov-slide");
+    const dots = document.querySelectorAll("#ovSlideshow .ov-dot");
+    if (!slides.length) return;
+    ovSlideIdx = (idx + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle("active", i === ovSlideIdx));
+    dots.forEach((d, i) => d.classList.toggle("active", i === ovSlideIdx));
+  }
+  function stepOvSlide(dir) {
+    goOvSlide(ovSlideIdx + dir);
+    resetOvSlideTimer();
+  }
+  function resetOvSlideTimer() {
+    if (ovSlideTimer) clearInterval(ovSlideTimer);
+    ovSlideTimer = setInterval(() => goOvSlide(ovSlideIdx + 1), 5000);
+  }
+  resetOvSlideTimer();
 
   function jumpToRegistry(term) {
     document.getElementById("nav-registry").click();
@@ -1836,7 +2085,7 @@
     ["C","China Lanka Motors","Honri","chinalankamotors.com","Verified","Thilakshana"]
   ];
 
-  const plotFont = { family: "Plus Jakarta Sans, sans-serif", color: "#072233" };
+  const plotFont = { family: "Inter, -apple-system, BlinkMacSystemFont, sans-serif", color: "#0F2537" };
   const gridCol = "rgba(8, 98, 136, 0.10)";
 
   function toggleLpDrawer(open) {
@@ -2101,7 +2350,8 @@
     const body = document.getElementById("filterBody").value;
     const f = currentData.filter(d => (pt==="ALL"||d.Powertrain===pt) && (dist==="ALL"||d.Distributor===dist) && (body==="ALL"||d.Body_Type===body));
     document.getElementById("modelCountBadge").textContent = `${f.length} Models Shown`;
-    document.getElementById("sbModelCount").textContent = currentData.length;
+    const smEl = document.getElementById("sbModelCount");
+    if (smEl) smEl.textContent = currentData.length;
     renderNineBox(f);
     renderPortfolio(f);
   }
@@ -2243,6 +2493,23 @@
         renderScorecard(ptObj.customdata);
       }
     });
+  }
+
+  function resetPfFilters() {
+    document.getElementById("pfPowertrain").value = "ALL";
+    document.getElementById("pfDistributor").value = "ALL";
+    document.getElementById("pfBody").value = "ALL";
+    document.getElementById("pfScale").value = "FOCUS";
+    applyPfFilters();
+  }
+
+  function resetNineBoxFilters() {
+    document.getElementById("filterPowertrain").value = "ALL";
+    document.getElementById("filterDistributor").value = "ALL";
+    document.getElementById("filterBody").value = "ALL";
+    document.getElementById("budgetSlider").value = 12;
+    document.getElementById("midSlider").value = 25;
+    updateThresholds();
   }
 
   ["pfPowertrain", "pfDistributor", "pfBody", "pfScale"].forEach(id => {
