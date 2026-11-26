@@ -1570,6 +1570,122 @@
   .so-cancel { background: var(--canvas); color: var(--deep-dark); } .so-cancel:hover { background: var(--ice-soft); }
   .so-confirm { background: #B91C1C; color: #FFFFFF; } .so-confirm:hover { background: #991B1B; }
 
+
+  /* ==================== LEVEL-1000 PROACTIVE CEO DECISION ENGINE ==================== */
+  .ceo-lens-wrap {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #EEF6FB; border: 1px solid #B8D4E6; border-radius: 8px;
+    padding: 4px 10px;
+  }
+  .ceo-lens-lbl { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: #086288; white-space: nowrap; }
+  .ceo-lens-select {
+    background: #FFFFFF; color: #043248; border: 1px solid #C2D6E4;
+    border-radius: 6px; padding: 4px 8px; font-size: 12px; font-weight: 700;
+    cursor: pointer; outline: none;
+  }
+  .ceo-lens-select:focus { border-color: #086288; }
+  .board-export-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 12px; border-radius: 8px; border: 1px solid #086288;
+    background: #FFFFFF; color: #086288; font-size: 12px; font-weight: 700;
+    cursor: pointer; transition: background 0.15s, color 0.15s; white-space: nowrap;
+  }
+  .board-export-btn:hover { background: #086288; color: #FFFFFF; }
+
+  .ceo-brief-panel {
+    background: #FFFFFF; border: 1px solid #C2D6E4; border-top: 4px solid #086288;
+    border-radius: 12px; padding: 18px 20px; margin-bottom: 18px;
+  }
+  .ceo-brief-top {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    flex-wrap: wrap; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+  }
+  .ceo-brief-title { font-size: 15.5px; font-weight: 800; color: #043248; letter-spacing: -0.25px; }
+  .ceo-brief-sub { font-size: 12px; color: var(--muted); }
+  .ceo-action-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  @media (max-width: 960px) { .ceo-action-grid { grid-template-columns: 1fr; } }
+  .ceo-act-card {
+    background: #F7FAFC; border: 1px solid #D6E4EE; border-left: 3.5px solid #086288;
+    border-radius: 9px; padding: 13px 14px;
+  }
+  .ceo-act-card.warn { border-left-color: #D97706; background: #FFFDF8; }
+  .ceo-act-card.go { border-left-color: #059669; background: #F6FBF9; }
+  .ceo-act-tag {
+    display: inline-block; font-size: 9.5px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 4px; margin-bottom: 6px;
+    background: #E6F3FA; color: #086288;
+  }
+  .ceo-act-card.warn .ceo-act-tag { background: #FEF3C7; color: #B45309; }
+  .ceo-act-card.go .ceo-act-tag { background: #D1FAE5; color: #047857; }
+  .ceo-act-card h5 { font-size: 13px; font-weight: 700; color: #043248; margin-bottom: 4px; }
+  .ceo-act-card p { font-size: 11.8px; color: #4A6375; line-height: 1.48; }
+
+  /* PROACTIVE AUTO-GAP RADAR */
+  .gap-radar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+  @media (max-width: 960px) { .gap-radar-grid { grid-template-columns: 1fr; } }
+  .gap-card {
+    background: #F5F9FC; border: 1px solid #C2D6E4; border-top: 3px solid #086288;
+    border-radius: 10px; padding: 13px 15px; display: flex; flex-direction: column; gap: 5px;
+  }
+  .gap-card-head { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+  .gap-card h5 { font-size: 13px; font-weight: 800; color: #043248; }
+  .gap-card p { font-size: 11.6px; color: #4A6375; line-height: 1.45; }
+  .gap-pill {
+    font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 99px;
+    background: #043248; color: #97D7FF; white-space: nowrap;
+  }
+
+  /* WHAT-IF NEW MODEL LAUNCH SIMULATOR */
+  .sim-box {
+    background: #F5F9FC; border: 1px solid #B8D4E6; border-left: 4px solid #086288;
+    border-radius: 11px; padding: 16px 18px; margin-bottom: 18px;
+  }
+  .sim-grid { display: grid; grid-template-columns: 1.4fr 0.9fr 0.9fr 0.9fr auto; gap: 10px; align-items: end; margin-top: 10px; }
+  @media (max-width: 980px) { .sim-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .sim-grid { grid-template-columns: 1fr; } }
+  .sim-field label { display: block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #043248; margin-bottom: 4px; }
+  .sim-field input, .sim-field select {
+    width: 100%; padding: 8px 10px; border-radius: 7px; border: 1px solid #C2D6E4;
+    background: #FFFFFF; color: #0F2537; font-size: 12.5px; font-weight: 600; outline: none;
+  }
+  .sim-field input:focus, .sim-field select:focus { border-color: #086288; }
+  .sim-run-btn {
+    padding: 9px 16px; border-radius: 7px; border: none; background: #086288; color: #FFFFFF;
+    font-size: 12.5px; font-weight: 700; cursor: pointer; white-space: nowrap; height: 37px;
+  }
+  .sim-run-btn:hover { background: #043248; }
+  .sim-result {
+    margin-top: 12px; padding: 12px 14px; border-radius: 8px;
+    background: #FFFFFF; border: 1px solid #C2D6E4;
+    display: none; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .sim-result.active { display: flex; }
+
+  /* MONTHLY MRR INTELLIGENCE FEED */
+  .mrr-feed { display: grid; grid-template-columns: repeat(2, 1fr); gap: 11px; }
+  @media (max-width: 860px) { .mrr-feed { grid-template-columns: 1fr; } }
+  .mrr-item {
+    background: #FAFDFE; border: 1px solid #DCE7EF; border-radius: 9px; padding: 12px 14px;
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;
+  }
+  .mrr-date { font-size: 10px; font-weight: 700; color: #4D8DBA; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 3px; }
+  .mrr-title { font-size: 12.8px; font-weight: 700; color: #043248; margin-bottom: 3px; }
+  .mrr-desc { font-size: 11.6px; color: #526A7C; line-height: 1.45; }
+
+  @media (max-width: 760px) {
+    .ceo-lens-lbl, .board-export-btn span { display: none; }
+    .ceo-lens-wrap { padding: 3px 6px; }
+    .ceo-lens-select { max-width: 132px; font-size: 11.5px; }
+  }
+
+  /* CLEAN 1-PAGE PRINT BOARD BRIEF */
+  @media print {
+    .sidebar, .topbar, .ov-slideshow, .ov-brands-strip, #landing-mode, #preloader, #login-modal, #tour-overlay, .filter-bar, .sim-box, .reset-btn { display: none !important; }
+    .main { margin-left: 0 !important; width: 100% !important; }
+    body, #dashboard-mode { background: #FFFFFF !important; }
+    .card, .ceo-brief-panel { break-inside: avoid; box-shadow: none !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -1905,6 +2021,24 @@
         </div>
       </div>
       <div class="topbar-right">
+        <div class="ceo-lens-wrap" title="Switch entire dashboard to a specific CEO perspective">
+          <span class="ceo-lens-lbl">CEO Lens</span>
+          <select id="ceoCompanySelect" class="ceo-lens-select" onchange="applyCeoLens()">
+            <option value="ALL">Market-Wide View</option>
+            <option value="United Motors (UNIMO)">United Motors (UNIMO)</option>
+            <option value="DIMO">DIMO PLC</option>
+            <option value="Toyota Lanka">Toyota Lanka</option>
+            <option value="John Keells CG Auto">John Keells (BYD)</option>
+            <option value="AMW">AMW (Suzuki/Nissan)</option>
+            <option value="Kia Motors Lanka">Kia Motors Lanka</option>
+            <option value="Hayleys Mobility">Hayleys Mobility</option>
+            <option value="Euro Motors">Euro Motors (Jetour)</option>
+          </select>
+        </div>
+        <button class="board-export-btn" onclick="exportBoardBrief()" title="Export 1-Page CEO Board Decision Brief">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Board Brief</span>
+        </button>
         <button class="tour-trigger" onclick="startTour(true)" title="Guided Tour" aria-label="Guided Tour">
           <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
         </button>
@@ -1977,6 +2111,63 @@
           <div class="kpi"><div class="kpi-label">BYD New-Car Share</div><div class="kpi-val">48.8%</div><div class="kpi-sub">221 of 453 brand-new cars (Oct '26)</div></div>
           <div class="kpi steel"><div class="kpi-label">MECE Distributors</div><div class="kpi-val">28</div><div class="kpi-sub">100% Brand-New • 18% VAT Base</div></div>
           <div class="kpi"><div class="kpi-label">EV Luxury Tax Tier</div><div class="kpi-val">60% vs 100%+</div><div class="kpi-sub">EV &gt;Rs 6M vs Petrol &gt;Rs 5M</div></div>
+        </div>
+
+        <!-- PROACTIVE CEO DECISION BRIEF (DYNAMIC BY SELECTED COMPANY LENS) -->
+        <div class="ceo-brief-panel" id="ceoBriefPanel">
+          <div class="ceo-brief-top">
+            <div>
+              <div class="ceo-brief-title" id="ceoBriefTitle">Proactive CEO Decision Radar — Sri Lanka Automotive Market</div>
+              <div class="ceo-brief-sub" id="ceoBriefSub">Select your company in the topbar CEO Lens to unlock tailored blind spots, threat alerts, and 90-day launch bets.</div>
+            </div>
+            <span class="badge dark" id="ceoBriefBadge">MRR Live Intelligence • Nov 2026 Cycle</span>
+          </div>
+          <div class="ceo-action-grid" id="ceoActionGrid"></div>
+        </div>
+
+        <!-- MONTHLY RECURRING INTELLIGENCE FEED (WHY A CEO PAYS MONTHLY) -->
+        <div class="card">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+            <div>
+              <div class="card-title">Monthly Market Pulse &amp; Competitive Threat Alerts</div>
+              <div class="card-sub" style="margin-bottom:0;">Curated monthly triggers—tariff shifts, rival price moves, and franchise handovers requiring immediate board action.</div>
+            </div>
+            <span class="badge">Updated Monthly • Board Subscription Feed</span>
+          </div>
+          <div class="mrr-feed">
+            <div class="mrr-item">
+              <div>
+                <div class="mrr-date">Nov 2026 • Pricing Disruption Alert</div>
+                <div class="mrr-title">Sub-10M LKR EVs Undercutting Entry Japanese Hatchbacks</div>
+                <div class="mrr-desc">Tata Tiago.ev (Rs 8.70M), BYD ATTO 1 (Rs 9.30M) &amp; BAW E7 (Rs 5.90M) now sit below or equal to entry ICE hatchbacks with 70% lower running cost.</div>
+              </div>
+              <span class="badge dark">High Impact</span>
+            </div>
+            <div class="mrr-item">
+              <div>
+                <div class="mrr-date">Nov 2026 • Tax Arbitrage Watch</div>
+                <div class="mrr-title">60% EV vs. 100%–120% Petrol Luxury Tax Window Still Open</div>
+                <div class="mrr-desc">Chinese EV/PHEV importers retain a massive CIF-to-showroom tax edge in the Rs 14M–25M Mid-Range SUV band—defending ICE-only SUVs is structurally losing share.</div>
+              </div>
+              <span class="badge dark">Policy Watch</span>
+            </div>
+            <div class="mrr-item">
+              <div>
+                <div class="mrr-date">Q4 2026 • Franchise &amp; Dealer Shift</div>
+                <div class="mrr-title">BMW Franchise Transition to Mels Automobiles (Melstacorp)</div>
+                <div class="mrr-desc">Luxury European competitive set is resetting as Melstacorp activates BMW operations alongside DIMO's Mercedes-Benz EQ EV expansion.</div>
+              </div>
+              <span class="badge steel">Franchise</span>
+            </div>
+            <div class="mrr-item">
+              <div>
+                <div class="mrr-date">FY 2025/26 • Audited CSE Benchmark</div>
+                <div class="mrr-title">Post-Ban Revenue Surge: DIMO Rs 103.6B &amp; UNIMO Rs 52.4B</div>
+                <div class="mrr-desc">United Motors grew revenue 4.4x and DIMO doubled—creating strong H1 cashflow that must now be reinvested into H2 Hybrid/EV white-space models.</div>
+              </div>
+              <span class="badge">Financials</span>
+            </div>
+          </div>
         </div>
 
         <div class="ov-brands-strip" id="tour-brands">
@@ -2084,6 +2275,47 @@
           <p><strong>Apples-to-Apples Automotive Positioning:</strong> Every brand-new model (including DIMO's Mercedes-Benz EQ &amp; Tata EVs, United Motors, Toyota Lanka, Kia &amp; BYD) is scored across <strong>6 MECE feature pillars (0–100)</strong> and plotted against Standardized LKR Price. Models <strong>above the dashed Value Frontier</strong> deliver superior features per LKR Million; empty bands reveal open market gaps.</p>
         </div>
 
+        <!-- WHAT-IF NEW MODEL LAUNCH & PRICING SIMULATOR (CEO DECISION TOOL) -->
+        <div class="sim-box">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div>
+              <div style="font-size:13.5px; font-weight:800; color:#043248;">What-If New Model Launch &amp; Pricing Simulator</div>
+              <div style="font-size:11.8px; color:#526A7C;">Test a proposed vehicle launch before signing an OEM franchise—plots live on the matrix and scores your competitive edge.</div>
+            </div>
+            <button class="reset-btn" onclick="clearWhatIf()">Clear Simulation</button>
+          </div>
+          <div class="sim-grid">
+            <div class="sim-field">
+              <label>Proposed Model Name</label>
+              <input type="text" id="simName" value="Proposed Hybrid Compact SUV" placeholder="e.g., UNIMO Hybrid SUV">
+            </div>
+            <div class="sim-field">
+              <label>Powertrain</label>
+              <select id="simPt">
+                <option value="Hybrid">Hybrid</option>
+                <option value="EV">EV</option>
+                <option value="ICE">ICE</option>
+              </select>
+            </div>
+            <div class="sim-field">
+              <label>Target Price (LKR Mn)</label>
+              <input type="number" id="simPrice" value="16.5" min="5" max="150" step="0.5">
+            </div>
+            <div class="sim-field">
+              <label>Target MECE Score (50–98)</label>
+              <input type="number" id="simScore" value="84" min="50" max="98" step="1">
+            </div>
+            <button class="sim-run-btn" onclick="runWhatIfSim()">Simulate Launch</button>
+          </div>
+          <div class="sim-result" id="simResult">
+            <div>
+              <div style="font-size:13px; font-weight:800; color:#043248;" id="simVerdictTitle">STRONG GO — Market Disruptor</div>
+              <div style="font-size:11.8px; color:#4A6375;" id="simVerdictDesc">Undercuts nearby rivals while delivering superior feature value.</div>
+            </div>
+            <span class="badge dark" id="simEdgeBadge">+9.4 pts vs Frontier</span>
+          </div>
+        </div>
+
         <div class="filter-bar" id="tour-pf-filters">
           <label>Powertrain:</label>
           <select id="pfPowertrain">
@@ -2136,6 +2368,18 @@
             </div>
             <div class="pillar-list" id="pfPillarList"></div>
           </div>
+        </div>
+
+        <!-- PROACTIVE AUTO-DETECTED MARKET GAP RADAR -->
+        <div class="card">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div>
+              <div class="card-title">Proactive Auto-Detected Market Gaps (White-Space Radar)</div>
+              <div class="card-sub" style="margin-bottom:0;">Automatically scans the active 116-model dataset to highlight underserved Price &times; Powertrain cells directly on the matrix above.</div>
+            </div>
+            <span class="badge dark">Auto-Highlighted on Chart</span>
+          </div>
+          <div class="gap-radar-grid" id="autoGapRadar"></div>
         </div>
 
         <div class="card">
@@ -3240,7 +3484,157 @@
     }
   }
 
+  let activeCeoCompany = "ALL";
+  let whatIfLaunch = null;
+
+  function detectAutoGaps(dataset) {
+    const candidates = [
+      { title: "Budget Hybrid White Space", pt: "Hybrid", x0: 10.0, x1: 17.5, y0: 76, y1: 86, desc: "High-demand family buyers priced out of Rs 20M+ SUVs have almost zero high-feature Hybrid options here." },
+      { title: "Sub-12M Mass EV Sweet Spot", pt: "EV", x0: 7.5, x1: 12.0, y0: 75, y1: 85, desc: "Massive first-time car buyer demand under Rs 12M where 60% EV luxury tax enables disruptive specs." },
+      { title: "Executive EV Sedan / SUV Gap", pt: "EV", x0: 24.0, x1: 36.0, y0: 84, y1: 93, desc: "Wide open space between mass Chinese EVs (Rs 15M–23M) and Mercedes-Benz EQ (Rs 39M+)." }
+    ];
+    return candidates.map(g => {
+      const count = dataset.filter(d => d.Powertrain === g.pt && d.Std_Price_Mn >= g.x0 && d.Std_Price_Mn <= g.x1 && d.Feature_Score >= g.y0).length;
+      return { ...g, count };
+    });
+  }
+
+  function renderAutoGapRadar(dataset) {
+    const el = document.getElementById("autoGapRadar");
+    if (!el) return;
+    const gaps = detectAutoGaps(dataset);
+    el.innerHTML = gaps.map(g => `
+      <div class="gap-card">
+        <div class="gap-card-head">
+          <h5>${g.title}</h5>
+          <span class="gap-pill">${g.count === 0 ? "0 Rivals • OPEN" : g.count + " Rivals • Thin"}</span>
+        </div>
+        <div style="font-size:11px; font-weight:700; color:#086288;">Band: LKR ${g.x0}M – ${g.x1}M • Target Score ${g.y0}+ (${g.pt})</div>
+        <p>${g.desc}</p>
+      </div>
+    `).join("");
+  }
+
+  function applyCeoLens() {
+    activeCeoCompany = document.getElementById("ceoCompanySelect").value;
+    renderCeoDecisionBrief();
+    if (document.getElementById("view-features").classList.contains("active")) applyPfFilters();
+    if (document.getElementById("view-ninebox").classList.contains("active")) applyFilters();
+  }
+
+  function renderCeoDecisionBrief() {
+    const titleEl = document.getElementById("ceoBriefTitle");
+    const subEl = document.getElementById("ceoBriefSub");
+    const gridEl = document.getElementById("ceoActionGrid");
+    if (!gridEl) return;
+
+    if (activeCeoCompany === "ALL") {
+      titleEl.textContent = "Proactive CEO Decision Radar — Market-Wide Executive Lens";
+      subEl.textContent = "Switch the CEO Lens dropdown in the topbar to any distributor (e.g., United Motors, DIMO, Toyota) for tailored blind spots and launch moves.";
+      gridEl.innerHTML = `
+        <div class="ceo-act-card go">
+          <div class="ceo-act-tag">Launch Opportunity</div>
+          <h5>Capture the LKR 10M–17.5M Hybrid Gap</h5>
+          <p>Only 2 models compete in Budget Hybrids despite massive buyer anxiety over EV charging outside Colombo. Ideal H2 entry for legacy distributors.</p>
+        </div>
+        <div class="ceo-act-card warn">
+          <div class="ceo-act-tag">Competitive Threat</div>
+          <h5>BYD &amp; Tata EVs Compressing ICE Margins</h5>
+          <p>BYD captured 48.8% of Oct '26 brand-new cars while Tata Tiago.ev (Rs 8.7M) &amp; BYD ATTO 1 (Rs 9.3M) undercut entry petrol cars on total cost of ownership.</p>
+        </div>
+        <div class="ceo-act-card">
+          <div class="ceo-act-tag">Board Priority</div>
+          <h5>Convert H1 Cashflow Into H2 NEV Franchises</h5>
+          <p>Audited CSE revenue surged (DIMO Rs 103.6B, UNIMO Rs 52.4B). Allocate 20% capital now to secure NEV/Hybrid models before 2027 tariff adjustments.</p>
+        </div>
+      `;
+      return;
+    }
+
+    const mine = currentData.filter(d => d.Distributor === activeCeoCompany);
+    const evC = mine.filter(d => d.Powertrain === "EV").length;
+    const hybC = mine.filter(d => d.Powertrain === "Hybrid").length;
+    const iceC = mine.filter(d => d.Powertrain === "ICE").length;
+    const avgP = mine.length ? (mine.reduce((a, b) => a + parseFloat(b.Std_Price_Mn), 0) / mine.length).toFixed(1) : "N/A";
+    const avgF = mine.length ? (mine.reduce((a, b) => a + b.Feature_Score, 0) / mine.length).toFixed(1) : "N/A";
+
+    titleEl.textContent = `CEO War-Room Brief — ${activeCeoCompany}`;
+    subEl.textContent = `Active Portfolio: ${mine.length} models (${iceC} ICE • ${hybC} Hybrid • ${evC} EV) | Avg Price: LKR ${avgP}M | Avg MECE Feature Score: ${avgF}/100`;
+
+    let blindSpot = evC === 0
+      ? `Zero EV exposure (${evC} EVs) while EVs capture 48.8% of new-car demand and enjoy the 60% luxury tax advantage.`
+      : (hybC === 0
+        ? `Zero Hybrid bridge models (${hybC} Hybrids)—missing outstation buyers hesitant about pure-EV charging.`
+        : `Balanced ${evC} EV + ${hybC} Hybrid mix; focus on defending Rs 15M–25M Mid-Range SUV share against Jetour & BYD.`);
+
+    let launchBet = evC === 0
+      ? `Introduce a LKR 12M–17M Hybrid or EV SUV (Target MECE Score 83+) to leapfrog directly into Sri Lanka's highest-growth white space.`
+      : `Target the Executive EV Gap (LKR 24M–36M, Score 85+) where competition is thin between mass Chinese EVs and Rs 39M+ Mercedes EQ.`;
+
+    let defendMove = `Leverage your islandwide service network & resale trust to bundle 5-year battery/service warranties—countering new entrants' thin after-sales footprints.`;
+
+    gridEl.innerHTML = `
+      <div class="ceo-act-card warn">
+        <div class="ceo-act-tag">Critical Blind Spot</div>
+        <h5>${evC === 0 ? "Urgent EV Portfolio Gap" : (hybC === 0 ? "Missing Hybrid Bridge" : "Mid-Range Margin Defense")}</h5>
+        <p>${blindSpot}</p>
+      </div>
+      <div class="ceo-act-card go">
+        <div class="ceo-act-tag">Recommended Launch Bet</div>
+        <h5>Proactive White-Space Move</h5>
+        <p>${launchBet}</p>
+      </div>
+      <div class="ceo-act-card">
+        <div class="ceo-act-tag">Defend Core Moat</div>
+        <h5>Monetize Service &amp; Trust Advantage</h5>
+        <p>${defendMove}</p>
+      </div>
+    `;
+  }
+
+  function runWhatIfSim() {
+    const name = (document.getElementById("simName").value || "Proposed Model").trim();
+    const pt = document.getElementById("simPt").value;
+    const price = parseFloat(document.getElementById("simPrice").value) || 16.5;
+    const score = parseFloat(document.getElementById("simScore").value) || 84;
+    whatIfLaunch = { name, pt, price, score };
+
+    const delta = score - frontierScore(price);
+    const nearbyRivals = currentData.filter(d => Math.abs(d.Std_Price_Mn - price) <= price * 0.2);
+    const beaten = nearbyRivals.filter(d => d.Feature_Score < score).length;
+
+    const res = document.getElementById("simResult");
+    res.classList.add("active");
+    document.getElementById("simEdgeBadge").textContent = `${delta >= 0 ? "+" : ""}${delta.toFixed(1)} pts vs Frontier`;
+    if (delta >= 3.5) {
+      document.getElementById("simVerdictTitle").textContent = `STRONG GO — High-Value ${pt} Disruptor`;
+      document.getElementById("simVerdictDesc").textContent = `"${name}" at LKR ${price.toFixed(1)}M outperforms ${beaten} of ${nearbyRivals.length} nearby rivals (±20% price band) on MECE Features.`;
+    } else if (delta >= -2.5) {
+      document.getElementById("simVerdictTitle").textContent = `CONDITIONAL GO — Competitive Parity`;
+      document.getElementById("simVerdictDesc").textContent = `"${name}" sits on the Value Frontier (beats ${beaten}/${nearbyRivals.length} nearby rivals). Differentiate via warranty or trim pricing.`;
+    } else {
+      document.getElementById("simVerdictTitle").textContent = `CAUTION / REPRICE — Below Value Frontier`;
+      document.getElementById("simVerdictDesc").textContent = `At LKR ${price.toFixed(1)}M and Score ${score}, "${name}" trails ${nearbyRivals.length - beaten} nearby rivals. Lower price by ~10–15% or raise ADAS/tech spec.`;
+    }
+    applyPfFilters();
+  }
+
+  function clearWhatIf() {
+    whatIfLaunch = null;
+    document.getElementById("simResult").classList.remove("active");
+    applyPfFilters();
+  }
+
+  function exportBoardBrief() {
+    const activeNav = document.querySelector(".nav-item.active");
+    if (!activeNav || activeNav.id !== "nav-overview") {
+      document.getElementById("nav-overview").click();
+    }
+    setTimeout(() => window.print(), 250);
+  }
+
   function renderPriceFeaturesChart(data, scale) {
+    renderAutoGapRadar(currentData);
     const ptColors = { "EV": "#086288", "Hybrid": "#4D8DBA", "ICE": "#032233" };
     const ptSymbols = { "EV": "circle", "Hybrid": "diamond", "ICE": "square" };
     const pts = ["EV", "Hybrid", "ICE"];
@@ -3251,12 +3645,13 @@
         y: rows.map(r => r.Feature_Score),
         text: rows.map(r => `${r.Brand} ${r.Model}`),
         customdata: rows,
-        mode: rows.length <= 16 ? "markers+text" : "markers",
+        mode: rows.length <= 14 ? "markers+text" : "markers",
         textposition: "top center",
         textfont: { size: 9.5, color: "#072233" },
         marker: {
-          size: 12,
-          color: ptColors[p],
+          size: rows.map(r => (activeCeoCompany !== "ALL" && r.Distributor === activeCeoCompany) ? 16 : 11),
+          color: rows.map(r => (activeCeoCompany !== "ALL" && r.Distributor === activeCeoCompany) ? "#F59E0B" : ptColors[p]),
+          opacity: rows.map(r => (activeCeoCompany === "ALL" || r.Distributor === activeCeoCompany) ? 0.95 : 0.30),
           symbol: ptSymbols[p],
           line: { color: p === "EV" ? "#97D7FF" : "#FFFFFF", width: 1.8 }
         },
@@ -3277,6 +3672,36 @@
       hoverinfo: "skip"
     });
 
+    if (whatIfLaunch) {
+      traces.push({
+        x: [whatIfLaunch.price],
+        y: [whatIfLaunch.score],
+        text: [`PROPOSED: ${whatIfLaunch.name}`],
+        mode: "markers+text",
+        textposition: "top center",
+        textfont: { size: 11, color: "#043248" },
+        marker: { size: 19, symbol: "star", color: "#10B981", line: { color: "#043248", width: 2 } },
+        name: "Proposed Launch",
+        hovertemplate: "<b>PROPOSED LAUNCH: %{text}</b><br>Target Price: LKR %{x:.2f}M • Target Score: %{y}/100<extra></extra>"
+      });
+    }
+
+    const autoGaps = detectAutoGaps(currentData).filter(g => g.x1 <= maxX);
+    const gapShapes = autoGaps.map(g => ({
+      type: "rect",
+      x0: g.x0, x1: g.x1, y0: g.y0, y1: g.y1,
+      fillcolor: "rgba(151, 215, 255, 0.24)",
+      line: { color: "#086288", width: 1.4, dash: "dot" },
+      layer: "below"
+    }));
+    const gapAnnots = autoGaps.map(g => ({
+      x: (g.x0 + g.x1) / 2,
+      y: g.y1 - 1.2,
+      text: `<b>GAP: ${g.pt}</b>`,
+      showarrow: false,
+      font: { color: "#043248", size: 9.5 }
+    }));
+
     const isMob = window.innerWidth < 640;
     Plotly.newPlot("priceFeaturesChart", traces, {
       paper_bgcolor: "#FFFFFF",
@@ -3285,9 +3710,11 @@
       margin: { l: isMob ? 42 : 56, r: isMob ? 10 : 18, t: 24, b: 48 },
       xaxis: { title: "Standardized Brand-New Price (LKR Millions, 18% VAT)", range: [3, maxX], gridcolor: gridCol, zeroline: false },
       yaxis: { title: "Composite MECE Feature Score (0–100)", range: [48, 100], gridcolor: gridCol, zeroline: false },
+      shapes: gapShapes,
       annotations: [
-        { x: maxX * 0.24, y: 96, text: "<b>HIGH-VALUE DISRUPTORS</b>", showarrow: false, font: { color: "#086288", size: isMob ? 9 : 10.5 } },
-        { x: maxX * 0.78, y: 53, text: "<b>OVERPRICED / LEGACY GAP</b>", showarrow: false, font: { color: "#64748B", size: isMob ? 9 : 10.5 } }
+        { x: maxX * 0.24, y: 97, text: "<b>HIGH-VALUE DISRUPTORS</b>", showarrow: false, font: { color: "#086288", size: isMob ? 9 : 10.5 } },
+        { x: maxX * 0.78, y: 52, text: "<b>OVERPRICED / LEGACY GAP</b>", showarrow: false, font: { color: "#64748B", size: isMob ? 9 : 10.5 } },
+        ...gapAnnots
       ],
       legend: { orientation: "h", y: -0.17, font: { size: 10.5 } }
     }, { responsive: true, displaylogo: false });
@@ -3980,6 +4407,7 @@
   renderOfferings();
   populateFilters(currentData);
   populatePfFilters(currentData);
+  renderCeoDecisionBrief();
   renderRegistry();
   initHeroShows();
   renderLeaderboard(0);
