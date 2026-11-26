@@ -766,6 +766,122 @@
   }
   .dmt-upload-btn:hover { background: var(--deep-dark); }
 
+
+  /* CREATIVE EXECUTIVE HERO SLIDESHOW (OVERVIEW) */
+  .ov-slideshow {
+    position: relative; border-radius: 14px; overflow: hidden;
+    background: #043248; border: 1px solid #086288;
+    margin-bottom: 20px; min-height: 252px;
+  }
+  .ov-slide {
+    display: none; grid-template-columns: 1.25fr 0.75fr; gap: 26px; align-items: center;
+    padding: 28px 32px 44px 32px; color: #FFFFFF;
+    animation: slideFade 0.45s ease;
+  }
+  .ov-slide.active { display: grid; }
+  @keyframes slideFade { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
+  @media (max-width: 960px) { .ov-slide { grid-template-columns: 1fr; padding: 22px 20px 44px 20px; gap: 16px; } }
+  .ov-slide-img {
+    width: 100%; height: 196px; object-fit: cover; border-radius: 10px;
+    border: 1px solid #1C5C7A;
+  }
+  .ov-slide h2 { font-size: 25px; font-weight: 700; letter-spacing: -0.45px; line-height: 1.2; margin-bottom: 8px; }
+  .ov-slide h2 span { color: var(--ice); }
+  .ov-slide p { font-size: 13.5px; color: #D7E9F5; max-width: 660px; line-height: 1.6; margin-bottom: 14px; }
+  .ov-slide-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 18px; border-radius: 8px; border: none;
+    background: #97D7FF; color: #031B29; font-size: 12.5px; font-weight: 700;
+    cursor: pointer; transition: background 0.15s;
+  }
+  .ov-slide-cta:hover { background: #FFFFFF; }
+  .ov-slide-controls {
+    position: absolute; bottom: 14px; left: 32px; right: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  @media (max-width: 960px) { .ov-slide-controls { left: 20px; right: 20px; } }
+  .ov-dots { display: flex; gap: 7px; align-items: center; }
+  .ov-dot {
+    width: 8px; height: 8px; border-radius: 99px; border: none;
+    background: #1B5B78; cursor: pointer; transition: width 0.25s, background 0.25s;
+  }
+  .ov-dot.active { width: 26px; background: #97D7FF; }
+  .ov-arrows { display: flex; gap: 6px; }
+  .ov-arr {
+    width: 28px; height: 28px; border-radius: 6px; border: 1px solid #1D5E7C;
+    background: #06425E; color: #FFFFFF; cursor: pointer; display: grid; place-items: center;
+    transition: background 0.15s;
+  }
+  .ov-arr:hover { background: #086288; }
+
+  /* BORDERLESS LARGE INTERACTIVE BRAND LOGO CAROUSEL (OVERVIEW — NO BOXES!) */
+  .ov-brands-strip {
+    padding: 18px 0 22px 0; margin-bottom: 20px;
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    overflow: hidden; background: transparent;
+  }
+  .ov-brands-head {
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 12px;
+    margin-bottom: 16px; flex-wrap: wrap;
+  }
+  .ov-brands-head h3 { font-size: 15.5px; font-weight: 700; color: var(--deep-dark); letter-spacing: -0.2px; }
+  .ov-brands-head p { font-size: 12px; color: var(--muted); }
+  .ov-marquee-wrap {
+    position: relative; width: 100%; overflow: hidden; padding: 8px 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  }
+  .ov-marquee-track {
+    display: flex; align-items: center; gap: 44px; width: max-content;
+    animation: marqueeScroll 32s linear infinite;
+  }
+  .ov-marquee-wrap:hover .ov-marquee-track { animation-play-state: paused; }
+  .ov-logo-item {
+    display: flex; flex-direction: column; align-items: center; gap: 7px;
+    cursor: pointer; flex-shrink: 0; padding: 6px 10px;
+    transition: transform 0.2s ease, opacity 0.2s ease; opacity: 0.88;
+  }
+  .ov-logo-item:hover { transform: scale(1.12); opacity: 1; }
+  .ov-logo-emblem {
+    width: 66px; height: 52px; display: flex; align-items: center; justify-content: center;
+  }
+  .ov-logo-emblem img, .ov-logo-emblem svg { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .ov-logo-title { font-size: 12px; font-weight: 700; color: var(--deep-dark); white-space: nowrap; }
+  .ov-logo-sub { font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+
+  /* CREATIVE SECTION HERO BANNERS (ALL DASHBOARD VIEWS — SOLID, NO GLASS!) */
+  .sec-hero {
+    border-radius: 12px; overflow: hidden; background: #043248;
+    border: 1px solid #086288; color: #FFFFFF;
+    padding: 22px 26px; margin-bottom: 18px;
+    display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 22px; align-items: center;
+  }
+  @media (max-width: 900px) { .sec-hero { grid-template-columns: 1fr; padding: 18px 18px; gap: 14px; } }
+  .sec-hero-kicker {
+    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase;
+    color: var(--ice); background: #084866; border: 1px solid #1B6488;
+    padding: 3px 9px; border-radius: 5px; margin-bottom: 8px;
+  }
+  .sec-hero h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.35px; line-height: 1.22; margin-bottom: 6px; color: #FFFFFF; }
+  .sec-hero h3 span { color: var(--ice); }
+  .sec-hero p { font-size: 12.8px; color: #D2E7F4; line-height: 1.55; margin-bottom: 12px; max-width: 660px; }
+  .sec-hero-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .sec-chip {
+    font-size: 11px; font-weight: 600; color: #E8F5FD; background: #074461;
+    border: 1px solid #1A5E7F; padding: 4px 10px; border-radius: 6px;
+  }
+  .sec-hero-img {
+    width: 100%; height: 142px; object-fit: cover; border-radius: 9px;
+    border: 1px solid #1B5B79;
+  }
+  @media (max-width: 640px) {
+    .sec-hero-img { height: 120px; }
+    .ov-slide h2 { font-size: 20px; }
+    .ov-slide-img { height: 150px; }
+    .ov-logo-emblem { width: 54px; height: 42px; }
+    .ov-marquee-track { gap: 30px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1064,15 +1180,45 @@
 
       <!-- ==================== VIEW 0: EXECUTIVE OVERVIEW ==================== -->
       <section id="view-overview" class="view active">
-        <div class="ov-hero">
-          <div>
-            <div class="ov-kicker">Sri Lanka Automotive Positioning Intelligence • Nov 2026</div>
-            <h2>A <span>5x Post-Ban Rebound</span> Redefined by Chinese EVs &amp; Tax Arbitrage</h2>
-            <p>
-              Following a five-year import suspension, Sri Lanka recorded <strong>360,117 new registrations</strong> ($2.05B import bill) in 2025. While legacy incumbents lead after-sales execution, Japanese share contracted from <strong>81% to 62%</strong> as <strong>BYD (48.8% of Oct 2026 brand-new cars)</strong> and new SUV entrants reshape every price tier.
-            </p>
+        <div class="ov-slideshow" id="ovSlideshow">
+          <div class="ov-slide active">
+            <div>
+              <div class="ov-kicker">Sri Lanka Automotive Positioning Intelligence • Nov 2026</div>
+              <h2>A <span>5x Post-Ban Rebound</span> Redefined by Chinese EVs &amp; Tax Arbitrage</h2>
+              <p>Following a five-year import suspension, Sri Lanka recorded <strong>360,117 new registrations</strong> ($2.05B import bill). Japanese share contracted from <strong>81% to 62%</strong> as <strong>BYD (48.8% of Oct 2026 brand-new cars)</strong> reshaped every price tier.</p>
+              <button class="ov-slide-cta" onclick="document.getElementById('nav-features').click()">Open Price vs. Features Matrix &rarr;</button>
+            </div>
+            <img class="ov-slide-img" src="assets/cars/hero_suv.jpg" alt="Sri Lanka EV & SUV Market Rebound">
           </div>
-          <img class="ov-hero-img" src="assets/cars/hero_suv.jpg" alt="Sri Lanka Modern Automotive Landscape">
+          <div class="ov-slide">
+            <div>
+              <div class="ov-kicker">Apples-to-Apples Model Coverage • 116 Models</div>
+              <h2><span>116 Brand-New Models</span> Scored Across 6 MECE Feature Pillars</h2>
+              <p>Covering <strong>14 active distributors</strong>—including DIMO's Mercedes-Benz EQ &amp; Tata EVs, United Motors (Mitsubishi/Perodua), Toyota Lanka, Kia, Abans Hyundai, AMW, Euro Motors, and BYD—plotted against Sri Lanka's Market Value Frontier.</p>
+              <button class="ov-slide-cta" onclick="document.getElementById('nav-ninebox').click()">Launch 9-Box Price Simulator &rarr;</button>
+            </div>
+            <img class="ov-slide-img" src="assets/cars/stage2_jeep.jpg" alt="116 Brand-New SUV and EV Models">
+          </div>
+          <div class="ov-slide">
+            <div>
+              <div class="ov-kicker">The SCALE Pathway • Strategic Execution</div>
+              <h2>Turning <span>Market Gaps</span> Into a 70 / 20 / 10 Growth Playbook</h2>
+              <p>Combine real post-ban consumer demand signals with Blue Ocean Strategy Canvas, ERRC Value Innovation, and Three Horizons capital allocation to defend legacy core profit while scaling NEVs.</p>
+              <button class="ov-slide-cta" onclick="document.getElementById('nav-scale').click()">Explore SCALE Strategy Suite &rarr;</button>
+            </div>
+            <img class="ov-slide-img" src="assets/cars/stage1_ice.jpg" alt="SCALE Strategic Framework">
+          </div>
+          <div class="ov-slide-controls">
+            <div class="ov-dots">
+              <button class="ov-dot active" onclick="goOvSlide(0)" aria-label="Slide 1"></button>
+              <button class="ov-dot" onclick="goOvSlide(1)" aria-label="Slide 2"></button>
+              <button class="ov-dot" onclick="goOvSlide(2)" aria-label="Slide 3"></button>
+            </div>
+            <div class="ov-arrows">
+              <button class="ov-arr" onclick="stepOvSlide(-1)" aria-label="Previous Slide"><svg class="ico" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+              <button class="ov-arr" onclick="stepOvSlide(1)" aria-label="Next Slide"><svg class="ico" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            </div>
+          </div>
         </div>
 
         <div class="kpi-grid" id="tour-kpis">
@@ -1083,10 +1229,17 @@
           <div class="kpi"><div class="kpi-label">EV Luxury Tax Tier</div><div class="kpi-val">60% vs 100%+</div><div class="kpi-sub">EV &gt;Rs 6M vs Petrol &gt;Rs 5M</div></div>
         </div>
 
-        <div class="card" id="tour-brands">
-          <div class="card-title">Key Market Players &amp; Official Brand Franchises</div>
-          <div class="card-sub">Select any brand card to inspect its verified distributor entry and powertrain portfolio.</div>
-          <div class="brand-grid" id="overviewBrandGrid"></div>
+        <div class="ov-brands-strip" id="tour-brands">
+          <div class="ov-brands-head">
+            <div>
+              <h3>Key Market Players &amp; Official Brand Franchises</h3>
+              <p>Hover to pause or select any brand emblem to jump straight into its verified distributor record.</p>
+            </div>
+            <button class="reset-btn" onclick="document.getElementById('nav-registry').click()">View All 28 Distributors &rarr;</button>
+          </div>
+          <div class="ov-marquee-wrap">
+            <div class="ov-marquee-track" id="overviewBrandGrid"></div>
+          </div>
         </div>
 
         <div class="grid-3">
@@ -1128,6 +1281,19 @@
 
       <!-- ==================== NEW PRIMARY VIEW: PRICE VS FEATURES (MECE) ==================== -->
       <section id="view-features" class="view">
+        <div class="sec-hero">
+          <div>
+            <div class="sec-hero-kicker">MECE Model-Level Positioning • Apples-to-Apples</div>
+            <h3>Price vs. <span>Features</span> Positioning Matrix</h3>
+            <p>Every brand-new model in Sri Lanka scored objectively across 6 mutually exclusive feature pillars and benchmarked against the Market Value Frontier to reveal exact product gaps.</p>
+            <div class="sec-hero-chips">
+              <span class="sec-chip">116 Scored Models</span>
+              <span class="sec-chip">42 EVs • 28 Hybrids • 46 ICE</span>
+              <span class="sec-chip">DIMO EVs &amp; Legacy Franchises Included</span>
+            </div>
+          </div>
+          <img class="sec-hero-img" src="assets/cars/stage2_jeep.jpg" alt="Price vs Features Positioning">
+        </div>
         <div class="insight-strip">
           <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           <p><strong>Apples-to-Apples Automotive Positioning:</strong> Every brand-new model (including DIMO's Mercedes-Benz EQ &amp; Tata EVs, United Motors, Toyota Lanka, Kia &amp; BYD) is scored across <strong>6 MECE feature pillars (0–100)</strong> and plotted against Standardized LKR Price. Models <strong>above the dashed Value Frontier</strong> deliver superior features per LKR Million; empty bands reveal open market gaps.</p>
@@ -1221,6 +1387,19 @@
 
       <!-- ==================== VIEW 1: INTERACTIVE 9-BOX SIMULATOR ==================== -->
       <section id="view-ninebox" class="view">
+        <div class="sec-hero">
+          <div>
+            <div class="sec-hero-kicker">Interactive Scenario Engine • 18% VAT Base</div>
+            <h3>9-Box <span>Powertrain vs. Price</span> Simulator</h3>
+            <p>Drag live Budget and Mid-Range LKR price ceilings to stress-test how ICE, Hybrid, and EV portfolios cluster across Sri Lanka's 9 competitive cells.</p>
+            <div class="sec-hero-chips">
+              <span class="sec-chip">Live LKR Threshold Sliders</span>
+              <span class="sec-chip">14 Active Distributors</span>
+              <span class="sec-chip">Portfolio Mix Breakdown</span>
+            </div>
+          </div>
+          <img class="sec-hero-img" src="assets/cars/hero_suv.jpg" alt="9-Box Simulator">
+        </div>
         <div class="insight-strip">
           <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           <p><strong>Interactive Simulator:</strong> Drag the <strong>Budget</strong> and <strong>Mid-Range</strong> price sliders below to dynamically test how Sri Lankan brand-new models cluster across the 9 boxes.</p>
@@ -1269,6 +1448,19 @@
 
       <!-- ==================== VIEW 2: GARTNER MAGIC QUADRANT ==================== -->
       <section id="view-quadrant" class="view">
+        <div class="sec-hero">
+          <div>
+            <div class="sec-hero-kicker">Optional Corporate Innovator Lens</div>
+            <h3>Gartner-Style <span>Vision vs. Execution</span> Benchmark</h3>
+            <p>Compare corporate execution strength against strategic vision across 15 scored Sri Lankan automotive players and inspect analyst outlooks by vehicle segment.</p>
+            <div class="sec-hero-chips">
+              <span class="sec-chip">15 Scored Players</span>
+              <span class="sec-chip">PV · EV · CV · TW · MF</span>
+              <span class="sec-chip">Click-to-Inspect Outlooks</span>
+            </div>
+          </div>
+          <img class="sec-hero-img" src="assets/cars/stage2_jeep.jpg" alt="Innovator Benchmark">
+        </div>
         <div class="insight-strip">
           <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           <p><strong>Optional Innovator Benchmark (Gartner Lens):</strong> Evaluates corporate Vision vs. Execution across 15 scored players. For model-level automotive gap analysis, use the <strong>Price vs. Features</strong> and <strong>9-Box Matrix</strong> tabs.</p>
@@ -1299,6 +1491,19 @@
 
       <!-- ==================== VIEW 3: SCALE STRATEGY SUITE ==================== -->
       <section id="view-scale" class="view">
+        <div class="sec-hero">
+          <div>
+            <div class="sec-hero-kicker">The SCALE Pathway © • Executive Playbook</div>
+            <h3>Blue Ocean, <span>ERRC Grid</span> &amp; Three Horizons</h3>
+            <p>Translate positioning white spaces into boardroom execution: diagnose Adaptive/Shaping dynamics, plot Value Innovation curves, and allocate 70/20/10 capital across H1–H3.</p>
+            <div class="sec-hero-chips">
+              <span class="sec-chip">Sense · Choose · Align · Layer</span>
+              <span class="sec-chip">Innovator's Dilemma</span>
+              <span class="sec-chip">70 / 20 / 10 Roadmap</span>
+            </div>
+          </div>
+          <img class="sec-hero-img" src="assets/cars/hero_suv.jpg" alt="SCALE Strategy Suite">
+        </div>
         <div class="grid-2-eq">
           <div class="card">
             <div class="card-title">S · Sense: Strategy Palette &amp; Disruption</div>
@@ -1343,6 +1548,19 @@
 
       <!-- ==================== VIEW 4: DEMAND & MACRO (DMT-READY) ==================== -->
       <section id="view-macro" class="view">
+        <div class="sec-hero">
+          <div>
+            <div class="sec-hero-kicker">Consumer Demand &amp; Macroeconomic Signals</div>
+            <h3>Post-Ban <span>Demand, DMT</span> &amp; Audited Financials</h3>
+            <p>Track what Sri Lankan consumers are actually buying—pairing brand-wise registration signals with CBSL import bills, DCS sector GDP, and audited CSE distributor revenue surges.</p>
+            <div class="sec-hero-chips">
+              <span class="sec-chip">360,117 Registrations (2025)</span>
+              <span class="sec-chip">DMT CSV Live Upload Ready</span>
+              <span class="sec-chip">DIMO Rs 103.6B • UNIMO Rs 52.4B</span>
+            </div>
+          </div>
+          <img class="sec-hero-img" src="assets/cars/stage1_ice.jpg" alt="Demand and Macro Analytics">
+        </div>
         <div class="card">
           <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
             <div>
@@ -1384,6 +1602,19 @@
 
       <!-- ==================== VIEW 5: 28-PLAYER REGISTRY & EVIDENCE ==================== -->
       <section id="view-registry" class="view">
+        <div class="sec-hero">
+          <div>
+            <div class="sec-hero-kicker">100% Verified Official Franchises • Nov 2026</div>
+            <h3>MECE <span>28-Distributor</span> Master Registry</h3>
+            <p>Search and filter all 28 verified brand-new vehicle distributors across Batches A, B, and C, complete with official website verification and evidenced market offerings.</p>
+            <div class="sec-hero-chips">
+              <span class="sec-chip">28 Verified Official Sites</span>
+              <span class="sec-chip">100% Brand-New Scope</span>
+              <span class="sec-chip">Batches A · B · C</span>
+            </div>
+          </div>
+          <img class="sec-hero-img" src="assets/cars/stage1_ice.jpg" alt="28-Distributor Registry">
+        </div>
         <div class="card">
           <div class="card-title">Verified 28-Distributor MECE Master Registry</div>
           <div class="card-sub">Brand-new Sri Lankan distributors only (as of Nov 2026). Filter by batch or search any company or brand.</div>
@@ -1552,16 +1783,36 @@
   }
 
   function renderOverviewBrands() {
-    document.getElementById("overviewBrandGrid").innerHTML = showcaseBrands.slice(0, 12).map(b => `
-      <div class="brand-tile" onclick="jumpToRegistry('${b.search}')">
-        ${getBrandLogoHTML(b.brand)}
-        <div>
-          <div class="brand-tile-name">${b.brand}</div>
-          <div class="brand-tile-sub">${b.dist}</div>
-        </div>
+    const items = showcaseBrands.map(b => `
+      <div class="ov-logo-item" onclick="jumpToRegistry('${b.search}')" title="${b.brand} — ${b.dist}">
+        <div class="ov-logo-emblem">${getLogoInner(b, b.brand, b.code)}</div>
+        <div class="ov-logo-title">${b.brand}</div>
+        <div class="ov-logo-sub">${b.dist}</div>
       </div>
     `).join("");
+    document.getElementById("overviewBrandGrid").innerHTML = items + items;
   }
+
+  // OVERVIEW EXECUTIVE AUTO-SLIDESHOW
+  let ovSlideIdx = 0;
+  let ovSlideTimer = null;
+  function goOvSlide(idx) {
+    const slides = document.querySelectorAll("#ovSlideshow .ov-slide");
+    const dots = document.querySelectorAll("#ovSlideshow .ov-dot");
+    if (!slides.length) return;
+    ovSlideIdx = (idx + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle("active", i === ovSlideIdx));
+    dots.forEach((d, i) => d.classList.toggle("active", i === ovSlideIdx));
+  }
+  function stepOvSlide(dir) {
+    goOvSlide(ovSlideIdx + dir);
+    resetOvSlideTimer();
+  }
+  function resetOvSlideTimer() {
+    if (ovSlideTimer) clearInterval(ovSlideTimer);
+    ovSlideTimer = setInterval(() => goOvSlide(ovSlideIdx + 1), 5000);
+  }
+  resetOvSlideTimer();
 
   function jumpToRegistry(term) {
     document.getElementById("nav-registry").click();
