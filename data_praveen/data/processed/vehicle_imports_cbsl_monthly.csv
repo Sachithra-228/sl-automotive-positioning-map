@@ -1,0 +1,11 @@
+period,vehicle_import_bill_usd_mn,source_org,publication,source_type,url,note
+2025-09,286,JB Securities / CBSL,"Daily FT, Jan 2026",secondary_news,https://www.ft.lk/top-story/Vehicle-registrations-surge-in-December-2025-to-10-year-high/26-787250,peak month of 2025 until December
+2025-10,261,JB Securities / CBSL,"Daily FT, Jan 2026",secondary_news,https://www.ft.lk/top-story/Vehicle-registrations-surge-in-December-2025-to-10-year-high/26-787250,
+2025-11,281,JB Securities / CBSL,"Daily FT, Jan 2026",secondary_news,https://www.ft.lk/top-story/Vehicle-registrations-surge-in-December-2025-to-10-year-high/26-787250,
+2025-12,311,JB Securities,"Daily Mirror print, Feb 2026",secondary_news,https://www.dailymirror.lk/print/breaking-news/Vehicle-registrations-hit-record-high-in-January/108-333330,peak
+2026-01,236.4,JB Securities / CBSL,"Daily Mirror print, Apr 2026",secondary_news,https://www.dailymirror.lk/print/business-main/March-vehicle-registrations-expand-over-15-as-EV-adoption-accelerates/245-338794,
+2026-02,204.8,JB Securities / CBSL,"Daily Mirror print, Apr 2026",secondary_news,https://www.dailymirror.lk/print/business-main/March-vehicle-registrations-expand-over-15-as-EV-adoption-accelerates/245-338794,-13.4% m/m
+2026-06,182,CBSL / JB Securities,"Daily FT, Jul 2026",secondary_news,https://www.ft.lk/front-page/Vehicle-import-bill-falls-27--M-o-M-in-June/44-795481,-27% m/m
+2025-01..2025-11,1700,JB Securities / CBSL,"Daily FT, Jan 2026",secondary_news,https://www.ft.lk/top-story/Vehicle-registrations-surge-in-December-2025-to-10-year-high/26-787250,"cumulative, approx. (US$1.7bn)"
+2026-H1,1254,CBSL / JB Securities,"Daily FT, Jul 2026",secondary_news,https://www.ft.lk/front-page/Vehicle-import-bill-falls-27--M-o-M-in-June/44-795481,cumulative first half of 2026
+2025-H2,1572,CBSL / JB Securities,"Daily FT, Jul 2026",secondary_news,https://www.ft.lk/front-page/Vehicle-import-bill-falls-27--M-o-M-in-June/44-795481,cumulative second half of 2025

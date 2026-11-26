@@ -17,3 +17,11 @@ Three-wheelers registered 2025,JB Securities analysis (via search summary),13768
 Four-wheel registrations FY2025/26 (new and used),United Motors annual report 2025/26,113000.0,vehicles,"April 2025 to March 2026, four-wheel vehicles of all kinds","Context only. Scope (four-wheelers, fiscal year, new and used) differs from the class-level calendar-year figures, so it cannot settle them."
 Group profit FY2025/26 United Motors,Press headline,3600.0,Rs mn,Group figure,"Resolved by the audited annual report: Rs 3,611 mn Group, Rs 2,201 mn Company."
 Group profit FY2025/26 United Motors,Press (company figure),2200.0,Rs mn,Company-only figure,"Resolved by the audited annual report: Rs 3,611 mn Group, Rs 2,201 mn Company."
+Total registrations May 2026,HNB Stockbrokers (Daily FT 11 Jun 2026),60444,units,First estimate,"Use 62,776 (JB Securities, repeated in June and July reports). Both kept in registrations_monthly_press_2025_2026.csv."
+Total registrations May 2026,"JB Securities (Daily FT, Jul-Aug 2026)",62776,units,Revised / different compiler,Preferred: quoted consistently by JB Securities in three later articles.
+Brand-new car registrations May 2026,HNB Stockbrokers,1110,units,Different compiler,"Both kept; JB Securities (1,199) is used for time series because it covers Mar-Jul consistently."
+Brand-new car registrations May 2026,JB Securities,1199,units,Different compiler,Preferred for time series.
+Total registrations Dec 2025,HNB Stockbrokers (rounded),47900,units,Rounded series in the May 2026 article,"Use 48,525 (JB Securities)."
+Total registrations Dec 2025,JB Securities,48525,units,,Preferred.
+Vehicle import tax revenue 2025,Ceylon Chamber Motor Vehicle Industry Report,896.4,Rs billion,Customs revenue,Not combined: scope may differ (Customs revenue vs all import taxes).
+Vehicle import tax revenue 2025,Deputy Minister / JB Securities (Daily FT),904,Rs billion,Taxes on vehicle imports,Not combined: see above.
