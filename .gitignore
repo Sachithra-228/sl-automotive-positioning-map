@@ -20,3 +20,6 @@ Thumbs.db
 desktop.ini
 ~$*.docx
 ~$*.xlsx
+
+# Private personal notes (never push)
+private_notes/
