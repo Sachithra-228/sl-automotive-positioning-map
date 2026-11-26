@@ -729,6 +729,47 @@
       width: auto !important; max-width: none;
     }
   }
+
+  /* PHASE 2: PRICE VS FEATURES MECE SCORECARD & DMT DEMAND */
+  .pf-scorecard {
+    background: linear-gradient(180deg, #FAFDFE 0%, #FFFFFF 100%);
+    border: 1px solid var(--border-strong); border-top: 4px solid var(--deep);
+    border-radius: 14px; padding: 18px 20px; height: 100%;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .pf-sc-head { display: flex; align-items: center; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .pf-sc-title { font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 800; color: var(--deep-dark); line-height: 1.2; }
+  .pf-sc-sub { font-size: 11.5px; color: var(--muted); }
+  .pf-big-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .pf-big-box {
+    background: var(--ice-soft); border: 1px solid rgba(8, 98, 136, 0.16);
+    border-radius: 10px; padding: 10px 12px;
+  }
+  .pf-big-box.dark { background: var(--deep); color: #FFFFFF; }
+  .pf-big-lbl { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; opacity: 0.78; }
+  .pf-big-val { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 900; line-height: 1.15; margin-top: 2px; }
+  .pillar-list { display: flex; flex-direction: column; gap: 9px; }
+  .pillar-row { display: flex; flex-direction: column; gap: 4px; }
+  .pillar-top { display: flex; justify-content: space-between; font-size: 11.5px; font-weight: 700; color: var(--deep-dark); }
+  .pillar-track { width: 100%; height: 7px; border-radius: 99px; background: rgba(8, 98, 136, 0.10); overflow: hidden; }
+  .pillar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--deep), var(--steel), var(--ice)); transition: width 0.35s ease; }
+  .mece-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  @media (max-width: 1020px) { .mece-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .mece-grid { grid-template-columns: 1fr; } #priceFeaturesChart, #dmtDemandChart { height: 370px !important; } }
+  .mece-card {
+    background: #FAFDFE; border: 1px solid var(--border); border-left: 3.5px solid var(--deep);
+    border-radius: 11px; padding: 12px 14px;
+  }
+  .mece-card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+  .mece-card h5 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 800; color: var(--deep-dark); }
+  .mece-card p { font-size: 11.4px; color: var(--muted); line-height: 1.45; }
+  .dmt-upload-btn {
+    display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border-radius: 8px;
+    background: var(--deep); color: #FFFFFF; font-size: 11.8px; font-weight: 700;
+    cursor: pointer; border: none; transition: 0.16s;
+  }
+  .dmt-upload-btn:hover { background: var(--deep-dark); }
+
 </style>
 </head>
 <body>
@@ -970,21 +1011,25 @@
         <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
         Overview
       </button>
+      <button class="nav-item" id="nav-features" onclick="showView('features', 'Price vs. Features Matrix', 'MECE Apples-to-Apples Model Positioning', this)">
+        <svg class="ico" viewBox="0 0 24 24"><line x1="4" y1="20" x2="20" y2="20"/><line x1="4" y1="20" x2="4" y2="4"/><circle cx="9" cy="14" r="2"/><circle cx="14" cy="9" r="2"/><circle cx="18" cy="13" r="2"/></svg>
+        Price vs. Features <span class="nav-count" id="sbFeatureCount">116</span>
+      </button>
       <button class="nav-item" id="nav-ninebox" onclick="showView('ninebox', '9-Box Positioning Simulator', 'ICE / Hybrid / EV vs. Price Tiers', this)">
         <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
-        9-Box Simulator <span class="nav-count" id="sbModelCount">86</span>
+        9-Box Simulator <span class="nav-count" id="sbModelCount">116</span>
       </button>
-      <button class="nav-item" id="nav-quadrant" onclick="showView('quadrant', 'Gartner Magic Quadrant', 'Ability to Execute vs. Vision', this)">
-        <svg class="ico" viewBox="0 0 24 24"><path d="M3 3v18h18"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="14" r="2"/><circle cx="17" cy="15" r="2"/></svg>
-        Magic Quadrant <span class="nav-count">15</span>
+      <button class="nav-item" id="nav-macro" onclick="showView('macro', 'Demand &amp; Macro (DMT)', 'Registrations, CSE Financials &amp; Trade', this)">
+        <svg class="ico" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Demand &amp; Macro
       </button>
       <button class="nav-item" id="nav-scale" onclick="showView('scale', 'SCALE Strategy Suite', 'Blue Ocean, ERRC &amp; Three Horizons', this)">
         <svg class="ico" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
         SCALE Strategy
       </button>
-      <button class="nav-item" id="nav-macro" onclick="showView('macro', 'Macro &amp; Trade Analytics', 'DMT, CBSL &amp; DCS Data', this)">
-        <svg class="ico" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-        Macro &amp; Trade
+      <button class="nav-item" id="nav-quadrant" onclick="showView('quadrant', 'Innovator Benchmark (Gartner)', 'Optional Vision vs. Execution Lens', this)">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M3 3v18h18"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="14" r="2"/><circle cx="17" cy="15" r="2"/></svg>
+        Innovator Benchmark <span class="nav-count">15</span>
       </button>
       <button class="nav-item" id="nav-registry" onclick="showView('registry', 'MECE 28-Player Registry', 'Batches A, B, C &amp; Evidenced Offerings', this)">
         <svg class="ico" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
@@ -1060,15 +1105,15 @@
               <div class="visual-card-cta">Open 9-Box Simulator &rarr;</div>
             </div>
           </div>
-          <div class="visual-card" onclick="document.getElementById('nav-quadrant').click()">
-            <img class="visual-card-img" src="assets/cars/stage1_ice.jpg" alt="Gartner Magic Quadrant">
+          <div class="visual-card" onclick="document.getElementById('nav-features').click()">
+            <img class="visual-card-img" src="assets/cars/stage1_ice.jpg" alt="Price vs Features MECE Matrix">
             <div class="visual-card-body">
               <div>
-                <div class="visual-card-kicker">Competitive Scoring</div>
-                <h4>Gartner Magic Quadrant</h4>
-                <p>Compare Ability to Execute vs. Completeness of Vision across 15 scored Sri Lankan players with analyst rationales.</p>
+                <div class="visual-card-kicker">NEW • MECE Model-Level Map</div>
+                <h4>Price vs. Features Positioning</h4>
+                <p>Apples-to-apples scoring of 116 brand-new models across 6 MECE feature pillars (Comfort, Safety, Performance, Tech, Efficiency, Service) to expose exact market gaps.</p>
               </div>
-              <div class="visual-card-cta">Explore Magic Quadrant &rarr;</div>
+              <div class="visual-card-cta">Open Price vs. Features &rarr;</div>
             </div>
           </div>
           <div class="visual-card" onclick="document.getElementById('nav-scale').click()">
@@ -1080,6 +1125,98 @@
                 <p>Blue Ocean Strategy Canvas, ERRC Action Grid, Innovator's Dilemma, and 70/20/10 Three Horizons roadmap.</p>
               </div>
               <div class="visual-card-cta">View SCALE Strategy &rarr;</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== NEW PRIMARY VIEW: PRICE VS FEATURES (MECE) ==================== -->
+      <section id="view-features" class="view">
+        <div class="insight-strip">
+          <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <p><strong>Apples-to-Apples Automotive Positioning:</strong> Every brand-new model (including DIMO's Mercedes-Benz EQ &amp; Tata EVs, United Motors, Toyota Lanka, Kia &amp; BYD) is scored across <strong>6 MECE feature pillars (0–100)</strong> and plotted against Standardized LKR Price. Models <strong>above the dashed Value Frontier</strong> deliver superior features per LKR Million; empty bands reveal open market gaps.</p>
+        </div>
+
+        <div class="filter-bar" id="tour-pf-filters">
+          <label>Powertrain:</label>
+          <select id="pfPowertrain">
+            <option value="ALL">All (EV / Hybrid / ICE)</option>
+            <option value="EV">EV Only (42)</option>
+            <option value="Hybrid">Hybrid Only (28)</option>
+            <option value="ICE">ICE Only (46)</option>
+          </select>
+          <label>Distributor:</label>
+          <select id="pfDistributor"><option value="ALL">All 14 Distributors</option></select>
+          <label>Body Type:</label>
+          <select id="pfBody"><option value="ALL">All Body Types</option></select>
+          <label>Price Scale:</label>
+          <select id="pfScale">
+            <option value="FOCUS">Core Market Focus (0 – 45M LKR)</option>
+            <option value="FULL">Full Market (0 – 250M LKR)</option>
+          </select>
+          <span style="margin-left:auto; font-size:12px; font-weight:800; color:var(--deep);" id="pfCountBadge">116 Models Plotted</span>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Price vs. Features Positioning Matrix (Model-Level MECE)</div>
+            <div class="card-sub">Click any model dot to inspect its 6-pillar MECE scorecard on the right. Dashed line = Market Value Frontier.</div>
+            <div id="priceFeaturesChart" style="width:100%; height:505px;"></div>
+          </div>
+
+          <div class="pf-scorecard" id="pfScorecard">
+            <div class="pf-sc-head">
+              <div id="pfScLogo"></div>
+              <div>
+                <div class="pf-sc-title" id="pfScTitle">BYD ATTO 3 Advanced</div>
+                <div class="pf-sc-sub" id="pfScSub">John Keells CG Auto • EV • SUV</div>
+              </div>
+            </div>
+            <div class="pf-big-row">
+              <div class="pf-big-box">
+                <div class="pf-big-lbl">Brand-New Price</div>
+                <div class="pf-big-val" id="pfScPrice" style="color:var(--deep-dark);">LKR 14.65M</div>
+              </div>
+              <div class="pf-big-box dark">
+                <div class="pf-big-lbl">MECE Feature Score</div>
+                <div class="pf-big-val" id="pfScScore">82.6 / 100</div>
+              </div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+              <span class="badge dark" id="pfScVerdict">High-Value Disruptor (+8.4 vs Frontier)</span>
+              <span style="font-size:10.5px; color:var(--muted); font-weight:600;" id="pfScSource">Verified Team Master CSV</span>
+            </div>
+            <div class="pillar-list" id="pfPillarList"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">MECE Feature Scoring Methodology (Level Playing Field Rubric)</div>
+          <div class="card-sub">Mutually Exclusive &amp; Collectively Exhaustive (MECE) sub-parameters ensure apples-to-apples comparison between luxury European, legacy Japanese, and Chinese EV models.</div>
+          <div class="mece-grid">
+            <div class="mece-card">
+              <div class="mece-card-head"><h5>1. Comfort &amp; Cabin</h5><span class="badge">20%</span></div>
+              <p>Cabin space &amp; ergonomics, ride suspension tuning, climate control zones, seating materials &amp; NVH insulation.</p>
+            </div>
+            <div class="mece-card">
+              <div class="mece-card-head"><h5>2. Performance &amp; Drivetrain</h5><span class="badge">18%</span></div>
+              <p>Horsepower / instant torque delivery, 0–100 km/h responsiveness, AWD/4x4 capability &amp; chassis dynamics.</p>
+            </div>
+            <div class="mece-card">
+              <div class="mece-card-head"><h5>3. Safety &amp; ADAS</h5><span class="badge">20%</span></div>
+              <p>NCAP safety rating, airbag count, Autonomous Emergency Braking (AEB), Lane-Keep Assist &amp; 360° camera suite.</p>
+            </div>
+            <div class="mece-card">
+              <div class="mece-card-head"><h5>4. In-Car Tech &amp; OTA</h5><span class="badge">16%</span></div>
+              <p>Central infotainment display, digital cluster, wireless CarPlay/Android Auto, mobile app telematics &amp; OTA updates.</p>
+            </div>
+            <div class="mece-card">
+              <div class="mece-card-head"><h5>5. Efficiency &amp; Range</h5><span class="badge">14%</span></div>
+              <p>WLTP EV range / hybrid fuel economy (km/L), running cost per km in Sri Lanka &amp; DC fast-charging / regen capability.</p>
+            </div>
+            <div class="mece-card">
+              <div class="mece-card-head"><h5>6. After-Sales &amp; Resale Moat</h5><span class="badge">12%</span></div>
+              <p>Islandwide authorized workshop footprint, spare-parts availability, manufacturer warranty &amp; local resale confidence.</p>
             </div>
           </div>
         </div>
@@ -1116,7 +1253,7 @@
           <select id="filterDistributor"><option value="ALL">All Distributors</option></select>
           <label>Body Type:</label>
           <select id="filterBody"><option value="ALL">All Body Types</option></select>
-          <span style="margin-left:auto; font-size:12px; font-weight:800; color:var(--deep);" id="modelCountBadge">86 Models Shown</span>
+          <span style="margin-left:auto; font-size:12px; font-weight:800; color:var(--deep);" id="modelCountBadge">116 Models Shown</span>
         </div>
 
         <div class="card">
@@ -1136,7 +1273,7 @@
       <section id="view-quadrant" class="view">
         <div class="insight-strip">
           <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-          <p><strong>Click-to-Inspect:</strong> Filter by segment (PV, EV, CV, TW, MF) and click any company card on the right to highlight its position and evidence coverage inside the Magic Quadrant.</p>
+          <p><strong>Optional Innovator Benchmark (Gartner Lens):</strong> Evaluates corporate Vision vs. Execution across 15 scored players. For model-level automotive gap analysis, use the <strong>Price vs. Features</strong> and <strong>9-Box Matrix</strong> tabs.</p>
         </div>
 
         <div class="pill-bar" id="tour-quad-pills">
@@ -1206,8 +1343,25 @@
         </div>
       </section>
 
-      <!-- ==================== VIEW 4: MACRO & TRADE ==================== -->
+      <!-- ==================== VIEW 4: DEMAND & MACRO (DMT-READY) ==================== -->
       <section id="view-macro" class="view">
+        <div class="card">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
+            <div>
+              <div class="card-title">Post-Ban Brand Demand vs. Average Price (DMT-Ready View)</div>
+              <div class="card-sub">Answers <em>"What is the Sri Lankan consumer actually buying?"</em> — Bubble size = Model Portfolio Depth. Currently shows provisional public post-ban signals; upload official DMT brand counts CSV to update live.</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="badge steel" id="dmtStatusBadge">Provisional Public Signal • Awaiting DMT Official Call</span>
+              <label class="dmt-upload-btn" title="Upload CSV with columns: Brand,Registrations,Avg_Price_Mn,Portfolio_Count">
+                <svg class="ico" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                Upload Official DMT CSV
+                <input type="file" id="dmtCsvInput" accept=".csv" style="display:none;" onchange="handleDmtCsvUpload(event)">
+              </label>
+            </div>
+          </div>
+          <div id="dmtDemandChart" style="width:100%; height:370px;"></div>
+        </div>
         <div class="kpi-grid cols-4">
           <div class="kpi"><div class="kpi-label">Locally Assembled (2023)</div><div class="kpi-val">17,956</div><div class="kpi-sub">1,121 4W + 16,835 2W (MoI)</div></div>
           <div class="kpi steel"><div class="kpi-label">Direct Sector Jobs</div><div class="kpi-val">~20,000</div><div class="kpi-sub">15 Assemblers • 25 Component Makers</div></div>
@@ -1531,8 +1685,8 @@
     { view: "overview", target: "#tour-nav", title: "Executive Sidebar Navigation", desc: "Switch seamlessly between Overview, the 9-Box Price Simulator, Gartner Magic Quadrant, SCALE Strategy, Macro Analytics, and all 28 Distributors." },
     { view: "overview", target: "#tour-kpis", title: "Headline Market Pulse", desc: "Instant boardroom metrics: 360,117 post-ban registrations, $2.05B import bill, BYD's 48.8% Oct 2026 new-car share, and Sri Lanka's EV luxury tax edge." },
     { view: "overview", target: "#tour-brands", title: "Interactive Official Brand Grid", desc: "Click any automotive brand logo to jump directly to its verified Sri Lankan distributor, website status, and batch ownership." },
-    { view: "ninebox", target: "#tour-sliders", title: "Live 9-Box Price Simulator", desc: "Drag the Budget and Mid-Range LKR sliders in real time to test how ICE, Hybrid, and EV models shift across the 9 positioning boxes." },
-    { view: "quadrant", target: "#tour-quad-pills", title: "Gartner Magic Quadrant Filters", desc: "Filter 15 scored players by segment (PV, EV, CV, TW, MF) and click any Analyst Outlook card on the right to highlight it on the chart." }
+    { view: "features", target: "#tour-pf-filters", title: "Price vs. Features (MECE Matrix)", desc: "Compare all 116 brand-new models apples-to-apples across 6 MECE feature pillars, filter by EV/ICE/Hybrid, and click any model dot for its full scorecard." },
+    { view: "ninebox", target: "#tour-sliders", title: "Live 9-Box Price Simulator", desc: "Drag the Budget and Mid-Range LKR sliders in real time to test how ICE, Hybrid, and EV models (including DIMO EVs & United Motors) shift across the 9 boxes." }
   ];
   let tourIdx = 0;
 
@@ -1649,7 +1803,7 @@
     ["ChargeNET","Charging Infra","Evidenced","100+ locations, 150+ chargers; Dialog Touch Card payment integration."]
   ];
 
-  let currentData = [{"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "C-Class C 180", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 39.9}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "E-Class E 200 Exclusive", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 66.5}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "E-Class E 300", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 72.6}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "S-Class", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 167.3}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "Mercedes-Maybach S 580 4MATIC", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 207.5}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "CLA 180", "Powertrain": "ICE", "Body_Type": "Coupe", "Std_Price_Mn": 40.3}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLA 200 Progressive", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 36.5}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLB", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 46.7}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLC", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 65.5}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLE", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 130.0}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLS 450 4MATIC", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 118.8}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "Mercedes-Maybach GLS 600", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 233.0}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "G-Class G 500", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 182.8}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "Mercedes-AMG G 63", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 240.0}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "V-Class V 220 d", "Powertrain": "ICE", "Body_Type": "MPV", "Std_Price_Mn": 80.4}, {"Distributor": "Euro Motors", "Brand": "Jetour", "Model": "T1", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 25.5}, {"Distributor": "Euro Motors", "Brand": "Jetour", "Model": "T2", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 28.5}, {"Distributor": "Euro Motors", "Brand": "Jetour", "Model": "Dashing", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 16.95}, {"Distributor": "Euro Motors", "Brand": "Jetour", "Model": "X70 Plus", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 17.5}, {"Distributor": "Euro Motors", "Brand": "Dongfeng", "Model": "007", "Powertrain": "EV", "Body_Type": "Sedan", "Std_Price_Mn": 18.95}, {"Distributor": "Euro Motors", "Brand": "Dongfeng", "Model": "Box", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 10.98}, {"Distributor": "Euro Motors", "Brand": "Dongfeng", "Model": "Vigo", "Powertrain": "EV", "Body_Type": "Compact SUV", "Std_Price_Mn": 14.35}, {"Distributor": "Euro Motors", "Brand": "JAC", "Model": "T9 Double Cab", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 18.5}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Haval H6", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 20.0}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Haval H6 GT", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 26.0}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Tank 300", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 34.0}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Tank 500", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 43.5}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Ora 5", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 14.5}, {"Distributor": "Carmart", "Brand": "Leapmotor", "Model": "C10 REEV Style", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 23.3}, {"Distributor": "Carmart", "Brand": "Leapmotor", "Model": "C10 REEV Design", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 23.9}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 1 Dynamic", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 9.3}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 1 Premium", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 10.3}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "RACCO Dynamic", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 8.75}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "RACCO Advanced", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 9.75}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "RACCO Premium", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 11.45}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 Advanced", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 14.65}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 EVO Advanced", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 16.3}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 EVO Superior", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 18.9}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 EVO Premium", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 44.55}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 EVO Performance", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 57.89}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "M6 Superior", "Powertrain": "EV", "Body_Type": "MPV", "Std_Price_Mn": 17.4}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "SEALION 5 Dynamic", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 19.48}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "SEALION 5 Premium", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 20.75}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "SEALION 6 Superior", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 23.85}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "SHARK 6 Premium", "Powertrain": "Hybrid", "Body_Type": "Pickup", "Std_Price_Mn": 28.35}, {"Distributor": "AMW", "Brand": "Nissan", "Model": "Magnite Accenta 1.0 AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 8.19}, {"Distributor": "AMW", "Brand": "Nissan", "Model": "Magnite Tekna+ 1.0 AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 9.39}, {"Distributor": "AMW", "Brand": "Nissan", "Model": "Magnite N-Connecta 1.0 Turbo CVT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 9.99}, {"Distributor": "AMW", "Brand": "Nissan", "Model": "Magnite Tekna+ 1.0 Turbo CVT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 10.59}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "XUV 3XO 1.2 MX3 AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 11.6}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "XUV 3XO 1.2 AX5 AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 12.7}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "XUV 3XO 1.2 AX7L AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 13.7}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "Pik-Up Single Cab S6 4x4", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 8.99}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "Bolero MaXX Pik-Up City 1.5T", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 5.79}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "Bolero MaXX HD 1.7T", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 6.1}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J8", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 34.9}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J8 PHEV", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 32.9}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J7 PHEV", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 24.9}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J6", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 23.5}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J5 HEV", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 19.99}, {"Distributor": "Hayleys Mobility", "Brand": "OMODA", "Model": "C9", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 33.9}, {"Distributor": "Hayleys Mobility", "Brand": "OMODA", "Model": "C5", "Powertrain": "ICE", "Body_Type": "Compact SUV", "Std_Price_Mn": 15.9}, {"Distributor": "Hayleys Mobility", "Brand": "OMODA", "Model": "E5", "Powertrain": "EV", "Body_Type": "Crossover", "Std_Price_Mn": 20.9}, {"Distributor": "Hayleys Mobility", "Brand": "Kaiyi", "Model": "eVibe e04", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 7.99}, {"Distributor": "Hayleys Mobility", "Brand": "Kaiyi", "Model": "X3 Pro EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 13.39}, {"Distributor": "Hayleys Mobility", "Brand": "SRM", "Model": "T3 EV Truck", "Powertrain": "EV", "Body_Type": "Light Truck", "Std_Price_Mn": 14.04}, {"Distributor": "Hayleys Mobility", "Brand": "SRM", "Model": "X30L EV Passenger Van", "Powertrain": "EV", "Body_Type": "Van", "Std_Price_Mn": 14.04}, {"Distributor": "Hayleys Mobility", "Brand": "SRM", "Model": "X30L EV Cargo Van", "Powertrain": "EV", "Body_Type": "Van", "Std_Price_Mn": 14.04}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "ZS MCE", "Powertrain": "ICE", "Body_Type": "Compact SUV", "Std_Price_Mn": 12.99}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "ZS Hybrid+", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 18.39}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "HS Plug-In Hybrid", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 25.0}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "HS Hybrid+", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 21.45}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "S9 PHEV", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 30.85}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "S5 EV", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 20.99}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "MG4 Electric", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 15.85}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "MG4 Urban EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 15.79}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "U9", "Powertrain": "ICE", "Body_Type": "Double Cab Pickup", "Std_Price_Mn": 32.99}, {"Distributor": "Browns EV", "Brand": "BAW", "Model": "E6 EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 4.5}, {"Distributor": "Browns EV", "Brand": "BAW", "Model": "E7 EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 5.9}, {"Distributor": "Browns EV", "Brand": "BAW", "Model": "E7 Pro EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 6.5}, {"Distributor": "Browns EV", "Brand": "BAW", "Model": "M8 REEV", "Powertrain": "Hybrid", "Body_Type": "MPV", "Std_Price_Mn": 23.0}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Binguo EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 9.35}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Cloud EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 13.7}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Eksion Plug-in Hybrid", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 20.8}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Darion EV", "Powertrain": "EV", "Body_Type": "MPV", "Std_Price_Mn": 22.5}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Darion Plug-in Hybrid", "Powertrain": "Hybrid", "Body_Type": "MPV", "Std_Price_Mn": 23.0}];
+  let currentData = [{"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "C-Class C 180", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 39.9, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 85, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 58, "AfterSales": 92, "Feature_Score": 89.3}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "E-Class E 200 Exclusive", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 66.5, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 89, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 58, "AfterSales": 92, "Feature_Score": 90.1}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "E-Class E 300", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 72.6, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 90, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 58, "AfterSales": 92, "Feature_Score": 90.2}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "S-Class", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 167.3, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 94, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 46, "AfterSales": 92, "Feature_Score": 89.3}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "Mercedes-Maybach S 580 4MATIC", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 207.5, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 98, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 46, "AfterSales": 92, "Feature_Score": 90.0}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "CLA 180", "Powertrain": "ICE", "Body_Type": "Coupe", "Std_Price_Mn": 40.3, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 85, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 58, "AfterSales": 92, "Feature_Score": 89.3}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLA 200 Progressive", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 36.5, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 83, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 58, "AfterSales": 92, "Feature_Score": 89.0}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLB", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 46.7, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 86, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 58, "AfterSales": 92, "Feature_Score": 89.5}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLC", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 65.5, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 89, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 58, "AfterSales": 92, "Feature_Score": 90.1}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLE", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 130.0, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 93, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 46, "AfterSales": 92, "Feature_Score": 89.1}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "GLS 450 4MATIC", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 118.8, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 98, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 46, "AfterSales": 92, "Feature_Score": 90.0}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "Mercedes-Maybach GLS 600", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 233.0, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 96, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 46, "AfterSales": 92, "Feature_Score": 89.6}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "G-Class G 500", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 182.8, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 95, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 46, "AfterSales": 92, "Feature_Score": 89.5}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "Mercedes-AMG G 63", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 240.0, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 98, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 46, "AfterSales": 92, "Feature_Score": 90.0}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "V-Class V 220 d", "Powertrain": "ICE", "Body_Type": "MPV", "Std_Price_Mn": 80.4, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 91, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 46, "AfterSales": 92, "Feature_Score": 88.7}, {"Distributor": "Euro Motors", "Brand": "Jetour", "Model": "T1", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 25.5, "Price_Source": "Verified Team Master CSV", "Comfort": 89, "Performance": 80, "Safety_ADAS": 85, "Tech_OTA": 92, "Efficiency": 81, "AfterSales": 76, "Feature_Score": 84.4}, {"Distributor": "Euro Motors", "Brand": "Jetour", "Model": "T2", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 28.5, "Price_Source": "Verified Team Master CSV", "Comfort": 91, "Performance": 82, "Safety_ADAS": 87, "Tech_OTA": 94, "Efficiency": 81, "AfterSales": 76, "Feature_Score": 85.9}, {"Distributor": "Euro Motors", "Brand": "Jetour", "Model": "Dashing", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 16.95, "Price_Source": "Verified Team Master CSV", "Comfort": 82, "Performance": 69, "Safety_ADAS": 78, "Tech_OTA": 82, "Efficiency": 58, "AfterSales": 76, "Feature_Score": 74.8}, {"Distributor": "Euro Motors", "Brand": "Jetour", "Model": "X70 Plus", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 17.5, "Price_Source": "Verified Team Master CSV", "Comfort": 83, "Performance": 70, "Safety_ADAS": 79, "Tech_OTA": 83, "Efficiency": 58, "AfterSales": 76, "Feature_Score": 75.5}, {"Distributor": "Euro Motors", "Brand": "Dongfeng", "Model": "007", "Powertrain": "EV", "Body_Type": "Sedan", "Std_Price_Mn": 18.95, "Price_Source": "Verified Team Master CSV", "Comfort": 79, "Performance": 80, "Safety_ADAS": 81, "Tech_OTA": 92, "Efficiency": 88, "AfterSales": 76, "Feature_Score": 82.6}, {"Distributor": "Euro Motors", "Brand": "Dongfeng", "Model": "Box", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 10.98, "Price_Source": "Verified Team Master CSV", "Comfort": 68, "Performance": 61, "Safety_ADAS": 70, "Tech_OTA": 81, "Efficiency": 82, "AfterSales": 76, "Feature_Score": 72.1}, {"Distributor": "Euro Motors", "Brand": "Dongfeng", "Model": "Vigo", "Powertrain": "EV", "Body_Type": "Compact SUV", "Std_Price_Mn": 14.35, "Price_Source": "Verified Team Master CSV", "Comfort": 76, "Performance": 74, "Safety_ADAS": 75, "Tech_OTA": 86, "Efficiency": 88, "AfterSales": 76, "Feature_Score": 78.7}, {"Distributor": "Euro Motors", "Brand": "JAC", "Model": "T9 Double Cab", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 18.5, "Price_Source": "Verified Team Master CSV", "Comfort": 67, "Performance": 71, "Safety_ADAS": 75, "Tech_OTA": 66, "Efficiency": 58, "AfterSales": 76, "Feature_Score": 69.0}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Haval H6", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 20.0, "Price_Source": "Verified Team Master CSV", "Comfort": 86, "Performance": 77, "Safety_ADAS": 86, "Tech_OTA": 88, "Efficiency": 81, "AfterSales": 86, "Feature_Score": 84.0}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Haval H6 GT", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 26.0, "Price_Source": "Verified Team Master CSV", "Comfort": 90, "Performance": 91, "Safety_ADAS": 90, "Tech_OTA": 92, "Efficiency": 81, "AfterSales": 86, "Feature_Score": 88.8}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Tank 300", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 34.0, "Price_Source": "Verified Team Master CSV", "Comfort": 94, "Performance": 95, "Safety_ADAS": 95, "Tech_OTA": 96, "Efficiency": 81, "AfterSales": 86, "Feature_Score": 91.9}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Tank 500", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 43.5, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 98, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 81, "AfterSales": 86, "Feature_Score": 94.2}, {"Distributor": "David Pieris", "Brand": "GWM", "Model": "Ora 5", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 14.5, "Price_Source": "Verified Team Master CSV", "Comfort": 76, "Performance": 74, "Safety_ADAS": 79, "Tech_OTA": 85, "Efficiency": 88, "AfterSales": 86, "Feature_Score": 80.6}, {"Distributor": "Carmart", "Brand": "Leapmotor", "Model": "C10 REEV Style", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 23.3, "Price_Source": "Verified Team Master CSV", "Comfort": 89, "Performance": 79, "Safety_ADAS": 90, "Tech_OTA": 93, "Efficiency": 87, "AfterSales": 75, "Feature_Score": 86.1}, {"Distributor": "Carmart", "Brand": "Leapmotor", "Model": "C10 REEV Design", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 23.9, "Price_Source": "Verified Team Master CSV", "Comfort": 89, "Performance": 79, "Safety_ADAS": 91, "Tech_OTA": 93, "Efficiency": 87, "AfterSales": 75, "Feature_Score": 86.3}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 1 Dynamic", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 9.3, "Price_Source": "Verified Team Master CSV", "Comfort": 68, "Performance": 58, "Safety_ADAS": 75, "Tech_OTA": 82, "Efficiency": 82, "AfterSales": 85, "Feature_Score": 73.8}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 1 Premium", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 10.3, "Price_Source": "Verified Team Master CSV", "Comfort": 74, "Performance": 60, "Safety_ADAS": 81, "Tech_OTA": 84, "Efficiency": 82, "AfterSales": 85, "Feature_Score": 76.9}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "RACCO Dynamic", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 8.75, "Price_Source": "Verified Team Master CSV", "Comfort": 68, "Performance": 58, "Safety_ADAS": 74, "Tech_OTA": 82, "Efficiency": 82, "AfterSales": 85, "Feature_Score": 73.6}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "RACCO Advanced", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 9.75, "Price_Source": "Verified Team Master CSV", "Comfort": 69, "Performance": 59, "Safety_ADAS": 76, "Tech_OTA": 83, "Efficiency": 82, "AfterSales": 85, "Feature_Score": 74.6}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "RACCO Premium", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 11.45, "Price_Source": "Verified Team Master CSV", "Comfort": 76, "Performance": 70, "Safety_ADAS": 83, "Tech_OTA": 86, "Efficiency": 82, "AfterSales": 85, "Feature_Score": 79.8}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 Advanced", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 14.65, "Price_Source": "Verified Team Master CSV", "Comfort": 79, "Performance": 74, "Safety_ADAS": 83, "Tech_OTA": 90, "Efficiency": 94, "AfterSales": 85, "Feature_Score": 83.5}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 EVO Advanced", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 16.3, "Price_Source": "Verified Team Master CSV", "Comfort": 81, "Performance": 76, "Safety_ADAS": 85, "Tech_OTA": 92, "Efficiency": 94, "AfterSales": 85, "Feature_Score": 85.0}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 EVO Superior", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 18.9, "Price_Source": "Verified Team Master CSV", "Comfort": 89, "Performance": 80, "Safety_ADAS": 92, "Tech_OTA": 96, "Efficiency": 94, "AfterSales": 85, "Feature_Score": 89.3}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 EVO Premium", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 44.55, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 94, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 94, "AfterSales": 85, "Feature_Score": 95.2}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "ATTO 3 EVO Performance", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 57.89, "Price_Source": "Verified Team Master CSV", "Comfort": 98, "Performance": 98, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 94, "AfterSales": 85, "Feature_Score": 95.9}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "M6 Superior", "Powertrain": "EV", "Body_Type": "MPV", "Std_Price_Mn": 17.4, "Price_Source": "Verified Team Master CSV", "Comfort": 87, "Performance": 78, "Safety_ADAS": 90, "Tech_OTA": 94, "Efficiency": 88, "AfterSales": 85, "Feature_Score": 87.0}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "SEALION 5 Dynamic", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 19.48, "Price_Source": "Verified Team Master CSV", "Comfort": 85, "Performance": 76, "Safety_ADAS": 89, "Tech_OTA": 92, "Efficiency": 87, "AfterSales": 85, "Feature_Score": 85.6}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "SEALION 5 Premium", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 20.75, "Price_Source": "Verified Team Master CSV", "Comfort": 90, "Performance": 77, "Safety_ADAS": 94, "Tech_OTA": 93, "Efficiency": 87, "AfterSales": 85, "Feature_Score": 87.9}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "SEALION 6 Superior", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 23.85, "Price_Source": "Verified Team Master CSV", "Comfort": 92, "Performance": 79, "Safety_ADAS": 96, "Tech_OTA": 95, "Efficiency": 87, "AfterSales": 85, "Feature_Score": 89.4}, {"Distributor": "John Keells CG Auto", "Brand": "BYD", "Model": "SHARK 6 Premium", "Powertrain": "Hybrid", "Body_Type": "Pickup", "Std_Price_Mn": 28.35, "Price_Source": "Verified Team Master CSV", "Comfort": 84, "Performance": 92, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 81, "AfterSales": 85, "Feature_Score": 90.2}, {"Distributor": "AMW", "Brand": "Nissan", "Model": "Magnite Accenta 1.0 AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 8.19, "Price_Source": "Verified Team Master CSV", "Comfort": 64, "Performance": 57, "Safety_ADAS": 61, "Tech_OTA": 62, "Efficiency": 58, "AfterSales": 88, "Feature_Score": 63.9}, {"Distributor": "AMW", "Brand": "Nissan", "Model": "Magnite Tekna+ 1.0 AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 9.39, "Price_Source": "Verified Team Master CSV", "Comfort": 66, "Performance": 59, "Safety_ADAS": 63, "Tech_OTA": 64, "Efficiency": 58, "AfterSales": 88, "Feature_Score": 65.3}, {"Distributor": "AMW", "Brand": "Nissan", "Model": "Magnite N-Connecta 1.0 Turbo CVT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 9.99, "Price_Source": "Verified Team Master CSV", "Comfort": 67, "Performance": 70, "Safety_ADAS": 64, "Tech_OTA": 65, "Efficiency": 58, "AfterSales": 88, "Feature_Score": 67.9}, {"Distributor": "AMW", "Brand": "Nissan", "Model": "Magnite Tekna+ 1.0 Turbo CVT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 10.59, "Price_Source": "Verified Team Master CSV", "Comfort": 68, "Performance": 71, "Safety_ADAS": 65, "Tech_OTA": 66, "Efficiency": 58, "AfterSales": 88, "Feature_Score": 68.6}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "XUV 3XO 1.2 MX3 AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 11.6, "Price_Source": "Verified Team Master CSV", "Comfort": 70, "Performance": 62, "Safety_ADAS": 67, "Tech_OTA": 68, "Efficiency": 58, "AfterSales": 83, "Feature_Score": 67.5}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "XUV 3XO 1.2 AX5 AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 12.7, "Price_Source": "Verified Team Master CSV", "Comfort": 72, "Performance": 64, "Safety_ADAS": 68, "Tech_OTA": 70, "Efficiency": 58, "AfterSales": 83, "Feature_Score": 68.8}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "XUV 3XO 1.2 AX7L AT", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 13.7, "Price_Source": "Verified Team Master CSV", "Comfort": 73, "Performance": 65, "Safety_ADAS": 73, "Tech_OTA": 71, "Efficiency": 58, "AfterSales": 83, "Feature_Score": 70.3}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "Pik-Up Single Cab S6 4x4", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 8.99, "Price_Source": "Verified Team Master CSV", "Comfort": 55, "Performance": 58, "Safety_ADAS": 63, "Tech_OTA": 54, "Efficiency": 58, "AfterSales": 83, "Feature_Score": 60.8}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "Bolero MaXX Pik-Up City 1.5T", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 5.79, "Price_Source": "Verified Team Master CSV", "Comfort": 50, "Performance": 53, "Safety_ADAS": 47, "Tech_OTA": 49, "Efficiency": 58, "AfterSales": 83, "Feature_Score": 54.9}, {"Distributor": "Ideal Motors", "Brand": "Mahindra", "Model": "Bolero MaXX HD 1.7T", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 6.1, "Price_Source": "Verified Team Master CSV", "Comfort": 50, "Performance": 53, "Safety_ADAS": 48, "Tech_OTA": 49, "Efficiency": 58, "AfterSales": 83, "Feature_Score": 55.1}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J8", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 34.9, "Price_Source": "Verified Team Master CSV", "Comfort": 96, "Performance": 82, "Safety_ADAS": 97, "Tech_OTA": 96, "Efficiency": 58, "AfterSales": 79, "Feature_Score": 86.3}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J8 PHEV", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 32.9, "Price_Source": "Verified Team Master CSV", "Comfort": 95, "Performance": 85, "Safety_ADAS": 96, "Tech_OTA": 98, "Efficiency": 87, "AfterSales": 79, "Feature_Score": 90.8}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J7 PHEV", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 24.9, "Price_Source": "Verified Team Master CSV", "Comfort": 90, "Performance": 80, "Safety_ADAS": 91, "Tech_OTA": 93, "Efficiency": 87, "AfterSales": 79, "Feature_Score": 87.1}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J6", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 23.5, "Price_Source": "Verified Team Master CSV", "Comfort": 89, "Performance": 83, "Safety_ADAS": 90, "Tech_OTA": 96, "Efficiency": 88, "AfterSales": 79, "Feature_Score": 87.9}, {"Distributor": "Hayleys Mobility", "Brand": "JAECOO", "Model": "J5 HEV", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 19.99, "Price_Source": "Verified Team Master CSV", "Comfort": 87, "Performance": 77, "Safety_ADAS": 88, "Tech_OTA": 90, "Efficiency": 87, "AfterSales": 79, "Feature_Score": 84.9}, {"Distributor": "Hayleys Mobility", "Brand": "OMODA", "Model": "C9", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 33.9, "Price_Source": "Verified Team Master CSV", "Comfort": 94, "Performance": 85, "Safety_ADAS": 97, "Tech_OTA": 98, "Efficiency": 81, "AfterSales": 79, "Feature_Score": 90.0}, {"Distributor": "Hayleys Mobility", "Brand": "OMODA", "Model": "C5", "Powertrain": "ICE", "Body_Type": "Compact SUV", "Std_Price_Mn": 15.9, "Price_Source": "Verified Team Master CSV", "Comfort": 81, "Performance": 68, "Safety_ADAS": 83, "Tech_OTA": 83, "Efficiency": 58, "AfterSales": 79, "Feature_Score": 75.9}, {"Distributor": "Hayleys Mobility", "Brand": "OMODA", "Model": "E5", "Powertrain": "EV", "Body_Type": "Crossover", "Std_Price_Mn": 20.9, "Price_Source": "Verified Team Master CSV", "Comfort": 84, "Performance": 82, "Safety_ADAS": 89, "Tech_OTA": 96, "Efficiency": 88, "AfterSales": 79, "Feature_Score": 86.5}, {"Distributor": "Hayleys Mobility", "Brand": "Kaiyi", "Model": "eVibe e04", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 7.99, "Price_Source": "Verified Team Master CSV", "Comfort": 59, "Performance": 56, "Safety_ADAS": 63, "Tech_OTA": 72, "Efficiency": 82, "AfterSales": 79, "Feature_Score": 67.0}, {"Distributor": "Hayleys Mobility", "Brand": "Kaiyi", "Model": "X3 Pro EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 13.39, "Price_Source": "Verified Team Master CSV", "Comfort": 67, "Performance": 72, "Safety_ADAS": 71, "Tech_OTA": 80, "Efficiency": 88, "AfterSales": 79, "Feature_Score": 75.2}, {"Distributor": "Hayleys Mobility", "Brand": "SRM", "Model": "T3 EV Truck", "Powertrain": "EV", "Body_Type": "Light Truck", "Std_Price_Mn": 14.04, "Price_Source": "Verified Team Master CSV", "Comfort": 53, "Performance": 61, "Safety_ADAS": 55, "Tech_OTA": 61, "Efficiency": 88, "AfterSales": 79, "Feature_Score": 64.1}, {"Distributor": "Hayleys Mobility", "Brand": "SRM", "Model": "X30L EV Passenger Van", "Powertrain": "EV", "Body_Type": "Van", "Std_Price_Mn": 14.04, "Price_Source": "Verified Team Master CSV", "Comfort": 53, "Performance": 61, "Safety_ADAS": 65, "Tech_OTA": 61, "Efficiency": 88, "AfterSales": 79, "Feature_Score": 66.1}, {"Distributor": "Hayleys Mobility", "Brand": "SRM", "Model": "X30L EV Cargo Van", "Powertrain": "EV", "Body_Type": "Van", "Std_Price_Mn": 14.04, "Price_Source": "Verified Team Master CSV", "Comfort": 53, "Performance": 61, "Safety_ADAS": 65, "Tech_OTA": 61, "Efficiency": 88, "AfterSales": 79, "Feature_Score": 66.1}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "ZS MCE", "Powertrain": "ICE", "Body_Type": "Compact SUV", "Std_Price_Mn": 12.99, "Price_Source": "Verified Team Master CSV", "Comfort": 75, "Performance": 64, "Safety_ADAS": 77, "Tech_OTA": 75, "Efficiency": 58, "AfterSales": 73, "Feature_Score": 70.8}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "ZS Hybrid+", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 18.39, "Price_Source": "Verified Team Master CSV", "Comfort": 82, "Performance": 75, "Safety_ADAS": 88, "Tech_OTA": 85, "Efficiency": 81, "AfterSales": 73, "Feature_Score": 81.2}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "HS Plug-In Hybrid", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 25.0, "Price_Source": "Verified Team Master CSV", "Comfort": 87, "Performance": 80, "Safety_ADAS": 93, "Tech_OTA": 90, "Efficiency": 87, "AfterSales": 73, "Feature_Score": 85.7}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "HS Hybrid+", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 21.45, "Price_Source": "Verified Team Master CSV", "Comfort": 85, "Performance": 78, "Safety_ADAS": 91, "Tech_OTA": 88, "Efficiency": 81, "AfterSales": 73, "Feature_Score": 83.4}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "S9 PHEV", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 30.85, "Price_Source": "Verified Team Master CSV", "Comfort": 91, "Performance": 84, "Safety_ADAS": 92, "Tech_OTA": 94, "Efficiency": 87, "AfterSales": 73, "Feature_Score": 87.7}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "S5 EV", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 20.99, "Price_Source": "Verified Team Master CSV", "Comfort": 85, "Performance": 82, "Safety_ADAS": 86, "Tech_OTA": 92, "Efficiency": 88, "AfterSales": 73, "Feature_Score": 84.8}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "MG4 Electric", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 15.85, "Price_Source": "Verified Team Master CSV", "Comfort": 76, "Performance": 76, "Safety_ADAS": 80, "Tech_OTA": 86, "Efficiency": 94, "AfterSales": 73, "Feature_Score": 80.6}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "MG4 Urban EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 15.79, "Price_Source": "Verified Team Master CSV", "Comfort": 76, "Performance": 76, "Safety_ADAS": 80, "Tech_OTA": 86, "Efficiency": 94, "AfterSales": 73, "Feature_Score": 80.6}, {"Distributor": "Micro Cars", "Brand": "MG", "Model": "U9", "Powertrain": "ICE", "Body_Type": "Double Cab Pickup", "Std_Price_Mn": 32.99, "Price_Source": "Verified Team Master CSV", "Comfort": 81, "Performance": 81, "Safety_ADAS": 94, "Tech_OTA": 82, "Efficiency": 58, "AfterSales": 73, "Feature_Score": 79.6}, {"Distributor": "Browns EV", "Brand": "BAW", "Model": "E6 EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 4.5, "Price_Source": "Verified Team Master CSV", "Comfort": 49, "Performance": 51, "Safety_ADAS": 43, "Tech_OTA": 61, "Efficiency": 82, "AfterSales": 74, "Feature_Score": 57.7}, {"Distributor": "Browns EV", "Brand": "BAW", "Model": "E7 EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 5.9, "Price_Source": "Verified Team Master CSV", "Comfort": 51, "Performance": 53, "Safety_ADAS": 46, "Tech_OTA": 63, "Efficiency": 82, "AfterSales": 74, "Feature_Score": 59.4}, {"Distributor": "Browns EV", "Brand": "BAW", "Model": "E7 Pro EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 6.5, "Price_Source": "Verified Team Master CSV", "Comfort": 52, "Performance": 54, "Safety_ADAS": 47, "Tech_OTA": 64, "Efficiency": 82, "AfterSales": 74, "Feature_Score": 60.1}, {"Distributor": "Browns EV", "Brand": "BAW", "Model": "M8 REEV", "Powertrain": "Hybrid", "Body_Type": "MPV", "Std_Price_Mn": 23.0, "Price_Source": "Verified Team Master CSV", "Comfort": 76, "Performance": 79, "Safety_ADAS": 77, "Tech_OTA": 81, "Efficiency": 87, "AfterSales": 74, "Feature_Score": 78.8}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Binguo EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 9.35, "Price_Source": "Verified Team Master CSV", "Comfort": 63, "Performance": 59, "Safety_ADAS": 66, "Tech_OTA": 76, "Efficiency": 82, "AfterSales": 74, "Feature_Score": 68.9}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Cloud EV", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 13.7, "Price_Source": "Verified Team Master CSV", "Comfort": 69, "Performance": 73, "Safety_ADAS": 72, "Tech_OTA": 82, "Efficiency": 88, "AfterSales": 74, "Feature_Score": 75.7}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Eksion Plug-in Hybrid", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 20.8, "Price_Source": "Verified Team Master CSV", "Comfort": 80, "Performance": 77, "Safety_ADAS": 85, "Tech_OTA": 86, "Efficiency": 87, "AfterSales": 74, "Feature_Score": 81.7}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Darion EV", "Powertrain": "EV", "Body_Type": "MPV", "Std_Price_Mn": 22.5, "Price_Source": "Verified Team Master CSV", "Comfort": 82, "Performance": 82, "Safety_ADAS": 82, "Tech_OTA": 92, "Efficiency": 88, "AfterSales": 74, "Feature_Score": 83.5}, {"Distributor": "Browns EV", "Brand": "Wuling", "Model": "Darion Plug-in Hybrid", "Powertrain": "Hybrid", "Body_Type": "MPV", "Std_Price_Mn": 23.0, "Price_Source": "Verified Team Master CSV", "Comfort": 82, "Performance": 79, "Safety_ADAS": 86, "Tech_OTA": 88, "Efficiency": 87, "AfterSales": 74, "Feature_Score": 83.0}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "EQA 250", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 38.8, "Price_Source": "Verified Microsite / NewsWire", "Comfort": 98, "Performance": 92, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 88, "AfterSales": 88, "Feature_Score": 94.3}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "EQB 250", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 40.6, "Price_Source": "Verified Microsite / NewsWire", "Comfort": 98, "Performance": 93, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 88, "AfterSales": 88, "Feature_Score": 94.5}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "EQE 350+", "Powertrain": "EV", "Body_Type": "Sedan", "Std_Price_Mn": 79.5, "Price_Source": "Verified Microsite / NewsWire", "Comfort": 98, "Performance": 98, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 94, "AfterSales": 88, "Feature_Score": 96.2}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "EQE 350 4MATIC SUV", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 93.5, "Price_Source": "Verified Microsite / NewsWire", "Comfort": 98, "Performance": 98, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 94, "AfterSales": 88, "Feature_Score": 96.2}, {"Distributor": "DIMO", "Brand": "Mercedes-Benz", "Model": "EQS 450+", "Powertrain": "EV", "Body_Type": "Sedan", "Std_Price_Mn": 111.0, "Price_Source": "Verified Microsite / NewsWire", "Comfort": 98, "Performance": 98, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 94, "AfterSales": 88, "Feature_Score": 96.2}, {"Distributor": "DIMO", "Brand": "Tata", "Model": "Tiago.ev", "Powertrain": "EV", "Body_Type": "Hatchback", "Std_Price_Mn": 8.7, "Price_Source": "Verified Tata SL Launch", "Comfort": 62, "Performance": 58, "Safety_ADAS": 63, "Tech_OTA": 73, "Efficiency": 82, "AfterSales": 86, "Feature_Score": 68.9}, {"Distributor": "DIMO", "Brand": "Tata", "Model": "Nexon.ev Creative", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 11.4, "Price_Source": "Verified Tata SL Launch", "Comfort": 69, "Performance": 70, "Safety_ADAS": 68, "Tech_OTA": 77, "Efficiency": 88, "AfterSales": 86, "Feature_Score": 75.0}, {"Distributor": "DIMO", "Brand": "Tata", "Model": "Nexon.ev Empowered+", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 14.5, "Price_Source": "Verified Tata SL Launch", "Comfort": 77, "Performance": 74, "Safety_ADAS": 76, "Tech_OTA": 81, "Efficiency": 94, "AfterSales": 86, "Feature_Score": 80.4}, {"Distributor": "United Motors (UNIMO)", "Brand": "Perodua", "Model": "Bezza 1.0G AT", "Powertrain": "ICE", "Body_Type": "Sedan", "Std_Price_Mn": 8.49, "Price_Source": "Verified Unimo Promo", "Comfort": 57, "Performance": 57, "Safety_ADAS": 48, "Tech_OTA": 57, "Efficiency": 70, "AfterSales": 89, "Feature_Score": 60.9}, {"Distributor": "United Motors (UNIMO)", "Brand": "Mitsubishi", "Model": "Xpander", "Powertrain": "ICE", "Body_Type": "MPV", "Std_Price_Mn": 14.99, "Price_Source": "Verified UML Promo", "Comfort": 76, "Performance": 66, "Safety_ADAS": 70, "Tech_OTA": 70, "Efficiency": 58, "AfterSales": 89, "Feature_Score": 71.1}, {"Distributor": "United Motors (UNIMO)", "Brand": "Mitsubishi", "Model": "Xforce / Outlander Sport", "Powertrain": "ICE", "Body_Type": "Compact SUV", "Std_Price_Mn": 15.6, "Price_Source": "Verified UML Launch", "Comfort": 77, "Performance": 67, "Safety_ADAS": 71, "Tech_OTA": 71, "Efficiency": 58, "AfterSales": 89, "Feature_Score": 71.8}, {"Distributor": "United Motors (UNIMO)", "Brand": "Mitsubishi", "Model": "Xpander Cross", "Powertrain": "ICE", "Body_Type": "MPV", "Std_Price_Mn": 16.1, "Price_Source": "Verified UML Promo", "Comfort": 78, "Performance": 68, "Safety_ADAS": 71, "Tech_OTA": 72, "Efficiency": 58, "AfterSales": 89, "Feature_Score": 72.4}, {"Distributor": "United Motors (UNIMO)", "Brand": "Mitsubishi", "Model": "Triton L200 Double Cab", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 18.14, "Price_Source": "Verified UML Launch", "Comfort": 70, "Performance": 71, "Safety_ADAS": 74, "Tech_OTA": 65, "Efficiency": 46, "AfterSales": 89, "Feature_Score": 69.1}, {"Distributor": "United Motors (UNIMO)", "Brand": "Mitsubishi", "Model": "Outlander 7-Seat", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 27.0, "Price_Source": "Verified UML Market", "Comfort": 87, "Performance": 77, "Safety_ADAS": 80, "Tech_OTA": 81, "Efficiency": 58, "AfterSales": 89, "Feature_Score": 79.0}, {"Distributor": "Toyota Lanka", "Brand": "Toyota", "Model": "Wigo", "Powertrain": "ICE", "Body_Type": "Hatchback", "Std_Price_Mn": 8.5, "Price_Source": "Est. Brand-New Market", "Comfort": 65, "Performance": 49, "Safety_ADAS": 57, "Tech_OTA": 63, "Efficiency": 70, "AfterSales": 97, "Feature_Score": 64.7}, {"Distributor": "Toyota Lanka", "Brand": "Toyota", "Model": "Raize 1.0T", "Powertrain": "ICE", "Body_Type": "Compact SUV", "Std_Price_Mn": 13.2, "Price_Source": "Est. Brand-New Market", "Comfort": 75, "Performance": 64, "Safety_ADAS": 74, "Tech_OTA": 70, "Efficiency": 58, "AfterSales": 97, "Feature_Score": 72.3}, {"Distributor": "Toyota Lanka", "Brand": "Toyota", "Model": "Urban Cruiser Hyryder", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 19.5, "Price_Source": "Est. Brand-New Market", "Comfort": 83, "Performance": 76, "Safety_ADAS": 82, "Tech_OTA": 81, "Efficiency": 87, "AfterSales": 97, "Feature_Score": 83.5}, {"Distributor": "Toyota Lanka", "Brand": "Toyota", "Model": "Corolla Cross Hybrid", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 26.5, "Price_Source": "Est. Brand-New Market", "Comfort": 88, "Performance": 81, "Safety_ADAS": 90, "Tech_OTA": 86, "Efficiency": 87, "AfterSales": 97, "Feature_Score": 87.8}, {"Distributor": "Toyota Lanka", "Brand": "Toyota", "Model": "Hilux Double Cab", "Powertrain": "ICE", "Body_Type": "Pickup", "Std_Price_Mn": 24.5, "Price_Source": "Est. Brand-New Market", "Comfort": 76, "Performance": 76, "Safety_ADAS": 85, "Tech_OTA": 72, "Efficiency": 46, "AfterSales": 97, "Feature_Score": 75.5}, {"Distributor": "Kia Motors Lanka", "Brand": "Kia", "Model": "Sonet HTX", "Powertrain": "ICE", "Body_Type": "Compact SUV", "Std_Price_Mn": 11.5, "Price_Source": "Verified Kia SL Market", "Comfort": 75, "Performance": 62, "Safety_ADAS": 76, "Tech_OTA": 75, "Efficiency": 58, "AfterSales": 84, "Feature_Score": 71.6}, {"Distributor": "Kia Motors Lanka", "Brand": "Kia", "Model": "Sonet GTX+", "Powertrain": "ICE", "Body_Type": "Compact SUV", "Std_Price_Mn": 16.5, "Price_Source": "Verified Kia SL Market", "Comfort": 85, "Performance": 78, "Safety_ADAS": 83, "Tech_OTA": 81, "Efficiency": 58, "AfterSales": 84, "Feature_Score": 78.8}, {"Distributor": "Kia Motors Lanka", "Brand": "Kia", "Model": "EV5 Standard Range", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 26.0, "Price_Source": "Verified Kia SL Launch", "Comfort": 90, "Performance": 85, "Safety_ADAS": 91, "Tech_OTA": 97, "Efficiency": 94, "AfterSales": 84, "Feature_Score": 90.3}, {"Distributor": "Kia Motors Lanka", "Brand": "Kia", "Model": "Sportage Turbo-Hybrid", "Powertrain": "Hybrid", "Body_Type": "SUV", "Std_Price_Mn": 28.5, "Price_Source": "Verified Kia SL Launch", "Comfort": 91, "Performance": 92, "Safety_ADAS": 96, "Tech_OTA": 94, "Efficiency": 81, "AfterSales": 84, "Feature_Score": 90.4}, {"Distributor": "Kia Motors Lanka", "Brand": "Kia", "Model": "EV5 Long Range", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 34.5, "Price_Source": "Verified Kia SL Launch", "Comfort": 95, "Performance": 90, "Safety_ADAS": 98, "Tech_OTA": 98, "Efficiency": 94, "AfterSales": 84, "Feature_Score": 93.7}, {"Distributor": "AMW", "Brand": "Suzuki", "Model": "Fronx Mild-Hybrid", "Powertrain": "Hybrid", "Body_Type": "Crossover", "Std_Price_Mn": 10.5, "Price_Source": "Verified AMW Market", "Comfort": 64, "Performance": 65, "Safety_ADAS": 69, "Tech_OTA": 69, "Efficiency": 81, "AfterSales": 88, "Feature_Score": 71.2}, {"Distributor": "AMW", "Brand": "Suzuki", "Model": "Swift Mild-Hybrid", "Powertrain": "Hybrid", "Body_Type": "Hatchback", "Std_Price_Mn": 10.8, "Price_Source": "Verified AMW Market", "Comfort": 64, "Performance": 57, "Safety_ADAS": 69, "Tech_OTA": 69, "Efficiency": 81, "AfterSales": 88, "Feature_Score": 69.8}, {"Distributor": "Abans Auto", "Brand": "Hyundai", "Model": "Grand i10", "Powertrain": "ICE", "Body_Type": "Hatchback", "Std_Price_Mn": 8.95, "Price_Source": "Est. Abans Market", "Comfort": 67, "Performance": 50, "Safety_ADAS": 71, "Tech_OTA": 70, "Efficiency": 70, "AfterSales": 80, "Feature_Score": 67.2}, {"Distributor": "Abans Auto", "Brand": "Hyundai", "Model": "Creta", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 18.5, "Price_Source": "Est. Abans Market", "Comfort": 83, "Performance": 71, "Safety_ADAS": 85, "Tech_OTA": 83, "Efficiency": 58, "AfterSales": 80, "Feature_Score": 77.4}, {"Distributor": "Abans Auto", "Brand": "Hyundai", "Model": "Ioniq 5 EV", "Powertrain": "EV", "Body_Type": "SUV", "Std_Price_Mn": 21.4, "Price_Source": "Est. Abans Market", "Comfort": 86, "Performance": 82, "Safety_ADAS": 87, "Tech_OTA": 93, "Efficiency": 94, "AfterSales": 80, "Feature_Score": 87.0}, {"Distributor": "Abans Auto", "Brand": "Hyundai", "Model": "Tucson", "Powertrain": "ICE", "Body_Type": "SUV", "Std_Price_Mn": 22.5, "Price_Source": "Est. Abans Market", "Comfort": 86, "Performance": 74, "Safety_ADAS": 88, "Tech_OTA": 86, "Efficiency": 58, "AfterSales": 80, "Feature_Score": 79.6}];
 
   const registry28 = [
     ["A","Toyota Lanka (Pvt) Ltd","Toyota; Lexus; Hino","toyota.lk","Verified","Arundathie"],
@@ -1712,6 +1866,7 @@
     document.getElementById("topCrumb").textContent = crumb;
     toggleMobileSidebar(false);
     setTimeout(() => {
+      if (id === "features") applyPfFilters();
       if (id === "ninebox") applyFilters();
       if (id === "quadrant") renderQuadrant(activeSegment);
       if (id === "scale") renderStrategyCanvas();
@@ -1872,6 +2027,7 @@
   }
 
   function renderMacroCharts() {
+    renderDmtDemandChart();
     Plotly.newPlot("finChart", [
       {x:["FY 2023/24","FY 2024/25","FY 2025/26"], y:[43.6, 50.2, 103.6], name:"DIMO Group (Rs Bn)", type:"bar", marker:{color:"#086288"}, text:["43.6B","50.2B","103.6B"], textposition:"outside"},
       {x:["FY 2023/24","FY 2024/25","FY 2025/26"], y:[11.6, 11.8, 52.4], name:"United Motors Lanka (Rs Bn)", type:"bar", marker:{color:"#4D8DBA"}, text:["11.6B","11.8B","52.4B"], textposition:"outside"},
@@ -1953,12 +2109,224 @@
   ["filterPowertrain","filterDistributor","filterBody"].forEach(id => document.getElementById(id).addEventListener("change", applyFilters));
   document.getElementById("registrySearch").addEventListener("input", renderRegistry);
 
+
+  // ==================== PHASE 2: PRICE VS FEATURES (MECE) ====================
+  function populatePfFilters(data) {
+    const dists = [...new Set(data.map(d => d.Distributor))].sort();
+    const bodies = [...new Set(data.map(d => d.Body_Type).filter(Boolean))].sort();
+    document.getElementById("pfDistributor").innerHTML = `<option value="ALL">All ${dists.length} Distributors</option>` + dists.map(d => `<option value="${d}">${d}</option>`).join("");
+    document.getElementById("pfBody").innerHTML = '<option value="ALL">All Body Types</option>' + bodies.map(b => `<option value="${b}">${b}</option>`).join("");
+    const fc = document.getElementById("sbFeatureCount");
+    if (fc) fc.textContent = data.length;
+  }
+
+  function frontierScore(price) {
+    // Logarithmic market value frontier benchmark (0-100)
+    return Math.min(96, Math.max(54, 43.5 + 11.4 * Math.log(Math.max(4, price))));
+  }
+
+  function renderScorecard(m) {
+    if (!m) return;
+    document.getElementById("pfScLogo").innerHTML = getBrandLogoHTML(m.Brand);
+    document.getElementById("pfScTitle").textContent = `${m.Brand} ${m.Model}`;
+    document.getElementById("pfScSub").textContent = `${m.Distributor} • ${m.Powertrain} • ${m.Body_Type}`;
+    document.getElementById("pfScPrice").textContent = `LKR ${parseFloat(m.Std_Price_Mn).toFixed(2)}M`;
+    document.getElementById("pfScScore").textContent = `${m.Feature_Score} / 100`;
+    document.getElementById("pfScSource").textContent = m.Price_Source || "Verified";
+
+    const delta = (m.Feature_Score - frontierScore(m.Std_Price_Mn)).toFixed(1);
+    const vEl = document.getElementById("pfScVerdict");
+    if (delta >= 3.5) {
+      vEl.className = "badge dark";
+      vEl.textContent = `Value Disruptor (+${delta} vs Frontier)`;
+    } else if (delta <= -3.5) {
+      vEl.className = "badge";
+      vEl.textContent = `Heritage / Price Premium (${delta} vs Frontier)`;
+    } else {
+      vEl.className = "badge steel";
+      vEl.textContent = `On Value Frontier (${delta >= 0 ? "+" : ""}${delta})`;
+    }
+
+    const pillars = [
+      { name: "Comfort & Cabin (20%)", val: m.Comfort },
+      { name: "Performance & Drivetrain (18%)", val: m.Performance },
+      { name: "Safety & ADAS (20%)", val: m.Safety_ADAS },
+      { name: "In-Car Tech & OTA (16%)", val: m.Tech_OTA },
+      { name: "Efficiency & Range (14%)", val: m.Efficiency },
+      { name: "After-Sales & Resale Moat (12%)", val: m.AfterSales }
+    ];
+    document.getElementById("pfPillarList").innerHTML = pillars.map(p => `
+      <div class="pillar-row">
+        <div class="pillar-top"><span>${p.name}</span><span>${p.val} / 100</span></div>
+        <div class="pillar-track"><div class="pillar-fill" style="width:${p.val}%"></div></div>
+      </div>
+    `).join("");
+  }
+
+  function applyPfFilters() {
+    const pt = document.getElementById("pfPowertrain").value;
+    const dist = document.getElementById("pfDistributor").value;
+    const body = document.getElementById("pfBody").value;
+    const scale = document.getElementById("pfScale").value;
+
+    let f = currentData.filter(d =>
+      (pt === "ALL" || d.Powertrain === pt) &&
+      (dist === "ALL" || d.Distributor === dist) &&
+      (body === "ALL" || d.Body_Type === body)
+    );
+    if (scale === "FOCUS") f = f.filter(d => parseFloat(d.Std_Price_Mn) <= 45.5);
+
+    document.getElementById("pfCountBadge").textContent = `${f.length} Models Plotted`;
+    renderPriceFeaturesChart(f, scale);
+    if (f.length) {
+      const def = f.find(m => m.Brand === "BYD" && m.Model.includes("ATTO 3")) || f[0];
+      renderScorecard(def);
+    }
+  }
+
+  function renderPriceFeaturesChart(data, scale) {
+    const ptColors = { "EV": "#086288", "Hybrid": "#4D8DBA", "ICE": "#032233" };
+    const ptSymbols = { "EV": "circle", "Hybrid": "diamond", "ICE": "square" };
+    const pts = ["EV", "Hybrid", "ICE"];
+    const traces = pts.map(p => {
+      const rows = data.filter(d => d.Powertrain === p);
+      return {
+        x: rows.map(r => parseFloat(r.Std_Price_Mn)),
+        y: rows.map(r => r.Feature_Score),
+        text: rows.map(r => `${r.Brand} ${r.Model}`),
+        customdata: rows,
+        mode: rows.length <= 16 ? "markers+text" : "markers",
+        textposition: "top center",
+        textfont: { size: 9.5, color: "#072233" },
+        marker: {
+          size: 12,
+          color: ptColors[p],
+          symbol: ptSymbols[p],
+          line: { color: p === "EV" ? "#97D7FF" : "#FFFFFF", width: 1.8 }
+        },
+        name: `${p} (${rows.length})`,
+        hovertemplate: "<b>%{text}</b><br>Price: LKR %{x:.2f}M • MECE Score: %{y:.1f}/100<br><i>Click dot for 6-pillar breakdown</i><extra></extra>"
+      };
+    });
+
+    const maxX = scale === "FOCUS" ? 46 : Math.max(50, ...data.map(d => parseFloat(d.Std_Price_Mn) || 0)) * 1.06;
+    const fx = [];
+    for (let x = 4.5; x <= maxX; x += (maxX - 4.5) / 40) fx.push(x);
+    traces.push({
+      x: fx,
+      y: fx.map(frontierScore),
+      mode: "lines",
+      name: "Market Value Frontier",
+      line: { color: "#4D8DBA", width: 2, dash: "dash" },
+      hoverinfo: "skip"
+    });
+
+    const isMob = window.innerWidth < 640;
+    Plotly.newPlot("priceFeaturesChart", traces, {
+      paper_bgcolor: "#FFFFFF",
+      plot_bgcolor: "#F8FBFE",
+      font: { ...plotFont, size: isMob ? 10 : 12 },
+      margin: { l: isMob ? 42 : 56, r: isMob ? 10 : 18, t: 24, b: 48 },
+      xaxis: { title: "Standardized Brand-New Price (LKR Millions, 18% VAT)", range: [3, maxX], gridcolor: gridCol, zeroline: false },
+      yaxis: { title: "Composite MECE Feature Score (0–100)", range: [48, 100], gridcolor: gridCol, zeroline: false },
+      annotations: [
+        { x: maxX * 0.24, y: 96, text: "<b>HIGH-VALUE DISRUPTORS</b>", showarrow: false, font: { color: "#086288", size: isMob ? 9 : 10.5 } },
+        { x: maxX * 0.78, y: 53, text: "<b>OVERPRICED / LEGACY GAP</b>", showarrow: false, font: { color: "#64748B", size: isMob ? 9 : 10.5 } }
+      ],
+      legend: { orientation: "h", y: -0.17, font: { size: 10.5 } }
+    }, { responsive: true, displaylogo: false });
+
+    const chartEl = document.getElementById("priceFeaturesChart");
+    chartEl.on("plotly_click", ev => {
+      const ptObj = ev.points && ev.points[0];
+      if (ptObj && ptObj.customdata && ptObj.customdata.Model) {
+        renderScorecard(ptObj.customdata);
+      }
+    });
+  }
+
+  ["pfPowertrain", "pfDistributor", "pfBody", "pfScale"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener("change", applyPfFilters);
+  });
+
+  // ==================== PHASE 2: DMT-READY DEMAND CHART ====================
+  let dmtBrandDemand = [
+    { Brand: "BYD (JKH)", Registrations: 2650, Avg_Price_Mn: 17.8, Portfolio_Count: 15, Powertrain: "EV/Hybrid" },
+    { Brand: "Toyota Lanka", Registrations: 1420, Avg_Price_Mn: 18.4, Portfolio_Count: 5, Powertrain: "ICE/Hybrid" },
+    { Brand: "Suzuki / Nissan (AMW)", Registrations: 1180, Avg_Price_Mn: 9.9, Portfolio_Count: 6, Powertrain: "ICE/Hybrid" },
+    { Brand: "Mitsubishi / Perodua (UNIMO)", Registrations: 890, Avg_Price_Mn: 16.7, Portfolio_Count: 6, Powertrain: "ICE" },
+    { Brand: "Jetour / Dongfeng (Euro Motors)", Registrations: 760, Avg_Price_Mn: 18.9, Portfolio_Count: 8, Powertrain: "EV/Hybrid/ICE" },
+    { Brand: "OMODA / JAECOO / Kaiyi (Hayleys)", Registrations: 640, Avg_Price_Mn: 20.5, Portfolio_Count: 13, Powertrain: "EV/Hybrid/ICE" },
+    { Brand: "BAW / Wuling (Browns EV)", Registrations: 580, Avg_Price_Mn: 14.4, Portfolio_Count: 9, Powertrain: "EV/Hybrid" },
+    { Brand: "Mercedes-Benz / Tata (DIMO)", Registrations: 510, Avg_Price_Mn: 44.5, Portfolio_Count: 23, Powertrain: "ICE/EV" },
+    { Brand: "MG (Micro Cars)", Registrations: 420, Avg_Price_Mn: 21.6, Portfolio_Count: 9, Powertrain: "EV/Hybrid/ICE" },
+    { Brand: "Kia Motors Lanka", Registrations: 340, Avg_Price_Mn: 23.4, Portfolio_Count: 5, Powertrain: "EV/Hybrid/ICE" },
+    { Brand: "GWM (David Pieris)", Registrations: 310, Avg_Price_Mn: 27.6, Portfolio_Count: 5, Powertrain: "Hybrid/EV" }
+  ];
+
+  function renderDmtDemandChart() {
+    const el = document.getElementById("dmtDemandChart");
+    if (!el) return;
+    const isMob = window.innerWidth < 640;
+    Plotly.newPlot("dmtDemandChart", [{
+      x: dmtBrandDemand.map(d => d.Avg_Price_Mn),
+      y: dmtBrandDemand.map(d => d.Registrations),
+      text: dmtBrandDemand.map(d => d.Brand),
+      customdata: dmtBrandDemand.map(d => [d.Portfolio_Count, d.Powertrain]),
+      mode: "markers+text",
+      textposition: "top center",
+      textfont: { size: isMob ? 9 : 10.5, color: "#043952" },
+      marker: {
+        size: dmtBrandDemand.map(d => Math.max(14, Math.min(42, d.Portfolio_Count * 2.1))),
+        color: dmtBrandDemand.map(d => d.Powertrain.includes("EV") ? "#086288" : "#4D8DBA"),
+        opacity: 0.85,
+        line: { color: "#97D7FF", width: 2 }
+      },
+      hovertemplate: "<b>%{text}</b><br>Avg Brand-New Price: LKR %{x:.1f}M<br>Est. Post-Ban Volume: %{y:,} units<br>Models Tracked: %{customdata[0]} (%{customdata[1]})<extra></extra>"
+    }], {
+      paper_bgcolor: "#FFFFFF",
+      plot_bgcolor: "#F8FBFE",
+      font: { ...plotFont, size: isMob ? 10 : 12 },
+      margin: { l: isMob ? 48 : 64, r: 16, t: 22, b: 46 },
+      xaxis: { title: "Average Brand-New Price (LKR Millions)", gridcolor: gridCol, zeroline: false },
+      yaxis: { title: "Post-Ban Registrations / Volume Signal", gridcolor: gridCol, zeroline: false }
+    }, { responsive: true, displaylogo: false });
+  }
+
+  function handleDmtCsvUpload(ev) {
+    const file = ev.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const lines = e.target.result.trim().split(/\r?\n/).slice(1);
+      const parsed = lines.map(l => {
+        const parts = l.split(",").map(s => s.trim().replace(/^"|"$/g, ""));
+        return {
+          Brand: parts[0],
+          Registrations: parseFloat(parts[1]) || 0,
+          Avg_Price_Mn: parseFloat(parts[2]) || 15,
+          Portfolio_Count: parseInt(parts[3], 10) || 6,
+          Powertrain: parts[4] || "Mixed"
+        };
+      }).filter(r => r.Brand && r.Registrations > 0);
+      if (parsed.length) {
+        dmtBrandDemand = parsed;
+        document.getElementById("dmtStatusBadge").textContent = `Official DMT CSV Loaded (${parsed.length} Brands)`;
+        document.getElementById("dmtStatusBadge").className = "badge dark";
+        renderDmtDemandChart();
+      }
+    };
+    reader.readAsText(file);
+  }
+
   // Initial setup
   renderLandingLogoWall();
   renderOverviewBrands();
   renderOutlooks();
   renderOfferings();
   populateFilters(currentData);
+  populatePfFilters(currentData);
   renderRegistry();
 
   // Keep user on their current dashboard page across refreshes until Sign Out
