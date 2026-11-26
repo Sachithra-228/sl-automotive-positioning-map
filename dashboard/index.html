@@ -1343,6 +1343,38 @@
   .outlook-list { max-height: none; overflow: visible; padding-right: 0; }
   @media (max-width: 640px) { .table-wrap { overflow-x: auto !important; } }
 
+  /* ---------- PHASE 3.2: monthly market pulse (Praveen press data) ---------- */
+  .pulse-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+  .pulse-head .card-sub { margin-bottom: 0; max-width: 640px; }
+  .seg-tabs { display: inline-flex; gap: 4px; padding: 4px; border-radius: 99px; background: var(--canvas); flex-wrap: wrap; }
+  .seg-tabs button { border: none; background: transparent; padding: 8px 14px; border-radius: 99px; font-size: 12px; font-weight: 700; color: var(--deep); cursor: pointer; font-family: inherit; }
+  .seg-tabs button.active { background: var(--deep); color: #FFFFFF; box-shadow: 0 4px 12px rgba(8,98,136,.25); }
+  .pulse-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 8px; }
+  @media (max-width: 900px) { .pulse-kpis { grid-template-columns: 1fr 1fr; } }
+  .pulse-kpi { background: var(--tint-ice); border-radius: 14px; padding: 12px 14px; }
+  .pulse-kpi b { display: block; font-size: 22px; font-weight: 800; letter-spacing: -.4px; color: var(--deep-dark); font-variant-numeric: tabular-nums; }
+  .pulse-kpi span { font-size: 11px; color: var(--muted); font-weight: 600; line-height: 1.35; display: block; }
+  .pulse-kpi em { font-style: normal; font-weight: 800; }
+  .pulse-note { font-size: 11.8px; color: var(--muted); background: var(--canvas); border-radius: 12px; padding: 10px 12px; margin-top: 6px; }
+  .lb-list { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+  .lb-row { display: grid; grid-template-columns: 40px 110px 1fr 64px; align-items: center; gap: 12px; animation: coIn .4s ease both; }
+  .lb-logo { width: 40px; height: 40px; border-radius: 12px; background: #FFFFFF; box-shadow: 0 1px 6px rgba(4,50,72,.12); display: grid; place-items: center; padding: 6px; }
+  .lb-logo img, .lb-logo svg { width: 100%; height: 100%; object-fit: contain; }
+  .lb-name { font-size: 13px; font-weight: 700; color: var(--deep-dark); line-height: 1.2; }
+  .lb-name small { display: block; font-size: 10.5px; font-weight: 600; color: var(--muted); }
+  .lb-bar { height: 12px; border-radius: 99px; background: rgba(8,98,136,.08); overflow: hidden; }
+  .lb-bar i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--deep), var(--ice)); animation: growX .8s cubic-bezier(.22,1,.36,1); transform-origin: left; }
+  .lb-val { text-align: right; font-weight: 800; color: var(--deep-dark); font-size: 14px; font-variant-numeric: tabular-nums; }
+  .lb-val small { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; }
+  .origin-chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+  .origin-chip { background: var(--tint-ice); border-radius: 14px; padding: 12px; text-align: center; }
+  .origin-chip b { display: block; font-size: 22px; font-weight: 800; color: var(--deep-dark); }
+  .origin-chip span { font-size: 11px; color: var(--muted); font-weight: 600; }
+  .press-list { list-style: none; display: flex; flex-direction: column; gap: 7px; margin-top: 6px; }
+  .press-list li { font-size: 12.6px; line-height: 1.5; color: var(--ink); padding-left: 16px; position: relative; }
+  .press-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--steel); }
+  .press-src { font-size: 10.8px; color: var(--muted); margin-top: 8px; }
+
 </style>
 </head>
 <body>
@@ -2103,6 +2135,59 @@
           </div>
           <div id="dmtDemandChart" style="width:100%; height:370px;"></div>
         </div>
+        <!-- PHASE 3.2: MONTHLY MARKET PULSE (Praveen — press-reported registrations) -->
+        <div class="card">
+          <div class="pulse-head">
+            <div>
+              <div class="card-title">Monthly Market Pulse (Jul 2025 – Jul 2026)</div>
+              <div class="card-sub">Press-reported monthly figures compiled from JB Securities, HNB Stockbrokers and CAL Research (Daily FT / Daily Mirror). Source: <code style="color:var(--deep)">registrations_monthly_press_2025_2026.csv</code> &amp; <code style="color:var(--deep)">vehicle_imports_cbsl_monthly.csv</code>.</div>
+            </div>
+            <div class="seg-tabs" id="pulseTabs">
+              <button class="active" onclick="setPulse('total', this)">Total registrations</button>
+              <button onclick="setPulse('newcars', this)">Brand-new cars</button>
+              <button onclick="setPulse('power', this)">EV vs Hybrid</button>
+              <button onclick="setPulse('imports', this)">Import bill</button>
+            </div>
+          </div>
+          <div class="pulse-kpis">
+            <div class="pulse-kpi"><b>62,776</b><span>Peak month — May 2026 total registrations</span></div>
+            <div class="pulse-kpi"><b>53,221</b><span>Jul 2026 total — <em class="down">−8.5% m/m</em>, 15.2% below the May peak</span></div>
+            <div class="pulse-kpi"><b>1,062</b><span>Brand-new cars registered in Jul 2026 (42.8% financed)</span></div>
+            <div class="pulse-kpi"><b>7,170</b><span>EV registrations in Jul 2026 — 5,544 e-two-wheelers, 992 EV cars</span></div>
+          </div>
+          <div id="pulseChart" style="width:100%; height:340px;"></div>
+          <div class="pulse-note" id="pulseNote"></div>
+        </div>
+
+        <div class="grid-2-eq">
+          <div class="card">
+            <div class="pulse-head" style="margin-bottom:10px">
+              <div>
+                <div class="card-title">Brand-New Car Leaderboard</div>
+                <div class="card-sub">Units registered by brand. Source: <code style="color:var(--deep)">registrations_by_brand_press_2025_2026.csv</code>.</div>
+              </div>
+              <div class="seg-tabs" id="lbTabs">
+                <button class="active" onclick="setLeader(0, this)">Jul 2026</button>
+                <button onclick="setLeader(1, this)">Jun 2026</button>
+                <button onclick="setLeader(2, this)">May 2026</button>
+                <button onclick="setLeader(3, this)">Mar–May 2025</button>
+              </div>
+            </div>
+            <div class="lb-list" id="lbList"></div>
+            <div class="press-src" id="lbSrc"></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Where Vehicles Come From</div>
+            <div class="card-sub">Registrations by source market — units (Jun–Jul 2026) and 2025 share of all registrations.</div>
+            <div id="originChart" style="width:100%; height:230px;"></div>
+            <div class="origin-chips">
+              <div class="origin-chip"><b>62%</b><span>Japan, 2025<br>(81% in 2019)</span></div>
+              <div class="origin-chip"><b>8%</b><span>China, 2025<br>(virtually 0 in 2019)</span></div>
+              <div class="origin-chip"><b>52%</b><span>SUVs of passenger regs, 2025<br>(16% in 2019)</span></div>
+            </div>
+          </div>
+        </div>
+
         <div class="kpi-grid cols-4">
           <div class="kpi"><div class="kpi-label">Locally Assembled (2023)</div><div class="kpi-val">17,956</div><div class="kpi-sub">1,121 4W + 16,835 2W (MoI)</div></div>
           <div class="kpi steel"><div class="kpi-label">Direct Sector Jobs</div><div class="kpi-val">~20,000</div><div class="kpi-sub">15 Assemblers • 25 Component Makers</div></div>
@@ -2624,7 +2709,7 @@
       if (id === "ninebox") applyFilters();
       if (id === "quadrant") renderQuadrant(activeSegment);
       if (id === "scale") renderStrategyCanvas();
-      if (id === "macro") renderMacroCharts();
+      if (id === "macro") { renderMacroCharts(); renderPulse(); renderOriginChart(); }
       const hs = document.getElementById("hs-" + id);
       if (hs && hs.restartShow) hs.restartShow();
     }, 30);
@@ -3178,7 +3263,8 @@
     jac: wordmark("JAC", "#1D4ED8", 40, 6),
     riddara: wordmark("RIDDARA", "#111827", 26, 4),
     immotors: wordmark("IM", "#111827", 42, 6),
-    rangerover: wordmark("RANGE ROVER", "#1F2937", 20, 3)
+    rangerover: wordmark("RANGE ROVER", "#1F2937", 20, 3),
+    wuling: wordmark("WULING", "#B91C1C", 28, 4)
   });
 
   const brandLogo = {
@@ -3200,7 +3286,7 @@
     "Kia": { slug: "kia", color: "05141F" }, "MG": { slug: "mg", color: "C8102E" }, "Chery": { svgKey: "chery" },
     "KGM": { svgKey: "kgm" }, "Higer": { svgKey: "higer" }, "Ashok Leyland": { svgKey: "ashok" },
     "BAW": { svgKey: "baw" }, "Porsche": { slug: "porsche", color: "B12B28" }, "Livan": { svgKey: "livan" },
-    "Henrey": { svgKey: "henrey" }, "Honri": { svgKey: "honri" }
+    "Henrey": { svgKey: "henrey" }, "Honri": { svgKey: "honri" }, "Wuling": { svgKey: "wuling" }
   };
   function brandLogoInner(brand) {
     const b = brandLogo[brand] || {};
@@ -3384,7 +3470,8 @@
     const quad = c.quad ? quadrantData.find(q => q.id === c.quad) : null;
     const offer = c.offerKey ? offeringsData.find(o => o[0] === c.offerKey) : null;
     const fin = c.fin ? companyFin[c.fin] : null;
-    const signals = [outlook, quad, fin, offer].filter(Boolean).length + 1;
+    const press = pressSignals[c.name];
+    const signals = [outlook, quad, fin, offer, press].filter(Boolean).length + 1;
     const tabs = [["overview", "Overview"], ["models", `Models${n ? ` (${n})` : ""}`], ["signals", `Market Signals (${signals})`]];
     let body = "";
 
@@ -3459,6 +3546,7 @@
         ${fin ? `<div class="co-sig"><h5>Audited revenue (Rs. billion, CSE)</h5>
             <div class="co-fin">${fin.map(f => `<div><b>${f[1]}B</b><i style="height:${Math.max(10, f[1] / finMax * 62)}px"></i><span>${f[0]}</span></div>`).join("")}</div></div>` : ""}
         ${offer ? `<div class="co-sig"><h5>Evidenced offering • ${offer[1]}</h5><p>${offer[3]}</p></div>` : ""}
+        ${press ? `<div class="co-sig"><h5>Registration signals (press, 2025–26)</h5><ul class="press-list">${press.map(p => `<li>${p}</li>`).join("")}</ul><div class="press-src">JB Securities • HNB Stockbrokers • CAL Research via Daily FT / Daily Mirror</div></div>` : ""}
         <div class="co-sig"><h5>Registry record</h5><p>Batch ${c.batch} • Owner: ${c.owner}<br>Website status: <strong>Verified</strong> (${c.web})</p></div>
       </div>`;
     }
@@ -3522,6 +3610,111 @@
     frame();
   })();
 
+
+  // ==================== PHASE 3.2: MONTHLY MARKET PULSE (Praveen press data) ====================
+  // Conflicts resolved per data_praveen/data/processed/source_conflicts.csv (JB Securities preferred for time series)
+  const pulseData = {
+    total: { x: ["2025-07","2025-08","2025-11","2025-12","2026-01","2026-03","2026-04","2026-05","2026-06","2026-07"],
+             y: [37543, 38240, 43810, 48525, 55365, 59734, 51156, 62776, 58151, 53221] },
+    newcars: { x: ["2025-12","2026-01","2026-03","2026-04","2026-05","2026-06","2026-07"], y: [1150, 556, 1432, 467, 1199, 998, 1062],
+               byd: { x: ["2026-06","2026-07"], y: [519, 800] } },
+    power: { x: ["2026-03","2026-04","2026-06","2026-07"], ev: [8805, 8098, 7745, 7170], hybrid: [2512, 2316, 3023, 2288] },
+    imports: { x: ["2025-09","2025-10","2025-11","2025-12","2026-01","2026-02","2026-06"], y: [286, 261, 281, 311, 236.4, 204.8, 182] }
+  };
+  const pulseNotes = {
+    total: "All vehicle classes (two-wheelers are ~70%). Dec 2025 was the highest month in a decade; registrations peaked in May 2026 and have eased since. Months with no press figure (Sep–Oct 2025, Feb 2026) are bridged. May 2026 uses JB Securities' 62,776 (HNB first reported 60,444).",
+    newcars: "Brand-new cars only (JB Securities). BYD alone registered 519 of 998 in June and 800 of 1,062 in July 2026. May uses JB's 1,199 (HNB: 1,110). Brand-new cars are still only ~25–30% of all car registrations — pre-owned imports dominate.",
+    power: "EV counts include electric two-wheelers (7,452 of 8,098 EVs in April; 5,544 of 7,170 in July). Hybrids held between 2,300 and 3,000 a month.",
+    imports: "CBSL vehicle import bill, US$ million. Dec 2025 was the peak at $311M; June 2026 fell 27% m/m to $182M. Cumulative: $1,572M in H2 2025 and $1,254M in H1 2026."
+  };
+  let pulseMode = "total";
+  const padMonth = (p, days) => { const [y, m] = p.split("-"); const t = new Date(Date.UTC(+y, +m - 1, 1) + days * 864e5); return t.toISOString().slice(0, 10); };
+  function renderPulse() {
+    const el = document.getElementById("pulseChart");
+    if (!el || !el.offsetParent) return;
+    const d = pulseData[pulseMode];
+    const X = arr => arr.map(p => p + "-01");
+    const xs = d.x;
+    const base = { paper_bgcolor: "#FFFFFF", plot_bgcolor: "#F8FBFE", font: { ...plotFont, size: 12 }, margin: { l: 56, r: 24, t: 30, b: 40 },
+      xaxis: { type: "date", tickformat: "%b '%y", dtick: "M1", gridcolor: gridCol, range: [padMonth(xs[0], -22), padMonth(xs[xs.length - 1], 22)] },
+      yaxis: { gridcolor: gridCol, zeroline: false, separatethousands: true, rangemode: "tozero" },
+      legend: { orientation: "h", y: 1.12 }, hovermode: "x unified", bargap: 0.35 };
+    let traces = [];
+    if (pulseMode === "total") traces = [{ x: X(d.x), y: d.y, type: "scatter", mode: "lines+markers+text", connectgaps: true, name: "Total registrations",
+        line: { color: "#086288", width: 3, shape: "linear" }, marker: { size: 9, color: "#086288", line: { color: "#FFFFFF", width: 2 } },
+        fill: "tozeroy", fillcolor: "rgba(151,215,255,.22)", text: d.y.map(v => (v / 1000).toFixed(1) + "K"), textposition: "top center", cliponaxis: false, textfont: { size: 10, color: "#043248" },
+        hovertemplate: "%{y:,} registrations<extra></extra>" }];
+    if (pulseMode === "newcars") traces = [
+      { x: X(d.x), y: d.y, type: "bar", name: "All brand-new cars", marker: { color: "#4D8DBA" }, text: d.y.map(v => v.toLocaleString()), textposition: "outside", cliponaxis: false, hovertemplate: "%{y:,} brand-new cars<extra></extra>" },
+      { x: X(d.byd.x), y: d.byd.y, type: "scatter", mode: "lines+markers", name: "of which BYD", line: { color: "#043248", width: 3 }, marker: { size: 10, color: "#97D7FF", line: { color: "#043248", width: 2 } }, hovertemplate: "BYD: %{y:,}<extra></extra>" }];
+    if (pulseMode === "power") traces = [
+      { x: X(d.x), y: d.ev, type: "bar", name: "EV (incl. e-two-wheelers)", marker: { color: "#086288" }, hovertemplate: "EV: %{y:,}<extra></extra>" },
+      { x: X(d.x), y: d.hybrid, type: "bar", name: "Hybrid", marker: { color: "#97D7FF" }, hovertemplate: "Hybrid: %{y:,}<extra></extra>" }];
+    if (pulseMode === "imports") traces = [{ x: X(d.x), y: d.y, type: "bar", name: "Import bill (US$ Mn)",
+        marker: { color: d.y.map(v => v === Math.max(...d.y) ? "#043248" : "#4D8DBA") }, text: d.y.map(v => "$" + v + "M"), textposition: "outside", cliponaxis: false, hovertemplate: "US$ %{y}M<extra></extra>" }];
+    if (pulseMode === "power") base.barmode = "group";
+    Plotly.newPlot("pulseChart", traces, base, { responsive: true, displaylogo: false });
+    document.getElementById("pulseNote").textContent = pulseNotes[pulseMode];
+  }
+  function setPulse(mode, btn) {
+    pulseMode = mode;
+    document.querySelectorAll("#pulseTabs button").forEach(b => b.classList.toggle("active", b === btn));
+    renderPulse();
+  }
+
+  const leaderData = [
+    { total: 1062, src: "JB Securities via Daily FT, 31 Aug 2026 — total brand-new cars 1,062.",
+      rows: [["BYD", 800, "Atto 1: 612 • Dolphin Dynamic: 180"], ["BAW", 63, "E7"], ["Wuling", 53, ""], ["Perodua", 27, ""]] },
+    { total: 998, src: "JB Securities via Daily FT, Jul 2026 — total brand-new cars 998.",
+      rows: [["BYD", 519, "Atto 1: 373 • Dolphin Dynamic: 131"], ["Perodua", 160, "Bezza: 82 • Axia: 78"], ["BAW", 108, "E7"], ["Kaiyi", 56, ""]] },
+    { total: 1110, src: "HNB Stockbrokers via Daily FT, 11 Jun 2026 — HNB basis 1,110 brand-new cars; EVs = 91% of them.",
+      rows: [["BAW", 519, "BAW led May"], ["BYD", 436, ""], ["Perodua", 65, ""]] },
+    { total: 587, src: "HNB Stockbrokers (Jul 2025 report) via Daily Mirror — Mar–May 2025 cumulative; total derived from Perodua's 60% share.",
+      rows: [["Perodua", 352, "60% share — early post-ban leader"], ["BYD", 178, "30% • Seal: 95 • Dolphin: 78"]] }
+  ];
+  const leaderLogo = b => brandLogoInner(b === "Wuling" ? "Wuling" : b);
+  function setLeader(i, btn) {
+    document.querySelectorAll("#lbTabs button").forEach(b => b.classList.toggle("active", b === btn));
+    renderLeaderboard(i);
+  }
+  function renderLeaderboard(i = 0) {
+    const L = leaderData[i];
+    const top = Math.max(...L.rows.map(r => r[1]));
+    const other = L.total - L.rows.reduce((a, r) => a + r[1], 0);
+    const rows = other > 0 ? [...L.rows, ["Others", other, "remaining brands"]] : L.rows;
+    document.getElementById("lbList").innerHTML = rows.map((r, k) => `
+      <div class="lb-row" style="animation-delay:${k * 60}ms">
+        <div class="lb-logo">${r[0] === "Others" ? '<span class="logo-fallback">+</span>' : leaderLogo(r[0])}</div>
+        <div class="lb-name">${r[0]}<small>${r[2]}</small></div>
+        <div class="lb-bar"><i style="width:${Math.max(3, r[1] / top * 100)}%"></i></div>
+        <div class="lb-val">${r[1].toLocaleString()}<small>${(r[1] / L.total * 100).toFixed(0)}%</small></div>
+      </div>`).join("");
+    document.getElementById("lbSrc").textContent = L.src;
+  }
+  function renderOriginChart() {
+    const el = document.getElementById("originChart");
+    if (!el || !el.offsetParent) return;
+    Plotly.newPlot("originChart", [
+      { x: ["India", "China", "Japan"], y: [36307, 8165, null], type: "bar", name: "Jun 2026", marker: { color: "#97D7FF" }, hovertemplate: "%{y:,} units<extra>Jun 2026</extra>" },
+      { x: ["India", "China", "Japan"], y: [33201, 7626, 6050], type: "bar", name: "Jul 2026", marker: { color: "#086288" }, hovertemplate: "%{y:,} units<extra>Jul 2026</extra>" }
+    ], { barmode: "group", paper_bgcolor: "#FFFFFF", plot_bgcolor: "#F8FBFE", font: { ...plotFont, size: 11.5 }, margin: { l: 52, r: 10, t: 10, b: 30 },
+      yaxis: { gridcolor: gridCol, separatethousands: true }, legend: { orientation: "h", y: 1.15 } }, { responsive: true, displaylogo: false });
+  }
+
+  // Press registration signals per distributor (brand-new unless marked "new + pre-owned")
+  const pressSignals = {
+    "John Keells CG Auto": ["Jul 2026: <strong>800 of 1,062</strong> brand-new cars (75%) — Atto 1: 612, Dolphin Dynamic: 180", "Jul 2026: 801 of 992 EV motor cars", "Jun 2026: 519 of 998 brand-new cars", "Motor cars: 807 in Mar 2026, then 29 in Apr 2026 (JB Securities)", "Apr 2025–Jan 2026: 37% of brand-new vehicles and over 70% of cumulative EV registrations (company statement)", "Mar–May 2025: 1,204 brand-new SUVs/crossovers (72% share) — Atto 3: 677, Sealion 6: 526"],
+    "Browns EV (Brown & Co.)": ["May 2026: BAW <strong>led brand-new cars with 519 units</strong> (HNB basis)", "Jun 2026: BAW E7 108 units • Jul 2026: 63", "Jan 2026: BAW led brand-new registrations, almost entirely the E7"],
+    "United Motors Lanka (incl. Unimo)": ["Mar–May 2025: Perodua <strong>352 brand-new cars (60% share)</strong> — the early post-ban leader", "Jun 2026: Perodua 160 (Bezza 82, Axia 78)", "May 2026: 65 (HNB basis) • Jul 2026: 27"],
+    "Hayleys Mobility": ["Jun 2026: Kaiyi 56 brand-new cars"],
+    "Associated Motorways (AMW)": ["May 2026: Suzuki Fronx took <strong>32.6% of 1,606 brand-new SUVs</strong> (HNB)", "Apr 2026: Suzuki 688 SUVs/crossovers (new + pre-owned)"],
+    "Toyota Lanka (Pvt) Ltd": ["Jul 2026: 1,401 SUVs/crossovers (new + pre-owned) — Raize 930, Urban Cruiser 294", "Apr 2026: 1,725 SUVs/crossovers (new + pre-owned)", "Aug 2025: 24% of 918 truck registrations", "Jun 2026: Lexus 12 premium passenger cars (new + pre-owned)"],
+    "Stafford Motor Company": ["Jul 2026: Honda 936 SUVs/crossovers (new + pre-owned) — Vezel 923", "Apr 2026: 906 SUVs/crossovers (new + pre-owned)"],
+    "DIMO PLC": ["Jun 2026: Mercedes-Benz 59 premium passenger cars — top premium brand (new + pre-owned)", "Aug 2025: Tata 13% of 918 truck registrations"],
+    "Mels Automobiles (Melstacorp)": ["Jun 2026: BMW 27 premium passenger cars (new + pre-owned)"],
+    "Lanka Ashok Leyland PLC": ["Aug 2025: <strong>13% of 918 trucks and 22% of 72 buses</strong>"]
+  };
+
   // Initial setup
   renderLandingLogoWall();
   renderOverviewBrands();
@@ -3531,6 +3724,7 @@
   populatePfFilters(currentData);
   renderRegistry();
   initHeroShows();
+  renderLeaderboard(0);
   renderCompanyList();
   openCompany(0);
 
