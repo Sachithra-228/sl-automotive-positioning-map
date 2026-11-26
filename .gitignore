@@ -1,6 +1,11 @@
-# IMPORTANT: Never commit Angelo's confidential coaching PDF to GitHub!
+# IMPORTANT: Never commit Angelo's confidential coaching PDF or audio recordings to GitHub!
 *SCALE Pathway*.pdf
 *.pdf
+*.mp4
+*.m4a
+*.aac
+*.mp3
+*.wav
 
 # Python
 __pycache__/
