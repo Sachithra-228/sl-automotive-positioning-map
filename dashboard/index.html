@@ -1153,6 +1153,196 @@
   .co-qbar .track i { display: block; height: 100%; background: linear-gradient(90deg, var(--deep), var(--ice)); border-radius: 99px; }
   .co-qbar b { color: var(--deep-dark); text-align: right; }
 
+  /* ---------- PHASE 3.1: interactive company explorer ---------- */
+  .hero-show.static { min-height: 300px; }
+  .hero-show.static .hs-content { padding-bottom: 40px; }
+  .hero-show.static .hs-slide .hs-bg { animation: hsKen 12s ease-out forwards; }
+
+  .co-dock-card { background: #FFFFFF; border-radius: var(--r-lg); box-shadow: var(--soft); padding: 16px 18px 14px 18px; margin-bottom: 18px; }
+  .co-dock-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+  .co-dock-top .co-search { width: 260px; margin: 0; }
+  .co-dock-top .co-batch { margin: 0; }
+  .co-dock-top .co-batch button { padding: 7px 14px; flex: none; }
+  .co-count { margin-left: auto; font-size: 12.5px; color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .co-count b { font-size: 18px; color: var(--deep-dark); }
+  .co-dock-wrap { position: relative; }
+  .co-dock { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x proximity; padding: 12px 44px 10px 44px; }
+  .dock-arr { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 36px; height: 36px; border-radius: 50%; border: none;
+    background: #FFFFFF; color: var(--deep); box-shadow: 0 4px 14px rgba(4,50,72,.18); cursor: pointer; display: grid; place-items: center; }
+  .dock-arr.l { left: 0; } .dock-arr.r { right: 0; }
+  .dock-arr:hover { background: var(--deep); color: #FFFFFF; }
+  .dock-item {
+    position: relative; flex: 0 0 auto; width: 118px; scroll-snap-align: center; border: none; cursor: pointer; font-family: inherit;
+    display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 8px 10px 8px; border-radius: 16px;
+    background: var(--canvas); transition: transform .18s, background .18s, box-shadow .18s;
+  }
+  .dock-item:hover { transform: translateY(-4px); background: #FFFFFF; box-shadow: var(--soft-hover); }
+  .dock-item.active { background: linear-gradient(145deg, #064A6A, #031B29); box-shadow: 0 12px 26px rgba(3,27,41,.3); transform: translateY(-4px); }
+  .dock-logo { width: 62px; height: 62px; border-radius: 16px; background: #FFFFFF; display: grid; place-items: center; padding: 10px; box-shadow: 0 2px 8px rgba(4,50,72,.1); }
+  .dock-logo img, .dock-logo svg { width: 100%; height: 100%; object-fit: contain; }
+  .dock-name { font-size: 11.5px; font-weight: 700; color: var(--deep-dark); text-align: center; line-height: 1.25; min-height: 29px; }
+  .dock-item.active .dock-name { color: #FFFFFF; }
+  .dock-batch { position: absolute; top: 8px; right: 8px; font-size: 9.5px; font-weight: 800; color: var(--steel); }
+  .dock-item.active .dock-batch { color: var(--ice); }
+
+  .co-stage { grid-template-columns: auto 1fr auto; }
+  @media (max-width: 1180px) { .co-stage { grid-template-columns: auto 1fr; } .co-stage-stats { grid-column: 1 / -1; } }
+  @media (max-width: 760px) { .co-stage { grid-template-columns: 1fr; } }
+  .co-stage-stats { display: flex; gap: 10px; }
+  .co-stage-stats div { min-width: 104px; background: rgba(255,255,255,.08); border-radius: 16px; padding: 14px 16px; backdrop-filter: blur(6px); }
+  .co-stage-stats b { display: block; font-size: 30px; font-weight: 800; letter-spacing: -.6px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .co-stage-stats span { font-size: 11px; color: rgba(190,225,247,.85); font-weight: 600; }
+  .co-chip.hot { background: var(--ice); color: #031B29; }
+
+  .co-tabs { display: inline-flex; gap: 4px; padding: 5px; border-radius: 99px; background: #FFFFFF; box-shadow: var(--soft); margin: 18px 0 14px 0; flex-wrap: wrap; }
+  .co-tabs button { border: none; background: transparent; padding: 9px 18px; border-radius: 99px; font-size: 13px; font-weight: 700; color: var(--deep); cursor: pointer; font-family: inherit; transition: background .15s, color .15s; }
+  .co-tabs button:hover { background: var(--ice-soft); }
+  .co-tabs button.active { background: var(--deep); color: #FFFFFF; }
+  .co-tab-body { animation: coIn .4s cubic-bezier(.22,1,.36,1); }
+  .co-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 18px; }
+  .co-grid.models { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 1100px) { .co-grid, .co-grid.models { grid-template-columns: 1fr; } }
+  .co-grid > * { min-width: 0; }
+  .co-sub-h { font-size: 12px; font-weight: 800; color: var(--deep-dark); margin: 18px 0 6px 0; text-transform: uppercase; letter-spacing: .6px; }
+  .co-legend button { border: none; background: var(--canvas); border-radius: 99px; padding: 5px 11px; font-size: 11.5px; font-weight: 700; color: var(--deep-dark); cursor: pointer; font-family: inherit; }
+  .co-legend button:hover { background: var(--ice-soft); }
+  .co-legend button::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 6px; background: var(--c); }
+  .co-mix i { transition: filter .15s; } .co-mix i:hover { filter: brightness(1.15); }
+  .co-ladder { position: relative; height: 46px; margin-top: 8px; border-radius: 12px; background: linear-gradient(90deg, #EEF7FD, #DCEFFB); }
+  .co-ladder i { position: absolute; top: 12px; width: 14px; height: 14px; border-radius: 50%; margin-left: -7px; border: 2px solid #FFFFFF; box-shadow: 0 2px 6px rgba(4,50,72,.25); cursor: help; transition: transform .15s; }
+  .co-ladder i:hover { transform: scale(1.5); z-index: 2; }
+  .co-ladder span { position: absolute; bottom: 3px; font-size: 10px; font-weight: 700; color: var(--muted); }
+  .co-ladder .lo { left: 8px; } .co-ladder .hi { right: 8px; }
+  .co-brand-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; }
+  .co-brand-tile { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 8px 12px 8px; border-radius: 16px; background: var(--canvas); transition: transform .18s, box-shadow .18s, background .18s; }
+  .co-brand-tile:hover { transform: translateY(-3px); background: #FFFFFF; box-shadow: var(--soft-hover); }
+  .co-brand-logo { width: 64px; height: 64px; display: grid; place-items: center; background: #FFFFFF; border-radius: 16px; padding: 10px; }
+  .co-brand-logo img, .co-brand-logo svg { width: 100%; height: 100%; object-fit: contain; }
+  .co-brand-tile span { font-size: 12px; font-weight: 700; color: var(--deep-dark); }
+
+  .co-pt-filter { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  .co-pt-filter button { border: none; padding: 7px 14px; border-radius: 99px; background: #FFFFFF; box-shadow: var(--soft); font-size: 12px; font-weight: 700; color: var(--deep); cursor: pointer; font-family: inherit; }
+  .co-pt-filter button.active { background: var(--deep); color: #FFFFFF; }
+  .co-model-list { display: flex; flex-direction: column; gap: 8px; }
+  .co-model-list .co-model {
+    display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; border: none; cursor: pointer; font-family: inherit;
+    padding: 12px 14px; border-radius: 14px; background: #FFFFFF; box-shadow: var(--soft); transition: transform .15s, box-shadow .15s;
+  }
+  .co-model-list .co-model:hover { transform: translateX(4px); box-shadow: var(--soft-hover); }
+  .co-model-list .co-model.active { background: linear-gradient(135deg, #064A6A, #086288); }
+  .co-model-list .co-model.active .co-model-name, .co-model-list .co-model.active .co-model-score { color: #FFFFFF; }
+  .co-model-list .co-model.active .co-model-meta { color: var(--ice); }
+  .co-pt-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; box-shadow: 0 0 0 3px rgba(8,98,136,.1); }
+  .co-model-main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .co-model-list .co-model-score { grid-row: auto; display: flex; flex-direction: column; align-items: flex-end; font-size: 17px; }
+  .co-model-score small { font-size: 10.5px; font-weight: 700; }
+  .up { color: #0E9F6E !important; } .down { color: #C2410C !important; }
+  .co-model.active small.up { color: #6EE7B7 !important; } .co-model.active small.down { color: #FDBA74 !important; }
+  .co-model-detail { position: sticky; top: 84px; align-self: start; animation: coIn .35s ease; }
+  .co-md-name { font-size: 20px; font-weight: 800; letter-spacing: -.4px; color: var(--deep-dark); margin-bottom: 12px; }
+  .co-md-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+  .co-md-row div { background: var(--tint-ice); border-radius: 14px; padding: 12px; }
+  .co-md-row b { display: block; font-size: 17px; font-weight: 800; color: var(--deep-dark); }
+  .co-md-row span { font-size: 10.5px; color: var(--muted); font-weight: 600; }
+  .co-pillar { display: grid; grid-template-columns: 130px 1fr 32px; align-items: center; gap: 10px; margin: 9px 0; font-size: 12px; font-weight: 600; color: var(--ink); }
+  .co-pillar .track { height: 8px; border-radius: 99px; background: rgba(8,98,136,.1); overflow: hidden; }
+  .co-pillar .track i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--deep), var(--ice)); animation: growX .7s cubic-bezier(.22,1,.36,1); transform-origin: left; }
+  @keyframes growX { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .co-pillar b { text-align: right; color: var(--deep-dark); }
+  .co-sig-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+  .co-sig-grid .co-sig { background: #FFFFFF; box-shadow: var(--soft); padding: 18px; }
+
+  /* ======================================================================
+     PHASE 3.1 — LANDING: scroll-driven 3-car hero, square blue tags,
+     glass stat tiles, large logo carousel, footer; hidden scrollbars
+     ====================================================================== */
+  html, body, * { scrollbar-width: none; -ms-overflow-style: none; }
+  ::-webkit-scrollbar { width: 0; height: 0; display: none; }
+
+  .lp-drive { height: 320vh; min-height: 0; padding: 0; display: block; position: relative; overflow: visible; background: #042538; }
+  .drive-stage {
+    position: sticky; top: 0; height: 100vh; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+    padding: 104px 24px 34px 24px;
+    background: radial-gradient(120% 80% at 50% 60%, #0D4A68 0%, #042538 55%, #021520 100%);
+  }
+  .drive-car { position: absolute; inset: 0; opacity: 0; will-change: transform, opacity, filter; transform-origin: 50% 62%; }
+  .drive-car:first-child { opacity: 1; }
+  .drive-car img { width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, center 58%); display: block; }
+  .drive-stage .hero-vignette { z-index: 2; }
+  .drive-stage .hero-top, .drive-stage .drive-foot { position: relative; z-index: 4; }
+  .drive-foot { display: flex; flex-direction: column; align-items: center; gap: 14px; width: 100%; max-width: 520px; }
+  .drive-caption { text-align: center; min-height: 52px; }
+  .drive-num { font-size: 11px; font-weight: 800; letter-spacing: 3px; color: var(--ice); text-transform: uppercase; }
+  .drive-label { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 800; color: #FFFFFF; text-shadow: 0 6px 20px rgba(3,27,41,.6); transition: opacity .3s; }
+  .drive-track { display: flex; gap: 8px; width: 180px; }
+  .drive-track span { flex: 1; height: 3px; background: rgba(255,255,255,.22); overflow: hidden; }
+  .drive-track span i { display: block; height: 100%; width: 0; background: var(--ice); }
+  @media (max-width: 760px) {
+    .drive-stage { padding: 88px 16px 26px 16px; background: linear-gradient(180deg, #031B29 0%, #0B4562 50%, #031B29 100%); }
+    .drive-car img { position: absolute; top: 52%; left: -8%; width: 116%; height: auto; transform: translateY(-50%); object-fit: initial;
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 80%, transparent 100%), linear-gradient(90deg, transparent 4%, #000 14%, #000 86%, transparent 96%);
+      -webkit-mask-composite: source-in;
+              mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 80%, transparent 100%), linear-gradient(90deg, transparent 4%, #000 14%, #000 86%, transparent 96%);
+              mask-composite: intersect; }
+    .drive-stage .hero-vignette { background: linear-gradient(180deg, rgba(3,27,41,.55) 0%, rgba(3,27,41,0) 30%, rgba(3,27,41,0) 70%, rgba(3,27,41,.7) 100%); }
+    .drive-label { font-size: 18px; }
+  }
+
+  /* square blue era tag (no rounded pill) */
+  .hud-pill {
+    border: none; border-radius: 2px; padding: 6px 12px; margin-bottom: 10px;
+    background: linear-gradient(90deg, #086288 0%, #4D8DBA 100%); color: #FFFFFF;
+    box-shadow: 0 6px 18px rgba(8,98,136,.45); letter-spacing: 2px;
+  }
+
+  /* glass stat tiles on the story chapters */
+  .chap-stats { gap: 14px; }
+  .c-stat {
+    position: relative; overflow: hidden; border-radius: 16px; padding: 18px 18px 16px 18px;
+    background: linear-gradient(145deg, rgba(8,98,136,.55) 0%, rgba(3,27,41,.35) 100%);
+    border: 1px solid rgba(151,215,255,.16); border-left: 1px solid rgba(151,215,255,.16);
+    box-shadow: 0 14px 30px rgba(2,18,28,.35), inset 0 1px 0 rgba(255,255,255,.08);
+    backdrop-filter: blur(10px);
+  }
+  .c-stat::after { content: ""; position: absolute; right: -30px; top: -30px; width: 110px; height: 110px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(151,215,255,.28), transparent 70%); }
+  .c-stat-val { font-size: 30px; background: linear-gradient(90deg, #FFFFFF, #BFE6FF); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .c-stat-lbl { font-size: 11px; letter-spacing: .6px; text-transform: uppercase; color: rgba(190,225,247,.9); font-weight: 700; margin-top: 6px; }
+
+  /* larger logo carousel */
+  .carousel-track { gap: 26px; animation-duration: 48s; }
+  .lp-logo-card { width: 280px; padding: 34px 22px 28px 22px; border-radius: 24px; gap: 16px;
+    background: linear-gradient(160deg, rgba(255,255,255,.1), rgba(8,98,136,.22)); }
+  .lp-logo-pill { width: 124px; height: 124px; border-radius: 30px; padding: 24px; box-shadow: 0 14px 34px rgba(0,0,0,.3); transition: transform .25s; }
+  .lp-logo-card:hover .lp-logo-pill { transform: scale(1.06) rotate(-2deg); }
+  .lp-logo-name { font-size: 19px; }
+  .lp-logo-dist { font-size: 12.5px; }
+  @media (max-width: 640px) {
+    .lp-logo-card { width: 200px; padding: 24px 16px; }
+    .lp-logo-pill { width: 92px; height: 92px; padding: 18px; border-radius: 22px; }
+    .lp-logo-name { font-size: 16px; }
+  }
+
+  /* footer */
+  .lp-footer { background: #021520; border-top: 1px solid rgba(151,215,255,.12); padding: 64px 44px 28px 44px; color: rgba(225,241,252,.8); }
+  .lp-foot-grid { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.1fr; gap: 36px; }
+  @media (max-width: 860px) { .lp-foot-grid { grid-template-columns: 1fr 1fr; } .lp-footer { padding: 48px 20px 24px 20px; } }
+  @media (max-width: 520px) { .lp-foot-grid { grid-template-columns: 1fr; } }
+  .lp-foot-grid p { font-size: 13px; line-height: 1.7; margin-top: 12px; max-width: 320px; }
+  .lp-foot-grid h5 { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--ice); margin-bottom: 14px; }
+  .lp-foot-grid a { display: block; color: rgba(235,247,255,.85); text-decoration: none; font-size: 13.5px; margin-bottom: 9px; cursor: pointer; transition: color .15s; }
+  .lp-foot-grid a:hover { color: #FFFFFF; }
+  .lp-foot-src { font-size: 12.5px; line-height: 1.8; }
+  .lp-foot-bottom { max-width: 1240px; margin: 44px auto 0 auto; padding-top: 20px; border-top: 1px solid rgba(151,215,255,.1);
+    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 12px; color: rgba(190,225,247,.6); }
+
+  /* dashboard: no inner scroll boxes */
+  .table-wrap { max-height: none !important; overflow: visible; }
+  th { position: static; }
+  .outlook-list { max-height: none; overflow: visible; padding-right: 0; }
+  @media (max-width: 640px) { .table-wrap { overflow-x: auto !important; } }
+
 </style>
 </head>
 <body>
@@ -1260,21 +1450,23 @@
     <button class="lp-drawer-cta" onclick="toggleLpDrawer(false); enterDashboard('overview')">Sign In to Dashboard</button>
   </aside>
 
-  <section class="lp-hero" id="top">
-    <img class="hero-bg-img" src="assets/cars/hero_suv.jpg" alt="Sri Lanka Automotive 2026 Hero SUV">
-    <div class="hero-vignette"></div>
+  <section class="lp-hero lp-drive" id="top">
+    <div class="drive-stage">
+      <div class="drive-car"><img src="assets/cars/hero_suv.jpg" alt="Brand-new SUV, side profile" style="--pos:center 58%"></div>
+      <div class="drive-car"><img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=2000&q=80" alt="Premium sedan driving through the city" style="--pos:center 62%"></div>
+      <div class="drive-car"><img src="https://images.unsplash.com/photo-1775114501677-18ba958f38c6?auto=format&fit=crop&w=2000&q=80" alt="Electric SUV on a mountain road" style="--pos:center 62%"></div>
+      <div class="hero-vignette"></div>
 
-    <div class="hero-top">
-      <div class="hero-eyebrow">Sri Lanka Brand-New Market • 28 Distributors • 2026</div>
-      <h1 class="hero-title">THE NEW <span>AUTOMOTIVE</span> ERA</h1>
-    </div>
+      <div class="hero-top">
+        <div class="hero-eyebrow">Sri Lanka Brand-New Market • 28 Distributors • 2026</div>
+        <h1 class="hero-title">THE NEW <span>AUTOMOTIVE</span> ERA</h1>
+      </div>
 
-    <div class="hero-bottom">
-      <button class="btn-explore" onclick="enterDashboard('overview')">Explore Dashboard</button>
-      <a class="scroll-cue" href="#evolution">
-        <span>Scroll the Evolution</span>
-        <div class="scroll-line"></div>
-      </a>
+      <div class="drive-foot">
+        <div class="drive-caption"><div class="drive-num" id="driveNum">01 · The legacy base</div><div class="drive-label" id="driveLabel">Rugged SUVs built the market</div></div>
+        <div class="drive-track"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+        <a class="scroll-cue" href="#evolution"><span>Scroll to drive</span><div class="scroll-line"></div></a>
+      </div>
     </div>
   </section>
 
@@ -1367,11 +1559,36 @@
     </div>
   </section>
 
-  <section id="launch" class="lp-cta-band">
-    <h2>Step Inside the Executive Intelligence Portal</h2>
-    <p>Explore all 28 MECE distributors, drag live 9-Box price sliders, inspect Gartner Magic Quadrant scores, and review the SCALE strategic roadmap.</p>
-    <button class="btn-solid" onclick="enterDashboard('overview')">Launch Executive Dashboard</button>
-  </section>
+  <footer class="lp-footer">
+    <div class="lp-foot-grid">
+      <div>
+        <div class="lp-logo">SL AUTO<span>INTEL</span></div>
+        <p>Executive positioning intelligence for Sri Lanka's brand-new vehicle market — 28 official distributors, 116 scored models and the SCALE strategy playbook in one portal.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <a href="#top">Home</a>
+        <a href="#evolution">The Evolution</a>
+        <a href="#lp-brands">Brands</a>
+      </div>
+      <div>
+        <h5>Inside the Portal</h5>
+        <a onclick="enterDashboard('overview')">Executive Overview</a>
+        <a onclick="enterDashboard('companies')">Company Profiles</a>
+        <a onclick="enterDashboard('features')">Price vs. Features</a>
+        <a onclick="enterDashboard('ninebox')">9-Box Simulator</a>
+        <a onclick="enterDashboard('scale')">SCALE Strategy</a>
+      </div>
+      <div>
+        <h5>Data Sources</h5>
+        <div class="lp-foot-src">Department of Motor Traffic (DMT)<br>Central Bank of Sri Lanka (CBSL)<br>Dept. of Census &amp; Statistics (DCS)<br>Sri Lanka Customs • CSE annual reports</div>
+      </div>
+    </div>
+    <div class="lp-foot-bottom">
+      <span>© 2026 Sandbox Consultancy Services (Pvt) Ltd</span>
+      <span>Confidential executive review • Photos: Unsplash</span>
+    </div>
+  </footer>
 </div>
 
 <!-- ====================================================================== -->
@@ -1496,7 +1713,6 @@
               <button class="hs-cta" onclick="document.getElementById('nav-scale').click()">Explore SCALE Strategy →</button>
             </div>
           </div>
-          <div class="hs-credit">Photos: Unsplash</div>
         </div>
 
         <div class="kpi-grid" id="tour-kpis">
@@ -1560,7 +1776,7 @@
 
       <!-- ==================== PHASE 3: COMPANY PROFILES (ONE BY ONE) ==================== -->
       <section id="view-companies" class="view">
-        <div class="hero-show" id="hs-companies">
+        <div class="hero-show static" id="hs-companies">
           <div class="hs-slide active" style="--img:url('https://images.unsplash.com/photo-1780690146711-750845e57b6e?auto=format&fit=crop&w=1800&q=80'); --pos:center 65%;">
             <div class="hs-bg"></div><div class="hs-shade"></div>
             <div class="hs-content">
@@ -1571,30 +1787,9 @@
               
             </div>
           </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1764013290175-2b76e9a00b2e?auto=format&fit=crop&w=1800&q=80'); --pos:center;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">How to Browse</div>
-              <h2>Pick from the list or press <span>← →</span> to move company by company</h2>
-              <p>Search by company or brand, filter by batch, then use the Previous / Next buttons or your keyboard arrows to walk through all 28 profiles.</p>
-              <div class="hs-stats"><div><b>A · B · C</b><span>research batches</span></div><div><b>← →</b><span>keyboard browsing</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1765446925499-71c1c9f797c4?auto=format&fit=crop&w=1800&q=80'); --pos:center 60%;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">Data-Backed Profiles</div>
-              <h2>Line-ups, prices and <span>feature scores</span> in one view</h2>
-              <p>Each profile pulls from the team master CSV, the analyst outlook, Gartner-style quadrant scores and audited CSE financials wherever they exist.</p>
-              <div class="hs-stats"><div><b>6</b><span>MECE pillars</span></div><div><b>3</b><span>audited financials</span></div><div><b>10</b><span>analyst outlooks</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-credit">Photos: Unsplash</div>
         </div>
-        <div class="co-layout">
-          <aside class="co-rail">
+        <div class="co-dock-card">
+          <div class="co-dock-top">
             <input type="text" class="co-search" id="coSearch" placeholder="Search company or brand..." oninput="renderCompanyList()">
             <div class="co-batch">
               <button class="active" onclick="setCoBatch('ALL', this)">All 28</button>
@@ -1602,15 +1797,21 @@
               <button onclick="setCoBatch('B', this)">Batch B</button>
               <button onclick="setCoBatch('C', this)">Batch C</button>
             </div>
-            <div class="co-list" id="coList"></div>
-          </aside>
-          <div id="coProfile"></div>
+            <div class="co-count" id="coCount"></div>
+          </div>
+          <div class="co-dock-wrap">
+            <button class="dock-arr l" onclick="scrollDock(-1)" aria-label="Scroll left"><svg class="ico" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <div class="co-dock" id="coDock"></div>
+            <button class="dock-arr r" onclick="scrollDock(1)" aria-label="Scroll right"><svg class="ico" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+          </div>
         </div>
+        <div id="coStage"></div>
+        <div id="coBody"></div>
       </section>
 
       <!-- ==================== NEW PRIMARY VIEW: PRICE VS FEATURES (MECE) ==================== -->
       <section id="view-features" class="view">
-        <div class="hero-show" id="hs-features">
+        <div class="hero-show static" id="hs-features">
           <div class="hs-slide active" style="--img:url('https://images.unsplash.com/photo-1636763086471-9f29bc34ab9e?auto=format&fit=crop&w=1800&q=80'); --pos:center;">
             <div class="hs-bg"></div><div class="hs-shade"></div>
             <div class="hs-content">
@@ -1621,27 +1822,6 @@
               
             </div>
           </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1800&q=80'); --pos:center 62%;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">Market Value Frontier</div>
-              <h2>Who gives <span>more car per rupee?</span></h2>
-              <p>Models above the dashed frontier deliver more features per LKR million. Chinese EVs dominate the High-Value Disruptor zone, while many legacy ICE models sit in the Overpriced / Legacy Gap.</p>
-              <div class="hs-stats"><div><b>83.5</b><span>BYD Atto 3 score</span></div><div><b>LKR 14.65M</b><span>Atto 3 price</span></div><div><b>+9.4</b><span>vs. frontier</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?auto=format&fit=crop&w=1800&q=80'); --pos:center;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">Six MECE Pillars</div>
-              <h2>Comfort, Safety, Performance, <span>Tech, Efficiency &amp; Service</span></h2>
-              <p>A level-playing-field rubric lets European luxury, legacy Japanese and Chinese EV models be compared on exactly the same yardstick.</p>
-              <div class="hs-stats"><div><b>20%</b><span>Comfort &amp; Cabin</span></div><div><b>20%</b><span>Safety &amp; ADAS</span></div><div><b>16%</b><span>Tech &amp; OTA</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-credit">Photos: Unsplash</div>
         </div>
         <div class="insight-strip">
           <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
@@ -1736,7 +1916,7 @@
 
       <!-- ==================== VIEW 1: INTERACTIVE 9-BOX SIMULATOR ==================== -->
       <section id="view-ninebox" class="view">
-        <div class="hero-show" id="hs-ninebox">
+        <div class="hero-show static" id="hs-ninebox">
           <div class="hs-slide active" style="--img:url('https://images.unsplash.com/photo-1622893288761-823ba60f17a6?auto=format&fit=crop&w=1800&q=80'); --pos:center 60%;">
             <div class="hs-bg"></div><div class="hs-shade"></div>
             <div class="hs-content">
@@ -1747,27 +1927,6 @@
               
             </div>
           </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1775114501677-18ba958f38c6?auto=format&fit=crop&w=1800&q=80'); --pos:center 60%;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">Crowded vs. Open Boxes</div>
-              <h2>ICE budget is crowded. <span>Budget hybrids are open.</span></h2>
-              <p>Legacy ICE SUVs and hatchbacks pile up below LKR 25M, while very few hybrids sit in the budget tier — one of the clearest white spaces on the map.</p>
-              <div class="hs-stats"><div><b>12M</b><span>budget ceiling</span></div><div><b>25M</b><span>mid-range ceiling</span></div><div><b>9</b><span>competitive boxes</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1692406069831-0bb7ea297645?auto=format&fit=crop&w=1800&q=80'); --pos:center;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">Portfolio Mix</div>
-              <h2>Pure-play EV challengers vs. <span>ICE-only incumbents</span></h2>
-              <p>BYD's line-up carries no ICE models, while United Motors and Ideal Motors are 100% ICE. DIMO has the deepest portfolio with around 23 models.</p>
-              <div class="hs-stats"><div><b>~23</b><span>DIMO models</span></div><div><b>0</b><span>ICE models at BYD</span></div><div><b>100%</b><span>ICE at UNIMO</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-credit">Photos: Unsplash</div>
         </div>
         <div class="insight-strip">
           <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
@@ -1817,7 +1976,7 @@
 
       <!-- ==================== VIEW 2: GARTNER MAGIC QUADRANT ==================== -->
       <section id="view-quadrant" class="view">
-        <div class="hero-show" id="hs-quadrant">
+        <div class="hero-show static" id="hs-quadrant">
           <div class="hs-slide active" style="--img:url('https://images.unsplash.com/photo-1775189632564-9a089ed5d0b5?auto=format&fit=crop&w=1800&q=80'); --pos:center 45%;">
             <div class="hs-bg"></div><div class="hs-shade"></div>
             <div class="hs-content">
@@ -1828,27 +1987,6 @@
               
             </div>
           </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1764605206511-7a649d9df63b?auto=format&fit=crop&w=1800&q=80'); --pos:center 60%;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">Leaders</div>
-              <h2>Toyota, LAL and DPMC <span>lead on execution</span></h2>
-              <p>Toyota Lanka's service footprint, Lanka Ashok Leyland's local-assembly moat and DPMC's ~92% three-wheeler share put them at the top of the execution axis.</p>
-              <div class="hs-stats"><div><b>4.58</b><span>Toyota execution</span></div><div><b>~92%</b><span>DPMC 3W share</span></div><div><b>5.0</b><span>ChargeNET execution</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1741905358565-5ae6835ac172?auto=format&fit=crop&w=1800&q=80'); --pos:center 55%;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">Visionaries</div>
-              <h2>BYD and Evolution Auto <span>own the vision</span></h2>
-              <p>EV-first players score 4.5+ on vision, but still need to scale islandwide service to match incumbents on execution.</p>
-              <div class="hs-stats"><div><b>4.62</b><span>BYD vision</span></div><div><b>4.50</b><span>Evolution vision</span></div><div><b>3.43</b><span>execution today</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-credit">Photos: Unsplash</div>
         </div>
         <div class="insight-strip">
           <svg class="ico" viewBox="0 0 24 24" style="color:var(--deep)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
@@ -1880,7 +2018,7 @@
 
       <!-- ==================== VIEW 3: SCALE STRATEGY SUITE ==================== -->
       <section id="view-scale" class="view">
-        <div class="hero-show" id="hs-scale">
+        <div class="hero-show static" id="hs-scale">
           <div class="hs-slide active" style="--img:url('https://images.unsplash.com/photo-1647962922288-4c7a48558979?auto=format&fit=crop&w=1800&q=80'); --pos:center;">
             <div class="hs-bg"></div><div class="hs-shade"></div>
             <div class="hs-content">
@@ -1891,27 +2029,6 @@
               
             </div>
           </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1707341597123-c53bbb7e7f93?auto=format&fit=crop&w=1800&q=80'); --pos:center 60%;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">Blue Ocean • ERRC</div>
-              <h2>Eliminate, Reduce, <span>Raise, Create</span></h2>
-              <p>Chinese EV makers win on running cost, in-car tech, ADAS and refresh speed; incumbents still own heritage and service. The ERRC grid turns that gap into concrete moves.</p>
-              <div class="hs-stats"><div><b>60%</b><span>EV luxury-tax tier</span></div><div><b>~18 mo</b><span>EV model refresh</span></div><div><b>LKR 10–22M</b><span>value sweet spot</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1757922589576-129377dadac9?auto=format&fit=crop&w=1800&q=80'); --pos:center 60%;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">Three Horizons</div>
-              <h2>Defend the core, <span>scale NEVs</span>, seed the future</h2>
-              <p>For a legacy distributor: ~70% defends the ICE core, ~20% builds an autonomous NEV unit in the LKR 10–20M white space, ~10% pilots charging, battery-resale and fleet bets.</p>
-              <div class="hs-stats"><div><b>70%</b><span>H1 · defend</span></div><div><b>20%</b><span>H2 · grow</span></div><div><b>10%</b><span>H3 · transform</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-credit">Photos: Unsplash</div>
         </div>
         <div class="grid-2-eq">
           <div class="card">
@@ -1957,7 +2074,7 @@
 
       <!-- ==================== VIEW 4: DEMAND & MACRO (DMT-READY) ==================== -->
       <section id="view-macro" class="view">
-        <div class="hero-show" id="hs-macro">
+        <div class="hero-show static" id="hs-macro">
           <div class="hs-slide active" style="--img:url('https://images.unsplash.com/photo-1498084393753-b411b2d26b34?auto=format&fit=crop&w=1800&q=80'); --pos:center 40%;">
             <div class="hs-bg"></div><div class="hs-shade"></div>
             <div class="hs-content">
@@ -1968,27 +2085,6 @@
               
             </div>
           </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1783197287675-9c0fbbcb4b9d?auto=format&fit=crop&w=1800&q=80'); --pos:center 55%;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">Imports &amp; Trade</div>
-              <h2>A <span>$2.05 billion</span> import bill in 2025</h2>
-              <p>Reopening imports after five years pulled in a record wave of new vehicles. Upload the official DMT brand counts to replace the provisional demand signals below.</p>
-              <div class="hs-stats"><div><b>$2.05 Bn</b><span>import bill (CBSL)</span></div><div><b>~5x</b><span>growth vs 2024</span></div><div><b>74,410</b><span>2024 registrations</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1700726783633-23c0c6383b00?auto=format&fit=crop&w=1800&q=80'); --pos:center;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">Local Industry</div>
-              <h2>Local assembly and <span>component exports</span></h2>
-              <p>17,956 vehicles were assembled locally in 2023 and component exports grew 2.8x — wire harnesses and sensors ship to Toyota, Honda, BMW and Volvo.</p>
-              <div class="hs-stats"><div><b>17,956</b><span>assembled (2023)</span></div><div><b>~20,000</b><span>direct jobs</span></div><div><b>2.8x</b><span>component exports</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-credit">Photos: Unsplash</div>
         </div>
         <div class="card">
           <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
@@ -2031,7 +2127,7 @@
 
       <!-- ==================== VIEW 5: 28-PLAYER REGISTRY & EVIDENCE ==================== -->
       <section id="view-registry" class="view">
-        <div class="hero-show" id="hs-registry">
+        <div class="hero-show static" id="hs-registry">
           <div class="hs-slide active" style="--img:url('https://images.unsplash.com/photo-1574023240744-64c47c8c0676?auto=format&fit=crop&w=1800&q=80'); --pos:center;">
             <div class="hs-bg"></div><div class="hs-shade"></div>
             <div class="hs-content">
@@ -2042,27 +2138,6 @@
               <button class="hs-cta" onclick="document.getElementById('nav-companies').click()">Open Company Profiles →</button>
             </div>
           </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1777175013302-eaf4b3ef785a?auto=format&fit=crop&w=1800&q=80'); --pos:center;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">Batches A · B · C</div>
-              <h2>Legacy giants, <span>new entrants</span> and specialists</h2>
-              <p>Batch A covers legacy majors and European marques, Batch B new entrants and EV specialists, and Batch C specialty, luxury and commercial players.</p>
-              <div class="hs-stats"><div><b>9</b><span>Batch A</span></div><div><b>10</b><span>Batch B</span></div><div><b>9</b><span>Batch C</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-slide" style="--img:url('https://images.unsplash.com/photo-1546656495-fc838de15e5c?auto=format&fit=crop&w=1800&q=80'); --pos:center 40%;">
-            <div class="hs-bg"></div><div class="hs-shade"></div>
-            <div class="hs-content">
-              <div class="hs-kicker">Evidence</div>
-              <h2>Every offering <span>backed by evidence</span></h2>
-              <p>From BYD's 221 of 453 October new-car sales to ChargeNET's 150+ chargers, each offering in the evidence table is tied to a verified market signal.</p>
-              <div class="hs-stats"><div><b>11</b><span>evidenced offerings</span></div><div><b>150+</b><span>ChargeNET chargers</span></div><div><b>1,000+</b><span>BAIC X55 SUVs</span></div></div>
-              
-            </div>
-          </div>
-          <div class="hs-credit">Photos: Unsplash</div>
         </div>
         <div class="card">
           <div class="card-title">Verified 28-Distributor MECE Master Registry</div>
@@ -3027,6 +3102,7 @@
       const slides = [...show.querySelectorAll(".hs-slide")];
       if (show.dataset.ready) return;
       show.dataset.ready = "1";
+      if (slides.length < 2) { show.classList.add("static"); show.restartShow = () => {}; return; }
       show.style.setProperty("--hs-dur", HS_DUR + "ms");
       const pad = n => String(n).padStart(2, "0");
       const ui = document.createElement("div");
@@ -3068,7 +3144,7 @@
 
   // ==================== PHASE 3: COMPANY PROFILES EXPLORER ====================
   const wordmark = (txt, color, size = 30, sp = 3) => {
-    const w = Math.max(70, Math.round(txt.length * (size * 0.7 + sp) + 10));
+    const w = Math.max(70, Math.round(txt.length * (size * 0.82 + sp) + 16));
     return `<svg viewBox="0 0 ${w} 64" xmlns="http://www.w3.org/2000/svg"><text x="${w / 2}" y="${32 + size * 0.36}" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="900" font-size="${size}" letter-spacing="${sp}" fill="${color}">${txt}</text></svg>`;
   };
   Object.assign(inlineSVGs, {
@@ -3197,26 +3273,35 @@
     lal: [["FY24/25", 5.4], ["FY25/26", 9.0]]
   };
 
-  let coIdx = 0, coBatch = "ALL";
+
+  // ---------- interactive explorer: logo dock + tabbed profile ----------
+  let coIdx = 0, coBatch = "ALL", coTab = "overview", coPt = "ALL", coModel = null;
+  const PT_COLOR = { EV: "#97D7FF", Hybrid: "#4D8DBA", ICE: "#043248" };
+
   function coFiltered() {
     const q = (document.getElementById("coSearch")?.value || "").toLowerCase();
     return companyProfiles.map((c, i) => ({ c, i })).filter(({ c }) =>
       (coBatch === "ALL" || c.batch === coBatch) && (c.name + " " + c.brands.join(" ")).toLowerCase().includes(q));
   }
+  function shortName(n) { return n.replace(/\s*\(.*?\)\s*/g, " ").replace(/\b(Pvt|Ltd|PLC|Ltd\.)\b/g, "").replace(/\s+/g, " ").trim(); }
+
   function renderCompanyList() {
-    const el = document.getElementById("coList");
+    const el = document.getElementById("coDock");
     if (!el) return;
-    el.innerHTML = coFiltered().map(({ c, i }) => `
-      <button class="co-item ${i === coIdx ? "active" : ""}" onclick="openCompany(${i})">
-        <span class="co-item-num">${String(i + 1).padStart(2, "0")}</span>
-        <div class="logo-box">${brandLogoInner(c.lead)}</div>
-        <div><div class="co-item-name">${c.name}</div><div class="co-item-sub">${c.brands.join(" · ")}</div></div>
+    const list = coFiltered();
+    el.innerHTML = list.map(({ c, i }) => `
+      <button class="dock-item ${i === coIdx ? "active" : ""}" onclick="openCompany(${i})" title="${c.name}">
+        <span class="dock-logo">${brandLogoInner(c.lead)}</span>
+        <span class="dock-name">${shortName(c.name)}</span>
+        <span class="dock-batch">${c.batch}</span>
       </button>`).join("") || `<div class="co-empty">No company matches that search.</div>`;
-    const a = el.querySelector(".co-item.active");
-    if (a) {
-      el.scrollTop = Math.max(0, a.offsetTop - el.offsetTop - el.clientHeight / 2 + a.offsetHeight / 2);
-      el.scrollLeft = Math.max(0, a.offsetLeft - el.offsetLeft - 12);
-    }
+    document.getElementById("coCount").innerHTML = `<b>${String(coIdx + 1).padStart(2, "0")}</b> / ${companyProfiles.length}`;
+    const a = el.querySelector(".dock-item.active");
+    if (a) el.scrollTo({ left: Math.max(0, a.offsetLeft - el.clientWidth / 2 + a.offsetWidth / 2), behavior: "smooth" });
+  }
+  function scrollDock(dir) {
+    const el = document.getElementById("coDock");
+    el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: "smooth" });
   }
   function setCoBatch(b, btn) {
     coBatch = b;
@@ -3235,26 +3320,35 @@
     document.getElementById("nav-companies").click();
     openCompany(i < 0 ? 0 : i);
   }
+  function setCoTab(t) { coTab = t; renderProfileBody(); }
+  function setCoPt(pt) { coPt = pt; coModel = null; renderProfileBody(); }
+  function pickModel(k) { coModel = k; renderProfileBody(); }
+
+  function coModels() {
+    const c = companyProfiles[coIdx];
+    return c.data ? currentData.filter(m => m.Distributor === c.data) : [];
+  }
+  function countUp(root) {
+    root.querySelectorAll("[data-count]").forEach(el => {
+      const end = parseFloat(el.dataset.count), dec = parseInt(el.dataset.dec || "0", 10);
+      const pre = el.dataset.pre || "", suf = el.dataset.suf || "";
+      const t0 = performance.now(), dur = 900;
+      const tick = now => {
+        const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+        el.textContent = pre + (end * e).toFixed(dec) + suf;
+        if (k < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }
+
   function openCompany(i) {
-    coIdx = i;
+    coIdx = i; coTab = "overview"; coPt = "ALL"; coModel = null;
     renderCompanyList();
     const c = companyProfiles[i];
-    const models = c.data ? currentData.filter(m => m.Distributor === c.data) : [];
-    const n = models.length;
-    const cnt = pt => models.filter(m => m.Powertrain === pt).length;
-    const prices = models.map(m => m.Std_Price_Mn);
-    const avgScore = n ? (models.reduce((s, m) => s + m.Feature_Score, 0) / n).toFixed(1) : "—";
-    const priceRange = n ? `${Math.min(...prices).toFixed(1)}–${Math.max(...prices).toFixed(1)}M` : "—";
-    const best = [...models].sort((a, b) => (b.Feature_Score - frontierScore(b.Std_Price_Mn)) - (a.Feature_Score - frontierScore(a.Std_Price_Mn)))[0];
+    const models = coModels();
     const outlook = c.outlook ? outlookData.find(o => o.id === c.outlook) : null;
-    const quad = c.quad ? quadrantData.find(q => q.id === c.quad) : null;
-    const offer = c.offerKey ? offeringsData.find(o => o[0] === c.offerKey) : null;
-    const fin = c.fin ? companyFin[c.fin] : null;
-    const finMax = fin ? Math.max(...fin.map(f => f[1])) : 1;
-    const top = [...models].sort((a, b) => b.Feature_Score - a.Feature_Score).slice(0, 6);
-    const ptColor = { EV: "#97D7FF", Hybrid: "#4D8DBA", ICE: "#043248" };
-
-    document.getElementById("coProfile").innerHTML = `
+    document.getElementById("coStage").innerHTML = `
       <div class="co-stage" style="--co-glow:${c.glow}">
         <div class="co-logo-xl">${brandLogoInner(c.lead)}</div>
         <div>
@@ -3264,69 +3358,169 @@
             <span class="co-chip">${c.focus}</span>
             <a class="co-chip" href="https://${c.web.split(";")[0].trim()}" target="_blank" rel="noopener">${c.web} ↗</a>
             <span class="co-chip">Researched by ${c.owner}</span>
-            ${outlook ? `<span class="co-chip">${outlook.label}</span>` : ""}
+            ${outlook ? `<span class="co-chip hot">${outlook.label}</span>` : ""}
           </div>
           <div class="co-nav">
             <button onclick="stepCompany(-1)"><svg class="ico" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Previous</button>
             <button class="primary" onclick="stepCompany(1)">Next company <svg class="ico" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
           </div>
         </div>
-      </div>
+        <div class="co-stage-stats">
+          <div><b data-count="${c.brands.length}">0</b><span>Brands</span></div>
+          <div><b data-count="${models.length}">0</b><span>Models scored</span></div>
+          <div><b ${models.length ? `data-count="${(models.reduce((s, m) => s + m.Feature_Score, 0) / models.length).toFixed(1)}" data-dec="1"` : ""}>${models.length ? "0" : "—"}</b><span>Avg. MECE score</span></div>
+        </div>
+      </div>`;
+    countUp(document.getElementById("coStage"));
+    renderProfileBody();
+  }
 
-      <div class="co-body">
-        <div>
+  function renderProfileBody() {
+    const c = companyProfiles[coIdx];
+    const models = coModels();
+    const n = models.length;
+    const cnt = pt => models.filter(m => m.Powertrain === pt).length;
+    const outlook = c.outlook ? outlookData.find(o => o.id === c.outlook) : null;
+    const quad = c.quad ? quadrantData.find(q => q.id === c.quad) : null;
+    const offer = c.offerKey ? offeringsData.find(o => o[0] === c.offerKey) : null;
+    const fin = c.fin ? companyFin[c.fin] : null;
+    const signals = [outlook, quad, fin, offer].filter(Boolean).length + 1;
+    const tabs = [["overview", "Overview"], ["models", `Models${n ? ` (${n})` : ""}`], ["signals", `Market Signals (${signals})`]];
+    let body = "";
+
+    if (coTab === "overview") {
+      const prices = models.map(m => m.Std_Price_Mn);
+      body = `
+        <div class="co-grid">
           <div class="card co-overview">
             <div class="card-title">Company Overview</div>
             <p>${c.text}</p>
-            <div class="co-tiles">
-              <div class="co-tile"><b>${c.brands.length}</b><span>Brands carried</span></div>
-              <div class="co-tile"><b>${n || "—"}</b><span>Models in MECE matrix</span></div>
-              <div class="co-tile"><b>${n ? "LKR " + priceRange : "—"}</b><span>Price range (18% VAT)</span></div>
-              <div class="co-tile"><b>${avgScore}</b><span>Avg. MECE feature score</span></div>
-            </div>
             ${n ? `
-            <div style="margin-top:14px;font-size:12px;font-weight:700;color:var(--deep-dark)">Powertrain mix</div>
-            <div class="co-mix">${["EV", "Hybrid", "ICE"].map(pt => cnt(pt) ? `<i style="width:${cnt(pt) / n * 100}%;background:${ptColor[pt]}"></i>` : "").join("")}</div>
-            <div class="co-legend">${["EV", "Hybrid", "ICE"].map(pt => `<span style="--c:${ptColor[pt]}">${pt} ${cnt(pt)}</span>`).join("")}</div>` : ""}
+              <div class="co-sub-h">Powertrain mix</div>
+              <div class="co-mix">${["EV", "Hybrid", "ICE"].map(pt => cnt(pt) ? `<i style="width:${cnt(pt) / n * 100}%;background:${PT_COLOR[pt]}" title="${pt}: ${cnt(pt)}"></i>` : "").join("")}</div>
+              <div class="co-legend">${["EV", "Hybrid", "ICE"].map(pt => `<button onclick="coTab='models';setCoPt('${pt}')" style="--c:${PT_COLOR[pt]}">${pt} ${cnt(pt)}</button>`).join("")}</div>
+              <div class="co-sub-h">Price ladder (LKR M, 18% VAT)</div>
+              <div class="co-ladder">
+                ${models.slice().sort((a, b) => a.Std_Price_Mn - b.Std_Price_Mn).map(m => {
+                  const lo = Math.min(...prices), hi = Math.max(...prices), x = hi > lo ? (m.Std_Price_Mn - lo) / (hi - lo) * 100 : 50;
+                  return `<i style="left:${x}%;background:${PT_COLOR[m.Powertrain]}" title="${m.Brand} ${m.Model} — LKR ${m.Std_Price_Mn.toFixed(2)}M"></i>`;
+                }).join("")}
+                <span class="lo">${Math.min(...prices).toFixed(1)}M</span><span class="hi">${Math.max(...prices).toFixed(1)}M</span>
+              </div>` : `<div class="co-empty" style="margin-top:14px">This distributor's models are not yet in the 116-model MECE matrix; its record comes from the verified 28-distributor registry.</div>`}
           </div>
-
           <div class="card">
             <div class="card-title">Brands Carried</div>
-            <div class="card-sub">Official franchises held in Sri Lanka (brand-new only).</div>
-            <div class="co-brands">${c.brands.map(b => `<div class="co-brand"><div class="logo-box">${brandLogoInner(b)}</div>${b}</div>`).join("")}</div>
+            <div class="card-sub">Official franchises in Sri Lanka (brand-new only).</div>
+            <div class="co-brand-grid">${c.brands.map(b => `<div class="co-brand-tile"><div class="co-brand-logo">${brandLogoInner(b)}</div><span>${b}</span></div>`).join("")}</div>
           </div>
+        </div>`;
+    }
 
-          <div class="card">
-            <div class="card-title">Top Models by MECE Feature Score</div>
-            <div class="card-sub">From the verified team master CSV (116 brand-new models).</div>
-            ${top.length ? `<div class="co-models">${top.map(m => `
-              <div class="co-model">
-                <div class="co-model-name">${m.Brand} ${m.Model}</div>
-                <div class="co-model-score">${m.Feature_Score.toFixed(1)}<small>/ 100</small></div>
-                <div class="co-model-meta">${m.Powertrain} • ${m.Body_Type} • LKR ${m.Std_Price_Mn.toFixed(2)}M</div>
-              </div>`).join("")}</div>` : `<div class="co-empty">This distributor's models are not yet in the 116-model MECE matrix. Its record comes from the verified 28-distributor registry.</div>`}
-          </div>
-        </div>
+    if (coTab === "models") {
+      if (!n) body = `<div class="card"><div class="co-empty">No scored models yet for ${c.name}. Its record comes from the verified 28-distributor registry.</div></div>`;
+      else {
+        const list = models.filter(m => coPt === "ALL" || m.Powertrain === coPt).sort((a, b) => b.Feature_Score - a.Feature_Score);
+        const sel = list.find(m => m.Model === coModel) || list[0];
+        const gap = m => m.Feature_Score - frontierScore(m.Std_Price_Mn);
+        const pillars = sel ? [["Comfort & Cabin", sel.Comfort], ["Performance", sel.Performance], ["Safety & ADAS", sel.Safety_ADAS], ["Tech & OTA", sel.Tech_OTA], ["Efficiency & Range", sel.Efficiency], ["After-Sales", sel.AfterSales]] : [];
+        body = `
+          <div class="co-pt-filter">${["ALL", "EV", "Hybrid", "ICE"].map(pt => `<button class="${coPt === pt ? "active" : ""}" onclick="setCoPt('${pt}')">${pt === "ALL" ? `All (${n})` : `${pt} (${cnt(pt)})`}</button>`).join("")}</div>
+          <div class="co-grid models">
+            <div class="co-model-list">
+              ${list.map(m => `
+                <button class="co-model ${sel && m.Model === sel.Model ? "active" : ""}" onclick="pickModel('${m.Model.replace(/'/g, "\\'")}')">
+                  <span class="co-pt-dot" style="background:${PT_COLOR[m.Powertrain]}"></span>
+                  <span class="co-model-main"><span class="co-model-name">${m.Brand} ${m.Model}</span><span class="co-model-meta">${m.Powertrain} • ${m.Body_Type} • LKR ${m.Std_Price_Mn.toFixed(2)}M</span></span>
+                  <span class="co-model-score">${m.Feature_Score.toFixed(1)}<small class="${gap(m) >= 0 ? "up" : "down"}">${gap(m) >= 0 ? "+" : ""}${gap(m).toFixed(1)}</small></span>
+                </button>`).join("") || `<div class="co-empty">No ${coPt} models for this distributor.</div>`}
+            </div>
+            ${sel ? `<div class="card co-model-detail">
+              <div class="co-sub-h" style="margin-top:0">Model scorecard</div>
+              <div class="co-md-name">${sel.Brand} ${sel.Model}</div>
+              <div class="co-md-row">
+                <div><b>LKR ${sel.Std_Price_Mn.toFixed(2)}M</b><span>Brand-new price</span></div>
+                <div><b>${sel.Feature_Score.toFixed(1)}</b><span>MECE score / 100</span></div>
+                <div><b class="${gap(sel) >= 0 ? "up" : "down"}">${gap(sel) >= 0 ? "+" : ""}${gap(sel).toFixed(1)}</b><span>vs. Value Frontier</span></div>
+              </div>
+              ${pillars.map(([k, v]) => `<div class="co-pillar"><span>${k}</span><div class="track"><i style="width:${v}%"></i></div><b>${v}</b></div>`).join("")}
+            </div>` : ""}
+          </div>`;
+      }
+    }
 
-        <div class="co-signal">
-          ${best ? `<div class="co-sig"><h5>Best value model</h5><p><strong>${best.Brand} ${best.Model}</strong> — LKR ${best.Std_Price_Mn.toFixed(2)}M, score ${best.Feature_Score.toFixed(1)} (${(best.Feature_Score - frontierScore(best.Std_Price_Mn)) >= 0 ? "+" : ""}${(best.Feature_Score - frontierScore(best.Std_Price_Mn)).toFixed(1)} vs. Value Frontier).</p></div>` : ""}
-          ${outlook ? `<div class="co-sig"><h5>Analyst outlook</h5><span class="badge dark">${outlook.label}</span><p>${outlook.text}</p></div>` : ""}
-          ${quad ? `<div class="co-sig"><h5>Innovator benchmark (${quad.seg})</h5>
-              <div class="co-qbar"><span>Ability to execute</span><div class="track"><i style="width:${quad.exec / 5 * 100}%"></i></div><b>${quad.exec.toFixed(2)}</b></div>
-              <div class="co-qbar"><span>Completeness of vision</span><div class="track"><i style="width:${quad.vision / 5 * 100}%"></i></div><b>${quad.vision.toFixed(2)}</b></div></div>` : ""}
-          ${fin ? `<div class="co-sig"><h5>Audited revenue (Rs. billion, CSE)</h5>
-              <div class="co-fin">${fin.map(f => `<div><b>${f[1]}B</b><i style="height:${Math.max(10, f[1] / finMax * 62)}px"></i><span>${f[0]}</span></div>`).join("")}</div></div>` : ""}
-          ${offer ? `<div class="co-sig"><h5>Evidenced offering • ${offer[1]}</h5><p>${offer[3]}</p></div>` : ""}
-          <div class="co-sig"><h5>Registry record</h5><p>Batch ${c.batch} • Owner: ${c.owner}<br>Website status: <strong>Verified</strong> (${c.web})</p></div>
-        </div>
+    if (coTab === "signals") {
+      const finMax = fin ? Math.max(...fin.map(f => f[1])) : 1;
+      body = `<div class="co-sig-grid">
+        ${outlook ? `<div class="co-sig"><h5>Analyst outlook</h5><span class="badge dark">${outlook.label}</span><p>${outlook.text}</p></div>` : ""}
+        ${quad ? `<div class="co-sig"><h5>Innovator benchmark (${quad.seg})</h5>
+            <div class="co-qbar"><span>Ability to execute</span><div class="track"><i style="width:${quad.exec / 5 * 100}%"></i></div><b>${quad.exec.toFixed(2)}</b></div>
+            <div class="co-qbar"><span>Completeness of vision</span><div class="track"><i style="width:${quad.vision / 5 * 100}%"></i></div><b>${quad.vision.toFixed(2)}</b></div>
+            <p style="margin-top:8px">Quadrant: <strong>${quad.quad}</strong></p></div>` : ""}
+        ${fin ? `<div class="co-sig"><h5>Audited revenue (Rs. billion, CSE)</h5>
+            <div class="co-fin">${fin.map(f => `<div><b>${f[1]}B</b><i style="height:${Math.max(10, f[1] / finMax * 62)}px"></i><span>${f[0]}</span></div>`).join("")}</div></div>` : ""}
+        ${offer ? `<div class="co-sig"><h5>Evidenced offering • ${offer[1]}</h5><p>${offer[3]}</p></div>` : ""}
+        <div class="co-sig"><h5>Registry record</h5><p>Batch ${c.batch} • Owner: ${c.owner}<br>Website status: <strong>Verified</strong> (${c.web})</p></div>
       </div>`;
+    }
+
+    document.getElementById("coBody").innerHTML = `
+      <div class="co-tabs">${tabs.map(([k, l]) => `<button class="${coTab === k ? "active" : ""}" onclick="setCoTab('${k}')">${l}</button>`).join("")}</div>
+      <div class="co-tab-body">${body}</div>`;
   }
+
   document.addEventListener("keydown", e => {
     const v = document.getElementById("view-companies");
     if (!v || !v.classList.contains("active") || /input|select|textarea/i.test(document.activeElement.tagName)) return;
     if (e.key === "ArrowRight") stepCompany(1);
     if (e.key === "ArrowLeft") stepCompany(-1);
   });
+
+  // ==================== PHASE 3.1: SCROLL-DRIVEN 3-CAR HERO ====================
+  (function driveHero() {
+    const sec = document.getElementById("top");
+    if (!sec || !sec.classList.contains("lp-drive")) return;
+    const cars = [...sec.querySelectorAll(".drive-car")];
+    const fills = [...sec.querySelectorAll(".drive-track i")];
+    const labels = [
+      { n: "01 · The legacy base", t: "Rugged SUVs built the market" },
+      { n: "02 · The post-ban surge", t: "New premium models, re-priced" },
+      { n: "03 · The electric shift", t: "EV SUVs take the lead" }
+    ];
+    const numEl = document.getElementById("driveNum");
+    const lblEl = document.getElementById("driveLabel");
+    let shown = -1, ticking = false;
+    const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+    function frame() {
+      ticking = false;
+      if (document.getElementById("landing-mode").classList.contains("hidden")) return;
+      const total = sec.offsetHeight - window.innerHeight;
+      const p = clamp((window.scrollY - sec.offsetTop) / Math.max(1, total), 0, 1);
+      const seg = clamp(p * 2.5 - 0.15, 0, 2);           // 0 → 2 across the three cars, with short holds
+      cars.forEach((car, i) => {
+        const t = seg - i;                                 // <0 approaching, 0 parked, >0 driving past
+        let o = 0, s = 1, y = 0, blur = 0;
+        if (t <= -1) { o = 0; }
+        else if (t < 0) { const k = 1 + t; o = k; s = 0.8 + 0.2 * k; y = (1 - k) * 6; }
+        else if (i < cars.length - 1 && t < 1) { o = 1 - t; s = 1 + 0.55 * t; y = -t * 3; blur = t * 7; }
+        else if (i < cars.length - 1) { o = 0; }
+        else { o = 1; s = 1 + Math.min(0.06, t * 0.06); }
+        car.style.opacity = o.toFixed(3);
+        car.style.transform = `translateY(${y.toFixed(2)}%) scale(${s.toFixed(3)})`;
+        car.style.filter = blur ? `blur(${blur.toFixed(1)}px)` : "none";
+      });
+      fills.forEach((f, i) => { f.style.width = (clamp(seg - i + 1, 0, 1) * 100).toFixed(1) + "%"; });
+      const idx = clamp(Math.round(seg), 0, 2);
+      if (idx !== shown) {
+        shown = idx;
+        numEl.textContent = labels[idx].n;
+        lblEl.textContent = labels[idx].t;
+      }
+    }
+    const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
+    window.addEventListener("scroll", req, { passive: true });
+    window.addEventListener("resize", req);
+    frame();
+  })();
 
   // Initial setup
   renderLandingLogoWall();
